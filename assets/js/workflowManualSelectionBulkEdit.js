@@ -1566,19 +1566,12 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `#publishpress-future-bulk-edit-manual-trigger {
-    max-width: 340px;
-    padding: 14px;
-    border: 1px solid #ddd;
-    margin-bottom: 20px;
-}
-
-#publishpress-future-bulk-edit-manual-trigger label {
+___CSS_LOADER_EXPORT___.push([module.id, `#publishpress-future-bulk-edit-manual-trigger label {
     display: inline-block;
     max-width: 100% !important;
     line-height: 12px;
 }
-`, "",{"version":3,"sources":["webpack://./assets/jsx/workflow-manual-selection/bulk-edit/css/style.css"],"names":[],"mappings":"AAAA;IACI,gBAAgB;IAChB,aAAa;IACb,sBAAsB;IACtB,mBAAmB;AACvB;;AAEA;IACI,qBAAqB;IACrB,0BAA0B;IAC1B,iBAAiB;AACrB","sourcesContent":["#publishpress-future-bulk-edit-manual-trigger {\n    max-width: 340px;\n    padding: 14px;\n    border: 1px solid #ddd;\n    margin-bottom: 20px;\n}\n\n#publishpress-future-bulk-edit-manual-trigger label {\n    display: inline-block;\n    max-width: 100% !important;\n    line-height: 12px;\n}\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./assets/jsx/workflow-manual-selection/bulk-edit/css/style.css"],"names":[],"mappings":"AAAA;IACI,qBAAqB;IACrB,0BAA0B;IAC1B,iBAAiB;AACrB","sourcesContent":["#publishpress-future-bulk-edit-manual-trigger label {\n    display: inline-block;\n    max-width: 100% !important;\n    line-height: 12px;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
