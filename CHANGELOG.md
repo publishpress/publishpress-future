@@ -5,6 +5,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [4.9.0]- UNRELEASHED
 
+### Added
+
+- Add "Duplicate" button for workflow editor filters, (Issue #1297).
+
 ### Fixed
 
 - Bulk Edit for Posts produces an empty Future box, (Issue #1302).
