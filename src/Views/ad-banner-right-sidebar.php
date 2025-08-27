@@ -6,41 +6,6 @@ defined('ABSPATH') or die('Direct access not allowed.');
 <div class="pp-column-right">
     <div class="pp-advertisement-right-sidebar">
         <div class="advertisement-box-content postbox pp-advert">
-            <div class="postbox-header pp-advert">
-                <h3 class="advertisement-box-header hndle is-non-sortable">
-                    <span><?php
-                            echo esc_html__('Upgrade to PublishPress Future Pro', 'post-expirator'); ?></span>
-                </h3>
-            </div>
-
-            <div class="inside pp-advert">
-                <p><?php
-                    echo esc_html__(
-                        'Enhance the power of PublishPress Future with the Pro version:',
-                        'post-expirator'
-                    ); ?>
-                </p>
-                <ul>
-                    <li><?php
-                        echo esc_html__('Additional workflow triggers', 'post-expirator'); ?></li>
-                    <li><?php
-                        echo esc_html__('Additional workflow actions', 'post-expirator'); ?></li>
-                    <li><?php
-                        echo esc_html__('Schedule your workflows', 'post-expirator'); ?></li>
-                    <li><?php
-                        echo esc_html__('Manage metadata with workflows', 'post-expirator'); ?></li>
-                    <li><?php
-                        echo esc_html__('Advanced features for Future Actions', 'post-expirator'); ?></li>
-                    <li><?php
-                        echo esc_html__('Use other plugins to control Future Actions', 'post-expirator'); ?></li>
-                </ul>
-                <div class="upgrade-btn">
-                    <a href="https://publishpress.com/links/future-sidebar" target="__blank"><?php
-                                                                                                echo esc_html__('Upgrade to Pro', 'post-expirator'); ?></a>
-                </div>
-            </div>
-        </div>
-        <div class="advertisement-box-content postbox pp-advert">
             <div class="postbox-header">
                 <h3 class="advertisement-box-header hndle is-non-sortable">
                     <span><?php
