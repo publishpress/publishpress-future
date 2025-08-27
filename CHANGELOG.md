@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
-- Add "Duplicate" button for filters, (Issue #1297).
+- Add "Duplicate" button for workflow editor filters, (Issue #1297).
 
 ### Fixed
 
