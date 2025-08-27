@@ -5,6 +5,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [4.9.0]- UNRELEASHED
 
+### Fixed
+
+- Bulk Edit for Posts produces an empty Future box, (Issue #1302).
+
 ### Removed
 
 - Remove the sidebar promo box, (Issue #1426).
