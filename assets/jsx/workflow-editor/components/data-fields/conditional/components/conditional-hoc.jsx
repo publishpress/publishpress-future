@@ -9,6 +9,7 @@ import { store as editorStore } from '../../../editor-store';
 import { NotToggle } from './not-toggle';
 import { AddElementButton } from './add-element-button';
 import { RemoveElementButton } from './remove-element-button';
+import { DuplicateRuleButton } from './duplicate-rule-button';
 import { CombinatorSelector } from './combinator-selector';
 import { OperatorSelector } from './operator-selector';
 import { ConditionPreview } from './condition-preview';
@@ -103,6 +104,8 @@ export const withConditional = ({
             addGroupAction: AddElementButton,
             removeGroupAction: RemoveElementButton,
             removeRuleAction: RemoveElementButton,
+            cloneRuleAction: DuplicateRuleButton,
+            cloneGroupAction: DuplicateRuleButton,
             combinatorSelector: CombinatorSelector,
             operatorSelector: OperatorSelector,
         };
@@ -156,6 +159,7 @@ export const withConditional = ({
                                 showCombinatorsBetweenRules
                                 showNotToggle
                                 enableDragAndDrop={true}
+                                showCloneButtons={true}
                                 controlClassnames={QUERY_BUILDER_CONTROL_CLASSNAMES}
                                 translations={QUERY_BUILDER_TRANSLATIONS}
                                 controlElements={queryBuilderControlElements}

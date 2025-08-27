@@ -854,8 +854,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   withConditional: () => (/* binding */ withConditional)
 /* harmony export */ });
-/* harmony import */ var react_querybuilder__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! react-querybuilder */ "./node_modules/react-querybuilder/dist/react-querybuilder.mjs");
-/* harmony import */ var _react_querybuilder_dnd__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @react-querybuilder/dnd */ "./node_modules/@react-querybuilder/dnd/dist/react-querybuilder_dnd.mjs");
+/* harmony import */ var react_querybuilder__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! react-querybuilder */ "./node_modules/react-querybuilder/dist/react-querybuilder.mjs");
+/* harmony import */ var _react_querybuilder_dnd__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @react-querybuilder/dnd */ "./node_modules/@react-querybuilder/dnd/dist/react-querybuilder_dnd.mjs");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
@@ -868,24 +868,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _not_toggle__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./not-toggle */ "./assets/jsx/workflow-editor/components/data-fields/conditional/components/not-toggle.jsx");
 /* harmony import */ var _add_element_button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./add-element-button */ "./assets/jsx/workflow-editor/components/data-fields/conditional/components/add-element-button.jsx");
 /* harmony import */ var _remove_element_button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./remove-element-button */ "./assets/jsx/workflow-editor/components/data-fields/conditional/components/remove-element-button.jsx");
-/* harmony import */ var _combinator_selector__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./combinator-selector */ "./assets/jsx/workflow-editor/components/data-fields/conditional/components/combinator-selector.jsx");
-/* harmony import */ var _operator_selector__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./operator-selector */ "./assets/jsx/workflow-editor/components/data-fields/conditional/components/operator-selector.jsx");
-/* harmony import */ var _condition_preview__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./condition-preview */ "./assets/jsx/workflow-editor/components/data-fields/conditional/components/condition-preview.jsx");
-/* harmony import */ var _hooks_useConditionalLogic__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../hooks/useConditionalLogic */ "./assets/jsx/workflow-editor/components/data-fields/conditional/hooks/useConditionalLogic.jsx");
-/* harmony import */ var _hooks_useModalManagement__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../hooks/useModalManagement */ "./assets/jsx/workflow-editor/components/data-fields/conditional/hooks/useModalManagement.jsx");
-/* harmony import */ var _hooks_useEditorSetup__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../hooks/useEditorSetup */ "./assets/jsx/workflow-editor/components/data-fields/conditional/hooks/useEditorSetup.jsx");
-/* harmony import */ var _hooks_useLegacyVariables__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../hooks/useLegacyVariables */ "./assets/jsx/workflow-editor/components/data-fields/conditional/hooks/useLegacyVariables.jsx");
-/* harmony import */ var _contexts_pro_context__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../../../contexts/pro-context */ "./assets/jsx/workflow-editor/contexts/pro-context.jsx");
-/* harmony import */ var _modal_footer__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./../../modal-footer */ "./assets/jsx/workflow-editor/components/data-fields/modal-footer.jsx");
-/* harmony import */ var react_querybuilder_dist_query_builder_css__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! react-querybuilder/dist/query-builder.css */ "./node_modules/react-querybuilder/dist/query-builder.css");
-/* harmony import */ var _css_query_builder_css__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../../../css/query-builder.css */ "./assets/jsx/workflow-editor/css/query-builder.css");
-/* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../styles/index.css */ "./assets/jsx/workflow-editor/components/data-fields/conditional/styles/index.css");
+/* harmony import */ var _duplicate_rule_button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./duplicate-rule-button */ "./assets/jsx/workflow-editor/components/data-fields/conditional/components/duplicate-rule-button.jsx");
+/* harmony import */ var _combinator_selector__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./combinator-selector */ "./assets/jsx/workflow-editor/components/data-fields/conditional/components/combinator-selector.jsx");
+/* harmony import */ var _operator_selector__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./operator-selector */ "./assets/jsx/workflow-editor/components/data-fields/conditional/components/operator-selector.jsx");
+/* harmony import */ var _condition_preview__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./condition-preview */ "./assets/jsx/workflow-editor/components/data-fields/conditional/components/condition-preview.jsx");
+/* harmony import */ var _hooks_useConditionalLogic__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../hooks/useConditionalLogic */ "./assets/jsx/workflow-editor/components/data-fields/conditional/hooks/useConditionalLogic.jsx");
+/* harmony import */ var _hooks_useModalManagement__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../hooks/useModalManagement */ "./assets/jsx/workflow-editor/components/data-fields/conditional/hooks/useModalManagement.jsx");
+/* harmony import */ var _hooks_useEditorSetup__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../hooks/useEditorSetup */ "./assets/jsx/workflow-editor/components/data-fields/conditional/hooks/useEditorSetup.jsx");
+/* harmony import */ var _hooks_useLegacyVariables__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../hooks/useLegacyVariables */ "./assets/jsx/workflow-editor/components/data-fields/conditional/hooks/useLegacyVariables.jsx");
+/* harmony import */ var _contexts_pro_context__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../../../contexts/pro-context */ "./assets/jsx/workflow-editor/contexts/pro-context.jsx");
+/* harmony import */ var _modal_footer__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./../../modal-footer */ "./assets/jsx/workflow-editor/components/data-fields/modal-footer.jsx");
+/* harmony import */ var react_querybuilder_dist_query_builder_css__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! react-querybuilder/dist/query-builder.css */ "./node_modules/react-querybuilder/dist/query-builder.css");
+/* harmony import */ var _css_query_builder_css__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../../../../css/query-builder.css */ "./assets/jsx/workflow-editor/css/query-builder.css");
+/* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../styles/index.css */ "./assets/jsx/workflow-editor/components/data-fields/conditional/styles/index.css");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t.return && (u = t.return(), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
 
 
 
@@ -961,7 +963,7 @@ var withConditional = function withConditional(_ref) {
       defaultValue = _ref2.defaultValue,
       onChange = _ref2.onChange,
       variables = _ref2.variables;
-    var _useConditionalLogic = (0,_hooks_useConditionalLogic__WEBPACK_IMPORTED_MODULE_11__.useConditionalLogic)({
+    var _useConditionalLogic = (0,_hooks_useConditionalLogic__WEBPACK_IMPORTED_MODULE_12__.useConditionalLogic)({
         defaultValue: defaultValue,
         name: name,
         onChange: onChange,
@@ -971,7 +973,7 @@ var withConditional = function withConditional(_ref) {
       query = _useConditionalLogic.query,
       setQuery = _useConditionalLogic.setQuery,
       formatCondition = _useConditionalLogic.formatCondition;
-    var _useModalManagement = (0,_hooks_useModalManagement__WEBPACK_IMPORTED_MODULE_12__.useModalManagement)({
+    var _useModalManagement = (0,_hooks_useModalManagement__WEBPACK_IMPORTED_MODULE_13__.useModalManagement)({
         onChange: onChange,
         name: name,
         formatCondition: formatCondition
@@ -979,10 +981,10 @@ var withConditional = function withConditional(_ref) {
       isModalOpen = _useModalManagement.isModalOpen,
       onCloseModal = _useModalManagement.onCloseModal,
       openModal = _useModalManagement.openModal;
-    var _useEditorSetup = (0,_hooks_useEditorSetup__WEBPACK_IMPORTED_MODULE_13__.useEditorSetup)(),
+    var _useEditorSetup = (0,_hooks_useEditorSetup__WEBPACK_IMPORTED_MODULE_14__.useEditorSetup)(),
       _useEditorSetup2 = _slicedToArray(_useEditorSetup, 1),
       editorRef = _useEditorSetup2[0];
-    var _useLegacyVariables = (0,_hooks_useLegacyVariables__WEBPACK_IMPORTED_MODULE_14__.useLegacyVariables)(),
+    var _useLegacyVariables = (0,_hooks_useLegacyVariables__WEBPACK_IMPORTED_MODULE_15__.useLegacyVariables)(),
       _useLegacyVariables2 = _slicedToArray(_useLegacyVariables, 1),
       convertLegacyVariables = _useLegacyVariables2[0];
     var _useDispatch = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.useDispatch)(_editor_store__WEBPACK_IMPORTED_MODULE_4__.store),
@@ -1004,8 +1006,10 @@ var withConditional = function withConditional(_ref) {
       addGroupAction: _add_element_button__WEBPACK_IMPORTED_MODULE_6__.AddElementButton,
       removeGroupAction: _remove_element_button__WEBPACK_IMPORTED_MODULE_7__.RemoveElementButton,
       removeRuleAction: _remove_element_button__WEBPACK_IMPORTED_MODULE_7__.RemoveElementButton,
-      combinatorSelector: _combinator_selector__WEBPACK_IMPORTED_MODULE_8__.CombinatorSelector,
-      operatorSelector: _operator_selector__WEBPACK_IMPORTED_MODULE_9__.OperatorSelector
+      cloneRuleAction: _duplicate_rule_button__WEBPACK_IMPORTED_MODULE_8__.DuplicateRuleButton,
+      cloneGroupAction: _duplicate_rule_button__WEBPACK_IMPORTED_MODULE_8__.DuplicateRuleButton,
+      combinatorSelector: _combinator_selector__WEBPACK_IMPORTED_MODULE_9__.CombinatorSelector,
+      operatorSelector: _operator_selector__WEBPACK_IMPORTED_MODULE_10__.OperatorSelector
     };
     var queryBuilderContext = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
       return {
@@ -1014,13 +1018,13 @@ var withConditional = function withConditional(_ref) {
         label: label
       };
     }, [variables, name, label]);
-    var isPro = (0,_contexts_pro_context__WEBPACK_IMPORTED_MODULE_15__.useIsPro)();
+    var isPro = (0,_contexts_pro_context__WEBPACK_IMPORTED_MODULE_16__.useIsPro)();
     return /*#__PURE__*/React.createElement("div", {
       className: "conditional-editor"
     }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
       onClick: openModal,
       variant: "secondary"
-    }, buttonText), /*#__PURE__*/React.createElement(_condition_preview__WEBPACK_IMPORTED_MODULE_10__.ConditionPreview, {
+    }, buttonText), /*#__PURE__*/React.createElement(_condition_preview__WEBPACK_IMPORTED_MODULE_11__.ConditionPreview, {
       defaultValue: defaultValue,
       editorRef: editorRef,
       editorProps: EDITOR_PROPS,
@@ -1034,7 +1038,7 @@ var withConditional = function withConditional(_ref) {
       title: modalTitle,
       onRequestClose: onCloseModal,
       className: "workflow-editor-modal conditional-editor-modal"
-    }, /*#__PURE__*/React.createElement("p", null, modalDescription), /*#__PURE__*/React.createElement(_react_querybuilder_dnd__WEBPACK_IMPORTED_MODULE_20__.QueryBuilderDnD, null, /*#__PURE__*/React.createElement(react_querybuilder__WEBPACK_IMPORTED_MODULE_21__.QueryBuilder, {
+    }, /*#__PURE__*/React.createElement("p", null, modalDescription), /*#__PURE__*/React.createElement(_react_querybuilder_dnd__WEBPACK_IMPORTED_MODULE_21__.QueryBuilderDnD, null, /*#__PURE__*/React.createElement(react_querybuilder__WEBPACK_IMPORTED_MODULE_22__.QueryBuilder, {
       fields: variables,
       onQueryChange: setQuery,
       query: query,
@@ -1043,12 +1047,13 @@ var withConditional = function withConditional(_ref) {
       showCombinatorsBetweenRules: true,
       showNotToggle: true,
       enableDragAndDrop: true,
+      showCloneButtons: true,
       controlClassnames: QUERY_BUILDER_CONTROL_CLASSNAMES,
       translations: QUERY_BUILDER_TRANSLATIONS,
       controlElements: queryBuilderControlElements,
       context: queryBuilderContext,
       getDefaultField: getDefaultField
-    })), /*#__PURE__*/React.createElement(_modal_footer__WEBPACK_IMPORTED_MODULE_16__.ModalFooter, {
+    })), /*#__PURE__*/React.createElement(_modal_footer__WEBPACK_IMPORTED_MODULE_17__.ModalFooter, {
       onClose: onCloseModal
     })));
   };
@@ -1082,6 +1087,41 @@ var Conditional = (0,_conditional_hoc__WEBPACK_IMPORTED_MODULE_3__.withCondition
   defaultField: '{{global.user.id}}'
 });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Conditional);
+
+/***/ }),
+
+/***/ "./assets/jsx/workflow-editor/components/data-fields/conditional/components/duplicate-rule-button.jsx":
+/*!************************************************************************************************************!*\
+  !*** ./assets/jsx/workflow-editor/components/data-fields/conditional/components/duplicate-rule-button.jsx ***!
+  \************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   DuplicateRuleButton: () => (/* binding */ DuplicateRuleButton)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _publishpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @publishpress/i18n */ "@publishpress/i18n");
+/* harmony import */ var _publishpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_publishpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+var _excluded = ["handleOnClick"];
+function _objectWithoutProperties(e, t) { if (null == e) return {}; var o, r, i = _objectWithoutPropertiesLoose(e, t); if (Object.getOwnPropertySymbols) { var s = Object.getOwnPropertySymbols(e); for (r = 0; r < s.length; r++) o = s[r], t.includes(o) || {}.propertyIsEnumerable.call(e, o) && (i[o] = e[o]); } return i; }
+function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (e.includes(n)) continue; t[n] = r[n]; } return t; }
+
+
+var DuplicateRuleButton = function DuplicateRuleButton(_ref) {
+  var handleOnClick = _ref.handleOnClick,
+    props = _objectWithoutProperties(_ref, _excluded);
+  return /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
+    onClick: handleOnClick,
+    variant: "secondary",
+    className: "conditional-editor-modal-duplicate-rule",
+    title: (0,_publishpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Duplicate Rule', 'post-expirator')
+  }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Dashicon, {
+    icon: "admin-page",
+    size: 16
+  }));
+};
 
 /***/ }),
 
