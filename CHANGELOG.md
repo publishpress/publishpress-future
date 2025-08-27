@@ -3,6 +3,12 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.9.0]- UNRELEASHED
+
+### Removed
+
+- Remove the sidebar promo box, (Issue #1426).
+
 ## [4.8.2]- 30 July, 2025
 
 ### Added
