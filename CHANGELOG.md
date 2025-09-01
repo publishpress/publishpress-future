@@ -9,6 +9,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Add "Duplicate" button for workflow editor filters, (Issue #1297).
 
+### Changed
+
+- Make the "Send email" actions available in the Free version, (Issue #1430).
+- Make the "Post status changed" actions available in the Free version, (Issue #1430).
+
 ### Fixed
 
 - Bulk Edit for Posts produces an empty Future box, (Issue #1302).
