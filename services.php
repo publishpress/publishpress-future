@@ -1144,15 +1144,18 @@ return [
                         $workflowExecutionId
                     );
 
-                    $stepRunner = new ChangePostStatusRunner(
+                    return new ChangePostStatusRunner(
+                        $hooks,
                         $postStepProcessor,
+                        $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY),
                         $logger
                     );
-                    break;
 
                 case SendEmailRunner::getNodeTypeName():
                     $stepRunner = new SendEmailRunner(
                         $generalStepProcessor,
+                        $container->get(ServicesAbstract::EMAIL),
+                        $executionContext,
                         $logger
                     );
                     break;
