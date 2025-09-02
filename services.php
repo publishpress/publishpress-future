@@ -381,11 +381,11 @@ return [
      */
     ServicesAbstract::MODULE_WOOCOMMERCE => static function (ContainerInterface $container) {
         return new ModuleWooCommerce(
+            $container->get(ServicesAbstract::HOOKS),
             $container->get(ServicesAbstract::BASE_URL),
             $container->get(ServicesAbstract::PLUGIN_VERSION)
         );
     },
-
     /**
      * @return ModuleInterface
      */
@@ -1144,12 +1144,13 @@ return [
                         $workflowExecutionId
                     );
 
-                    return new ChangePostStatusRunner(
+                    $stepRunner = new ChangePostStatusRunner(
                         $hooks,
                         $postStepProcessor,
                         $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY),
                         $logger
                     );
+                    break;
 
                 case SendEmailRunner::getNodeTypeName():
                     $stepRunner = new SendEmailRunner(

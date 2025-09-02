@@ -270,7 +270,7 @@ class SettingsFacade
             $this->cache['postTypeDefaults'] = [];
         }
 
-        $defaults = apply_filters(HooksAbstract::FILTER_SETTINGS_POST_TYPE_DEFAULTS, $defaults, $postType);
+        $defaults = $this->hooks->applyFilters(HooksAbstract::FILTER_SETTINGS_POST_TYPE_DEFAULTS, $defaults, $postType);
 
         $this->cache['postTypeDefaults'][$postType] = $defaults;
 
@@ -281,7 +281,7 @@ class SettingsFacade
     {
         $this->options->updateOption('expirationdateDefaults' . ucfirst($postType), $defaults);
 
-        do_action(HooksAbstract::ACTION_SETTINGS_SET_POST_TYPE_DEFAULTS, $defaults, $postType);
+        $this->hooks->doAction(HooksAbstract::ACTION_SETTINGS_SET_POST_TYPE_DEFAULTS, $defaults, $postType);
     }
 
     /**
@@ -565,7 +565,7 @@ class SettingsFacade
         $this->setHideCalendarByDefault($settings['hideCalendarByDefault'] ?? false);
         $this->setAllowUserRoles($settings['allowUserRoles'] ?? []);
 
-        do_action(HooksAbstract::ACTION_SETTINGS_SET_GENERAL, $settings);
+        $this->hooks->doAction(HooksAbstract::ACTION_SETTINGS_SET_GENERAL, $settings);
     }
 
     public function getNotificationsSettings(): array
@@ -587,7 +587,7 @@ class SettingsFacade
         $this->setSendEmailNotificationToAdmins($settings['enableEmailNotificationToAdmins'] ?? false);
         $this->setEmailNotificationAddressesList($settings['emailNotificationAddressesList'] ?? []);
 
-        do_action(HooksAbstract::ACTION_SETTINGS_SET_NOTIFICATIONS, $settings);
+        $this->hooks->doAction(HooksAbstract::ACTION_SETTINGS_SET_NOTIFICATIONS, $settings);
     }
 
     public function getDisplaySettings(): array
@@ -631,7 +631,7 @@ class SettingsFacade
         $this->setShortcodeWrapper($settings['shortcodeWrapper'] ?? '');
         $this->setShortcodeWrapperClass($settings['shortcodeWrapperClass'] ?? '');
 
-        do_action(HooksAbstract::ACTION_SETTINGS_SET_DISPLAY, $settings);
+        $this->hooks->doAction(HooksAbstract::ACTION_SETTINGS_SET_DISPLAY, $settings);
     }
 
     public function setAdminSettings(array $settings): void
@@ -641,7 +641,7 @@ class SettingsFacade
         $this->setColumnStyle($settings['columnStyle'] ?? '');
         $this->setTimeFormatForDatePicker($settings['timeFormatForDatePicker'] ?? '');
 
-        do_action(HooksAbstract::ACTION_SETTINGS_SET_ADMIN, $settings);
+        $this->hooks->doAction(HooksAbstract::ACTION_SETTINGS_SET_ADMIN, $settings);
     }
 
     public function getAdvancedSettings(): array
@@ -667,7 +667,7 @@ class SettingsFacade
         $this->setExperimentalFeaturesStatus($settings['experimentalFeatures'] ?? false);
         $this->setSettingPreserveData($settings['preserveDataDeactivating'] ?? false);
 
-        do_action(HooksAbstract::ACTION_SETTINGS_SET_ADVANCED, $settings);
+        $this->hooks->doAction(HooksAbstract::ACTION_SETTINGS_SET_ADVANCED, $settings);
     }
 
     public function getPastDueActionsNotificationStatus(): bool
