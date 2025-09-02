@@ -8,6 +8,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 - Add "Duplicate" button for workflow editor filters, (Issue #1297).
+- Create the "Future Actions" workflows as samples in the "Action Workflows" area on install, (Issue #1309).
+  - Added "Change status to draft one week after publishing" workflow sample
+  - Added "Delete post one week after publishing" workflow sample
+  - Added "Remove all categories one week after publishing" workflow sample
+  - Added "Remove selected categories one week after publishing" workflow sample
+  - Added "Replace all categories one week after publishing" workflow sample
+  - Added "Stick post one week after publishing" workflow sample
+  - Added "Unstick post one week after publishing" workflow sample
 
 ### Changed
 
