@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Make the "Send email" actions available in the Free version, (Issue #1430).
 - Make the "Post status changed" actions available in the Free version, (Issue #1430).
+- Move items under workflow editor "Advanced" tab to "Actions" tab and remove "Advanced" tab, (Issue #1383).
 
 ### Fixed
 
