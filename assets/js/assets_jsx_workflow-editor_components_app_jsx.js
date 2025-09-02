@@ -12765,6 +12765,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _editor_store__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../editor-store */ "./assets/jsx/workflow-editor/components/editor-store/index.jsx");
 /* harmony import */ var _inserter_search_results__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./inserter-search-results */ "./assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx");
 /* harmony import */ var _inserter_preview_panel__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./inserter-preview-panel */ "./assets/jsx/workflow-editor/components/secondary-sidebar/inserter-preview-panel.jsx");
+function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
+function _arrayWithoutHoles(r) { if (Array.isArray(r)) return _arrayLikeToArray(r); }
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
@@ -12832,7 +12836,9 @@ function InserterMenu(_ref) {
     }, (0,_publishpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('A tip for using the workflow editor', 'post-expirator')), /*#__PURE__*/React.createElement(_tips__WEBPACK_IMPORTED_MODULE_4__.Tips, null)));
   }, [onInsert, onHover, filterValue, showMostUsedNodes, showInserterHelpPanel]);
   var actionsTab = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    var items = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.select)(_editor_store__WEBPACK_IMPORTED_MODULE_8__.store).getActionNodes();
+    var actionItems = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.select)(_editor_store__WEBPACK_IMPORTED_MODULE_8__.store).getActionNodes();
+    var advancedItems = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.select)(_editor_store__WEBPACK_IMPORTED_MODULE_8__.store).getAdvancedNodes();
+    var items = [].concat(_toConsumableArray(actionItems), _toConsumableArray(advancedItems));
     var categories = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.select)(_editor_store__WEBPACK_IMPORTED_MODULE_8__.store).getActionCategories();
     return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
       className: "block-editor-inserter__block-list"
@@ -12849,33 +12855,12 @@ function InserterMenu(_ref) {
       as: "h2"
     }, (0,_publishpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('A tip for using the workflow editor', 'post-expirator')), /*#__PURE__*/React.createElement(_tips__WEBPACK_IMPORTED_MODULE_4__.Tips, null)));
   }, [onInsert, onHover, filterValue, showMostUsedNodes, showInserterHelpPanel]);
-  var advancedControlsTab = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    var items = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.select)(_editor_store__WEBPACK_IMPORTED_MODULE_8__.store).getAdvancedNodes();
-    var categories = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.select)(_editor_store__WEBPACK_IMPORTED_MODULE_8__.store).getAdvancedCategories();
-    return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
-      className: "block-editor-inserter__block-list"
-    }, /*#__PURE__*/React.createElement(_nodes_tab__WEBPACK_IMPORTED_MODULE_5__.NodesTab, {
-      type: _constants__WEBPACK_IMPORTED_MODULE_7__.INSERTER_TAB_ADVANCED,
-      onInsert: onInsert,
-      onHover: onHover,
-      showMostUsedNodes: showMostUsedNodes,
-      items: items,
-      categories: categories
-    })), showInserterHelpPanel && /*#__PURE__*/React.createElement("div", {
-      className: "block-editor-inserter__tips"
-    }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.VisuallyHidden, {
-      as: "h2"
-    }, (0,_publishpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('A tip for using the workflow editor')), /*#__PURE__*/React.createElement(_tips__WEBPACK_IMPORTED_MODULE_4__.Tips, null)));
-  }, [onInsert, onHover, filterValue, showMostUsedNodes, showInserterHelpPanel]);
   var getCurrentTab = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (tab) {
     if (tab.name === _constants__WEBPACK_IMPORTED_MODULE_7__.INSERTER_TAB_TRIGGERS) {
       return triggersTab;
     }
     if (tab.name === _constants__WEBPACK_IMPORTED_MODULE_7__.INSERTER_TAB_ACTIONS) {
       return actionsTab;
-    }
-    if (tab.name === _constants__WEBPACK_IMPORTED_MODULE_7__.INSERTER_TAB_ADVANCED) {
-      return advancedControlsTab;
     }
   }, [triggersTab, actionsTab]);
   var onSelectTab = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (tab) {
@@ -13477,20 +13462,15 @@ var actionsTabs = {
   /* translators: Patterns tab title in the block inserter. */
   title: (0,_publishpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Actions', 'post-expirator')
 };
-var advancedTabs = {
-  name: _constants__WEBPACK_IMPORTED_MODULE_3__.INSERTER_TAB_ADVANCED,
-  /* translators: Patterns tab title in the block inserter. */
-  title: (0,_publishpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Advanced', 'post-expirator')
-};
 function InserterTabs(_ref) {
   var children = _ref.children,
     onSelect = _ref.onSelect,
     _ref$initialTabName = _ref.initialTabName,
     initialTabName = _ref$initialTabName === void 0 ? _constants__WEBPACK_IMPORTED_MODULE_3__.INSERTER_TAB_TRIGGERS : _ref$initialTabName;
   var tabs = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
-    var tempTabs = [triggersTab, actionsTabs, advancedTabs];
+    var tempTabs = [triggersTab, actionsTabs];
     return tempTabs;
-  }, [triggersTab, actionsTabs, advancedTabs]);
+  }, [triggersTab, actionsTabs]);
   return /*#__PURE__*/React.createElement(_tab_panel__WEBPACK_IMPORTED_MODULE_1__.TabPanel, {
     className: "block-editor-inserter__tabs",
     tabs: tabs,

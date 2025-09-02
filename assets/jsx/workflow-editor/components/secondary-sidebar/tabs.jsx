@@ -10,7 +10,6 @@ import { __ } from '@publishpress/i18n';
  */
 import {
     INSERTER_TAB_ACTIONS,
-    INSERTER_TAB_ADVANCED,
     INSERTER_TAB_TRIGGERS
 } from '../../constants';
 
@@ -24,11 +23,6 @@ const actionsTabs = {
     /* translators: Patterns tab title in the block inserter. */
     title: __('Actions', 'post-expirator'),
 };
-const advancedTabs = {
-    name: INSERTER_TAB_ADVANCED,
-    /* translators: Patterns tab title in the block inserter. */
-    title: __('Advanced', 'post-expirator'),
-};
 
 function InserterTabs({
     children,
@@ -36,13 +30,12 @@ function InserterTabs({
     initialTabName = INSERTER_TAB_TRIGGERS,
 }) {
     const tabs = useMemo(() => {
-        const tempTabs = [triggersTab, actionsTabs, advancedTabs];
+        const tempTabs = [triggersTab, actionsTabs];
 
         return tempTabs;
     }, [
         triggersTab,
         actionsTabs,
-        advancedTabs,
     ]);
 
     return (
