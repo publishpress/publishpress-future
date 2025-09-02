@@ -265,7 +265,7 @@ class BackupRestApi implements InitializableInterface
             $settings = array_merge($settings, $this->getAdvancedSettings());
         }
 
-        $settings = apply_filters(BackupHooksAbstract::FILTER_EXPORTED_SETTINGS, $settings, $selectedSettings);
+        $settings = $this->hooks->applyFilters(BackupHooksAbstract::FILTER_EXPORTED_SETTINGS, $settings, $selectedSettings);
 
         return $settings;
     }
@@ -410,6 +410,6 @@ class BackupRestApi implements InitializableInterface
             $this->settingsFacade->setAdvancedSettings($settings['advanced']);
         }
 
-        do_action(BackupHooksAbstract::ACTION_AFTER_IMPORT_SETTINGS, $settings);
+        $this->hooks->doAction(BackupHooksAbstract::ACTION_AFTER_IMPORT_SETTINGS, $settings);
     }
 }

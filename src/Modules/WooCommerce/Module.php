@@ -7,11 +7,17 @@
 namespace PublishPress\Future\Modules\WooCommerce;
 
 use PublishPress\Future\Framework\ModuleInterface;
+use PublishPress\Future\Core\HookableInterface;
 
 defined('ABSPATH') or die('Direct access not allowed.');
 
 final class Module implements ModuleInterface
 {
+    /**
+     * @var HookableInterface
+     */
+    private $hooks;
+
     /**
      * @var string
      */
@@ -23,8 +29,9 @@ final class Module implements ModuleInterface
     private $pluginVersion;
 
 
-    public function __construct($baseUrl, $pluginVersion)
+    public function __construct(HookableInterface $hooks, $baseUrl, $pluginVersion)
     {
+        $this->hooks = $hooks;
         $this->baseUrl = $baseUrl;
         $this->pluginVersion = $pluginVersion;
     }
@@ -34,7 +41,7 @@ final class Module implements ModuleInterface
      */
     public function initialize()
     {
-        add_action('admin_enqueue_scripts', [$this, 'enqueueStyle']);
+        $this->hooks->addAction('admin_enqueue_scripts', [$this, 'enqueueStyle']);
     }
 
     public function enqueueStyle()

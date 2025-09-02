@@ -31,6 +31,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Remove the sidebar promo box, (Issue #1426).
 
+### Developers
+
+- Refactor hardcoded do_action occurrences, (Issue #1335).
+
 ## [4.8.2]- 30 July, 2025
 
 ### Added
