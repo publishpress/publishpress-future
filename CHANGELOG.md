@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 
 - Bulk Edit for Posts produces an empty Future box, (Issue #1302).
+- Newly created workflow "Manually run via Future Actions box" not working, (Issue #1425).
 
 ### Removed
 
