@@ -37,6 +37,7 @@ export const ExpressionBuilder = ({
     helpUrl = '',
     autoComplete = true,
     completers = [],
+    buttonText = null,
 }) => {
     const editorFullRef = useRef(null);
     const editorSmallRef = useRef(null);
@@ -132,9 +133,10 @@ export const ExpressionBuilder = ({
             variant="secondary"
             onClick={() => setIsOpen(true)}
             className="expression-builder-button"
-            icon={<NodeIcon icon="braces" iconSize={16} />}
-            title={__("Edit", "post-expirator")}
-        />
+            title={buttonText || __("Edit", "post-expirator")}
+        >
+            {buttonText || __("Edit", "post-expirator")}
+        </Button>
 
         {! isInline && label && (
             <Heading level={3} className="expression-builder-small-heading">{label}</Heading>

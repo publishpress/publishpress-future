@@ -98,11 +98,13 @@
     top: 0;
     right: 0;
     height: 24px;
-    padding-top: 4px;
-    width: 24px !important;
-    display: inline-block;
+    width: auto !important;
     min-width: 24px;
-    padding-left: 4px;
+    display: inline-block;
+    padding-top: 4px;
+    padding-bottom: 23px;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 .column-item-form {
