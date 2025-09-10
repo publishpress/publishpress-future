@@ -24,6 +24,11 @@ class PostResolver implements VariableResolverInterface
     private $cachedPermalink;
 
     /**
+     * @var ARRAY
+     */
+    private $cachedTerms;
+
+    /**
      * @var \Closure
      */
     private $expirablePostModelFactory;
@@ -32,12 +37,14 @@ class PostResolver implements VariableResolverInterface
         object $post,
         HookableInterface $hooks,
         string $cachedPermalink = '',
-        \Closure $expirablePostModelFactory = null
+        \Closure $expirablePostModelFactory = null,
+        $cachedTerms = []
     ) {
         $this->post = $post;
         $this->hooks = $hooks;
         $this->cachedPermalink = $cachedPermalink;
         $this->expirablePostModelFactory = $expirablePostModelFactory;
+        $this->cachedTerms = $cachedTerms;
     }
 
     public function getType(): string
@@ -116,6 +123,9 @@ class PostResolver implements VariableResolverInterface
             case 'author':
                 return new UserResolver($this->post->post_author);
 
+            case 'terms':
+                return new PostTermsResolver($this->post, $this->cachedTerms);
+
             case 'future':
                 return new FutureActionResolver($this->post, $this->expirablePostModelFactory);
         }
@@ -190,6 +200,7 @@ class PostResolver implements VariableResolverInterface
                 'meta',
                 'post_author',
                 'author',
+                'terms',
                 'future',
             ]
         );

@@ -112,6 +112,7 @@ use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnPostUp
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnPostWorkflowEnableRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnScheduleRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnUserRoleChangeRunner;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnTermsAddedRunner;
 use PublishPress\Future\Modules\Workflows\HooksAbstract as WorkflowsHooksAbstract;
 use PublishPress\Future\Modules\Workflows\Infrastructure\Safety\WorkflowExecutionSafeguard;
 use PublishPress\Future\Modules\Workflows\Interfaces\AsyncStepProcessorInterface;
@@ -972,6 +973,24 @@ return [
                         $generalStepProcessor,
                         $logger
                     );
+                    break;
+
+                case OnTermsAddedRunner::getNodeTypeName():
+                        $inputValidatorPostQuery = call_user_func(
+                            $container->get(ServicesAbstract::INPUT_VALIDATOR_POST_QUERY_FACTORY),
+                            $workflowExecutionId
+                        );
+
+                        $stepRunner = new OnTermsAddedRunner(
+                            $container->get(ServicesAbstract::HOOKS),
+                            $generalStepProcessor,
+                            $inputValidatorPostQuery,
+                            $logger,
+                            $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY),
+                            $container->get(ServicesAbstract::POST_CACHE),
+                            $container->get(ServicesAbstract::WORKFLOW_EXECUTION_SAFEGUARD),
+                            $executionContext
+                        );
                     break;
 
                 case OnPostWorkflowEnableRunner::getNodeTypeName():

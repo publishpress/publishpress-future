@@ -28,6 +28,8 @@ class PostCache implements PostCacheInterface
         $this->hooks->addAction(HooksAbstract::ACTION_SAVE_POST, [$this, 'storeCacheAfterInsert'], 10, 2);
 
         $this->hooks->addAction(HooksAbstract::ACTION_TRANSITION_POST_STATUS, [$this, 'storeCacheAfterTransition'], 15, 3);
+
+        $this->hooks->addAction(HooksAbstract::ACTION_SET_OBJECT_TERMS, [$this, 'storeTermsCache'], 10, 6);
     }
 
     /**
@@ -142,9 +144,118 @@ class PostCache implements PostCacheInterface
     }
 
     /**
-     * Retrieves the cached posts and permalinks for a given post ID.
+     * Store taxonomy term before and after cache for posts.
      *
-     * This method returns an array containing both before and after states of the post and its permalink.
+     * @param int    $objectId  The object ID.
+     * @param array  $terms     The terms.
+     * @param array  $ttIds     The term taxonomy IDs after update.
+     * @param string $taxonomy  The taxonomy.
+     * @param bool   $append    Whether to append terms.
+     * @param array  $oldTtIds  The term taxonomy IDs before update.
+     *
+     * @return void
+     */
+    public function storeTermsCache($objectId, $terms, $ttIds, $taxonomy, $append, $oldTtIds): void
+    {
+        $post = get_post($objectId);
+
+        if (!$post) {
+            return;
+        }
+
+        $this->ensureCacheExists($objectId);
+
+        $existingTermsBefore = $this->cache[$objectId]['termsBefore'] ?? [];
+        $existingTermsAfter = $this->cache[$objectId]['termsAfter'] ?? [];
+
+        $allTaxonomies = get_object_taxonomies($post->post_type, 'names');
+
+        foreach ($allTaxonomies as $currentTaxonomy) {
+            if ($currentTaxonomy === $taxonomy) {
+                // Handle before state
+                $beforeTaxonomyTermsData = [];
+                if (!empty($oldTtIds)) {
+                    $termsBefore = get_terms([
+                        'include' => $oldTtIds,
+                        'taxonomy' => $taxonomy,
+                        'hide_empty' => false
+                    ]);
+                    if (!is_wp_error($termsBefore)) {
+                        $beforeTaxonomyTermsData = $termsBefore;
+                    }
+                }
+                $existingTermsBefore[$taxonomy] = $beforeTaxonomyTermsData;
+
+                // Handle after state
+                $afterTaxonomyTermsData = [];
+                if (!empty($ttIds)) {
+                    $termsAfter = get_terms([
+                        'include' => $ttIds,
+                        'taxonomy' => $taxonomy,
+                        'hide_empty' => false
+                    ]);
+                    if (!is_wp_error($termsAfter)) {
+                        $afterTaxonomyTermsData = $termsAfter;
+                    }
+                }
+                $existingTermsAfter[$taxonomy] = $afterTaxonomyTermsData;
+            } else {
+                if (!isset($existingTermsBefore[$currentTaxonomy])) {
+                    $currentTerms = wp_get_post_terms($objectId, $currentTaxonomy);
+                    if (!is_wp_error($currentTerms)) {
+                        $existingTermsBefore[$currentTaxonomy] = $currentTerms;
+                        $existingTermsAfter[$currentTaxonomy] = $currentTerms;
+                    } else {
+                        $existingTermsBefore[$currentTaxonomy] = [];
+                        $existingTermsAfter[$currentTaxonomy] = [];
+                    }
+                }
+            }
+        }
+
+        // Store cache data
+        $this->cache[$objectId]['termsBefore'] = $existingTermsBefore;
+        $this->cache[$objectId]['termsAfter'] = $existingTermsAfter;
+    }
+    /**
+     * Get added terms ids for a specific taxonomy.
+     *
+     * @param int    $postId   The post ID.
+     * @param string $taxonomy The taxonomy.
+     *
+     * @return array The added terms Ids.
+     */
+    public function getAddedTermsIds(int $postId, string $taxonomy): array
+    {
+        $cache = $this->getCacheForPostId($postId);
+
+        if (!$cache) {
+            return [];
+        }
+
+        $beforeIds = [];
+        if (!empty($cache['termsBefore'][$taxonomy])) {
+            $beforeIds = array_map(function ($term) {
+                return $term->term_id;
+            }, $cache['termsBefore'][$taxonomy]);
+        }
+
+        $afterIds = [];
+        if (!empty($cache['termsAfter'][$taxonomy])) {
+            $afterIds = array_map(function ($term) {
+                return $term->term_id;
+            }, $cache['termsAfter'][$taxonomy]);
+        }
+
+        $addedIds = array_diff($afterIds, $beforeIds);
+
+        return $addedIds;
+    }
+
+    /**
+     * Retrieves the cached posts, terms and permalinks for a given post ID.
+     *
+     * This method returns an array containing both before and after states of the post, terms and its permalink.
      *
      * @param int $postId The ID of the post to retrieve cached data for.
      *
@@ -165,6 +276,8 @@ class PostCache implements PostCacheInterface
                 'postAfter' => null,
                 'permalinkBefore' => '',
                 'permalinkAfter' => '',
+                'termsBefore' => [],
+                'termsAfter' => [],
             ];
         }
     }

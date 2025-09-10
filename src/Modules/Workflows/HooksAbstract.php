@@ -21,6 +21,11 @@ abstract class HooksAbstract
      */
     public const ACTION_TRANSITION_POST_STATUS = 'transition_post_status';
 
+    /**
+     * @since 4.9.0
+     */
+    public const ACTION_SET_OBJECT_TERMS = 'set_object_terms';
+
     public const ACTION_INIT = 'init';
 
     public const ACTION_ADMIN_INIT = 'admin_init';

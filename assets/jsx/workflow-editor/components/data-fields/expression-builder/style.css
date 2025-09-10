@@ -17,7 +17,6 @@
     border-right: 1px solid #ccc;
     overflow-y: scroll;
     max-height: 212px;
-    min-height: 212px;
 }
 
 .column-item {

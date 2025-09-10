@@ -29,6 +29,7 @@ use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\Updat
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\DuplicatePost;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnAdminInit;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnCustomAction;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnTermsAdded;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnInit;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnLegacyActionTrigger;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnPostAuthorChange;
@@ -223,6 +224,7 @@ class StepTypesModel implements StepTypesModelInterface
             OnPostMetaChange::getNodeTypeName() => new OnPostMetaChange(),
             OnPostAuthorChange::getNodeTypeName() => new OnPostAuthorChange(),
             OnPostRowAction::getNodeTypeName() => new OnPostRowAction(),
+            OnTermsAdded::getNodeTypeName() => new OnTermsAdded(),
             OnCustomAction::getNodeTypeName() => new OnCustomAction(),
         ];
 
