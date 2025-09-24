@@ -78,7 +78,7 @@
     "reakit": "^1.0.0",
     "source-map-explorer": "^2.5.3",
     "style-loader": "^4.0.0",
-    "tar-fs": "^3.0.7",
+    "tar-fs": "^3.1.1",
     "underscore": "^1.12.1",
     "webpack": "^5.94.0",
     "webpack-bundle-analyzer": "^4.10.2",
