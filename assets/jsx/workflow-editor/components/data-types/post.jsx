@@ -86,6 +86,12 @@ export function PostData() {
                 },
             },
             {
+                name: "terms",
+                type: "post_terms",
+                label: "Terms",
+                description: "The taxonomy terms assigned to the post.",
+            },
+            {
                 name: "future",
                 type: "future_action",
                 label: "Future Action",

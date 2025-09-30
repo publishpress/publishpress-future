@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
+- Add a new trigger (When terms are added to a post), (Issue #1130).
+- Add Terms to the execution context, (Issue #1271).
+- Add new operator("has" & "does not have") to compare array in workflow editor filters, (Issue #1271).
 - Add "Duplicate" button for workflow editor filters, (Issue #1297).
 - Create the "Future Actions" workflows as samples in the "Action Workflows" area on install, (Issue #1309).
   - Added "Change status to draft one week after publishing" workflow sample
@@ -37,6 +40,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Refactor hardcoded do_action occurrences, (Issue #1335).
 - Update the actions scheduler library, (Issue #726).
+- Fixed workflow editor resolveExpressionsInJsonLogic forcing array into strings/json for all var.
 
 ## [4.8.2]- 30 July, 2025
 

@@ -17,3 +17,5 @@ export { default as PostTypeData } from './post-type';
 export { default as UrlData } from './url';
 export { default as UserRolesData } from './user-roles';
 export { default as MetaData } from './meta';
+export { default as PostTermsData } from './post-terms';
+

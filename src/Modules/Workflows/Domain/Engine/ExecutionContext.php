@@ -11,6 +11,7 @@ use PublishPress\Future\Modules\Workflows\Domain\Engine\VariableResolvers\Future
 use PublishPress\Future\Modules\Workflows\Domain\Engine\VariableResolvers\IntegerResolver;
 use PublishPress\Future\Modules\Workflows\Domain\Engine\VariableResolvers\NodeResolver;
 use PublishPress\Future\Modules\Workflows\Domain\Engine\VariableResolvers\PostResolver;
+use PublishPress\Future\Modules\Workflows\Domain\Engine\VariableResolvers\PostTermsResolver;
 use PublishPress\Future\Modules\Workflows\Domain\Engine\VariableResolvers\SiteResolver;
 use PublishPress\Future\Modules\Workflows\Domain\Engine\VariableResolvers\UserResolver;
 use PublishPress\Future\Modules\Workflows\Domain\Engine\VariableResolvers\WorkflowResolver;
@@ -157,19 +158,39 @@ class ExecutionContext implements ExecutionContextInterface
         $newExpression = [];
 
         foreach ($jsonLogicExpression as $key => $value) {
-            if (is_array($value)) {
-                if (isset($value['var'])) {
-                    $value = $value['var'];
-                } else {
-                    $value = $this->resolveExpressionsInJsonLogic($value);
-                    if (is_bool($value)) {
-                        $value = $value ? '1' : '0';
+            // If it's a {"var": "..."} node, try to resolve it to a real value
+            if (is_array($value) && array_key_exists('var', $value)) {
+                $originalVar = $value['var'];
+
+                $resolved = $this->getVariableValueFromNestedVariable($originalVar, $this->runtimeVariables);
+
+                if ($resolved === $originalVar || (is_string($resolved) && strpos($resolved, '{{') !== false)) {
+                    try {
+                        $fallback = $this->getVariable($originalVar);
+                        if ($fallback !== null) {
+                            $resolved = $fallback;
+                        }
+                    } catch (\Throwable $e) {
+                        // couldn't resolve
                     }
                 }
+
+                if ($resolved instanceof VariableResolverInterface) {
+                    $resolved = $resolved->getValue();
+                }
+
+                $newExpression[$key] = $resolved;
+                continue;
+            }
+
+            if (is_array($value)) {
+                $newExpression[$key] = $this->resolveExpressionsInJsonLogic($value);
+                continue;
             }
 
             if (is_string($value) && strpos($value, '{{') !== false) {
-                $value = $this->resolveExpressionsInText($value);
+                $newExpression[$key] = $this->resolveExpressionsInText($value);
+                continue;
             }
 
             $newExpression[$key] = $value;
@@ -488,6 +509,7 @@ class ExecutionContext implements ExecutionContextInterface
                     'integer' => IntegerResolver::class,
                     'node' => NodeResolver::class,
                     'post' => PostResolver::class,
+                    'terms' => TermsResolver::class,
                     'site' => SiteResolver::class,
                     'user' => UserResolver::class,
                     'workflow' => WorkflowResolver::class,
