@@ -307,6 +307,11 @@ class ExpirablePostModel extends PostModel
             $termModelFactory = $this->termModelFactory;
             $termModel = $termModelFactory($categoryId);
 
+            if (! $termModel->termExists()) {
+                $this->logger->debug('Term model does not exist for category ID: ' . $categoryId);
+                continue;
+            }
+
             $categoryNames[] = $termModel->getName();
         }
 
