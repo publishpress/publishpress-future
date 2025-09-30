@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Bulk Edit for Posts produces an empty Future box, (Issue #1302).
 - Newly created workflow "Manually run via Future Actions box" not working, (Issue #1425).
 - Update ES-FR-IT translations (Issues #1445, #1439).
+- PHP message: PHP Fatal error: Uncaught ... NonexistentTermException in ...TermModel.php, (Issue #1442).
 
 ### Removed
 
