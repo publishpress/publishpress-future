@@ -61,7 +61,7 @@ class V30104ArgsColumnLength implements MigrationInterface
         if ($row['hook'] === self::HOOK) {
             return __(
                 'Change args column length to 1000 in the table _ppfuture_actions_args after v3.1.4',
-                'publishpress-future'
+                'post-expirator'
             );
         }
 
