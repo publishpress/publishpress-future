@@ -551,11 +551,41 @@ var FutureActionPanel = function FutureActionPanel(props) {
       setValidationError(props.strings.errorDateRequired);
       valid = false;
     }
+    if (date) {
+      var wpTimezone = props.wpTimezone || "UTC";
+      var selectedDate = new Date(date);
+      var now = new Date();
+      var nowInWpTimezone;
+      if (wpTimezone.match(/^[+-]\d{2}:\d{2}$/)) {
+        var _wpTimezone$match = wpTimezone.match(/^([+-])(\d{2}):(\d{2})$/),
+          _wpTimezone$match2 = _slicedToArray(_wpTimezone$match, 4),
+          sign = _wpTimezone$match2[1],
+          hours = _wpTimezone$match2[2],
+          minutes = _wpTimezone$match2[3];
+        var offsetMinutes = (parseInt(hours) * 60 + parseInt(minutes)) * (sign === '+' ? 1 : -1);
 
-    // Check if the date is in the past
-    if (date && new Date(date) < new Date()) {
-      setValidationError(props.strings.errorDateInPast);
-      valid = false;
+        // Convert browser time to WordPress timezone
+        // Browser offset from UTC
+        var browserOffsetMinutes = now.getTimezoneOffset();
+
+        // Adjust from browser timezone to WordPress timezone
+        var totalOffsetMinutes = offsetMinutes + browserOffsetMinutes;
+        nowInWpTimezone = new Date(now.getTime() + totalOffsetMinutes * 60000);
+      } else {
+        try {
+          nowInWpTimezone = new Date(now.toLocaleString("en-US", {
+            timeZone: wpTimezone
+          }));
+        } catch (error) {
+          nowInWpTimezone = new Date(now.toLocaleString("en-US", {
+            timeZone: "UTC"
+          }));
+        }
+      }
+      if (selectedDate < nowInWpTimezone) {
+        setValidationError(props.strings.errorDateInPast);
+        valid = false;
+      }
     }
     var isTermRequired = ['category', 'category-add', 'category-remove'].includes(action);
     var noTermIsSelected = terms.length === 0 || terms.length === 1 && (terms[0] === '' || terms[0] === '0');
@@ -808,6 +838,7 @@ var FutureActionPanelBlockEditor = function FutureActionPanelBlockEditor(props) 
     onDataIsValid: onDataIsValid,
     hideCalendarByDefault: props.hideCalendarByDefault,
     hiddenFields: props.hiddenFields,
+    wpTimezone: props.wpTimezone,
     showTitle: false,
     onDataIsInvalid: onDataIsInvalid
   })));
@@ -933,6 +964,7 @@ var FutureActionPanelBulkEdit = function FutureActionPanelBulkEdit(props) {
     storeName: props.storeName,
     hideCalendarByDefault: props.hideCalendarByDefault,
     hiddenFields: props.hiddenFields,
+    wpTimezone: props.wpTimezone,
     showTitle: false,
     strings: props.strings
   }), /*#__PURE__*/React.createElement("input", {
@@ -1063,6 +1095,7 @@ var FutureActionPanelClassicEditor = function FutureActionPanelClassicEditor(pro
     onDataIsValid: onDataIsValid,
     hideCalendarByDefault: props.hideCalendarByDefault,
     hiddenFields: props.hiddenFields,
+    wpTimezone: props.wpTimezone,
     showTitle: false,
     onDataIsInvalid: onDataIsInvalid
   }));
@@ -1147,6 +1180,7 @@ var FutureActionPanelQuickEdit = function FutureActionPanelQuickEdit(props) {
     onDataIsValid: onDataIsValid,
     hideCalendarByDefault: props.hideCalendarByDefault,
     hiddenFields: props.hiddenFields,
+    wpTimezone: props.wpTimezone,
     showTitle: true,
     onDataIsInvalid: onDataIsInvalid
   }), /*#__PURE__*/React.createElement("input", {
@@ -3531,7 +3565,8 @@ var _window$publishpressF = window.publishpressFutureClassicEditorConfig,
   defaultDate = _window$publishpressF.defaultDate,
   statusesSelectOptions = _window$publishpressF.statusesSelectOptions,
   hideCalendarByDefault = _window$publishpressF.hideCalendarByDefault,
-  hiddenFields = _window$publishpressF.hiddenFields;
+  hiddenFields = _window$publishpressF.hiddenFields,
+  wpTimezone = _window$publishpressF.wpTimezone;
 if (!(0,_utils__WEBPACK_IMPORTED_MODULE_2__.isGutenbergEnabled)()) {
   var storeName = 'publishpress-future/future-action';
   if (!(0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.select)(storeName)) {
@@ -3562,7 +3597,8 @@ if (!(0,_utils__WEBPACK_IMPORTED_MODULE_2__.isGutenbergEnabled)()) {
       strings: strings,
       taxonomyName: taxonomyName,
       hideCalendarByDefault: hideCalendarByDefault,
-      hiddenFields: hiddenFields
+      hiddenFields: hiddenFields,
+      wpTimezone: wpTimezone
     });
     (0,react_dom_client__WEBPACK_IMPORTED_MODULE_4__.createRoot)(container).render(component);
   }

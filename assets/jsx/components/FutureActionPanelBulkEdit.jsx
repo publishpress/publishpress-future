@@ -89,6 +89,7 @@ export const FutureActionPanelBulkEdit = (props) => {
                     storeName={props.storeName}
                     hideCalendarByDefault={props.hideCalendarByDefault}
                     hiddenFields={props.hiddenFields}
+                    wpTimezone={props.wpTimezone}
                     showTitle={false}
                     strings={props.strings} />
             )}

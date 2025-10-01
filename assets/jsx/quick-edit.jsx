@@ -18,7 +18,8 @@ const {
     nonce,
     statusesSelectOptions,
     hideCalendarByDefault,
-    hiddenFields
+    hiddenFields,
+    wpTimezone
 } = window.publishpressFutureQuickEditConfig;
 
 const storeName = 'publishpress-future/future-action-quick-edit';
@@ -125,6 +126,7 @@ inlineEditPost.edit = function (button, id) {
             nonce={nonce}
             hideCalendarByDefault={hideCalendarByDefault}
             hiddenFields={hiddenFields}
+            wpTimezone={wpTimezone}
         />
     );
 

@@ -1517,7 +1517,7 @@ var useConditionalLogic = function useConditionalLogic(_ref) {
       json: jsonCondition,
       natural: naturalLanguageCondition
     });
-  }, [query, defaultValue, variables]);
+  }, [query, defaultValue, onChange, name, variables]);
   return {
     query: query,
     setQuery: setQuery,
