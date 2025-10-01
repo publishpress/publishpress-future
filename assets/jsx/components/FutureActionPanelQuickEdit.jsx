@@ -51,6 +51,7 @@ export const FutureActionPanelQuickEdit = (props) => {
                 onDataIsValid={onDataIsValid}
                 hideCalendarByDefault={props.hideCalendarByDefault}
                 hiddenFields={props.hiddenFields}
+                wpTimezone={props.wpTimezone}
                 showTitle={true}
                 onDataIsInvalid={onDataIsInvalid} />
 

@@ -15,7 +15,8 @@ const {
     defaultDate,
     statusesSelectOptions,
     hideCalendarByDefault,
-    hiddenFields
+    hiddenFields,
+    wpTimezone
 } = window.publishpressFutureBlockEditorConfig;
 
 const storeName = 'publishpress-future/future-action';
@@ -52,6 +53,7 @@ const BlockEditorFutureActionPlugin = () => {
             postTypeDefaultConfig={postTypeDefaultConfig}
             hideCalendarByDefault={hideCalendarByDefault}
             hiddenFields={hiddenFields}
+            wpTimezone={wpTimezone}
         />
     );
 }

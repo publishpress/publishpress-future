@@ -321,10 +321,36 @@ export const FutureActionPanel = (props) => {
             valid = false;
         }
 
-        // Check if the date is in the past
-        if (date && new Date(date) < new Date()) {
-            setValidationError(props.strings.errorDateInPast);
-            valid = false;
+        if (date) {
+            const wpTimezone = props.wpTimezone || "UTC";
+            const selectedDate = new Date(date);
+            const now = new Date();
+            let nowInWpTimezone;
+
+            if (wpTimezone.match(/^[+-]\d{2}:\d{2}$/)) {
+                const [, sign, hours, minutes] = wpTimezone.match(/^([+-])(\d{2}):(\d{2})$/);
+                const offsetMinutes = (parseInt(hours) * 60 + parseInt(minutes)) * (sign === '+' ? 1 : -1);
+
+                // Convert browser time to WordPress timezone
+                // Browser offset from UTC
+                const browserOffsetMinutes = now.getTimezoneOffset();
+
+                // Adjust from browser timezone to WordPress timezone
+                const totalOffsetMinutes = offsetMinutes + browserOffsetMinutes;
+
+                nowInWpTimezone = new Date(now.getTime() + (totalOffsetMinutes * 60000));
+            } else {
+                try {
+                    nowInWpTimezone = new Date(now.toLocaleString("en-US", { timeZone: wpTimezone }));
+                } catch (error) {
+                    nowInWpTimezone = new Date(now.toLocaleString("en-US", { timeZone: "UTC" }));
+                }
+            }
+
+            if (selectedDate < nowInWpTimezone) {
+                setValidationError(props.strings.errorDateInPast);
+                valid = false;
+            }
         }
 
         const isTermRequired = ['category', 'category-add', 'category-remove'].includes(action);

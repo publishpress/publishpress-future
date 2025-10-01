@@ -17,7 +17,8 @@ const {
     defaultDate,
     statusesSelectOptions,
     hideCalendarByDefault,
-    hiddenFields
+    hiddenFields,
+    wpTimezone
 } = window.publishpressFutureClassicEditorConfig;
 
 if (! isGutenbergEnabled()) {
@@ -54,6 +55,7 @@ if (! isGutenbergEnabled()) {
                 taxonomyName={taxonomyName}
                 hideCalendarByDefault={hideCalendarByDefault}
                 hiddenFields={hiddenFields}
+                wpTimezone={wpTimezone}
             />
         );
 
