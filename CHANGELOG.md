@@ -3,7 +3,7 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [4.9.0]- UNRELEASHED
+## [4.9.0]- 02 October, 2025
 
 ### Added
 
@@ -31,9 +31,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Bulk Edit for Posts produces an empty Future box, (Issue #1302).
 - Newly created workflow "Manually run via Future Actions box" not working, (Issue #1425).
-- Update ES-FR-IT translations (Issues #1445, #1439).
-- Issue with date timezones comparison in Future Actions, (Issue #1348).
 - PHP message: PHP Fatal error: Uncaught ... NonexistentTermException in ...TermModel.php, (Issue #1442).
+- Issue with date timezones comparison in Future Actions, (Issue #1348).
+- Pro translations not working, (Issue #1444).
+- Update ES-FR-IT translations (Issues #1445, #1439).
 
 ### Removed
 
