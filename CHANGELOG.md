@@ -3,7 +3,7 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [4.9.0]- 02 October, 2025
+## [4.9.0]- 08 October, 2025
 
 ### Added
 
@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Make the "Send email" actions available in the Free version, (Issue #1430).
 - Make the "Post status changed" actions available in the Free version, (Issue #1430).
+- Make the "Post is published" trigger available in the Free version, (Issue #1452).
 - Move items under workflow editor "Advanced" tab to "Actions" tab and remove "Advanced" tab, (Issue #1383).
 - Change workflow editor edit icon {} to text, (Issue #1295).
 

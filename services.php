@@ -955,9 +955,20 @@ return [
                     break;
 
                 case OnPostPublishRunner::getNodeTypeName():
+                    $inputValidatorPostQuery = call_user_func(
+                        $container->get(ServicesAbstract::INPUT_VALIDATOR_POST_QUERY_FACTORY),
+                        $workflowExecutionId
+                    );
+
                     $stepRunner = new OnPostPublishRunner(
+                        $hooks,
                         $generalStepProcessor,
-                        $logger
+                        $inputValidatorPostQuery,
+                        $executionContext,
+                        $logger,
+                        $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY),
+                        $container->get(ServicesAbstract::POST_CACHE),
+                        $container->get(ServicesAbstract::WORKFLOW_EXECUTION_SAFEGUARD)
                     );
                     break;
 
