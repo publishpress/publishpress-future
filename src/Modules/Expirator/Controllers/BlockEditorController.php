@@ -169,6 +169,7 @@ class BlockEditorController implements InitializableInterface
                     'taxonomyTerms' => $taxonomyTerms,
                     'hideCalendarByDefault' => $settingsFacade->getHideCalendarByDefault(),
                     'hiddenFields' => $hiddenFields,
+                    'wpTimezone' => wp_timezone_string(),
                     'strings' => [
                         'category' => __('Categories', 'post-expirator'),
                         'panelTitle' => $metaboxTitle,

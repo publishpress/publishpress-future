@@ -14,6 +14,7 @@ const Fields = ({ storeName }) => {
         action,
         workflowId,
         postId,
+        currentStoreWorkflowId,
     } = useSelect((select) => {
 
         const classicEditor = select('publishpress-future/future-action');
@@ -33,6 +34,7 @@ const Fields = ({ storeName }) => {
             action: select(storeName).getAction(),
             workflowId: select(storeName).getExtraDataByName('workflowId') || defaultWorkflow,
             postId: postId,
+            currentStoreWorkflowId: select(storeName).getExtraDataByName('workflowId'),
         };
     });
 
@@ -60,6 +62,12 @@ const Fields = ({ storeName }) => {
             }
         }
     }, []);
+
+
+
+    if (workflowId && workflowId !== currentStoreWorkflowId) {
+        setExtraDataByName('workflowId', workflowId);
+    }
 
     return (
         <>

@@ -7,8 +7,7 @@ import { NodesTab } from './nodes-tab';
 import InserterTabs from './tabs';
 import {
     INSERTER_TAB_ACTIONS,
-    INSERTER_TAB_TRIGGERS,
-    INSERTER_TAB_ADVANCED
+    INSERTER_TAB_TRIGGERS
 } from '../../constants';
 import { store as editorStore } from '../editor-store';
 import { useDispatch } from '@wordpress/data';
@@ -89,7 +88,9 @@ export function InserterMenu({
 
     const actionsTab = useMemo(
         () => {
-            const items = select(editorStore).getActionNodes();
+            const actionItems = select(editorStore).getActionNodes();
+            const advancedItems = select(editorStore).getAdvancedNodes();
+            const items = [...actionItems, ...advancedItems];
             const categories = select(editorStore).getActionCategories();
 
             return (
@@ -124,43 +125,6 @@ export function InserterMenu({
         ]
     );
 
-    const advancedControlsTab = useMemo(
-        () => {
-            const items = select(editorStore).getAdvancedNodes();
-            const categories = select(editorStore).getAdvancedCategories();
-
-            return (
-                <>
-                    <div className="block-editor-inserter__block-list">
-                        <NodesTab
-                            type={INSERTER_TAB_ADVANCED}
-                            onInsert={onInsert}
-                            onHover={onHover}
-                            showMostUsedNodes={showMostUsedNodes}
-                            items={items}
-                            categories={categories}
-                        />
-                    </div>
-                    {showInserterHelpPanel && (
-                        <div className="block-editor-inserter__tips">
-                            <VisuallyHidden as="h2">
-                                {__('A tip for using the workflow editor')}
-                            </VisuallyHidden>
-                            <Tips />
-                        </div>
-                    )}
-                </>
-            );
-        },
-        [
-            onInsert,
-            onHover,
-            filterValue,
-            showMostUsedNodes,
-            showInserterHelpPanel,
-        ]
-    );
-
 
     const getCurrentTab = useCallback(
         (tab) => {
@@ -170,10 +134,6 @@ export function InserterMenu({
 
             if (tab.name === INSERTER_TAB_ACTIONS) {
                 return actionsTab;
-            }
-
-            if (tab.name === INSERTER_TAB_ADVANCED) {
-                return advancedControlsTab;
             }
         },
         [triggersTab, actionsTab]

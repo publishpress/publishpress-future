@@ -330,7 +330,7 @@ export function getNodeVariablesTree(node, globalVariables) {
     return expandedVariablesList;
 }
 
-function formatVariableStructure(variable) {
+export function formatVariableStructure(variable) {
     return {
         id: '{{' + variable.name + '}}',
         name: variable.name,

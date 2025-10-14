@@ -319,6 +319,12 @@ class SettingsController implements InitializableInterface
                         'referrer' => esc_html(remove_query_arg('_wp_http_referer')),
                     ]
                 );
+
+                wp_set_script_translations(
+                    'publishpressfuture-settings-panel',
+                    'post-expirator',
+                    PUBLISHPRESS_FUTURE_BASE_PATH . '/languages'
+                );
             }
 
             // phpcs:disable WordPress.Security.NonceVerification.Recommended

@@ -143,7 +143,7 @@ class ScheduledActionsController implements InitializableInterface
                 'publishpress-future-scheduled-actions',
                 [$this, 'renderScheduledActionsTemplate']
             );
-            add_action('load-' . $hook_suffix, [$this, 'processAdminUi']);
+            $this->hooks->addAction('load-' . $hook_suffix, [$this, 'processAdminUi']);
         } catch (Throwable $th) {
             $this->logger->error('Error adding scheduled actions menu: ' . $th->getMessage());
         }

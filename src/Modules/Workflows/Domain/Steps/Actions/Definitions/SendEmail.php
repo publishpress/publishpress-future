@@ -194,6 +194,6 @@ class SendEmail implements StepTypeInterface
 
     public function isProFeature(): bool
     {
-        return true;
+        return false;
     }
 }

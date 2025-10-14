@@ -410,6 +410,7 @@ class ClassicEditorController implements InitializableInterface
                     'isNewPost' => $isNewPostPage,
                     'hideCalendarByDefault' => $settingsFacade->getHideCalendarByDefault(),
                     'hiddenFields' => $hiddenFields,
+                    'wpTimezone' => wp_timezone_string(),
                     'strings' => [
                         'category' => __('Category', 'post-expirator'),
                         'panelTitle' => $metaboxTitle,

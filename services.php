@@ -112,6 +112,7 @@ use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnPostUp
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnPostWorkflowEnableRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnScheduleRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnUserRoleChangeRunner;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnTermsAddedRunner;
 use PublishPress\Future\Modules\Workflows\HooksAbstract as WorkflowsHooksAbstract;
 use PublishPress\Future\Modules\Workflows\Infrastructure\Safety\WorkflowExecutionSafeguard;
 use PublishPress\Future\Modules\Workflows\Interfaces\AsyncStepProcessorInterface;
@@ -381,11 +382,11 @@ return [
      */
     ServicesAbstract::MODULE_WOOCOMMERCE => static function (ContainerInterface $container) {
         return new ModuleWooCommerce(
+            $container->get(ServicesAbstract::HOOKS),
             $container->get(ServicesAbstract::BASE_URL),
             $container->get(ServicesAbstract::PLUGIN_VERSION)
         );
     },
-
     /**
      * @return ModuleInterface
      */
@@ -954,9 +955,20 @@ return [
                     break;
 
                 case OnPostPublishRunner::getNodeTypeName():
+                    $inputValidatorPostQuery = call_user_func(
+                        $container->get(ServicesAbstract::INPUT_VALIDATOR_POST_QUERY_FACTORY),
+                        $workflowExecutionId
+                    );
+
                     $stepRunner = new OnPostPublishRunner(
+                        $hooks,
                         $generalStepProcessor,
-                        $logger
+                        $inputValidatorPostQuery,
+                        $executionContext,
+                        $logger,
+                        $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY),
+                        $container->get(ServicesAbstract::POST_CACHE),
+                        $container->get(ServicesAbstract::WORKFLOW_EXECUTION_SAFEGUARD)
                     );
                     break;
 
@@ -972,6 +984,24 @@ return [
                         $generalStepProcessor,
                         $logger
                     );
+                    break;
+
+                case OnTermsAddedRunner::getNodeTypeName():
+                        $inputValidatorPostQuery = call_user_func(
+                            $container->get(ServicesAbstract::INPUT_VALIDATOR_POST_QUERY_FACTORY),
+                            $workflowExecutionId
+                        );
+
+                        $stepRunner = new OnTermsAddedRunner(
+                            $container->get(ServicesAbstract::HOOKS),
+                            $generalStepProcessor,
+                            $inputValidatorPostQuery,
+                            $logger,
+                            $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY),
+                            $container->get(ServicesAbstract::POST_CACHE),
+                            $container->get(ServicesAbstract::WORKFLOW_EXECUTION_SAFEGUARD),
+                            $executionContext
+                        );
                     break;
 
                 case OnPostWorkflowEnableRunner::getNodeTypeName():
@@ -1145,7 +1175,9 @@ return [
                     );
 
                     $stepRunner = new ChangePostStatusRunner(
+                        $hooks,
                         $postStepProcessor,
+                        $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY),
                         $logger
                     );
                     break;
@@ -1153,6 +1185,8 @@ return [
                 case SendEmailRunner::getNodeTypeName():
                     $stepRunner = new SendEmailRunner(
                         $generalStepProcessor,
+                        $container->get(ServicesAbstract::EMAIL),
+                        $executionContext,
                         $logger
                     );
                     break;

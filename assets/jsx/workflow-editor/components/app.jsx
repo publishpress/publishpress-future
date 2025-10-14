@@ -23,6 +23,7 @@ import {
     PostTypeData,
     UrlData,
     UserRolesData,
+    PostTermsData,
 } from "./data-types";
 
 const { workflowId, nodeTypeCategories, nodeTypes } = window.futureWorkflowEditor;
@@ -76,6 +77,7 @@ export default function WorkflowEditorApp() {
             PostTypeData(),
             UrlData(),
             UserRolesData(),
+            PostTermsData()
         ]
         setDataTypes(dataTypes);
     }, [workflowId]);

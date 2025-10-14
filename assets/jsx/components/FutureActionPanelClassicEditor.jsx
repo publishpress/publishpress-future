@@ -86,6 +86,7 @@ export const FutureActionPanelClassicEditor = (props) => {
                 onDataIsValid={onDataIsValid}
                 hideCalendarByDefault={props.hideCalendarByDefault}
                 hiddenFields={props.hiddenFields}
+                wpTimezone={props.wpTimezone}
                 showTitle={false}
                 onDataIsInvalid={onDataIsInvalid} />
         </div>

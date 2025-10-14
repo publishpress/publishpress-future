@@ -9,6 +9,7 @@ import { store as editorStore } from '../../../editor-store';
 import { NotToggle } from './not-toggle';
 import { AddElementButton } from './add-element-button';
 import { RemoveElementButton } from './remove-element-button';
+import { DuplicateRuleButton } from './duplicate-rule-button';
 import { CombinatorSelector } from './combinator-selector';
 import { OperatorSelector } from './operator-selector';
 import { ConditionPreview } from './condition-preview';
@@ -64,7 +65,7 @@ export const withConditional = ({
 }) => {
     // Return the actual component
     return ({ name, label, defaultValue, onChange, variables }) => {
-        const { query, setQuery, formatCondition } = useConditionalLogic({
+        const { query, setQuery, formatCondition, operators } = useConditionalLogic({
             defaultValue,
             name,
             onChange,
@@ -103,6 +104,8 @@ export const withConditional = ({
             addGroupAction: AddElementButton,
             removeGroupAction: RemoveElementButton,
             removeRuleAction: RemoveElementButton,
+            cloneRuleAction: DuplicateRuleButton,
+            cloneGroupAction: DuplicateRuleButton,
             combinatorSelector: CombinatorSelector,
             operatorSelector: OperatorSelector,
         };
@@ -113,6 +116,8 @@ export const withConditional = ({
             label: label,
         }), [variables, name, label]);
 
+        const formattedCondition = useMemo(() => formatCondition(), [formatCondition]);
+
         const isPro = useIsPro();
 
         return (
@@ -122,10 +127,11 @@ export const withConditional = ({
                 </Button>
 
                 <ConditionPreview
-                    defaultValue={defaultValue}
+                    defaultValue={formattedCondition}
                     editorRef={editorRef}
                     editorProps={EDITOR_PROPS}
                     editorOptions={EDITOR_OPTIONS}
+                    naturalLanguage={formattedCondition.natural}
                 />
 
                 {! isPro && isProFeature && (
@@ -156,11 +162,13 @@ export const withConditional = ({
                                 showCombinatorsBetweenRules
                                 showNotToggle
                                 enableDragAndDrop={true}
+                                showCloneButtons={true}
                                 controlClassnames={QUERY_BUILDER_CONTROL_CLASSNAMES}
                                 translations={QUERY_BUILDER_TRANSLATIONS}
                                 controlElements={queryBuilderControlElements}
                                 context={queryBuilderContext}
                                 getDefaultField={getDefaultField}
+                                operators={operators}
                             />
                         </QueryBuilderDnD>
                         <ModalFooter onClose={ onCloseModal } />

@@ -19,7 +19,8 @@ const {
     nonce,
     statusesSelectOptions,
     hideCalendarByDefault,
-    hiddenFields
+    hiddenFields,
+    wpTimezone
 } = window.publishpressFutureBulkEditConfig;
 
 const storeName = 'publishpress-future/future-action-bulk-edit';
@@ -91,6 +92,7 @@ inlineEditPost.setBulk = function (id) {
             nonce={nonce}
             hideCalendarByDefault={hideCalendarByDefault}
             hiddenFields={hiddenFields}
+            wpTimezone={wpTimezone}
         />
     );
 

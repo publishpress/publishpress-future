@@ -1,6 +1,7 @@
 import { useState, useCallback } from "@wordpress/element";
 import { ColumnItem } from "./column-item";
 import { __, sprintf } from "@publishpress/i18n";
+import { processItemWithTypeHandler } from "./type-handlers";
 
 const RenderColumns = ({
     currentItemPath,
@@ -16,41 +17,14 @@ const RenderColumns = ({
 
     const currentColumnIndex = path.length;
     const selectedItemIndex = currentItemPath[currentColumnIndex];
-    let currentItem = currentItems[selectedItemIndex];
-
-    const addMetaKeyInputChildren = useCallback((item) => {
-
-        let metaDescription = sprintf(
-            /* translators: %s is the database table name */
-            __('Type the %s key and click on the button to insert it.', 'post-expirator'),
-            item.context?.table || 'meta'
-        );
-
-        return {
-            ...item,
-            children: [
-                {
-                    name: item.name,
-                    label: __('Metadata key', 'post-expirator'),
-                    description: metaDescription,
-                    type: 'meta-key-input',
-                    context: item.context,
-                }
-            ]
-        }
-    }, []);
-
-    if (currentItem?.type === 'meta') {
-        currentItem = addMetaKeyInputChildren(currentItem);
-    }
+    let currentItem = processItemWithTypeHandler(currentItems[selectedItemIndex]);
 
     return (
         <>
             <div className="column" key={`column-${path.join('-')}`}>
                 {currentItems.map((item, index) => {
-                    if (item.type === 'meta') {
-                        item = addMetaKeyInputChildren(item);
-                    }
+                    item = processItemWithTypeHandler(item);
+
                     return <ColumnItem
                         key={`column-item-${path.join('-')}-${index}`}
                         item={item}

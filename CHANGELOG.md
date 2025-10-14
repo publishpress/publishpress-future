@@ -3,6 +3,50 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.9.0]- 14 October, 2025
+
+### Added
+
+- Add a new trigger (When terms are added to a post), (Issue #1130).
+- Add Terms to the execution context, (Issue #1271).
+- Add new operator("has" & "does not have") to compare array in workflow editor filters, (Issue #1271).
+- Add "Duplicate" button for workflow editor filters, (Issue #1297).
+- Create the "Future Actions" workflows as samples in the "Action Workflows" area on install, (Issue #1309).
+  - Added "Change status to draft one week after publishing" workflow sample
+  - Added "Delete post one week after publishing" workflow sample
+  - Added "Remove all categories one week after publishing" workflow sample
+  - Added "Remove selected categories one week after publishing" workflow sample
+  - Added "Replace all categories one week after publishing" workflow sample
+  - Added "Stick post one week after publishing" workflow sample
+  - Added "Unstick post one week after publishing" workflow sample
+
+### Changed
+
+- Make the "Send email" actions available in the Free version, (Issue #1430).
+- Make the "Post status changed" actions available in the Free version, (Issue #1430).
+- Make the "Post is published" trigger available in the Free version, (Issue #1452).
+- Move items under workflow editor "Advanced" tab to "Actions" tab and remove "Advanced" tab, (Issue #1383).
+- Change workflow editor edit icon {} to text, (Issue #1295).
+
+### Fixed
+
+- Bulk Edit for Posts produces an empty Future box, (Issue #1302).
+- Newly created workflow "Manually run via Future Actions box" not working, (Issue #1425).
+- PHP message: PHP Fatal error: Uncaught ... NonexistentTermException in ...TermModel.php, (Issue #1442).
+- Issue with date timezones comparison in Future Actions, (Issue #1348).
+- Pro translations not working, (Issue #1444).
+- Update ES-FR-IT translations (Issues #1445, #1439).
+
+### Removed
+
+- Remove the sidebar promo box, (Issue #1426).
+
+### Developers
+
+- Refactor hardcoded do_action occurrences, (Issue #1335).
+- Update the actions scheduler library, (Issue #726).
+- Fixed workflow editor resolveExpressionsInJsonLogic forcing array into strings/json for all var.
+
 ## [4.8.2]- 30 July, 2025
 
 ### Added
