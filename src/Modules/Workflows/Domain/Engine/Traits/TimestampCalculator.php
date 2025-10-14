@@ -28,6 +28,10 @@ trait TimestampCalculator
                     $timestamp = time();
                 } elseif ($dateSource === 'custom') {
                     $timestamp = $this->executionContext->resolveExpressionsInText($customDate);
+                    // use current time when no custom date source field is empty
+                    if (empty($timestamp) && !empty($offset)) {
+                        $timestamp = time();
+                    }
                 } else {
                     $timestamp = $this->executionContext->getVariable($dateSource);
                 }
