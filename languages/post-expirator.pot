@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-10-02T09:56:28+00:00\n"
+"POT-Creation-Date: 2025-10-21T07:59:33+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
@@ -1214,7 +1214,7 @@ msgid "Change the post status to Draft a week after it was published."
 msgstr ""
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:44
-msgid "Unpublish and change category after one week"
+msgid "Unpublish and change category after 15 days"
 msgstr ""
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:45
