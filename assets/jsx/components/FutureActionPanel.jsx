@@ -171,10 +171,12 @@ export const FutureActionPanel = (props) => {
         apiFetch({
             path: addQueryArgs(`publishpress-future/v1/terms/${taxonomy}`),
         }).then((result) => {
-            result.terms.forEach(term => {
-                termsListByName[decodeEntities(term.name)] = term;
-                termsListById[term.id] = decodeEntities(term.name);
-            });
+            if (result.terms && Array.isArray(result.terms)) {
+                result.terms.forEach(term => {
+                    termsListByName[decodeEntities(term.name)] = term;
+                    termsListById[term.id] = decodeEntities(term.name);
+                });
+            }
 
             setTermsListByName(termsListByName);
             setTermsListById(termsListById);
