@@ -2,7 +2,7 @@ ARG NODE_VERSION=18
 
 FROM node:$NODE_VERSION-alpine AS node
 
-FROM publishpress/dev-workspace-terminal:generic-4.3.7
+FROM publishpress/dev-workspace-terminal:generic-4.4.3
 
 ENV PLUGIN_NAME="PublishPress Future"
 ENV PLUGIN_TYPE="FREE"
@@ -14,6 +14,7 @@ COPY --from=node /usr/local/include /usr/local/include
 COPY --from=node /usr/local/bin /usr/local/bin
 
 COPY git/.gitconfig /root/.gitconfig
+COPY .zshrc.local /root/.zshrc.local
 
 RUN set -ex \
     && mkdir -p /root/.ssh \

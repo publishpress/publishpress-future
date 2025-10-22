@@ -15,7 +15,6 @@ services:
         working_dir: "/project"
         volumes:
             - ../../:/project
-            - ./terminal/.zshrc:/root/.zshrc
             - ../.cache/.zsh_history:/root/.zsh_history
             - ../.cache/.bash_history:/root/.bash_history
             - ../.cache/.npm/_cacache:/root/.npm/_cacache

@@ -17,9 +17,13 @@ build-wp:
 build-wpcli:
 	$(MAKE) build-wp_dev_cli
 
+build-terminal:
+	docker compose -f docker/compose.yaml --env-file ../.env build terminal
+
 build:
 	$(MAKE) build-wp
 	$(MAKE) build-wpcli
+	$(MAKE) build-terminal
 
 push:
 	$(MAKE) push-terminal "$$@"
