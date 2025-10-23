@@ -415,27 +415,25 @@ class WorkflowsList implements InitializableInterface
             )
         ];
 
-        if ($workflowStatus !== 'publish') {
-            // add cancel scheduled actions
-            $newActions['cancel_scheduled_actions'] = sprintf(
-                '<a href="%s" class="pp-future-workflow-cancel-actions" title="%s" data-workflow-title="%s">%s</a>',
-                esc_url(
-                    wp_nonce_url(
-                        add_query_arg(
-                            [
-                                'pp_action' => 'cancel_workflow_scheduled_actions',
-                                'workflow_id' => $post->ID
-                            ],
-                            admin_url('edit.php?post_type=' . Module::POST_TYPE_WORKFLOW)
-                        ),
-                        'cancel_workflow_scheduled_actions_' . $post->ID
-                    )
-                ),
-                __('Cancel all actions scheduled for this workflow', 'post-expirator'),
-                esc_attr($post->post_title),
-                __('Cancel Scheduled Actions', 'post-expirator'),
-            );
-        }
+        // add cancel scheduled actions
+        $newActions['cancel_scheduled_actions'] = sprintf(
+            '<a href="%s" class="pp-future-workflow-cancel-actions" title="%s" data-workflow-title="%s">%s</a>',
+            esc_url(
+                wp_nonce_url(
+                    add_query_arg(
+                        [
+                            'pp_action' => 'cancel_workflow_scheduled_actions',
+                            'workflow_id' => $post->ID
+                        ],
+                        admin_url('edit.php?post_type=' . Module::POST_TYPE_WORKFLOW)
+                    ),
+                    'cancel_workflow_scheduled_actions_' . $post->ID
+                )
+            ),
+            __('Cancel all actions scheduled for this workflow', 'post-expirator'),
+            esc_attr($post->post_title),
+            __('Cancel Scheduled Actions', 'post-expirator'),
+        );
 
         // add copy action
         $newActions['copy'] = sprintf(
@@ -577,24 +575,6 @@ class WorkflowsList implements InitializableInterface
             $redirect_url = admin_url('edit.php?post_type=' . $postType);
             $workflowId = (int) $_GET['workflow_id'];
 
-            // Check if workflow is disabled
-            $workflowModel = new WorkflowModel();
-            $workflowModel->load($workflowId);
-
-            if ($workflowModel->getStatus() === 'publish') {
-                $redirect_url = add_query_arg(
-                    [
-                        'pp_workflow_notice' => 'scheduled_action_cancelling_status_error',
-                        'pp_workflow_notice_type' => 'error'
-                    ],
-                    $redirect_url
-                );
-                wp_safe_redirect(
-                    esc_url_raw($redirect_url)
-                );
-                exit;
-            }
-
             $scheduledActionsModel = new ScheduledActionsModel();
 
             // Check if workflow has scheduled actions
@@ -679,7 +659,6 @@ class WorkflowsList implements InitializableInterface
                 'create_failed'     => __('Failed to create new workflow.', 'post-expirator'),
                 'generic_error'     => __('An error occurred while copying the workflow.', 'post-expirator'),
                 // Cancel  scheduled workflow error
-                'scheduled_action_cancelling_status_error'  =>  __('Cannot cancel scheduled actions for an active workflow.', 'post-expirator'),
                 'scheduled_action_cancelling_error'         =>  __('Error cancelling scheduled actions.', 'post-expirator'),
                 'scheduled_action_cancelling_empty'         =>  __('This workflow doesn\'t have any scheduled action.', 'post-expirator')
             ],

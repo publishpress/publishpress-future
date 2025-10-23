@@ -1,6 +1,19 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.10.0]- UNRELEASHED
+
+### Changed
+
+- Enable "Cancel Scheduled Actions" link for active workflow, (Issue #1455).
+
+### Fixed
+
+- DoAction step arguments not available as variables in subsequent workflow steps, (Issue #1467).
+- Custom i18n wrapper doesn't fall back to original string when translation is empty, (Issue #1465).
+- "No results found." message is breaking when using nl_NL, showing a JS error message, (Issue #1140).
+- TypeError: t.terms.forEach is not a function, (Issue #1169).
+
 ## [4.9.0]- 14 October, 2025
 
 ### Added
