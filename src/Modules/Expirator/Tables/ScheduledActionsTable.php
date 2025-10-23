@@ -837,7 +837,8 @@ class ScheduledActionsTable extends \ActionScheduler_ListTable
      * @param array $ids Array of action IDs to run
      * @param string $ids_sql
      */
-    protected function bulk_run(array $ids, $ids_sql) {
+    protected function bulk_run(array $ids, $ids_sql)
+    {
         foreach ($ids as $action_id) {
             try {
                 $this->runner->process_action($action_id);
@@ -853,7 +854,8 @@ class ScheduledActionsTable extends \ActionScheduler_ListTable
      * @param array $ids Array of action IDs to cancel
      * @param string $ids_sq
      */
-    protected function bulk_cancel(array $ids, $ids_sql) {
+    protected function bulk_cancel(array $ids, $ids_sql)
+    {
         foreach ($ids as $action_id) {
             try {
                 $this->store->cancel_action($action_id);
