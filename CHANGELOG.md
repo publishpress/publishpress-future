@@ -3,6 +3,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [4.10.0]- UNRELEASHED
 
+### Added
+
+- Add "Run" and "Cancel" Bulk Edit in Scheduled Actions screen,  (Issue #1461).
+
 ### Changed
 
 - Enable "Cancel Scheduled Actions" link for active workflow, (Issue #1455).
