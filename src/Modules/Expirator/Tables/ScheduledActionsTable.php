@@ -76,6 +76,12 @@ class ScheduledActionsTable extends \ActionScheduler_ListTable
             ),
         );
 
+        $this->bulk_actions = array(
+            'delete' => __('Delete', 'post-expirator'),
+            'run' => __('Run', 'post-expirator'),
+            'cancel' => __('Cancel', 'post-expirator'),
+        );
+
         self::$time_periods = array(
             array(
                 'seconds' => YEAR_IN_SECONDS,
@@ -823,6 +829,40 @@ class ScheduledActionsTable extends \ActionScheduler_ListTable
     public function no_items()
     {
         echo esc_html__('No Scheduled Actions.', 'post-expirator');
+    }
+
+    /**
+     * Bulk action handler for running actions immediately.
+     *
+     * @param array $ids Array of action IDs to run
+     * @param string $ids_sql
+     */
+    protected function bulk_run(array $ids, $ids_sql)
+    {
+        foreach ($ids as $action_id) {
+            try {
+                $this->runner->process_action($action_id);
+            } catch (\Exception $e) {
+                continue;
+            }
+        }
+    }
+
+    /**
+     * Bulk action handler for canceling actions.
+     *
+     * @param array $ids Array of action IDs to cancel
+     * @param string $ids_sq
+     */
+    protected function bulk_cancel(array $ids, $ids_sql)
+    {
+        foreach ($ids as $action_id) {
+            try {
+                $this->store->cancel_action($action_id);
+            } catch (\Exception $e) {
+                continue;
+            }
+        }
     }
 }
 
