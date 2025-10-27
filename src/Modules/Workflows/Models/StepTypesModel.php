@@ -224,6 +224,7 @@ class StepTypesModel implements StepTypesModelInterface
             OnPostMetaChange::getNodeTypeName() => new OnPostMetaChange(),
             OnPostAuthorChange::getNodeTypeName() => new OnPostAuthorChange(),
             OnPostRowAction::getNodeTypeName() => new OnPostRowAction(),
+            OnUserRoleChange::getNodeTypeName() => new OnUserRoleChange(),
             OnTermsAdded::getNodeTypeName() => new OnTermsAdded(),
             OnCustomAction::getNodeTypeName() => new OnCustomAction(),
         ];
