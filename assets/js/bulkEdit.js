@@ -415,10 +415,12 @@ var FutureActionPanel = function FutureActionPanel(props) {
     apiFetch({
       path: addQueryArgs("publishpress-future/v1/terms/".concat(taxonomy))
     }).then(function (result) {
-      result.terms.forEach(function (term) {
-        termsListByName[decodeEntities(term.name)] = term;
-        termsListById[term.id] = decodeEntities(term.name);
-      });
+      if (result.terms && Array.isArray(result.terms)) {
+        result.terms.forEach(function (term) {
+          termsListByName[decodeEntities(term.name)] = term;
+          termsListById[term.id] = decodeEntities(term.name);
+        });
+      }
       setTermsListByName(termsListByName);
       setTermsListById(termsListById);
       setTaxonomyName(decodeEntities(result.taxonomyName));
@@ -1448,19 +1450,21 @@ var PostTypeSettingsPanel = function PostTypeSettingsPanel(props) {
       var options = [];
       var settingsTermsOptions = null;
       var option;
-      result.terms.forEach(function (term) {
-        option = {
-          value: term.id,
-          label: term.name
-        };
-        options.push(option);
-        if (postTypeTaxonomy === props.settings.taxonomy && props.settings.terms.includes(term.id)) {
-          if (settingsTermsOptions === null) {
-            settingsTermsOptions = [];
+      if (result.terms && Array.isArray(result.terms)) {
+        result.terms.forEach(function (term) {
+          option = {
+            value: term.id,
+            label: term.name
+          };
+          options.push(option);
+          if (postTypeTaxonomy === props.settings.taxonomy && props.settings.terms.includes(term.id)) {
+            if (settingsTermsOptions === null) {
+              settingsTermsOptions = [];
+            }
+            settingsTermsOptions.push(option.label);
           }
-          settingsTermsOptions.push(option.label);
-        }
-      });
+        });
+      }
       setTermOptions(options);
       setSelectedTerms(settingsTermsOptions);
       setTermsSelectIsLoading(false);

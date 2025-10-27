@@ -33,15 +33,13 @@ const data = (() => {
     };
 })();
 
-
 export const __ = (text, domain = null) => {
-
-    if (domain && data.locale_data?.[domain]?.[text]) {
+    if (domain && data.locale_data?.[domain]?.[text] && data.locale_data[domain][text][0]) {
         return data.locale_data[domain][text][0];
     }
 
     for (const key in data.locale_data) {
-        if (data.locale_data[key]?.[text]) {
+        if (data.locale_data[key]?.[text] && data.locale_data[key][text][0]) {
             return data.locale_data[key][text][0];
         }
     }

@@ -122,19 +122,20 @@ export const PostTypeSettingsPanel = function (props) {
 
             let settingsTermsOptions = null;
             let option;
+            if (result.terms && Array.isArray(result.terms)) {
+                result.terms.forEach(term => {
+                    option = { value: term.id, label: term.name };
+                    options.push(option);
 
-            result.terms.forEach(term => {
-                option = { value: term.id, label: term.name };
-                options.push(option);
+                    if (postTypeTaxonomy === props.settings.taxonomy && props.settings.terms.includes(term.id)) {
+                        if (settingsTermsOptions === null) {
+                            settingsTermsOptions = [];
+                        }
 
-                if (postTypeTaxonomy === props.settings.taxonomy && props.settings.terms.includes(term.id)) {
-                    if (settingsTermsOptions === null) {
-                        settingsTermsOptions = [];
+                        settingsTermsOptions.push(option.label);
                     }
-
-                    settingsTermsOptions.push(option.label);
-                }
-            });
+                });
+            }
 
             setTermOptions(options);
             setSelectedTerms(settingsTermsOptions);
