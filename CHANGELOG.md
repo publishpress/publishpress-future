@@ -6,10 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 - Add "Run" and "Cancel" Bulk Edit in Scheduled Actions screen,  (Issue #1461).
+- Restore "User role change" trigger - PRO, (Issue #1212)
 
 ### Changed
 
 - Enable "Cancel Scheduled Actions" link for active workflow, (Issue #1455).
+- Text changes for User role is changed, (Issue#1209)
 
 ### Fixed
 

@@ -109,7 +109,7 @@ class QueryPosts implements StepTypeInterface
                 "name" => "posts",
                 "type" => "array",
                 "itemsType" => "integer",
-                "label" => __("Array of queried post IDs", "post-expirator"),
+                "label" => __("Posts from the Query posts step", "post-expirator"),
                 "description" => __("The posts found following the criteria of the query.", "post-expirator"),
             ],
         ];
@@ -122,7 +122,7 @@ class QueryPosts implements StepTypeInterface
                 "name" => "posts",
                 "type" => "array",
                 "itemsType" => "integer",
-                "label" => __("Array of queried post IDs", "post-expirator"),
+                "label" => __("Posts from the Query posts step", "post-expirator"),
                 "description" => __("The posts found following the criteria of the query.", "post-expirator"),
             ],
             [
