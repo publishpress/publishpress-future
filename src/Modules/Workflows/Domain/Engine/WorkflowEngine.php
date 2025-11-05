@@ -302,6 +302,143 @@ class WorkflowEngine implements WorkflowEngineInterface
         );
     }
 
+    public function runWorkflowsFromCache(array $workflowIdsToRun = [])
+    {
+        /**
+         * Action triggered when the workflows are running.
+         *
+         * @param array $workflowIdsToRun The IDs of the workflows to run.
+         */
+        $this->hooks->doAction(
+            HooksAbstract::ACTION_WORKFLOW_ENGINE_RUN_WORKFLOWS,
+            $workflowIdsToRun
+        );
+
+        $this->logger->debug(self::LOG_PREFIX . ' Running workflows from cache');
+
+        $cache = new Cache();
+        $cachedWorkflows = $cache->getCacheData();
+
+        if (empty($workflowIdsToRun)) {
+            $this->logger->debug(self::LOG_PREFIX . ' No specific workflows to run, getting all published workflows');
+
+            $workflowIdsToRun = array_keys($cachedWorkflows);
+        }
+
+        $stepTypes = $this->getAllStepTypes();
+
+        // Setup the workflow triggers
+        foreach ($workflowIdsToRun as $workflowId) {
+            $workflowId = (int) $workflowId;
+
+            /** @var WorkflowModelInterface $workflow */
+            $workflow = new WorkflowModel();
+            $workflow->loadFromPostObject($cachedWorkflows[$workflowId]);
+
+            /**
+             * Action triggered when the workflow is initialized.
+             *
+             * @param int $workflowId The ID of the workflow to initialize.
+             */
+            $this->hooks->doAction(
+                HooksAbstract::ACTION_WORKFLOW_ENGINE_INITIALIZE_WORKFLOW,
+                $workflowId
+            );
+
+            $this->logger->debug(
+                sprintf(
+                    self::LOG_PREFIX . ' Initializing workflow | ID: %d | Title: %s',
+                    $workflowId,
+                    $workflow->getTitle()
+                )
+            );
+
+            $workflowExecutionId = $this->generateUniqueId();
+            $this->executionContextRegistry->getExecutionContext($workflowExecutionId);
+
+            $triggerSteps = $workflow->getTriggerNodes();
+            $routineTree = $workflow->getRoutineTree($stepTypes);
+
+            $this->prepareExecutionContextForWorkflow(
+                $workflowExecutionId,
+                $workflow
+            );
+
+            foreach ($triggerSteps as $triggerStep) {
+                $triggerName = $triggerStep['data']['name'];
+                $triggerId = $triggerStep['id'];
+
+                $stepType = $this->stepTypesModel->getStepType($triggerName);
+
+                if (! $stepType) {
+                    continue;
+                }
+
+                /** @var TriggerRunnerInterface $triggerRunner */
+                $triggerRunner = call_user_func($this->stepRunnerFactory, $triggerName, $workflowExecutionId);
+
+                if (is_null($triggerRunner)) {
+                    $message = sprintf(
+                        self::LOG_PREFIX . ' Trigger not found: %s',
+                        $triggerName
+                    );
+
+                    $this->logger->error($message);
+
+                    continue;
+                }
+
+                // Ignore if there is no routine tree for this trigger
+                if (! isset($routineTree[$triggerId])) {
+                    continue;
+                }
+
+                $this->prepareExecutionContextForTrigger(
+                    $workflowExecutionId,
+                    $triggerStep
+                );
+
+                // Setup the trigger
+                $this->logger->debug(
+                    sprintf(
+                        self::LOG_PREFIX . '   - Setting up trigger | Slug: %s',
+                        $triggerStep['data']['slug']
+                    )
+                );
+
+                /**
+                 * Action triggered when the trigger is initialized.
+                 *
+                 * @param int $workflowId The ID of the workflow.
+                 * @param string $triggerId The ID of the trigger.
+                 */
+                $this->hooks->doAction(
+                    HooksAbstract::ACTION_WORKFLOW_ENGINE_SETUP_TRIGGER,
+                    $workflowId,
+                    $triggerId
+                );
+
+                $triggerRunner->setup($workflowId, $routineTree[$triggerId]);
+            }
+
+            $this->logger->debug(
+                sprintf(
+                    self::LOG_PREFIX . ' Workflow initialized | ID: %d',
+                    $workflowId
+                )
+            );
+        }
+
+        $this->logger->debug(self::LOG_PREFIX . ' All workflows initialized');
+
+        /**
+         * Action triggered when the workflows are initialized.
+         */
+        $this->hooks->doAction(
+            HooksAbstract::ACTION_WORKFLOW_ENGINE_WORKFLOWS_INITIALIZED
+        );
+    }
+
     public function prepareExecutionContextForWorkflow(
         string $workflowExecutionId,
         WorkflowModelInterface $workflowModel

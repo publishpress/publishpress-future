@@ -13,6 +13,8 @@ interface WorkflowEngineInterface
      */
     public function runWorkflows(array $workflowIdsToRun = []);
 
+    public function runWorkflowsFromCache(array $workflowIdsToRun = []);
+
     public function setCurrentAsyncActionId($actionId);
 
     public function getCurrentAsyncActionId(): int;

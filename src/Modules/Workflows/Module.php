@@ -17,6 +17,9 @@ use PublishPress\Future\Modules\Workflows\Interfaces\StepTypesModelInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\RestApiManagerInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\WorkflowEngineInterface;
 use PublishPress\Future\Modules\Expirator\Models\CurrentUserModel;
+use PublishPress\Future\Modules\Workflows\Domain\Engine\Cache;
+use PublishPress\Future\Modules\Workflows\Models\WorkflowModel;
+use PublishPress\Future\Modules\Workflows\Models\WorkflowsModel;
 
 final class Module implements InitializableInterface
 {
@@ -211,8 +214,78 @@ final class Module implements InitializableInterface
             return;
         }
 
+        // TMP
+        if ($_GET['cache'] === 'clear') {
+            $cache = new Cache();
+            $cache->clearCache();
+            delete_transient('publishpress_future_benchmark_raw');
+            delete_transient('publishpress_future_benchmark_cached');
+            die('Cache cleared');
+        }
+
+        if ($_GET['cache'] === 'set') {
+            $cache = new Cache();
+            $workflowsModel = new WorkflowsModel();
+            $workflows = $workflowsModel->getPublishedWorkflowsIds();
+
+            foreach ($workflows as $workflowId) {
+                $workflow = new WorkflowModel();
+                $workflow->load($workflowId);
+                $cache->setCache($workflowId, $workflow->getPostObject());
+            }
+            die('Cache set');
+        }
+
+        if ($_GET['cache'] === 'get') {
+            $startTime = microtime(true);
+
+            $this->workflowEngine->start();
+            $this->workflowEngine->runWorkflowsFromCache();
+
+            $executionTime = round((microtime(true) - $startTime) * 1000, 2);
+            $benchmarks = (array) get_transient('publishpress_future_benchmark_cached');
+            $benchmarks[] = $executionTime;
+
+            // Keep only the last 100 benchmarks to prevent unlimited growth
+            if (count($benchmarks) > 100) {
+                $benchmarks = array_slice($benchmarks, -100);
+            }
+
+            set_transient('publishpress_future_benchmark_cached', $benchmarks, HOUR_IN_SECONDS);
+
+            $average = !empty($benchmarks) ? array_sum($benchmarks) / count($benchmarks) : 0;
+            ray([
+                'execution_time' => $executionTime,
+                'benchmarks_count' => count($benchmarks),
+                'benchmarks_average' => round($average, 2),
+            ])->label('cached benchmark');
+
+            return;
+        }
+
+        // Run without cache
+        $startTime = microtime(true);
+
         $this->workflowEngine->start();
         $this->workflowEngine->runWorkflows();
+
+        $executionTime = round((microtime(true) - $startTime) * 1000, 2);
+        $benchmarks = (array) get_transient('publishpress_future_benchmark_raw');
+        $benchmarks[] = $executionTime;
+
+        // Keep only the last 100 benchmarks to prevent unlimited growth
+        if (count($benchmarks) > 100) {
+            $benchmarks = array_slice($benchmarks, -100);
+        }
+
+        set_transient('publishpress_future_benchmark_raw', $benchmarks, HOUR_IN_SECONDS);
+
+        $average = !empty($benchmarks) ? array_sum($benchmarks) / count($benchmarks) : 0;
+        ray([
+            'execution_time' => $executionTime,
+            'benchmarks_count' => count($benchmarks),
+            'benchmarks_average' => round($average, 2),
+        ])->label('raw benchmark');
     }
 
     private function registerHooks()

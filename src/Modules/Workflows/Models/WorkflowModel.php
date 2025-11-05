@@ -909,4 +909,19 @@ class WorkflowModel implements WorkflowModelInterface
 
         return $nodes;
     }
+
+    public function getPostObject(): WP_Post
+    {
+        return $this->post;
+    }
+
+
+    public function loadFromPostObject(WP_Post $postObject): bool
+    {
+        $this->reset();
+
+        $this->post = $postObject;
+
+        return true;
+    }
 }

@@ -2,6 +2,8 @@
 
 namespace PublishPress\Future\Modules\Workflows\Interfaces;
 
+use WP_Post;
+
 interface WorkflowModelInterface
 {
     public function load(int $id): bool;
@@ -67,4 +69,8 @@ interface WorkflowModelInterface
     public function getNodes(): array;
 
     public function getPartialRoutineTreeFromNodeId(string $nodeId): array;
+
+    public function getPostObject(): WP_Post;
+
+    public function loadFromPostObject(WP_Post $postObject): bool;
 }
