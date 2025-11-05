@@ -169,6 +169,8 @@
         "dev:clean-cache": "rm -rf dev-workspace/.cache/wp_dev && rm -rf dev-workspace/.cache/db_dev",
         "dev:refresh": "bash dev-workspace/scripts/env.sh refresh dev",
         "dev:info": "bash dev-workspace/scripts/env.sh info dev",
+        "sync:local": "bash dev-workspace/scripts/local-sync.sh",
+        "sync:local:watch": "bash dev-workspace/scripts/local-sync.sh --watch",
         "test:db-export": "bash dev-workspace/scripts/tests-db-export.sh $@",
         "test:db-import": "bash dev-workspace/scripts/tests-db-import.sh $@",
         "test:up": [
