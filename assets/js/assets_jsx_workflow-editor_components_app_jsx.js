@@ -5605,7 +5605,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 
 
 function UserQuery(_ref) {
-  var _defaultValue, _settings$labels, _defaultValue2, _defaultValue3, _defaultValue4;
+  var _defaultValue, _settings$labels, _settings$labels2, _defaultValue2, _defaultValue3, _defaultValue4, _defaultValue5;
   var name = _ref.name,
     label = _ref.label,
     defaultValue = _ref.defaultValue,
@@ -5632,6 +5632,7 @@ function UserQuery(_ref) {
       defaultValue = {
         userSource: defaultUserSource,
         userRole: [],
+        userRoleAfter: [],
         userId: []
       };
       onChangeSetting({
@@ -5642,8 +5643,10 @@ function UserQuery(_ref) {
   }, []);
   var userRoleFieldLabel = (settings === null || settings === void 0 || (_settings$labels = settings.labels) === null || _settings$labels === void 0 ? void 0 : _settings$labels.userRole) || (0,_publishpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('User Role', 'post-expirator');
   userRoleFieldLabel = isUserRoleRequired ? userRoleFieldLabel + ' *' : userRoleFieldLabel;
+  var userRoleAfterFieldLabel = (settings === null || settings === void 0 || (_settings$labels2 = settings.labels) === null || _settings$labels2 === void 0 ? void 0 : _settings$labels2.userRoleAfter) || null;
   var descriptions = {
     userRole: (settings === null || settings === void 0 ? void 0 : settings.userRoleDescription) || null,
+    userRoleAfter: (settings === null || settings === void 0 ? void 0 : settings.userRoleAfterDescription) || null,
     userId: (settings === null || settings === void 0 ? void 0 : settings.userIdDescription) || null
   };
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.__experimentalVStack, null, acceptsInput && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RadioControl, {
@@ -5676,9 +5679,23 @@ function UserQuery(_ref) {
     }
   }), (descriptions === null || descriptions === void 0 ? void 0 : descriptions.userRole) && /*#__PURE__*/React.createElement("p", {
     className: "description"
-  }, descriptions.userRole), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.FormTokenField, {
+  }, descriptions.userRole), userRoleAfterFieldLabel && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_inline_multi_select__WEBPACK_IMPORTED_MODULE_3__.InlineMultiSelect, {
+    label: userRoleAfterFieldLabel,
+    value: ((_defaultValue4 = defaultValue) === null || _defaultValue4 === void 0 ? void 0 : _defaultValue4.userRoleAfter) || [],
+    suggestions: userRoles,
+    expandOnFocus: true,
+    autoSelectFirstMatch: true,
+    onChange: function onChange(value) {
+      return onChangeSetting({
+        settingName: "userRoleAfter",
+        value: value
+      });
+    }
+  }), (descriptions === null || descriptions === void 0 ? void 0 : descriptions.userRoleAfter) && /*#__PURE__*/React.createElement("p", {
+    className: "description"
+  }, descriptions.userRoleAfter)), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.FormTokenField, {
     label: (0,_publishpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('User ID', 'post-expirator'),
-    value: ((_defaultValue4 = defaultValue) === null || _defaultValue4 === void 0 ? void 0 : _defaultValue4.userId) || [],
+    value: ((_defaultValue5 = defaultValue) === null || _defaultValue5 === void 0 ? void 0 : _defaultValue5.userId) || [],
     onChange: function onChange(value) {
       return onChangeSetting({
         settingName: "userId",
