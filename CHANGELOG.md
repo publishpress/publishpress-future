@@ -3,6 +3,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [4.10.0]- [UNRELEASHED]
 
+### Added
+
+- Add "User Role After Change" criteria to "User role is changed" trigger,  (Issue #1473).
+
 ### Changed
 
 - Re-organize Action Workflows quick edit links, (Issue #1479)

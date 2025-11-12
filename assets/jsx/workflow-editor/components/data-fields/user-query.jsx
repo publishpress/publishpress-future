@@ -34,6 +34,7 @@ export function UserQuery({
             defaultValue = {
                 userSource: defaultUserSource,
                 userRole: [],
+                userRoleAfter: [],
                 userId: [],
             };
 
@@ -44,8 +45,11 @@ export function UserQuery({
     let userRoleFieldLabel = settings?.labels?.userRole || __('User Role', 'post-expirator');
     userRoleFieldLabel = isUserRoleRequired ? userRoleFieldLabel + ' *' : userRoleFieldLabel;
 
+    let userRoleAfterFieldLabel = settings?.labels?.userRoleAfter || null;
+
     const descriptions = {
         userRole: settings?.userRoleDescription || null,
+        userRoleAfter: settings?.userRoleAfterDescription || null,
         userId: settings?.userIdDescription || null,
     };
 
@@ -78,6 +82,23 @@ export function UserQuery({
 
                         {descriptions?.userRole && (
                             <p className="description">{descriptions.userRole}</p>
+                        )}
+
+                        {userRoleAfterFieldLabel && (
+                            <>
+                                <InlineMultiSelect
+                                    label={userRoleAfterFieldLabel}
+                                    value={defaultValue?.userRoleAfter || []}
+                                    suggestions={userRoles}
+                                    expandOnFocus={true}
+                                    autoSelectFirstMatch={true}
+                                    onChange={(value) => onChangeSetting({ settingName: "userRoleAfter", value })}
+                                />
+
+                                {descriptions?.userRoleAfter && (
+                                    <p className="description">{descriptions.userRoleAfter}</p>
+                                )}
+                            </>
                         )}
 
                         <FormTokenField
