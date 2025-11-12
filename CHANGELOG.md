@@ -1,6 +1,12 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.10.0]- [UNRELEASHED]
+
+### Changed
+
+- Re-organize Action Workflows quick edit links, (Issue #1479)
+
 ## [4.9.1]- 27 October, 2025
 
 ### Added

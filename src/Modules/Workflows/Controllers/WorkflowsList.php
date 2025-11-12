@@ -454,7 +454,19 @@ class WorkflowsList implements InitializableInterface
             __('Copy', 'post-expirator')
         );
 
-        $actions = $newActions + $actions;
+
+        $quickEditIndex = array_search('inline hide-if-no-js', array_keys($actions));
+
+        if ($quickEditIndex !== false) {
+            $insertPosition = $quickEditIndex + 1;
+            $actions = array_merge(
+                array_slice($actions, 0, $insertPosition),
+                $newActions,
+                array_slice($actions, $insertPosition)
+            );
+        } else {
+            $actions = array_merge($newActions, $actions);
+        }
 
         return $actions;
     }
