@@ -104,6 +104,7 @@ use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnLegacy
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnPostAuthorChangeRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnPostMetaChangeRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnPostPublishRunner;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnPostInsertRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnPostRowActionRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnPostSaveRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnPostScheduleRunner;
@@ -969,6 +970,13 @@ return [
                         $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY),
                         $container->get(ServicesAbstract::POST_CACHE),
                         $container->get(ServicesAbstract::WORKFLOW_EXECUTION_SAFEGUARD)
+                    );
+                    break;
+
+                case OnPostInsertRunner::getNodeTypeName():
+                    $stepRunner = new OnPostInsertRunner(
+                        $generalStepProcessor,
+                        $logger
                     );
                     break;
 
