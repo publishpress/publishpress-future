@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 - Re-organize Action Workflows quick edit links, (Issue #1479)
+- Resize workflow editor expression box modal, (Issue #1480)
 
 ## [4.9.1]- 27 October, 2025
 
