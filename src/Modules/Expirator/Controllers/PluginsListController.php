@@ -85,7 +85,7 @@ class PluginsListController implements InitializableInterface
 
         delete_transient(self::TRANSIENT_REDIRECT_AFTER_ACTIVATION);
 
-        wp_safe_redirect(admin_url('admin.php?page=publishpress-future'));
+        wp_safe_redirect(admin_url('edit.php?post_type=ppfuture_workflow'));
         exit;
     }
 }
