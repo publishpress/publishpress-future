@@ -203,7 +203,7 @@ export const ExpressionBuilder = ({
                             showGutter: !singleVariableOnly,
                             highlightActiveLine: !singleVariableOnly,
                         }}
-                        height={singleVariableOnly ? '30px' : '200px'}
+                        height={singleVariableOnly ? '30px' : '35px'}
                         width="100%"
                         placeholder={placeholder}
                     />
