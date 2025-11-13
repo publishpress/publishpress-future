@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Re-organize Action Workflows quick edit links, (Issue #1479)
 - Resize workflow editor expression box modal, (Issue #1480)
 - Redirect users to "Action Workflows" screen on plugin activation, (Issue #1454)
+- Add validation to workflow schedule custom date source variable, (Issue #1481)
 
 ### Fixed
 

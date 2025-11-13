@@ -583,6 +583,27 @@ export function NodeValidator({})
                             }
 
                             break;
+
+                        case 'hasVariableSyntax':
+                            if (!settingValue || settingValue === '') {
+                                break;
+                            }
+
+                            const trimmedValue = settingValue.trim();
+                            const hasProperSyntax = trimmedValue.startsWith('{{') && trimmedValue.endsWith('}}');
+
+                            if (!hasProperSyntax) {
+                                addNodeError(
+                                    node.id,
+                                    `${fieldName}-hasVariableSyntax`,
+                                    sprintf(
+                                        __('Invalid variable.', 'post-expirator'),
+                                        fieldLabel
+                                    ),
+                                    __('Please use the variable picker to select valid expression.', 'post-expirator')
+                                );
+                            }
+                            break;
                     }
                 });
             }
