@@ -13,6 +13,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Resize workflow editor expression box modal, (Issue #1480)
 - Redirect users to "Action Workflows" screen on plugin activation, (Issue #1454)
 
+### Fixed
+
+- Update ES-FR-IT translations (Issue #1477).
+
 ### Developers
 
 - Fixed duplicated constant values for hooks between modules and the core, (Issue #1292).
