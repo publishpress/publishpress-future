@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 
 - Update ES-FR-IT translations (Issue #1477).
+- Enhance permission checks for REST API post modification endpoint, (Issue #1491).
 
 ### Developers
 
