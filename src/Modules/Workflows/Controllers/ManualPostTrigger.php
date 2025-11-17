@@ -611,6 +611,10 @@ class ManualPostTrigger implements InitializableInterface
         foreach ($postIds as $postId) {
             $postId = (int)$postId;
 
+            if (! $this->currentUserModel->userCanEditPost($postId)) {
+                continue;
+            }
+
             $loaded = $postModel->load($postId);
 
             if (! $loaded) {

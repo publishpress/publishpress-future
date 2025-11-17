@@ -20,4 +20,9 @@ class CurrentUserModel extends FrameworkCurrentUserModel
         return is_object($user)
             && $user->has_cap(Capabilities::EXPIRE_POST);
     }
+
+    public function userCanEditPost($postId)
+    {
+        return current_user_can('edit_post', $postId);
+    }
 }

@@ -115,7 +115,8 @@ class RestAPIController implements InitializableInterface
             'callback' => [$this, 'saveFutureActionData'],
             'permission_callback' => function ($request) {
                 $postId = $request->get_param('postId');
-                return $this->currentUserModel->userCanExpirePosts() && current_user_can('edit_post', $postId);
+                return $this->currentUserModel->userCanExpirePosts()
+                    && $this->currentUserModel->userCanEditPost($postId);
             },
             'args' => [
                 'postId' => [
@@ -315,7 +316,10 @@ class RestAPIController implements InitializableInterface
                     },
                     'update_callback' => function ($value, $post) {
                         try {
-                            if (! $this->currentUserModel->userCanExpirePosts()) {
+                            if (
+                                ! $this->currentUserModel->userCanExpirePosts() ||
+                                ! $this->currentUserModel->userCanEditPost($post->ID)
+                            ) {
                                 return false;
                             }
 
