@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the PublishPress Future plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: PublishPress Future 4.9.0\n"
+"Project-Id-Version: PublishPress Future 4.9.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/project\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-10-27T13:01:02+00:00\n"
+"POT-Creation-Date: 2025-11-14T10:37:55+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
@@ -436,7 +436,7 @@ msgstr ""
 msgid "No future action"
 msgstr ""
 
-#: src/Modules/Expirator/Controllers/RestAPIController.php:237
+#: src/Modules/Expirator/Controllers/RestAPIController.php:238
 msgid "Invalid date time offset."
 msgstr ""
 
@@ -448,7 +448,7 @@ msgstr ""
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:141
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:323
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:47
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:747
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:759
 msgid "Scheduled Actions"
 msgstr ""
 
@@ -1495,72 +1495,72 @@ msgstr ""
 msgid "Copy"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:658
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:670
 msgid "Source workflow not found."
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:659
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:671
 msgid "Failed to create new workflow."
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:660
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:672
 msgid "An error occurred while copying the workflow."
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:662
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:674
 msgid "Error cancelling scheduled actions."
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:663
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:675
 msgid "This workflow doesn't have any scheduled action."
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:667
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:679
 msgid "Workflow copied successfully."
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:669
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:681
 msgid "Scheduled actions have been cancelled successfully."
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:720
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:732
 msgid "Action Workflow Editor"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:787
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:791
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:799
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:803
 #, php-format
 msgid "%s updated."
 msgstr ""
 
 #. translators: 1: Post type singular label, 2: Revision title
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:797
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:809
 #, php-format
 msgid "%1$s restored to revision from %2$s"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:803
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:815
 #, php-format
 msgid "%s published."
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:807
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:819
 #, php-format
 msgid "%s saved."
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:811
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:823
 #, php-format
 msgid "%s submitted."
 msgstr ""
 
 #. translators: 1: Post type singular label, 2: Scheduled date
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:816
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:828
 #, php-format
 msgid "%1$s scheduled for: <strong>%2$s</strong>."
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:821
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:833
 #, php-format
 msgid "%s draft updated."
 msgstr ""
@@ -1702,7 +1702,7 @@ msgstr ""
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DuplicatePost.php:180
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/QueryPosts.php:131
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/RemovePostTerm.php:150
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:142
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:157
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:167
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:202
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendRay.php:127
@@ -1726,7 +1726,7 @@ msgstr ""
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DuplicatePost.php:181
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/QueryPosts.php:132
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/RemovePostTerm.php:151
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:143
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:158
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:168
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:203
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendRay.php:128
@@ -1784,7 +1784,7 @@ msgstr ""
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostUpdate.php:144
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostWorkflowEnable.php:156
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnTermsAdded.php:178
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:148
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:152
 msgid "Next"
 msgstr ""
 
@@ -2221,51 +2221,63 @@ msgstr ""
 msgid "Schedule > Unique ID Expression"
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:112
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:104
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:113
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:64
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:139
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-date.jsx:72
+msgid "Custom date source"
+msgstr ""
+
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:114
+msgid "Schedule > Custom date source"
+msgstr ""
+
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:127
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:104
 msgid "Schedule date"
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:113
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:128
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:105
 msgid "The date and time when the step will run."
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:118
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:133
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:110
 msgid "Action UID hash"
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:119
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:134
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:111
 msgid "The unique ID hash of the action that will run."
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:124
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:139
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:116
 msgid "Repeat count"
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:125
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:140
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:117
 msgid "The number of times the scheduled action has been repeated."
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:130
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:145
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:122
 msgid "Repeat limit"
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:131
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:146
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:123
 msgid "The maximum number of times the scheduled action will be repeated."
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:168
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:183
 msgid "After delay"
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:172
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:187
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:149
 msgid "After all repetitions"
 msgstr ""
@@ -3191,27 +3203,31 @@ msgstr ""
 msgid "User Role before change"
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:118
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:84
+msgid "User Role after change"
+msgstr ""
+
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:122
 msgid "User that data was changed for"
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:119
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:123
 msgid "The user that data was changed for."
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:124
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:128
 msgid "Added roles"
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:125
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:129
 msgid "The roles that were added to the user."
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:130
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:134
 msgid "Removed roles"
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:131
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:135
 msgid "The roles that were removed from the user."
 msgstr ""
 
@@ -4123,12 +4139,6 @@ msgstr ""
 msgid "When the step is activated"
 msgstr ""
 
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:64
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:139
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-date.jsx:72
-msgid "Custom date source"
-msgstr ""
-
 #: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:80
 msgid "As soon as possible"
 msgstr ""
@@ -4437,7 +4447,7 @@ msgid "Post received as input"
 msgstr ""
 
 #: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:82
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:61
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:65
 msgid "Custom query"
 msgstr ""
 
@@ -4446,12 +4456,12 @@ msgid "Post Terms"
 msgstr ""
 
 #: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:160
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:95
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:116
 msgid "Separate multiple values with commas or Enter key."
 msgstr ""
 
 #: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:166
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:101
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:122
 msgid "* Required field"
 msgstr ""
 
@@ -4531,19 +4541,19 @@ msgstr ""
 msgid "Specific terms"
 msgstr ""
 
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:44
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:45
 msgid "User Role"
 msgstr ""
 
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:57
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:61
 msgid "User selection"
 msgstr ""
 
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:60
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:64
 msgid "User received as input"
 msgstr ""
 
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:84
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:105
 msgid "User ID"
 msgstr ""
 
