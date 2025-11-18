@@ -444,6 +444,10 @@ class BulkEditController implements InitializableInterface
         foreach ($postIds as $postId) {
             $postId = (int)$postId;
 
+            if (! $this->currentUserModel->userCanEditPost($postId)) {
+                continue;
+            }
+
             $postModel = $postModelFactory($postId);
 
             if (empty($postModel)) {

@@ -113,8 +113,10 @@ class RestAPIController implements InitializableInterface
         register_rest_route($apiNamespace, '/post-expiration/(?P<postId>\d+)', [
             'methods' => 'POST',
             'callback' => [$this, 'saveFutureActionData'],
-            'permission_callback' => function () {
-                return $this->currentUserModel->userCanExpirePosts();
+            'permission_callback' => function ($request) {
+                $postId = $request->get_param('postId');
+                return $this->currentUserModel->userCanExpirePosts()
+                    && $this->currentUserModel->userCanEditPost($postId);
             },
             'args' => [
                 'postId' => [
@@ -314,7 +316,10 @@ class RestAPIController implements InitializableInterface
                     },
                     'update_callback' => function ($value, $post) {
                         try {
-                            if (! $this->currentUserModel->userCanExpirePosts()) {
+                            if (
+                                ! $this->currentUserModel->userCanExpirePosts() ||
+                                ! $this->currentUserModel->userCanEditPost($post->ID)
+                            ) {
                                 return false;
                             }
 

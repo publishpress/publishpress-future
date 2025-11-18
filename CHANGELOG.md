@@ -1,6 +1,28 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.9.2]- 18 Novemeber, 2025
+
+### Added
+
+- Add "User Role After Change" criteria to "User role is changed" trigger,  (Issue #1473).
+
+### Changed
+
+- Re-organize Action Workflows quick edit links, (Issue #1479)
+- Resize workflow editor expression box modal, (Issue #1480)
+- Redirect users to "Action Workflows" screen on plugin activation, (Issue #1454)
+- Add validation to workflow schedule custom date source variable, (Issue #1481)
+
+### Fixed
+
+- Update ES-FR-IT translations (Issue #1477).
+- Enhance permission checks for REST API post modification endpoint, (Issue #1491).
+
+### Developers
+
+- Fixed duplicated constant values for hooks between modules and the core, (Issue #1292).
+
 ## [4.9.1]- 27 October, 2025
 
 ### Added

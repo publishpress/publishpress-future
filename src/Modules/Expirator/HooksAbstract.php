@@ -6,19 +6,41 @@
 
 namespace PublishPress\Future\Modules\Expirator;
 
+use PublishPress\Future\Core\HooksAbstract as CoreHooksAbstract;
+
 defined('ABSPATH') or die('Direct access not allowed.');
 
 abstract class HooksAbstract
 {
-    public const ACTION_INIT = 'init';
+    public const ACTION_INIT = CoreHooksAbstract::ACTION_INIT;
 
-    public const ACTION_ADMIN_INIT = 'admin_init';
+    public const ACTION_ADMIN_INIT = CoreHooksAbstract::ACTION_ADMIN_INIT;
 
-    public const ACTION_ADMIN_MENU = 'admin_menu';
+    public const ACTION_ADMIN_MENU = CoreHooksAbstract::ACTION_ADMIN_MENU;
 
-    public const ACTION_ADMIN_NOTICES = 'admin_notices';
+    public const ACTION_ADMIN_NOTICES = CoreHooksAbstract::ACTION_ADMIN_NOTICES;
 
-    public const ACTION_REST_API_INIT = 'rest_api_init';
+    public const ACTION_REST_API_INIT = CoreHooksAbstract::ACTION_REST_API_INIT;
+
+    public const ACTION_INSERT_POST = CoreHooksAbstract::ACTION_INSERT_POST;
+
+    public const ACTION_MANAGE_POSTS_CUSTOM_COLUMN = CoreHooksAbstract::ACTION_MANAGE_POSTS_CUSTOM_COLUMN;
+
+    public const ACTION_MANAGE_PAGES_CUSTOM_COLUMN = CoreHooksAbstract::ACTION_MANAGE_PAGES_CUSTOM_COLUMN;
+
+    public const ACTION_POSTS_ORDER_BY = CoreHooksAbstract::ACTION_POSTS_ORDER_BY;
+
+    public const ACTION_POST_UPDATED = CoreHooksAbstract::ACTION_POST_UPDATED;
+
+    public const FILTER_THE_CONTENT = CoreHooksAbstract::FILTER_THE_CONTENT;
+
+    public const FILTER_BULK_ACTIONS_POST_EDIT = CoreHooksAbstract::FILTER_BULK_ACTIONS_POST_EDIT;
+
+    public const FILTER_MANAGE_POSTS_COLUMNS = CoreHooksAbstract::FILTER_MANAGE_POSTS_COLUMNS;
+
+    public const FILTER_MANAGE_PAGES_COLUMNS = CoreHooksAbstract::FILTER_MANAGE_PAGES_COLUMNS;
+
+    public const FILTER_POSTS_JOIN = CoreHooksAbstract::FILTER_POSTS_JOIN;
 
     public const ACTION_LEGACY_SCHEDULE = 'postexpirator_schedule';
 
@@ -64,18 +86,6 @@ abstract class HooksAbstract
 
     public const ACTION_SYNC_SCHEDULER_WITH_POST_META = 'admin_action_sync_scheduler_with_post_meta';
 
-    public const ACTION_MANAGE_POSTS_CUSTOM_COLUMN = 'manage_posts_custom_column';
-
-    public const ACTION_MANAGE_PAGES_CUSTOM_COLUMN = 'manage_pages_custom_column';
-
-    public const ACTION_POSTS_ORDER_BY = 'posts_orderby';
-
-    public const ACTION_INSERT_POST = 'wp_insert_post';
-
-    public const ACTION_POST_UPDATED = 'post_updated';
-
-    public const FILTER_THE_CONTENT = 'the_content';
-
     public const FILTER_CUSTOM_EXPIRATION_TYPE = 'publishpressfuture_custom_expiration_type';
 
     public const FILTER_LEGACY_TEMPLATE_PARAMS = 'publishpressfuture_legacy_template_params';
@@ -97,14 +107,6 @@ abstract class HooksAbstract
     public const FILTER_EXPIRATION_ACTION_FACTORY = 'publishpressfuture_expiration_action_factory';
 
     public const FILTER_ACTION_SCHEDULER_LIST_COLUMN_HOOK = 'publishpressfuture_action_scheduler_column_hook';
-
-    public const FILTER_BULK_ACTIONS_POST_EDIT = 'bulk_actions-edit-%s';
-
-    public const FILTER_MANAGE_POSTS_COLUMNS = 'manage_posts_columns';
-
-    public const FILTER_MANAGE_PAGES_COLUMNS = 'manage_pages_columns';
-
-    public const FILTER_POSTS_JOIN = 'posts_join';
 
     public const FILTER_CONTENT_FOOTER = 'publishpress_future/content_footer';
 
