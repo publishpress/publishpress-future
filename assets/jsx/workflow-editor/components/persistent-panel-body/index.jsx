@@ -8,11 +8,13 @@ export const PersistentPanelBody = (props) => {
     };
 
     newProps.id = newProps.id ?? newProps.title.toLowerCase().replace(/ /g, '');
+    const initialOpen = newProps.initialOpen ?? true;
+    delete newProps.initialOpen;
 
     const {
         panelBodyState,
     } = useSelect((select) => {
-        const panelBodyState = select(editorStore).getPanelBodyState(newProps.id) ?? true;
+        const panelBodyState = select(editorStore).getPanelBodyState(newProps.id) ?? initialOpen;
 
         return {
             panelBodyState,

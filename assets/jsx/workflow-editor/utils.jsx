@@ -181,6 +181,29 @@ export function getNodeOutputSchema(node) {
         outputSchema = outputSchema.concat(dynamicOutputItems);
     }
 
+    // Add input bindings as output items so they can be used by downstream steps
+    const inputBindings = node?.data?.inputBindings || {};
+    const bindingOutputItems = [];
+
+    Object.keys(inputBindings).forEach((bindingName) => {
+        const binding = inputBindings[bindingName];
+
+        // Only add bindings that have at least one source
+        if (binding.sources && binding.sources.length > 0) {
+            bindingOutputItems.push({
+                name: bindingName,
+                label: binding.label || bindingName,
+                type: binding.type,
+                description: `Input binding: ${binding.label || bindingName}`,
+                priority: 5, // Higher priority to show bindings prominently
+            });
+        }
+    });
+
+    if (bindingOutputItems.length) {
+        outputSchema = outputSchema.concat(bindingOutputItems);
+    }
+
     return outputSchema;
 }
 
@@ -321,7 +344,27 @@ export function getNodeVariablesTree(node, globalVariables) {
     const mappedNodeInputs = mapNodeInputs(node);
     const globalVariablesToList = getGlobalVariablesExpanded(globalVariables);
 
-    const variablesList = [...mappedNodeInputs, ...globalVariablesToList];
+    // Add the node's own input bindings as available variables
+    const inputBindings = node?.data?.inputBindings || {};
+    const bindingVariables = [];
+
+    Object.keys(inputBindings).forEach((bindingName) => {
+        const binding = inputBindings[bindingName];
+
+        // Only add bindings that have at least one source
+        if (binding.sources && binding.sources.length > 0) {
+            bindingVariables.push({
+                name: bindingName,
+                label: binding.label || bindingName,
+                type: binding.type,
+                description: `Input binding: ${binding.label || bindingName}`,
+                priority: 3, // Higher priority than inputs but lower than step-scoped
+                nodeSlug: node.data.slug,
+            });
+        }
+    });
+
+    const variablesList = [...bindingVariables, ...mappedNodeInputs, ...globalVariablesToList];
 
     const expandedVariablesList = variablesList.map(expandVariableWithChildren);
 

@@ -9,6 +9,7 @@
 @import url('notices.css');
 @import url('pro-features.css');
 @import url('conditionals.css');
+@import url('../components/input-bindings-panel/style.css');
 
 .reactflow-wrapper {
     height: 100%;

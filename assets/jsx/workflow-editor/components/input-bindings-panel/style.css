@@ -1,0 +1,185 @@
+/* Input Bindings Panel Styles */
+
+.input-bindings-panel .input-bindings-description {
+    font-size: 13px;
+    color: #757575;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.input-bindings-panel .input-bindings-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.input-bindings-panel .input-bindings-empty {
+    padding: 16px;
+    background: #f0f0f0;
+    border-radius: 4px;
+    text-align: center;
+    color: #757575;
+    font-size: 13px;
+}
+
+/* Input Binding Item */
+
+.input-binding-item {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 12px;
+    background: #fff;
+}
+
+.input-binding-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.input-binding-actions {
+    display: flex;
+    gap: 4px;
+}
+
+.input-binding-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+}
+
+.input-binding-title strong {
+    font-size: 14px;
+    color: #1e1e1e;
+}
+
+.input-binding-type {
+    font-size: 12px;
+    color: #757575;
+    font-weight: normal;
+}
+
+.input-binding-sources {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-binding-sources .components-base-control {
+    margin-bottom: 0;
+}
+
+.input-binding-sources .components-checkbox-control__label {
+    font-size: 13px;
+}
+
+.input-binding-no-sources,
+.input-binding-all-sources-added,
+.input-binding-no-compatible {
+    padding: 8px 12px;
+    background: #f9f9f9;
+    border-radius: 3px;
+    font-size: 12px;
+    color: #757575;
+    font-style: italic;
+}
+
+.input-binding-add-source {
+    align-self: flex-start;
+    font-size: 13px;
+    padding-left: 0;
+}
+
+/* Modal Styles */
+
+.input-binding-add-source-modal .components-modal__content,
+.input-binding-new-modal .components-modal__content {
+    padding-bottom: 0;
+}
+
+.input-binding-modal-content {
+    padding: 16px 0;
+}
+
+.input-binding-modal-content p {
+    margin-bottom: 16px;
+    font-size: 13px;
+    color: #1e1e1e;
+}
+
+.input-binding-modal-content .components-base-control {
+    margin-bottom: 16px;
+}
+
+.input-binding-sources-checkboxes {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 12px;
+    max-height: 300px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-binding-sources-checkboxes .components-base-control {
+    margin-bottom: 0;
+}
+
+.input-binding-sources-checkboxes .components-checkbox-control__label {
+    font-size: 13px;
+}
+
+.input-binding-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #ddd;
+}
+
+.input-binding-no-types {
+    padding: 12px;
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #856404;
+    margin-bottom: 16px;
+}
+
+.input-binding-type-change-warning {
+    padding: 12px;
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #856404;
+    margin-bottom: 16px;
+}
+
+/* Responsive adjustments */
+
+@media (max-width: 782px) {
+    .input-binding-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .input-binding-modal-actions {
+        flex-direction: column-reverse;
+    }
+
+    .input-binding-modal-actions .components-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+

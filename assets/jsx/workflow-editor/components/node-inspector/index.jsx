@@ -9,7 +9,7 @@ import InspectorCard from "../inspector-card";
 import InspectorWarning from "../inspector-warning";
 import NodeSettingsPanel from "./node-settings-panel";
 import { getNodeOutputSchema, mapNodeInputs } from "../../utils";
-import { FEATURE_DEVELOPER_MODE } from "../../constants";
+import { FEATURE_DEVELOPER_MODE, NODE_TYPE_TRIGGER } from "../../constants";
 import NodeValidationPanel from "../node-validation-panel";
 import NodeDataFlowPanel from "./node-data-flow-panel";
 import ObjectGroupIcon from "../icons/object-group";
@@ -17,6 +17,7 @@ import LinesLeaningIcon from "../icons/lines-leaning";
 import NodeDevInfoPanel from "../node-dev-info-panel";
 import useScrollToTop from "../scrolled-to-top";
 import { getExpandedStepScopedVariables } from "../../utils";
+import InputBindingsPanel from "../input-bindings-panel";
 
 export const NodeInspector = () => {
     const {
@@ -70,6 +71,7 @@ export const NodeInspector = () => {
         selectedNodes.length === 0 && selectedEdges.length > 0;
 
     const nodeHasSettings = nodeType?.settingsSchema?.length > 0;
+    const nodeIsTrigger = nodeType?.elementaryType === NODE_TYPE_TRIGGER;
 
     const stepScopedVariables = getExpandedStepScopedVariables(selectedNode);
     const mappedNodeInputSchema = mapNodeInputs(selectedNode);
@@ -141,6 +143,10 @@ export const NodeInspector = () => {
             {onlyNodesSelected && selectedElementsCount === 1 && (
                 <>
                     <NodeInspectorCard node={selectedNode} />
+
+                    {!nodeIsTrigger && (
+                        <InputBindingsPanel node={selectedNode} />
+                    )}
 
                     {nodeHasSettings && (
                         <NodeSettingsPanel node={selectedNode} />

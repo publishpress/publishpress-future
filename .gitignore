@@ -34,3 +34,5 @@ gh_token.txt
 publishpress-future.code-workspace
 
 .phpactor.json
+/security-audit/
+/reports/
