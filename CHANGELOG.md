@@ -1,6 +1,12 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.9.3]- UNRELEASHED
+
+### Fixed
+
+- "Update post details" step not working with "Query posts" step,  (Issue #1503).
+
 ## [4.9.2]- 18 Novemeber, 2025
 
 ### Added
