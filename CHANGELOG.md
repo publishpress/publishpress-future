@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 
 - "Update post details" step not working with "Query posts" step,  (Issue #1503).
+- Remove email field from getAuthors REST API endpoint.
 
 ## [4.9.2]- 18 Novemeber, 2025
 
