@@ -7,15 +7,18 @@ import './style.css';
 const CancelActionsConfirmation = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [actionData, setActionData] = useState({
-        link: '',
+        form: null,
         title: ''
     });
 
     const handleCancelActionsClick = useCallback((e) => {
         e.preventDefault();
-        const link = e.target.href;
+        const form = e.target.closest('form');
         const title = e.target.dataset.workflowTitle || '';
-        setActionData({ link, title });
+        setActionData({
+            form,
+            title
+        });
         setIsOpen(true);
     }, []);
 
@@ -38,7 +41,9 @@ const CancelActionsConfirmation = () => {
     }
 
     const handleConfirm = () => {
-        window.location.href = actionData.link;
+        if (actionData.form) {
+            actionData.form.submit();
+        }
     };
 
     return (
