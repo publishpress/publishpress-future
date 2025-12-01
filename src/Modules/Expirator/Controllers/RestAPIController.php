@@ -94,9 +94,9 @@ class RestAPIController implements InitializableInterface
         register_rest_route($apiNamespace, '/post-expiration/(?P<postId>\d+)', [
             'methods' => 'GET',
             'callback' => [$this, 'getFutureActionData'],
-            'permission_callback' => function () {
-                // Everyone with read access should be able to see the expiration data
-                return true;
+            'permission_callback' => function ($request) {
+                $postId = $request->get_param('postId');
+                return $this->currentUserModel->userCanReadPost($postId);
             },
             'args' => [
                 'postId' => [
