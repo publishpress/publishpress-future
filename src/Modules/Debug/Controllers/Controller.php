@@ -73,7 +73,7 @@ class Controller implements InitializableInterface
         }
 
         // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-        if (! isset($_GET['nonce']) || ! wp_verify_nonce($_GET['nonce'], 'publishpress_future_download_log')) {
+        if (! isset($_GET['nonce']) || ! wp_verify_nonce(sanitize_key($_GET['nonce']), 'publishpress_future_download_log')) {
             wp_die(esc_html__('Invalid nonce.', 'post-expirator'), '', ['response' => 403]);
         }
 
