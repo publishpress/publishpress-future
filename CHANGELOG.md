@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Convert workflow operations from GET to POST requests
 - Add capability checks for all workflow actions
 - Improve utils stripTags function
+- Implement backup structure validation to ensure data integrity
+- Add sanitization methods for workflows and settings data
+- Improve input validation with proper type checking and whitelisting
 
 ## [4.9.2]- 18 Novemeber, 2025
 
