@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Enhance post expiration extraData data validation
 - Improve query parameter handling in settings controller
 - Enhance template rendering validation and path security
+- Add nonce verification to processMetaboxUpdate method
 
 ## [4.9.2]- 18 Novemeber, 2025
 

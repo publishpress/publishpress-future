@@ -498,6 +498,8 @@ class ManualPostTrigger implements InitializableInterface
                 return;
             }
 
+            check_ajax_referer('__future_action', '_future_action_nonce');
+
             // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
             $manuallyEnabledWorkflows = $_POST['future_workflow_manual_trigger'] ?? [];
             $manuallyEnabledWorkflows = array_map('intval', $manuallyEnabledWorkflows);
