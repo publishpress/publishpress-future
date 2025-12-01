@@ -175,7 +175,7 @@ class WorkflowModel implements WorkflowModelInterface
             return;
         }
 
-        $this->post->post_excerpt = $description;
+        $this->post->post_excerpt = wp_kses_post($description);
     }
 
     public function getStatus(): string

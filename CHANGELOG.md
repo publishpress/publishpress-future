@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Implement backup structure validation to ensure data integrity
 - Add sanitization methods for workflows and settings data
 - Improve input validation with proper type checking and whitelisting
+- Enhanced workflow setDescription() method with wp_kses_post() sanitization
 
 ## [4.9.2]- 18 Novemeber, 2025
 
