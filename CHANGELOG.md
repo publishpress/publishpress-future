@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Improve input validation with proper type checking and whitelisting
 - Enhanced workflow setDescription() method with wp_kses_post() sanitization
 - Enhance post expiration extraData data validation
+- Improve query parameter handling in settings controller
 
 ## [4.9.2]- 18 Novemeber, 2025
 
