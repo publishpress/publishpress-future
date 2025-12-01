@@ -162,9 +162,9 @@ class Controller implements InitializableInterface
             );
 
             $defaultTab = $this->settings->getSettingsDefaultTab();
+            // phpcs:ignore WordPress.Security.NonceVerification.Recommended
             $tab = isset($_GET['tab']) ? sanitize_key($_GET['tab']) : '';
 
-            // phpcs:ignore WordPress.Security.NonceVerification.Recommended
             if ((!$tab && $defaultTab === 'advanced') || ($tab === 'advanced')) {
                 wp_enqueue_script(
                     'publishpress-future-settings-advanced-panel',
