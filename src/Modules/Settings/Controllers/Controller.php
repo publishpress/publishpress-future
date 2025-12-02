@@ -136,8 +136,6 @@ class Controller implements InitializableInterface
                 return;
             }
 
-            $defaultTab = $this->settings->getSettingsDefaultTab();
-
             wp_enqueue_style(
                 'pe-footer',
                 Plugin::getAssetUrl('css/footer.css'),
@@ -163,8 +161,11 @@ class Controller implements InitializableInterface
                 PUBLISHPRESS_FUTURE_VERSION
             );
 
+            $defaultTab = $this->settings->getSettingsDefaultTab();
             // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-            if ((! isset($_GET['tab']) && $defaultTab === 'advanced') || (isset($_GET['tab']) && $_GET['tab'] === 'advanced')) {
+            $tab = isset($_GET['tab']) ? sanitize_key($_GET['tab']) : '';
+
+            if ((!$tab && $defaultTab === 'advanced') || ($tab === 'advanced')) {
                 wp_enqueue_script(
                     'publishpress-future-settings-advanced-panel',
                     Plugin::getScriptUrl('settingsAdvanced'),
@@ -293,7 +294,7 @@ class Controller implements InitializableInterface
         $tab = isset($_GET['tab']) ? sanitize_key($_GET['tab']) : $defaultTab;
 
         // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-        if (! isset($_GET['tab']) || ! in_array($tab, $allowedTabs, true)) {
+        if (! in_array($tab, $allowedTabs, true)) {
             $tab = $this->settings::SETTINGS_DEFAULT_TAB;
         }
 

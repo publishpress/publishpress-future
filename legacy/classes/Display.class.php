@@ -515,6 +515,13 @@ class PostExpirator_Display
             $params
         );
 
+        $allowedBasePath = realpath(POSTEXPIRATOR_BASEDIR . "/src/Views/");
+        $templatePath = realpath($template);
+
+        if ($templatePath === false || strpos($templatePath, $allowedBasePath) !== 0) {
+            return;
+        }
+
         if (file_exists($template)) {
             // expand all parameters so that they can be directly accessed with their name.
             if ($params) {

@@ -6,6 +6,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 
 - "Update post details" step not working with "Query posts" step,  (Issue #1503).
+- Remove email field from getAuthors REST API endpoint.
+- Convert workflow operations from GET to POST requests
+- Add capability checks for all workflow actions
+- Improve utils stripTags function
+- Implement backup structure validation to ensure data integrity
+- Add sanitization methods for workflows and settings data
+- Improve input validation with proper type checking and whitelisting
+- Enhanced workflow setDescription() method with wp_kses_post() sanitization
+- Enhance post expiration extraData data validation
+- Improve query parameter handling in settings controller
+- Enhance template rendering validation and path security
+- Add nonce verification to processMetaboxUpdate method
+- Improve input sanitization in debug log download
+- Add proper permission checks for post expiration data access
 
 ## [4.9.2]- 18 Novemeber, 2025
 

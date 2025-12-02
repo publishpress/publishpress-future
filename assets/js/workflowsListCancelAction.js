@@ -646,7 +646,7 @@ var CancelActionsConfirmation = function CancelActionsConfirmation() {
     isOpen = _useState2[0],
     setIsOpen = _useState2[1];
   var _useState3 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)({
-      link: '',
+      form: null,
       title: ''
     }),
     _useState4 = _slicedToArray(_useState3, 2),
@@ -654,10 +654,10 @@ var CancelActionsConfirmation = function CancelActionsConfirmation() {
     setActionData = _useState4[1];
   var handleCancelActionsClick = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (e) {
     e.preventDefault();
-    var link = e.target.href;
+    var form = e.target.closest('form');
     var title = e.target.dataset.workflowTitle || '';
     setActionData({
-      link: link,
+      form: form,
       title: title
     });
     setIsOpen(true);
@@ -677,7 +677,9 @@ var CancelActionsConfirmation = function CancelActionsConfirmation() {
     return null;
   }
   var handleConfirm = function handleConfirm() {
-    window.location.href = actionData.link;
+    if (actionData.form) {
+      actionData.form.submit();
+    }
   };
   return /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Modal, {
     title: (0,_publishpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Cancel Scheduled Actions', 'post-expirator'),
