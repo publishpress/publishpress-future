@@ -246,6 +246,15 @@ class RestApiV1 implements RestApiManagerInterface
             );
         }
 
+        if (isset($request['flow'])) {
+            $validation = $this->validateWorkflowData($request['flow']);
+            if (is_wp_error($validation)) {
+                return $validation;
+            }
+
+            $request['flow'] = $this->sanitizeWorkflowData($request['flow']);
+        }
+
         $isPublishing = $workflowModel->getStatus() !== 'publish' && $request['status'] === 'publish';
         $isUnpublishing = $workflowModel->getStatus() === 'publish' && $request['status'] !== 'publish';
 
@@ -387,5 +396,104 @@ class RestApiV1 implements RestApiManagerInterface
         }, $authors);
 
         return rest_ensure_response($authors);
+    }
+
+    private function validateWorkflowData($flowData)
+    {
+        if (!is_array($flowData)) {
+            return new WP_Error(
+                'invalid_flow_data',
+                __('Flow data must be an array.', 'post-expirator'),
+                ['status' => 400]
+            );
+        }
+
+        $nodes = $flowData['nodes'] ?? [];
+        $edges = $flowData['edges'] ?? [];
+
+        // Validate nodes structure
+        foreach ($nodes as $node) {
+            if (!isset($node['id']) || !isset($node['type'])) {
+                return new WP_Error(
+                    'invalid_node_structure',
+                    __('Each node must have an id and type.', 'post-expirator'),
+                    ['status' => 400]
+                );
+            }
+        }
+
+        // Validate edges structure
+        foreach ($edges as $edge) {
+            if (!isset($edge['id']) || !isset($edge['source']) || !isset($edge['target'])) {
+                return new WP_Error(
+                    'invalid_edge_structure',
+                    __('Each edge must have an id, source, and target.', 'post-expirator'),
+                    ['status' => 400]
+                );
+            }
+        }
+
+        return true;
+    }
+
+    private function sanitizeWorkflowData($flowData)
+    {
+        $nodes = $flowData['nodes'] ?? [];
+        $edges = $flowData['edges'] ?? [];
+
+        $sanitizedNodes = [];
+        foreach ($nodes as $node) {
+            $sanitizedNode = [
+                'id' => sanitize_text_field($node['id']),
+                'type' => sanitize_key($node['type']),
+                'position' => [
+                    'x' => isset($node['position']['x']) ? (float)$node['position']['x'] : 0,
+                    'y' => isset($node['position']['y']) ? (float)$node['position']['y'] : 0,
+                ],
+                'data' => $this->sanitizeNodeData($node['data'] ?? []),
+            ];
+            $sanitizedNodes[] = $sanitizedNode;
+        }
+
+        $sanitizedEdges = [];
+        foreach ($edges as $edge) {
+            $sanitizedEdge = [
+                'id' => sanitize_text_field($edge['id']),
+                'source' => sanitize_text_field($edge['source']),
+                'target' => sanitize_text_field($edge['target']),
+                'sourceHandle' => isset($edge['sourceHandle']) ? sanitize_text_field($edge['sourceHandle']) : null,
+                'targetHandle' => isset($edge['targetHandle']) ? sanitize_text_field($edge['targetHandle']) : null,
+            ];
+            $sanitizedEdges[] = $sanitizedEdge;
+        }
+
+        $sanitizedFlowData = [
+            'nodes' => $sanitizedNodes,
+            'edges' => $sanitizedEdges,
+        ];
+
+        return $sanitizedFlowData;
+    }
+
+    private function sanitizeNodeData($data)
+    {
+        if (!is_array($data)) {
+            return [];
+        }
+
+        $sanitized = [];
+        foreach ($data as $key => $value) {
+            if (is_array($value)) {
+                $sanitized[$key] = $this->sanitizeNodeData($value);
+            } elseif (is_string($value)) {
+                $sanitized[$key] = sanitize_text_field($value);
+            } elseif (is_numeric($value)) {
+                $sanitized[$key] = $value;
+            } elseif (is_bool($value)) {
+                $sanitized[$key] = $value;
+            }
+        }
+
+        return $sanitized;
     }
 }

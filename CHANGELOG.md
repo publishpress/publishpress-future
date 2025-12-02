@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Add nonce verification to processMetaboxUpdate method
 - Improve input sanitization in debug log download
 - Add proper permission checks for post expiration data access
+- Add input sanitization for workflow node data values
 
 ## [4.9.2]- 18 Novemeber, 2025
 
