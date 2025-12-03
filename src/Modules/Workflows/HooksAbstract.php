@@ -31,6 +31,11 @@ abstract class HooksAbstract
     public const FILTER_BULK_POST_UPDATED_MESSAGES = CoreHooksAbstract::FILTER_BULK_POST_UPDATED_MESSAGES;
 
     /**
+     * @since 4.9.3
+     */
+    public const ACTION_AFTER_INSERT_POST = CoreHooksAbstract::ACTION_AFTER_INSERT_POST;
+
+    /**
      * @since 4.6.0
      */
     public const ACTION_TRANSITION_POST_STATUS = CoreHooksAbstract::ACTION_TRANSITION_POST_STATUS;
