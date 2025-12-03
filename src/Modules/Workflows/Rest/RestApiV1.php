@@ -483,17 +483,24 @@ class RestApiV1 implements RestApiManagerInterface
 
         $sanitized = [];
         foreach ($data as $key => $value) {
+            $sanitizedKey = $this->sanitizeCamelCaseKeys($key);
+
             if (is_array($value)) {
-                $sanitized[$key] = $this->sanitizeNodeData($value);
+                $sanitized[$sanitizedKey] = $this->sanitizeNodeData($value);
             } elseif (is_string($value)) {
-                $sanitized[$key] = sanitize_text_field($value);
+                $sanitized[$sanitizedKey] = sanitize_text_field($value);
             } elseif (is_numeric($value)) {
-                $sanitized[$key] = $value;
+                $sanitized[$sanitizedKey] = $value;
             } elseif (is_bool($value)) {
-                $sanitized[$key] = $value;
+                $sanitized[$sanitizedKey] = $value;
             }
         }
 
         return $sanitized;
+    }
+
+    private function sanitizeCamelCaseKeys(string $key): string
+    {
+        return preg_replace('/[^a-zA-Z0-9\-_]/', '', $key);
     }
 }
