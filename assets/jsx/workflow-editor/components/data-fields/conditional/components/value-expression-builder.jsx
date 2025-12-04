@@ -28,7 +28,7 @@ export const ValueExpressionBuilder = ({ value, handleOnChange, context, rule })
         setCompleters(newCompleters);
     }, [variableDataType]);
 
-    if (rule.operator === 'null' || rule.operator === 'notNull') {
+    if (rule.operator === 'null' || rule.operator === 'notNull' || rule.operator === 'isEmpty' || rule.operator === 'isNotEmpty') {
         return <div></div>;
     }
 

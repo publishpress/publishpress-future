@@ -25,6 +25,18 @@ export const useConditionalLogic = ({ defaultValue, name, onChange, variables })
             jsonLogic: (field, value) => ({ '!': { in: [value, { var: field }] } }),
             formatValue: (_field, value) => `'${value}'`,
         },
+        {
+            name: 'isEmpty',
+            value: 'isEmpty',
+            label: 'is empty',
+            jsonLogic: (field) => ({ isEmpty: [{ var: field }] }),
+        },
+        {
+            name: 'isNotEmpty',
+            value: 'isNotEmpty',
+            label: 'is not empty',
+            jsonLogic: (field) => ({ isNotEmpty: [{ var: field }] }),
+        },
     ];
 
     /**
@@ -50,6 +62,16 @@ export const useConditionalLogic = ({ defaultValue, name, onChange, variables })
             };
             }
         },
+        // Handle "isEmpty" => { isEmpty: [{ var: field }] }
+        isEmpty: ([field]) => ({
+            field: field.var,
+            operator: 'isEmpty',
+        }),
+        // Handle "isNotEmpty" => { isNotEmpty: [{ var: field }] }
+        isNotEmpty: ([field]) => ({
+            field: field.var,
+            operator: 'isNotEmpty',
+        }),
     };
 
     /**
@@ -68,6 +90,10 @@ export const useConditionalLogic = ({ defaultValue, name, onChange, variables })
             return `${fieldLabel} does not have ${formattedValue}`;
         } else if (rule.operator === 'has') {
             return `${fieldLabel} has ${formattedValue}`;
+        } else if (rule.operator === 'isEmpty') {
+            return `${fieldLabel} is empty`;
+        } else if (rule.operator === 'isNotEmpty') {
+            return `${fieldLabel} is not empty`;
         }
 
         return defaultRuleProcessorNL(rule, options);

@@ -3,6 +3,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [4.9.3]- UNRELEASHED
 
+### Added
+
+- Added new conditional operators for workflow steps: "Is empty" and "Is not empty", allowing you to check if a value or field is empty or not within conditional logic (Issue #1518).
+
 ### Fixed
 
 - "Update post details" step not working with "Query posts" step,  (Issue #1503).
