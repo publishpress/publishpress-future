@@ -55,6 +55,10 @@ jobs:
         run: |
           docker exec future_free_env_wp_test chmod -R 777 /var/www/html/wp-content
 
+      - name: Remove WordPress maintenance file if exists
+        run: |
+          docker exec future_free_env_wp_test rm -f /var/www/html/.maintenance || true
+
       - name: Run Unit Tests
         run: |
           composer test Unit
