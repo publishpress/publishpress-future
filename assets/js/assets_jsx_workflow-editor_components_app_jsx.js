@@ -4469,7 +4469,6 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 
 
 function PostQuery(_ref) {
-  var _defaultValue, _defaultValue2, _defaultValue3, _defaultValue4, _defaultValue5, _defaultValue6, _defaultValue7;
   var name = _ref.name,
     label = _ref.label,
     defaultValue = _ref.defaultValue,
@@ -4479,32 +4478,33 @@ function PostQuery(_ref) {
   var postTypes = futureWorkflowEditor.postTypes;
   var postStatuses = futureWorkflowEditor.postStatuses;
   var postTermsOptions = futureWorkflowEditor.postTerms;
+  var acceptsInput = settings && (settings === null || settings === void 0 ? void 0 : settings.acceptsInput) === true;
+  var isPostTypeRequired = settings && (settings === null || settings === void 0 ? void 0 : settings.isPostTypeRequired) === true;
+  var defaultPostSource = acceptsInput ? 'input' : 'custom';
   var onChangeSetting = function onChangeSetting(_ref2) {
     var settingName = _ref2.settingName,
       value = _ref2.value;
-    var newValue = _objectSpread({}, defaultValue);
+    // Ensure we always have a valid default value object
+    var currentValue = defaultValue || {
+      postSource: defaultPostSource,
+      postType: [],
+      postId: [],
+      postStatus: [],
+      postAuthor: [],
+      postTerms: []
+    };
+    var newValue = _objectSpread({}, currentValue);
     newValue[settingName] = value;
     if (onChange) {
       onChange(name, newValue);
     }
   };
-  var acceptsInput = settings && (settings === null || settings === void 0 ? void 0 : settings.acceptsInput) === true;
-  var isPostTypeRequired = settings && (settings === null || settings === void 0 ? void 0 : settings.isPostTypeRequired) === true;
-  var defaultPostSource = acceptsInput ? 'input' : 'custom';
-  var showCustomQueryFields = ((_defaultValue = defaultValue) === null || _defaultValue === void 0 ? void 0 : _defaultValue.postSource) === 'custom' || !acceptsInput;
+  var showCustomQueryFields = (defaultValue === null || defaultValue === void 0 ? void 0 : defaultValue.postSource) === 'custom' || !acceptsInput;
   var hidePostStatus = settings && (settings === null || settings === void 0 ? void 0 : settings.hidePostStatus) === true;
 
   // Set default setting
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useEffect)(function () {
     if (!defaultValue) {
-      defaultValue = {
-        postSource: defaultPostSource,
-        postType: [],
-        postId: [],
-        postStatus: [],
-        postAuthor: [],
-        postTerms: []
-      };
       onChangeSetting({
         settingName: "postSource",
         value: defaultPostSource
@@ -4537,7 +4537,7 @@ function PostQuery(_ref) {
   }, [injectUserVariablesIntoPostAuthors]);
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.__experimentalVStack, null, acceptsInput && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.RadioControl, {
     label: (0,_publishpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Post selection', 'post-expirator'),
-    selected: ((_defaultValue2 = defaultValue) === null || _defaultValue2 === void 0 ? void 0 : _defaultValue2.postSource) || defaultPostSource,
+    selected: (defaultValue === null || defaultValue === void 0 ? void 0 : defaultValue.postSource) || defaultPostSource,
     options: [{
       label: (0,_publishpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Post received as input', 'post-expirator'),
       value: 'input'
@@ -4553,7 +4553,7 @@ function PostQuery(_ref) {
     }
   }), showCustomQueryFields && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_inline_multi_select__WEBPACK_IMPORTED_MODULE_3__.InlineMultiSelect, {
     label: postTypeFieldLabel,
-    value: ((_defaultValue3 = defaultValue) === null || _defaultValue3 === void 0 ? void 0 : _defaultValue3.postType) || [],
+    value: (defaultValue === null || defaultValue === void 0 ? void 0 : defaultValue.postType) || [],
     suggestions: postTypes,
     expandOnFocus: true,
     autoSelectFirstMatch: true,
@@ -4567,18 +4567,42 @@ function PostQuery(_ref) {
     className: "description"
   }, descriptions.postType), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.FormTokenField, {
     label: (0,_publishpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Post ID', 'post-expirator'),
-    value: ((_defaultValue4 = defaultValue) === null || _defaultValue4 === void 0 ? void 0 : _defaultValue4.postId) || [],
+    value: function () {
+      // Convert numbers to strings for FormTokenField display
+      var postIdValue = defaultValue === null || defaultValue === void 0 ? void 0 : defaultValue.postId;
+      if (!Array.isArray(postIdValue) || postIdValue.length === 0) {
+        return [];
+      }
+      return postIdValue.map(function (id) {
+        // Convert to string, handling both number and string inputs
+        var strId = String(id).trim();
+        return strId === '' ? null : strId;
+      }).filter(function (id) {
+        return id !== null;
+      });
+    }(),
     onChange: function onChange(value) {
-      // Convert string IDs to numbers for consistency
-      // FormTokenField returns an array of strings, but we want to store numbers
-      var normalizedValue = Array.isArray(value) ? value.map(function (id) {
-        // If it's already a number, keep it; otherwise convert string to number
-        if (typeof id === 'number') {
-          return id;
+      // FormTokenField returns an array of strings
+      // Convert to array of integers, filtering out invalid values
+      if (!Array.isArray(value)) {
+        onChangeSetting({
+          settingName: "postId",
+          value: []
+        });
+        return;
+      }
+      var normalizedValue = value.map(function (id) {
+        // Remove any whitespace and convert to number
+        var trimmedId = String(id).trim();
+        if (trimmedId === '') {
+          return null;
         }
-        var numId = parseInt(String(id), 10);
-        return isNaN(numId) ? id : numId;
-      }) : value;
+        var numId = parseInt(trimmedId, 10);
+        return isNaN(numId) ? null : numId;
+      }).filter(function (id) {
+        return id !== null && id > 0;
+      }); // Filter out null, NaN, and non-positive numbers
+
       onChangeSetting({
         settingName: "postId",
         value: normalizedValue
@@ -4588,7 +4612,7 @@ function PostQuery(_ref) {
     className: "description"
   }, descriptions.postId), !hidePostStatus && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_inline_multi_select__WEBPACK_IMPORTED_MODULE_3__.InlineMultiSelect, {
     label: (0,_publishpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Post Status', 'post-expirator'),
-    value: ((_defaultValue5 = defaultValue) === null || _defaultValue5 === void 0 ? void 0 : _defaultValue5.postStatus) || [],
+    value: (defaultValue === null || defaultValue === void 0 ? void 0 : defaultValue.postStatus) || [],
     suggestions: postStatuses,
     expandOnFocus: true,
     autoSelectFirstMatch: true,
@@ -4602,7 +4626,7 @@ function PostQuery(_ref) {
     className: "description"
   }, descriptions.postStatus)), /*#__PURE__*/React.createElement(_inline_multi_select__WEBPACK_IMPORTED_MODULE_3__.InlineMultiSelect, {
     label: (0,_publishpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Post Author', 'post-expirator'),
-    value: ((_defaultValue6 = defaultValue) === null || _defaultValue6 === void 0 ? void 0 : _defaultValue6.postAuthor) || [],
+    value: (defaultValue === null || defaultValue === void 0 ? void 0 : defaultValue.postAuthor) || [],
     suggestions: postAuthorOptions,
     expandOnFocus: true,
     autoSelectFirstMatch: true,
@@ -4616,7 +4640,7 @@ function PostQuery(_ref) {
     className: "description"
   }, descriptions.postAuthor), /*#__PURE__*/React.createElement(_inline_multi_select__WEBPACK_IMPORTED_MODULE_3__.InlineMultiSelect, {
     label: (0,_publishpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Post Terms', 'post-expirator'),
-    value: ((_defaultValue7 = defaultValue) === null || _defaultValue7 === void 0 ? void 0 : _defaultValue7.postTerms) || [],
+    value: (defaultValue === null || defaultValue === void 0 ? void 0 : defaultValue.postTerms) || [],
     suggestions: postTermsOptions,
     expandOnFocus: true,
     autoSelectFirstMatch: true,

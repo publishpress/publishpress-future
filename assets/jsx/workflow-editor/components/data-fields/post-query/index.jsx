@@ -16,34 +16,37 @@ export function PostQuery({
     const postTypes = futureWorkflowEditor.postTypes;
     const postStatuses = futureWorkflowEditor.postStatuses;
     const postTermsOptions = futureWorkflowEditor.postTerms;
+    const acceptsInput = settings && settings?.acceptsInput === true;
+    const isPostTypeRequired = settings && settings?.isPostTypeRequired === true;
+    const defaultPostSource = acceptsInput ? 'input' : 'custom';
+
     const onChangeSetting = ({ settingName, value }) => {
-        const newValue = { ...defaultValue };
+        // Ensure we always have a valid default value object
+        const currentValue = defaultValue || {
+            postSource: defaultPostSource,
+            postType: [],
+            postId: [],
+            postStatus: [],
+            postAuthor: [],
+            postTerms: [],
+        };
+        const newValue = { ...currentValue };
         newValue[settingName] = value;
 
         if (onChange) {
             onChange(name, newValue);
         }
     }
-
-    const acceptsInput = settings && settings?.acceptsInput === true;
-    const isPostTypeRequired = settings && settings?.isPostTypeRequired === true;
-    const defaultPostSource =acceptsInput ? 'input' : 'custom';
     const showCustomQueryFields = defaultValue?.postSource === 'custom' || ! acceptsInput;
     const hidePostStatus = settings && settings?.hidePostStatus === true;
 
     // Set default setting
     useEffect(() => {
         if (!defaultValue) {
-            defaultValue = {
-                postSource: defaultPostSource,
-                postType: [],
-                postId: [],
-                postStatus: [],
-                postAuthor: [],
-                postTerms: [],
-            };
-
-            onChangeSetting({ settingName: "postSource", value: defaultPostSource });
+            onChangeSetting({
+                settingName: "postSource",
+                value: defaultPostSource
+            });
         }
     }, []);
 
@@ -103,20 +106,38 @@ export function PostQuery({
 
                         <FormTokenField
                             label={__('Post ID', 'post-expirator')}
-                            value={defaultValue?.postId || []}
+                            value={(() => {
+                                // Convert numbers to strings for FormTokenField display
+                                const postIdValue = defaultValue?.postId;
+                                if (!Array.isArray(postIdValue) || postIdValue.length === 0) {
+                                    return [];
+                                }
+                                return postIdValue.map(id => {
+                                    // Convert to string, handling both number and string inputs
+                                    const strId = String(id).trim();
+                                    return strId === '' ? null : strId;
+                                }).filter(id => id !== null);
+                            })()}
                             onChange={(value) => {
-                                // Convert string IDs to numbers for consistency
-                                // FormTokenField returns an array of strings, but we want to store numbers
-                                const normalizedValue = Array.isArray(value)
-                                    ? value.map(id => {
-                                        // If it's already a number, keep it; otherwise convert string to number
-                                        if (typeof id === 'number') {
-                                            return id;
+                                // FormTokenField returns an array of strings
+                                // Convert to array of integers, filtering out invalid values
+                                if (!Array.isArray(value)) {
+                                    onChangeSetting({ settingName: "postId", value: [] });
+                                    return;
+                                }
+
+                                const normalizedValue = value
+                                    .map(id => {
+                                        // Remove any whitespace and convert to number
+                                        const trimmedId = String(id).trim();
+                                        if (trimmedId === '') {
+                                            return null;
                                         }
-                                        const numId = parseInt(String(id), 10);
-                                        return isNaN(numId) ? id : numId;
+                                        const numId = parseInt(trimmedId, 10);
+                                        return isNaN(numId) ? null : numId;
                                     })
-                                    : value;
+                                    .filter(id => id !== null && id > 0); // Filter out null, NaN, and non-positive numbers
+
                                 onChangeSetting({ settingName: "postId", value: normalizedValue });
                             }}
                         />
