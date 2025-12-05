@@ -104,7 +104,21 @@ export function PostQuery({
                         <FormTokenField
                             label={__('Post ID', 'post-expirator')}
                             value={defaultValue?.postId || []}
-                            onChange={(value) => onChangeSetting({ settingName: "postId", value })}
+                            onChange={(value) => {
+                                // Convert string IDs to numbers for consistency
+                                // FormTokenField returns an array of strings, but we want to store numbers
+                                const normalizedValue = Array.isArray(value)
+                                    ? value.map(id => {
+                                        // If it's already a number, keep it; otherwise convert string to number
+                                        if (typeof id === 'number') {
+                                            return id;
+                                        }
+                                        const numId = parseInt(String(id), 10);
+                                        return isNaN(numId) ? id : numId;
+                                    })
+                                    : value;
+                                onChangeSetting({ settingName: "postId", value: normalizedValue });
+                            }}
                         />
 
                         {descriptions?.postId && (
