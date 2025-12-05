@@ -14,6 +14,9 @@ namespace PreTests;
 
 use PublishPress\Future\Modules\Expirator\HooksAbstract as ExpiratorHooks;
 
+// Disable maintenance mode during tests
+add_filter('enable_maintenance_mode', '__return_false');
+
 add_filter('admin_email_check_interval', '__return_false');
 
 add_action('init', 'PreTests\registerPostTypes', 1);
