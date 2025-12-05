@@ -83,9 +83,11 @@ class DBTableSchemaHandler implements DBTableSchemaHandlerInterface
         }
         $indexesSql = rtrim($indexesSql, ', ');
 
+        // Combine columns and indexes, ensuring no trailing comma
+        $tableDefinition = rtrim($columnsSql . $indexesSql, ', ');
+
         $sql = "CREATE TABLE `$tableName` (
-            $columnsSql
-            $indexesSql
+            $tableDefinition
         ) $charsetCollate;";
 
         if (! function_exists('dbDelta')) {
@@ -98,12 +100,28 @@ class DBTableSchemaHandler implements DBTableSchemaHandlerInterface
         $result = dbDelta($sql);
         $this->wpdb->suppress_errors($suppressErrors);
 
-        if (empty($result)) {
-            return false;
+        // Check if table was created successfully
+        // dbDelta() returns table names as keys - check both with and without backticks
+        $tableKey = $tableName;
+        $tableKeyWithBackticks = "`$tableName`";
+
+        if (! empty($result)) {
+            // Check both possible key formats
+            if (isset($result[$tableKey])) {
+                $message = $result[$tableKey];
+                return strpos($message, "Created table") !== false
+                    || strpos($message, "Updated table") !== false;
+            }
+
+            if (isset($result[$tableKeyWithBackticks])) {
+                $message = $result[$tableKeyWithBackticks];
+                return strpos($message, "Created table") !== false
+                    || strpos($message, "Updated table") !== false;
+            }
         }
 
-        return isset($result["`$tableName`"])
-            && $result["`$tableName`"] === "Created table `$tableName`";
+        // If dbDelta() returned empty but table exists, consider it successful
+        return $this->isTableExistent();
     }
 
     public function dropTable(): bool
