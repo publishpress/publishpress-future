@@ -41,6 +41,8 @@ class JsonLogicEngine implements JsonLogicEngineInterface
         JsonLogic::add_operation('notIn', [$this, 'operationNotIn']);
         JsonLogic::add_operation('between', [$this, 'operationBetween']);
         JsonLogic::add_operation('notBetween', [$this, 'operationNotBetween']);
+        JsonLogic::add_operation('isEmpty', [$this, 'operationIsEmpty']);
+        JsonLogic::add_operation('isNotEmpty', [$this, 'operationIsNotEmpty']);
     }
 
     public function operationStartsWith($value, $pattern)
@@ -125,5 +127,29 @@ class JsonLogicEngine implements JsonLogicEngineInterface
     public function operationNotBetween($value, $min, $max)
     {
         return $value < $min || $value > $max;
+    }
+
+    /**
+     * Check if the value is empty
+     *
+     * @param mixed $value
+     * @return bool
+     * @since 4.9.4
+     */
+    public function operationIsEmpty($value)
+    {
+        return empty($value);
+    }
+
+    /**
+     * Check if the value is not empty
+     *
+     * @param mixed $value
+     * @return bool
+     * @since 4.9.4
+     */
+    public function operationIsNotEmpty($value)
+    {
+        return ! $this->operationIsEmpty($value);
     }
 }
