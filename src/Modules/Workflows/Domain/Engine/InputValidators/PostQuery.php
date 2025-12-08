@@ -123,11 +123,15 @@ class PostQuery implements InputValidatorsInterface
 
     private function hasValidPostId($postId, array $nodeSettings)
     {
-        $settingPostIds = $nodeSettings['postQuery']['postIds'] ?? [];
+        $settingPostIds = $nodeSettings['postQuery']['postId'] ?? [];
 
         if (is_object($postId)) {
             $postId = $postId->ID;
         }
+
+        // Convert string IDs to integers for comparison
+        $settingPostIds = array_map('intval', $settingPostIds);
+        $postId = (int) $postId;
 
         if (!empty($settingPostIds) && !in_array($postId, $settingPostIds)) {
             return false;
