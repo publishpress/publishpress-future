@@ -103,18 +103,31 @@ class ExecutionContext implements ExecutionContextInterface
         $expressions = $this->extractExpressionsFromText($text);
 
         foreach ($expressions as $expression) {
-            if ($expressionElements = $this->variableHasHelper($expression)) {
+            // Trim the expression to handle any whitespace issues
+            $expression = trim($expression);
+
+            if ($expressionElements = $this->parseHelperFromVariable($expression)) {
                 $value = $this->getVariable($expressionElements['variable']);
                 $value = $this->processorRegistry->process($expressionElements['helper'], $value, $expressionElements['args']);
             } else {
                 $value = $this->getVariable($expression);
             }
 
+            // Convert null to empty string for text replacement
+            if ($value === null) {
+                $value = '';
+            }
+
             if (is_array($value) || is_object($value)) {
                 $value = wp_json_encode($value);
             }
 
-            $text = str_replace('{{' . $expression . '}}', $value, $text);
+            // Ensure value is a string for str_replace
+            $value = (string)$value;
+
+            // Use preg_replace for more reliable replacement, escaping special regex characters
+            $pattern = '/\{\{' . preg_quote($expression, '/') . '\}\}/';
+            $text = preg_replace($pattern, $value, $text);
         }
 
         return $text;
@@ -160,19 +173,29 @@ class ExecutionContext implements ExecutionContextInterface
         foreach ($jsonLogicExpression as $key => $value) {
             // If it's a {"var": "..."} node, try to resolve it to a real value
             if (is_array($value) && array_key_exists('var', $value)) {
-                $originalVar = $value['var'];
+                $originalVar = '{{' . trim($value['var'], '{}') . '}}';
 
-                $resolved = $this->getVariableValueFromNestedVariable($originalVar, $this->runtimeVariables);
+                $resolvedText = $this->resolveExpressionsInText($originalVar);
 
-                if ($resolved === $originalVar || (is_string($resolved) && strpos($resolved, '{{') !== false)) {
-                    try {
-                        $fallback = $this->getVariable($originalVar);
-                        if ($fallback !== null) {
-                            $resolved = $fallback;
-                        }
-                    } catch (\Throwable $e) {
-                        // couldn't resolve
+                // Convert the resolved text back to appropriate type
+                // If it's JSON-encoded (arrays/objects), decode it
+                if (is_string($resolvedText) && (strpos($resolvedText, '[') === 0 || strpos($resolvedText, '{') === 0)) {
+                    $decoded = json_decode($resolvedText, true);
+                    if (json_last_error() === JSON_ERROR_NONE) {
+                        $resolved = $decoded;
+                    } else {
+                        $resolved = $resolvedText;
                     }
+                } elseif (is_numeric($resolvedText)) {
+                    // Preserve numeric types (e.g., timestamps from date helper with output="U")
+                    $resolved = strpos($resolvedText, '.') !== false ? (float)$resolvedText : (int)$resolvedText;
+                } else {
+                    $resolved = $resolvedText;
+                }
+
+                // Handle empty string as null for isEmpty/isNotEmpty operations
+                if ($resolved === '') {
+                    $resolved = null;
                 }
 
                 if ($resolved instanceof VariableResolverInterface) {
@@ -199,8 +222,17 @@ class ExecutionContext implements ExecutionContextInterface
         return $newExpression;
     }
 
-    private function variableHasHelper(string $variableName)
+    /**
+     * Parse the helper from the variable name
+     *
+     * @param string $variableName
+     * @return array|false
+     * @since 4.9.4
+     */
+    private function parseHelperFromVariable(string $variableName)
     {
+        $variableName = trim($variableName, '{}');
+
         $helperRegex = '/^([a-zA-Z0-9_]+)\s+([a-zA-Z0-9_\.]+)\s*(.*)$/';
 
         $matches = [];
