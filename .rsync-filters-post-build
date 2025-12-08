@@ -10,3 +10,4 @@
 - lib/vendor/bin
 - .DS_Store
 - .phplint.cache
+- .rsync-filters-dev-sync

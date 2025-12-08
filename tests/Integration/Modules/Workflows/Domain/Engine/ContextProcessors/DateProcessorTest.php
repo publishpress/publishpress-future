@@ -41,12 +41,20 @@ class DateProcessorTest extends WPTestCase
 
     public function tearDown(): void
     {
+        // Reset timezone to UTC after tests
+        $this->setTimezone('UTC', '0');
         parent::tearDown();
     }
 
     private function createProcessor(): DateProcessor
     {
         return new DateProcessor($this->dateTimeHandler);
+    }
+
+    private function setTimezone(string $timezoneString, string $timezoneOffset): void
+    {
+        update_option('timezone_string', $timezoneString);
+        update_option('gmt_offset', $timezoneOffset);
     }
 
     public function testGetType(): void
@@ -142,5 +150,23 @@ class DateProcessorTest extends WPTestCase
 
         // Should be one hour earlier
         $this->assertEquals('2023-05-15 13:30:00', $result);
+    }
+
+    public function testProcessWithConvertToUtc(): void
+    {
+        // Set a predefined timezone offset (UTC+4) to ensure predictable conversion
+        // Input: 2023-05-15 14:30:00 (in UTC+4) should convert to 2023-05-15 10:30:00 (UTC)
+        $this->setTimezone('UTC+4', '+4');
+
+        $processor = $this->createProcessor();
+
+        // Test with convert to UTC
+        $result = $processor->process('2023-05-15 14:30:00', [
+            'convertToUtc' => true,
+            'output' => 'Y-m-d H:i:s'
+        ]);
+
+        // Should be in UTC (14:30 UTC+4 = 10:30 UTC)
+        $this->assertEquals('2023-05-15 10:30:00', $result);
     }
 }

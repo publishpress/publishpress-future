@@ -113,4 +113,9 @@ abstract class HooksAbstract
      * @deprecated 3.1.5 use ACTION_ADD_META_BOXES instead
      */
     public const ACTION_ADD_META_BOX = self::ACTION_ADD_META_BOXES;
+
+    /**
+     * @since 4.9.3
+     */
+    public const ACTION_AFTER_INSERT_POST = 'wp_after_insert_post';
 }

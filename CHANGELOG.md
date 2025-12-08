@@ -3,9 +3,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [4.9.3]- UNRELEASHED
 
+### Added
+
+- Added new conditional operators for workflow steps: "Is empty" and "Is not empty", allowing you to check if a value or field is empty or not within conditional logic (Issue #1518).
+
 ### Fixed
 
-- "Update post details" step not working with "Query posts" step,  (Issue #1503).
+- Unable to re-schedule "On Schedule" trigger if it was already executed, (Issue #1527)
+- "Update post details" step not working with "Query posts" step, (Issue #1503).
 - Remove email field from getAuthors REST API endpoint.
 - Convert workflow operations from GET to POST requests
 - Add capability checks for all workflow actions
@@ -21,6 +26,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Improve input sanitization in debug log download
 - Add proper permission checks for post expiration data access
 - Add input sanitization for workflow node data values
+- Fixed how variable helpers are interpreted inside JSON logic conditions (Issue #1517).
+- "Query Posts" step has invalid settings validation, (Issue #1525)
 
 ## [4.9.2]- 18 Novemeber, 2025
 
