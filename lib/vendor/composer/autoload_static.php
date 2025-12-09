@@ -15,9 +15,9 @@ class ComposerStaticInitPublishPressFuture
     );
 
     public static $prefixesPsr0 = array (
-        'J' => 
+        'J' =>
         array (
-            'JWadhams' => 
+            'JWadhams' =>
             array (
                 0 => __DIR__ . '/..' . '/jwadhams/json-logic-php/src',
             ),
