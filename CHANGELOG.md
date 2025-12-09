@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Add nonce verification to processMetaboxUpdate method
 - Improve input sanitization in debug log download
 - Add proper permission checks for post expiration data access
+- Add input sanitization for workflow node data values
 - Fixed how variable helpers are interpreted inside JSON logic conditions (Issue #1517).
 - "Query Posts" step has invalid settings validation, (Issue #1525)
 - Update ES-FR-IT translations (Issue #1477).
