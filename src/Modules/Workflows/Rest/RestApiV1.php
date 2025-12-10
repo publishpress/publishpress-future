@@ -436,71 +436,35 @@ class RestApiV1 implements RestApiManagerInterface
         return true;
     }
 
-    private function sanitizeWorkflowData($flowData)
+    private function sanitizeWorkflowData($data)
     {
-        $nodes = $flowData['nodes'] ?? [];
-        $edges = $flowData['edges'] ?? [];
+        if (is_array($data)) {
+            $sanitized = [];
+            foreach ($data as $key => $value) {
+                $sanitizedKey = $this->sanitizeKeyMinimal($key);
 
-        $sanitizedNodes = [];
-        foreach ($nodes as $node) {
-            $sanitizedNode = [
-                'id' => sanitize_text_field($node['id']),
-                'type' => sanitize_key($node['type']),
-                'position' => [
-                    'x' => isset($node['position']['x']) ? (float)$node['position']['x'] : 0,
-                    'y' => isset($node['position']['y']) ? (float)$node['position']['y'] : 0,
-                ],
-                'data' => $this->sanitizeNodeData($node['data'] ?? []),
-            ];
-            $sanitizedNodes[] = $sanitizedNode;
-        }
-
-        $sanitizedEdges = [];
-        foreach ($edges as $edge) {
-            $sanitizedEdge = [
-                'id' => sanitize_text_field($edge['id']),
-                'source' => sanitize_text_field($edge['source']),
-                'target' => sanitize_text_field($edge['target']),
-                'sourceHandle' => isset($edge['sourceHandle']) ? sanitize_text_field($edge['sourceHandle']) : null,
-                'targetHandle' => isset($edge['targetHandle']) ? sanitize_text_field($edge['targetHandle']) : null,
-            ];
-            $sanitizedEdges[] = $sanitizedEdge;
-        }
-
-        $sanitizedFlowData = [
-            'nodes' => $sanitizedNodes,
-            'edges' => $sanitizedEdges,
-        ];
-
-        return $sanitizedFlowData;
-    }
-
-    private function sanitizeNodeData($data)
-    {
-        if (!is_array($data)) {
-            return [];
-        }
-
-        $sanitized = [];
-        foreach ($data as $key => $value) {
-            $sanitizedKey = $this->sanitizeCamelCaseKeys($key);
-
-            if (is_array($value)) {
-                $sanitized[$sanitizedKey] = $this->sanitizeNodeData($value);
-            } elseif (is_string($value)) {
-                $sanitized[$sanitizedKey] = sanitize_text_field($value);
-            } elseif (is_numeric($value)) {
-                $sanitized[$sanitizedKey] = $value;
-            } elseif (is_bool($value)) {
-                $sanitized[$sanitizedKey] = $value;
+                if (is_array($value)) {
+                    $sanitized[$sanitizedKey] = $this->sanitizeWorkflowData($value);
+                } elseif (is_string($value)) {
+                    $sanitized[$sanitizedKey] = sanitize_text_field($value);
+                } else {
+                    // Preserve booleans, numbers, null as-is
+                    $sanitized[$sanitizedKey] = $value;
+                }
             }
+            return $sanitized;
         }
 
-        return $sanitized;
+        return is_string($data) ? sanitize_text_field($data) : $data;
     }
 
-    private function sanitizeCamelCaseKeys(string $key): string
+    private function sanitizeKeyMinimal($key)
     {
-        return preg_replace('/[^a-zA-Z0-9\-_]/', '', $key);
+        /**
+         * Remove dangerous characters to support camelCase key
+         * and operators like ==, !=, >, <, etc
+         */
+        $dangerous = ['<', '>', '"', "'", '\\', '/', ';', '(', ')'];
+        return str_replace($dangerous, '', $key);
     }
 }
