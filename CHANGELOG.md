@@ -1,7 +1,7 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [4.9.3]- 09 December, 2025
+## [4.9.3]- 11 December, 2025
 
 ### Added
 
