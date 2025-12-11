@@ -1,6 +1,36 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.9.3]- 11 December, 2025
+
+### Added
+
+- Added new conditional operators for workflow steps: "Is empty" and "Is not empty", allowing you to check if a value or field is empty or not within conditional logic (Issue #1518).
+
+### Fixed
+
+- Warning: Undefined array key "id" on an imported workflow, (Issue #1524)
+- Unable to re-schedule "On Schedule" trigger if it was already executed, (Issue #1527)
+- "Update post details" step not working with "Query posts" step, (Issue #1503).
+- Fixed how variable helpers are interpreted inside JSON logic conditions (Issue #1517).
+- "Query Posts" step has invalid settings validation, (Issue #1525)
+- Update ES-FR-IT translations (Issue #1477).
+- Remove email field from getAuthors REST API endpoint.
+- Convert workflow operations from GET to POST requests
+- Add capability checks for all workflow actions
+- Improve utils stripTags function
+- Implement backup structure validation to ensure data integrity
+- Add sanitization methods for workflows and settings data
+- Improve input validation with proper type checking and whitelisting
+- Enhanced workflow setDescription() method with wp_kses_post() sanitization
+- Enhance post expiration extraData data validation
+- Improve query parameter handling in settings controller
+- Enhance template rendering validation and path security
+- Add nonce verification to processMetaboxUpdate method
+- Improve input sanitization in debug log download
+- Add proper permission checks for post expiration data access
+- Add input sanitization for workflow node data values
+
 ## [4.9.2]- 18 Novemeber, 2025
 
 ### Added

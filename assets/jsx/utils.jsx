@@ -95,5 +95,11 @@ export const isNumber = (value) => {
 }
 
 export function stripTags(string) {
-    return string.replace(/<[^>]*>?/gm, '');
+    if (typeof string !== 'string') {
+        return '';
+    }
+
+    const div = document.createElement('div');
+    div.textContent = string;
+    return div.innerHTML;
 }

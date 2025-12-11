@@ -200,6 +200,12 @@ class Cron implements AsyncStepProcessorInterface
             $this->stepSlug = $this->stepData['slug'];
             $this->nodeSettings = $this->getNodeSettings($node);
             $this->workflowId = $this->executionContext->getVariable('global.workflow.id');
+            $this->recurrence = $this->nodeSettings['schedule']['recurrence'] ?? self::SCHEDULE_RECURRENCE_SINGLE;
+            $this->isSingleAction = self::SCHEDULE_RECURRENCE_SINGLE === $this->recurrence;
+            $this->whenToRun = $this->nodeSettings['schedule']['whenToRun'] ?? self::WHEN_TO_RUN_NOW;
+
+            // Calculate timestamp before generating UID so it can be included in the UID
+            $this->timestamp = $this->getCalculatedTimestamp();
 
             /**
              * @param bool $useTimestamp
@@ -215,15 +221,10 @@ class Cron implements AsyncStepProcessorInterface
                 $step,
             );
 
-            $this->actionUID = $this->getScheduledActionUniqueId($node, $useTimestamp);
+            $this->actionUID = $this->getScheduledActionUniqueId($node, $useTimestamp, $this->timestamp);
             $this->actionUIDHash = md5($this->actionUID);
             $this->priority = (int)($this->nodeSettings['schedule']['priority'] ?? self::DEFAULT_PRIORITY);
             $this->isFinished = WorkflowScheduledStepModel::getMetaIsFinished($this->workflowId, $this->actionUIDHash);
-            $this->recurrence = $this->nodeSettings['schedule']['recurrence'] ?? self::SCHEDULE_RECURRENCE_SINGLE;
-            $this->isSingleAction = self::SCHEDULE_RECURRENCE_SINGLE === $this->recurrence;
-            $this->whenToRun = $this->nodeSettings['schedule']['whenToRun'] ?? self::WHEN_TO_RUN_NOW;
-
-            $this->timestamp = $this->getCalculatedTimestamp();
 
             if ($this->shouldSkipScheduling()) {
                 return;
@@ -496,7 +497,7 @@ class Cron implements AsyncStepProcessorInterface
         return $shouldSkip;
     }
 
-    private function getScheduledActionUniqueId(array $node, $useTimestamp = true): string
+    private function getScheduledActionUniqueId(array $node, $useTimestamp = true, ?int $scheduledTimestamp = null): string
     {
         $uniqueId = [
             'workflowId' => $this->workflowId,
@@ -504,7 +505,8 @@ class Cron implements AsyncStepProcessorInterface
         ];
 
         if ($useTimestamp) {
-            $uniqueId['timestamp'] = time();
+            // Use scheduled timestamp if provided, otherwise use current time
+            $uniqueId['timestamp'] = $scheduledTimestamp !== null ? $scheduledTimestamp : time();
         }
 
         if (isset($node['data']['settings']['schedule']['uniqueIdExpression'])) {

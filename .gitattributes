@@ -13,6 +13,7 @@
 .phplint.yml export-ignore
 .rsync-filters-post-build export-ignore
 .rsync-filters-pre-build export-ignore
+.rsync-filters-dev-sync export-ignore
 .vscode export-ignore
 .wordpress-org export-ignore
 .env export-ignore

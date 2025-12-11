@@ -31,6 +31,11 @@ abstract class HooksAbstract
     public const FILTER_BULK_POST_UPDATED_MESSAGES = CoreHooksAbstract::FILTER_BULK_POST_UPDATED_MESSAGES;
 
     /**
+     * @since 4.9.3
+     */
+    public const ACTION_AFTER_INSERT_POST = CoreHooksAbstract::ACTION_AFTER_INSERT_POST;
+
+    /**
      * @since 4.6.0
      */
     public const ACTION_TRANSITION_POST_STATUS = CoreHooksAbstract::ACTION_TRANSITION_POST_STATUS;
@@ -250,4 +255,19 @@ abstract class HooksAbstract
      * @since 4.7.0
      */
     public const ACTION_WORKFLOW_ENGINE_RUN_WORKFLOWS = 'publishpressfuture_workflow_engine_run_workflows';
+
+    /**
+     * @since 4.9.3
+     */
+    public const ACTION_ADMIN_POST_CHANGE_WORKFLOW_STATUS = 'admin_post_publishpress_future_change_workflow_status';
+
+    /**
+     * @since 4.9.3
+     */
+    public const ACTION_ADMIN_POST_COPY_WORKFLOW = 'admin_post_publishpress_future_copy_workflow';
+
+    /**
+     * @since 4.9.3
+     */
+    public const ACTION_ADMIN_POST_CANCEL_SCHEDULED_ACTIONS = 'admin_post_publishpress_future_cancel_scheduled_actions';
 }

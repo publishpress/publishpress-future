@@ -94,9 +94,9 @@ class RestAPIController implements InitializableInterface
         register_rest_route($apiNamespace, '/post-expiration/(?P<postId>\d+)', [
             'methods' => 'GET',
             'callback' => [$this, 'getFutureActionData'],
-            'permission_callback' => function () {
-                // Everyone with read access should be able to see the expiration data
-                return true;
+            'permission_callback' => function ($request) {
+                $postId = $request->get_param('postId');
+                return $this->currentUserModel->userCanReadPost($postId);
             },
             'args' => [
                 'postId' => [
@@ -106,6 +106,16 @@ class RestAPIController implements InitializableInterface
                     'sanitize_callback' => 'absint',
                     'required' => true,
                     'type' => 'integer',
+                ],
+                'extraData' => [
+                    'validate_callback' => function ($param, $request, $key) {
+                        return is_array($param);
+                    },
+                    'sanitize_callback' => function ($param, $request, $key) {
+                        return $this->sanitizeExtraData($param);
+                    },
+                    'required' => false,
+                    'type' => 'array',
                 ],
             ]
         ]);
@@ -489,7 +499,7 @@ class RestAPIController implements InitializableInterface
 
             $extraData = $request->get_param('extraData');
             if (is_array($extraData) && !empty($extraData)) {
-                $opts['extraData'] = $extraData;
+                $opts['extraData'] = $this->sanitizeExtraData($extraData);
             }
 
             $this->hooks->doAction(
@@ -503,5 +513,26 @@ class RestAPIController implements InitializableInterface
         }
 
         return rest_ensure_response(true);
+    }
+
+    private function sanitizeExtraData($data)
+    {
+        if (!is_array($data)) {
+            if (is_string($data)) {
+                return sanitize_text_field($data);
+            }
+            if (is_numeric($data) || is_bool($data)) {
+                return $data;
+            }
+            return null;
+        }
+
+        $sanitized = [];
+        foreach ($data as $key => $value) {
+            $sanitizedKey = sanitize_key($key);
+            $sanitized[$sanitizedKey] = $this->sanitizeExtraData($value);
+        }
+
+        return $sanitized;
     }
 }

@@ -329,25 +329,19 @@ class BackupRestApi implements InitializableInterface
             $data = $request->get_param('data');
             $backupData = json_decode($data, true);
 
-            if (! is_array($backupData)) {
+            if (json_last_error() !== JSON_ERROR_NONE || !is_array($backupData)) {
                 throw new Exception('Invalid data');
             }
 
-            if (! isset($backupData['workflows']) || ! isset($backupData['settings'])) {
-                throw new Exception('Invalid data. Missing workflows or settings');
+            if (!$this->validateBackupStructure($backupData)) {
+                throw new Exception('Invalid backup data');
             }
 
-            if (empty($backupData) || (empty($backupData['workflows']) && empty($backupData['settings']))) {
-                throw new Exception('No content to import');
-            }
+            $workflows = $this->sanitizeWorkflows($backupData['workflows'] ?? []);
+            $settings = $this->sanitizeSettings($backupData['settings'] ?? []);
 
-            if (isset($backupData['workflows'])) {
-                $this->importWorkflows($backupData['workflows']);
-            }
-
-            if (isset($backupData['settings'])) {
-                $this->importSettings($backupData['settings']);
-            }
+            $this->importWorkflows($workflows);
+            $this->importSettings($settings);
 
             return new WP_REST_Response(
                 [
@@ -369,45 +363,168 @@ class BackupRestApi implements InitializableInterface
         }
     }
 
+    private function validateBackupStructure($data)
+    {
+        if (isset($data['workflows']) && !is_array($data['workflows'])) {
+            return false;
+        }
+
+        if (isset($data['settings']) && !is_array($data['settings'])) {
+            return false;
+        }
+
+        if (isset($data['version']) && !is_string($data['version'])) {
+            return false;
+        }
+
+        return true;
+    }
+
+    private function sanitizeWorkflows($workflows)
+    {
+        if (!is_array($workflows)) {
+            return [];
+        }
+
+        $sanitized = [];
+        foreach ($workflows as $workflow) {
+            if (!is_array($workflow)) {
+                continue;
+            }
+
+            $sanitized[] = [
+                'title' => sanitize_text_field($workflow['title'] ?? ''),
+                'description' => sanitize_textarea_field($workflow['description'] ?? ''),
+                'status' => in_array($workflow['status'] ?? '', ['publish', 'draft'], true)
+                    ? $workflow['status']
+                    : 'draft',
+                'flow' => $this->sanitizeFlowData($workflow['flow'] ?? []),
+            ];
+        }
+
+        return $sanitized;
+    }
+
+    private function sanitizeFlowData($flow)
+    {
+        if (!is_array($flow)) {
+            return [];
+        }
+
+        if (isset($flow['nodes']) && is_array($flow['nodes'])) {
+            $sanitizedNodes = [];
+            foreach ($flow['nodes'] as $node) {
+                if (!is_array($node)) {
+                    continue;
+                }
+
+                $sanitizedNodes[] = [
+                    'type' => sanitize_text_field($node['type'] ?? ''),
+                    'data' => $this->sanitizeNodeData($node['data'] ?? []),
+                ];
+            }
+            $flow['nodes'] = $sanitizedNodes;
+        }
+
+        return $flow;
+    }
+
+    private function sanitizeNodeData($data)
+    {
+        if (!is_array($data)) {
+            return [];
+        }
+
+        $sanitized = [];
+        foreach ($data as $key => $value) {
+            if (is_array($value)) {
+                $sanitized[sanitize_text_field($key)] = $this->sanitizeNodeData($value);
+            } elseif (is_string($value)) {
+                $sanitized[sanitize_text_field($key)] = sanitize_text_field($value);
+            } else {
+                $sanitized[sanitize_text_field($key)] = $value;
+            }
+        }
+
+        return $sanitized;
+    }
+
+    private function sanitizeSettings($settings)
+    {
+        $allowedSettings = ['postTypesDefaults', 'general', 'notifications', 'display', 'admin', 'advanced'];
+        $sanitized = [];
+
+        foreach ($allowedSettings as $key) {
+            if (isset($settings[$key]) && is_array($settings[$key])) {
+                $sanitized[$key] = $this->sanitizeSettingsArray($settings[$key]);
+            }
+        }
+
+        return $sanitized;
+    }
+
+    private function sanitizeSettingsArray($settingsArray)
+    {
+        $sanitized = [];
+        foreach ($settingsArray as $settingKey => $settingValue) {
+            if (is_array($settingValue)) {
+                $sanitized[sanitize_text_field($settingKey)] = $this->sanitizeSettingsArray($settingValue);
+            } elseif (is_string($settingValue)) {
+                $sanitized[sanitize_text_field($settingKey)] = sanitize_text_field($settingValue);
+            } else {
+                $sanitized[sanitize_text_field($settingKey)] = $settingValue;
+            }
+        }
+        return $sanitized;
+    }
+
     public function importWorkflows($workflows)
     {
+        if (!is_array($workflows)) {
+            return;
+        }
+
         foreach ($workflows as $workflow) {
+            if (!is_array($workflow) || empty($workflow['title'])) {
+                continue;
+            }
+
             $workflowModel = new WorkflowModel();
             $workflowModel->createNew();
             $workflowModel->setTitle($workflow['title']);
-            $workflowModel->setDescription($workflow['description']);
-            $workflowModel->setStatus('draft');
-            $workflowModel->setFlow($workflow['flow']);
+            $workflowModel->setDescription($workflow['description'] ?? '');
+            $workflowModel->setStatus($workflow['status'] ?? 'draft');
+            $workflowModel->setFlow($workflow['flow'] ?? []);
             $workflowModel->save();
         }
     }
 
     public function importSettings($settings)
     {
-        if (isset($settings['postTypesDefaults'])) {
+        if (!is_array($settings)) {
+            return;
+        }
+
+        if (isset($settings['postTypesDefaults']) && is_array($settings['postTypesDefaults'])) {
             foreach ($settings['postTypesDefaults'] as $postType => $default) {
-                $this->settingsFacade->setPostTypeDefaults($postType, $default);
+                if (is_string($postType) && is_array($default)) {
+                    $this->settingsFacade->setPostTypeDefaults($postType, $default);
+                }
             }
         }
 
-        if (isset($settings['general'])) {
-            $this->settingsFacade->setGeneralSettings($settings['general']);
-        }
+        $settingMethods = [
+            'general' => 'setGeneralSettings',
+            'notifications' => 'setNotificationsSettings',
+            'display' => 'setDisplaySettings',
+            'admin' => 'setAdminSettings',
+            'advanced' => 'setAdvancedSettings',
+        ];
 
-        if (isset($settings['notifications'])) {
-            $this->settingsFacade->setNotificationsSettings($settings['notifications']);
-        }
-
-        if (isset($settings['display'])) {
-            $this->settingsFacade->setDisplaySettings($settings['display']);
-        }
-
-        if (isset($settings['admin'])) {
-            $this->settingsFacade->setAdminSettings($settings['admin']);
-        }
-
-        if (isset($settings['advanced'])) {
-            $this->settingsFacade->setAdvancedSettings($settings['advanced']);
+        foreach ($settingMethods as $key => $method) {
+            if (isset($settings[$key]) && is_array($settings[$key])) {
+                $this->settingsFacade->$method($settings[$key]);
+            }
         }
 
         $this->hooks->doAction(BackupHooksAbstract::ACTION_AFTER_IMPORT_SETTINGS, $settings);

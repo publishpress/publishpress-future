@@ -22,7 +22,9 @@ module.exports = {
         workflowManualSelectionBulkEdit: "./assets/jsx/workflow-manual-selection/bulk-edit/index.jsx",
         futureActions: "./assets/jsx/future-actions.jsx",
         backupPanel: "./assets/jsx/backup-panel/index.jsx",
-        workflowsListCancelAction: "./assets/jsx/workflows-list/cancel-action/index.jsx"
+        workflowsListCancelAction: "./assets/jsx/workflows-list/cancel-action/index.jsx",
+        workflowsListStatusChange: "./assets/jsx/workflows-list/status-change/index.jsx",
+        workflowsListCopyWorkflow: "./assets/jsx/workflows-list/copy-workflow/index.jsx"
     },
     output: {
         path: path.join(__dirname, "assets", "js"),
