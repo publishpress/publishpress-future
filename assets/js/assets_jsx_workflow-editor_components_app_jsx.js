@@ -1334,7 +1334,7 @@ var ValueExpressionBuilder = function ValueExpressionBuilder(_ref) {
     }
     setCompleters(newCompleters);
   }, [variableDataType]);
-  if (rule.operator === 'null' || rule.operator === 'notNull') {
+  if (rule.operator === 'null' || rule.operator === 'notNull' || rule.operator === 'isEmpty' || rule.operator === 'isNotEmpty') {
     return /*#__PURE__*/React.createElement("div", null);
   }
   return /*#__PURE__*/React.createElement(_conditional_expression_builder__WEBPACK_IMPORTED_MODULE_2__.ConditionalExpressionBuilder, {
@@ -1424,6 +1424,28 @@ var useConditionalLogic = function useConditionalLogic(_ref) {
     formatValue: function formatValue(_field, value) {
       return "'".concat(value, "'");
     }
+  }, {
+    name: 'isEmpty',
+    value: 'isEmpty',
+    label: 'is empty',
+    jsonLogic: function jsonLogic(field) {
+      return {
+        isEmpty: [{
+          var: field
+        }]
+      };
+    }
+  }, {
+    name: 'isNotEmpty',
+    value: 'isNotEmpty',
+    label: 'is not empty',
+    jsonLogic: function jsonLogic(field) {
+      return {
+        isNotEmpty: [{
+          var: field
+        }]
+      };
+    }
   }]);
 
   /**
@@ -1455,6 +1477,24 @@ var useConditionalLogic = function useConditionalLogic(_ref) {
           value: value
         };
       }
+    },
+    // Handle "isEmpty" => { isEmpty: [{ var: field }] }
+    isEmpty: function isEmpty(_ref4) {
+      var _ref5 = _slicedToArray(_ref4, 1),
+        field = _ref5[0];
+      return {
+        field: field.var,
+        operator: 'isEmpty'
+      };
+    },
+    // Handle "isNotEmpty" => { isNotEmpty: [{ var: field }] }
+    isNotEmpty: function isNotEmpty(_ref6) {
+      var _ref7 = _slicedToArray(_ref6, 1),
+        field = _ref7[0];
+      return {
+        field: field.var,
+        operator: 'isNotEmpty'
+      };
     }
   };
 
@@ -1473,6 +1513,10 @@ var useConditionalLogic = function useConditionalLogic(_ref) {
       return "".concat(fieldLabel, " does not have ").concat(formattedValue);
     } else if (rule.operator === 'has') {
       return "".concat(fieldLabel, " has ").concat(formattedValue);
+    } else if (rule.operator === 'isEmpty') {
+      return "".concat(fieldLabel, " is empty");
+    } else if (rule.operator === 'isNotEmpty') {
+      return "".concat(fieldLabel, " is not empty");
     }
     return (0,react_querybuilder__WEBPACK_IMPORTED_MODULE_1__.defaultRuleProcessorNL)(rule, options);
   }, []);
