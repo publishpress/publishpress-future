@@ -10,6 +10,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
   - Update REST API to use workflow-specific capabilities instead of generic edit_posts
   - Add X-PP-Workflow-Nonce verification to all workflow endpoints for enhanced security
 
+### Fixed
+
+- Update ES-FR-IT translations (Issue #1537).
+- Published pages via Future Actions show incorrect View links (Issue #1539).
+
 ## [4.9.3]- 11 December, 2025
 
 ### Added
