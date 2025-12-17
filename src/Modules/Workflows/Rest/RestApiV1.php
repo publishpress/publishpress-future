@@ -446,4 +446,9 @@ class RestApiV1 implements RestApiManagerInterface
     {
         return $this->workflowSanitization->sanitizeWorkflowData($data);
     }
+
+    private function sanitizeWorkflowKey($key)
+    {
+        return $this->workflowSanitization->sanitizeWorkflowKey($key);
+    }
 }

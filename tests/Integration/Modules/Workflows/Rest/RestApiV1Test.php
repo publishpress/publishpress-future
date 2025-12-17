@@ -9,6 +9,7 @@ namespace Tests\Modules\Workflows\Rest;
 use Codeception\Stub;
 use PublishPress\Future\Core\HookableInterface;
 use PublishPress\Future\Modules\Workflows\Rest\RestApiV1;
+use PublishPress\Future\Framework\WordPress\Utils\WorkflowSanitizationUtil;
 use ReflectionClass;
 use ReflectionMethod;
 use lucatume\WPBrowser\TestCase\WPTestCase;
@@ -35,7 +36,9 @@ class RestApiV1Test extends WPTestCase
         parent::setUp();
 
         $hooks = Stub::makeEmpty(HookableInterface::class);
-        $this->restApi = new RestApiV1($hooks);
+        $workflowSanitization = new WorkflowSanitizationUtil();
+
+        $this->restApi = new RestApiV1($hooks, $workflowSanitization);
 
         // Use reflection to access private method for testing
         $reflection = new ReflectionClass($this->restApi);
