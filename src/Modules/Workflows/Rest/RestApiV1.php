@@ -51,7 +51,7 @@ class RestApiV1 implements RestApiManagerInterface
             [
                 'methods' => WP_REST_Server::READABLE,
                 'callback' => [$this, 'getWorkflow'],
-                'permission_callback' => function($request) {
+                'permission_callback' => function ($request) {
                     return $this->hasValidNonce($request)
                         && current_user_can(self::PERMISSION_READ);
                 },
@@ -75,7 +75,7 @@ class RestApiV1 implements RestApiManagerInterface
             [
                 'methods' => WP_REST_Server::READABLE,
                 'callback' => [$this, 'getWorkflowsWithManualTrigger'],
-                'permission_callback' => function($request) {
+                'permission_callback' => function ($request) {
                     return $this->hasValidNonce($request)
                         && current_user_can(self::PERMISSION_READ);
                 },
@@ -98,7 +98,7 @@ class RestApiV1 implements RestApiManagerInterface
             [
                 'methods' => WP_REST_Server::CREATABLE,
                 'callback' => [$this, 'createWorkflow'],
-                'permission_callback' => function($request) {
+                'permission_callback' => function ($request) {
                     return $this->hasValidNonce($request)
                         && current_user_can(self::PERMISSION_CREATE);
                 },
@@ -114,7 +114,7 @@ class RestApiV1 implements RestApiManagerInterface
             [
                 'methods' => WP_REST_Server::EDITABLE,
                 'callback' => [$this, 'updateWorkflow'],
-                'permission_callback' => function($request) {
+                'permission_callback' => function ($request) {
                     return $this->hasValidNonce($request)
                         && current_user_can(self::PERMISSION_UPDATE);
                 },
@@ -137,7 +137,7 @@ class RestApiV1 implements RestApiManagerInterface
             [
                 'methods' => WP_REST_Server::DELETABLE,
                 'callback' => [$this, 'deleteWorkflow'],
-                'permission_callback' => function($request) {
+                'permission_callback' => function ($request) {
                     return $this->hasValidNonce($request)
                         && current_user_can(self::PERMISSION_DELETE);
                 },
@@ -160,7 +160,7 @@ class RestApiV1 implements RestApiManagerInterface
             [
                 'methods' => WP_REST_Server::READABLE,
                 'callback' => [$this, 'getTaxonomyTerms'],
-                'permission_callback' => function($request) {
+                'permission_callback' => function ($request) {
                     return $this->hasValidNonce($request)
                         && current_user_can(self::PERMISSION_READ);
                 },
@@ -183,7 +183,7 @@ class RestApiV1 implements RestApiManagerInterface
             [
                 'methods' => WP_REST_Server::READABLE,
                 'callback' => [$this, 'getPostWorkflowSettings'],
-                'permission_callback' => function($request) {
+                'permission_callback' => function ($request) {
                     return $this->hasValidNonce($request)
                         && current_user_can(self::PERMISSION_READ);
                 },
@@ -206,7 +206,7 @@ class RestApiV1 implements RestApiManagerInterface
             [
                 'methods' => WP_REST_Server::READABLE,
                 'callback' => [$this, 'getAuthors'],
-                'permission_callback' => function($request) {
+                'permission_callback' => function ($request) {
                     return $this->hasValidNonce($request)
                         && current_user_can(self::PERMISSION_READ);
                 },
