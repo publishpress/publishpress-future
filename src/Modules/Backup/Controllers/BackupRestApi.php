@@ -12,12 +12,15 @@ use PublishPress\Future\Modules\Settings\Models\SettingsPostTypesModel;
 use PublishPress\Future\Modules\Settings\SettingsFacade;
 use PublishPress\Future\Modules\Workflows\Models\WorkflowModel;
 use PublishPress\Future\Modules\Workflows\Models\WorkflowsModel;
+use PublishPress\Future\Framework\WordPress\Utils\WorkflowSanitizationUtil;
 use Throwable;
 use WP_REST_Request;
 use WP_REST_Response;
 
 class BackupRestApi implements InitializableInterface
 {
+    private WorkflowSanitizationUtil $workflowSanitization;
+
     private HookableInterface $hooks;
 
     private string $pluginVersion;
@@ -30,12 +33,14 @@ class BackupRestApi implements InitializableInterface
         HookableInterface $hooks,
         string $pluginVersion,
         SettingsFacade $settingsFacade,
-        LoggerInterface $logger
+        LoggerInterface $logger,
+        WorkflowSanitizationUtil $workflowSanitization
     ) {
         $this->hooks = $hooks;
         $this->pluginVersion = $pluginVersion;
         $this->settingsFacade = $settingsFacade;
         $this->logger = $logger;
+        $this->workflowSanitization = $workflowSanitization;
     }
 
     public function initialize()
@@ -382,71 +387,7 @@ class BackupRestApi implements InitializableInterface
 
     private function sanitizeWorkflows($workflows)
     {
-        if (!is_array($workflows)) {
-            return [];
-        }
-
-        $sanitized = [];
-        foreach ($workflows as $workflow) {
-            if (!is_array($workflow)) {
-                continue;
-            }
-
-            $sanitized[] = [
-                'title' => sanitize_text_field($workflow['title'] ?? ''),
-                'description' => sanitize_textarea_field($workflow['description'] ?? ''),
-                'status' => in_array($workflow['status'] ?? '', ['publish', 'draft'], true)
-                    ? $workflow['status']
-                    : 'draft',
-                'flow' => $this->sanitizeFlowData($workflow['flow'] ?? []),
-            ];
-        }
-
-        return $sanitized;
-    }
-
-    private function sanitizeFlowData($flow)
-    {
-        if (!is_array($flow)) {
-            return [];
-        }
-
-        if (isset($flow['nodes']) && is_array($flow['nodes'])) {
-            $sanitizedNodes = [];
-            foreach ($flow['nodes'] as $node) {
-                if (!is_array($node)) {
-                    continue;
-                }
-
-                $sanitizedNodes[] = [
-                    'type' => sanitize_text_field($node['type'] ?? ''),
-                    'data' => $this->sanitizeNodeData($node['data'] ?? []),
-                ];
-            }
-            $flow['nodes'] = $sanitizedNodes;
-        }
-
-        return $flow;
-    }
-
-    private function sanitizeNodeData($data)
-    {
-        if (!is_array($data)) {
-            return [];
-        }
-
-        $sanitized = [];
-        foreach ($data as $key => $value) {
-            if (is_array($value)) {
-                $sanitized[sanitize_text_field($key)] = $this->sanitizeNodeData($value);
-            } elseif (is_string($value)) {
-                $sanitized[sanitize_text_field($key)] = sanitize_text_field($value);
-            } else {
-                $sanitized[sanitize_text_field($key)] = $value;
-            }
-        }
-
-        return $sanitized;
+        return $this->workflowSanitization->sanitizeWorkflows($workflows);
     }
 
     private function sanitizeSettings($settings)

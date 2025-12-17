@@ -20,6 +20,7 @@ use PublishPress\Future\Framework\Database\DBTableSchemaHandler;
 use PublishPress\Future\Framework\Logger\DBTableSchemas\DebugLogSchema;
 use PublishPress\Future\Framework\Logger\Logger;
 use PublishPress\Future\Framework\System\DateTimeHandler;
+use PublishPress\Future\Framework\WordPress\Utils;
 use PublishPress\Future\Framework\WordPress\Facade\DatabaseFacade;
 use PublishPress\Future\Framework\WordPress\Facade\DateTimeFacade;
 use PublishPress\Future\Framework\WordPress\Facade\EmailFacade;
@@ -444,7 +445,8 @@ return [
             $container->get(ServicesAbstract::HOOKS),
             $container->get(ServicesAbstract::PLUGIN_VERSION),
             $container->get(ServicesAbstract::SETTINGS),
-            $container->get(ServicesAbstract::LOGGER)
+            $container->get(ServicesAbstract::LOGGER),
+            $container->get(ServicesAbstract::WORKFLOW_SANITIZATION_UTIL)
         );
     },
 
@@ -765,7 +767,8 @@ return [
 
     ServicesAbstract::WORKFLOWS_REST_API_MANAGER => static function (ContainerInterface $container) {
         return new RestApiManager(
-            $container->get(ServicesAbstract::HOOKS)
+            $container->get(ServicesAbstract::HOOKS),
+            $container->get(ServicesAbstract::WORKFLOW_SANITIZATION_UTIL)
         );
     },
 
@@ -1375,5 +1378,9 @@ return [
         }
 
         return $workflowExecutionSafeguard;
+    },
+
+    ServicesAbstract::WORKFLOW_SANITIZATION_UTIL => static function (ContainerInterface $container) {
+        return new Utils\WorkflowSanitizationUtil();
     },
 ];
