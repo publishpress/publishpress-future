@@ -51,7 +51,10 @@ class RestApiV1 implements RestApiManagerInterface
             [
                 'methods' => WP_REST_Server::READABLE,
                 'callback' => [$this, 'getWorkflow'],
-                'permission_callback' => [$this, 'checkUserCanCallApi'],
+                'permission_callback' => function($request) {
+                    return $this->hasValidNonce($request)
+                        && current_user_can(self::PERMISSION_READ);
+                },
                 'args' => [
                     'id' => [
                         'description' => __('The ID of the workflow', 'post-expirator'),
@@ -72,7 +75,10 @@ class RestApiV1 implements RestApiManagerInterface
             [
                 'methods' => WP_REST_Server::READABLE,
                 'callback' => [$this, 'getWorkflowsWithManualTrigger'],
-                'permission_callback' => [$this, 'checkUserCanCallApi'],
+                'permission_callback' => function($request) {
+                    return $this->hasValidNonce($request)
+                        && current_user_can(self::PERMISSION_READ);
+                },
                 'args' => [
                     'postType' => [
                         'description' => __('The post type', 'post-expirator'),
@@ -92,7 +98,10 @@ class RestApiV1 implements RestApiManagerInterface
             [
                 'methods' => WP_REST_Server::CREATABLE,
                 'callback' => [$this, 'createWorkflow'],
-                'permission_callback' => [$this, 'checkUserCanCallApi'],
+                'permission_callback' => function($request) {
+                    return $this->hasValidNonce($request)
+                        && current_user_can(self::PERMISSION_CREATE);
+                },
                 'show_in_index' => false,
                 'show_in_rest' => true,
             ]
@@ -105,7 +114,10 @@ class RestApiV1 implements RestApiManagerInterface
             [
                 'methods' => WP_REST_Server::EDITABLE,
                 'callback' => [$this, 'updateWorkflow'],
-                'permission_callback' => [$this, 'checkUserCanCallApi'],
+                'permission_callback' => function($request) {
+                    return $this->hasValidNonce($request)
+                        && current_user_can(self::PERMISSION_UPDATE);
+                },
                 'args' => [
                     'id' => [
                         'description' => __('The ID of the workflow', 'post-expirator'),
@@ -125,7 +137,10 @@ class RestApiV1 implements RestApiManagerInterface
             [
                 'methods' => WP_REST_Server::DELETABLE,
                 'callback' => [$this, 'deleteWorkflow'],
-                'permission_callback' => [$this, 'checkUserCanCallApi'],
+                'permission_callback' => function($request) {
+                    return $this->hasValidNonce($request)
+                        && current_user_can(self::PERMISSION_DELETE);
+                },
                 'args' => [
                     'id' => [
                         'description' => __('The ID of the workflow', 'post-expirator'),
@@ -145,7 +160,10 @@ class RestApiV1 implements RestApiManagerInterface
             [
                 'methods' => WP_REST_Server::READABLE,
                 'callback' => [$this, 'getTaxonomyTerms'],
-                'permission_callback' => [$this, 'checkUserCanCallApi'],
+                'permission_callback' => function($request) {
+                    return $this->hasValidNonce($request)
+                        && current_user_can(self::PERMISSION_READ);
+                },
                 'args' => [
                     'taxonomy' => [
                         'description' => __('The taxonomy name', 'post-expirator'),
@@ -165,7 +183,10 @@ class RestApiV1 implements RestApiManagerInterface
             [
                 'methods' => WP_REST_Server::READABLE,
                 'callback' => [$this, 'getPostWorkflowSettings'],
-                'permission_callback' => [$this, 'checkUserCanCallApi'],
+                'permission_callback' => function($request) {
+                    return $this->hasValidNonce($request)
+                        && current_user_can(self::PERMISSION_READ);
+                },
                 'args' => [
                     'post' => [
                         'description' => __('The post ID', 'post-expirator'),
@@ -185,7 +206,10 @@ class RestApiV1 implements RestApiManagerInterface
             [
                 'methods' => WP_REST_Server::READABLE,
                 'callback' => [$this, 'getAuthors'],
-                'permission_callback' => [$this, 'checkUserCanCallApi'],
+                'permission_callback' => function($request) {
+                    return $this->hasValidNonce($request)
+                        && current_user_can(self::PERMISSION_READ);
+                },
                 'show_in_index' => false,
                 'show_in_rest' => true,
             ]
@@ -382,7 +406,14 @@ class RestApiV1 implements RestApiManagerInterface
         ]);
     }
 
-    public function checkUserCanCallApi($request)
+    /**
+     * Validate the nonce for the request
+     *
+     * @param WP_REST_Request $request The request object
+     *
+     * @return bool True if the nonce is valid, false otherwise
+     */
+    private function hasValidNonce($request)
     {
         $nonce = $request->get_header('X-WP-Nonce');
         if (!$nonce || !wp_verify_nonce($nonce, 'wp_rest')) {
@@ -394,29 +425,7 @@ class RestApiV1 implements RestApiManagerInterface
             return false;
         }
 
-        $method = $request->get_method();
-        $route = $request->get_route();
-
-        if (strpos($route, '/workflows') !== false) {
-            if ($method === 'POST' && strpos($route, '/workflows') === strrpos($route, '/workflows')) {
-                // Create workflow
-                return current_user_can(self::PERMISSION_CREATE);
-            } elseif ($method === 'POST' && strpos($route, '/workflows/') !== false) {
-                // Update workflow
-                return current_user_can(self::PERMISSION_UPDATE);
-            } elseif ($method === 'DELETE') {
-                // Delete workflow
-                return current_user_can(self::PERMISSION_DELETE);
-            } elseif (isset($request['status']) && $request['status'] === 'publish') {
-                // Publish workflow
-                return current_user_can(self::PERMISSION_PUBLISH);
-            } elseif (isset($request['status']) && $request['status'] === 'draft') {
-                // Unpublish workflow
-                return current_user_can(self::PERMISSION_UNPUBLISH);
-            }
-        }
-
-        return current_user_can(self::PERMISSION_READ);
+        return true;
     }
 
     public function getAuthors($request)
