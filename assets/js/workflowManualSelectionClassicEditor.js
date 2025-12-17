@@ -1186,6 +1186,7 @@ function Fieldset(_ref) {
     postId = _ref.postId,
     apiUrl = _ref.apiUrl,
     nonce = _ref.nonce,
+    workflowNonce = _ref.workflowNonce,
     onChange = _ref.onChange,
     wrapper = _ref.wrapper;
   var _useSelect = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_0__.useSelect)(function (select) {
@@ -1206,7 +1207,8 @@ function Fieldset(_ref) {
     (0,_wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_4__["default"])({
       url: "".concat(apiUrl, "/posts/workflow-settings/").concat(postId),
       headers: {
-        'X-WP-Nonce': nonce
+        'X-WP-Nonce': nonce,
+        'X-PP-Workflow-Nonce': workflowNonce
       }
     }).then(function (response) {
       setWorkflowsWithManualTrigger(response.workflowsWithManualTrigger);
@@ -2142,13 +2144,15 @@ if (container) {
   // Load the workflow settings for the post
   var apiUrl = window.futureWorkflowManualSelection.apiUrl;
   var nonce = window.futureWorkflowManualSelection.nonce;
+  var workflowNonce = window.futureWorkflowManualSelection.workflowNonce;
   var postId = window.futureWorkflowManualSelection.postId;
   (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_0__.dispatch)(_store__WEBPACK_IMPORTED_MODULE_2__.store).setWorkflowsWithManualTrigger([]);
   (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_0__.dispatch)(_store__WEBPACK_IMPORTED_MODULE_2__.store).setWorkflowsEnabledForPost([]);
   (0,_wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_4__["default"])({
     url: "".concat(apiUrl, "/posts/workflow-settings/").concat(postId),
     headers: {
-      'X-WP-Nonce': nonce
+      'X-WP-Nonce': nonce,
+      'X-PP-Workflow-Nonce': workflowNonce
     }
   }).then(function (response) {
     (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_0__.dispatch)(_store__WEBPACK_IMPORTED_MODULE_2__.store).setWorkflowsWithManualTrigger(response.workflowsWithManualTrigger);
@@ -2158,7 +2162,8 @@ if (container) {
     context: "classic-editor",
     postId: postId,
     apiUrl: apiUrl,
-    nonce: nonce
+    nonce: nonce,
+    workflowNonce: workflowNonce
   });
   root.render(component);
 }

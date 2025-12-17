@@ -165,6 +165,7 @@ __webpack_require__.r(__webpack_exports__);
 var _futureWorkflows = futureWorkflows,
   apiUrl = _futureWorkflows.apiUrl,
   nonce = _futureWorkflows.nonce,
+  workflowNonce = _futureWorkflows.workflowNonce,
   workflows = _futureWorkflows.workflows;
 var Fields = function Fields(_ref) {
   var storeName = _ref.storeName;
@@ -203,7 +204,8 @@ var Fields = function Fields(_ref) {
         wp.apiFetch({
           url: "".concat(apiUrl, "/post-expiration/").concat(postId),
           headers: {
-            'X-WP-Nonce': nonce
+            'X-WP-Nonce': nonce,
+            'X-PP-Workflow-Nonce': workflowNonce
           }
         }).then(function (data) {
           setExtraDataByName('workflowId', data.extraData.workflowId);

@@ -1186,6 +1186,7 @@ function Fieldset(_ref) {
     postId = _ref.postId,
     apiUrl = _ref.apiUrl,
     nonce = _ref.nonce,
+    workflowNonce = _ref.workflowNonce,
     onChange = _ref.onChange,
     wrapper = _ref.wrapper;
   var _useSelect = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_0__.useSelect)(function (select) {
@@ -1206,7 +1207,8 @@ function Fieldset(_ref) {
     (0,_wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_4__["default"])({
       url: "".concat(apiUrl, "/posts/workflow-settings/").concat(postId),
       headers: {
-        'X-WP-Nonce': nonce
+        'X-WP-Nonce': nonce,
+        'X-PP-Workflow-Nonce': workflowNonce
       }
     }).then(function (response) {
       setWorkflowsWithManualTrigger(response.workflowsWithManualTrigger);
@@ -2189,11 +2191,13 @@ window.inlineEditPost.edit = function (button, id) {
   // Load the workflow settings for the post
   var apiUrl = window.futureWorkflowManualSelection.apiUrl;
   var nonce = window.futureWorkflowManualSelection.nonce;
+  var workflowNonce = window.futureWorkflowManualSelection.workflowNonce;
   var component = /*#__PURE__*/React.createElement(_fieldset__WEBPACK_IMPORTED_MODULE_1__.Fieldset, {
     context: "quick-edit",
     postId: postId,
     apiUrl: apiUrl,
     nonce: nonce,
+    workflowNonce: workflowNonce,
     wrapper: function wrapper(_ref) {
       var workflowsWithManualTrigger = _ref.workflowsWithManualTrigger,
         children = _ref.children;
