@@ -11,6 +11,7 @@ use PublishPress\Future\Modules\Workflows\Models\PostAuthorsModel;
 use PublishPress\Future\Modules\Workflows\Models\PostModel;
 use PublishPress\Future\Modules\Workflows\Models\WorkflowModel;
 use PublishPress\Future\Modules\Workflows\Models\WorkflowsModel;
+use PublishPress\Future\Modules\Workflows\CapabilitiesAbstract;
 
 // TODO: Move this to a controller on the workflows module.
 class RestApiV1 implements RestApiManagerInterface
@@ -19,13 +20,17 @@ class RestApiV1 implements RestApiManagerInterface
 
     public const BASE_PATH = RestApiManager::API_BASE . '/v1';
 
-    public const PERMISSION_READ = 'edit_posts';
+    public const PERMISSION_READ = CapabilitiesAbstract::EDIT_WORKFLOWS;
 
-    public const PERMISSION_CREATE = 'edit_posts';
+    public const PERMISSION_CREATE = CapabilitiesAbstract::EDIT_WORKFLOWS;
 
-    public const PERMISSION_UPDATE = 'edit_posts';
+    public const PERMISSION_UPDATE = CapabilitiesAbstract::EDIT_WORKFLOWS;
 
-    public const PERMISSION_DELETE = 'edit_posts';
+    public const PERMISSION_DELETE = CapabilitiesAbstract::EDIT_WORKFLOWS;
+
+    public const PERMISSION_PUBLISH = CapabilitiesAbstract::PUBLISH_WORKFLOWS;
+
+    public const PERMISSION_UNPUBLISH = CapabilitiesAbstract::UNPUBLISH_WORKFLOWS;
 
     /**
      * @var HookableInterface
@@ -379,6 +384,38 @@ class RestApiV1 implements RestApiManagerInterface
 
     public function checkUserCanCallApi($request)
     {
+        $nonce = $request->get_header('X-WP-Nonce');
+        if (!$nonce || !wp_verify_nonce($nonce, 'wp_rest')) {
+            return false;
+        }
+
+        $workflowNonce = $request->get_header('X-PP-Workflow-Nonce');
+        if (!$workflowNonce || !wp_verify_nonce($workflowNonce, 'pp_workflow_action')) {
+            return false;
+        }
+
+        $method = $request->get_method();
+        $route = $request->get_route();
+
+        if (strpos($route, '/workflows') !== false) {
+            if ($method === 'POST' && strpos($route, '/workflows') === strrpos($route, '/workflows')) {
+                // Create workflow
+                return current_user_can(self::PERMISSION_CREATE);
+            } elseif ($method === 'POST' && strpos($route, '/workflows/') !== false) {
+                // Update workflow
+                return current_user_can(self::PERMISSION_UPDATE);
+            } elseif ($method === 'DELETE') {
+                // Delete workflow
+                return current_user_can(self::PERMISSION_DELETE);
+            } elseif (isset($request['status']) && $request['status'] === 'publish') {
+                // Publish workflow
+                return current_user_can(self::PERMISSION_PUBLISH);
+            } elseif (isset($request['status']) && $request['status'] === 'draft') {
+                // Unpublish workflow
+                return current_user_can(self::PERMISSION_UNPUBLISH);
+            }
+        }
+
         return current_user_can(self::PERMISSION_READ);
     }
 
