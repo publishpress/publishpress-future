@@ -1,6 +1,12 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.9.4]- [UNRELEASHED]
+
+### Fixed
+
+- Update ES-FR-IT translations (Issue #1537).
+
 ## [4.9.3]- 11 December, 2025
 
 ### Added
