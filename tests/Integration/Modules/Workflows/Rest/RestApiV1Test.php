@@ -31,6 +31,11 @@ class RestApiV1Test extends WPTestCase
      */
     private $sanitizeWorkflowKeyMethod;
 
+    /**
+     * @var WorkflowSanitizationUtil
+     */
+    private $workflowSanitizationUtil;
+
     public function setUp(): void
     {
         parent::setUp();
@@ -39,9 +44,10 @@ class RestApiV1Test extends WPTestCase
         $workflowSanitization = new WorkflowSanitizationUtil();
 
         $this->restApi = new RestApiV1($hooks, $workflowSanitization);
+        $this->workflowSanitizationUtil = $workflowSanitization;
 
         // Use reflection to access private method for testing
-        $reflection = new ReflectionClass($this->restApi);
+        $reflection = new ReflectionClass($workflowSanitization);
         $this->sanitizeWorkflowKeyMethod = $reflection->getMethod('sanitizeWorkflowKey');
         $this->sanitizeWorkflowKeyMethod->setAccessible(true);
     }
@@ -63,7 +69,7 @@ class RestApiV1Test extends WPTestCase
         ];
 
         foreach ($validOperators as $operator) {
-            $result = $this->sanitizeWorkflowKeyMethod->invoke($this->restApi, $operator);
+            $result = $this->sanitizeWorkflowKeyMethod->invoke($this->workflowSanitizationUtil, $operator);
             $this->assertEquals($operator, $result, "Operator '{$operator}' should be preserved");
         }
     }
@@ -87,7 +93,7 @@ class RestApiV1Test extends WPTestCase
         ];
 
         foreach ($camelCaseKeys as $key) {
-            $result = $this->sanitizeWorkflowKeyMethod->invoke($this->restApi, $key);
+            $result = $this->sanitizeWorkflowKeyMethod->invoke($this->workflowSanitizationUtil, $key);
             $this->assertEquals($key, $result, "CamelCase key '{$key}' should be preserved");
         }
     }
@@ -109,7 +115,7 @@ class RestApiV1Test extends WPTestCase
         ];
 
         foreach ($validKeys as $key) {
-            $result = $this->sanitizeWorkflowKeyMethod->invoke($this->restApi, $key);
+            $result = $this->sanitizeWorkflowKeyMethod->invoke($this->workflowSanitizationUtil, $key);
             $this->assertEquals($key, $result, "Key '{$key}' should be preserved");
         }
     }
@@ -134,7 +140,7 @@ class RestApiV1Test extends WPTestCase
         ];
 
         foreach ($testCases as [$input, $expected]) {
-            $result = $this->sanitizeWorkflowKeyMethod->invoke($this->restApi, $input);
+            $result = $this->sanitizeWorkflowKeyMethod->invoke($this->workflowSanitizationUtil, $input);
             $this->assertEquals($expected, $result, "Dangerous characters should be removed from '{$input}'");
         }
     }
@@ -156,7 +162,7 @@ class RestApiV1Test extends WPTestCase
         ];
 
         foreach ($testCases as [$input, $expected]) {
-            $result = $this->sanitizeWorkflowKeyMethod->invoke($this->restApi, $input);
+            $result = $this->sanitizeWorkflowKeyMethod->invoke($this->workflowSanitizationUtil, $input);
             $this->assertEquals($expected, $result, "Invalid operator-like key '{$input}' should be sanitized");
         }
     }
@@ -175,7 +181,7 @@ class RestApiV1Test extends WPTestCase
         ];
 
         foreach ($testCases as [$input, $expected]) {
-            $result = $this->sanitizeWorkflowKeyMethod->invoke($this->restApi, $input);
+            $result = $this->sanitizeWorkflowKeyMethod->invoke($this->workflowSanitizationUtil, $input);
             $this->assertEquals($expected, $result, "Control characters should be removed from '{$input}'");
         }
     }
@@ -193,7 +199,7 @@ class RestApiV1Test extends WPTestCase
         ];
 
         foreach ($testCases as [$input, $expected]) {
-            $result = $this->sanitizeWorkflowKeyMethod->invoke($this->restApi, $input);
+            $result = $this->sanitizeWorkflowKeyMethod->invoke($this->workflowSanitizationUtil, $input);
             $this->assertEquals($expected, $result, "All dangerous characters should be removed from '{$input}'");
         }
     }
@@ -203,7 +209,7 @@ class RestApiV1Test extends WPTestCase
      */
     public function testEmptyStringIsHandled()
     {
-        $result = $this->sanitizeWorkflowKeyMethod->invoke($this->restApi, '');
+        $result = $this->sanitizeWorkflowKeyMethod->invoke($this->workflowSanitizationUtil, '');
         $this->assertEquals('', $result, 'Empty string should return empty string');
     }
 
@@ -215,7 +221,7 @@ class RestApiV1Test extends WPTestCase
         $numericKeys = ['0', '123', '456789'];
 
         foreach ($numericKeys as $key) {
-            $result = $this->sanitizeWorkflowKeyMethod->invoke($this->restApi, $key);
+            $result = $this->sanitizeWorkflowKeyMethod->invoke($this->workflowSanitizationUtil, $key);
             $this->assertEquals($key, $result, "Numeric key '{$key}' should be preserved");
         }
     }
@@ -242,7 +248,7 @@ class RestApiV1Test extends WPTestCase
                 continue;
             }
 
-            $result = $this->sanitizeWorkflowKeyMethod->invoke($this->restApi, $input);
+            $result = $this->sanitizeWorkflowKeyMethod->invoke($this->workflowSanitizationUtil, $input);
             $this->assertEquals('', $result, "Key with only dangerous characters '{$input}' should return empty string");
         }
     }
@@ -252,7 +258,7 @@ class RestApiV1Test extends WPTestCase
      */
     public function testSanitizeWorkflowDataSanitizesNestedKeysAndValues()
     {
-        $reflection = new ReflectionClass($this->restApi);
+        $reflection = new ReflectionClass($this->workflowSanitizationUtil);
         $sanitizeMethod = $reflection->getMethod('sanitizeWorkflowData');
         $sanitizeMethod->setAccessible(true);
 
@@ -295,7 +301,7 @@ class RestApiV1Test extends WPTestCase
      */
     public function testSanitizeWorkflowDataWithRealisticWorkflow()
     {
-        $reflection = new ReflectionClass($this->restApi);
+        $reflection = new ReflectionClass($this->workflowSanitizationUtil);
         $sanitizeMethod = $reflection->getMethod('sanitizeWorkflowData');
         $sanitizeMethod->setAccessible(true);
 
@@ -418,7 +424,7 @@ class RestApiV1Test extends WPTestCase
      */
     public function testSanitizeWorkflowDataWithDangerousInput()
     {
-        $reflection = new ReflectionClass($this->restApi);
+        $reflection = new ReflectionClass($this->workflowSanitizationUtil);
         $sanitizeMethod = $reflection->getMethod('sanitizeWorkflowData');
         $sanitizeMethod->setAccessible(true);
 
