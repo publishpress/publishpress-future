@@ -275,7 +275,7 @@ class RestApiV1Test extends WPTestCase
             ],
         ];
 
-        $result = $sanitizeMethod->invoke($this->restApi, $data);
+        $result = $sanitizeMethod->invoke($this->workflowSanitizationUtil, $data);
 
         // Keys should be sanitized
         $this->assertEquals('postId', array_key_first($result));
@@ -365,7 +365,7 @@ class RestApiV1Test extends WPTestCase
             ],
         ];
 
-        $result = $sanitizeMethod->invoke($this->restApi, $workflowFlow);
+        $result = $sanitizeMethod->invoke($this->workflowSanitizationUtil, $workflowFlow);
 
         // Verify structure is preserved
         $this->assertArrayHasKey('nodes', $result);
@@ -513,7 +513,7 @@ class RestApiV1Test extends WPTestCase
             ],
         ];
 
-        $result = $sanitizeMethod->invoke($this->restApi, $workflowFlow);
+        $result = $sanitizeMethod->invoke($this->workflowSanitizationUtil, $workflowFlow);
 
         // Verify structure is preserved
         $this->assertArrayHasKey('nodes', $result);
