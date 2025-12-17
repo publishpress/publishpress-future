@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Plugins - PublishPress Future: Automatically Unpublish "
 "WordPress Posts - Stable (latest release)\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/project\n"
-"POT-Creation-Date: 2025-11-14T10:37:55+00:00\n"
-"PO-Revision-Date: 2025-11-18 12:34+0100\n"
+"POT-Creation-Date: 2025-12-09T15:43:27+00:00\n"
+"PO-Revision-Date: 2025-12-12 08:00+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -100,32 +100,32 @@ msgid "Saved Options!"
 msgstr "Opzioni salvate!"
 
 #. translators: %1$s is the plugin name, %2$s is the star rating markup
-#: legacy/classes/Display.class.php:558
+#: legacy/classes/Display.class.php:565
 #, php-format
 msgid "If you like %1$s, please leave us a %2$s rating. Thank you!"
 msgstr "Se ti piace %1$s, lasciaci una valutazione di %2$s. Grazie!"
 
-#: legacy/classes/Display.class.php:573
+#: legacy/classes/Display.class.php:580
 msgid "About PublishPress Future"
 msgstr "Informazioni su PublishPress Future"
 
-#: legacy/classes/Display.class.php:575
+#: legacy/classes/Display.class.php:582
 msgid "About"
 msgstr "Chi siamo"
 
-#: legacy/classes/Display.class.php:581
+#: legacy/classes/Display.class.php:588
 msgid "Future Documentation"
 msgstr "Documentazione di Future"
 
-#: legacy/classes/Display.class.php:583
+#: legacy/classes/Display.class.php:590
 msgid "Documentation"
 msgstr "Documentazione"
 
-#: legacy/classes/Display.class.php:589
+#: legacy/classes/Display.class.php:596
 msgid "Contact the PublishPress team"
 msgstr "Contatta il team di PublishPress"
 
-#: legacy/classes/Display.class.php:591
+#: legacy/classes/Display.class.php:598
 msgid "Contact"
 msgstr "Contatto"
 
@@ -190,7 +190,7 @@ msgstr ""
 "Impossibile esportare il file. Controlla i registri per maggiori "
 "informazioni."
 
-#: src/Modules/Backup/Controllers/BackupRestApi.php:364
+#: src/Modules/Backup/Controllers/BackupRestApi.php:358
 msgid "Failed to import the file. Check the logs for more details."
 msgstr ""
 "Impossibile importare il file. Controlla i registri per maggiori "
@@ -426,7 +426,7 @@ msgstr "Aggiorna a Pro"
 #: src/Modules/Expirator/Controllers/PluginsListController.php:69
 #: src/Modules/Workflows/Controllers/ManualPostTrigger.php:458
 #: src/Modules/Workflows/Controllers/PostType.php:48
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:180
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:185
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-import.jsx:68
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:83
 #: assets/jsx/workflow-manual-selection/block-editor/index.jsx:48
@@ -456,7 +456,7 @@ msgstr "Azione Future"
 msgid "No future action"
 msgstr "Nessuna azione Future"
 
-#: src/Modules/Expirator/Controllers/RestAPIController.php:238
+#: src/Modules/Expirator/Controllers/RestAPIController.php:249
 msgid "Invalid date time offset."
 msgstr "Offset della data non valido."
 
@@ -468,7 +468,7 @@ msgstr "Future"
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:141
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:323
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:47
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:759
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:788
 msgid "Scheduled Actions"
 msgstr "Azioni programmate"
 
@@ -666,7 +666,7 @@ msgstr ""
 "Questa è una funzionalità Pro. Aggiorna per sbloccare questa funzionalità."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:459
-#: src/Modules/Settings/Controllers/Controller.php:238
+#: src/Modules/Settings/Controllers/Controller.php:239
 msgid "Form Validation Failure: Sorry, your nonce did not verify."
 msgstr "Errore di convalida del modulo: il nonce non è stato verificato."
 
@@ -903,7 +903,7 @@ msgstr ""
 "ora, come \"3 months\" (3 mesi) o \"1 week\" (1 settimana)."
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:53
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:217
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:238
 msgid "Status"
 msgstr "Stato"
 
@@ -1133,15 +1133,15 @@ msgstr "Non ripetibile"
 msgid "No Scheduled Actions."
 msgstr "Nessuna azione programmata."
 
-#: src/Modules/Settings/Controllers/Controller.php:192
+#: src/Modules/Settings/Controllers/Controller.php:193
 msgid "Scheduled Workflow Steps Cleanup"
 msgstr "Pulizia dei passaggi programmati del flusso di lavoro"
 
-#: src/Modules/Settings/Controllers/Controller.php:193
+#: src/Modules/Settings/Controllers/Controller.php:194
 msgid "Automatically remove scheduled workflow steps"
 msgstr "Rimuovi automaticamente i passaggi del flusso di lavoro programmati"
 
-#: src/Modules/Settings/Controllers/Controller.php:197
+#: src/Modules/Settings/Controllers/Controller.php:198
 msgid ""
 "Automatically remove scheduled workflow steps that have been marked as "
 "failed, completed, or cancelled."
@@ -1149,11 +1149,11 @@ msgstr ""
 "Rimuovi automaticamente i passaggi del flusso di lavoro programmati che sono "
 "stati contrassegnati come falliti, completati o annullati."
 
-#: src/Modules/Settings/Controllers/Controller.php:201
+#: src/Modules/Settings/Controllers/Controller.php:202
 msgid "Retain all scheduled workflow steps"
 msgstr "Mantieni tutti i passaggi programmati del flusso di lavoro"
 
-#: src/Modules/Settings/Controllers/Controller.php:205
+#: src/Modules/Settings/Controllers/Controller.php:206
 msgid ""
 "Retain all scheduled workflow steps indefinitely, including those marked as "
 "failed, completed, or cancelled. This may impact database performance over "
@@ -1163,11 +1163,11 @@ msgstr ""
 "indefinito, incluso quelli contrassegnati come falliti, completati o "
 "annullati. Questo nel tempo potrebbe influenzare la prestazione del database."
 
-#: src/Modules/Settings/Controllers/Controller.php:209
+#: src/Modules/Settings/Controllers/Controller.php:210
 msgid "Retention"
 msgstr "Mantieni"
 
-#: src/Modules/Settings/Controllers/Controller.php:210
+#: src/Modules/Settings/Controllers/Controller.php:211
 msgid ""
 "The duration, in days, for which completed, failed, and canceled scheduled "
 "workflow steps will be preserved before automatic removal."
@@ -1176,7 +1176,7 @@ msgstr ""
 "programmati completati, non riusciti e annullati saranno conservati prima "
 "della rimozione automatica."
 
-#: src/Modules/Settings/Controllers/Controller.php:214
+#: src/Modules/Settings/Controllers/Controller.php:215
 msgid "days"
 msgstr "giorni"
 
@@ -1619,110 +1619,118 @@ msgstr ""
 "nell'angolo in alto a destra per accedere alle risorse di supporto."
 
 #. translators: Blocks tab title in the block inserter.
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:219
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:240
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:19
 msgid "Triggers"
 msgstr "Trigger"
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:246
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:383
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:384
-msgid "Deactivate"
-msgstr "Disattiva"
-
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:246
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:377
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:378
-msgid "Activate"
-msgstr "Attiva"
-
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:288
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:284
 msgid "—"
 msgstr "—"
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:433
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:566
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:594
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:595
+msgid "Deactivate"
+msgstr "Disattiva"
+
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:566
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:588
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:589
+msgid "Activate"
+msgstr "Attiva"
+
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:640
 msgid "Cancel all actions scheduled for this workflow"
 msgstr "Annulla tutte le azioni programmate per questo flusso di lavoro"
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:435
-#: assets/jsx/workflows-list/cancel-action/index.jsx:46
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:641
+#: assets/jsx/workflows-list/cancel-action/index.jsx:51
 msgid "Cancel Scheduled Actions"
 msgstr "Annulla le azioni programmate"
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:453
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:656
 msgid "Copy this workflow"
 msgstr "Copia questo flusso di lavoro"
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:454
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:657
 msgid "Copy"
 msgstr "Copia"
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:670
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:695
 msgid "Source workflow not found."
 msgstr "Sorgente del flusso di lavoro non trovata."
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:671
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:696
 msgid "Failed to create new workflow."
 msgstr "Creazione del nuovo flusso di lavoro fallita."
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:672
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:697
 msgid "An error occurred while copying the workflow."
 msgstr "Si è verificato un errore durante la copia del flusso di lavoro."
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:674
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:699
 msgid "Error cancelling scheduled actions."
 msgstr "Errore durante l'annullamento delle azioni programmate."
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:675
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:700
 msgid "This workflow doesn't have any scheduled action."
 msgstr "Questo flusso di lavoro non ha azioni programmate."
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:679
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:702
+msgid "Error updating workflow status."
+msgstr "Errore durante l'aggiornamento dello stato del flusso di lavoro."
+
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:706
 msgid "Workflow copied successfully."
 msgstr "Il flusso di lavoro è stato copiato correttamente."
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:681
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:708
 msgid "Scheduled actions have been cancelled successfully."
 msgstr "Le azioni programmate sono state annullate correttamente."
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:732
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:710
+msgid "Workflow status updated successfully."
+msgstr "Flusso di lavoro aggiornato correttamente."
+
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:761
 msgid "Action Workflow Editor"
 msgstr "Editor dei flusso di lavoro delle azioni"
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:799
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:803
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:828
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:832
 #, php-format
 msgid "%s updated."
 msgstr "%s aggiornata."
 
 #. translators: 1: Post type singular label, 2: Revision title
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:809
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:838
 #, php-format
 msgid "%1$s restored to revision from %2$s"
 msgstr "%1$s ripristinata per la revisione da %2$s"
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:815
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:844
 #, php-format
 msgid "%s published."
 msgstr "%s pubblicato."
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:819
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:848
 #, php-format
 msgid "%s saved."
 msgstr "%s salvato."
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:823
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:852
 #, php-format
 msgid "%s submitted."
 msgstr "%s inviato."
 
 #. translators: 1: Post type singular label, 2: Scheduled date
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:828
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:857
 #, php-format
 msgid "%1$s scheduled for: <strong>%2$s</strong>."
 msgstr "%1$s programmata per: <strong>%2$s</strong>."
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:833
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:862
 #, php-format
 msgid "%s draft updated."
 msgstr "%s bozza aggiornata."
@@ -1743,7 +1751,7 @@ msgstr "Sì"
 
 #: src/Modules/Workflows/Domain/Engine/VariableResolvers/BooleanResolver.php:31
 #: src/Modules/Workflows/Domain/Engine/VariableResolvers/BooleanResolver.php:77
-#: assets/jsx/workflows-list/cancel-action/index.jsx:70
+#: assets/jsx/workflows-list/cancel-action/index.jsx:75
 msgid "No"
 msgstr "No"
 
@@ -3614,9 +3622,21 @@ msgstr "L'ID dell'articolo"
 
 #: src/Modules/Workflows/Rest/RestApiV1.php:218
 #: src/Modules/Workflows/Rest/RestApiV1.php:244
-#: src/Modules/Workflows/Rest/RestApiV1.php:305
+#: src/Modules/Workflows/Rest/RestApiV1.php:314
 msgid "Workflow not found"
 msgstr "Flusso di lavoro non trovato"
+
+#: src/Modules/Workflows/Rest/RestApiV1.php:406
+msgid "Flow data must be an array."
+msgstr "I dati del flusso devono essere un array."
+
+#: src/Modules/Workflows/Rest/RestApiV1.php:419
+msgid "Each node must have an id and type."
+msgstr "Ogni nodo deve avere un ID e un tipo."
+
+#: src/Modules/Workflows/Rest/RestApiV1.php:430
+msgid "Each edge must have an id, source, and target."
+msgstr "Ogni bordo deve avere un ID, una sorgente e una destinazione."
 
 #: src/Modules/Workflows/Views/editor.html.php:13
 msgid "Loading the workflow editor..."
@@ -5656,7 +5676,7 @@ msgid "Enable workflow %s"
 msgstr "Abilita il flusso di lavoro %s"
 
 #. translators: %s: Workflow title
-#: assets/jsx/workflows-list/cancel-action/index.jsx:54
+#: assets/jsx/workflows-list/cancel-action/index.jsx:59
 msgid ""
 "Are you sure you want to cancel all scheduled actions for the \"%s\" "
 "workflow?"
@@ -5664,7 +5684,7 @@ msgstr ""
 "Vuoi davvero annullare tutte le azioni programmate per il flusso di lavoro "
 "\"%s\"?"
 
-#: assets/jsx/workflows-list/cancel-action/index.jsx:64
+#: assets/jsx/workflows-list/cancel-action/index.jsx:69
 msgid "Cancel Actions"
 msgstr "Annulla azioni"
 
