@@ -5,8 +5,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
-- Update ES-FR-IT translations (Issue #1537).
 - Published pages via Future Actions show incorrect View links (Issue #1539).
+- Unable to edit imported workflow (Issue #1544).
+- Update ES-FR-IT translations (Issue #1537).
 
 ## [4.9.3]- 11 December, 2025
 
