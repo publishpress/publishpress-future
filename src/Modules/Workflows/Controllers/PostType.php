@@ -7,6 +7,7 @@ use PublishPress\Future\Framework\InitializableInterface;
 use PublishPress\Future\Core\HooksAbstract as CoreHooksAbstract;
 use PublishPress\Future\Modules\Expirator\HooksAbstract;
 use PublishPress\Future\Modules\Workflows\Module;
+use PublishPress\Future\Modules\Workflows\CapabilitiesAbstract as WorkflowCapabilities;
 
 class PostType implements InitializableInterface
 {
@@ -69,6 +70,16 @@ class PostType implements InitializableInterface
                 "item_scheduled" => __("Workflow scheduled.", "post-expirator"),
                 "item_updated" => __("Workflow updated.", "post-expirator"),
             ],
+            'capabilities' => [
+                'read_post' => WorkflowCapabilities::EDIT_WORKFLOWS,
+                'read_private_posts' => WorkflowCapabilities::EDIT_WORKFLOWS,
+                'edit_post' => WorkflowCapabilities::EDIT_WORKFLOWS,
+                'edit_posts' => WorkflowCapabilities::EDIT_WORKFLOWS,
+                'edit_others_posts' => WorkflowCapabilities::EDIT_WORKFLOWS,
+                'publish_posts' => WorkflowCapabilities::PUBLISH_WORKFLOWS,
+                'delete_post' => WorkflowCapabilities::UNPUBLISH_WORKFLOWS,
+                'delete_posts' => WorkflowCapabilities::UNPUBLISH_WORKFLOWS,
+            ],
             "public" => false,
             "show_ui" => true,
             "show_in_menu" => $showInMenu,
@@ -83,7 +94,7 @@ class PostType implements InitializableInterface
             "query_var" => false,
             "can_export" => true,
             "delete_with_user" => false,
-            "show_in_rest" => true,
+            "show_in_rest" => false,
             "rest_base" => "workflows",
         ]);
     }

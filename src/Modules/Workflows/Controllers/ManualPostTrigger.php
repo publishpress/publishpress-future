@@ -231,6 +231,7 @@ class ManualPostTrigger implements InitializableInterface
                 "futureWorkflowManualSelection",
                 [
                     "nonce" => wp_create_nonce("wp_rest"),
+                    "workflowNonce" => wp_create_nonce("pp_workflow_action"),
                     "apiUrl" => rest_url("publishpress-future/v1"),
                 ]
             );
@@ -273,6 +274,7 @@ class ManualPostTrigger implements InitializableInterface
                 "futureWorkflowManualSelection",
                 [
                     "nonce" => wp_create_nonce("wp_rest"),
+                    "workflowNonce" => wp_create_nonce("pp_workflow_action"),
                     "apiUrl" => rest_url("publishpress-future/v1"),
                     "postType" => get_post_type(),
                 ]
@@ -328,6 +330,7 @@ class ManualPostTrigger implements InitializableInterface
                 "futureWorkflowManualSelection",
                 [
                     "nonce" => wp_create_nonce("wp_rest"),
+                    "workflowNonce" => wp_create_nonce("pp_workflow_action"),
                     "apiUrl" => rest_url("publishpress-future/v1"),
                     "postId" => $post->ID,
                 ]
@@ -556,6 +559,7 @@ class ManualPostTrigger implements InitializableInterface
                 "futureWorkflowManualSelection",
                 [
                     "nonce" => wp_create_nonce("wp_rest"),
+                    "workflowNonce" => wp_create_nonce("pp_workflow_action"),
                     "apiUrl" => rest_url("publishpress-future/v1"),
                     "postId" => $post->ID,
                 ]

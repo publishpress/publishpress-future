@@ -25,6 +25,7 @@ if (container) {
     // Load the workflow settings for the post
     const apiUrl = window.futureWorkflowManualSelection.apiUrl;
     const nonce = window.futureWorkflowManualSelection.nonce;
+    const workflowNonce = window.futureWorkflowManualSelection.workflowNonce;
     const postId = window.futureWorkflowManualSelection.postId;
 
     dispatch(store).setWorkflowsWithManualTrigger([]);
@@ -34,6 +35,7 @@ if (container) {
         url: `${apiUrl}/posts/workflow-settings/${postId}`,
         headers: {
             'X-WP-Nonce': nonce,
+            'X-PP-Workflow-Nonce': workflowNonce,
         },
     }).then((response) => {
         dispatch(store).setWorkflowsWithManualTrigger(response.workflowsWithManualTrigger);
@@ -46,6 +48,7 @@ if (container) {
             postId={postId}
             apiUrl={apiUrl}
             nonce={nonce}
+            workflowNonce={workflowNonce}
         />
     );
 

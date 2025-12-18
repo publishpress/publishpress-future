@@ -74,7 +74,11 @@ class ChangePostStatus implements ExpirationActionInterface
         $this->oldPostStatus = $this->postModel->getPostStatus();
         $this->newPostStatus = $this->postModel->getExpirationNewStatus();
 
-        $result = $this->postModel->setPostStatus($this->newPostStatus);
+        if ($this->newPostStatus === 'publish') {
+            $result = $this->postModel->publish();
+        } else {
+            $result = $this->postModel->setPostStatus($this->newPostStatus);
+        }
 
         $this->log['success'] = $result;
 

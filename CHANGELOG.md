@@ -1,6 +1,22 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.9.4]- 18 December, 2025
+
+### Added
+
+- Enhance workflow management with custom capabilities (Issue #1540).
+  - Introduced new workflow capabilities: edit_publishpress_workflows, publish_publishpress_workflows, unpublish_publishpress_workflows
+  - Update REST API to use workflow-specific capabilities instead of generic edit_posts
+  - Add X-PP-Workflow-Nonce verification to all workflow endpoints for enhanced security
+
+### Fixed
+
+- Published pages via Future Actions show incorrect View links (Issue #1539).
+- Unable to edit imported workflow (Issue #1544).
+- "Query posts" step doesn't work when post type is not specified for custom posts, (Issue #1546)
+- Update ES-FR-IT translations (Issue #1537).
+
 ## [4.9.3]- 11 December, 2025
 
 ### Added
