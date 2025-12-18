@@ -11,6 +11,7 @@ use PublishPress\Future\Modules\Workflows\Interfaces\StepTypesModelInterface;
 use PublishPress\Future\Modules\Workflows\Models\StepTypesModel;
 use PublishPress\Future\Modules\Workflows\Models\WorkflowModel;
 use PublishPress\Future\Modules\Workflows\Models\ScheduledActionsModel;
+use PublishPress\Future\Modules\Workflows\CapabilitiesAbstract as WorkflowCapabilities;
 use PublishPress\Future\Modules\Workflows\Module;
 use PublishPress\Future\Framework\Logger\LoggerInterface;
 use PublishPress\Future\Modules\Settings\SettingsFacade;
@@ -18,11 +19,6 @@ use Throwable;
 
 class WorkflowsList implements InitializableInterface
 {
-    /**
-     * @var string
-     */
-    public const WORKFLOWS_LIST_CAPABILITY = 'manage_options';
-
     /**
      * @var HookableInterface
      */
@@ -164,7 +160,7 @@ class WorkflowsList implements InitializableInterface
                 '',
                 "Action Workflow Editor",
                 "Action Workflow Editor",
-                self::WORKFLOWS_LIST_CAPABILITY,
+                WorkflowCapabilities::EDIT_WORKFLOWS,
                 "future_workflow_editor",
                 [$this, "renderEditorPage"]
             );
@@ -321,7 +317,7 @@ class WorkflowsList implements InitializableInterface
             return;
         }
 
-        if (!current_user_can(self::WORKFLOWS_LIST_CAPABILITY)) {
+        if (!current_user_can(WorkflowCapabilities::EDIT_WORKFLOWS)) {
             return;
         }
 
@@ -377,6 +373,10 @@ class WorkflowsList implements InitializableInterface
             return $actions;
         }
 
+        if (!current_user_can(WorkflowCapabilities::EDIT_WORKFLOWS)) {
+            return;
+        }
+
         $workflowModel = new WorkflowModel();
         $workflowModel->load($post->ID);
 
@@ -416,7 +416,7 @@ class WorkflowsList implements InitializableInterface
             return;
         }
 
-        if (!current_user_can(self::WORKFLOWS_LIST_CAPABILITY)) {
+        if (!current_user_can(WorkflowCapabilities::EDIT_WORKFLOWS)) {
             return;
         }
 
@@ -503,7 +503,7 @@ class WorkflowsList implements InitializableInterface
             return;
         }
 
-        if (!current_user_can(self::WORKFLOWS_LIST_CAPABILITY)) {
+        if (!current_user_can(WorkflowCapabilities::EDIT_WORKFLOWS)) {
             return;
         }
 
