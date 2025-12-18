@@ -1,7 +1,7 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [4.9.4]- [UNRELEASHED]
+## [4.9.4]- 18 December, 2025
 
 ### Added
 
@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Published pages via Future Actions show incorrect View links (Issue #1539).
 - Unable to edit imported workflow (Issue #1544).
+- "Query posts" step doesn't work when post type is not specified for custom posts, (Issue #1546)
 - Update ES-FR-IT translations (Issue #1537).
 
 ## [4.9.3]- 11 December, 2025
