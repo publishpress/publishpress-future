@@ -24,6 +24,7 @@ export function Fieldset({context, onChange}) {
     const {
         postType,
         nonce,
+        workflowNonce,
         apiUrl
     } = window.futureWorkflowManualSelection;
 
@@ -32,6 +33,7 @@ export function Fieldset({context, onChange}) {
             url: `${apiUrl}/workflows/with-manual-trigger/${postType}`,
             headers: {
                 'X-WP-Nonce': nonce,
+                'X-PP-Workflow-Nonce': workflowNonce,
             },
         }).then((response) => {
             setWorkflowsWithManualTrigger(response.workflowsWithManualTrigger);

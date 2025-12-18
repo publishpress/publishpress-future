@@ -53,6 +53,7 @@ window.inlineEditPost.edit = function (button, id) {
     // Load the workflow settings for the post
     const apiUrl = window.futureWorkflowManualSelection.apiUrl;
     const nonce = window.futureWorkflowManualSelection.nonce;
+    const workflowNonce = window.futureWorkflowManualSelection.workflowNonce;
 
     const component = (
         <Fieldset
@@ -60,6 +61,7 @@ window.inlineEditPost.edit = function (button, id) {
             postId={postId}
             apiUrl={apiUrl}
             nonce={nonce}
+            workflowNonce={workflowNonce}
             wrapper={({workflowsWithManualTrigger, children}) => {
                 if (workflowsWithManualTrigger.length === 0) {
                     return children;

@@ -3,7 +3,7 @@ import { apiFetch } from '@wordpress/data-controls';
 import { STORE_NAME } from './name';
 import { __ } from '@publishpress/i18n';
 
-const { apiUrl, nonce } = window.futureWorkflowEditor;
+const { apiUrl, nonce, workflowNonce } = window.futureWorkflowEditor;
 
 const editableAttributes = ['title', 'description', 'flow', 'status', 'debugRayShowQueries', 'debugRayShowEmails', 'debugRayShowWordPressErrors', 'debugRayShowCurrentRunningStep'];
 
@@ -21,6 +21,7 @@ export function* setupEditor(workflowId) {
                 method: 'POST',
                 headers: {
                     'X-WP-Nonce': nonce,
+                    'X-PP-Workflow-Nonce': workflowNonce,
                 },
             });
 
@@ -40,6 +41,7 @@ export function* setupEditor(workflowId) {
                 path: `${apiUrl}/workflows/${workflowId}`,
                 headers: {
                     'X-WP-Nonce': nonce,
+                    'X-PP-Workflow-Nonce': workflowNonce,
                 },
             });
 
@@ -76,6 +78,7 @@ export function* saveAsDraft() {
             method: 'PUT',
             headers: {
                 'X-WP-Nonce': nonce,
+                'X-PP-Workflow-Nonce': workflowNonce,
             },
             body: JSON.stringify(workflowToSave),
         });
@@ -126,6 +129,7 @@ export function* saveAsCurrentStatus() {
             method: 'PUT',
             headers: {
                 'X-WP-Nonce': nonce,
+                'X-PP-Workflow-Nonce': workflowNonce,
             },
             body: JSON.stringify(workflowToSave),
         });
@@ -170,6 +174,7 @@ export function* publishWorkflow() {
             method: 'PUT',
             headers: {
                 'X-WP-Nonce': nonce,
+                'X-PP-Workflow-Nonce': workflowNonce,
             },
             body: JSON.stringify(workflowToSave),
         });
@@ -214,6 +219,7 @@ export function* switchToDraft() {
             method: 'PUT',
             headers: {
                 'X-WP-Nonce': nonce,
+                'X-PP-Workflow-Nonce': workflowNonce,
             },
             body: JSON.stringify(workflowToSave),
         });
@@ -318,6 +324,7 @@ export function* deleteWorkflow () {
             method: 'DELETE',
             headers: {
                 'X-WP-Nonce': nonce,
+                'X-PP-Workflow-Nonce': workflowNonce,
             },
         });
 
@@ -378,6 +385,7 @@ export function* fetchTaxonomyTerms(taxonomy) {
             path: `${apiUrl}/terms/${taxonomy}`,
             headers: {
                 'X-WP-Nonce': nonce,
+                'X-PP-Workflow-Nonce': workflowNonce,
             },
         });
 

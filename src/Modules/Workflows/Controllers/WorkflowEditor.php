@@ -214,6 +214,7 @@ class WorkflowEditor implements InitializableInterface
                 "assetsUrl" => PUBLISHPRESS_FUTURE_ASSETS_URL,
                 "workflowId" => $workflowId,
                 "nonce" => wp_create_nonce("wp_rest"),
+                "workflowNonce" => wp_create_nonce("pp_workflow_action"),
                 "dateFormat" => get_option("date_format"),
                 "timeFormat" => get_option("time_format"),
                 "startOfWeek" => get_option("start_of_week"),

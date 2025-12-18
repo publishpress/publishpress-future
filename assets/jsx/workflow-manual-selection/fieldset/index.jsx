@@ -4,7 +4,7 @@ import { store } from '../store';
 import { useEffect } from '@wordpress/element';
 import apiFetch from '@wordpress/api-fetch';
 
-export function Fieldset({context, postId, apiUrl, nonce, onChange, wrapper}) {
+export function Fieldset({context, postId, apiUrl, nonce, workflowNonce, onChange, wrapper}) {
     const {
         workflowsWithManualTrigger,
         workflowsEnabledForPost
@@ -29,6 +29,7 @@ export function Fieldset({context, postId, apiUrl, nonce, onChange, wrapper}) {
             url: `${apiUrl}/posts/workflow-settings/${postId}`,
             headers: {
                 'X-WP-Nonce': nonce,
+                'X-PP-Workflow-Nonce': workflowNonce,
             },
         }).then((response) => {
             setWorkflowsWithManualTrigger(response.workflowsWithManualTrigger);
