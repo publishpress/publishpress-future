@@ -12,6 +12,7 @@ use PublishPress\Future\Framework\ModuleInterface;
 use PublishPress\Future\Modules\Backup\Controllers\BackupAdminPage;
 use PublishPress\Future\Modules\Backup\Controllers\BackupRestApi;
 use PublishPress\Future\Modules\Settings\SettingsFacade;
+use PublishPress\Future\Framework\WordPress\Utils\WorkflowSanitizationUtil;
 
 defined('ABSPATH') or die('Direct access not allowed.');
 
@@ -25,16 +26,20 @@ final class Module implements ModuleInterface
 
     private LoggerInterface $logger;
 
+    private WorkflowSanitizationUtil $workflowSanitization;
+
     public function __construct(
         HookableInterface $hooks,
         string $pluginVersion,
         SettingsFacade $settingsFacade,
-        LoggerInterface $logger
+        LoggerInterface $logger,
+        WorkflowSanitizationUtil $workflowSanitization
     ) {
         $this->hooks = $hooks;
         $this->pluginVersion = $pluginVersion;
         $this->settingsFacade = $settingsFacade;
         $this->logger = $logger;
+        $this->workflowSanitization = $workflowSanitization;
     }
 
     /**
@@ -51,7 +56,8 @@ final class Module implements ModuleInterface
                 $this->hooks,
                 $this->pluginVersion,
                 $this->settingsFacade,
-                $this->logger
+                $this->logger,
+                $this->workflowSanitization
             ),
         ];
 
