@@ -51,20 +51,27 @@ class ScheduledActionsTable extends \ActionScheduler_ListTable
 
         // Force the title of columns so they are translatable on our text domain.
         $this->columns['status'] = __('Status', 'post-expirator');
+
         $this->columns['args'] = __('Arguments', 'post-expirator');
         $this->columns['log_entries'] = __('Logs', 'post-expirator');
         $this->columns['schedule'] = __('Scheduled Date', 'post-expirator');
         $this->columns['recurrence'] = __('Recurrence', 'post-expirator');
+
+        $statusPosition = array_search('status', array_keys($this->columns));
+        if ($statusPosition !== false) {
+            $columns = $this->columns;
+            $this->columns = array_slice($columns, 0, $statusPosition + 1, true) +
+                            ['run_now' => __('Run now', 'post-expirator')] +
+                            array_slice($columns, $statusPosition + 1, null, true);
+        } else {
+            $this->columns['run_now'] = __('Run now', 'post-expirator');
+        }
 
 
         $this->hooks->addAction('admin_enqueue_scripts', [$this, 'enqueueScripts']);
 
         $this->row_actions = array(
             'hook' => array(
-                'run' => array(
-                    'name' => __('Run', 'post-expirator'),
-                    'desc' => __('Process the action now', 'post-expirator'),
-                ),
                 'cancel' => array(
                     'name' => __('Cancel', 'post-expirator'),
                     'desc' => __(
@@ -447,6 +454,29 @@ class ScheduledActionsTable extends \ActionScheduler_ListTable
         }
 
         return esc_html($actionLabel);
+    }
+
+    public function column_run_now(array $row)
+    {
+        if ($row['status_name'] !== \ActionScheduler_Store::STATUS_PENDING) {
+            return '-';
+        }
+
+        $row_id = $row[$this->ID];
+        $action_link = add_query_arg(
+            array(
+                'row_action' => 'run',
+                'row_id'     => $row_id,
+                'nonce'      => wp_create_nonce('run::' . $row_id),
+            )
+        );
+
+        return sprintf(
+            '<a href="%1$s" title="%2$s">%3$s</a>',
+            esc_url($action_link),
+            esc_attr__('Process the action now', 'post-expirator'),
+            esc_html__('Run', 'post-expirator')
+        );
     }
 
     public function column_args(array $row)

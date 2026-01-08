@@ -1,6 +1,12 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.10.0]- UNRELEASHED
+
+### Changed
+
+- Move the scheduled actions "Run" button to it's own column, (Issue #1496).
+
 ## [4.9.4]- 18 December, 2025
 
 ### Added
