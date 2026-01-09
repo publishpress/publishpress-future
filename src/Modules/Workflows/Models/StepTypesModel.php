@@ -40,6 +40,7 @@ use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnPo
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnPostSchedule;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnPostStatusChange;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnPostUpdate;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnPostInsert;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnPostWorkflowEnable;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnSchedule;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnUserRoleChange;
@@ -215,6 +216,7 @@ class StepTypesModel implements StepTypesModelInterface
         $nodesInstances = [
             OnPostSave::getNodeTypeName() => new OnPostSave(),
             OnPostUpdate::getNodeTypeName() => new OnPostUpdate(),
+            OnPostInsert::getNodeTypeName() => new OnPostInsert(),
             OnPostPublish::getNodeTypeName() => new OnPostPublish(),
             OnPostSchedule::getNodeTypeName() => new OnPostSchedule(),
             OnPostStatusChange::getNodeTypeName() => new OnPostStatusChange(),

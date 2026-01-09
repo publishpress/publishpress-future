@@ -1,7 +1,11 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [4.10.0]- UNRELEASHED
+## [4.10.0]- [UNRELEASHED]
+
+### Added
+
+- Added new trigger: Post is inserted - PRO, (Issue #1146)
 
 ### Changed
 
