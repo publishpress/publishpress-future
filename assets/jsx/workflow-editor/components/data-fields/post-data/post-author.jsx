@@ -39,7 +39,7 @@ const getAuthors = () => {
 const getAuthorOptions = (authors) => {
     return authors.map(author => ({
         value: author.id,
-        label: author.name + ' (' + author.email + ')',
+        label: author.name,
     }));
 };
 

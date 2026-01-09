@@ -58,6 +58,42 @@ abstract class HooksAbstract
 
     public const ACTION_ENQUEUE_BLOCK_EDITOR_ASSETS = 'enqueue_block_editor_assets';
 
+    public const ACTION_PRE_POST_UPDATE = 'pre_post_update';
+
+    public const ACTION_POST_UPDATED = 'post_updated';
+
+    public const ACTION_TRANSITION_POST_STATUS = 'transition_post_status';
+
+    public const ACTION_SET_OBJECT_TERMS = 'set_object_terms';
+
+    public const ACTION_WP_INSERT_POST_DATA = 'wp_insert_post_data';
+
+    public const ACTION_ADMIN_FOOTER = 'admin_footer';
+
+    public const ACTION_MANAGE_POSTS_CUSTOM_COLUMN = 'manage_posts_custom_column';
+
+    public const ACTION_MANAGE_PAGES_CUSTOM_COLUMN = 'manage_pages_custom_column';
+
+    public const ACTION_POSTS_ORDER_BY = 'posts_orderby';
+
+    public const FILTER_BULK_ACTIONS_POST_EDIT = 'bulk_actions-edit-%s';
+
+    public const FILTER_MANAGE_POSTS_COLUMNS = 'manage_posts_columns';
+
+    public const FILTER_MANAGE_PAGES_COLUMNS = 'manage_pages_columns';
+
+    public const FILTER_POSTS_JOIN = 'posts_join';
+
+    public const FILTER_THE_CONTENT = 'the_content';
+
+    public const FILTER_THE_TITLE = 'the_title';
+
+    public const FILTER_POST_ROW_ACTIONS = 'post_row_actions';
+
+    public const FILTER_POST_UPDATED_MESSAGES = 'post_updated_messages';
+
+    public const FILTER_BULK_POST_UPDATED_MESSAGES = 'bulk_post_updated_messages';
+
     public const FILTER_MODULES_LIST = 'publishpressfuture_list_modules';
 
     public const FILTER_PLUGIN_ACTION_LINKS = 'plugin_action_links';
@@ -77,4 +113,9 @@ abstract class HooksAbstract
      * @deprecated 3.1.5 use ACTION_ADD_META_BOXES instead
      */
     public const ACTION_ADD_META_BOX = self::ACTION_ADD_META_BOXES;
+
+    /**
+     * @since 4.9.3
+     */
+    public const ACTION_AFTER_INSERT_POST = 'wp_after_insert_post';
 }

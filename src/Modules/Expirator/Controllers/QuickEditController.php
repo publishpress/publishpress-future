@@ -144,7 +144,7 @@ class QuickEditController implements InitializableInterface
             $currentUserModelFactory = Container::getInstance()->get(ServicesAbstract::CURRENT_USER_MODEL_FACTORY);
             $currentUserModel = $currentUserModelFactory();
 
-            if (! $currentUserModel->userCanExpirePosts()) {
+            if (! $currentUserModel->userCanExpirePosts() || ! $currentUserModel->userCanEditPost($postId)) {
                 return;
             }
 

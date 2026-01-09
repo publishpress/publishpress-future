@@ -98,6 +98,21 @@ class ScheduleDelay implements StepTypeInterface
                         "label" => __("Unique ID Expression", "post-expirator"),
                         "fieldLabel" => __("Schedule > Unique ID Expression", "post-expirator"),
                     ],
+                    [
+                        "rule" => "required",
+                        "field" => "schedule.customDateSource.expression",
+                        "label" => __("Custom date source", "post-expirator"),
+                        "condition" => [
+                            "field" => "schedule.dateSource",
+                            "value" => "custom",
+                        ],
+                    ],
+                    [
+                        "rule" => "hasVariableSyntax",
+                        "field" => "schedule.customDateSource.expression",
+                        "label" => __("Custom date source", "post-expirator"),
+                        "fieldLabel" => __("Schedule > Custom date source", "post-expirator"),
+                    ],
                 ],
             ],
         ];

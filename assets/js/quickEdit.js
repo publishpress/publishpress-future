@@ -2769,7 +2769,12 @@ var isNumber = function isNumber(value) {
   return !isNaN(value);
 };
 function stripTags(string) {
-  return string.replace(/<[^>]*>?/gm, '');
+  if (typeof string !== 'string') {
+    return '';
+  }
+  var div = document.createElement('div');
+  div.textContent = string;
+  return div.innerHTML;
 }
 
 /***/ }),

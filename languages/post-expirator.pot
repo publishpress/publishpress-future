@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the PublishPress Future plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: PublishPress Future 4.9.0\n"
+"Project-Id-Version: PublishPress Future 4.9.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/project\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-10-27T13:01:02+00:00\n"
+"POT-Creation-Date: 2025-12-18T15:54:57+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
@@ -85,32 +85,32 @@ msgid "Saved Options!"
 msgstr ""
 
 #. translators: %1$s is the plugin name, %2$s is the star rating markup
-#: legacy/classes/Display.class.php:558
+#: legacy/classes/Display.class.php:565
 #, php-format
 msgid "If you like %1$s, please leave us a %2$s rating. Thank you!"
 msgstr ""
 
-#: legacy/classes/Display.class.php:573
+#: legacy/classes/Display.class.php:580
 msgid "About PublishPress Future"
 msgstr ""
 
-#: legacy/classes/Display.class.php:575
+#: legacy/classes/Display.class.php:582
 msgid "About"
 msgstr ""
 
-#: legacy/classes/Display.class.php:581
+#: legacy/classes/Display.class.php:588
 msgid "Future Documentation"
 msgstr ""
 
-#: legacy/classes/Display.class.php:583
+#: legacy/classes/Display.class.php:590
 msgid "Documentation"
 msgstr ""
 
-#: legacy/classes/Display.class.php:589
+#: legacy/classes/Display.class.php:596
 msgid "Contact the PublishPress team"
 msgstr ""
 
-#: legacy/classes/Display.class.php:591
+#: legacy/classes/Display.class.php:598
 msgid "Contact"
 msgstr ""
 
@@ -118,17 +118,17 @@ msgstr ""
 msgid "No taxonomies found"
 msgstr ""
 
-#: services.php:144
+#: services.php:145
 #: src/Modules/Settings/SettingsFacade.php:122
 msgid "l F jS, Y"
 msgstr ""
 
-#: services.php:148
+#: services.php:149
 #: src/Modules/Settings/SettingsFacade.php:123
 msgid "g:ia"
 msgstr ""
 
-#: services.php:149
+#: services.php:150
 #: src/Modules/Settings/SettingsFacade.php:124
 msgid "Post expires at EXPIRATIONTIME on ACTIONDATE"
 msgstr ""
@@ -166,15 +166,15 @@ msgstr ""
 msgid "Import"
 msgstr ""
 
-#: src/Modules/Backup/Controllers/BackupRestApi.php:137
+#: src/Modules/Backup/Controllers/BackupRestApi.php:142
 msgid "Failed to get workflows. Check the logs for more details."
 msgstr ""
 
-#: src/Modules/Backup/Controllers/BackupRestApi.php:189
+#: src/Modules/Backup/Controllers/BackupRestApi.php:194
 msgid "Failed to export the file. Check the logs for more details."
 msgstr ""
 
-#: src/Modules/Backup/Controllers/BackupRestApi.php:364
+#: src/Modules/Backup/Controllers/BackupRestApi.php:363
 msgid "Failed to import the file. Check the logs for more details."
 msgstr ""
 
@@ -373,7 +373,7 @@ msgid "Future Action Update"
 msgstr ""
 
 #: src/Modules/Expirator/Controllers/BulkEditController.php:237
-#: assets/jsx/workflow-manual-selection/bulk-edit/fieldset.jsx:70
+#: assets/jsx/workflow-manual-selection/bulk-edit/fieldset.jsx:72
 msgid "— No Change —"
 msgstr ""
 
@@ -404,14 +404,14 @@ msgid "Upgrade to Pro"
 msgstr ""
 
 #: src/Modules/Expirator/Controllers/PluginsListController.php:69
-#: src/Modules/Workflows/Controllers/ManualPostTrigger.php:458
-#: src/Modules/Workflows/Controllers/PostType.php:48
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:180
+#: src/Modules/Workflows/Controllers/ManualPostTrigger.php:461
+#: src/Modules/Workflows/Controllers/PostType.php:49
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:181
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-import.jsx:68
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:83
-#: assets/jsx/workflow-manual-selection/block-editor/index.jsx:48
-#: assets/jsx/workflow-manual-selection/bulk-edit/fieldset.jsx:86
-#: assets/jsx/workflow-manual-selection/quick-edit/index.jsx:71
+#: assets/jsx/workflow-manual-selection/block-editor/index.jsx:49
+#: assets/jsx/workflow-manual-selection/bulk-edit/fieldset.jsx:88
+#: assets/jsx/workflow-manual-selection/quick-edit/index.jsx:73
 msgid "Action Workflows"
 msgstr ""
 
@@ -436,7 +436,7 @@ msgstr ""
 msgid "No future action"
 msgstr ""
 
-#: src/Modules/Expirator/Controllers/RestAPIController.php:237
+#: src/Modules/Expirator/Controllers/RestAPIController.php:249
 msgid "Invalid date time offset."
 msgstr ""
 
@@ -448,7 +448,7 @@ msgstr ""
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:141
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:323
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:47
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:747
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:788
 msgid "Scheduled Actions"
 msgstr ""
 
@@ -612,7 +612,7 @@ msgid "This is a Pro feature. Upgrade to unlock this functionality."
 msgstr ""
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:459
-#: src/Modules/Settings/Controllers/Controller.php:238
+#: src/Modules/Settings/Controllers/Controller.php:239
 msgid "Form Validation Failure: Sorry, your nonce did not verify."
 msgstr ""
 
@@ -640,7 +640,7 @@ msgstr ""
 msgid "Status has been successfully changed from \"%1$s\" to \"%2$s\"."
 msgstr ""
 
-#: src/Modules/Expirator/ExpirationActions/ChangePostStatus.php:89
+#: src/Modules/Expirator/ExpirationActions/ChangePostStatus.php:93
 msgid "Change status"
 msgstr ""
 
@@ -822,7 +822,7 @@ msgid "Invalid date/time offset \"%s\" for post type \"%s\". Please ensure you u
 msgstr ""
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:53
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:217
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:234
 msgid "Status"
 msgstr ""
 
@@ -1051,35 +1051,35 @@ msgstr ""
 msgid "No Scheduled Actions."
 msgstr ""
 
-#: src/Modules/Settings/Controllers/Controller.php:192
+#: src/Modules/Settings/Controllers/Controller.php:193
 msgid "Scheduled Workflow Steps Cleanup"
 msgstr ""
 
-#: src/Modules/Settings/Controllers/Controller.php:193
+#: src/Modules/Settings/Controllers/Controller.php:194
 msgid "Automatically remove scheduled workflow steps"
 msgstr ""
 
-#: src/Modules/Settings/Controllers/Controller.php:197
+#: src/Modules/Settings/Controllers/Controller.php:198
 msgid "Automatically remove scheduled workflow steps that have been marked as failed, completed, or cancelled."
 msgstr ""
 
-#: src/Modules/Settings/Controllers/Controller.php:201
+#: src/Modules/Settings/Controllers/Controller.php:202
 msgid "Retain all scheduled workflow steps"
 msgstr ""
 
-#: src/Modules/Settings/Controllers/Controller.php:205
+#: src/Modules/Settings/Controllers/Controller.php:206
 msgid "Retain all scheduled workflow steps indefinitely, including those marked as failed, completed, or cancelled. This may impact database performance over time."
 msgstr ""
 
-#: src/Modules/Settings/Controllers/Controller.php:209
+#: src/Modules/Settings/Controllers/Controller.php:210
 msgid "Retention"
 msgstr ""
 
-#: src/Modules/Settings/Controllers/Controller.php:210
+#: src/Modules/Settings/Controllers/Controller.php:211
 msgid "The duration, in days, for which completed, failed, and canceled scheduled workflow steps will be preserved before automatic removal."
 msgstr ""
 
-#: src/Modules/Settings/Controllers/Controller.php:214
+#: src/Modules/Settings/Controllers/Controller.php:215
 msgid "days"
 msgstr ""
 
@@ -1089,7 +1089,7 @@ msgstr ""
 msgid "You're using PublishPress Future Free. The Pro version has more features and support. %1$sUpgrade to Pro%2$s"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/ManualPostTrigger.php:393
+#: src/Modules/Workflows/Controllers/ManualPostTrigger.php:396
 msgid "Workflow Manual Trigger"
 msgstr ""
 
@@ -1110,93 +1110,93 @@ msgstr ""
 msgid "[PublishPress Future] Past-due Actions Found"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/PostType.php:49
+#: src/Modules/Workflows/Controllers/PostType.php:50
 msgid "Future Workflow"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/PostType.php:50
+#: src/Modules/Workflows/Controllers/PostType.php:51
 msgid "Add New"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/PostType.php:51
+#: src/Modules/Workflows/Controllers/PostType.php:52
 msgid "Add New Workflow"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/PostType.php:52
+#: src/Modules/Workflows/Controllers/PostType.php:53
 msgid "Edit Workflow"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/PostType.php:53
+#: src/Modules/Workflows/Controllers/PostType.php:54
 #: src/Modules/Workflows/Models/WorkflowModel.php:456
 msgid "New Workflow"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/PostType.php:54
+#: src/Modules/Workflows/Controllers/PostType.php:55
 msgid "View Workflow"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/PostType.php:55
+#: src/Modules/Workflows/Controllers/PostType.php:56
 msgid "Search Workflows"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/PostType.php:56
+#: src/Modules/Workflows/Controllers/PostType.php:57
 msgid "No Workflows found"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/PostType.php:57
+#: src/Modules/Workflows/Controllers/PostType.php:58
 msgid "No Workflows found in Trash"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/PostType.php:58
+#: src/Modules/Workflows/Controllers/PostType.php:59
 msgid "Parent Workflow:"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/PostType.php:59
+#: src/Modules/Workflows/Controllers/PostType.php:60
 msgid "All Workflows"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/PostType.php:60
+#: src/Modules/Workflows/Controllers/PostType.php:61
 msgid "Workflow Archives"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/PostType.php:61
+#: src/Modules/Workflows/Controllers/PostType.php:62
 msgid "Insert into workflow"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/PostType.php:62
+#: src/Modules/Workflows/Controllers/PostType.php:63
 msgid "Uploaded to this workflow"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/PostType.php:63
+#: src/Modules/Workflows/Controllers/PostType.php:64
 msgid "Filter workflows list"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/PostType.php:64
+#: src/Modules/Workflows/Controllers/PostType.php:65
 msgid "Workflows list navigation"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/PostType.php:65
+#: src/Modules/Workflows/Controllers/PostType.php:66
 msgid "Action Workflows list"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/PostType.php:66
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:185
+#: src/Modules/Workflows/Controllers/PostType.php:67
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:190
 msgid "Workflow published."
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/PostType.php:67
+#: src/Modules/Workflows/Controllers/PostType.php:68
 msgid "Workflow published privately."
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/PostType.php:68
+#: src/Modules/Workflows/Controllers/PostType.php:69
 msgid "Workflow reverted to draft."
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/PostType.php:69
+#: src/Modules/Workflows/Controllers/PostType.php:70
 msgid "Workflow scheduled."
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/PostType.php:70
+#: src/Modules/Workflows/Controllers/PostType.php:71
 msgid "Workflow updated."
 msgstr ""
 
@@ -1383,184 +1383,192 @@ msgstr ""
 msgid "[%1$s/%2$d]"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowEditor.php:263
+#: src/Modules/Workflows/Controllers/WorkflowEditor.php:264
 #: assets/jsx/workflow-editor/components/welcome-guide/index.jsx:21
 msgid "Welcome to the workflow editor"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowEditor.php:264
+#: src/Modules/Workflows/Controllers/WorkflowEditor.php:265
 msgid "In the PublishPress Workflow Editor, each workflow step is presented as a distinct 'node' in the workflow."
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowEditor.php:268
+#: src/Modules/Workflows/Controllers/WorkflowEditor.php:269
 msgid "Use your imagination"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowEditor.php:269
+#: src/Modules/Workflows/Controllers/WorkflowEditor.php:270
 msgid "You're free to create very distinct workflows in your site, according to your needs."
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowEditor.php:273
+#: src/Modules/Workflows/Controllers/WorkflowEditor.php:274
 msgid "A basic workflow"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowEditor.php:274
+#: src/Modules/Workflows/Controllers/WorkflowEditor.php:275
 msgid "Every workflow requires at least two steps connected to each other: one trigger and one action."
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowEditor.php:278
+#: src/Modules/Workflows/Controllers/WorkflowEditor.php:279
 msgid "Add steps to your workflow"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowEditor.php:279
+#: src/Modules/Workflows/Controllers/WorkflowEditor.php:280
 msgid "Drag and drop steps to add them to your workflow. Connect the steps to create a workflow."
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowEditor.php:283
+#: src/Modules/Workflows/Controllers/WorkflowEditor.php:284
 msgid "Output and input"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowEditor.php:284
+#: src/Modules/Workflows/Controllers/WorkflowEditor.php:285
 msgid "Linked steps can pass data forward as input to the next step."
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowEditor.php:288
+#: src/Modules/Workflows/Controllers/WorkflowEditor.php:289
 msgid "Customize the workflow"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowEditor.php:289
+#: src/Modules/Workflows/Controllers/WorkflowEditor.php:290
 msgid "Click on a step to customize it. You can change the step's settings in the right sidebar."
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowEditor.php:293
+#: src/Modules/Workflows/Controllers/WorkflowEditor.php:294
 msgid "Workflow validation"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowEditor.php:294
+#: src/Modules/Workflows/Controllers/WorkflowEditor.php:295
 msgid "Error messages will appear for any unfilled required settings, missed connections, or invalid values. Select the step to view the corresponding error in the sidebar."
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowEditor.php:298
+#: src/Modules/Workflows/Controllers/WorkflowEditor.php:299
 msgid "Publish your workflow"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowEditor.php:299
+#: src/Modules/Workflows/Controllers/WorkflowEditor.php:300
 msgid "When you're ready, click the publish button to make your workflow live."
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowEditor.php:303
+#: src/Modules/Workflows/Controllers/WorkflowEditor.php:304
 msgid "Need help?"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowEditor.php:304
+#: src/Modules/Workflows/Controllers/WorkflowEditor.php:305
 msgid "If you have any questions or need help, click the help button in the top right corner to access the support resources."
 msgstr ""
 
 #. translators: Blocks tab title in the block inserter.
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:219
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:236
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:19
 msgid "Triggers"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:246
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:383
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:384
-msgid "Deactivate"
-msgstr ""
-
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:246
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:377
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:378
-msgid "Activate"
-msgstr ""
-
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:288
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:280
 msgid "—"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:433
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:566
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:594
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:595
+msgid "Deactivate"
+msgstr ""
+
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:566
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:588
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:589
+msgid "Activate"
+msgstr ""
+
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:640
 msgid "Cancel all actions scheduled for this workflow"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:435
-#: assets/jsx/workflows-list/cancel-action/index.jsx:46
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:641
+#: assets/jsx/workflows-list/cancel-action/index.jsx:51
 msgid "Cancel Scheduled Actions"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:453
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:656
 msgid "Copy this workflow"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:454
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:657
 msgid "Copy"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:658
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:695
 msgid "Source workflow not found."
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:659
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:696
 msgid "Failed to create new workflow."
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:660
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:697
 msgid "An error occurred while copying the workflow."
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:662
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:699
 msgid "Error cancelling scheduled actions."
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:663
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:700
 msgid "This workflow doesn't have any scheduled action."
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:667
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:702
+msgid "Error updating workflow status."
+msgstr ""
+
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:706
 msgid "Workflow copied successfully."
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:669
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:708
 msgid "Scheduled actions have been cancelled successfully."
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:720
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:710
+msgid "Workflow status updated successfully."
+msgstr ""
+
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:761
 msgid "Action Workflow Editor"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:787
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:791
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:828
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:832
 #, php-format
 msgid "%s updated."
 msgstr ""
 
 #. translators: 1: Post type singular label, 2: Revision title
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:797
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:838
 #, php-format
 msgid "%1$s restored to revision from %2$s"
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:803
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:844
 #, php-format
 msgid "%s published."
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:807
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:848
 #, php-format
 msgid "%s saved."
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:811
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:852
 #, php-format
 msgid "%s submitted."
 msgstr ""
 
 #. translators: 1: Post type singular label, 2: Scheduled date
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:816
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:857
 #, php-format
 msgid "%1$s scheduled for: <strong>%2$s</strong>."
 msgstr ""
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:821
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:862
 #, php-format
 msgid "%s draft updated."
 msgstr ""
@@ -1581,7 +1589,7 @@ msgstr ""
 
 #: src/Modules/Workflows/Domain/Engine/VariableResolvers/BooleanResolver.php:31
 #: src/Modules/Workflows/Domain/Engine/VariableResolvers/BooleanResolver.php:77
-#: assets/jsx/workflows-list/cancel-action/index.jsx:70
+#: assets/jsx/workflows-list/cancel-action/index.jsx:75
 msgid "No"
 msgstr ""
 
@@ -1702,7 +1710,7 @@ msgstr ""
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DuplicatePost.php:180
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/QueryPosts.php:131
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/RemovePostTerm.php:150
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:142
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:157
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:167
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:202
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendRay.php:127
@@ -1726,7 +1734,7 @@ msgstr ""
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DuplicatePost.php:181
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/QueryPosts.php:132
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/RemovePostTerm.php:151
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:143
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:158
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:168
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:203
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendRay.php:128
@@ -1784,7 +1792,7 @@ msgstr ""
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostUpdate.php:144
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostWorkflowEnable.php:156
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnTermsAdded.php:178
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:148
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:152
 msgid "Next"
 msgstr ""
 
@@ -2221,51 +2229,63 @@ msgstr ""
 msgid "Schedule > Unique ID Expression"
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:112
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:104
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:113
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:64
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:139
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-date.jsx:72
+msgid "Custom date source"
+msgstr ""
+
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:114
+msgid "Schedule > Custom date source"
+msgstr ""
+
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:127
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:104
 msgid "Schedule date"
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:113
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:128
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:105
 msgid "The date and time when the step will run."
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:118
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:133
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:110
 msgid "Action UID hash"
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:119
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:134
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:111
 msgid "The unique ID hash of the action that will run."
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:124
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:139
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:116
 msgid "Repeat count"
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:125
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:140
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:117
 msgid "The number of times the scheduled action has been repeated."
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:130
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:145
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:122
 msgid "Repeat limit"
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:131
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:146
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:123
 msgid "The maximum number of times the scheduled action will be repeated."
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:168
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:183
 msgid "After delay"
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:172
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:187
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:149
 msgid "After all repetitions"
 msgstr ""
@@ -3191,27 +3211,31 @@ msgstr ""
 msgid "User Role before change"
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:118
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:84
+msgid "User Role after change"
+msgstr ""
+
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:122
 msgid "User that data was changed for"
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:119
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:123
 msgid "The user that data was changed for."
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:124
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:128
 msgid "Added roles"
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:125
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:129
 msgid "The roles that were added to the user."
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:130
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:134
 msgid "Removed roles"
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:131
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:135
 msgid "The roles that were removed from the user."
 msgstr ""
 
@@ -3259,28 +3283,40 @@ msgstr ""
 msgid "%s #2"
 msgstr ""
 
-#: src/Modules/Workflows/Rest/RestApiV1.php:52
-#: src/Modules/Workflows/Rest/RestApiV1.php:106
-#: src/Modules/Workflows/Rest/RestApiV1.php:126
+#: src/Modules/Workflows/Rest/RestApiV1.php:66
+#: src/Modules/Workflows/Rest/RestApiV1.php:129
+#: src/Modules/Workflows/Rest/RestApiV1.php:152
 msgid "The ID of the workflow"
 msgstr ""
 
-#: src/Modules/Workflows/Rest/RestApiV1.php:73
+#: src/Modules/Workflows/Rest/RestApiV1.php:90
 msgid "The post type"
 msgstr ""
 
-#: src/Modules/Workflows/Rest/RestApiV1.php:146
+#: src/Modules/Workflows/Rest/RestApiV1.php:175
 msgid "The taxonomy name"
 msgstr ""
 
-#: src/Modules/Workflows/Rest/RestApiV1.php:166
+#: src/Modules/Workflows/Rest/RestApiV1.php:198
 msgid "The post ID"
 msgstr ""
 
-#: src/Modules/Workflows/Rest/RestApiV1.php:218
-#: src/Modules/Workflows/Rest/RestApiV1.php:244
-#: src/Modules/Workflows/Rest/RestApiV1.php:305
+#: src/Modules/Workflows/Rest/RestApiV1.php:253
+#: src/Modules/Workflows/Rest/RestApiV1.php:279
+#: src/Modules/Workflows/Rest/RestApiV1.php:349
 msgid "Workflow not found"
+msgstr ""
+
+#: src/Modules/Workflows/Rest/RestApiV1.php:458
+msgid "Flow data must be an array."
+msgstr ""
+
+#: src/Modules/Workflows/Rest/RestApiV1.php:471
+msgid "Each node must have an id and type."
+msgstr ""
+
+#: src/Modules/Workflows/Rest/RestApiV1.php:482
+msgid "Each edge must have an id, source, and target."
 msgstr ""
 
 #: src/Modules/Workflows/Views/editor.html.php:13
@@ -3969,11 +4005,11 @@ msgstr ""
 msgid "Select a post type to edit:"
 msgstr ""
 
-#: assets/jsx/legacy-action/index.jsx:77
+#: assets/jsx/legacy-action/index.jsx:78
 msgid "Workflow to trigger"
 msgstr ""
 
-#: assets/jsx/legacy-action/index.jsx:89
+#: assets/jsx/legacy-action/index.jsx:90
 msgid "No compatible workflows available."
 msgstr ""
 
@@ -4121,12 +4157,6 @@ msgstr ""
 #: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:63
 #: assets/jsx/workflow-editor/components/data-fields/post-data/post-date.jsx:63
 msgid "When the step is activated"
-msgstr ""
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:64
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:139
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-date.jsx:72
-msgid "Custom date source"
 msgstr ""
 
 #: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:80
@@ -4367,18 +4397,18 @@ msgstr ""
 msgid "Update the post author"
 msgstr ""
 
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-author.jsx:62
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-author.jsx:63
 msgid "Unable to load the list of authors. Please try again."
 msgstr ""
 
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-author.jsx:80
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-author.jsx:81
 #: assets/jsx/workflow-editor/components/data-fields/post-data/post-date.jsx:84
 #: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:32
 #: assets/jsx/workflow-editor/components/data-fields/post-data/post-text.jsx:27
 msgid "Do not update"
 msgstr ""
 
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-author.jsx:102
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-author.jsx:103
 msgid "Author"
 msgstr ""
 
@@ -4437,7 +4467,7 @@ msgid "Post received as input"
 msgstr ""
 
 #: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:82
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:61
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:65
 msgid "Custom query"
 msgstr ""
 
@@ -4446,12 +4476,12 @@ msgid "Post Terms"
 msgstr ""
 
 #: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:160
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:95
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:116
 msgid "Separate multiple values with commas or Enter key."
 msgstr ""
 
 #: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:166
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:101
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:122
 msgid "* Required field"
 msgstr ""
 
@@ -4531,19 +4561,19 @@ msgstr ""
 msgid "Specific terms"
 msgstr ""
 
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:44
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:45
 msgid "User Role"
 msgstr ""
 
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:57
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:61
 msgid "User selection"
 msgstr ""
 
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:60
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:64
 msgid "User received as input"
 msgstr ""
 
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:84
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:105
 msgid "User ID"
 msgstr ""
 
@@ -5060,44 +5090,44 @@ msgstr ""
 msgid "Saved"
 msgstr ""
 
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:30
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:31
 msgid "Unable to create a new workflow. Please try again."
 msgstr ""
 
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:49
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:51
 msgid "Unable to load the workflow. Please try again."
 msgstr ""
 
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:91
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:94
 msgid "Workflow saved as draft."
 msgstr ""
 
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:99
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:149
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:102
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:153
 msgid "Unable to save workflow. Please, try again."
 msgstr ""
 
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:141
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:145
 msgid "Workflow saved."
 msgstr ""
 
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:193
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:198
 msgid "Unable to publish the workflow. Please, try again."
 msgstr ""
 
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:229
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:235
 msgid "Workflow switched to draft."
 msgstr ""
 
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:237
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:243
 msgid "Unable to switch workflow to draft. Please, try again."
 msgstr ""
 
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:327
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:334
 msgid "Workflow deleted. Redirecting..."
 msgstr ""
 
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:338
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:345
 msgid "Unable to delete the workflow. Please, try again."
 msgstr ""
 
@@ -5125,7 +5155,7 @@ msgstr ""
 msgid "Switch to draft"
 msgstr ""
 
-#: assets/jsx/workflow-manual-selection/bulk-edit/fieldset.jsx:74
+#: assets/jsx/workflow-manual-selection/bulk-edit/fieldset.jsx:76
 msgid "Change manually enabled workflows"
 msgstr ""
 
@@ -5135,11 +5165,11 @@ msgid "Enable workflow %s"
 msgstr ""
 
 #. translators: %s: Workflow title
-#: assets/jsx/workflows-list/cancel-action/index.jsx:54
+#: assets/jsx/workflows-list/cancel-action/index.jsx:59
 #, js-format
 msgid "Are you sure you want to cancel all scheduled actions for the \"%s\" workflow?"
 msgstr ""
 
-#: assets/jsx/workflows-list/cancel-action/index.jsx:64
+#: assets/jsx/workflows-list/cancel-action/index.jsx:69
 msgid "Cancel Actions"
 msgstr ""

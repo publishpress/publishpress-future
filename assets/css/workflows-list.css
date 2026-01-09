@@ -2,3 +2,9 @@
 .inline-edit-wrapper .inline-edit-date {
     display: none;
 }
+
+.pp-future-workflow-action-form {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}

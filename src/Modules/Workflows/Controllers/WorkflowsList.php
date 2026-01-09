@@ -96,7 +96,7 @@ class WorkflowsList implements InitializableInterface
         );
 
         $this->hooks->addAction(
-            CoreHooksAbstract::ACTION_ADMIN_INIT,
+            HooksAbstract::ACTION_ADMIN_POST_CHANGE_WORKFLOW_STATUS,
             [$this, "updateWorkflowStatus"]
         );
 
@@ -125,7 +125,7 @@ class WorkflowsList implements InitializableInterface
         );
 
         $this->hooks->addAction(
-            CoreHooksAbstract::ACTION_ADMIN_INIT,
+            HooksAbstract::ACTION_ADMIN_POST_COPY_WORKFLOW,
             [$this, "copyWorkflow"]
         );
 
@@ -140,7 +140,7 @@ class WorkflowsList implements InitializableInterface
         );
 
         $this->hooks->addAction(
-            CoreHooksAbstract::ACTION_ADMIN_INIT,
+            HooksAbstract::ACTION_ADMIN_POST_CANCEL_SCHEDULED_ACTIONS,
             [$this, "handleCancelScheduledActions"]
         );
     }
@@ -211,6 +211,22 @@ class WorkflowsList implements InitializableInterface
             PUBLISHPRESS_FUTURE_VERSION,
             true
         );
+
+        wp_enqueue_script(
+            'pp-future-workflows-list-status-change',
+            Plugin::getAssetUrl('js/workflowsListStatusChange.js'),
+            ['wp-element', 'wp-components', 'wp-i18n'],
+            PUBLISHPRESS_FUTURE_VERSION,
+            true
+        );
+
+        wp_enqueue_script(
+            'pp-future-workflows-list-copy-workflow',
+            Plugin::getAssetUrl('js/workflowsListCopyWorkflow.js'),
+            ['wp-element', 'wp-components', 'wp-i18n'],
+            PUBLISHPRESS_FUTURE_VERSION,
+            true
+        );
     }
 
     public function addCustomColumns($columns)
@@ -244,32 +260,7 @@ class WorkflowsList implements InitializableInterface
         $workflowStatus = $workflowModel->getStatus();
         $isActive = $workflowStatus === 'publish';
 
-        $title = $isActive ? __('Deactivate', 'post-expirator') : __('Activate', 'post-expirator');
-
-        $icon = $isActive ? 'yes' : 'no';
-        $iconClass = $isActive ? 'active' : 'inactive';
-
-        $toggleUrl = esc_url(
-            wp_nonce_url(
-                add_query_arg(
-                    [
-                        'pp_action' => 'change_workflow_status',
-                        'workflow_id' => $postId,
-                        'status' => $isActive ? 'draft' : 'publish'
-                    ],
-                    admin_url('edit.php?post_type=' . Module::POST_TYPE_WORKFLOW)
-                ),
-                'change_workflow_status_' . $postId
-            )
-        );
-
-        echo sprintf(
-            '<a href="%s"><i class="pp-future-workflow-status-icon dashicons dashicons-%s %s" title="%s"></i> </a>',
-            esc_url($toggleUrl),
-            esc_attr($icon),
-            esc_attr($iconClass),
-            esc_attr($title)
-        );
+        $this->renderStatusToggleForm($postId, $isActive);
     }
 
     public function renderTriggersColumn($column, $postId)
@@ -338,54 +329,42 @@ class WorkflowsList implements InitializableInterface
         $newStatus = sanitize_key($_POST['new_status']);
 
         try {
-            if (!isset($_GET['pp_action']) || 'change_workflow_status' !== $_GET['pp_action']) {
-                return;
-            }
-
-            if (!isset($_GET['workflow_id'])) {
-                return;
-            }
-
-            if (!isset($_GET['status'])) {
-                return;
-            }
-
-            if (!isset($_GET['_wpnonce'])) {
-                return;
-            }
-
-            if (!wp_verify_nonce(sanitize_key($_GET['_wpnonce']), 'change_workflow_status_' . (int) $_GET['workflow_id'])) {
-                return;
-            }
-
-            $workflowId = (int) $_GET['workflow_id'];
-            $workflowStatus = sanitize_key($_GET['status']);
-
             $workflowModel = new WorkflowModel();
             $workflowModel->load($workflowId);
 
-            if ('publish' === $workflowStatus) {
+            if ('publish' === $newStatus) {
                 $workflowModel->publish();
             } else {
                 $workflowModel->unpublish();
             }
 
-            wp_redirect(
-                esc_url(
-                    add_query_arg(
-                        'post_type',
-                        Module::POST_TYPE_WORKFLOW,
-                        admin_url('edit.php')
-                    )
+
+            wp_safe_redirect(
+                add_query_arg(
+                    [
+                        'post_type' => Module::POST_TYPE_WORKFLOW,
+                        'pp_workflow_notice' => 'status_changed',
+                        'pp_workflow_notice_type' => 'success'
+                    ],
+                    admin_url('edit.php')
                 )
             );
-
             exit;
         } catch (Throwable $th) {
             $this->logger->error('Error updating workflow status: ' . $th->getMessage());
-        }
 
-        exit;
+            wp_safe_redirect(
+                add_query_arg(
+                    [
+                        'post_type' => Module::POST_TYPE_WORKFLOW,
+                        'pp_workflow_notice' => 'status_change_error',
+                        'pp_workflow_notice_type' => 'error'
+                    ],
+                    admin_url('edit.php')
+                )
+            );
+            exit;
+        }
     }
 
     public function renderWorkflowAction($actions, $post)
@@ -403,90 +382,20 @@ class WorkflowsList implements InitializableInterface
 
         $workflowStatus = $workflowModel->getStatus();
 
-        $statuses = [
-            'draft' => [
-                'action' => 'activate',
-                'text' => __('Activate', 'post-expirator'),
-                'title' => __('Activate', 'post-expirator'),
-                'status' => 'publish',
-            ],
-            'publish' => [
-                'action' => 'deactivate',
-                'text' => __('Deactivate', 'post-expirator'),
-                'title' => __('Deactivate', 'post-expirator'),
-                'status' => 'draft',
-            ]
-        ];
+        $newActions = $this->getWorkflowActionForms($post, $workflowStatus);
 
-        $statusData = isset($statuses[$workflowStatus]) ? $statuses[$workflowStatus] : [];
+        $quickEditIndex = array_search('inline hide-if-no-js', array_keys($actions));
 
-        if (empty($statusData)) {
-            return $actions;
+        if ($quickEditIndex !== false) {
+            $insertPosition = $quickEditIndex + 1;
+            $actions = array_merge(
+                array_slice($actions, 0, $insertPosition),
+                $newActions,
+                array_slice($actions, $insertPosition)
+            );
+        } else {
+            $actions = array_merge($newActions, $actions);
         }
-
-        // New Action for status
-        $newActions = [
-            $statusData['action'] => sprintf(
-                '<a href="%s" class="pp-future-workflow-%s-inline" title="%s">%s</a>',
-                esc_url(
-                    wp_nonce_url(
-                        add_query_arg(
-                            [
-                                'pp_action' => 'change_workflow_status',
-                                'workflow_id' => $post->ID,
-                                'status' => $statusData['status']
-                            ],
-                            admin_url('edit.php?post_type=' . Module::POST_TYPE_WORKFLOW)
-                        ),
-                        'change_workflow_status_' . $post->ID
-                    )
-                ),
-                $statusData['action'],
-                $statusData['text'],
-                $statusData['title']
-            )
-        ];
-
-        // add cancel scheduled actions
-        $newActions['cancel_scheduled_actions'] = sprintf(
-            '<a href="%s" class="pp-future-workflow-cancel-actions" title="%s" data-workflow-title="%s">%s</a>',
-            esc_url(
-                wp_nonce_url(
-                    add_query_arg(
-                        [
-                            'pp_action' => 'cancel_workflow_scheduled_actions',
-                            'workflow_id' => $post->ID
-                        ],
-                        admin_url('edit.php?post_type=' . Module::POST_TYPE_WORKFLOW)
-                    ),
-                    'cancel_workflow_scheduled_actions_' . $post->ID
-                )
-            ),
-            __('Cancel all actions scheduled for this workflow', 'post-expirator'),
-            esc_attr($post->post_title),
-            __('Cancel Scheduled Actions', 'post-expirator'),
-        );
-
-        // add copy action
-        $newActions['copy'] = sprintf(
-            '<a href="%s" class="pp-future-workflow-copy-inline" title="%s">%s</a>',
-            esc_url(
-                wp_nonce_url(
-                    add_query_arg(
-                        [
-                            'pp_action' => 'copy_workflow',
-                            'workflow_id' => $post->ID
-                        ],
-                        admin_url('edit.php?post_type=' . Module::POST_TYPE_WORKFLOW)
-                    ),
-                    'copy_workflow_' . $post->ID
-                )
-            ),
-            __('Copy this workflow', 'post-expirator'),
-            __('Copy', 'post-expirator')
-        );
-
-        $actions = $newActions + $actions;
 
         return $actions;
     }
@@ -511,10 +420,10 @@ class WorkflowsList implements InitializableInterface
             return;
         }
 
+        $sourceWorkflowId = (int) $_POST['workflow_id'];
         $redirect_url = admin_url('edit.php?post_type=' . $postType);
 
         try {
-            $sourceWorkflowId = (int) $_GET['workflow_id'];
             // load source workflow
             $sourceWorkflowModel = new WorkflowModel();
             if (!$sourceWorkflowModel->load($sourceWorkflowId)) {
@@ -558,6 +467,8 @@ class WorkflowsList implements InitializableInterface
             );
             exit;
         } catch (Throwable $th) {
+            $this->logger->error('Error copying workflow: ' . $th->getMessage());
+
             $redirect_url = add_query_arg(
                 [
                     'pp_workflow_notice' => 'generic_error',
@@ -576,12 +487,11 @@ class WorkflowsList implements InitializableInterface
     {
         $postType = Module::POST_TYPE_WORKFLOW;
 
-        // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-        if (!isset($_GET['post_type']) || $_GET['post_type'] !== $postType) {
+        if (!isset($_SERVER['REQUEST_METHOD']) || $_SERVER['REQUEST_METHOD'] !== 'POST') {
             return;
         }
 
-        if (!isset($_GET['pp_action']) || 'cancel_workflow_scheduled_actions' !== $_GET['pp_action']) {
+        if (!isset($_POST['workflow_id'])) {
             return;
         }
 
@@ -601,26 +511,6 @@ class WorkflowsList implements InitializableInterface
         $workflowId = (int) $_POST['workflow_id'];
 
         try {
-            if (!isset($_GET['workflow_id'])) {
-                return;
-            }
-
-            if (!isset($_GET['_wpnonce'])) {
-                return;
-            }
-
-            if (
-                !wp_verify_nonce(
-                    sanitize_key($_GET['_wpnonce']),
-                    'cancel_workflow_scheduled_actions_' . (int) $_GET['workflow_id']
-                )
-            ) {
-                return;
-            }
-
-            $redirect_url = admin_url('edit.php?post_type=' . $postType);
-            $workflowId = (int) $_GET['workflow_id'];
-
             $scheduledActionsModel = new ScheduledActionsModel();
 
             // Check if workflow has scheduled actions
@@ -655,6 +545,8 @@ class WorkflowsList implements InitializableInterface
             );
             exit;
         } catch (Throwable $th) {
+            $this->logger->error('Error cancelling scheduled actions: ' . $th->getMessage());
+
             $redirect_url = add_query_arg(
                 [
                     'pp_workflow_notice' => 'scheduled_action_cancelling_error',
@@ -667,6 +559,105 @@ class WorkflowsList implements InitializableInterface
             );
             exit;
         }
+    }
+
+    private function renderStatusToggleForm($postId, $isActive)
+    {
+        $title = $isActive ? __('Deactivate', 'post-expirator') : __('Activate', 'post-expirator');
+        $newStatus = $isActive ? 'draft' : 'publish';
+        $icon = $isActive ? 'yes' : 'no';
+        $iconClass = $isActive ? 'active' : 'inactive';
+        ?>
+        <form method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" style="display: inline;">
+            <?php wp_nonce_field('workflow_status_change', 'workflow_nonce'); ?>
+            <input type="hidden" name="action" value="publishpress_future_change_workflow_status" />
+            <input type="hidden" name="workflow_id" value="<?php echo esc_attr($postId); ?>" />
+            <input type="hidden" name="new_status" value="<?php echo esc_attr($newStatus); ?>" />
+            <button type="submit" class="button-link" style="border: none; background: none; padding: 0; cursor: pointer;">
+                <i class="pp-future-workflow-status-icon dashicons dashicons-<?php echo esc_attr($icon); ?> <?php echo esc_attr($iconClass); ?>" title="<?php echo esc_attr($title); ?>"></i>
+            </button>
+        </form>
+        <?php
+    }
+
+    private function getWorkflowActionForms($post, $workflowStatus): array
+    {
+        $statuses = [
+            'draft' => [
+                'action' => 'activate',
+                'text' => __('Activate', 'post-expirator'),
+                'title' => __('Activate', 'post-expirator'),
+                'status' => 'publish',
+            ],
+            'publish' => [
+                'action' => 'deactivate',
+                'text' => __('Deactivate', 'post-expirator'),
+                'title' => __('Deactivate', 'post-expirator'),
+                'status' => 'draft',
+            ]
+        ];
+
+        $statusData = isset($statuses[$workflowStatus]) ? $statuses[$workflowStatus] : [];
+
+        if (empty($statusData)) {
+            return [];
+        }
+
+        $actions = [];
+
+        // Status change form
+        $actions[$statusData['action']] = sprintf(
+            '<form></form><!-- Dummy form to workaround WordPress stripping first form from row actions -->
+            <form method="post" action="%s" class="pp-future-workflow-action-form">
+                %s
+                <input type="hidden" name="action" value="publishpress_future_change_workflow_status" />
+                <input type="hidden" name="workflow_id" value="%s" />
+                <input type="hidden" name="new_status" value="%s" />
+                <button type="submit" class="button-link pp-future-workflow-status-change" data-action="%s" data-workflow-title="%s" title="%s">%s</button>
+            </form>',
+            esc_url(admin_url('admin-post.php')),
+            wp_nonce_field('workflow_status_change', 'workflow_nonce', true, false),
+            esc_attr($post->ID),
+            esc_attr($statusData['status']),
+            esc_attr($statusData['action']),
+            esc_attr($post->post_title),
+            esc_attr($statusData['title']),
+            esc_html($statusData['text'])
+        );
+
+        // Cancel scheduled actions form
+        $actions['cancel_scheduled_actions'] = sprintf(
+            '<form method="post" action="%s" class="pp-future-workflow-action-form pp-cancel-form">
+                %s
+                <input type="hidden" name="action" value="publishpress_future_cancel_scheduled_actions" />
+                <input type="hidden" name="workflow_id" value="%s" />
+                <button type="submit" class="button-link pp-future-workflow-cancel-actions" data-workflow-title="%s" title="%s">%s</button>
+            </form>',
+            esc_url(admin_url('admin-post.php')),
+            wp_nonce_field('workflow_cancel_actions', 'workflow_nonce', true, false),
+            esc_attr($post->ID),
+            esc_attr($post->post_title),
+            esc_attr(__('Cancel all actions scheduled for this workflow', 'post-expirator')),
+            esc_html(__('Cancel Scheduled Actions', 'post-expirator'))
+        );
+
+        // Copy workflow form
+        $actions['copy'] = sprintf(
+            '<form method="post" action="%s" class="pp-future-workflow-action-form">
+                %s
+                <input type="hidden" name="action" value="publishpress_future_copy_workflow" />
+                <input type="hidden" name="workflow_id" value="%s" />
+                <button type="submit" class="button-link pp-future-workflow-copy" data-workflow-title="%s" title="%s">%s</button>
+            </form>',
+            esc_url(admin_url('admin-post.php')),
+            wp_nonce_field('workflow_copy', 'workflow_nonce', true, false),
+            esc_attr($post->ID),
+            esc_attr($post->post_title),
+            esc_attr(__('Copy this workflow', 'post-expirator')),
+            esc_html(__('Copy', 'post-expirator'))
+        );
+
+        return $actions;
     }
 
     public function addRemovableQueryArgs($args)
@@ -705,14 +696,18 @@ class WorkflowsList implements InitializableInterface
                 'create_failed'     => __('Failed to create new workflow.', 'post-expirator'),
                 'generic_error'     => __('An error occurred while copying the workflow.', 'post-expirator'),
                 // Cancel  scheduled workflow error
-                'scheduled_action_cancelling_error'         =>  __('Error cancelling scheduled actions.', 'post-expirator'),
-                'scheduled_action_cancelling_empty'         =>  __('This workflow doesn\'t have any scheduled action.', 'post-expirator')
+                'scheduled_action_cancelling_error' =>  __('Error cancelling scheduled actions.', 'post-expirator'),
+                'scheduled_action_cancelling_empty' =>  __('This workflow doesn\'t have any scheduled action.', 'post-expirator'),
+                // Worklow status change
+                'status_change_error'   =>  __('Error updating workflow status.', 'post-expirator')
             ],
             'success' => [
                 // Copy workflow success
                 'copy_success'  => __('Workflow copied successfully.', 'post-expirator'),
                 // Cancel scheduled workflow success
-                'scheduled_action_cancelling_success' => __('Scheduled actions have been cancelled successfully.', 'post-expirator')
+                'scheduled_action_cancelling_success' => __('Scheduled actions have been cancelled successfully.', 'post-expirator'),
+                // Worklow status change
+                'status_changed'   =>  __('Workflow status updated successfully.', 'post-expirator')
             ]
         ];
 

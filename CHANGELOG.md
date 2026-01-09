@@ -7,6 +7,78 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Added new trigger: Post is inserted - PRO, (Issue #1146)
 
+### Changed
+
+- Move the scheduled actions "Run" button to it's own column, (Issue #1496).
+
+## [4.9.4]- 18 December, 2025
+
+### Added
+
+- Enhance workflow management with custom capabilities (Issue #1540).
+  - Introduced new workflow capabilities: edit_publishpress_workflows, publish_publishpress_workflows, unpublish_publishpress_workflows
+  - Update REST API to use workflow-specific capabilities instead of generic edit_posts
+  - Add X-PP-Workflow-Nonce verification to all workflow endpoints for enhanced security
+
+### Fixed
+
+- Published pages via Future Actions show incorrect View links (Issue #1539).
+- Unable to edit imported workflow (Issue #1544).
+- "Query posts" step doesn't work when post type is not specified for custom posts, (Issue #1546)
+- Update ES-FR-IT translations (Issue #1537).
+
+## [4.9.3]- 11 December, 2025
+
+### Added
+
+- Added new conditional operators for workflow steps: "Is empty" and "Is not empty", allowing you to check if a value or field is empty or not within conditional logic (Issue #1518).
+
+### Fixed
+
+- Warning: Undefined array key "id" on an imported workflow, (Issue #1524)
+- Unable to re-schedule "On Schedule" trigger if it was already executed, (Issue #1527)
+- "Update post details" step not working with "Query posts" step, (Issue #1503).
+- Fixed how variable helpers are interpreted inside JSON logic conditions (Issue #1517).
+- "Query Posts" step has invalid settings validation, (Issue #1525)
+- Update ES-FR-IT translations (Issue #1477).
+- Remove email field from getAuthors REST API endpoint.
+- Convert workflow operations from GET to POST requests
+- Add capability checks for all workflow actions
+- Improve utils stripTags function
+- Implement backup structure validation to ensure data integrity
+- Add sanitization methods for workflows and settings data
+- Improve input validation with proper type checking and whitelisting
+- Enhanced workflow setDescription() method with wp_kses_post() sanitization
+- Enhance post expiration extraData data validation
+- Improve query parameter handling in settings controller
+- Enhance template rendering validation and path security
+- Add nonce verification to processMetaboxUpdate method
+- Improve input sanitization in debug log download
+- Add proper permission checks for post expiration data access
+- Add input sanitization for workflow node data values
+
+## [4.9.2]- 18 Novemeber, 2025
+
+### Added
+
+- Add "User Role After Change" criteria to "User role is changed" trigger,  (Issue #1473).
+
+### Changed
+
+- Re-organize Action Workflows quick edit links, (Issue #1479)
+- Resize workflow editor expression box modal, (Issue #1480)
+- Redirect users to "Action Workflows" screen on plugin activation, (Issue #1454)
+- Add validation to workflow schedule custom date source variable, (Issue #1481)
+
+### Fixed
+
+- Update ES-FR-IT translations (Issue #1477).
+- Enhance permission checks for REST API post modification endpoint, (Issue #1491).
+
+### Developers
+
+- Fixed duplicated constant values for hooks between modules and the core, (Issue #1292).
+
 ## [4.9.1]- 27 October, 2025
 
 ### Added

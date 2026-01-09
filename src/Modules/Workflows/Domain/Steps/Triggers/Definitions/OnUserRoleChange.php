@@ -81,6 +81,10 @@ class OnUserRoleChange implements StepTypeInterface
                                     "User Role before change",
                                     "post-expirator"
                                 ),
+                                "userRoleAfter" => __(
+                                    "User Role after change",
+                                    "post-expirator"
+                                ),
                             ],
                         ],
                     ],

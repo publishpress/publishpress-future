@@ -334,25 +334,19 @@ class BackupRestApi implements InitializableInterface
             $data = $request->get_param('data');
             $backupData = json_decode($data, true);
 
-            if (! is_array($backupData)) {
+            if (json_last_error() !== JSON_ERROR_NONE || !is_array($backupData)) {
                 throw new Exception('Invalid data');
             }
 
-            if (! isset($backupData['workflows']) || ! isset($backupData['settings'])) {
-                throw new Exception('Invalid data. Missing workflows or settings');
+            if (!$this->validateBackupStructure($backupData)) {
+                throw new Exception('Invalid backup data');
             }
 
-            if (empty($backupData) || (empty($backupData['workflows']) && empty($backupData['settings']))) {
-                throw new Exception('No content to import');
-            }
+            $workflows = $this->sanitizeWorkflows($backupData['workflows'] ?? []);
+            $settings = $this->sanitizeSettings($backupData['settings'] ?? []);
 
-            if (isset($backupData['workflows'])) {
-                $this->importWorkflows($backupData['workflows']);
-            }
-
-            if (isset($backupData['settings'])) {
-                $this->importSettings($backupData['settings']);
-            }
+            $this->importWorkflows($workflows);
+            $this->importSettings($settings);
 
             return new WP_REST_Response(
                 [
@@ -427,43 +421,51 @@ class BackupRestApi implements InitializableInterface
 
     public function importWorkflows($workflows)
     {
+        if (!is_array($workflows)) {
+            return;
+        }
+
         foreach ($workflows as $workflow) {
+            if (!is_array($workflow) || empty($workflow['title'])) {
+                continue;
+            }
+
             $workflowModel = new WorkflowModel();
             $workflowModel->createNew();
             $workflowModel->setTitle($workflow['title']);
-            $workflowModel->setDescription($workflow['description']);
-            $workflowModel->setStatus('draft');
-            $workflowModel->setFlow($workflow['flow']);
+            $workflowModel->setDescription($workflow['description'] ?? '');
+            $workflowModel->setStatus($workflow['status'] ?? 'draft');
+            $workflowModel->setFlow($workflow['flow'] ?? []);
             $workflowModel->save();
         }
     }
 
     public function importSettings($settings)
     {
-        if (isset($settings['postTypesDefaults'])) {
+        if (!is_array($settings)) {
+            return;
+        }
+
+        if (isset($settings['postTypesDefaults']) && is_array($settings['postTypesDefaults'])) {
             foreach ($settings['postTypesDefaults'] as $postType => $default) {
-                $this->settingsFacade->setPostTypeDefaults($postType, $default);
+                if (is_string($postType) && is_array($default)) {
+                    $this->settingsFacade->setPostTypeDefaults($postType, $default);
+                }
             }
         }
 
-        if (isset($settings['general'])) {
-            $this->settingsFacade->setGeneralSettings($settings['general']);
-        }
+        $settingMethods = [
+            'general' => 'setGeneralSettings',
+            'notifications' => 'setNotificationsSettings',
+            'display' => 'setDisplaySettings',
+            'admin' => 'setAdminSettings',
+            'advanced' => 'setAdvancedSettings',
+        ];
 
-        if (isset($settings['notifications'])) {
-            $this->settingsFacade->setNotificationsSettings($settings['notifications']);
-        }
-
-        if (isset($settings['display'])) {
-            $this->settingsFacade->setDisplaySettings($settings['display']);
-        }
-
-        if (isset($settings['admin'])) {
-            $this->settingsFacade->setAdminSettings($settings['admin']);
-        }
-
-        if (isset($settings['advanced'])) {
-            $this->settingsFacade->setAdvancedSettings($settings['advanced']);
+        foreach ($settingMethods as $key => $method) {
+            if (isset($settings[$key]) && is_array($settings[$key])) {
+                $this->settingsFacade->$method($settings[$key]);
+            }
         }
 
         $this->hooks->doAction(BackupHooksAbstract::ACTION_AFTER_IMPORT_SETTINGS, $settings);

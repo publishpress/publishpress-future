@@ -443,8 +443,7 @@ class RestApiV1 implements RestApiManagerInterface
             return [
                 'id' => $user->ID,
                 'userLogin' => $user->user_login,
-                'name' => $user->display_name,
-                'email' => $user->user_email,
+                'name' => $user->display_name
             ];
         }, $authors);
 

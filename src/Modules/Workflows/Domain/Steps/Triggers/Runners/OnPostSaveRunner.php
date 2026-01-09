@@ -90,7 +90,12 @@ class OnPostSaveRunner implements TriggerRunnerInterface
         $this->step = $step;
         $this->workflowId = $workflowId;
 
-        $this->hooks->addAction(HooksAbstract::ACTION_SAVE_POST, [$this, 'triggerCallback'], 15, 3);
+        $this->hooks->addAction(
+            HooksAbstract::ACTION_AFTER_INSERT_POST,
+            [$this, 'triggerCallback'],
+            20,
+            3
+        );
     }
 
     public function triggerCallback($postId, $post, $update)

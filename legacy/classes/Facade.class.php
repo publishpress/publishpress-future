@@ -2,7 +2,8 @@
 
 use PublishPress\Future\Core\DI\Container;
 use PublishPress\Future\Core\DI\ServicesAbstract;
-use PublishPress\Future\Modules\Expirator\CapabilitiesAbstract;
+use PublishPress\Future\Modules\Expirator\CapabilitiesAbstract as ExpiratorCapabilities;
+use PublishPress\Future\Modules\Workflows\CapabilitiesAbstract as WorkflowCapabilities;
 
 defined('ABSPATH') or die('Direct access not allowed.');
 
@@ -31,6 +32,10 @@ class PostExpirator_Facade
         if (! $this->user_role_can_expire_posts('administrator')) {
             $this->set_default_capabilities();
         }
+
+        if (! $this->user_role_can_manage_workflows('administrator')) {
+            $this->set_default_workflow_capabilities();
+        }
     }
 
     /**
@@ -57,8 +62,25 @@ class PostExpirator_Facade
             return false;
         }
 
-        return $user_role_instance->has_cap(CapabilitiesAbstract::EXPIRE_POST)
-            && $user_role_instance->capabilities[CapabilitiesAbstract::EXPIRE_POST] === true;
+        return $user_role_instance->has_cap(ExpiratorCapabilities::EXPIRE_POST)
+            && $user_role_instance->capabilities[ExpiratorCapabilities::EXPIRE_POST] === true;
+    }
+
+    /**
+     * Return true if the specific user role can manage workflows.
+     *
+     * @return bool
+     */
+    public function user_role_can_manage_workflows($user_role)
+    {
+        $user_role_instance = get_role($user_role);
+
+        if (! is_a($user_role_instance, WP_Role::class)) {
+            return false;
+        }
+
+        return $user_role_instance->has_cap(WorkflowCapabilities::EDIT_WORKFLOWS)
+            && $user_role_instance->capabilities[WorkflowCapabilities::EDIT_WORKFLOWS] === true;
     }
 
     /**
@@ -72,7 +94,23 @@ class PostExpirator_Facade
             return;
         }
 
-        $admin_role->add_cap(CapabilitiesAbstract::EXPIRE_POST);
+        $admin_role->add_cap(ExpiratorCapabilities::EXPIRE_POST);
+    }
+
+    /**
+     * Set the default workflow capabilities.
+     */
+    public function set_default_workflow_capabilities()
+    {
+        $admin_role = get_role('administrator');
+
+        if (! is_a($admin_role, WP_Role::class)) {
+            return;
+        }
+
+        $admin_role->add_cap(WorkflowCapabilities::EDIT_WORKFLOWS);
+        $admin_role->add_cap(WorkflowCapabilities::PUBLISH_WORKFLOWS);
+        $admin_role->add_cap(WorkflowCapabilities::UNPUBLISH_WORKFLOWS);
     }
 
     /**
@@ -158,7 +196,12 @@ class PostExpirator_Facade
         return array_merge(
             $capabilities,
             array(
-                'PublishPress Future' => [CapabilitiesAbstract::EXPIRE_POST],
+                'PublishPress Future' => [
+                    ExpiratorCapabilities::EXPIRE_POST,
+                    WorkflowCapabilities::EDIT_WORKFLOWS,
+                    WorkflowCapabilities::PUBLISH_WORKFLOWS,
+                    WorkflowCapabilities::UNPUBLISH_WORKFLOWS,
+                ],
             )
         );
     }
