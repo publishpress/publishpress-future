@@ -11,7 +11,7 @@ import {
 import ToggleInlineSetting from "./toggle-inline-setting";
 import apiFetch from "@wordpress/api-fetch";
 
-const { apiUrl, nonce } = window.futureWorkflowEditor;
+const { apiUrl, nonce, workflowNonce } = window.futureWorkflowEditor;
 
 let authorsPromise = null;
 let cachedAuthors = null;
@@ -26,6 +26,7 @@ const getAuthors = () => {
             path: `${apiUrl}/authors`,
             headers: {
                 'X-WP-Nonce': nonce,
+                'X-PP-Workflow-Nonce': workflowNonce,
             },
         }).then(response => {
             cachedAuthors = response;

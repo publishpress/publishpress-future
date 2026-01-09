@@ -1216,12 +1216,14 @@ function Fieldset(_ref) {
   var _window$futureWorkflo = window.futureWorkflowManualSelection,
     postType = _window$futureWorkflo.postType,
     nonce = _window$futureWorkflo.nonce,
+    workflowNonce = _window$futureWorkflo.workflowNonce,
     apiUrl = _window$futureWorkflo.apiUrl;
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useEffect)(function () {
     (0,_wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_4__["default"])({
       url: "".concat(apiUrl, "/workflows/with-manual-trigger/").concat(postType),
       headers: {
-        'X-WP-Nonce': nonce
+        'X-WP-Nonce': nonce,
+        'X-PP-Workflow-Nonce': workflowNonce
       }
     }).then(function (response) {
       setWorkflowsWithManualTrigger(response.workflowsWithManualTrigger);

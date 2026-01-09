@@ -40,6 +40,7 @@ function BlockEditorWorkflowManualTrigger() {
     // Load the workflow settings for the post
     const apiUrl = window.futureWorkflowManualSelection.apiUrl;
     const nonce = window.futureWorkflowManualSelection.nonce;
+    const workflowNonce = window.futureWorkflowManualSelection.workflowNonce;
     const postId = window.futureWorkflowManualSelection.postId;
 
     return (
@@ -54,6 +55,7 @@ function BlockEditorWorkflowManualTrigger() {
                 postId={postId}
                 apiUrl={apiUrl}
                 nonce={nonce}
+                workflowNonce={workflowNonce}
             />
         </PluginDocumentSettingPanel>
     );

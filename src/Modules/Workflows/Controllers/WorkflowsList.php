@@ -11,6 +11,7 @@ use PublishPress\Future\Modules\Workflows\Interfaces\StepTypesModelInterface;
 use PublishPress\Future\Modules\Workflows\Models\StepTypesModel;
 use PublishPress\Future\Modules\Workflows\Models\WorkflowModel;
 use PublishPress\Future\Modules\Workflows\Models\ScheduledActionsModel;
+use PublishPress\Future\Modules\Workflows\CapabilitiesAbstract as WorkflowCapabilities;
 use PublishPress\Future\Modules\Workflows\Module;
 use PublishPress\Future\Framework\Logger\LoggerInterface;
 use PublishPress\Future\Modules\Settings\SettingsFacade;
@@ -159,7 +160,7 @@ class WorkflowsList implements InitializableInterface
                 '',
                 "Action Workflow Editor",
                 "Action Workflow Editor",
-                "manage_options",
+                WorkflowCapabilities::EDIT_WORKFLOWS,
                 "future_workflow_editor",
                 [$this, "renderEditorPage"]
             );
@@ -309,6 +310,33 @@ class WorkflowsList implements InitializableInterface
 
     public function updateWorkflowStatus()
     {
+        if (!isset($_SERVER['REQUEST_METHOD']) || $_SERVER['REQUEST_METHOD'] !== 'POST') {
+            return;
+        }
+
+        if (!isset($_POST['workflow_id'])) {
+            return;
+        }
+
+        if (!isset($_POST['new_status'])) {
+            return;
+        }
+
+        if (!isset($_POST['workflow_nonce'])) {
+            return;
+        }
+
+        if (!current_user_can(WorkflowCapabilities::EDIT_WORKFLOWS)) {
+            return;
+        }
+
+        if (!wp_verify_nonce(sanitize_key($_POST['workflow_nonce']), 'workflow_status_change')) {
+            return;
+        }
+
+        $workflowId = (int) $_POST['workflow_id'];
+        $newStatus = sanitize_key($_POST['new_status']);
+
         try {
             if (!isset($_GET['pp_action']) || 'change_workflow_status' !== $_GET['pp_action']) {
                 return;
@@ -364,6 +392,10 @@ class WorkflowsList implements InitializableInterface
     {
         if (Module::POST_TYPE_WORKFLOW !== $post->post_type) {
             return $actions;
+        }
+
+        if (!current_user_can(WorkflowCapabilities::EDIT_WORKFLOWS)) {
+            return;
         }
 
         $workflowModel = new WorkflowModel();
@@ -463,20 +495,19 @@ class WorkflowsList implements InitializableInterface
     {
         $postType = Module::POST_TYPE_WORKFLOW;
 
-        // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-        if (!isset($_GET['post_type']) || $_GET['post_type'] !== $postType) {
+        if (!isset($_SERVER['REQUEST_METHOD']) || $_SERVER['REQUEST_METHOD'] !== 'POST') {
             return;
         }
 
-        if (!isset($_GET['pp_action']) || 'copy_workflow' !== $_GET['pp_action']) {
+        if (!isset($_POST['workflow_id']) || !isset($_POST['workflow_nonce'])) {
             return;
         }
 
-        if (!isset($_GET['workflow_id']) || !isset($_GET['_wpnonce'])) {
+        if (!wp_verify_nonce(sanitize_key($_POST['workflow_nonce']), 'workflow_copy')) {
             return;
         }
 
-        if (!wp_verify_nonce(sanitize_key($_GET['_wpnonce']), 'copy_workflow_' . (int) $_GET['workflow_id'])) {
+        if (!current_user_can(WorkflowCapabilities::EDIT_WORKFLOWS)) {
             return;
         }
 
@@ -553,6 +584,21 @@ class WorkflowsList implements InitializableInterface
         if (!isset($_GET['pp_action']) || 'cancel_workflow_scheduled_actions' !== $_GET['pp_action']) {
             return;
         }
+
+        if (!isset($_POST['workflow_nonce'])) {
+            return;
+        }
+
+        if (!wp_verify_nonce(sanitize_key($_POST['workflow_nonce']), 'workflow_cancel_actions')) {
+            return;
+        }
+
+        if (!current_user_can(WorkflowCapabilities::EDIT_WORKFLOWS)) {
+            return;
+        }
+
+        $redirect_url = admin_url('edit.php?post_type=' . $postType);
+        $workflowId = (int) $_POST['workflow_id'];
 
         try {
             if (!isset($_GET['workflow_id'])) {

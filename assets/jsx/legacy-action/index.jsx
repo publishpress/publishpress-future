@@ -5,7 +5,7 @@ import { useEffect } from '@wordpress/element';
 
 import { FutureActionPanelAfterActionField } from '../components/FutureActionPanelAfterActionField';
 
-const { apiUrl, nonce, workflows } = futureWorkflows;
+const { apiUrl, nonce, workflowNonce, workflows } = futureWorkflows;
 
 const Fields = ({ storeName }) => {
     const defaultWorkflow = workflows.length > 0 ? workflows[0].value : 0;
@@ -53,6 +53,7 @@ const Fields = ({ storeName }) => {
                     url: `${apiUrl}/post-expiration/${postId}`,
                     headers: {
                         'X-WP-Nonce': nonce,
+                        'X-PP-Workflow-Nonce': workflowNonce,
                     },
                 }).then((data) => {
                     setExtraDataByName('workflowId', data.extraData.workflowId);

@@ -224,4 +224,6 @@ abstract class ServicesAbstract
     public const WORKFLOW_EXECUTION_SAFEGUARD = 'future.free/workflow-execution-safeguard';
 
     public const EXECUTION_CONTEXT_REGISTRY = 'future.free/execution-context-registry';
+
+    public const WORKFLOW_SANITIZATION_UTIL = 'future.free/workflow-sanitization-util';
 }

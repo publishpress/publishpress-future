@@ -12,12 +12,15 @@ use PublishPress\Future\Modules\Settings\Models\SettingsPostTypesModel;
 use PublishPress\Future\Modules\Settings\SettingsFacade;
 use PublishPress\Future\Modules\Workflows\Models\WorkflowModel;
 use PublishPress\Future\Modules\Workflows\Models\WorkflowsModel;
+use PublishPress\Future\Framework\WordPress\Utils\WorkflowSanitizationUtil;
 use Throwable;
 use WP_REST_Request;
 use WP_REST_Response;
 
 class BackupRestApi implements InitializableInterface
 {
+    private WorkflowSanitizationUtil $workflowSanitization;
+
     private HookableInterface $hooks;
 
     private string $pluginVersion;
@@ -30,12 +33,14 @@ class BackupRestApi implements InitializableInterface
         HookableInterface $hooks,
         string $pluginVersion,
         SettingsFacade $settingsFacade,
-        LoggerInterface $logger
+        LoggerInterface $logger,
+        WorkflowSanitizationUtil $workflowSanitization
     ) {
         $this->hooks = $hooks;
         $this->pluginVersion = $pluginVersion;
         $this->settingsFacade = $settingsFacade;
         $this->logger = $logger;
+        $this->workflowSanitization = $workflowSanitization;
     }
 
     public function initialize()
@@ -367,6 +372,57 @@ class BackupRestApi implements InitializableInterface
                 400
             );
         }
+    }
+
+    private function validateBackupStructure($data)
+    {
+        if (isset($data['workflows']) && !is_array($data['workflows'])) {
+            return false;
+        }
+
+        if (isset($data['settings']) && !is_array($data['settings'])) {
+            return false;
+        }
+
+        if (isset($data['version']) && !is_string($data['version'])) {
+            return false;
+        }
+
+        return true;
+    }
+
+    private function sanitizeWorkflows($workflows)
+    {
+        return $this->workflowSanitization->sanitizeWorkflows($workflows);
+    }
+
+    private function sanitizeSettings($settings)
+    {
+        $allowedSettings = ['postTypesDefaults', 'general', 'notifications', 'display', 'admin', 'advanced'];
+        $sanitized = [];
+
+        foreach ($allowedSettings as $key) {
+            if (isset($settings[$key]) && is_array($settings[$key])) {
+                $sanitized[$key] = $this->sanitizeSettingsArray($settings[$key]);
+            }
+        }
+
+        return $sanitized;
+    }
+
+    private function sanitizeSettingsArray($settingsArray)
+    {
+        $sanitized = [];
+        foreach ($settingsArray as $settingKey => $settingValue) {
+            if (is_array($settingValue)) {
+                $sanitized[sanitize_text_field($settingKey)] = $this->sanitizeSettingsArray($settingValue);
+            } elseif (is_string($settingValue)) {
+                $sanitized[sanitize_text_field($settingKey)] = sanitize_text_field($settingValue);
+            } else {
+                $sanitized[sanitize_text_field($settingKey)] = $settingValue;
+            }
+        }
+        return $sanitized;
     }
 
     public function importWorkflows($workflows)
