@@ -46,4 +46,5 @@ push-wpcli:
 	bash ./scripts/build-push-image.sh "$${WPCLI_IMAGE_NAME}" ./docker/wp/wpcli "$$@"
 
 update:
+	rm -f ./.cache/.last_image_update_check
 	bash ./scripts/services-pull-images.sh "$$@"
