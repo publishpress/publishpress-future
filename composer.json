@@ -72,13 +72,13 @@
             "@build:lang",
             "@build"
         ],
-        "build": "/scripts/pbuild build",
+        "build": "build zip",
         "build:up": [
             "@build",
             "@dbox:up"
         ],
-        "build:dir": "/scripts/pbuild build-dir",
-        "build:clean": "/scripts/pbuild clean",
+        "build:dir": "build dir",
+        "build:clean": "build clean",
         "build:js-prod": "cross-env NODE_ENV=production npx webpack --progress",
         "build:js-dev": "cross-env NODE_ENV=development npx webpack --progress",
         "build:js": [
