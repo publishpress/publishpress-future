@@ -1,0 +1,9 @@
+---
+description:
+alwaysApply: true
+---
+- Tests should follow good practices.
+- This project uses Codeception and has Unit and Integration tests. It can also have Acceptance or EndToEnd tests.
+- Tests run inside a docker container defined on dev-workspace/docker/compose.yaml, as the services db_test, test-wp, test-wpcli
+- Instead of calling codecept directly, we call `composer test` and the arguments are the same as we would do on the original command.
+- We do not run tests inside the dev-workspace, so do not use the `dev-workspace/run`

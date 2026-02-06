@@ -1,7 +1,7 @@
 ---
 description: For creating git commit messages
 globs:
-alwaysApply: false
+alwaysApply: true
 ---
 # Commit messages:
 
