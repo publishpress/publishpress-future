@@ -275,4 +275,9 @@ abstract class HooksAbstract
      * @since 4.10.0
      */
     public const ACTION_ACF_SAVE_POST = 'acf/save_post';
+
+    /**
+     * @since 4.10.0
+     */
+    public const ACTION_REST_AFTER_INSERT_POST_TYPE = 'rest_after_insert_%s';
 }

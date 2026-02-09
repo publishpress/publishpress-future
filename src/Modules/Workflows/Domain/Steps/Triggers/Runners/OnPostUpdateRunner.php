@@ -173,16 +173,36 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
             return;
         }
 
+        $cache = $this->postCache->getCacheForPostId($postId);
+
+        $postBefore = $cache['postBefore'] ?? null;
+        $postAfter = $cache['postAfter'] ?? null;
+
+        // Skip only when this is a direct post publishing process (post was never saved before).
+        // Do NOT skip when it's a legit update that results in publish (e.g. draft → publish).
+        $isDirectPublish = $postBefore
+            && $postAfter
+            && $postAfter->post_status === 'publish'
+            && in_array($postBefore->post_status, ['new', 'auto-draft'], true);
+
+        if ($isDirectPublish) {
+            $stepSlug = $this->stepProcessor->getSlugFromStep($this->step);
+            $this->logger->debug(
+                $this->stepProcessor->prepareLogMessage(
+                    'Skipping OnPostUpdate for direct publish (from "%s" to "publish") for step %s - not a legit post update',
+                    $postBefore->post_status,
+                    $stepSlug
+                )
+            );
+
+            return;
+        }
+
         $stepSlug = $this->stepProcessor->getSlugFromStep($this->step);
 
         if ($this->shouldAbortExecution($postId, $stepSlug)) {
             return;
         }
-
-        $cache = $this->postCache->getCacheForPostId($postId);
-
-        $postBefore = $cache['postBefore'] ?? null;
-        $postAfter = $cache['postAfter'] ?? null;
 
         $this->executionContext->setVariable($stepSlug, [
             'postBefore' => new PostResolver(
