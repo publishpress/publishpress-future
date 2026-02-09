@@ -14,7 +14,12 @@ class WorkflowSanitizationUtil
                 if (is_array($value)) {
                     $sanitized[$sanitizedKey] = $this->sanitizeWorkflowData($value);
                 } elseif (is_string($value)) {
-                    $sanitized[$sanitizedKey] = sanitize_text_field($value);
+                    // Use sanitize_textarea_field for expression fields to preserve line breaks
+                    if ($sanitizedKey === 'expression') {
+                        $sanitized[$sanitizedKey] = sanitize_textarea_field($value);
+                    } else {
+                        $sanitized[$sanitizedKey] = sanitize_text_field($value);
+                    }
                 } else {
                     // Preserve booleans, numbers, null as-is
                     $sanitized[$sanitizedKey] = $value;
