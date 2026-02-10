@@ -270,4 +270,14 @@ abstract class HooksAbstract
      * @since 4.9.3
      */
     public const ACTION_ADMIN_POST_CANCEL_SCHEDULED_ACTIONS = 'admin_post_publishpress_future_cancel_scheduled_actions';
+
+    /**
+     * @since 4.10.0
+     */
+    public const ACTION_ACF_SAVE_POST = 'acf/save_post';
+
+    /**
+     * @since 4.10.0
+     */
+    public const ACTION_REST_AFTER_INSERT_POST_TYPE = 'rest_after_insert_%s';
 }

@@ -5,6 +5,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Added: Add new trigger: Post is inserted - PRO, (Issue #1146)
 - Changed: Move the scheduled actions "Run" button to it's own column, (Issue #1496).
+- Improved reliability of the "Post is Published" and "Post is Updated" triggers by fixing how post metadata is handled on block editor and when ACF is enabled (Issue #1312).
 
 [4.9.4] - 18 December, 2025
 

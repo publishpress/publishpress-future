@@ -1,0 +1,6 @@
+{
+  "setup-worktree": [
+    "dev-workspace/run yarn install",
+    "dev-workspace/run composer install"
+  ]
+}
