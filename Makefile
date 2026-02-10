@@ -161,6 +161,12 @@ cli-test:
 docker-cleanup:
 	docker system prune -f
 
+composer-update:
+	@./dev-workspace/run composer update
+
+composer-update-lib:
+	@./dev-workspace/run composer update --working-dir=./lib
+
 up:
 	@make dev-up
 	@make test-up
