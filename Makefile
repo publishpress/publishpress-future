@@ -261,3 +261,8 @@ pre-commit-check:
 
 metrics:
 	./dev-workspace/run composer metrics
+
+# Git
+git-development-pull:
+	git checkout development
+	git pull
