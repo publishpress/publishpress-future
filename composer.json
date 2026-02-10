@@ -215,7 +215,7 @@
         "pre-autoload-dump": "@composer dumpautoload --working-dir=./lib",
         "pre-update-cmd": "@composer update --working-dir=./lib",
         "pre-install-cmd": "@composer install --working-dir=./lib",
-        "metrics": "phpmetrics --report-html=metrics --exclude=vendor,lib/vendor,tests,dist,dev-workspace,.claude,.cursor,.github,.wordpress-org,.git,.zed,docs,languages .",
+        "metrics": "phpmetrics --report-html=metrics --exclude=vendor,lib/vendor,tests,dist,dev-workspace,.claude,.cursor,.github,.wordpress-org,.git,.zed,docs,languages ."
     },
     "scripts-descriptions": {
         "build": "Builds the plugin",
