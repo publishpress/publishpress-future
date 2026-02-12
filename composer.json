@@ -132,7 +132,7 @@
             "dev-workspace/run php-cs-fixer fix .",
             "dev-workspace/run phpcbf --standard=.phpcs.xml"
         ],
-        "metrics": "phpmetrics --report-html=metrics --exclude=vendor,lib/vendor,tests,dist,dev-workspace,.claude,.cursor,.github,.wordpress-org,.git,.zed,docs,languages.",
+        "metrics": "dev-workspace/run phpmetrics --report-html=metrics --exclude=vendor,lib/vendor,tests,dist,dev-workspace,.claude,.cursor,.github,.wordpress-org,.git,.zed,docs,languages.",
         "up": [
             "@test:up",
             "@wp:up",
@@ -162,93 +162,242 @@
             "@wp:logs",
             "@test:logs"
         ],
-        "wp:logs": "bash -c 'cd dev-workspace && set -a && source ../.env && set +a && docker compose -f docker/compose.yaml --profile dev logs --tail=100'",
-        "test:logs": "bash -c 'cd dev-workspace && set -a && source ../.env && set +a && docker compose -f docker/compose.yaml --profile test logs --tail=100'",
-        "wpcli:tests": "bash dev-workspace/scripts/tests-wp-cli.sh wp_test_cli $@",
-        "wpcli:dev": "bash dev-workspace/scripts/tests-wp-cli.sh wp_dev_cli $@",
+        "wp:logs": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "bash -c 'cd dev-workspace && set -a && source ../.env && set +a && docker compose -f docker/compose.yaml --profile dev logs --tail=100'"
+        ],
+        "test:logs": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "bash -c 'cd dev-workspace && set -a && source ../.env && set +a && docker compose -f docker/compose.yaml --profile test logs --tail=100'"
+        ],
+        "wpcli:tests": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "bash dev-workspace/scripts/tests-wp-cli.sh wp_test_cli $@"
+        ],
+        "wpcli:dev": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "bash dev-workspace/scripts/tests-wp-cli.sh wp_dev_cli $@"
+        ],
         "wp:up": [
+            "dev-workspace/scripts/ensure-not-container.sh",
             "bash dev-workspace/scripts/env.sh up dev",
             "@wp:info"
         ],
-        "wp:stop": "bash dev-workspace/scripts/env.sh stop dev",
-        "wp:down": "bash dev-workspace/scripts/env.sh down dev",
-        "wp:restart": "bash dev-workspace/scripts/env.sh restart dev",
+        "wp:stop": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "bash dev-workspace/scripts/env.sh stop dev"
+        ],
+        "wp:down": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "bash dev-workspace/scripts/env.sh down dev"
+        ],
+        "wp:restart": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "bash dev-workspace/scripts/env.sh restart dev"
+        ],
         "wp:clear": [
+            "dev-workspace/scripts/ensure-not-container.sh",
             "bash dev-workspace/scripts/env.sh cleanup dev",
             "@wp:clear-cache"
         ],
-        "wp:clear-logs": "rm -f dev-workspace/.cache/logs/db_dev/",
-        "wp:clear-cache": "rm -rf dev-workspace/.cache/wp_dev && rm -rf dev-workspace/.cache/db_dev",
-        "wp:refresh": "bash dev-workspace/scripts/env.sh refresh dev",
-        "wp:info": "bash dev-workspace/scripts/env.sh info dev",
-        "lib:install": "./dev-workspace/run composer install $@",
-        "lib:update": "./dev-workspace/run composer update $@",
-        "lib:update:lib": "./dev-workspace/run composer update --working-dir=./lib $@",
-        "sync:local": "bash dev-workspace/scripts/local-sync.sh --watch",
-        "sync:local:once": "bash dev-workspace/scripts/local-sync.sh",
-        "sync:local:stop": "pkill -f local-sync.sh || true",
-        "sync:remote": "bash dev-workspace/scripts/sync-plugin-remote.sh --watch",
-        "sync:remote:once": "bash dev-workspace/scripts/sync-plugin-remote.sh --once",
-        "sync:remote:stop": "pkill -f sync-plugin-remote.sh || true",
-        "test": "vendor/bin/codecept run $@",
+        "wp:clear-logs": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "rm -f dev-workspace/.cache/logs/db_dev/"
+        ],
+        "wp:clear-cache": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "rm -rf dev-workspace/.cache/wp_dev",
+            "rm -rf dev-workspace/.cache/db_dev"
+        ],
+        "wp:refresh": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "bash dev-workspace/scripts/env.sh refresh dev"
+        ],
+        "wp:info": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "bash dev-workspace/scripts/env.sh info dev"
+        ],
+        "lib:install": "dev-workspace/run composer install $@",
+        "lib:update": "dev-workspace/run composer update $@",
+        "lib:update:lib": "dev-workspace/run composer update --working-dir=./lib $@",
+        "sync:local": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "bash dev-workspace/scripts/local-sync.sh --watch"
+        ],
+        "sync:local:once": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "bash dev-workspace/scripts/local-sync.sh"
+        ],
+        "sync:local:stop": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "pkill -f local-sync.sh || true"
+        ],
+        "sync:remote": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "bash dev-workspace/scripts/sync-plugin-remote.sh --watch"
+        ],
+        "sync:remote:once": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "bash dev-workspace/scripts/sync-plugin-remote.sh --once"
+        ],
+        "sync:remote:stop": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "pkill -f sync-plugin-remote.sh || true"
+        ],
+        "test": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "vendor/bin/codecept run $@"
+        ],
         "test:up": [
+            "dev-workspace/scripts/ensure-not-container.sh",
             "bash dev-workspace/scripts/env.sh up test",
             "@test:info"
         ],
-        "test:driver": "source ./.env && $CHROMEDRIVER_BINARY --port=$CHROMEDRIVER_PORT",
-        "test:down": "bash dev-workspace/scripts/env.sh down test",
-        "test:restart": "bash dev-workspace/scripts/env.sh restart test",
-        "test:stop": "bash dev-workspace/scripts/env.sh stop test",
+        "test:driver": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "source ./.env && $CHROMEDRIVER_BINARY --port=$CHROMEDRIVER_PORT"
+        ],
+        "test:down": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "bash dev-workspace/scripts/env.sh down test"
+        ],
+        "test:restart": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "bash dev-workspace/scripts/env.sh restart test"
+        ],
+        "test:stop": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "bash dev-workspace/scripts/env.sh stop test"
+        ],
         "test:clean": [
+            "dev-workspace/scripts/ensure-not-container.sh",
             "bash dev-workspace/scripts/env.sh cleanup test",
             "@test:clean-cache",
             "composer codecept clean"
         ],
-        "test:clean-logs": "rm -f dev-workspace/.cache/logs/db_test/",
-        "test:clean-cache": "rm -rf dev-workspace/.cache/wp_test && rm -rf dev-workspace/.cache/db_test",
-        "test:db-export": "bash dev-workspace/scripts/tests-db-export.sh $@",
-        "test:db-import": "bash dev-workspace/scripts/tests-db-import.sh $@",
-        "test:db-logs": "bash dev-workspace/scripts/tests-db-logs.sh $@",
-        "test:info": "bash dev-workspace/scripts/env.sh info test",
-        "test:refresh": "bash dev-workspace/scripts/env.sh refresh test",
-        "test:snippets": "composer codecept gherkin:snippets $@",
-        "test:steps": "composer codecept gherkin:steps $@",
+        "test:clean-logs": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "rm -f dev-workspace/.cache/logs/db_test/"
+        ],
+        "test:clean-cache": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "rm -rf dev-workspace/.cache/wp_test",
+            "rm -rf dev-workspace/.cache/db_test"
+        ],
+        "test:db-export": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "bash dev-workspace/scripts/tests-db-export.sh $@"
+        ],
+        "test:db-import": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "bash dev-workspace/scripts/tests-db-import.sh $@"
+        ],
+        "test:db-logs": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "bash dev-workspace/scripts/tests-db-logs.sh $@"
+        ],
+        "test:info": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "bash dev-workspace/scripts/env.sh info test"
+        ],
+        "test:refresh": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "bash dev-workspace/scripts/env.sh refresh test"
+        ],
+        "test:snippets": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "composer codecept gherkin:snippets $@"
+        ],
+        "test:steps": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "composer codecept gherkin:steps $@"
+        ],
         "test:all": [
+            "dev-workspace/scripts/ensure-not-container.sh",
             "vendor/bin/codecept run Unit",
             "vendor/bin/codecept run Integration"
         ],
-        "test:coverage": "vendor/bin/codecept run --coverage --coverage-html $@",
-        "test:unit": "vendor/bin/codecept run Unit $@",
-        "test:integration": "vendor/bin/codecept run Integration $@",
-        "test:acceptance": "vendor/bin/codecept run Acceptance $@",
-        "test:end-to-end": "vendor/bin/codecept run EndToEnd $@",
-        "test:debug": "php -d xdebug.mode=debug -d xdebug.start_with_request=yes vendor/bin/codecept run $@",
-        "codecept": "./vendor/bin/codecept $@",
-        "docker:cleanup": "docker system prune -f",
-        "info:versions": "bash ./dev-workspace/scripts/dependency-versions.sh",
-        "set:version": "php ./dev-workspace/scripts/plugin-bump-version.php \"$@\"",
-        "pre-release": "bash ./dev-workspace/scripts/pre-release.sh \"$@\"",
-        "pr-link": "bash ./dev-workspace/scripts/pr-link.sh",
+        "test:coverage": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "vendor/bin/codecept run --coverage --coverage-html $@"
+        ],
+        "test:unit": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "vendor/bin/codecept run Unit $@"
+        ],
+        "test:integration": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "vendor/bin/codecept run Integration $@"
+        ],
+        "test:acceptance": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "vendor/bin/codecept run Acceptance $@"
+        ],
+        "test:end-to-end": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "vendor/bin/codecept run EndToEnd $@"
+        ],
+        "test:debug": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "php -d xdebug.mode=debug -d xdebug.start_with_request=yes vendor/bin/codecept run $@"
+        ],
+        "codecept": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "./vendor/bin/codecept $@"
+        ],
+        "docker:cleanup": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "docker system prune -f"
+        ],
+        "info:versions": "dev-workspace/run bash ./dev-workspace/scripts/dependency-versions.sh",
+        "set:version": "dev-workspace/run php ./dev-workspace/scripts/plugin-bump-version.php \"$@\"",
+        "pre-release": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "bash ./dev-workspace/scripts/pre-release.sh \"$@\"",
+        ],
+        "pr-link": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "bash ./dev-workspace/scripts/pr-link.sh"
+        ],
         "pre-commit-check": [
             "@check",
             "@test:unit",
             "@test:integration"
         ],
-        "after-pr-merge": "bash dev-workspace/scripts/after-pr-merge.sh",
+        "after-pr-merge": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "bash dev-workspace/scripts/after-pr-merge.sh"
+        ],
         "container:build": [
             "@container:build:wp",
             "@container:build:wpcli"
         ],
-        "container:build:wp": "dev-workspace/scripts/ensure-not-container.sh && docker compose -f dev-workspace/docker/compose.yaml --env-file .env build wp",
-        "container:build:wpcli": "dev-workspace/scripts/ensure-not-container.sh && docker compose -f dev-workspace/docker/compose.yaml --env-file .env build wpcli",
+        "container:build:wp": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "docker compose -f dev-workspace/docker/compose.yaml --env-file .env build wp"
+        ],
+        "container:build:wpcli": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "docker compose -f dev-workspace/docker/compose.yaml --env-file .env build wpcli"
+        ],
         "container:push": [
             "@container:push:wp",
             "@container:push:wpcli"
         ],
-        "container:push:wp": "dev-workspace/scripts/ensure-not-container.sh && bash dev-workspace/scripts/push-wp.sh",
-        "container:push:wpcli": "dev-workspace/scripts/ensure-not-container.sh && bash dev-workspace/scripts/push-wpcli.sh",
-        "container:pull": "dev-workspace/scripts/ensure-not-container.sh && rm -f dev-workspace/.cache/.last_image_update_check && bash dev-workspace/scripts/services-pull-images.sh",
-        "config:phpcs": "phpcs --config-set installed_paths \"../../phpcsstandards/phpcsutils,../../phpcsstandards/phpcsextra,../../automattic/vipwpcs,../../phpcompatibility/php-compatibility,../../sirbrillig/phpcs-variable-analysis,../../publishpress/publishpress-phpcs-standards/standards,../../wp-coding-standards/wpcs\"",
+        "container:push:wp": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "bash dev-workspace/scripts/push-wp.sh"
+        ],
+        "container:push:wpcli": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "bash dev-workspace/scripts/push-wpcli.sh"
+        ],
+        "container:pull": [
+            "dev-workspace/scripts/ensure-not-container.sh",
+            "rm -f dev-workspace/.cache/.last_image_update_check",
+            "bash dev-workspace/scripts/services-pull-images.sh"
+        ],
+        "config:phpcs": "dev-workspace/run phpcs --config-set installed_paths \"../../phpcsstandards/phpcsutils,../../phpcsstandards/phpcsextra,../../automattic/vipwpcs,../../phpcompatibility/php-compatibility,../../sirbrillig/phpcs-variable-analysis,../../publishpress/publishpress-phpcs-standards/standards,../../wp-coding-standards/wpcs\"",
         "post-install-cmd": [
             "@config:phpcs"
         ],
