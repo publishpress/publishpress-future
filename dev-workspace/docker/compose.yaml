@@ -14,13 +14,13 @@ services:
         working_dir: "/project"
         volumes:
             - ../../:/project
-            - ../.cache/.zsh_history:/root/.zsh_history
-            - ../.cache/.bash_history:/root/.bash_history
-            - ../.cache/.npm/_cacache:/root/.npm/_cacache
             - ../.cache/.npm/_logs:/root/.npm/_logs
             - ../.cache/.oh-my-zsh/log:/root/.oh-my-zsh/log
-            - ../.cache/.composer/cache:/root/.composer/cache
-            - ../.cache/.composer/auth.json:/root/.composer/auth.json
+        environment:
+            - INSIDE_DEV_WORKSPACE=true
+            - HISTFILE=/root/.cache/.zsh_history
+            - NPM_CONFIG_CACHE=/root/.cache/.npm
+            - COMPOSER_HOME=/root/.cache/.composer
     ##############################################################################
     # Tests
     ##############################################################################
