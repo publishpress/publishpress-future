@@ -105,10 +105,10 @@ wp config set WP_DEBUG_DISPLAY false --raw
 wp config set SCRIPT_DEBUG true --raw
 show_status "Debug configuration completed"
 
-# Activate Future Free
-show_header "Activating Future Free"
-wp plugin activate post-expirator
-show_status "Future Free activated successfully"
+# Activate Future Pro
+show_header "Activating Future Pro"
+wp plugin activate publishpress-future-pro
+show_status "Future Pro activated successfully"
 
 echo -e "\n${GREEN}================================================================"
 echo -e "✨ WordPress environment setup completed successfully!"
