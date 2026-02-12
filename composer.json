@@ -69,7 +69,7 @@
     },
     "scripts": {
         "term": "dev-workspace/run",
-        "build:all": [
+        "build:full": [
             "@build:js",
             "@build:lang",
             "@build"
@@ -353,7 +353,7 @@
         "set:version": "dev-workspace/run php ./dev-workspace/scripts/plugin-bump-version.php \"$@\"",
         "pre-release": [
             "dev-workspace/scripts/ensure-not-container.sh",
-            "bash ./dev-workspace/scripts/pre-release.sh \"$@\"",
+            "bash ./dev-workspace/scripts/pre-release.sh \"$@\""
         ],
         "pr-link": [
             "dev-workspace/scripts/ensure-not-container.sh",
@@ -397,7 +397,7 @@
             "rm -f dev-workspace/.cache/.last_image_update_check",
             "bash dev-workspace/scripts/services-pull-images.sh"
         ],
-        "config:phpcs": "dev-workspace/run phpcs --config-set installed_paths \"../../phpcsstandards/phpcsutils,../../phpcsstandards/phpcsextra,../../automattic/vipwpcs,../../phpcompatibility/php-compatibility,../../sirbrillig/phpcs-variable-analysis,../../publishpress/publishpress-phpcs-standards/standards,../../wp-coding-standards/wpcs\"",
+        "config:phpcs": "phpcs --config-set installed_paths \"../../phpcsstandards/phpcsutils,../../phpcsstandards/phpcsextra,../../automattic/vipwpcs,../../phpcompatibility/php-compatibility,../../sirbrillig/phpcs-variable-analysis,../../publishpress/publishpress-phpcs-standards/standards,../../wp-coding-standards/wpcs\"",
         "post-install-cmd": [
             "@config:phpcs"
         ],
