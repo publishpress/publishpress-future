@@ -115,6 +115,7 @@
             "@check:php-8.5"
         ],
         "check:php-5.6": "dev-workspace/run phpcs --standard=.phpcs-php-compatibility.xml --runtime-set testVersion 5.6 ./post-expirator.php",
+        "check:php-7.2": "dev-workspace/run phpcs --standard=.phpcs-php-compatibility.xml --runtime-set testVersion 7.2 ./post-expirator.php",
         "check:php-7.4": "dev-workspace/run phpcs --standard=.phpcs-php-compatibility.xml --runtime-set testVersion 7.4",
         "check:php-8.0": "dev-workspace/run phpcs --standard=.phpcs-php-compatibility.xml --runtime-set testVersion 8.0",
         "check:php-8.1": "dev-workspace/run phpcs --standard=.phpcs-php-compatibility.xml --runtime-set testVersion 8.1",
