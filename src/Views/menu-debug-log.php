@@ -90,7 +90,7 @@ if ($groupByRequest) {
 
 echo '<textarea readonly>';
 if (empty($results)) {
-    if ($totalLogs === 0) {
+    if ($totalLogsUnfiltered === 0) {
         echo esc_html__('Debugging table is currently empty.', 'post-expirator');
     } else {
         echo esc_html__('No results match the current filter.', 'post-expirator');
@@ -120,9 +120,9 @@ echo '</textarea>';
 
 $totalDisplayedLogs = count($results);
 
-if ($totalLogs === 0) {
+if ($totalLogsUnfiltered === 0) {
     echo '<p id="debug-log-length">' . esc_html__('Debugging table is currently empty.', 'post-expirator') . '</p>';
-} elseif ($totalDisplayedLogs === 0) {
+} elseif ($totalLogs === 0) {
     echo '<p id="debug-log-length">' . esc_html__('No results match the current filter.', 'post-expirator') . '</p>';
 } elseif ($totalLogs > $totalDisplayedLogs) {
     $message = $triggerActivatedOnly

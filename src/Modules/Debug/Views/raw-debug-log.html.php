@@ -32,7 +32,11 @@ $uniqueRequestIds = array_unique(array_filter(array_column($results, 'request_id
 $sessionCount = count($uniqueRequestIds);
 
 if (empty($results)) {
-    echo 'No results found';
+    echo esc_html(
+        $totalLogsUnfiltered === 0
+            ? __('Debugging table is currently empty.', 'post-expirator')
+            : __('No results match the current filter.', 'post-expirator')
+    );
     exit;
 }
 
