@@ -125,7 +125,7 @@ class Logger implements LoggerInterface
      */
     public function log($level, $message, $context = [])
     {
-        if (! $this->debugIsEnabled()) {
+        if (! $this->isDebugEnabled()) {
             return;
         }
 
@@ -163,7 +163,7 @@ class Logger implements LoggerInterface
     /**
      * @return bool
      */
-    private function debugIsEnabled()
+    public function isDebugEnabled()
     {
         return $this->settings->getDebugIsEnabled();
     }
@@ -276,7 +276,7 @@ class Logger implements LoggerInterface
      */
     public function markCurrentRequestHasTriggerActivated(): void
     {
-        if (! $this->debugIsEnabled()) {
+        if (! $this->isDebugEnabled()) {
             return;
         }
 

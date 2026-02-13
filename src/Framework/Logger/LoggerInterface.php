@@ -150,4 +150,9 @@ interface LoggerInterface
      * @return bool
      */
     public function isDownloadLogRequested();
+
+    /**
+     * @return bool
+     */
+    public function isDebugEnabled();
 }

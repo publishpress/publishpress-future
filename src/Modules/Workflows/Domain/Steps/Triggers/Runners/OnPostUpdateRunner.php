@@ -120,13 +120,27 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
 
     public function triggerCallbackAfterACF($postId)
     {
+        $scenario = null;
+        if ($this->logger->isEnabled()) {
+            $scenario = $this->getScenarioContext('acf/save_post', $postId, null, null);
+        }
+
         // Check if this post was marked as being saved via REST API
         $transientKey = self::REST_UPDATE_TRANSIENT_KEY . $postId;
         $wasRestSave = get_transient($transientKey);
 
         // Only trigger for posts that were initially saved via REST API (block editor)
         // WP-CLI and admin saves work fine with the regular save_post hook
-        if (!$wasRestSave) {
+        if (! $wasRestSave) {
+            $this->logger->debug(
+                $this->stepProcessor->prepareLogMessage(
+                    'Trigger not fired: Post #%d was not saved via REST API (block editor). %s ACF callback handles '
+                    . 'only block editor; classic editor uses save_post.',
+                    $postId,
+                    $scenario
+                )
+            );
+
             return;
         }
 
@@ -138,7 +152,15 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
         set_transient(self::ACF_EXECUTING_TRANSIENT_KEY . $postId, true, 10);
 
         $post = get_post($postId);
-        if (!$post) {
+        if (! $post) {
+            $this->logger->debug(
+                $this->stepProcessor->prepareLogMessage(
+                    'Trigger not fired: Post #%d not found after ACF save. %s',
+                    $postId,
+                    $scenario
+                )
+            );
+
             return;
         }
 
@@ -149,12 +171,24 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
 
     public function triggerCallback($postId, $post, $update)
     {
+        $stepSlug = $this->stepProcessor->getSlugFromStep($this->step);
+        $currentHook = current_filter();
+
         // Skip REST API requests in the regular save_post hook.
         // For REST requests (block editor), we'll handle the trigger via the acf/save_post hook
         // to ensure ACF metadata is available. This prevents the workflow from running with incomplete data.
         if ($this->isRestRequest()) {
+            $scenario = $this->getScenarioContext($currentHook, $postId, null, $post->post_status ?? null);
+            $this->logger->debug(
+                $this->stepProcessor->prepareLogMessage(
+                    'Trigger not fired: REST API (block editor) request. %s Deferring to acf/save_post to ensure '
+                    . 'ACF metadata is available before running workflow.',
+                    $scenario
+                )
+            );
             // Mark this post as being saved via REST so the ACF callback knows to trigger
             set_transient(self::REST_UPDATE_TRANSIENT_KEY . $postId, true, 60);
+
             return;
         }
 
@@ -163,13 +197,32 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
         $acfExecutingKey = self::ACF_EXECUTING_TRANSIENT_KEY . $postId;
         $acfIsExecuting = get_transient($acfExecutingKey);
 
-        if ($acfIsExecuting && current_filter() === 'save_post') {
+        if ($acfIsExecuting && $currentHook === 'save_post') {
+            $scenario = $this->getScenarioContext($currentHook, $postId, null, $post->post_status ?? null);
+            $this->logger->debug(
+                $this->stepProcessor->prepareLogMessage(
+                    'Trigger not fired: ACF callback in progress for Post #%d. %s Blocking duplicate execution '
+                    . 'from secondary save_post triggered by ACF metadata save.',
+                    $postId,
+                    $scenario
+                )
+            );
             // Clear the marker after blocking the duplicate
             delete_transient($acfExecutingKey);
+
             return;
         }
 
         if (! $update) {
+            $scenario = $this->getScenarioContext($currentHook, $postId, null, $post->post_status ?? null);
+            $this->logger->debug(
+                $this->stepProcessor->prepareLogMessage(
+                    'Trigger not fired: Not a post update (e.g. new post creation from auto-draft). Post #%d. %s',
+                    $postId,
+                    $scenario
+                )
+            );
+
             return;
         }
 
@@ -186,21 +239,32 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
             && in_array($postBefore->post_status, ['new', 'auto-draft'], true);
 
         if ($isDirectPublish) {
-            $stepSlug = $this->stepProcessor->getSlugFromStep($this->step);
+            $scenario = $this->getScenarioContext(
+                $currentHook,
+                $postId,
+                $postBefore->post_status,
+                $postAfter->post_status
+            );
             $this->logger->debug(
                 $this->stepProcessor->prepareLogMessage(
-                    'Skipping OnPostUpdate for direct publish (from "%s" to "publish") for step %s - not a legit post update',
+                    'Trigger not fired: Direct publish (from "%s" to "publish"), not a post update. %s Post was '
+                    . 'never saved before; OnPostUpdate requires a genuine update.',
                     $postBefore->post_status,
-                    $stepSlug
+                    $scenario
                 )
             );
 
             return;
         }
 
-        $stepSlug = $this->stepProcessor->getSlugFromStep($this->step);
+        $scenario = $this->getScenarioContext(
+            $currentHook,
+            $postId,
+            $postBefore->post_status ?? null,
+            $postAfter->post_status ?? null
+        );
 
-        if ($this->shouldAbortExecution($postId, $stepSlug)) {
+        if ($this->shouldAbortExecution($postId, $stepSlug, $scenario)) {
             return;
         }
 
@@ -228,7 +292,19 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
         ];
 
         if (! $this->postQueryValidator->validate($postQueryArgs)) {
-            return false;
+            $this->logger->debug(
+                $this->stepProcessor->prepareLogMessage(
+                    'Trigger not fired: Post query conditions not met for step %s. Post #%d (post_type: %s, '
+                    . 'post_status: %s). %s',
+                    $stepSlug,
+                    $postId,
+                    $postAfter->post_type ?? 'unknown',
+                    $postAfter->post_status ?? 'unknown',
+                    $scenario
+                )
+            );
+
+            return;
         }
 
         $this->stepProcessor->executeSafelyWithErrorHandling(
@@ -238,7 +314,12 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
         );
     }
 
-    private function shouldAbortExecution($postId, $stepSlug): bool
+    /**
+     * @param int $postId
+     * @param string $stepSlug
+     * @param string $scenario
+     */
+    private function shouldAbortExecution($postId, $stepSlug, string $scenario = ''): bool
     {
         if (
             $this->hooks->applyFilters(
@@ -250,8 +331,10 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
         ) {
             $this->logger->debug(
                 $this->stepProcessor->prepareLogMessage(
-                    'Ignoring save post event for step %s',
-                    $stepSlug
+                    'Trigger not fired: Save post event ignored via filter for step %s. Post #%d. %s',
+                    $stepSlug,
+                    $postId,
+                    $scenario
                 )
             );
 
@@ -267,8 +350,10 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
         ) {
             $this->logger->debug(
                 $this->stepProcessor->prepareLogMessage(
-                    'Infinite loop detected for step %s, skipping',
-                    $stepSlug
+                    'Trigger not fired: Infinite loop detected for step %s. Post #%d. %s',
+                    $stepSlug,
+                    $postId,
+                    $scenario
                 )
             );
 
@@ -285,8 +370,10 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
         if ($this->executionSafeguard->preventDuplicateExecution($uniqueId)) {
             $this->logger->debug(
                 $this->stepProcessor->prepareLogMessage(
-                    'Duplicate execution detected for step %s, skipping',
-                    $stepSlug
+                    'Trigger not fired: Duplicate execution detected for step %s. Post #%d. %s',
+                    $stepSlug,
+                    $postId,
+                    $scenario
                 )
             );
 
@@ -302,11 +389,19 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
 
         $this->stepProcessor->triggerCallbackIsRunning();
 
+        $post = get_post($postId);
+        $scenario = $this->getScenarioContext(
+            current_filter(),
+            $postId,
+            null,
+            $post !== null ? $post->post_status : null
+        );
         $this->logger->debug(
             $this->stepProcessor->prepareLogMessage(
-                'Trigger fired (%s, Post #%d)',
+                'Trigger fired: %s, Post #%d. %s',
                 $stepSlug,
-                $postId
+                $postId,
+                $scenario
             )
         );
 
@@ -319,7 +414,40 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
         $this->stepProcessor->runNextSteps($this->step);
     }
 
-    private function isRestRequest()
+    /**
+     * Build a scenario context string for debug logs.
+     *
+     * @param string $hook Current hook (e.g. save_post, acf/save_post)
+     * @param int $postId
+     * @param string|null $statusBefore Post status before update
+     * @param string|null $statusAfter Post status after update
+     *
+     * @return string Scenario description for log messages
+     */
+    private function getScenarioContext(
+        string $hook,
+        int $postId,
+        ?string $statusBefore,
+        ?string $statusAfter
+    ): string {
+        $parts = ['Scenario: ' . $hook];
+
+        if ($this->isRestRequest()) {
+            $parts[] = 'REST API (block editor)';
+        } else {
+            $parts[] = 'classic admin';
+        }
+
+        if ($statusBefore !== null && $statusAfter !== null) {
+            $parts[] = sprintf('Post #%d: %s → %s', $postId, $statusBefore, $statusAfter);
+        } else {
+            $parts[] = 'Post #' . $postId;
+        }
+
+        return implode(', ', $parts);
+    }
+
+    private function isRestRequest(): bool
     {
         return defined('REST_REQUEST') && REST_REQUEST;
     }
