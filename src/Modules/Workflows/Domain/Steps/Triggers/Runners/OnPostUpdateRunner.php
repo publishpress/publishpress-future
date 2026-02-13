@@ -121,7 +121,7 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
     public function triggerCallbackAfterACF($postId)
     {
         $scenario = null;
-        if ($this->logger->isEnabled()) {
+        if ($this->logger->isDebugEnabled()) {
             $scenario = $this->getScenarioContext('acf/save_post', $postId, null, null);
         }
 
