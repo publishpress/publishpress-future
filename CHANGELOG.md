@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Changed: Debug log now defaults to grouped by request display
 - Changed: Debug log Download button downloads as attachment; supports grouped or time sequence based on current display option
 - Changed: Move the scheduled actions "Run" button to it's own column, (Issue #1496).
+- Fixed: Debug log enable/disable in Diagnostics and Tools tab now reflects the correct state immediately without needing a second page refresh
 - Improved reliability of the "Post is Published" and "Post is Updated" triggers by fixing how post metadata is handled on block editor and when ACF is enabled (Issue #1312).
 
 [4.9.4] - 18 December, 2025
