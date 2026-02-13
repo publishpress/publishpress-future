@@ -1,9 +1,13 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-[4.10.0] - [UNRELEASHED]
+[UNRELEASHED]
 
 - Added: Add new trigger: Post is inserted - PRO, (Issue #1146)
+- Added: Debug log request_id column for request correlation, with migration for existing sites
+- Added: Debug log display option to toggle between time sequence and grouped by request views
+- Changed: Debug log now defaults to grouped by request display
+- Changed: Debug log Download button downloads as attachment; supports grouped or time sequence based on current display option
 - Changed: Move the scheduled actions "Run" button to it's own column, (Issue #1496).
 - Improved reliability of the "Post is Published" and "Post is Updated" triggers by fixing how post metadata is handled on block editor and when ACF is enabled (Issue #1312).
 
