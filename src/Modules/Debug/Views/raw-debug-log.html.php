@@ -19,20 +19,36 @@ if (! empty($rawDebugLogDisposition) && $rawDebugLogDisposition === 'attachment'
     header('Content-Disposition: attachment; filename="' . $filename . '"');
 }
 
-$results = $this->logger->fetchAll(! empty($rawDebugLogTriggerActivatedOnly));
-$totalLogs = $this->logger->getTotalLogs();
-$logSizeInBytes = $this->logger->getLogSizeInBytes();
+$filterApplied = ! empty($rawDebugLogTriggerActivatedOnly);
+$results = $this->logger->fetchAll($filterApplied);
+$totalLogs = count($results);
+$logSizeInBytes = $this->logger->getLogSizeInBytes($filterApplied);
+$logSizeInBytesTotal = $filterApplied ? $this->logger->getLogSizeInBytes(false) : $logSizeInBytes;
+$totalLogsUnfiltered = $filterApplied ? $this->logger->getTotalLogs(false) : $totalLogs;
+
+$uniqueRequestIds = array_unique(array_filter(array_column($results, 'request_id')));
+$sessionCount = count($uniqueRequestIds);
 
 if (empty($results)) {
     echo 'No results found';
     exit;
 }
 
-echo sprintf(
-    'Total logs: %d, Log size: %s',
-    esc_html($totalLogs),
-    esc_html(PostExpirator_Util::formatBytes($logSizeInBytes))
-);
+echo $filterApplied
+    ? sprintf(
+        'Total logs: %s, Sessions: %s, Total in database: %s, Log size: %s (total: %s)',
+        esc_html((string) $totalLogs),
+        esc_html((string) $sessionCount),
+        esc_html((string) $totalLogsUnfiltered),
+        esc_html(PostExpirator_Util::formatBytes($logSizeInBytes)),
+        esc_html(PostExpirator_Util::formatBytes($logSizeInBytesTotal))
+    )
+    : sprintf(
+        'Total logs: %s, Sessions: %s, Log size: %s',
+        esc_html((string) $totalLogs),
+        esc_html((string) $sessionCount),
+        esc_html(PostExpirator_Util::formatBytes($logSizeInBytes))
+    );
 echo "\n\n";
 
 $grouped = ! empty($rawDebugLogGrouped);
@@ -45,7 +61,7 @@ foreach ($results as $result) {
             ? $result['request_id']
             : '(no request id)';
         if ($previousRequestId !== null && $previousRequestId !== $requestId) {
-            echo $separator . "\n";
+            echo esc_html($separator) . "\n";
         }
         $previousRequestId = $requestId;
         $requestIdPrefix = $requestId !== '(no request id)'
@@ -56,5 +72,5 @@ foreach ($results as $result) {
             ? '[' . esc_html($result['request_id']) . '] '
             : '';
     }
-    echo $requestIdPrefix . esc_html($result['timestamp']) . ': ' . esc_html($result['message']) . "\n";
+    echo esc_html($requestIdPrefix) . esc_html($result['timestamp']) . ': ' . esc_html($result['message']) . "\n";
 }

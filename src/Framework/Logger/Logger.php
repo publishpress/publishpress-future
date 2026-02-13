@@ -327,22 +327,34 @@ class Logger implements LoggerInterface
 
     /**
      * @inheritDoc
+     * @param bool $triggerActivatedOnly Filter to count only logs from requests with trigger activated.
      */
-    public function getTotalLogs()
+    public function getTotalLogs($triggerActivatedOnly = false)
     {
         $databaseTableName = $this->getDatabaseTableName();
+        $where = '';
 
-        return (int)$this->db->getVar("SELECT COUNT(*) FROM $databaseTableName");
+        if ($triggerActivatedOnly) {
+            $where = " WHERE `request_id` IN (SELECT DISTINCT `request_id` FROM $databaseTableName WHERE `trigger_activated` = 1 AND `request_id` != '')";
+        }
+
+        return (int)$this->db->getVar("SELECT COUNT(*) FROM $databaseTableName{$where}");
     }
 
     /**
      * @inheritDoc
+     * @param bool $triggerActivatedOnly Filter to sum only logs from requests with trigger activated.
      */
-    public function getLogSizeInBytes()
+    public function getLogSizeInBytes($triggerActivatedOnly = false)
     {
         $databaseTableName = $this->getDatabaseTableName();
+        $where = '';
 
-        return $this->db->getVar("SELECT SUM(LENGTH(`message`)) FROM $databaseTableName");
+        if ($triggerActivatedOnly) {
+            $where = " WHERE `request_id` IN (SELECT DISTINCT `request_id` FROM $databaseTableName WHERE `trigger_activated` = 1 AND `request_id` != '')";
+        }
+
+        return (int) $this->db->getVar("SELECT COALESCE(SUM(LENGTH(`message`)), 0) FROM $databaseTableName{$where}");
     }
 
     /**

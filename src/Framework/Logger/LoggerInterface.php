@@ -130,14 +130,16 @@ interface LoggerInterface
     public function fetchLatest($limit = 100, $triggerActivatedOnly = false);
 
     /**
+     * @param bool $triggerActivatedOnly Filter to count only logs from requests with trigger activated.
      * @return int
      */
-    public function getTotalLogs();
+    public function getTotalLogs($triggerActivatedOnly = false);
 
     /**
+     * @param bool $triggerActivatedOnly Filter to sum only logs from requests with trigger activated.
      * @return int
      */
-    public function getLogSizeInBytes();
+    public function getLogSizeInBytes($triggerActivatedOnly = false);
 
     /**
      * @return void

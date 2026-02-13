@@ -36,8 +36,13 @@ $triggerActivatedOnly = isset($_GET['trigger_activated_only']) ? (int)$_GET['tri
  */
 $logger = Container::getInstance()->get(ServicesAbstract::LOGGER);
 $results = $logger->fetchLatest($currentLogCount, (bool)$triggerActivatedOnly);
-$totalLogs = $logger->getTotalLogs();
-$logSizeInBytes = $logger->getLogSizeInBytes();
+$totalLogs = $logger->getTotalLogs((bool)$triggerActivatedOnly);
+$logSizeInBytes = $logger->getLogSizeInBytes((bool)$triggerActivatedOnly);
+$logSizeInBytesTotal = $triggerActivatedOnly ? $logger->getLogSizeInBytes(false) : $logSizeInBytes;
+$totalLogsUnfiltered = $triggerActivatedOnly ? $logger->getTotalLogs(false) : $totalLogs;
+
+$uniqueRequestIds = array_unique(array_filter(array_column($results, 'request_id')));
+$sessionCount = count($uniqueRequestIds);
 
 echo '<div class="pp-debug-log">';
 
@@ -86,25 +91,25 @@ if (empty($results)) {
         echo esc_html__('No results match the current filter.', 'post-expirator');
     }
 } else {
-foreach ($results as $result) {
-    if ($groupByRequest) {
-        $requestId = isset($result['request_id']) && $result['request_id'] !== ''
-            ? $result['request_id']
-            : '(no request id)';
-        if ($previousRequestId !== null && $previousRequestId !== $requestId) {
-            echo esc_html($separator) . "\n";
+    foreach ($results as $result) {
+        if ($groupByRequest) {
+            $requestId = isset($result['request_id']) && $result['request_id'] !== ''
+                ? $result['request_id']
+                : '(no request id)';
+            if ($previousRequestId !== null && $previousRequestId !== $requestId) {
+                echo esc_html($separator) . "\n";
+            }
+            $previousRequestId = $requestId;
+            $requestIdPrefix = $requestId !== '(no request id)'
+                ? '[' . esc_html($requestId) . '] '
+                : '';
+        } else {
+            $requestIdPrefix = isset($result['request_id']) && $result['request_id'] !== ''
+                ? '[' . esc_html($result['request_id']) . '] '
+                : '';
         }
-        $previousRequestId = $requestId;
-        $requestIdPrefix = $requestId !== '(no request id)'
-            ? '[' . esc_html($requestId) . '] '
-            : '';
-    } else {
-        $requestIdPrefix = isset($result['request_id']) && $result['request_id'] !== ''
-            ? '[' . esc_html($result['request_id']) . '] '
-            : '';
+        printf("%s%s: %s\n", esc_html($requestIdPrefix), esc_html($result['timestamp']), esc_html($result['message']));
     }
-    printf("%s%s: %s\n", $requestIdPrefix, esc_html($result['timestamp']), esc_html($result['message']));
-}
 }
 echo '</textarea>';
 
@@ -115,20 +120,45 @@ if ($totalLogs === 0) {
 } elseif ($totalDisplayedLogs === 0) {
     echo '<p id="debug-log-length">' . esc_html__('No results match the current filter.', 'post-expirator') . '</p>';
 } elseif ($totalLogs > $totalDisplayedLogs) {
-    echo '<p id="debug-log-length">' . sprintf(
-        // translators: %1$d: displayed count, %2$d: total count, %3$s: log size.
-        esc_html__('Showing the latest %1$d of %2$d results. The approximate size of the log is %3$s.', 'post-expirator'),
-        $totalDisplayedLogs,
-        $totalLogs,
-        esc_html(PostExpirator_Util::formatBytes($logSizeInBytes))
-    ) . '</p>';
+    $message = $triggerActivatedOnly
+        ? sprintf(
+            // translators: %1$d: displayed count, %2$d: filtered total, %3$d: sessions, %4$d: total unfiltered, %5$s: filtered log size, %6$s: total log size.
+            esc_html__('Showing the latest %1$d of %2$d logs (%3$d sessions). Total in database: %4$d. Log size: %5$s (total: %6$s).', 'post-expirator'),
+            esc_html((string) $totalDisplayedLogs),
+            esc_html((string) $totalLogs),
+            esc_html((string) $sessionCount),
+            esc_html((string) $totalLogsUnfiltered),
+            esc_html(PostExpirator_Util::formatBytes($logSizeInBytes)),
+            esc_html(PostExpirator_Util::formatBytes($logSizeInBytesTotal))
+        )
+        : sprintf(
+            // translators: %1$d: displayed count, %2$d: total count, %3$d: sessions, %4$s: log size.
+            esc_html__('Showing the latest %1$d of %2$d logs (%3$d sessions). Log size: %4$s.', 'post-expirator'),
+            esc_html((string) $totalDisplayedLogs),
+            esc_html((string) $totalLogs),
+            esc_html((string) $sessionCount),
+            esc_html(PostExpirator_Util::formatBytes($logSizeInBytes))
+        );
+    echo '<p id="debug-log-length">' . $message . '</p>';
 } else {
-    echo '<p id="debug-log-length">' . sprintf(
-        // translators: %1$d: total count, %2$s: log size.
-        esc_html__('Showing all %1$d results. The approximate size of the log is %2$s.', 'post-expirator'),
-        $totalLogs,
-        esc_html(PostExpirator_Util::formatBytes($logSizeInBytes))
-    ) . '</p>';
+    $message = $triggerActivatedOnly
+        ? sprintf(
+            // translators: %1$d: filtered logs count, %2$d: sessions, %3$d: total unfiltered, %4$s: filtered log size, %5$s: total log size.
+            esc_html__('Showing all %1$d logs (%2$d sessions). Total in database: %3$d. Log size: %4$s (total: %5$s).', 'post-expirator'),
+            esc_html((string) $totalLogs),
+            esc_html((string) $sessionCount),
+            esc_html((string) $totalLogsUnfiltered),
+            esc_html(PostExpirator_Util::formatBytes($logSizeInBytes)),
+            esc_html(PostExpirator_Util::formatBytes($logSizeInBytesTotal))
+        )
+        : sprintf(
+            // translators: %1$d: total logs count, %2$d: sessions count, %3$s: log size.
+            esc_html__('Showing all %1$d logs (%2$d sessions). Log size: %3$s.', 'post-expirator'),
+            esc_html((string) $totalLogs),
+            esc_html((string) $sessionCount),
+            esc_html(PostExpirator_Util::formatBytes($logSizeInBytes))
+        );
+    echo '<p id="debug-log-length">' . $message . '</p>';
 }
 
 echo '<div class="pp-debug-log-actions">';
