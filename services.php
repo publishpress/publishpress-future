@@ -1359,7 +1359,8 @@ return [
 
             return new PostQueryValidator(
                 $executionContext,
-                $jsonLogicEngine
+                $jsonLogicEngine,
+                $container->get(ServicesAbstract::LOGGER)
             );
         };
     },

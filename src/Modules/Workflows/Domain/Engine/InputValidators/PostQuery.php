@@ -2,23 +2,30 @@
 
 namespace PublishPress\Future\Modules\Workflows\Domain\Engine\InputValidators;
 
-use PublishPress\Future\Modules\Workflows\Interfaces\InputValidatorsInterface;
+use PublishPress\Future\Framework\Logger\LoggerInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\ExecutionContextInterface;
+use PublishPress\Future\Modules\Workflows\Interfaces\InputValidatorsInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\JsonLogicEngineInterface;
 use PublishPress\Future\Modules\Workflows\Module;
 
 class PostQuery implements InputValidatorsInterface
 {
+    private const LOG_PREFIX = '[Workflow]   → ';
+
     private ExecutionContextInterface $executionContext;
 
     private JsonLogicEngineInterface $jsonLogicEngine;
 
+    private LoggerInterface $logger;
+
     public function __construct(
         ExecutionContextInterface $executionContext,
-        JsonLogicEngineInterface $jsonLogicEngine
+        JsonLogicEngineInterface $jsonLogicEngine,
+        LoggerInterface $logger
     ) {
         $this->executionContext = $executionContext;
         $this->jsonLogicEngine = $jsonLogicEngine;
+        $this->logger = $logger;
     }
 
     public function validate(array $args): bool
@@ -34,9 +41,11 @@ class PostQuery implements InputValidatorsInterface
         return $this->validateJsonPostQuery($nodeSettings);
     }
 
-    private function validateLegacyPostQuery($post, array $nodeSettings)
+    private function validateLegacyPostQuery($post, array $nodeSettings): bool
     {
         if (! $this->hasValidPost($post)) {
+            $this->logValidationFailure('Post object invalid (not an object or WP_Error)', $post);
+
             return false;
         }
 
@@ -63,11 +72,16 @@ class PostQuery implements InputValidatorsInterface
         return true;
     }
 
-    private function validateJsonPostQuery(array $nodeSettings)
+    private function validateJsonPostQuery(array $nodeSettings): bool
     {
         $json = $nodeSettings['postQuery']['json'] ?? [];
 
         if (empty($json)) {
+            $this->logValidationFailure(
+                'JSON Logic post query is empty (no rules configured)',
+                null
+            );
+
             return false;
         }
 
@@ -76,10 +90,26 @@ class PostQuery implements InputValidatorsInterface
         $result = $this->jsonLogicEngine->apply($json, []);
 
         if (! is_bool($result)) {
+            $this->logValidationFailure(
+                'JSON Logic result is not boolean',
+                null,
+                ['result_type' => gettype($result), 'result' => $result]
+            );
+
             return false;
         }
 
-        return $result;
+        if (! $result) {
+            $this->logValidationFailure(
+                'JSON Logic post query conditions evaluated to false',
+                null,
+                ['json_logic_query' => $json]
+            );
+
+            return false;
+        }
+
+        return true;
     }
 
     private function isLegacyPostQuery($nodeSettings)
@@ -100,10 +130,16 @@ class PostQuery implements InputValidatorsInterface
         return true;
     }
 
-    private function hasValidPostType($post, array $nodeSettings)
+    private function hasValidPostType($post, array $nodeSettings): bool
     {
         // Prevent to apply actions to workflows
         if ($post->post_type === Module::POST_TYPE_WORKFLOW) {
+            $this->logValidationFailure(
+                'Post type is workflow (restricted)',
+                $post,
+                ['configured' => [Module::POST_TYPE_WORKFLOW]]
+            );
+
             return false;
         }
 
@@ -111,47 +147,68 @@ class PostQuery implements InputValidatorsInterface
 
         // Invalidate nodes that don't specify a post type to avoid applying actions to all post types
         if (empty($settingPostTypes)) {
+            $this->logValidationFailure(
+                'No post types configured in step (post type filter is required)',
+                $post
+            );
+
             return false;
         }
 
-        if (!empty($settingPostTypes) && !in_array($post->post_type, $settingPostTypes)) {
+        if (! empty($settingPostTypes) && ! in_array($post->post_type, $settingPostTypes)) {
+            $this->logValidationFailure(
+                'Post type does not match',
+                $post,
+                ['post_type' => $post->post_type, 'allowed' => $settingPostTypes]
+            );
+
             return false;
         }
 
         return true;
     }
 
-    private function hasValidPostId($postId, array $nodeSettings)
+    private function hasValidPostId($post, array $nodeSettings): bool
     {
         $settingPostIds = $nodeSettings['postQuery']['postId'] ?? [];
 
-        if (is_object($postId)) {
-            $postId = $postId->ID;
-        }
+        $postId = is_object($post) ? $post->ID : (int) $post;
 
         // Convert string IDs to integers for comparison
         $settingPostIds = array_map('intval', $settingPostIds);
         $postId = (int) $postId;
 
-        if (!empty($settingPostIds) && !in_array($postId, $settingPostIds)) {
+        if (! empty($settingPostIds) && ! in_array($postId, $settingPostIds)) {
+            $this->logValidationFailure(
+                'Post ID does not match configured list',
+                is_object($post) ? $post : null,
+                ['post_id' => $postId, 'allowed' => $settingPostIds]
+            );
+
             return false;
         }
 
         return true;
     }
 
-    private function hasValidPostStatus($post, array $nodeSettings)
+    private function hasValidPostStatus($post, array $nodeSettings): bool
     {
         $settingPostStatus = $nodeSettings['postQuery']['postStatus'] ?? [];
 
-        if (!empty($settingPostStatus) && !in_array($post->post_status, $settingPostStatus)) {
+        if (! empty($settingPostStatus) && ! in_array($post->post_status, $settingPostStatus)) {
+            $this->logValidationFailure(
+                'Post status does not match',
+                $post,
+                ['post_status' => $post->post_status, 'allowed' => $settingPostStatus]
+            );
+
             return false;
         }
 
         return true;
     }
 
-    private function hasValidPostAuthor($post, array $nodeSettings)
+    private function hasValidPostAuthor($post, array $nodeSettings): bool
     {
         $settingPostAuthor = $nodeSettings['postQuery']['postAuthor'] ?? [];
 
@@ -161,10 +218,20 @@ class PostQuery implements InputValidatorsInterface
 
         $settingPostAuthor = $this->executionContext->resolveExpressionsInArray($settingPostAuthor);
 
-        return in_array($post->post_author, $settingPostAuthor);
+        if (! in_array($post->post_author, $settingPostAuthor)) {
+            $this->logValidationFailure(
+                'Post author does not match',
+                $post,
+                ['post_author' => $post->post_author, 'allowed' => $settingPostAuthor]
+            );
+
+            return false;
+        }
+
+        return true;
     }
 
-    private function hasValidPostTerms($post, array $nodeSettings)
+    private function hasValidPostTerms($post, array $nodeSettings): bool
     {
         $settingPostTerms = $nodeSettings['postQuery']['postTerms'] ?? [];
 
@@ -183,17 +250,23 @@ class PostQuery implements InputValidatorsInterface
                 continue;
             }
 
-            if (!isset($groupedSelectedTerms[$termParts[0]])) {
+            if (! isset($groupedSelectedTerms[$termParts[0]])) {
                 $groupedSelectedTerms[$termParts[0]] = [];
             }
 
-            $groupedSelectedTerms[$termParts[0]][] = (int)$termParts[1];
+            $groupedSelectedTerms[$termParts[0]][] = (int) $termParts[1];
         }
 
         foreach ($groupedSelectedTerms as $taxonomy => $termIds) {
             $postTerms = wp_get_post_terms($post->ID, $taxonomy, ['fields' => 'ids']);
 
             if (is_wp_error($postTerms)) {
+                $this->logValidationFailure(
+                    'Failed to fetch post terms',
+                    $post,
+                    ['taxonomy' => $taxonomy, 'error' => $postTerms->get_error_message()]
+                );
+
                 return false;
             }
 
@@ -202,6 +275,41 @@ class PostQuery implements InputValidatorsInterface
             }
         }
 
+        $this->logValidationFailure(
+            'Post has none of the required terms',
+            $post,
+            ['required' => $groupedSelectedTerms]
+        );
+
         return false;
+    }
+
+    /**
+     * Log a post query validation failure with context.
+     *
+     * @param string $reason Human-readable reason for failure
+     * @param object|null $post Post object if available
+     * @param array<string, mixed> $context Additional context (e.g. post_type, allowed values)
+     */
+    private function logValidationFailure(string $reason, $post, array $context = []): void
+    {
+        $prefix = $this->getLogPrefix();
+        $postInfo = $post !== null && is_object($post)
+            ? sprintf('Post #%d (post_type: %s, post_status: %s)', $post->ID, $post->post_type, $post->post_status)
+            : 'Post unknown';
+        $contextStr = ! empty($context) ? ' ' . wp_json_encode($context) : '';
+
+        $this->logger->debug($prefix . 'Post query validation failed: ' . $reason . '. ' . $postInfo . $contextStr);
+    }
+
+    private function getLogPrefix(): string
+    {
+        $workflowId = $this->executionContext->getVariable('global.workflow.id');
+
+        if ($workflowId !== null && $workflowId !== '') {
+            return self::LOG_PREFIX . 'Workflow #' . $workflowId . ' → ';
+        }
+
+        return self::LOG_PREFIX;
     }
 }
