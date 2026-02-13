@@ -1,4 +1,4 @@
-FROM wordpress:6.8-php8.3
+FROM wordpress:6.9-php8.3
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
@@ -21,5 +21,5 @@ RUN apt-get update && apt-get install -y \
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Install Xdebug
-RUN pecl install xdebug-3.4.2 && \
+RUN pecl install xdebug-3.5.0 && \
     docker-php-ext-enable xdebug
