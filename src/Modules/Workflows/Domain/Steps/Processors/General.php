@@ -12,7 +12,7 @@ use Throwable;
 
 class General implements StepProcessorInterface
 {
-    public const LOG_PREFIX = '[WF Engine]   - ';
+    public const LOG_PREFIX = '[Workflow]   → ';
 
     /**
      * @var HooksFacade
@@ -44,7 +44,7 @@ class General implements StepProcessorInterface
         $message = sprintf($message, ...$args);
 
         return sprintf(
-            self::LOG_PREFIX . 'Workflow %1$s: %2$s',
+            self::LOG_PREFIX . 'Workflow #%1$s → %2$s',
             $this->executionContext->getVariable('global.workflow.id'),
             $message
         );

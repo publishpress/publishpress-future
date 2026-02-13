@@ -139,7 +139,7 @@ class OnPostWorkflowEnableRunner implements TriggerRunnerInterface
 
         $this->logger->debug(
             $this->stepProcessor->prepareLogMessage(
-                'Trigger is running | Slug: %s | Post ID: %d',
+                'Trigger fired (%s, Post #%d)',
                 $nodeSlug,
                 $postId
             )

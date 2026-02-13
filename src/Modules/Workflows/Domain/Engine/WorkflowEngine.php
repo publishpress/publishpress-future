@@ -27,7 +27,7 @@ use Throwable;
 
 class WorkflowEngine implements WorkflowEngineInterface
 {
-    public const LOG_PREFIX = '[WF Engine]';
+    public const LOG_PREFIX = '[Workflow]';
 
     /**
      * @var HookableInterface
@@ -147,8 +147,8 @@ class WorkflowEngine implements WorkflowEngineInterface
 
         $this->logger->debug(
             sprintf(
-                self::LOG_PREFIX . ' Starting engine | User: %s | Environment: %s',
-                ($currentUser->ID > 0) ? "ID {$currentUser->ID}" : 'unknown',
+                self::LOG_PREFIX . ' Engine starting (User #%s, %s)',
+                ($currentUser->ID > 0) ? (string) $currentUser->ID : 'guest',
                 $this->engineExecutionEnvironment
             )
         );
@@ -165,7 +165,7 @@ class WorkflowEngine implements WorkflowEngineInterface
             $this->engineExecutionId
         );
 
-        $this->logger->debug(self::LOG_PREFIX . ' Engine started and listening for events');
+        $this->logger->debug(self::LOG_PREFIX . ' Engine ready, listening for triggers');
     }
 
     public function runWorkflows(array $workflowIdsToRun = [])
@@ -180,10 +180,10 @@ class WorkflowEngine implements WorkflowEngineInterface
             $workflowIdsToRun
         );
 
-        $this->logger->debug(self::LOG_PREFIX . ' Running workflows');
+        $this->logger->debug(self::LOG_PREFIX . ' Loading workflows');
 
         if (empty($workflowIdsToRun)) {
-            $this->logger->debug(self::LOG_PREFIX . ' No specific workflows to run, getting all published workflows');
+            $this->logger->debug(self::LOG_PREFIX . ' Loading all published workflows');
 
             $workflowIdsToRun = $this->getPublishedWorkflowsIds();
         }
@@ -210,7 +210,7 @@ class WorkflowEngine implements WorkflowEngineInterface
 
             $this->logger->debug(
                 sprintf(
-                    self::LOG_PREFIX . ' Initializing workflow | ID: %d | Title: %s',
+                    self::LOG_PREFIX . ' Initializing workflow #%d (%s)',
                     $workflowId,
                     $workflow->getTitle()
                 )
@@ -242,7 +242,7 @@ class WorkflowEngine implements WorkflowEngineInterface
 
                 if (is_null($triggerRunner)) {
                     $message = sprintf(
-                        self::LOG_PREFIX . ' Trigger not found: %s',
+                        self::LOG_PREFIX . ' Trigger not found: %s (skipping)',
                         $triggerName
                     );
 
@@ -264,7 +264,7 @@ class WorkflowEngine implements WorkflowEngineInterface
                 // Setup the trigger
                 $this->logger->debug(
                     sprintf(
-                        self::LOG_PREFIX . '   - Setting up trigger | Slug: %s',
+                        self::LOG_PREFIX . '   → Registering trigger (%s)',
                         $triggerStep['data']['slug']
                     )
                 );
@@ -286,13 +286,13 @@ class WorkflowEngine implements WorkflowEngineInterface
 
             $this->logger->debug(
                 sprintf(
-                    self::LOG_PREFIX . ' Workflow initialized | ID: %d',
+                    self::LOG_PREFIX . ' Workflow #%d initialized',
                     $workflowId
                 )
             );
         }
 
-        $this->logger->debug(self::LOG_PREFIX . ' All workflows initialized');
+        $this->logger->debug(self::LOG_PREFIX . ' All workflows ready');
 
         /**
          * Action triggered when the workflows are initialized.
@@ -375,7 +375,7 @@ class WorkflowEngine implements WorkflowEngineInterface
 
         if (is_null($stepRunner)) {
             $message = sprintf(
-                self::LOG_PREFIX . ' Node runner not found: %s',
+                self::LOG_PREFIX . ' Step runner not found: %s',
                 $nodeName
             );
 
@@ -386,7 +386,7 @@ class WorkflowEngine implements WorkflowEngineInterface
 
         $this->logger->debug(
             sprintf(
-                self::LOG_PREFIX . '   - Workflow %d: Setting up step | Slug: %s',
+                self::LOG_PREFIX . '   → Workflow #%d → Running step (%s)',
                 $executionContext->getVariable('global.workflow.id'),
                 $node['data']['slug']
             )
@@ -464,7 +464,7 @@ class WorkflowEngine implements WorkflowEngineInterface
 
             $this->logger->debug(
                 sprintf(
-                    self::LOG_PREFIX . '   - Workflow %1$d: Executing scheduled step %2$s on action %3$d',
+                    self::LOG_PREFIX . '   → Workflow #%1$d → Executing scheduled step (%2$s, Action #%3$d)',
                     $originalArgs['workflowId'],
                     $step['node']['data']['slug'] ?? 'unknown',
                     $args['actionId']

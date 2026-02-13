@@ -116,7 +116,7 @@ class Plugin implements InitializableInterface
     {
         \PostExpirator_Reviews::init();
 
-        $this->logger->debug(self::LOG_PREFIX . ' Reviews initialized');
+        $this->logger->debug(self::LOG_PREFIX . ' Reviews module ready');
     }
 
     private function initializeCli()
@@ -127,7 +127,7 @@ class Plugin implements InitializableInterface
 
         \PostExpirator_Cli::getInstance();
 
-        $this->logger->debug(self::LOG_PREFIX . ' CLI initialized');
+        $this->logger->debug(self::LOG_PREFIX . ' CLI module ready');
     }
 
     private function initializeHooks()
@@ -145,7 +145,7 @@ class Plugin implements InitializableInterface
     {
         $this->notices->init();
 
-        $this->logger->debug(self::LOG_PREFIX . ' Notices initialized');
+        $this->logger->debug(self::LOG_PREFIX . ' Notices module ready');
     }
 
     private function initializeModules()

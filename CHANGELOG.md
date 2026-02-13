@@ -4,6 +4,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 [UNRELEASED]
 
 - Added: Add new trigger: Post is inserted - PRO, (Issue #1146)
+- Added: Debug log view shows total logs displayed, session count, and log size (filter-aware; shows both filtered and total when filter applied)
 - Added: Debug log filter to show only requests where a workflow trigger was activated
 - Added: Debug log request_id column for request correlation, with migration for existing sites
 - Added: Debug log display option to toggle between time sequence and grouped by request views
@@ -11,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Changed: Debug log Download button downloads as attachment; supports grouped or time sequence based on current display option
 - Changed: Move the scheduled actions "Run" button to it's own column, (Issue #1496).
 - Fixed: Debug log enable/disable in Diagnostics and Tools tab now reflects the correct state immediately without needing a second page refresh
+- Changed: Workflow debug log messages rewritten for clarity and consistency (format, parentheses for details, [Workflow] prefix)
 - Improved reliability of the "Post is Published" and "Post is Updated" triggers by fixing how post metadata is handled on block editor and when ACF is enabled (Issue #1312).
 
 [4.9.4] - 18 December, 2025
