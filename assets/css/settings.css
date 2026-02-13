@@ -395,6 +395,34 @@ p.description,
     justify-content: flex-start;
 }
 
+.pp-debug-log-options {
+    margin-bottom: 15px;
+}
+
+.pp-debug-log-options form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 25px;
+}
+
+.pp-debug-log-option {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.pp-debug-log-option label:first-child {
+    font-weight: 600;
+}
+
+.pp-radio-label {
+    font-weight: normal !important;
+}
+
+.pp-radio-label input {
+    margin-right: 3px;
+}
+
 .pp-debug-log-count {
     margin-bottom: 10px;
 }

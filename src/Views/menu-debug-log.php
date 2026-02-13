@@ -27,6 +27,8 @@ echo '<div class="pp-column-left">';
 
 // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 $currentLogCount = isset($_GET['log_count']) ? (int)$_GET['log_count'] : 500;
+// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+$groupByRequest = isset($_GET['group_by_request']) ? (int)$_GET['group_by_request'] : 1;
 /**
  * @var LoggerInterface $logger
  */
@@ -52,10 +54,11 @@ if (! empty($results)) {
         10000 => '10000'
     ];
 
-    echo '<div class="pp-debug-log-count">';
-    echo '<form method="get">';
+    echo '<div class="pp-debug-log-options">';
+    echo '<form method="get" id="pp-debug-log-form">';
     echo '<input type="hidden" name="page" value="publishpress-future-settings">';
     echo '<input type="hidden" name="tab" value="viewdebug">';
+    echo '<div class="pp-debug-log-option">';
     echo '<label for="log-count">' . esc_html__('Number of logs to display:', 'post-expirator') . '</label>';
     echo '<select id="log-count" name="log_count" onchange="this.form.submit()">';
     foreach ($logCountOptions as $value => $label) {
@@ -63,17 +66,37 @@ if (! empty($results)) {
         echo '<option value="' . esc_attr((string)$value) . '"' . $selected . '>' . esc_html($label) . '</option>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
     }
     echo '</select>';
+    echo '</div>';
+    echo '<div class="pp-debug-log-option">';
+    echo '<label>' . esc_html__('Display:', 'post-expirator') . '</label>';
+    echo '<label class="pp-radio-label"><input type="radio" name="group_by_request" value="1" ' . ($groupByRequest === 1 ? 'checked' : '') . ' onchange="this.form.submit()"> ' . esc_html__('Grouped by request', 'post-expirator') . '</label>';
+    echo '<label class="pp-radio-label"><input type="radio" name="group_by_request" value="0" ' . ($groupByRequest === 0 ? 'checked' : '') . ' onchange="this.form.submit()"> ' . esc_html__('Time sequence', 'post-expirator') . '</label>';
+    echo '</div>';
     echo '</form>';
     echo '</div>';
 
-
+    $separator = str_repeat('-', 60);
+    $previousRequestId = null;
 
     echo '<textarea readonly>';
     foreach ($results as $result) {
-        $requestId = isset($result['request_id']) && $result['request_id'] !== ''
-            ? '[' . esc_html($result['request_id']) . '] '
-            : '';
-        printf("%s%s: %s\n", $requestId, esc_html($result['timestamp']), esc_html($result['message']));
+        if ($groupByRequest) {
+            $requestId = isset($result['request_id']) && $result['request_id'] !== ''
+                ? $result['request_id']
+                : '(no request id)';
+            if ($previousRequestId !== null && $previousRequestId !== $requestId) {
+                echo $separator . "\n";
+            }
+            $previousRequestId = $requestId;
+            $requestIdPrefix = $requestId !== '(no request id)'
+                ? '[' . esc_html($requestId) . '] '
+                : '';
+        } else {
+            $requestIdPrefix = isset($result['request_id']) && $result['request_id'] !== ''
+                ? '[' . esc_html($result['request_id']) . '] '
+                : '';
+        }
+        printf("%s%s: %s\n", $requestIdPrefix, esc_html($result['timestamp']), esc_html($result['message']));
     }
     echo '</textarea>';
 
@@ -99,14 +122,19 @@ if (! empty($results)) {
     echo '<div class="pp-debug-log-actions">';
 
     $nonce = wp_create_nonce('publishpress_future_download_log');
+    $logActionArgs = [
+        'action' => 'publishpress_future_debug_log',
+        'nonce' => $nonce,
+        'grouped' => $groupByRequest,
+    ];
 
     echo '<button id="copy-debug-log" class="button">' . esc_html__('Copy Debug Log', 'post-expirator') . '</button>';
 
-    echo '<a href="' . esc_url(add_query_arg([
-        'action' => 'publishpress_future_debug_log',
-        'nonce' => $nonce,
-    ], admin_url('admin.php'))) . '" class="button">'
-        . esc_html__('Download Entire Log', 'post-expirator') . '</a>';
+    echo '<a href="' . esc_url(add_query_arg(array_merge($logActionArgs, ['disposition' => 'attachment']), admin_url('admin.php'))) . '" class="button">'
+        . esc_html__('Download', 'post-expirator') . '</a>';
+
+    echo '<a href="' . esc_url(add_query_arg($logActionArgs, admin_url('admin.php'))) . '" class="button" target="_blank" rel="noopener noreferrer">'
+        . esc_html__('View Full Log in New Tab', 'post-expirator') . '</a>';
 
     echo '</div>';
 

@@ -64,7 +64,9 @@ class Controller implements InitializableInterface
 
     public function onDownloadLog()
     {
-        if (! isset($_GET['action']) || $_GET['action'] !== 'publishpress_future_debug_log') {
+        $action = isset($_GET['action']) ? sanitize_key($_GET['action']) : '';
+
+        if ($action !== 'publishpress_future_debug_log') {
             return;
         }
 
@@ -76,6 +78,13 @@ class Controller implements InitializableInterface
         if (! isset($_GET['nonce']) || ! wp_verify_nonce(sanitize_key($_GET['nonce']), 'publishpress_future_download_log')) {
             wp_die(esc_html__('Invalid nonce.', 'post-expirator'), '', ['response' => 403]);
         }
+
+        $grouped = isset($_GET['grouped']) ? (int)$_GET['grouped'] : 0;
+        $disposition = isset($_GET['disposition']) ? sanitize_key($_GET['disposition']) : 'inline';
+
+        // Variables for the view.
+        $raw_debug_log_grouped = (bool)$grouped;
+        $raw_debug_log_disposition = $disposition === 'attachment' ? 'attachment' : 'inline';
 
         require_once __DIR__ . '/../Views/raw-debug-log.html.php';
 
