@@ -42,6 +42,7 @@ class DebugLogSchema implements DBTableSchemaInterface
             'id' => 'int(9) NOT NULL AUTO_INCREMENT',
             'timestamp' => 'timestamp NOT NULL',
             'blog' => 'int(9) NOT NULL',
+            'request_id' => "varchar(32) DEFAULT ''",
             'message' => "text NOT NULL",
         ];
     }
@@ -112,8 +113,32 @@ class DebugLogSchema implements DBTableSchemaInterface
             $this->createTable();
         }
 
+        if ($this->isTableExistent()) {
+            $this->handler->fixColumns($this->getColumns());
+        }
+
         if (! empty($this->handler->checkTableIndexes($this->getIndexes()))) {
             $this->handler->fixIndexes($this->getIndexes());
         }
+    }
+
+    /**
+     * Add request_id column to the table if it does not exist.
+     *
+     * @since 4.9.5
+     * @return void
+     */
+    public function addRequestIdColumnIfMissing(): void
+    {
+        if (! $this->isTableExistent()) {
+            return;
+        }
+
+        $columns = $this->handler->getTableColumns();
+        if (in_array('request_id', $columns, true)) {
+            return;
+        }
+
+        $this->handler->addColumn('request_id', "varchar(32) DEFAULT ''");
     }
 }

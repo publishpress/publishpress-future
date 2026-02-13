@@ -18,5 +18,8 @@ echo sprintf(
 echo "\n\n";
 
 foreach ($results as $result) {
-    echo esc_html($result['timestamp']) . ': ' . esc_html($result['message']) . "\n";
+    $requestId = isset($result['request_id']) && $result['request_id'] !== ''
+        ? '[' . esc_html($result['request_id']) . '] '
+        : '';
+    echo $requestId . esc_html($result['timestamp']) . ': ' . esc_html($result['message']) . "\n";
 }

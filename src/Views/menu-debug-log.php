@@ -70,7 +70,10 @@ if (! empty($results)) {
 
     echo '<textarea readonly>';
     foreach ($results as $result) {
-        printf("%s: %s\n", esc_html($result['timestamp']), esc_html($result['message']));
+        $requestId = isset($result['request_id']) && $result['request_id'] !== ''
+            ? '[' . esc_html($result['request_id']) . '] '
+            : '';
+        printf("%s%s: %s\n", $requestId, esc_html($result['timestamp']), esc_html($result['message']));
     }
     echo '</textarea>';
 

@@ -36,6 +36,7 @@ class LoggerTest extends Unit
                 'modifyStructure' => Expected::once(
                     function ($sql) {
                         $this->assertStringStartsWith('CREATE TABLE `wp_postexpirator_debug`', $sql);
+                        $this->assertStringContainsString('request_id', $sql);
                     }
                 ),
                 'escape' => function ($string) {

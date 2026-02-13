@@ -23,6 +23,7 @@ use PublishPress\Future\Modules\Expirator\PostMetaAbstract;
 use PublishPress\Future\Modules\Settings\SettingsFacade;
 use PublishPress\Future\Modules\Workflows\Migrations\V40000WorkflowScheduledStepsSchema;
 use PublishPress\Future\Modules\Workflows\Migrations\V040500OnScheduledStepsSchema;
+use PublishPress\Future\Modules\Debug\Migrations\V04905DebugLogRequestId;
 use Throwable;
 
 defined('ABSPATH') or die('Direct access not allowed.');
@@ -315,6 +316,12 @@ class Plugin implements InitializableInterface
                 if (version_compare($version, '4.5.0', '<')) {
                     $container->get(ServicesAbstract::HOOKS)->doAction(
                         V040500OnScheduledStepsSchema::HOOK
+                    );
+                }
+
+                if (version_compare($version, '4.9.5', '<')) {
+                    $container->get(ServicesAbstract::HOOKS)->doAction(
+                        V04905DebugLogRequestId::HOOK
                     );
                 }
             }

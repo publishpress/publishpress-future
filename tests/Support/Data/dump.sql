@@ -446,6 +446,7 @@ CREATE TABLE `wp_postexpirator_debug` (
   `id` int(9) NOT NULL AUTO_INCREMENT,
   `timestamp` timestamp NOT NULL,
   `blog` int(9) NOT NULL,
+  `request_id` varchar(32) DEFAULT '',
   `message` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;

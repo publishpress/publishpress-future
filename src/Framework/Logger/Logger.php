@@ -81,6 +81,7 @@ class Logger implements LoggerInterface
             `id` INT(9) NOT NULL AUTO_INCREMENT PRIMARY KEY,
             `timestamp` TIMESTAMP NOT NULL,
             `blog` INT(9) NOT NULL,
+            `request_id` varchar(32) DEFAULT '',
             `message` text NOT NULL
         );";
 
@@ -136,12 +137,7 @@ class Logger implements LoggerInterface
 
         $databaseTableName = $this->getDatabaseTableName();
 
-        $fullMessage = sprintf(
-            '%s %s: %s',
-            $levelDescription,
-            $this->requestId,
-            $message
-        );
+        $fullMessage = sprintf('%s: %s', $levelDescription, $message);
 
         if (! empty($context)) {
             $fullMessage .= '[' . implode(', ', $context) . ']';
@@ -149,10 +145,11 @@ class Logger implements LoggerInterface
 
         $this->db->query(
             $this->db->prepare(
-                "INSERT INTO $databaseTableName (`timestamp`,`message`,`blog`) VALUES (FROM_UNIXTIME(%d),%s,%s)",
+                "INSERT INTO $databaseTableName (`timestamp`,`blog`,`request_id`,`message`) VALUES (FROM_UNIXTIME(%d),%s,%s,%s)",
                 time(),
-                $fullMessage,
-                $this->site->getBlogId()
+                $this->site->getBlogId(),
+                $this->requestId,
+                $fullMessage
             )
         );
     }
