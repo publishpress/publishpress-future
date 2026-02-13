@@ -1,7 +1,7 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-[UNRELEASHED]
+[UNRELEASED]
 
 - Added: Add new trigger: Post is inserted - PRO, (Issue #1146)
 - Added: Debug log filter to show only requests where a workflow trigger was activated
