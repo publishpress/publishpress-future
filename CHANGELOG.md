@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added: Debug log filter to show only requests where a workflow trigger was activated
 - Added: Debug log request_id column for request correlation, with migration for existing sites
 - Added: Debug log display option to toggle between time sequence and grouped by request views
+- Added: Workflow engine logs "Engine finished processing" on shutdown when debug is enabled
 - Changed: Debug log now defaults to grouped by request display
 - Changed: Debug log Download button downloads as attachment; supports grouped or time sequence based on current display option
 - Changed: Move the scheduled actions "Run" button to it's own column, (Issue #1496).

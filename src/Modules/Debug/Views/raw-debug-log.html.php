@@ -1,5 +1,7 @@
 <?php
 
+use PublishPress\Future\Modules\Debug\DebugLogDisplayHelper;
+
 /**
  * Raw debug log view.
  *
@@ -54,6 +56,10 @@ echo "\n\n";
 $grouped = ! empty($rawDebugLogGrouped);
 $separator = str_repeat('-', 60);
 $previousRequestId = null;
+
+if ($grouped) {
+    $results = DebugLogDisplayHelper::sortResultsByRequest($results);
+}
 
 foreach ($results as $result) {
     if ($grouped) {

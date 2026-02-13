@@ -74,6 +74,10 @@ class WorkflowEngine implements WorkflowEngineInterface
      */
     private $engineExecutionEnvironment;
 
+    /**
+     * @var float
+     */
+    private $engineStartTime;
 
     public function __construct(
         HookableInterface $hooks,
@@ -137,6 +141,8 @@ class WorkflowEngine implements WorkflowEngineInterface
 
     public function start()
     {
+        $this->engineStartTime = microtime(true);
+
         $this->hooks->doAction(HooksAbstract::ACTION_WORKFLOW_ENGINE_START);
 
         $this->executionContextInitializer->initialize();
@@ -166,6 +172,24 @@ class WorkflowEngine implements WorkflowEngineInterface
         );
 
         $this->logger->debug(self::LOG_PREFIX . ' Engine ready, listening for triggers');
+
+        $this->hooks->addAction('shutdown', [$this, 'onShutdown'], 10, 0);
+    }
+
+    /**
+     * Log when the workflow engine has finished processing the request.
+     *
+     * @since 4.9.5
+     * @return void
+     */
+    public function onShutdown(): void
+    {
+        if (! $this->logger->isDownloadLogRequested() && isset($this->engineStartTime)) {
+            $elapsedMs = (int) round((microtime(true) - $this->engineStartTime) * 1000);
+            $this->logger->debug(
+                sprintf(self::LOG_PREFIX . ' Engine finished processing (%d ms)', $elapsedMs)
+            );
+        }
     }
 
     public function runWorkflows(array $workflowIdsToRun = [])

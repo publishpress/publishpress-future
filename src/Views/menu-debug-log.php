@@ -1,9 +1,10 @@
 <?php
 
-use PublishPress\Future\Modules\Settings\HooksAbstract;
 use PublishPress\Future\Core\DI\Container;
 use PublishPress\Future\Core\DI\ServicesAbstract;
 use PublishPress\Future\Framework\Logger\LoggerInterface;
+use PublishPress\Future\Modules\Debug\DebugLogDisplayHelper;
+use PublishPress\Future\Modules\Settings\HooksAbstract;
 
 $container = Container::getInstance();
 $hooks = $container->get(ServicesAbstract::HOOKS);
@@ -82,6 +83,10 @@ echo '</div>';
 
 $separator = str_repeat('-', 60);
 $previousRequestId = null;
+
+if ($groupByRequest) {
+    $results = DebugLogDisplayHelper::sortResultsByRequest($results);
+}
 
 echo '<textarea readonly>';
 if (empty($results)) {
