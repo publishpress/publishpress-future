@@ -24,6 +24,7 @@ use PublishPress\Future\Modules\Settings\SettingsFacade;
 use PublishPress\Future\Modules\Workflows\Migrations\V40000WorkflowScheduledStepsSchema;
 use PublishPress\Future\Modules\Workflows\Migrations\V040500OnScheduledStepsSchema;
 use PublishPress\Future\Modules\Debug\Migrations\V04905DebugLogRequestId;
+use PublishPress\Future\Modules\Debug\Migrations\V04906DebugLogTimestampMilliseconds;
 use Throwable;
 
 defined('ABSPATH') or die('Direct access not allowed.');
@@ -322,6 +323,9 @@ class Plugin implements InitializableInterface
                 if (version_compare($version, '4.9.5', '<')) {
                     $container->get(ServicesAbstract::HOOKS)->doAction(
                         V04905DebugLogRequestId::HOOK
+                    );
+                    $container->get(ServicesAbstract::HOOKS)->doAction(
+                        V04906DebugLogTimestampMilliseconds::HOOK
                     );
                 }
             }

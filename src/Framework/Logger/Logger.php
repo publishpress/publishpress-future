@@ -79,7 +79,7 @@ class Logger implements LoggerInterface
 
         $tableStructure = "CREATE TABLE `$databaseTableName` (
             `id` INT(9) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-            `timestamp` TIMESTAMP NOT NULL,
+            `timestamp` DATETIME(3) NOT NULL,
             `blog` INT(9) NOT NULL,
             `request_id` varchar(32) DEFAULT '',
             `trigger_activated` tinyint(1) NOT NULL DEFAULT 0,
@@ -144,10 +144,15 @@ class Logger implements LoggerInterface
             $fullMessage .= '[' . implode(', ', $context) . ']';
         }
 
+        $microtime = microtime(true);
+        $timestampWithMs = gmdate('Y-m-d H:i:s', (int) $microtime)
+            . '.'
+            . sprintf('%03d', (int) (($microtime - floor($microtime)) * 1000));
+
         $this->db->query(
             $this->db->prepare(
-                "INSERT INTO $databaseTableName (`timestamp`,`blog`,`request_id`,`trigger_activated`,`message`) VALUES (FROM_UNIXTIME(%d),%s,%s,0,%s)",
-                time(),
+                "INSERT INTO $databaseTableName (`timestamp`,`blog`,`request_id`,`trigger_activated`,`message`) VALUES (%s,%s,%s,0,%s)",
+                $timestampWithMs,
                 $this->site->getBlogId(),
                 $this->requestId,
                 $fullMessage

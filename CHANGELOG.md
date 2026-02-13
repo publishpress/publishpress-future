@@ -5,6 +5,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Added: Add new trigger: Post is inserted - PRO, (Issue #1146)
 - Added: Debug log view shows total logs displayed, session count, and log size (filter-aware; shows both filtered and total when filter applied)
+- Added: Debug log timestamps now include milliseconds
 - Added: Debug log filter to show only requests where a workflow trigger was activated
 - Added: Debug log request_id column for request correlation, with migration for existing sites
 - Added: Debug log display option to toggle between time sequence and grouped by request views

@@ -40,7 +40,7 @@ class DebugLogSchema implements DBTableSchemaInterface
     {
         return [
             'id' => 'int(9) NOT NULL AUTO_INCREMENT',
-            'timestamp' => 'timestamp NOT NULL',
+            'timestamp' => 'datetime(3) NOT NULL',
             'blog' => 'int(9) NOT NULL',
             'request_id' => "varchar(32) DEFAULT ''",
             'trigger_activated' => "tinyint(1) NOT NULL DEFAULT 0",
@@ -161,5 +161,20 @@ class DebugLogSchema implements DBTableSchemaInterface
         }
 
         $this->handler->addColumn('trigger_activated', "tinyint(1) NOT NULL DEFAULT 0");
+    }
+
+    /**
+     * Add millisecond precision to the timestamp column if missing.
+     *
+     * @since 4.9.5
+     * @return void
+     */
+    public function addTimestampMillisecondsSupport(): void
+    {
+        if (! $this->isTableExistent()) {
+            return;
+        }
+
+        $this->handler->changeColumn('timestamp', 'datetime(3) NOT NULL');
     }
 }
