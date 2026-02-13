@@ -20,7 +20,7 @@ use PublishPress\Future\Modules\Expirator\Interfaces\MigrationInterface;
 defined('ABSPATH') or die('Direct access not allowed.');
 
 /**
- * Migration to add request_id column to the debug log table.
+ * Migration to add request_id and trigger_activated columns to the debug log table.
  *
  * @since 4.9.5
  */
@@ -57,13 +57,14 @@ class V04905DebugLogRequestId implements MigrationInterface
     }
 
     /**
-     * Add request_id column to debug log table if it does not exist.
+     * Add request_id and trigger_activated columns to debug log table if they do not exist.
      *
      * @return void
      */
     public function migrate()
     {
         $this->debugLogSchema->addRequestIdColumnIfMissing();
+        $this->debugLogSchema->addTriggerActivatedColumnIfMissing();
     }
 
     /**
@@ -76,7 +77,7 @@ class V04905DebugLogRequestId implements MigrationInterface
     public function formatLogActionColumn($text, $row)
     {
         if ($row['hook'] === self::HOOK) {
-            return __('Add request_id column to debug log table after v4.9.5', 'post-expirator');
+            return __('Add request_id and trigger_activated columns to debug log table after v4.9.5', 'post-expirator');
         }
 
         return $text;

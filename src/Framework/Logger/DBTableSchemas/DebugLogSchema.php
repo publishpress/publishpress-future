@@ -43,6 +43,7 @@ class DebugLogSchema implements DBTableSchemaInterface
             'timestamp' => 'timestamp NOT NULL',
             'blog' => 'int(9) NOT NULL',
             'request_id' => "varchar(32) DEFAULT ''",
+            'trigger_activated' => "tinyint(1) NOT NULL DEFAULT 0",
             'message' => "text NOT NULL",
         ];
     }
@@ -140,5 +141,25 @@ class DebugLogSchema implements DBTableSchemaInterface
         }
 
         $this->handler->addColumn('request_id', "varchar(32) DEFAULT ''");
+    }
+
+    /**
+     * Add trigger_activated column to the table if it does not exist.
+     *
+     * @since 4.9.5
+     * @return void
+     */
+    public function addTriggerActivatedColumnIfMissing(): void
+    {
+        if (! $this->isTableExistent()) {
+            return;
+        }
+
+        $columns = $this->handler->getTableColumns();
+        if (in_array('trigger_activated', $columns, true)) {
+            return;
+        }
+
+        $this->handler->addColumn('trigger_activated', "tinyint(1) NOT NULL DEFAULT 0");
     }
 }

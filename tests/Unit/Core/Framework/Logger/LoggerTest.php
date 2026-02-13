@@ -37,6 +37,7 @@ class LoggerTest extends Unit
                     function ($sql) {
                         $this->assertStringStartsWith('CREATE TABLE `wp_postexpirator_debug`', $sql);
                         $this->assertStringContainsString('request_id', $sql);
+                        $this->assertStringContainsString('trigger_activated', $sql);
                     }
                 ),
                 'escape' => function ($string) {

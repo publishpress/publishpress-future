@@ -4,6 +4,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 [UNRELEASHED]
 
 - Added: Add new trigger: Post is inserted - PRO, (Issue #1146)
+- Added: Debug log filter to show only requests where a workflow trigger was activated
 - Added: Debug log request_id column for request correlation, with migration for existing sites
 - Added: Debug log display option to toggle between time sequence and grouped by request views
 - Changed: Debug log now defaults to grouped by request display

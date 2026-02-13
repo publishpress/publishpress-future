@@ -12,6 +12,7 @@ use PublishPress\Future\Framework\InitializableInterface;
 use PublishPress\Future\Framework\Logger\LoggerInterface;
 use PublishPress\Future\Framework\WordPress\Facade\HooksFacade;
 use PublishPress\Future\Modules\Debug\HooksAbstract;
+use PublishPress\Future\Modules\Workflows\HooksAbstract as WorkflowsHooksAbstract;
 
 defined('ABSPATH') or die('Direct access not allowed.');
 
@@ -46,6 +47,22 @@ class Controller implements InitializableInterface
             CoreAbstractHooks::ACTION_ADMIN_INIT,
             [$this, 'onDownloadLog']
         );
+
+        $this->hooks->addAction(
+            WorkflowsHooksAbstract::ACTION_WORKFLOW_TRIGGER_EXECUTED,
+            [$this, 'onWorkflowTriggerExecuted']
+        );
+    }
+
+    /**
+     * Mark the current request in the debug log when a workflow trigger is executed.
+     *
+     * @since 4.9.5
+     * @return void
+     */
+    public function onWorkflowTriggerExecuted(): void
+    {
+        $this->logger->markCurrentRequestHasTriggerActivated();
     }
 
     public function onDebugLog($message)
@@ -81,10 +98,13 @@ class Controller implements InitializableInterface
 
         $grouped = isset($_GET['grouped']) ? (int)$_GET['grouped'] : 0;
         $disposition = isset($_GET['disposition']) ? sanitize_key($_GET['disposition']) : 'inline';
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+        $triggerActivatedOnly = isset($_GET['trigger_activated_only']) ? (int)$_GET['trigger_activated_only'] : 0;
 
         // Variables for the view.
-        $raw_debug_log_grouped = (bool)$grouped;
-        $raw_debug_log_disposition = $disposition === 'attachment' ? 'attachment' : 'inline';
+        $rawDebugLogGrouped = (bool)$grouped;
+        $rawDebugLogDisposition = $disposition === 'attachment' ? 'attachment' : 'inline';
+        $rawDebugLogTriggerActivatedOnly = (bool)$triggerActivatedOnly;
 
         require_once __DIR__ . '/../Views/raw-debug-log.html.php';
 

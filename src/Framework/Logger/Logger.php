@@ -82,6 +82,7 @@ class Logger implements LoggerInterface
             `timestamp` TIMESTAMP NOT NULL,
             `blog` INT(9) NOT NULL,
             `request_id` varchar(32) DEFAULT '',
+            `trigger_activated` tinyint(1) NOT NULL DEFAULT 0,
             `message` text NOT NULL
         );";
 
@@ -145,7 +146,7 @@ class Logger implements LoggerInterface
 
         $this->db->query(
             $this->db->prepare(
-                "INSERT INTO $databaseTableName (`timestamp`,`blog`,`request_id`,`message`) VALUES (FROM_UNIXTIME(%d),%s,%s,%s)",
+                "INSERT INTO $databaseTableName (`timestamp`,`blog`,`request_id`,`trigger_activated`,`message`) VALUES (FROM_UNIXTIME(%d),%s,%s,0,%s)",
                 time(),
                 $this->site->getBlogId(),
                 $this->requestId,
@@ -263,24 +264,63 @@ class Logger implements LoggerInterface
     }
 
     /**
-     * @return array
-     * @noinspection SqlResolve
+     * Mark the current request as having a workflow trigger activated.
+     *
+     * @since 4.9.5
+     * @return void
      */
-    public function fetchAll()
+    public function markCurrentRequestHasTriggerActivated(): void
     {
+        if (! $this->debugIsEnabled()) {
+            return;
+        }
+
         $databaseTableName = $this->getDatabaseTableName();
 
-        return (array)$this->db->getResults("SELECT * FROM $databaseTableName ORDER BY `id`", 'ARRAY_A');
+        $this->db->query(
+            $this->db->prepare(
+                "UPDATE $databaseTableName SET `trigger_activated` = 1 WHERE `request_id` = %s",
+                $this->requestId
+            )
+        );
+    }
+
+    /**
+     * @return array<string, mixed>
+     * @noinspection SqlResolve
+     */
+    public function fetchAll($triggerActivatedOnly = false)
+    {
+        $databaseTableName = $this->getDatabaseTableName();
+        $where = '';
+
+        if ($triggerActivatedOnly) {
+            $where = " WHERE `request_id` IN (SELECT DISTINCT `request_id` FROM $databaseTableName WHERE `trigger_activated` = 1 AND `request_id` != '')";
+        }
+
+        return (array)$this->db->getResults("SELECT * FROM $databaseTableName{$where} ORDER BY `id`", 'ARRAY_A');
     }
 
     /**
      * @inheritDoc
+     * @param int $limit
+     * @param bool $triggerActivatedOnly
+     * @return array<string, mixed>
      */
-    public function fetchLatest($limit = 100)
+    public function fetchLatest($limit = 100, $triggerActivatedOnly = false)
     {
         $databaseTableName = $this->getDatabaseTableName();
+        $limit = absint($limit);
+        $where = '';
 
-        $list = (array)$this->db->getResults("SELECT * FROM $databaseTableName ORDER BY `id` DESC LIMIT $limit", 'ARRAY_A');
+        if ($triggerActivatedOnly) {
+            $where = " WHERE `request_id` IN (SELECT DISTINCT `request_id` FROM $databaseTableName WHERE `trigger_activated` = 1 AND `request_id` != '')";
+        }
+
+        $list = (array)$this->db->getResults(
+            "SELECT * FROM $databaseTableName{$where} ORDER BY `id` DESC LIMIT $limit",
+            'ARRAY_A'
+        );
 
         return array_reverse($list);
     }

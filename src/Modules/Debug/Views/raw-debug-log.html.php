@@ -14,12 +14,12 @@
 
 header('Content-Type: text/plain; charset=utf-8');
 
-if (! empty($raw_debug_log_disposition) && $raw_debug_log_disposition === 'attachment') {
+if (! empty($rawDebugLogDisposition) && $rawDebugLogDisposition === 'attachment') {
     $filename = 'publishpress-future-debug-log-' . gmdate('Y-m-d-His') . '.txt';
     header('Content-Disposition: attachment; filename="' . $filename . '"');
 }
 
-$results = $this->logger->fetchAll();
+$results = $this->logger->fetchAll(! empty($rawDebugLogTriggerActivatedOnly));
 $totalLogs = $this->logger->getTotalLogs();
 $logSizeInBytes = $this->logger->getLogSizeInBytes();
 
@@ -35,7 +35,7 @@ echo sprintf(
 );
 echo "\n\n";
 
-$grouped = ! empty($raw_debug_log_grouped);
+$grouped = ! empty($rawDebugLogGrouped);
 $separator = str_repeat('-', 60);
 $previousRequestId = null;
 
