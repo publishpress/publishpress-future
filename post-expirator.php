@@ -101,8 +101,8 @@ try {
         define('PUBLISHPRESS_FUTURE_LOADED_DEPENDENCIES', true);
     }
 
-    require_once PUBLISHPRESS_FUTURE_SRC_PATH . '/src/install.php';
-    require_once PUBLISHPRESS_FUTURE_SRC_PATH . '/src/uninstall.php';
+    require_once PUBLISHPRESS_FUTURE_SRC_PATH . '/install.php';
+    require_once PUBLISHPRESS_FUTURE_SRC_PATH . '/uninstall.php';
 
     HooksFacade::registerActivationHook(PUBLISHPRESS_FUTURE_PLUGIN_FILE, __NAMESPACE__ . '\\install');
     HooksFacade::registerDeactivationHook(PUBLISHPRESS_FUTURE_PLUGIN_FILE, __NAMESPACE__ . '\\uninstall');
