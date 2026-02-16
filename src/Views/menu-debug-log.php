@@ -78,7 +78,7 @@ $viewDebugUrl = admin_url('admin.php?page=publishpress-future-settings&tab=viewd
 
 echo '<div class="pp-debug-log-options">';
 echo '<form method="post" action="' . esc_url($viewDebugUrl) . '" id="pp-debug-log-form">';
-echo wp_nonce_field($filterNonceAction, '_pp_future_debug_filter_nonce', true, false);
+echo wp_nonce_field($filterNonceAction, '_pp_future_debug_filter_nonce', true, false); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 echo '<div class="pp-debug-log-option">';
 echo '<label for="log-count">' . esc_html__('Number of logs to display:', 'post-expirator') . '</label>';
 echo '<select id="log-count" name="log_count" onchange="this.form.submit()">';
@@ -162,7 +162,7 @@ if ($totalLogsUnfiltered === 0) {
             esc_html((string) $sessionCount),
             esc_html(PostExpirator_Util::formatBytes($logSizeInBytes))
         );
-    echo '<p id="debug-log-length">' . $message . '</p>';
+    echo '<p id="debug-log-length">' . $message . '</p>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 } else {
     $message = $triggerActivatedOnly
         ? sprintf(
@@ -181,7 +181,7 @@ if ($totalLogsUnfiltered === 0) {
             esc_html((string) $sessionCount),
             esc_html(PostExpirator_Util::formatBytes($logSizeInBytes))
         );
-    echo '<p id="debug-log-length">' . $message . '</p>';
+    echo '<p id="debug-log-length">' . $message . '</p>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 
 echo '<div class="pp-debug-log-actions">';
