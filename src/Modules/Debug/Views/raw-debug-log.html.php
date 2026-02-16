@@ -1,7 +1,5 @@
 <?php
 
-use PublishPress\Future\Modules\Debug\DebugLogDisplayHelper;
-
 /**
  * Raw debug log view.
  *
@@ -13,6 +11,10 @@ use PublishPress\Future\Modules\Debug\DebugLogDisplayHelper;
  * @copyright Copyright (c) 2025, PublishPress
  * @license GPLv2 or later
  */
+
+declare(strict_types=1);
+
+use PublishPress\Future\Modules\Debug\DebugLogDisplayHelper;
 
 header('Content-Type: text/plain; charset=utf-8');
 
