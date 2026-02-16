@@ -26,12 +26,39 @@ $showSideBar = $hooks->applyFilters(
 echo '<div class="pp-columns-wrapper' . ($showSideBar ? ' pp-enable-sidebar' : '') . '">';
 echo '<div class="pp-column-left">';
 
-// phpcs:ignore WordPress.Security.NonceVerification.Recommended
-$currentLogCount = isset($_GET['log_count']) ? (int)$_GET['log_count'] : 500;
-// phpcs:ignore WordPress.Security.NonceVerification.Recommended
-$groupByRequest = isset($_GET['group_by_request']) ? (int)$_GET['group_by_request'] : 1;
-// phpcs:ignore WordPress.Security.NonceVerification.Recommended
-$triggerActivatedOnly = isset($_GET['trigger_activated_only']) ? (int)$_GET['trigger_activated_only'] : 0;
+// Filter values come from POST to avoid WAF/ModSecurity 403 when params are in URL.
+$logCountOptions = [
+    500 => '500',
+    700 => '700',
+    1000 => '1000',
+    2500 => '2000',
+    5000 => '5000',
+    7500 => '7500',
+    10000 => '10000',
+];
+$allowedLogCounts = array_keys($logCountOptions);
+
+$filterNonceAction = 'publishpress_future_debug_log_filter';
+$filterSubmitted = isset($_POST['_pp_future_debug_filter_nonce'])
+    && wp_verify_nonce(
+        sanitize_key($_POST['_pp_future_debug_filter_nonce']),
+        $filterNonceAction
+    );
+
+if ($filterSubmitted) {
+    // phpcs:ignore WordPress.Security.NonceVerification.Missing
+    $postedLogCount = isset($_POST['log_count']) ? (int) $_POST['log_count'] : 500;
+    // phpcs:ignore WordPress.Security.NonceVerification.Missing
+    $postedGroupBy = isset($_POST['group_by_request']) ? (int) $_POST['group_by_request'] : 1;
+    $currentLogCount = in_array($postedLogCount, $allowedLogCounts, true) ? $postedLogCount : 500;
+    $groupByRequest = ($postedGroupBy === 0 || $postedGroupBy === 1) ? $postedGroupBy : 1;
+    // phpcs:ignore WordPress.Security.NonceVerification.Missing
+    $triggerActivatedOnly = isset($_POST['trigger_activated_only']) ? 1 : 0;
+} else {
+    $currentLogCount = 500;
+    $groupByRequest = 1;
+    $triggerActivatedOnly = 0;
+}
 /**
  * @var LoggerInterface $logger
  */
@@ -47,20 +74,11 @@ $sessionCount = count($uniqueRequestIds);
 
 echo '<div class="pp-debug-log">';
 
-$logCountOptions = [
-    500 => '500',
-    700 => '700',
-    1000 => '1000',
-    2500 => '2000',
-    5000 => '5000',
-    7500 => '7500',
-    10000 => '10000'
-];
+$viewDebugUrl = admin_url('admin.php?page=publishpress-future-settings&tab=viewdebug');
 
 echo '<div class="pp-debug-log-options">';
-echo '<form method="get" id="pp-debug-log-form">';
-echo '<input type="hidden" name="page" value="publishpress-future-settings">';
-echo '<input type="hidden" name="tab" value="viewdebug">';
+echo '<form method="post" action="' . esc_url($viewDebugUrl) . '" id="pp-debug-log-form">';
+echo wp_nonce_field($filterNonceAction, '_pp_future_debug_filter_nonce', true, false);
 echo '<div class="pp-debug-log-option">';
 echo '<label for="log-count">' . esc_html__('Number of logs to display:', 'post-expirator') . '</label>';
 echo '<select id="log-count" name="log_count" onchange="this.form.submit()">';
