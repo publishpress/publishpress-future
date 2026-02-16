@@ -47,6 +47,7 @@ define('PUBLISHPRESS_FUTURE_BASE_PATH', __DIR__);
 define('PUBLISHPRESS_FUTURE_SRC_PATH', __DIR__ . '/src');
 define('PUBLISHPRESS_FUTURE_PLUGIN_FILE', __FILE__);
 define('PUBLISHPRESS_FUTURE_ASSETS_URL', plugins_url('assets', __FILE__));
+define('PUBLISHPRESS_FUTURE_LOADED', true);
 
 if (! defined('PUBLISHPRESS_FUTURE_WORKFLOW_EXPERIMENTAL')) {
     define('PUBLISHPRESS_FUTURE_WORKFLOW_EXPERIMENTAL', false);
@@ -118,8 +119,6 @@ try {
 
             $container = Container::getInstance();
             $container->get(ServicesAbstract::PLUGIN)->initialize();
-
-            define('PUBLISHPRESS_FUTURE_LOADED', true);
         } catch (Throwable $e) {
             $isLogged = false;
 
