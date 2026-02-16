@@ -310,7 +310,7 @@ class PostQuery implements InputValidatorsInterface
             $contextStr = ' ' . str_replace('"', '`', $json);
         }
 
-        $this->logger->debug($prefix . 'Post query validation failed: ' . $reason . '. ' . $postInfo . $contextStr);
+        $this->logger->debug($prefix . 'Post did not match workflow conditions: ' . $reason . '. ' . $postInfo . $contextStr);
     }
 
     private function getLogPrefix(): string
