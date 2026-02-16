@@ -134,8 +134,7 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
         if (! $wasRestSave) {
             $this->logger->debug(
                 $this->stepProcessor->prepareLogMessage(
-                    'Trigger not fired: Post #%d was not saved via REST API (block editor). %s ACF callback handles '
-                    . 'only block editor; classic editor uses save_post.',
+                    'ACF save_post detected - Trigger not fired yet because post #%d was not saved via REST API (block editor).',
                     $postId,
                     $scenario
                 )
@@ -155,7 +154,7 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
         if (! $post) {
             $this->logger->debug(
                 $this->stepProcessor->prepareLogMessage(
-                    'Trigger not fired: Post #%d not found after ACF save. %s',
+                    'ACF save_post detected - Trigger not fired because post #%d was not found.',
                     $postId,
                     $scenario
                 )
@@ -175,14 +174,15 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
         $currentHook = current_filter();
 
         // Skip REST API requests in the regular save_post hook.
-        // For REST requests (block editor), we'll handle the trigger via the acf/save_post hook
-        // to ensure ACF metadata is available. This prevents the workflow from running with incomplete data.
+        // For REST requests (block editor), we defer to acf/save_post when ACF is active, so that ACF metadata
+        // is available before the workflow runs. This prevents running with incomplete data.
         if ($this->isRestRequest()) {
             $scenario = $this->getScenarioContext($currentHook, $postId, null, $post->post_status ?? null);
             $this->logger->debug(
                 $this->stepProcessor->prepareLogMessage(
-                    'Trigger not fired: REST API (block editor) request. %s Deferring to acf/save_post to ensure '
-                    . 'ACF metadata is available before running workflow.',
+                    'REST API request detected - Trigger deferred for post #%d. Will run via acf/save_post when '
+                    . 'ACF metadata is available, or via fallback if ACF is not active. %s',
+                    $postId,
                     $scenario
                 )
             );
@@ -201,7 +201,7 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
             $scenario = $this->getScenarioContext($currentHook, $postId, null, $post->post_status ?? null);
             $this->logger->debug(
                 $this->stepProcessor->prepareLogMessage(
-                    'Trigger not fired: ACF callback in progress for Post #%d. %s Blocking duplicate execution '
+                    'ACF save_post detected - Trigger skipped because ACF callback in progress for post #%d. %s Blocking duplicate execution '
                     . 'from secondary save_post triggered by ACF metadata save.',
                     $postId,
                     $scenario
@@ -217,7 +217,7 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
             $scenario = $this->getScenarioContext($currentHook, $postId, null, $post->post_status ?? null);
             $this->logger->debug(
                 $this->stepProcessor->prepareLogMessage(
-                    'Trigger not fired: Not a post update (e.g. new post creation from auto-draft). Post #%d. %s',
+                    'Trigger skipped because post #%d was saved but not updated.',
                     $postId,
                     $scenario
                 )
@@ -247,9 +247,10 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
             );
             $this->logger->debug(
                 $this->stepProcessor->prepareLogMessage(
-                    'Trigger not fired: Direct publish (from "%s" to "publish"), not a post update. %s Post was '
-                    . 'never saved before; OnPostUpdate requires a genuine update.',
+                    'Trigger skipped: Direct publish (from "%s" to "publish") for post #%d, not a post update. '
+                    . 'Post was never saved before; OnPostUpdate requires a genuine update. %s',
                     $postBefore->post_status,
+                    $postId,
                     $scenario
                 )
             );
@@ -294,7 +295,7 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
         if (! $this->postQueryValidator->validate($postQueryArgs)) {
             $this->logger->debug(
                 $this->stepProcessor->prepareLogMessage(
-                    'Trigger not fired: Post query conditions not met for step %s. Post #%d (post_type: %s, '
+                    'Trigger skipped: Post query conditions not met for step %s, post #%d (post_type: %s, '
                     . 'post_status: %s). %s',
                     $stepSlug,
                     $postId,
@@ -331,7 +332,7 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
         ) {
             $this->logger->debug(
                 $this->stepProcessor->prepareLogMessage(
-                    'Trigger not fired: Save post event ignored via filter for step %s. Post #%d. %s',
+                    'Trigger skipped: Save post event ignored via filter for step %s for post #%d. %s',
                     $stepSlug,
                     $postId,
                     $scenario
@@ -350,7 +351,7 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
         ) {
             $this->logger->debug(
                 $this->stepProcessor->prepareLogMessage(
-                    'Trigger not fired: Infinite loop detected for step %s. Post #%d. %s',
+                    'Trigger skipped: Infinite loop detected for step %s for post #%d. %s',
                     $stepSlug,
                     $postId,
                     $scenario
@@ -370,7 +371,7 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
         if ($this->executionSafeguard->preventDuplicateExecution($uniqueId)) {
             $this->logger->debug(
                 $this->stepProcessor->prepareLogMessage(
-                    'Trigger not fired: Duplicate execution detected for step %s. Post #%d. %s',
+                    'Trigger skipped: Duplicate execution detected for step %s for post #%d. %s',
                     $stepSlug,
                     $postId,
                     $scenario
@@ -383,7 +384,7 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
         return false;
     }
 
-    public function processTriggerExecution($postId)
+    public function processTriggerExecution($step, $postId)
     {
         $stepSlug = $this->stepProcessor->getSlugFromStep($this->step);
 
@@ -398,7 +399,7 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
         );
         $this->logger->debug(
             $this->stepProcessor->prepareLogMessage(
-                'Trigger fired: %s, Post #%d. %s',
+                'Trigger fired: %s for post #%d. %s',
                 $stepSlug,
                 $postId,
                 $scenario
