@@ -63,7 +63,7 @@ define('PUBLISHPRESS_FUTURE_LIB_VENDOR_PATH', $vendorPath);
  */
 define('PUBLISHPRESS_FUTURE_VENDOR_PATH', PUBLISHPRESS_FUTURE_LIB_VENDOR_PATH);
 
-include __DIR__ . '/src/catch-exception.php';
+require __DIR__ . '/src/catch-exception.php';
 
 try {
     $autoloadFilePath = PUBLISHPRESS_FUTURE_LIB_VENDOR_PATH . '/autoload.php';
