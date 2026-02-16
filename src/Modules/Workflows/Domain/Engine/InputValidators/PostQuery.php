@@ -38,7 +38,7 @@ class PostQuery implements InputValidatorsInterface
             return $this->validateLegacyPostQuery($post, $nodeSettings);
         }
 
-        return $this->validateJsonPostQuery($nodeSettings);
+        return $this->validateJsonPostQuery($args['post'] ?? null, $nodeSettings);
     }
 
     private function validateLegacyPostQuery($post, array $nodeSettings): bool
@@ -72,14 +72,17 @@ class PostQuery implements InputValidatorsInterface
         return true;
     }
 
-    private function validateJsonPostQuery(array $nodeSettings): bool
+    /**
+     * @param \WP_Post|object|null $post
+     */
+    private function validateJsonPostQuery($post, array $nodeSettings): bool
     {
         $json = $nodeSettings['postQuery']['json'] ?? [];
 
         if (empty($json)) {
             $this->logValidationFailure(
                 'JSON Logic post query is empty (no rules configured)',
-                null
+                $post
             );
 
             return false;
@@ -92,7 +95,7 @@ class PostQuery implements InputValidatorsInterface
         if (! is_bool($result)) {
             $this->logValidationFailure(
                 'JSON Logic result is not boolean',
-                null,
+                $post,
                 ['result_type' => gettype($result), 'result' => $result]
             );
 
@@ -102,7 +105,7 @@ class PostQuery implements InputValidatorsInterface
         if (! $result) {
             $this->logValidationFailure(
                 'JSON Logic post query conditions evaluated to false',
-                null,
+                $post,
                 ['json_logic_query' => $json]
             );
 
@@ -293,11 +296,19 @@ class PostQuery implements InputValidatorsInterface
      */
     private function logValidationFailure(string $reason, $post, array $context = []): void
     {
+        if (! $this->logger->isDebugEnabled()) {
+            return;
+        }
+
         $prefix = $this->getLogPrefix();
-        $postInfo = $post !== null && is_object($post)
+        $postInfo = $post !== null && is_object($post) && isset($post->ID, $post->post_type, $post->post_status)
             ? sprintf('Post #%d (post_type: %s, post_status: %s)', $post->ID, $post->post_type, $post->post_status)
             : 'Post unknown';
-        $contextStr = ! empty($context) ? ' ' . wp_json_encode($context) : '';
+        $contextStr = '';
+        if (! empty($context)) {
+            $json = wp_json_encode($context, JSON_UNESCAPED_UNICODE);
+            $contextStr = ' ' . str_replace('"', '`', $json);
+        }
 
         $this->logger->debug($prefix . 'Post query validation failed: ' . $reason . '. ' . $postInfo . $contextStr);
     }
