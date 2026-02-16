@@ -134,6 +134,8 @@ use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\UserInter
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnCustomActionRunner;
 use PublishPress\Future\Modules\Workflows\Interfaces\WorkflowEngineInterface;
 use PublishPress\Future\Modules\Workflows\Migrations\V040500OnScheduledStepsSchema;
+use PublishPress\Future\Modules\Debug\Migrations\V04905DebugLogRequestId;
+use PublishPress\Future\Modules\Debug\Migrations\V04906DebugLogTimestampMilliseconds;
 
 return [
     ServicesAbstract::PLUGIN_VERSION => PUBLISHPRESS_FUTURE_VERSION,
@@ -684,6 +686,14 @@ return [
                 new V040500OnScheduledStepsSchema(
                     $container->get(ServicesAbstract::HOOKS),
                     $container->get(ServicesAbstract::DB_TABLE_WORKFLOW_SCHEDULED_STEPS_SCHEMA)
+                ),
+                new V04905DebugLogRequestId(
+                    $container->get(ServicesAbstract::HOOKS),
+                    $container->get(ServicesAbstract::DB_TABLE_DEBUG_LOG_SCHEMA)
+                ),
+                new V04906DebugLogTimestampMilliseconds(
+                    $container->get(ServicesAbstract::HOOKS),
+                    $container->get(ServicesAbstract::DB_TABLE_DEBUG_LOG_SCHEMA)
                 ),
             ];
 
@@ -1349,7 +1359,8 @@ return [
 
             return new PostQueryValidator(
                 $executionContext,
-                $jsonLogicEngine
+                $jsonLogicEngine,
+                $container->get(ServicesAbstract::LOGGER)
             );
         };
     },

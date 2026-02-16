@@ -23,6 +23,8 @@ use PublishPress\Future\Modules\Expirator\PostMetaAbstract;
 use PublishPress\Future\Modules\Settings\SettingsFacade;
 use PublishPress\Future\Modules\Workflows\Migrations\V40000WorkflowScheduledStepsSchema;
 use PublishPress\Future\Modules\Workflows\Migrations\V040500OnScheduledStepsSchema;
+use PublishPress\Future\Modules\Debug\Migrations\V04905DebugLogRequestId;
+use PublishPress\Future\Modules\Debug\Migrations\V04906DebugLogTimestampMilliseconds;
 use Throwable;
 
 defined('ABSPATH') or die('Direct access not allowed.');
@@ -115,7 +117,7 @@ class Plugin implements InitializableInterface
     {
         \PostExpirator_Reviews::init();
 
-        $this->logger->debug(self::LOG_PREFIX . ' Reviews initialized');
+        $this->logger->debug(self::LOG_PREFIX . ' Reviews module ready');
     }
 
     private function initializeCli()
@@ -126,7 +128,7 @@ class Plugin implements InitializableInterface
 
         \PostExpirator_Cli::getInstance();
 
-        $this->logger->debug(self::LOG_PREFIX . ' CLI initialized');
+        $this->logger->debug(self::LOG_PREFIX . ' CLI module ready');
     }
 
     private function initializeHooks()
@@ -144,7 +146,7 @@ class Plugin implements InitializableInterface
     {
         $this->notices->init();
 
-        $this->logger->debug(self::LOG_PREFIX . ' Notices initialized');
+        $this->logger->debug(self::LOG_PREFIX . ' Notices module ready');
     }
 
     private function initializeModules()
@@ -315,6 +317,15 @@ class Plugin implements InitializableInterface
                 if (version_compare($version, '4.5.0', '<')) {
                     $container->get(ServicesAbstract::HOOKS)->doAction(
                         V040500OnScheduledStepsSchema::HOOK
+                    );
+                }
+
+                if (version_compare($version, '4.9.5', '<')) {
+                    $container->get(ServicesAbstract::HOOKS)->doAction(
+                        V04905DebugLogRequestId::HOOK
+                    );
+                    $container->get(ServicesAbstract::HOOKS)->doAction(
+                        V04906DebugLogTimestampMilliseconds::HOOK
                     );
                 }
             }

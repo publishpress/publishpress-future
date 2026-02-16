@@ -104,29 +104,42 @@ interface LoggerInterface
     public function log($level, $message, $context = []);
 
     /**
+     * Mark the current request as having a workflow trigger activated.
+     *
+     * @since 4.9.5
+     * @return void
+     */
+    public function markCurrentRequestHasTriggerActivated();
+
+    /**
      * @return void
      */
     public function deleteLogs();
 
     /**
-     * @return array
+     * @param bool $triggerActivatedOnly Filter to show only requests with trigger activated.
+     * @return array<string, mixed>
      */
-    public function fetchAll();
+    public function fetchAll($triggerActivatedOnly = false);
 
     /**
-     * @return array
+     * @param int $limit
+     * @param bool $triggerActivatedOnly Filter to show only requests with trigger activated.
+     * @return array<string, mixed>
      */
-    public function fetchLatest($limit = 100);
+    public function fetchLatest($limit = 100, $triggerActivatedOnly = false);
 
     /**
+     * @param bool $triggerActivatedOnly Filter to count only logs from requests with trigger activated.
      * @return int
      */
-    public function getTotalLogs();
+    public function getTotalLogs($triggerActivatedOnly = false);
 
     /**
+     * @param bool $triggerActivatedOnly Filter to sum only logs from requests with trigger activated.
      * @return int
      */
-    public function getLogSizeInBytes();
+    public function getLogSizeInBytes($triggerActivatedOnly = false);
 
     /**
      * @return void
@@ -137,4 +150,9 @@ interface LoggerInterface
      * @return bool
      */
     public function isDownloadLogRequested();
+
+    /**
+     * @return bool
+     */
+    public function isDebugEnabled();
 }

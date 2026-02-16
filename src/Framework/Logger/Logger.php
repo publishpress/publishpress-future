@@ -79,8 +79,10 @@ class Logger implements LoggerInterface
 
         $tableStructure = "CREATE TABLE `$databaseTableName` (
             `id` INT(9) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-            `timestamp` TIMESTAMP NOT NULL,
+            `timestamp` DATETIME(3) NOT NULL,
             `blog` INT(9) NOT NULL,
+            `request_id` varchar(32) DEFAULT '',
+            `trigger_activated` tinyint(1) NOT NULL DEFAULT 0,
             `message` text NOT NULL
         );";
 
@@ -123,7 +125,7 @@ class Logger implements LoggerInterface
      */
     public function log($level, $message, $context = [])
     {
-        if (! $this->debugIsEnabled()) {
+        if (! $this->isDebugEnabled()) {
             return;
         }
 
@@ -136,23 +138,24 @@ class Logger implements LoggerInterface
 
         $databaseTableName = $this->getDatabaseTableName();
 
-        $fullMessage = sprintf(
-            '%s %s: %s',
-            $levelDescription,
-            $this->requestId,
-            $message
-        );
+        $fullMessage = sprintf('%s: %s', $levelDescription, $message);
 
         if (! empty($context)) {
             $fullMessage .= '[' . implode(', ', $context) . ']';
         }
 
+        $microtime = microtime(true);
+        $timestampWithMs = gmdate('Y-m-d H:i:s', (int) $microtime)
+            . '.'
+            . sprintf('%03d', (int) (($microtime - floor($microtime)) * 1000));
+
         $this->db->query(
             $this->db->prepare(
-                "INSERT INTO $databaseTableName (`timestamp`,`message`,`blog`) VALUES (FROM_UNIXTIME(%d),%s,%s)",
-                time(),
-                $fullMessage,
-                $this->site->getBlogId()
+                "INSERT INTO $databaseTableName (`timestamp`,`blog`,`request_id`,`trigger_activated`,`message`) VALUES (%s,%s,%s,0,%s)",
+                $timestampWithMs,
+                $this->site->getBlogId(),
+                $this->requestId,
+                $fullMessage
             )
         );
     }
@@ -160,7 +163,7 @@ class Logger implements LoggerInterface
     /**
      * @return bool
      */
-    private function debugIsEnabled()
+    public function isDebugEnabled()
     {
         return $this->settings->getDebugIsEnabled();
     }
@@ -266,46 +269,97 @@ class Logger implements LoggerInterface
     }
 
     /**
-     * @return array
-     * @noinspection SqlResolve
+     * Mark the current request as having a workflow trigger activated.
+     *
+     * @since 4.9.5
+     * @return void
      */
-    public function fetchAll()
+    public function markCurrentRequestHasTriggerActivated(): void
     {
+        if (! $this->isDebugEnabled()) {
+            return;
+        }
+
         $databaseTableName = $this->getDatabaseTableName();
 
-        return (array)$this->db->getResults("SELECT * FROM $databaseTableName ORDER BY `id`", 'ARRAY_A');
+        $this->db->query(
+            $this->db->prepare(
+                "UPDATE $databaseTableName SET `trigger_activated` = 1 WHERE `request_id` = %s",
+                $this->requestId
+            )
+        );
+    }
+
+    /**
+     * @return array<string, mixed>
+     * @noinspection SqlResolve
+     */
+    public function fetchAll($triggerActivatedOnly = false)
+    {
+        $databaseTableName = $this->getDatabaseTableName();
+        $where = '';
+
+        if ($triggerActivatedOnly) {
+            $where = " WHERE `request_id` IN (SELECT DISTINCT `request_id` FROM $databaseTableName WHERE `trigger_activated` = 1 AND `request_id` != '')";
+        }
+
+        return (array)$this->db->getResults("SELECT * FROM $databaseTableName{$where} ORDER BY `id`", 'ARRAY_A');
     }
 
     /**
      * @inheritDoc
+     * @param int $limit
+     * @param bool $triggerActivatedOnly
+     * @return array<string, mixed>
      */
-    public function fetchLatest($limit = 100)
+    public function fetchLatest($limit = 100, $triggerActivatedOnly = false)
     {
         $databaseTableName = $this->getDatabaseTableName();
+        $limit = absint($limit);
+        $where = '';
 
-        $list = (array)$this->db->getResults("SELECT * FROM $databaseTableName ORDER BY `id` DESC LIMIT $limit", 'ARRAY_A');
+        if ($triggerActivatedOnly) {
+            $where = " WHERE `request_id` IN (SELECT DISTINCT `request_id` FROM $databaseTableName WHERE `trigger_activated` = 1 AND `request_id` != '')";
+        }
+
+        $list = (array)$this->db->getResults(
+            "SELECT * FROM $databaseTableName{$where} ORDER BY `id` DESC LIMIT $limit",
+            'ARRAY_A'
+        );
 
         return array_reverse($list);
     }
 
     /**
      * @inheritDoc
+     * @param bool $triggerActivatedOnly Filter to count only logs from requests with trigger activated.
      */
-    public function getTotalLogs()
+    public function getTotalLogs($triggerActivatedOnly = false)
     {
         $databaseTableName = $this->getDatabaseTableName();
+        $where = '';
 
-        return (int)$this->db->getVar("SELECT COUNT(*) FROM $databaseTableName");
+        if ($triggerActivatedOnly) {
+            $where = " WHERE `request_id` IN (SELECT DISTINCT `request_id` FROM $databaseTableName WHERE `trigger_activated` = 1 AND `request_id` != '')";
+        }
+
+        return (int)$this->db->getVar("SELECT COUNT(*) FROM $databaseTableName{$where}");
     }
 
     /**
      * @inheritDoc
+     * @param bool $triggerActivatedOnly Filter to sum only logs from requests with trigger activated.
      */
-    public function getLogSizeInBytes()
+    public function getLogSizeInBytes($triggerActivatedOnly = false)
     {
         $databaseTableName = $this->getDatabaseTableName();
+        $where = '';
 
-        return $this->db->getVar("SELECT SUM(LENGTH(`message`)) FROM $databaseTableName");
+        if ($triggerActivatedOnly) {
+            $where = " WHERE `request_id` IN (SELECT DISTINCT `request_id` FROM $databaseTableName WHERE `trigger_activated` = 1 AND `request_id` != '')";
+        }
+
+        return (int) $this->db->getVar("SELECT COALESCE(SUM(LENGTH(`message`)), 0) FROM $databaseTableName{$where}");
     }
 
     /**

@@ -380,12 +380,15 @@ p.description,
     width: 100%;
     height: 500px;
     font-size: 12px;
-    font-family: monospace;
-    background-color: #f9f9f9;
+    font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+    background-color: #1e1e1e;
+    color: #d6d9d1;
+    border: 1px solid #3c3c3c;
     overflow-y: scroll;
     overflow-x: scroll;
-    padding: 10px;
+    padding: 12px;
     text-wrap: nowrap;
+    line-height: 1.5;
 }
 
 .pp-debug-log-actions {
@@ -393,6 +396,34 @@ p.description,
     display: flex;
     gap: 10px;
     justify-content: flex-start;
+}
+
+.pp-debug-log-options {
+    margin-bottom: 15px;
+}
+
+.pp-debug-log-options form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 25px;
+}
+
+.pp-debug-log-option {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.pp-debug-log-option label:first-child {
+    font-weight: 600;
+}
+
+.pp-radio-label {
+    font-weight: normal !important;
+}
+
+.pp-radio-label input {
+    margin-right: 3px;
 }
 
 .pp-debug-log-count {

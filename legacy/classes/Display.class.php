@@ -274,11 +274,13 @@ class PostExpirator_Display
             }
             if (isset($_POST['debugging-disable'])) {
                 update_option('expirationdateDebug', 0);
+                $this->settingsFacade->purgeCache();
                 echo "<div id='message' class='updated fade'><p>";
                 esc_html_e('Debugging Disabled', 'post-expirator');
                 echo '</p></div>';
             } elseif (isset($_POST['debugging-enable'])) {
                 update_option('expirationdateDebug', 1);
+                $this->settingsFacade->purgeCache();
                 echo "<div id='message' class='updated fade'><p>";
                 esc_html_e('Debugging Enabled', 'post-expirator');
                 echo '</p></div>';

@@ -84,7 +84,7 @@ class AppendDebugLogRunner implements StepRunnerInterface
 
                 $this->logger->debug(
                     $this->stepProcessor->prepareLogMessage(
-                        'Step completed | Slug: %s',
+                        'Step done (%s)',
                         $nodeSlug
                     )
                 );

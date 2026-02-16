@@ -12,6 +12,7 @@ use PublishPress\Future\Framework\InitializableInterface;
 use PublishPress\Future\Framework\Logger\LoggerInterface;
 use PublishPress\Future\Framework\WordPress\Facade\HooksFacade;
 use PublishPress\Future\Modules\Debug\HooksAbstract;
+use PublishPress\Future\Modules\Workflows\HooksAbstract as WorkflowsHooksAbstract;
 
 defined('ABSPATH') or die('Direct access not allowed.');
 
@@ -46,6 +47,22 @@ class Controller implements InitializableInterface
             CoreAbstractHooks::ACTION_ADMIN_INIT,
             [$this, 'onDownloadLog']
         );
+
+        $this->hooks->addAction(
+            WorkflowsHooksAbstract::ACTION_WORKFLOW_TRIGGER_EXECUTED,
+            [$this, 'onWorkflowTriggerExecuted']
+        );
+    }
+
+    /**
+     * Mark the current request in the debug log when a workflow trigger is executed.
+     *
+     * @since 4.9.5
+     * @return void
+     */
+    public function onWorkflowTriggerExecuted(): void
+    {
+        $this->logger->markCurrentRequestHasTriggerActivated();
     }
 
     public function onDebugLog($message)
@@ -64,7 +81,9 @@ class Controller implements InitializableInterface
 
     public function onDownloadLog()
     {
-        if (! isset($_GET['action']) || $_GET['action'] !== 'publishpress_future_debug_log') {
+        $action = isset($_GET['action']) ? sanitize_key($_GET['action']) : '';
+
+        if ($action !== 'publishpress_future_debug_log') {
             return;
         }
 
@@ -76,6 +95,16 @@ class Controller implements InitializableInterface
         if (! isset($_GET['nonce']) || ! wp_verify_nonce(sanitize_key($_GET['nonce']), 'publishpress_future_download_log')) {
             wp_die(esc_html__('Invalid nonce.', 'post-expirator'), '', ['response' => 403]);
         }
+
+        $grouped = isset($_GET['grouped']) ? (int)$_GET['grouped'] : 0;
+        $disposition = isset($_GET['disposition']) ? sanitize_key($_GET['disposition']) : 'inline';
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+        $triggerActivatedOnly = isset($_GET['trigger_activated_only']) ? (int)$_GET['trigger_activated_only'] : 0;
+
+        // Variables for the view.
+        $rawDebugLogGrouped = (bool)$grouped;
+        $rawDebugLogDisposition = $disposition === 'attachment' ? 'attachment' : 'inline';
+        $rawDebugLogTriggerActivatedOnly = (bool)$triggerActivatedOnly;
 
         require_once __DIR__ . '/../Views/raw-debug-log.html.php';
 
