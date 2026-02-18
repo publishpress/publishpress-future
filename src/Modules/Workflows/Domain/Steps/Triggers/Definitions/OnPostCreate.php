@@ -106,14 +106,14 @@ class OnPostCreate implements StepTypeInterface
             [
                 "name" => "post",
                 "type" => "post",
-                "label" => __("Inserted post", "post-expirator"),
-                "description" => __("The post that was inserted.", "post-expirator"),
+                "label" => __("Created post", "post-expirator"),
+                "description" => __("The post that was created.", "post-expirator"),
             ],
             [
                 "name" => "postId",
                 "type" => "integer",
-                "label" => __("Inserted post ID", "post-expirator"),
-                "description" => __("The ID of the post that was inserted.", "post-expirator"),
+                "label" => __("Created post's ID", "post-expirator"),
+                "description" => __("The ID of the post that was created.", "post-expirator"),
             ],
         ];
     }

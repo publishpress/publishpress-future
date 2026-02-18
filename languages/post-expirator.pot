@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-02-18T18:28:31+00:00\n"
+"POT-Creation-Date: 2026-02-18T20:28:21+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
@@ -2955,19 +2955,19 @@ msgid "This trigger activates when a new post is created."
 msgstr ""
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostCreate.php:109
-msgid "Inserted post"
+msgid "Created post"
 msgstr ""
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostCreate.php:110
-msgid "The post that was inserted."
+msgid "The post that was created."
 msgstr ""
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostCreate.php:115
-msgid "Inserted post ID"
+msgid "Created post's ID"
 msgstr ""
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostCreate.php:116
-msgid "The ID of the post that was inserted."
+msgid "The ID of the post that was created."
 msgstr ""
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:32
