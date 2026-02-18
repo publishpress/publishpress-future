@@ -320,7 +320,7 @@ class Plugin implements InitializableInterface
                     );
                 }
 
-                if (version_compare($version, '4.9.5', '<')) {
+                if (version_compare($version, '4.10.0', '<')) {
                     $container->get(ServicesAbstract::HOOKS)->doAction(
                         V04905DebugLogRequestId::HOOK
                     );

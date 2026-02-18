@@ -14,7 +14,7 @@ namespace PublishPress\Future\Modules\Debug;
 defined('ABSPATH') or die('Direct access not allowed.');
 
 /**
- * @since 4.9.5
+ * @since 4.10.0
  */
 final class DebugLogDisplayHelper
 {

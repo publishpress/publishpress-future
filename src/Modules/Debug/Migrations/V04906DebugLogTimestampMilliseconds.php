@@ -22,7 +22,7 @@ defined('ABSPATH') or die('Direct access not allowed.');
 /**
  * Migration to add millisecond precision to the debug log timestamp column.
  *
- * @since 4.9.5
+ * @since 4.10.0
  */
 class V04906DebugLogTimestampMilliseconds implements MigrationInterface
 {
@@ -76,7 +76,7 @@ class V04906DebugLogTimestampMilliseconds implements MigrationInterface
     public function formatLogActionColumn($text, $row)
     {
         if ($row['hook'] === self::HOOK) {
-            return __('Add millisecond precision to debug log timestamp column (v4.9.5)', 'post-expirator');
+            return __('Add millisecond precision to debug log timestamp column (v4.10.0)', 'post-expirator');
         }
 
         return $text;

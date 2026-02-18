@@ -179,7 +179,7 @@ class WorkflowEngine implements WorkflowEngineInterface
     /**
      * Log when the workflow engine has finished processing the request.
      *
-     * @since 4.9.5
+     * @since 4.10.0
      * @return void
      */
     public function onShutdown(): void

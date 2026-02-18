@@ -106,7 +106,7 @@ interface LoggerInterface
     /**
      * Mark the current request as having a workflow trigger activated.
      *
-     * @since 4.9.5
+     * @since 4.10.0
      * @return void
      */
     public function markCurrentRequestHasTriggerActivated();

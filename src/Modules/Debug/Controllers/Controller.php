@@ -57,7 +57,7 @@ class Controller implements InitializableInterface
     /**
      * Mark the current request in the debug log when a workflow trigger is executed.
      *
-     * @since 4.9.5
+     * @since 4.10.0
      * @return void
      */
     public function onWorkflowTriggerExecuted(): void
