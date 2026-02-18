@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the PublishPress Future plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: PublishPress Future 4.9.5-alpha.1\n"
+"Project-Id-Version: PublishPress Future 4.9.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/project\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-02-13T15:53:58+00:00\n"
+"POT-Creation-Date: 2026-02-18T14:12:49+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
@@ -118,17 +118,17 @@ msgstr ""
 msgid "No taxonomies found"
 msgstr ""
 
-#: services.php:147
+#: services.php:148
 #: src/Modules/Settings/SettingsFacade.php:122
 msgid "l F jS, Y"
 msgstr ""
 
-#: services.php:151
+#: services.php:152
 #: src/Modules/Settings/SettingsFacade.php:123
 msgid "g:ia"
 msgstr ""
 
-#: services.php:152
+#: services.php:153
 #: src/Modules/Settings/SettingsFacade.php:124
 msgid "Post expires at EXPIRATIONTIME on ACTIONDATE"
 msgstr ""
@@ -188,6 +188,22 @@ msgstr ""
 
 #: src/Modules/Debug/Migrations/V04905DebugLogRequestId.php:80
 msgid "Add request_id and trigger_activated columns to debug log table after v4.9.5"
+msgstr ""
+
+#: src/Modules/Debug/Migrations/V04906DebugLogTimestampMilliseconds.php:79
+msgid "Add millisecond precision to debug log timestamp column (v4.9.5)"
+msgstr ""
+
+#: src/Modules/Debug/Views/raw-debug-log.html.php:39
+#: src/Views/menu-debug-log.php:112
+#: src/Views/menu-debug-log.php:142
+msgid "Debugging table is currently empty."
+msgstr ""
+
+#: src/Modules/Debug/Views/raw-debug-log.html.php:40
+#: src/Views/menu-debug-log.php:114
+#: src/Views/menu-debug-log.php:144
+msgid "No results match the current filter."
 msgstr ""
 
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:121
@@ -3507,70 +3523,72 @@ msgstr ""
 msgid "Toggle between preserving or deleting data after the plugin is deactivated."
 msgstr ""
 
-#: src/Views/menu-debug-log.php:13
+#: src/Views/menu-debug-log.php:14
 msgid "Debug Log"
 msgstr ""
 
-#: src/Views/menu-debug-log.php:15
+#: src/Views/menu-debug-log.php:16
 msgid "Below is a dump of the debugging table, this should be useful for troubleshooting."
 msgstr ""
 
-#: src/Views/menu-debug-log.php:59
+#: src/Views/menu-debug-log.php:83
 msgid "Number of logs to display:"
 msgstr ""
 
-#: src/Views/menu-debug-log.php:68
+#: src/Views/menu-debug-log.php:92
 msgid "Display:"
 msgstr ""
 
-#: src/Views/menu-debug-log.php:69
+#: src/Views/menu-debug-log.php:93
 msgid "Grouped by request"
 msgstr ""
 
-#: src/Views/menu-debug-log.php:70
+#: src/Views/menu-debug-log.php:94
 msgid "Time sequence"
 msgstr ""
 
-#: src/Views/menu-debug-log.php:73
+#: src/Views/menu-debug-log.php:97
 msgid "Show only requests with trigger activated"
 msgstr ""
 
-#: src/Views/menu-debug-log.php:84
-#: src/Views/menu-debug-log.php:114
-msgid "Debugging table is currently empty."
-msgstr ""
-
-#: src/Views/menu-debug-log.php:86
-#: src/Views/menu-debug-log.php:116
-msgid "No results match the current filter."
-msgstr ""
-
-#. translators: %1$d: displayed count, %2$d: total count, %3$s: log size.
-#: src/Views/menu-debug-log.php:120
+#. translators: %1$d: displayed count, %2$d: filtered total, %3$d: sessions, %4$d: total unfiltered, %5$s: filtered log size, %6$s: total log size.
+#: src/Views/menu-debug-log.php:149
 #, php-format
-msgid "Showing the latest %1$d of %2$d results. The approximate size of the log is %3$s."
+msgid "Showing the latest %1$d of %2$d logs (%3$d sessions). Total in database: %4$d. Log size: %5$s (total: %6$s)."
 msgstr ""
 
-#. translators: %1$d: total count, %2$s: log size.
-#: src/Views/menu-debug-log.php:128
+#. translators: %1$d: displayed count, %2$d: total count, %3$d: sessions, %4$s: log size.
+#: src/Views/menu-debug-log.php:159
 #, php-format
-msgid "Showing all %1$d results. The approximate size of the log is %2$s."
+msgid "Showing the latest %1$d of %2$d logs (%3$d sessions). Log size: %4$s."
 msgstr ""
 
-#: src/Views/menu-debug-log.php:144
+#. translators: %1$d: filtered logs count, %2$d: sessions, %3$d: total unfiltered, %4$s: filtered log size, %5$s: total log size.
+#: src/Views/menu-debug-log.php:170
+#, php-format
+msgid "Showing all %1$d logs (%2$d sessions). Total in database: %3$d. Log size: %4$s (total: %5$s)."
+msgstr ""
+
+#. translators: %1$d: total logs count, %2$d: sessions count, %3$s: log size.
+#: src/Views/menu-debug-log.php:179
+#, php-format
+msgid "Showing all %1$d logs (%2$d sessions). Log size: %3$s."
+msgstr ""
+
+#: src/Views/menu-debug-log.php:197
 msgid "Copy Debug Log"
 msgstr ""
 
-#: src/Views/menu-debug-log.php:147
+#: src/Views/menu-debug-log.php:200
 #: assets/jsx/backup-panel/components/tabs-content/hooks/export.jsx:76
 msgid "Download"
 msgstr ""
 
-#: src/Views/menu-debug-log.php:150
+#: src/Views/menu-debug-log.php:203
 msgid "View Full Log in New Tab"
 msgstr ""
 
-#: src/Views/menu-debug-log.php:161
+#: src/Views/menu-debug-log.php:214
 msgid "Debug log copied to clipboard!"
 msgstr ""
 
