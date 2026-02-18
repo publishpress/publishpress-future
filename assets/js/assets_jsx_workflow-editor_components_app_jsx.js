@@ -2532,10 +2532,147 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
-var ColumnItemMeta = function ColumnItemMeta(_ref) {
+var TYPE_ICON_MAP = {
+  string: {
+    dashiconClass: 'dashicons-editor-quote',
+    title: 'String'
+  },
+  integer: {
+    svgIcon: 'hash',
+    title: 'Integer'
+  },
+  boolean: {
+    dashiconClass: 'dashicons-yes-alt',
+    title: 'Boolean'
+  },
+  array: {
+    dashiconClass: 'dashicons-list-view',
+    title: 'Array'
+  },
+  object: {
+    dashiconClass: 'dashicons-category',
+    title: 'Object'
+  },
+  datetime: {
+    dashiconClass: 'dashicons-calendar-alt',
+    title: 'Date/Time'
+  },
+  url: {
+    dashiconClass: 'dashicons-editor-quote',
+    title: 'URL'
+  },
+  email: {
+    dashiconClass: 'dashicons-editor-quote',
+    title: 'Email'
+  },
+  post: {
+    dashiconClass: 'dashicons-category',
+    title: 'Post'
+  },
+  user: {
+    dashiconClass: 'dashicons-category',
+    title: 'User'
+  },
+  meta: {
+    dashiconClass: 'dashicons-editor-quote',
+    title: 'Metadata'
+  },
+  post_status: {
+    dashiconClass: 'dashicons-editor-quote',
+    title: 'Post Status'
+  },
+  post_type: {
+    dashiconClass: 'dashicons-editor-quote',
+    title: 'Post Type'
+  },
+  post_terms: {
+    dashiconClass: 'dashicons-category',
+    title: 'Post Terms'
+  },
+  taxonomy_terms: {
+    dashiconClass: 'dashicons-category',
+    title: 'Taxonomy Terms'
+  },
+  user_roles: {
+    dashiconClass: 'dashicons-list-view',
+    title: 'User Roles'
+  },
+  node: {
+    dashiconClass: 'dashicons-controls-play',
+    title: 'Step'
+  },
+  'future-action': {
+    dashiconClass: 'dashicons-category',
+    title: 'Future Action'
+  },
+  site: {
+    dashiconClass: 'dashicons-admin-site',
+    title: 'Site'
+  }
+};
+var getTypeIcon = function getTypeIcon(type) {
+  if (type && TYPE_ICON_MAP[type]) {
+    return TYPE_ICON_MAP[type];
+  }
+  return {
+    dashiconClass: 'dashicons-marker',
+    title: type || 'Variable'
+  };
+};
+var SVG_ICONS = {
+  hash: /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 16 16",
+    width: "14",
+    height: "14",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, /*#__PURE__*/React.createElement("line", {
+    x1: "5.5",
+    y1: "1.5",
+    x2: "4.5",
+    y2: "14.5"
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: "11.5",
+    y1: "1.5",
+    x2: "10.5",
+    y2: "14.5"
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: "1.5",
+    y1: "5.5",
+    x2: "14.5",
+    y2: "5.5"
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: "1.5",
+    y1: "10.5",
+    x2: "14.5",
+    y2: "10.5"
+  }))
+};
+var TypeIcon = function TypeIcon(_ref) {
+  var iconDef = _ref.iconDef;
+  if (!iconDef) return null;
+  var dashiconClass = iconDef.dashiconClass,
+    svgIcon = iconDef.svgIcon,
+    title = iconDef.title;
+  if (svgIcon && SVG_ICONS[svgIcon]) {
+    return /*#__PURE__*/React.createElement("span", {
+      className: "column-item-type-icon column-item-type-icon-svg",
+      title: title
+    }, SVG_ICONS[svgIcon]);
+  }
+  return /*#__PURE__*/React.createElement("span", {
+    className: "dashicons column-item-type-icon ".concat(dashiconClass),
+    title: title,
+    "aria-hidden": "true"
+  });
+};
+var ColumnItemMeta = function ColumnItemMeta(_ref2) {
   var _item$context;
-  var item = _ref.item,
-    _onClick = _ref.onClick;
+  var item = _ref2.item,
+    _onClick = _ref2.onClick;
   var _useState = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
     _useState2 = _slicedToArray(_useState, 2),
     metaKey = _useState2[0],
@@ -2565,17 +2702,17 @@ var ColumnItemMeta = function ColumnItemMeta(_ref) {
     }
   }, (0,_publishpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Insert', 'post-expirator')));
 };
-var ColumnItemVariable = function ColumnItemVariable(_ref2) {
-  var item = _ref2.item,
-    currentItemPath = _ref2.currentItemPath,
-    _onClick2 = _ref2.onClick,
-    setCurrentDescription = _ref2.setCurrentDescription,
-    setCurrentVariableId = _ref2.setCurrentVariableId,
-    _onDoubleClick = _ref2.onDoubleClick,
-    _ref2$path = _ref2.path,
-    path = _ref2$path === void 0 ? [] : _ref2$path,
-    index = _ref2.index,
-    columnIndex = _ref2.columnIndex;
+var ColumnItemVariable = function ColumnItemVariable(_ref3) {
+  var item = _ref3.item,
+    currentItemPath = _ref3.currentItemPath,
+    _onClick2 = _ref3.onClick,
+    setCurrentDescription = _ref3.setCurrentDescription,
+    setCurrentVariableId = _ref3.setCurrentVariableId,
+    _onDoubleClick = _ref3.onDoubleClick,
+    _ref3$path = _ref3.path,
+    path = _ref3$path === void 0 ? [] : _ref3$path,
+    index = _ref3.index,
+    columnIndex = _ref3.columnIndex;
   var hasChildren = item.children && item.children.length > 0;
   var currentColumnIndex = path.length - 1;
   var selectedItemIndex = currentItemPath[currentColumnIndex];
@@ -2586,6 +2723,7 @@ var ColumnItemVariable = function ColumnItemVariable(_ref2) {
   var stepSlug = item.name.split('.')[0];
   var stepSlugLabel = stepSlug ? "(".concat(stepSlug, ")") : '';
   var showStepSlugLabel = columnIndex === 0 && stepSlug !== 'global';
+  var iconDef = getTypeIcon(item.type);
   return /*#__PURE__*/React.createElement("div", {
     className: "column-item ".concat(selectedItemIndex === index ? 'selected' : '', " ").concat(hasChildren ? 'has-children' : ''),
     onClick: function onClick() {
@@ -2595,21 +2733,23 @@ var ColumnItemVariable = function ColumnItemVariable(_ref2) {
     onDoubleClick: function onDoubleClick() {
       return _onDoubleClick(item);
     }
-  }, item.label, " ", showStepSlugLabel ? /*#__PURE__*/React.createElement("span", {
+  }, /*#__PURE__*/React.createElement(TypeIcon, {
+    iconDef: iconDef
+  }), item.label, " ", showStepSlugLabel ? /*#__PURE__*/React.createElement("span", {
     className: "column-item-step-slug"
   }, stepSlugLabel) : '');
 };
-var ColumnItem = function ColumnItem(_ref3) {
-  var item = _ref3.item,
-    currentItemPath = _ref3.currentItemPath,
-    onClick = _ref3.onClick,
-    setCurrentDescription = _ref3.setCurrentDescription,
-    setCurrentVariableId = _ref3.setCurrentVariableId,
-    onDoubleClick = _ref3.onDoubleClick,
-    _ref3$path = _ref3.path,
-    path = _ref3$path === void 0 ? [] : _ref3$path,
-    index = _ref3.index,
-    columnIndex = _ref3.columnIndex;
+var ColumnItem = function ColumnItem(_ref4) {
+  var item = _ref4.item,
+    currentItemPath = _ref4.currentItemPath,
+    onClick = _ref4.onClick,
+    setCurrentDescription = _ref4.setCurrentDescription,
+    setCurrentVariableId = _ref4.setCurrentVariableId,
+    onDoubleClick = _ref4.onDoubleClick,
+    _ref4$path = _ref4.path,
+    path = _ref4$path === void 0 ? [] : _ref4$path,
+    index = _ref4.index,
+    columnIndex = _ref4.columnIndex;
   if ((item === null || item === void 0 ? void 0 : item.type) === 'meta-key-input') {
     return /*#__PURE__*/React.createElement(ColumnItemMeta, {
       item: item,
@@ -18974,6 +19114,8 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.columns-container {
     -moz-user-select: none;
     -ms-user-select: none;
     padding-right: 20px;
+    display: flex;
+    align-items: center;
 }
 
 .column-item.has-children::after {
@@ -19138,7 +19280,32 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.columns-container {
 .expression-builder-modal-variables .column-item-step-slug {
     color: #a3a3a3;
 }
-`, "",{"version":3,"sources":["webpack://./assets/jsx/workflow-editor/components/data-fields/expression-builder/style.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,mBAAmB;IACnB,sBAAsB;IACtB,gBAAgB;IAChB,mBAAmB;IACnB,iBAAiB;IACjB,kBAAkB;IAClB,kBAAkB;AACtB;;AAEA;IACI,aAAa;IACb,sBAAsB;IACtB,gBAAgB;IAChB,cAAc;IACd,4BAA4B;IAC5B,kBAAkB;IAClB,iBAAiB;AACrB;;AAEA;IACI,eAAe;IACf,gBAAgB;IAChB,kBAAkB;IAClB,iBAAiB;IACjB,yBAAyB;IACzB,sBAAsB;IACtB,qBAAqB;IACrB,mBAAmB;AACvB;;AAEA;IACI,YAAY;IACZ,qBAAqB;IACrB,kBAAkB;IAClB,UAAU;IACV,QAAQ;IACR,2BAA2B;IAC3B,WAAW;AACf;;AAEA;IACI,mFAAmF;IACnF,uDAAuD;IACvD,YAAY;AAChB;;AAEA;IACI,mFAAmF;IACnF,uDAAuD;AAC3D;;AAEA;IACI,uDAAuD;AAC3D;;AAEA;IACI,mFAAmF;IACnF,uDAAuD;IACvD,YAAY;AAChB;;AAEA;IACI,sBAAsB;IACtB,mBAAmB;IACnB,gBAAgB;AACpB;;AAEA;IACI,mBAAmB;IACnB,sBAAsB;AAC1B;;AAEA;IACI,sBAAsB;IACtB,mBAAmB;AACvB;;AAEA;IACI,kBAAkB;IAClB,eAAe;IACf,mBAAmB;AACvB;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,kBAAkB;IAClB,WAAW;AACf;;AAEA;IACI,kBAAkB;IAClB,MAAM;IACN,QAAQ;IACR,YAAY;IACZ,sBAAsB;IACtB,eAAe;IACf,qBAAqB;IACrB,gBAAgB;IAChB,oBAAoB;IACpB,iBAAiB;IACjB,kBAAkB;AACtB;;AAEA;IACI,aAAa;IACb,gBAAgB;AACpB;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,gBAAgB;AACpB;;AAEA;IACI,yBAAyB;AAC7B;;AAEA;IACI,wBAAwB;IACxB,6BAA6B;IAC7B,2BAA2B;IAC3B,uBAAuB;IACvB,uBAAuB;AAC3B;;AAEA;IACI,iBAAiB;IACjB,mBAAmB;IACnB,uBAAuB;AAC3B;;AAEA;IACI,uBAAuB;IACvB,wBAAwB;IACxB,2BAA2B;AAC/B;;AAEA;IACI,oCAAoC;AACxC;;AAEA;IACI,QAAQ;AACZ;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,2BAA2B;AAC/B;;AAEA;IACI,2BAA2B;IAC3B,2BAA2B;AAC/B;;AAEA;IACI,cAAc;IACd,cAAc;IACd,YAAY;IACZ,eAAe;AACnB;;AAEA;IACI,eAAe;IACf,gBAAgB;IAChB,gBAAgB;IAChB,yBAAyB;IACzB,sBAAsB;IACtB,cAAc;IACd,gBAAgB;IAChB,mBAAmB;IACnB,eAAe;IACf,UAAU;IACV,gBAAgB;IAChB,uBAAuB;IACvB,mBAAmB;IACnB,sBAAsB;IACtB,mBAAmB;AACvB;;AAEA;IACI,cAAc;AAClB","sourcesContent":[".columns-container {\n    display: flex;\n    flex-direction: row;\n    border: 1px solid #ccc;\n    overflow-x: auto;\n    white-space: nowrap;\n    max-height: 212px;\n    overflow-y: hidden;\n    overflow-x: scroll;\n}\n\n.column {\n    display: flex;\n    flex-direction: column;\n    min-width: 150px;\n    flex: 0 0 auto;\n    border-right: 1px solid #ccc;\n    overflow-y: scroll;\n    max-height: 212px;\n}\n\n.column-item {\n    cursor: pointer;\n    padding: 2px 6px;\n    position: relative;\n    user-select: none;\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    padding-right: 20px;\n}\n\n.column-item.has-children::after {\n    content: '▶';\n    display: inline-block;\n    position: absolute;\n    right: 4px;\n    top: 50%;\n    transform: translateY(-50%);\n    color: #ccc;\n}\n\n.column-item:hover {\n    background: var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9));\n    color: var(--wp-components-color-accent-inverted, #fff);\n    opacity: 0.4;\n}\n\n.selected {\n    background: var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9));\n    color: var(--wp-components-color-accent-inverted, #fff);\n}\n\n.column-item.has-children.selected::after {\n    color: var(--wp-components-color-accent-inverted, #fff);\n}\n\n.column-item.selected:hover {\n    background: var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9));\n    color: var(--wp-components-color-accent-inverted, #fff);\n    opacity: 0.8;\n}\n\n#expression-editor-full {\n    border: 1px solid #ccc;\n    margin-bottom: 10px;\n    margin-top: 10px;\n}\n\n#expression-editor-preview {\n    margin-bottom: 10px;\n    border: 1px solid #ccc;\n}\n\n.ace_editor {\n    border: 1px solid #ccc;\n    margin-bottom: 10px;\n}\n\n.ace_editor.ace_autocomplete {\n    z-index: 999999999;\n    margin-top: 5px;\n    padding-bottom: 5px;\n}\n\n.components-modal__screen-overlay {\n    z-index: 999999998;\n}\n\n.expression-builder {\n    position: relative;\n    width: 100%;\n}\n\n.expression-builder .expression-builder-button {\n    position: absolute;\n    top: 0;\n    right: 0;\n    height: 24px;\n    width: auto !important;\n    min-width: 24px;\n    display: inline-block;\n    padding-top: 4px;\n    padding-bottom: 23px;\n    padding-left: 8px;\n    padding-right: 8px;\n}\n\n.column-item-form {\n    padding: 10px;\n    max-width: 202px;\n}\n\n.column-item-form p {\n    text-wrap: auto;\n}\n\n.expression-builder-variable-name {\n    margin-left: 5px;\n}\n\n.expression-builder-inline {\n    padding-top: 0 !important;\n}\n\n.expression-builder-inline .ace_editor {\n    margin-top: 0 !important;\n    margin-right: 40px !important;\n    margin-bottom: 0 !important;\n    height: 40px !important;\n    width: 300px !important;\n}\n\n.expression-builder-inline > button {\n    top: 0 !important;\n    right: 0 !important;\n    height: 40px !important;\n}\n\n.ace_editor.settings-panel {\n    width: 246px !important;\n    height: 180px !important;\n    margin-top: 10px !important;\n}\n\n.ace_editor.read-only-editor {\n    background-color: #f3f3f3 !important;\n}\n\n.ace_content {\n    top: 5px;\n}\n\n#expression-builder-full .ace_content {\n    top: 0 !important;\n}\n\n.expression-builder .description {\n    margin-top: 10px !important;\n}\n\n.expression-builder-modal .description:last-of-type {\n    min-height: 40px !important;\n    margin-top: 10px !important;\n}\n\n.expression-builder-modal-variables .description code {\n    color: #00458b;\n    margin-left: 0;\n    padding: 5px;\n    font-size: 12px;\n}\n\n.expression-builder .expression-builder-small-heading {\n    font-size: 11px;\n    font-weight: 500;\n    line-height: 1.4;\n    text-transform: uppercase;\n    box-sizing: border-box;\n    display: block;\n    padding-top: 0px;\n    padding-bottom: 0px;\n    max-width: 100%;\n    z-index: 1;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n    color: rgb(30, 30, 30);\n    margin-bottom: 15px;\n}\n\n.expression-builder-modal-variables .column-item-step-slug {\n    color: #a3a3a3;\n}\n"],"sourceRoot":""}]);
+
+.column-item-type-icon {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    opacity: 0.6;
+    margin-right: 4px;
+    vertical-align: middle;
+    flex-shrink: 0;
+}
+
+.column-item.selected .column-item-type-icon {
+    opacity: 1;
+}
+
+.column-item-type-icon-svg {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.column-item-type-icon-svg svg {
+    display: block;
+}
+`, "",{"version":3,"sources":["webpack://./assets/jsx/workflow-editor/components/data-fields/expression-builder/style.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,mBAAmB;IACnB,sBAAsB;IACtB,gBAAgB;IAChB,mBAAmB;IACnB,iBAAiB;IACjB,kBAAkB;IAClB,kBAAkB;AACtB;;AAEA;IACI,aAAa;IACb,sBAAsB;IACtB,gBAAgB;IAChB,cAAc;IACd,4BAA4B;IAC5B,kBAAkB;IAClB,iBAAiB;AACrB;;AAEA;IACI,eAAe;IACf,gBAAgB;IAChB,kBAAkB;IAClB,iBAAiB;IACjB,yBAAyB;IACzB,sBAAsB;IACtB,qBAAqB;IACrB,mBAAmB;IACnB,aAAa;IACb,mBAAmB;AACvB;;AAEA;IACI,YAAY;IACZ,qBAAqB;IACrB,kBAAkB;IAClB,UAAU;IACV,QAAQ;IACR,2BAA2B;IAC3B,WAAW;AACf;;AAEA;IACI,mFAAmF;IACnF,uDAAuD;IACvD,YAAY;AAChB;;AAEA;IACI,mFAAmF;IACnF,uDAAuD;AAC3D;;AAEA;IACI,uDAAuD;AAC3D;;AAEA;IACI,mFAAmF;IACnF,uDAAuD;IACvD,YAAY;AAChB;;AAEA;IACI,sBAAsB;IACtB,mBAAmB;IACnB,gBAAgB;AACpB;;AAEA;IACI,mBAAmB;IACnB,sBAAsB;AAC1B;;AAEA;IACI,sBAAsB;IACtB,mBAAmB;AACvB;;AAEA;IACI,kBAAkB;IAClB,eAAe;IACf,mBAAmB;AACvB;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,kBAAkB;IAClB,WAAW;AACf;;AAEA;IACI,kBAAkB;IAClB,MAAM;IACN,QAAQ;IACR,YAAY;IACZ,sBAAsB;IACtB,eAAe;IACf,qBAAqB;IACrB,gBAAgB;IAChB,oBAAoB;IACpB,iBAAiB;IACjB,kBAAkB;AACtB;;AAEA;IACI,aAAa;IACb,gBAAgB;AACpB;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,gBAAgB;AACpB;;AAEA;IACI,yBAAyB;AAC7B;;AAEA;IACI,wBAAwB;IACxB,6BAA6B;IAC7B,2BAA2B;IAC3B,uBAAuB;IACvB,uBAAuB;AAC3B;;AAEA;IACI,iBAAiB;IACjB,mBAAmB;IACnB,uBAAuB;AAC3B;;AAEA;IACI,uBAAuB;IACvB,wBAAwB;IACxB,2BAA2B;AAC/B;;AAEA;IACI,oCAAoC;AACxC;;AAEA;IACI,QAAQ;AACZ;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,2BAA2B;AAC/B;;AAEA;IACI,2BAA2B;IAC3B,2BAA2B;AAC/B;;AAEA;IACI,cAAc;IACd,cAAc;IACd,YAAY;IACZ,eAAe;AACnB;;AAEA;IACI,eAAe;IACf,gBAAgB;IAChB,gBAAgB;IAChB,yBAAyB;IACzB,sBAAsB;IACtB,cAAc;IACd,gBAAgB;IAChB,mBAAmB;IACnB,eAAe;IACf,UAAU;IACV,gBAAgB;IAChB,uBAAuB;IACvB,mBAAmB;IACnB,sBAAsB;IACtB,mBAAmB;AACvB;;AAEA;IACI,cAAc;AAClB;;AAEA;IACI,eAAe;IACf,WAAW;IACX,YAAY;IACZ,iBAAiB;IACjB,YAAY;IACZ,iBAAiB;IACjB,sBAAsB;IACtB,cAAc;AAClB;;AAEA;IACI,UAAU;AACd;;AAEA;IACI,oBAAoB;IACpB,mBAAmB;IACnB,uBAAuB;AAC3B;;AAEA;IACI,cAAc;AAClB","sourcesContent":[".columns-container {\n    display: flex;\n    flex-direction: row;\n    border: 1px solid #ccc;\n    overflow-x: auto;\n    white-space: nowrap;\n    max-height: 212px;\n    overflow-y: hidden;\n    overflow-x: scroll;\n}\n\n.column {\n    display: flex;\n    flex-direction: column;\n    min-width: 150px;\n    flex: 0 0 auto;\n    border-right: 1px solid #ccc;\n    overflow-y: scroll;\n    max-height: 212px;\n}\n\n.column-item {\n    cursor: pointer;\n    padding: 2px 6px;\n    position: relative;\n    user-select: none;\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    padding-right: 20px;\n    display: flex;\n    align-items: center;\n}\n\n.column-item.has-children::after {\n    content: '▶';\n    display: inline-block;\n    position: absolute;\n    right: 4px;\n    top: 50%;\n    transform: translateY(-50%);\n    color: #ccc;\n}\n\n.column-item:hover {\n    background: var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9));\n    color: var(--wp-components-color-accent-inverted, #fff);\n    opacity: 0.4;\n}\n\n.selected {\n    background: var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9));\n    color: var(--wp-components-color-accent-inverted, #fff);\n}\n\n.column-item.has-children.selected::after {\n    color: var(--wp-components-color-accent-inverted, #fff);\n}\n\n.column-item.selected:hover {\n    background: var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9));\n    color: var(--wp-components-color-accent-inverted, #fff);\n    opacity: 0.8;\n}\n\n#expression-editor-full {\n    border: 1px solid #ccc;\n    margin-bottom: 10px;\n    margin-top: 10px;\n}\n\n#expression-editor-preview {\n    margin-bottom: 10px;\n    border: 1px solid #ccc;\n}\n\n.ace_editor {\n    border: 1px solid #ccc;\n    margin-bottom: 10px;\n}\n\n.ace_editor.ace_autocomplete {\n    z-index: 999999999;\n    margin-top: 5px;\n    padding-bottom: 5px;\n}\n\n.components-modal__screen-overlay {\n    z-index: 999999998;\n}\n\n.expression-builder {\n    position: relative;\n    width: 100%;\n}\n\n.expression-builder .expression-builder-button {\n    position: absolute;\n    top: 0;\n    right: 0;\n    height: 24px;\n    width: auto !important;\n    min-width: 24px;\n    display: inline-block;\n    padding-top: 4px;\n    padding-bottom: 23px;\n    padding-left: 8px;\n    padding-right: 8px;\n}\n\n.column-item-form {\n    padding: 10px;\n    max-width: 202px;\n}\n\n.column-item-form p {\n    text-wrap: auto;\n}\n\n.expression-builder-variable-name {\n    margin-left: 5px;\n}\n\n.expression-builder-inline {\n    padding-top: 0 !important;\n}\n\n.expression-builder-inline .ace_editor {\n    margin-top: 0 !important;\n    margin-right: 40px !important;\n    margin-bottom: 0 !important;\n    height: 40px !important;\n    width: 300px !important;\n}\n\n.expression-builder-inline > button {\n    top: 0 !important;\n    right: 0 !important;\n    height: 40px !important;\n}\n\n.ace_editor.settings-panel {\n    width: 246px !important;\n    height: 180px !important;\n    margin-top: 10px !important;\n}\n\n.ace_editor.read-only-editor {\n    background-color: #f3f3f3 !important;\n}\n\n.ace_content {\n    top: 5px;\n}\n\n#expression-builder-full .ace_content {\n    top: 0 !important;\n}\n\n.expression-builder .description {\n    margin-top: 10px !important;\n}\n\n.expression-builder-modal .description:last-of-type {\n    min-height: 40px !important;\n    margin-top: 10px !important;\n}\n\n.expression-builder-modal-variables .description code {\n    color: #00458b;\n    margin-left: 0;\n    padding: 5px;\n    font-size: 12px;\n}\n\n.expression-builder .expression-builder-small-heading {\n    font-size: 11px;\n    font-weight: 500;\n    line-height: 1.4;\n    text-transform: uppercase;\n    box-sizing: border-box;\n    display: block;\n    padding-top: 0px;\n    padding-bottom: 0px;\n    max-width: 100%;\n    z-index: 1;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n    color: rgb(30, 30, 30);\n    margin-bottom: 15px;\n}\n\n.expression-builder-modal-variables .column-item-step-slug {\n    color: #a3a3a3;\n}\n\n.column-item-type-icon {\n    font-size: 14px;\n    width: 14px;\n    height: 14px;\n    line-height: 14px;\n    opacity: 0.6;\n    margin-right: 4px;\n    vertical-align: middle;\n    flex-shrink: 0;\n}\n\n.column-item.selected .column-item-type-icon {\n    opacity: 1;\n}\n\n.column-item-type-icon-svg {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n}\n\n.column-item-type-icon-svg svg {\n    display: block;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
