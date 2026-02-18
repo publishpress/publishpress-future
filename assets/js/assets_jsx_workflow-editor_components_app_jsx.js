@@ -13256,7 +13256,7 @@ function NodeCard(_ref) {
     className: "block-editor-block-card__description"
   }, node.description), node.isProFeature && !isPro && /*#__PURE__*/React.createElement("div", {
     className: "block-editor-block-card__pro-instructions"
-  }, (0,_publishpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Currently this step is being skipped. Upgrade to Pro to unlock this feature.', 'post-expirator'), "\xA0", (0,_publishpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Drag this node to preview its options in your workflow.', 'post-expirator'))));
+  }, (0,_publishpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Currently this step is being skipped. Upgrade to Pro to unlock this feature.', 'post-expirator'))));
 }
 
 /***/ }),

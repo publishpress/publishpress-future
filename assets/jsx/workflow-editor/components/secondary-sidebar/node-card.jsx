@@ -27,8 +27,6 @@ export function NodeCard({node}) {
                 { node.isProFeature && !isPro && (
                     <div className="block-editor-block-card__pro-instructions">
                         { __('Currently this step is being skipped. Upgrade to Pro to unlock this feature.', 'post-expirator') }
-                        &nbsp;
-                        { __('Drag this node to preview its options in your workflow.', 'post-expirator') }
                     </div>
                 ) }
             </div>
