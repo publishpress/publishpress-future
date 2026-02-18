@@ -3,11 +3,11 @@
 namespace PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners;
 
 use PublishPress\Future\Framework\Logger\LoggerInterface;
-use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnPostInsert;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnPostCreate;
 use PublishPress\Future\Modules\Workflows\Interfaces\StepProcessorInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\TriggerRunnerInterface;
 
-class OnPostInsertRunner implements TriggerRunnerInterface
+class OnPostCreateRunner implements TriggerRunnerInterface
 {
     /**
      * @var StepProcessorInterface
@@ -29,7 +29,7 @@ class OnPostInsertRunner implements TriggerRunnerInterface
 
     public static function getNodeTypeName(): string
     {
-        return OnPostInsert::getNodeTypeName();
+        return OnPostCreate::getNodeTypeName();
     }
 
     public function setup(int $workflowId, array $step): void

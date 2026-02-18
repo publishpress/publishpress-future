@@ -105,7 +105,7 @@ use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnLegacy
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnPostAuthorChangeRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnPostMetaChangeRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnPostPublishRunner;
-use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnPostInsertRunner;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnPostCreateRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnPostRowActionRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnPostSaveRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnPostScheduleRunner;
@@ -986,8 +986,8 @@ return [
                     );
                     break;
 
-                case OnPostInsertRunner::getNodeTypeName():
-                    $stepRunner = new OnPostInsertRunner(
+                case OnPostCreateRunner::getNodeTypeName():
+                    $stepRunner = new OnPostCreateRunner(
                         $generalStepProcessor,
                         $logger
                     );

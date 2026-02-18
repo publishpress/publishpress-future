@@ -142,7 +142,7 @@ class OnPostPublishRunner implements TriggerRunnerInterface
         $this->hooks->addAction(HooksAbstract::ACTION_ACF_SAVE_POST, [$this, 'onAcfSavePost'], 999);
 
         /*
-         * Run when the post is inserted via REST API.
+         * Run when the post is created via REST API.
          */
         $postTypes = get_post_types(
             [

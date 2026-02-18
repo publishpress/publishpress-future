@@ -5,11 +5,11 @@ namespace PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definition
 use PublishPress\Future\Modules\Workflows\Interfaces\StepTypeInterface;
 use PublishPress\Future\Modules\Workflows\Models\StepTypesModel;
 
-class OnPostInsert implements StepTypeInterface
+class OnPostCreate implements StepTypeInterface
 {
     public static function getNodeTypeName(): string
     {
-        return "trigger/core.post-inserted";
+        return "trigger/core.post-create";
     }
 
     public function getElementaryType(): string
@@ -24,12 +24,12 @@ class OnPostInsert implements StepTypeInterface
 
     public function getBaseSlug(): string
     {
-        return "onPostInsert";
+        return "onPostCreate";
     }
 
     public function getLabel(): string
     {
-        return __("Post is inserted", "post-expirator");
+        return __("Post is created", "post-expirator");
     }
 
     public function getDescription(): string

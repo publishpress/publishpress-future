@@ -1808,7 +1808,7 @@ msgstr ""
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnInit.php:100
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnLegacyActionTrigger.php:138
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostAuthorChange.php:144
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostInsert.php:138
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostCreate.php:138
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:195
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostPublish.php:144
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:175
@@ -2835,7 +2835,7 @@ msgid "This trigger activates when an existing post author is changed."
 msgstr ""
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostAuthorChange.php:64
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostInsert.php:64
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostCreate.php:64
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:64
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostPublish.php:64
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:67
@@ -2850,7 +2850,7 @@ msgid "Post Filter"
 msgstr ""
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostAuthorChange.php:65
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostInsert.php:65
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostCreate.php:65
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:65
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostPublish.php:65
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:68
@@ -2864,7 +2864,7 @@ msgid "Specify the criteria for posts that will trigger this action."
 msgstr ""
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostAuthorChange.php:73
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostInsert.php:73
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostCreate.php:73
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:73
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostPublish.php:73
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:76
@@ -2878,7 +2878,7 @@ msgid "Post filter"
 msgstr ""
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostAuthorChange.php:74
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostInsert.php:74
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostCreate.php:74
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:74
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostPublish.php:74
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:77
@@ -2946,27 +2946,27 @@ msgstr ""
 msgid "The ID of the post that was updated."
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostInsert.php:32
-msgid "Post is inserted"
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostCreate.php:32
+msgid "Post is created"
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostInsert.php:37
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostCreate.php:37
 msgid "This trigger activates when a new post is created."
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostInsert.php:109
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostCreate.php:109
 msgid "Inserted post"
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostInsert.php:110
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostCreate.php:110
 msgid "The post that was inserted."
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostInsert.php:115
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostCreate.php:115
 msgid "Inserted post ID"
 msgstr ""
 
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostInsert.php:116
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostCreate.php:116
 msgid "The ID of the post that was inserted."
 msgstr ""
 

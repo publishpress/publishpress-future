@@ -3,7 +3,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 [4.10.0] - 18 February, 2026
 
-- Added: Add new trigger: Post is inserted - PRO, (Issue #1146).
+- Added: Add new trigger: Post is created - PRO, (Issue #1146).
 - Added: Debug log view shows total logs displayed, session count, and log size (filter-aware; shows both filtered and total when filter applied).
 - Added: Debug log timestamps now include milliseconds.
 - Added: Debug log filter to show only requests where a workflow trigger was activated.
