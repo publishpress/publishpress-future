@@ -253,6 +253,37 @@ class PostCache implements PostCacheInterface
     }
 
     /**
+     * Updates the postAfter entry in the cache for a given post ID.
+     *
+     * @param int      $postId The post ID.
+     * @param \WP_Post $post   The fresh post object to store as postAfter.
+     *
+     * @return void
+     */
+    public function setPostAfter(int $postId, \WP_Post $post): void
+    {
+        $this->ensureCacheExists($postId);
+        $this->cache[$postId]['postAfter'] = $post;
+        $this->cache[$postId]['permalinkAfter'] = $this->getPostPermalink($postId);
+    }
+
+    /**
+     * Restores the postBefore entry in the cache for a given post ID.
+     * Used to preserve the original pre-edit state when subsequent saves
+     * (e.g. from ACF calling wp_update_post) would otherwise overwrite it.
+     *
+     * @param int      $postId The post ID.
+     * @param \WP_Post $post   The post object to store as postBefore.
+     *
+     * @return void
+     */
+    public function setPostBefore(int $postId, \WP_Post $post): void
+    {
+        $this->ensureCacheExists($postId);
+        $this->cache[$postId]['postBefore'] = $post;
+    }
+
+    /**
      * Retrieves the cached posts, terms and permalinks for a given post ID.
      *
      * This method returns an array containing both before and after states of the post, terms and its permalink.

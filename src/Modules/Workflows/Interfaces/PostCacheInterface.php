@@ -29,4 +29,22 @@ interface PostCacheInterface
      * @return array The added terms Ids or empty array.
      */
     public function getAddedTermsIds(int $postId, string $taxonomy): array;
+
+    /**
+     * Updates the postAfter entry in the cache for a given post ID.
+     *
+     * @param int      $postId The post ID.
+     * @param \WP_Post $post   The fresh post object to store as postAfter.
+     */
+    public function setPostAfter(int $postId, \WP_Post $post): void;
+
+    /**
+     * Restores the postBefore entry in the cache for a given post ID.
+     * Used to preserve the original pre-edit state when subsequent saves
+     * (e.g. from ACF calling wp_update_post) would otherwise overwrite it.
+     *
+     * @param int      $postId The post ID.
+     * @param \WP_Post $post   The post object to store as postBefore.
+     */
+    public function setPostBefore(int $postId, \WP_Post $post): void;
 }

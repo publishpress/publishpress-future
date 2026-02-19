@@ -14,6 +14,7 @@ module.exports = {
         quickEdit: "./assets/jsx/quick-edit.jsx",
         bulkEdit: "./assets/jsx/bulk-edit.jsx",
         settingsAdvanced: "./assets/jsx/settings-advanced.jsx",
+        settingsDebug: "./assets/jsx/settings-debug.jsx",
         workflowEditor: "./assets/jsx/workflow-editor/index.jsx",
         legacyAction: "./assets/jsx/legacy-action/index.jsx",
         workflowManualSelectionQuickEdit: "./assets/jsx/workflow-manual-selection/quick-edit/index.jsx",
