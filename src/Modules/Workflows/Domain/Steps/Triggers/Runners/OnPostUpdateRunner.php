@@ -14,10 +14,13 @@ use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnPo
 use PublishPress\Future\Modules\Workflows\Interfaces\ExecutionContextInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\PostCacheInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\WorkflowExecutionSafeguardInterface;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\Traits\BlockEditorRequestDetector;
 
 class OnPostUpdateRunner implements TriggerRunnerInterface
 {
-    private const BLOCK_EDITOR_REQUEST_TRANSIENT_KEY = 'pp_future_block_editor_request_';
+    use BlockEditorRequestDetector;
+
+    private const BLOCK_EDITOR_REQUEST_TRANSIENT_KEY = 'pp_future_block_editor_update_request_';
 
     /**
      * @var HookableInterface
@@ -113,7 +116,12 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
 
         $this->postCache->setup();
 
-        $this->hooks->addAction(HooksAbstract::ACTION_AFTER_INSERT_POST, [$this, 'wpAfterInsertPostCallback'], 999, 3);
+        $this->hooks->addAction(
+            HooksAbstract::ACTION_AFTER_INSERT_POST,
+            [$this, 'wpAfterInsertPostCallback'],
+            999,
+            3
+        );
     }
 
     /**
@@ -126,17 +134,12 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
      */
     public function wpAfterInsertPostCallback($postId, $post, $update)
     {
-        $stepSlug = $this->stepSlug;
-        $currentHook = current_filter();
-        $isBlockEditor = $this->isBlockEditorRequest();
-
         if (! $update) {
             if ($this->isDebugEnabled) {
                 $this->logger->debug(
                     $this->stepProcessor->prepareLogMessage(
                         'Trigger skipped because post #%d was saved but not updated.',
-                        $postId,
-                        []
+                        $postId
                     )
                 );
             }
@@ -144,19 +147,9 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
             return;
         }
 
-        /**
-         * If the request is a block editor request, we need to ignore the first time this
-         * is called and set the transient as a flag to catch the second time this is called
-         * when the metadata is saved.
-         */
-        if ($this->isBlockEditorRequest()) {
-            if (! get_transient(self::BLOCK_EDITOR_REQUEST_TRANSIENT_KEY . $postId)) {
-                set_transient(self::BLOCK_EDITOR_REQUEST_TRANSIENT_KEY . $postId, true, 60);
-                return;
-            }
+        if ($this->shouldSkipDuplicateBlockEditorRequest($postId, self::BLOCK_EDITOR_REQUEST_TRANSIENT_KEY)) {
+            return;
         }
-
-        delete_transient(self::BLOCK_EDITOR_REQUEST_TRANSIENT_KEY . $postId);
 
         $cache = $this->postCache->getCacheForPostId($postId);
 
@@ -175,10 +168,9 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
                 $this->logger->debug(
                     $this->stepProcessor->prepareLogMessage(
                         'Trigger skipped: Direct publish (from "%s" to "publish") for post #%d, not a post update. '
-                        . 'Post was never saved before; OnPostUpdate requires a genuine update. %s',
+                        . 'Post was never saved before; OnPostUpdate requires a genuine update.',
                         $postBefore->post_status,
-                        $postId,
-                        []
+                        $postId
                     )
                 );
             }
@@ -186,13 +178,11 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
             return;
         }
 
-        $scenario = '';
-
-        if ($this->shouldAbortExecution($postId, $stepSlug, $scenario)) {
+        if ($this->shouldAbortExecution($postId)) {
             return;
         }
 
-        $this->executionContext->setVariable($stepSlug, [
+        $this->executionContext->setVariable($this->stepSlug, [
             'postBefore' => new PostResolver(
                 $postBefore,
                 $this->hooks,
@@ -220,17 +210,16 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
                 $this->logger->debug(
                     $this->stepProcessor->prepareLogMessage(
                         'Trigger skipped: Post query conditions not met for step %s, post #%d (post_type: %s, '
-                        . 'post_status: %s). %s',
-                        $stepSlug,
+                        . 'post_status: %s).',
+                        $this->stepSlug,
                         $postId,
                         $postAfter->post_type ?? 'unknown',
-                        $postAfter->post_status ?? 'unknown',
-                        []
+                        $postAfter->post_status ?? 'unknown'
                     )
                 );
             }
 
-            return;
+            return false;
         }
 
         $this->stepProcessor->executeSafelyWithErrorHandling(
@@ -242,10 +231,8 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
 
     /**
      * @param int $postId
-     * @param string $stepSlug
-     * @param string $scenario
      */
-    private function shouldAbortExecution($postId, $stepSlug, string $scenario = ''): bool
+    private function shouldAbortExecution($postId): bool
     {
         if (
             $this->hooks->applyFilters(
@@ -257,10 +244,9 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
         ) {
             $this->logger->debug(
                 $this->stepProcessor->prepareLogMessage(
-                    'Trigger skipped: Save post event ignored via filter for step %s for post #%d. %s',
-                    $stepSlug,
-                    $postId,
-                    $scenario
+                    'Trigger skipped: Save post event ignored via filter for step %s for post #%d.',
+                    $this->stepSlug,
+                    $postId
                 )
             );
 
@@ -276,10 +262,9 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
         ) {
             $this->logger->debug(
                 $this->stepProcessor->prepareLogMessage(
-                    'Trigger skipped: Infinite loop detected for step %s for post #%d. %s',
-                    $stepSlug,
-                    $postId,
-                    $scenario
+                    'Trigger skipped: Infinite loop detected for step %s for post #%d.',
+                    $this->stepSlug,
+                    $postId
                 )
             );
 
@@ -296,10 +281,9 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
         if ($this->executionSafeguard->preventDuplicateExecution($uniqueId)) {
             $this->logger->debug(
                 $this->stepProcessor->prepareLogMessage(
-                    'Trigger skipped: Duplicate execution detected for step %s for post #%d. %s',
-                    $stepSlug,
-                    $postId,
-                    $scenario
+                    'Trigger skipped: Duplicate execution detected for step %s for post #%d.',
+                    $this->stepSlug,
+                    $postId
                 )
             );
 
@@ -318,18 +302,14 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
      */
     public function processTriggerExecution(array $step, int $postId): void
     {
-        $stepSlug = $this->stepSlug;
-
         $this->stepProcessor->triggerCallbackIsRunning();
 
-        $post = get_post($postId);
         if ($this->isDebugEnabled) {
             $this->logger->debug(
                 $this->stepProcessor->prepareLogMessage(
-                    'Trigger fired: %s for post #%d. %s',
-                    $stepSlug,
-                    $postId,
-                    []
+                    'Trigger fired: %s for post #%d.',
+                    $this->stepSlug,
+                    $postId
                 )
             );
         }
@@ -341,16 +321,5 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
         );
 
         $this->stepProcessor->runNextSteps($this->step);
-    }
-
-    /**
-     * Check if the request is a REST request.
-     *
-     * @return bool True if the request is a REST request, false otherwise.
-     * @since 4.10.0
-     */
-    private function isBlockEditorRequest(): bool
-    {
-        return defined('REST_REQUEST') && REST_REQUEST;
     }
 }
