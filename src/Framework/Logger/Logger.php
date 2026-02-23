@@ -278,6 +278,10 @@ class Logger implements LoggerInterface
      */
     public function debugWithArgs(string $message, ...$args): void
     {
+        if (! $this->isDebugEnabled()) {
+            return;
+        }
+
         $this->debug(sprintf($message, ...$args));
     }
 
@@ -304,6 +308,10 @@ class Logger implements LoggerInterface
      */
     public function warningWithArgs(string $message, ...$args): void
     {
+        if (! $this->isDebugEnabled()) {
+            return;
+        }
+
         $this->warning(sprintf($message, ...$args));
     }
 
@@ -317,6 +325,10 @@ class Logger implements LoggerInterface
      */
     public function infoWithArgs(string $message, ...$args): void
     {
+        if (! $this->isDebugEnabled()) {
+            return;
+        }
+
         $this->info(sprintf($message, ...$args));
     }
 
@@ -330,6 +342,10 @@ class Logger implements LoggerInterface
      */
     public function noticeWithArgs(string $message, ...$args): void
     {
+        if (! $this->isDebugEnabled()) {
+            return;
+        }
+
         $this->notice(sprintf($message, ...$args));
     }
 
