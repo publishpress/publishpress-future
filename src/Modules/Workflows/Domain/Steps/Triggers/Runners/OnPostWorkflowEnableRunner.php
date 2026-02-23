@@ -63,6 +63,11 @@ class OnPostWorkflowEnableRunner implements TriggerRunnerInterface
      */
     private $executionSafeguard;
 
+    /**
+     * @var string
+     */
+    private $stepSlug;
+
     public function __construct(
         HookableInterface $hooks,
         StepPostRelatedProcessorInterface $stepProcessor,
@@ -90,29 +95,26 @@ class OnPostWorkflowEnableRunner implements TriggerRunnerInterface
     {
         $this->step = $step;
         $this->workflowId = $workflowId;
+        $this->stepSlug = $this->stepProcessor->getSlugFromStep($this->step);
 
         $this->hooks->addAction(HooksAbstract::ACTION_MANUALLY_TRIGGERED_WORKFLOW, [$this, 'triggerCallback'], 10, 2);
     }
 
     public function triggerCallback($postId, $workflowId)
     {
-        $nodeSlug = $this->stepProcessor->getSlugFromStep($this->step);
-
-        if ($this->shouldAbortExecution($postId, $nodeSlug, $workflowId)) {
+        if ($this->shouldAbortExecution($postId, $workflowId)) {
             return;
         }
 
         $this->stepProcessor->executeSafelyWithErrorHandling(
             $this->step,
-            [$this, 'fireTheTrigger'],
+            [$this, 'processTriggerExecution'],
             $postId
         );
     }
 
-    public function fireTheTrigger($step, $postId)
+    public function processTriggerExecution($step, $postId)
     {
-        $nodeSlug = $this->stepProcessor->getSlugFromStep($step);
-
         $post = get_post($postId);
 
         $postQueryArgs = [
@@ -122,7 +124,7 @@ class OnPostWorkflowEnableRunner implements TriggerRunnerInterface
 
         // TODO: Do we really need to pass the postID if the post is already being passed?
         $this->executionContext->setVariable(
-            $nodeSlug,
+            $this->stepSlug,
             [
                 'postId' => new IntegerResolver($postId),
                 'post' => new PostResolver($post, $this->hooks, '', $this->expirablePostModelFactory),
@@ -139,8 +141,8 @@ class OnPostWorkflowEnableRunner implements TriggerRunnerInterface
 
         $this->logger->debug(
             $this->stepProcessor->prepareLogMessage(
-                'Trigger fired (%s, Post #%d)',
-                $nodeSlug,
+                'Trigger fired: %s for post #%d.',
+                $this->stepSlug,
                 $postId
             )
         );
@@ -156,7 +158,7 @@ class OnPostWorkflowEnableRunner implements TriggerRunnerInterface
         $this->stepProcessor->runNextSteps($this->step);
     }
 
-    private function shouldAbortExecution(int $postId, string $stepSlug, int $workflowId): bool
+    private function shouldAbortExecution(int $postId, int $workflowId): bool
     {
         if (
             $this->executionSafeguard->detectInfiniteLoop(
@@ -167,8 +169,9 @@ class OnPostWorkflowEnableRunner implements TriggerRunnerInterface
         ) {
             $this->logger->debug(
                 $this->stepProcessor->prepareLogMessage(
-                    'Infinite loop detected for step %s, skipping',
-                    $stepSlug
+                    'Trigger skipped: Infinite loop detected for step %s and post #%d.',
+                    $this->stepSlug,
+                    $postId
                 )
             );
 
@@ -176,6 +179,16 @@ class OnPostWorkflowEnableRunner implements TriggerRunnerInterface
         }
 
         if ($this->workflowId !== $workflowId) {
+            $this->logger->debug(
+                $this->stepProcessor->prepareLogMessage(
+                    'Trigger skipped: The workflow ID does not match for step %s and post #%d. Expected workflow ID: %d, but got: %d.',
+                    $this->stepSlug,
+                    $postId,
+                    $this->workflowId,
+                    $workflowId
+                )
+            );
+
             return true;
         }
 

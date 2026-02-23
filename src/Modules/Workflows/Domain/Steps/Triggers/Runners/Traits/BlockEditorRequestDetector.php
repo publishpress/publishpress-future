@@ -35,20 +35,22 @@ trait BlockEditorRequestDetector
      * the metadata. We skip the first call by setting a transient and only
      * proceed on the second call.
      *
-     * @param int $postId
      * @param string $transientKey
      * @return bool
      * @since 4.10.0
      */
-    protected function shouldSkipDuplicateBlockEditorRequest(int $postId, string $transientKey): bool
+    protected function shouldSkipDuplicateBlockEditorRequest(string $transientKey): bool
     {
         if ($this->isBlockEditorRequest()) {
-            if (! get_transient($transientKey . $postId)) {
-                set_transient($transientKey . $postId, true, 60);
+            if (! get_transient($transientKey)) {
+                set_transient($transientKey, true, 60);
+
                 return true;
             }
         }
-        delete_transient($transientKey . $postId);
+
+        delete_transient($transientKey);
+
         return false;
     }
 }

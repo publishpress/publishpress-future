@@ -67,6 +67,11 @@ class OnTermsAddedRunner implements TriggerRunnerInterface
      */
     private $executionContext;
 
+    /**
+     * @var string
+     */
+    private $stepSlug;
+
     public function __construct(
         HookableInterface $hooks,
         StepProcessorInterface $stepProcessor,
@@ -96,6 +101,7 @@ class OnTermsAddedRunner implements TriggerRunnerInterface
     {
         $this->step = $step;
         $this->workflowId = $workflowId;
+        $this->stepSlug = $this->stepProcessor->getSlugFromStep($this->step);
         $this->postCache->setup();
         $this->hooks->addAction(HooksAbstract::ACTION_SET_OBJECT_TERMS, [$this, 'triggerCallback'], 20, 6);
     }
@@ -107,8 +113,6 @@ class OnTermsAddedRunner implements TriggerRunnerInterface
         if (!$post) {
             return;
         }
-
-        $stepSlug = $this->stepProcessor->getSlugFromStep($this->step);
 
         // Get added terms from post cache
         $addedTermIds = $this->postCache->getAddedTermsIds($objectId, $taxonomy);
@@ -122,7 +126,7 @@ class OnTermsAddedRunner implements TriggerRunnerInterface
             return;
         }
 
-        if ($this->shouldAbortExecution($objectId, $stepSlug)) {
+        if ($this->shouldAbortExecution($objectId)) {
             return;
         }
 
@@ -132,7 +136,7 @@ class OnTermsAddedRunner implements TriggerRunnerInterface
         $postBefore = $cache['postBefore'] ?? $post;
         $postAfter = $cache['postAfter'] ?? $post;
 
-        $this->executionContext->setVariable($stepSlug, [
+        $this->executionContext->setVariable($this->stepSlug, [
             'postBefore' => new PostResolver(
                 $postBefore,
                 $this->hooks,
@@ -196,7 +200,7 @@ class OnTermsAddedRunner implements TriggerRunnerInterface
         return true;
     }
 
-    private function shouldAbortExecution($postId, $stepSlug): bool
+    private function shouldAbortExecution($postId): bool
     {
         if (
             $this->hooks->applyFilters(
@@ -209,7 +213,7 @@ class OnTermsAddedRunner implements TriggerRunnerInterface
             $this->logger->debug(
                 $this->stepProcessor->prepareLogMessage(
                     'Ignoring terms added event for step %s',
-                    $stepSlug
+                    $this->stepSlug
                 )
             );
 
@@ -225,8 +229,9 @@ class OnTermsAddedRunner implements TriggerRunnerInterface
         ) {
             $this->logger->debug(
                 $this->stepProcessor->prepareLogMessage(
-                    'Infinite loop detected for step %s, skipping',
-                    $stepSlug
+                    'Trigger skipped: Infinite loop detected for step %s and post #%d.',
+                    $this->stepSlug,
+                    $postId
                 )
             );
 
@@ -243,8 +248,9 @@ class OnTermsAddedRunner implements TriggerRunnerInterface
         if ($this->executionSafeguard->preventDuplicateExecution($uniqueId)) {
             $this->logger->debug(
                 $this->stepProcessor->prepareLogMessage(
-                    'Duplicate execution detected for step %s, skipping',
-                    $stepSlug
+                    'Trigger skipped: Duplicate execution detected for step %s and post #%d.',
+                    $this->stepSlug,
+                    $postId
                 )
             );
 
@@ -254,16 +260,14 @@ class OnTermsAddedRunner implements TriggerRunnerInterface
         return false;
     }
 
-    public function processTriggerExecution($postId)
+    public function processTriggerExecution($step, $postId)
     {
-        $stepSlug = $this->stepProcessor->getSlugFromStep($this->step);
-
         $this->stepProcessor->triggerCallbackIsRunning();
 
         $this->logger->debug(
             $this->stepProcessor->prepareLogMessage(
-                'Trigger fired (%s, Post #%d)',
-                $stepSlug,
+                'Trigger fired: %s for post #%d.',
+                $this->stepSlug,
                 $postId
             )
         );

@@ -20,7 +20,7 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
 {
     use BlockEditorRequestDetector;
 
-    private const BLOCK_EDITOR_REQUEST_TRANSIENT_KEY = 'pp_future_block_editor_update_request_';
+    private const BLOCK_EDITOR_REQUEST_TRANSIENT_KEY = 'pp_future_block_editor_update_request_%d_%d';
 
     /**
      * @var HookableInterface
@@ -118,7 +118,7 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
 
         $this->hooks->addAction(
             HooksAbstract::ACTION_AFTER_INSERT_POST,
-            [$this, 'wpAfterInsertPostCallback'],
+            [$this, 'onAfterInsertPostCallback'],
             999,
             3
         );
@@ -132,7 +132,7 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
      * @param bool $update
      * @return void
      */
-    public function wpAfterInsertPostCallback($postId, $post, $update)
+    public function onAfterInsertPostCallback($postId, $post, $update)
     {
         if (! $update) {
             if ($this->isDebugEnabled) {
@@ -147,7 +147,13 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
             return;
         }
 
-        if ($this->shouldSkipDuplicateBlockEditorRequest($postId, self::BLOCK_EDITOR_REQUEST_TRANSIENT_KEY)) {
+        $transientKey = sprintf(
+            self::BLOCK_EDITOR_REQUEST_TRANSIENT_KEY,
+            $postId,
+            $this->workflowId
+        );
+
+        if ($this->shouldSkipDuplicateBlockEditorRequest($transientKey)) {
             return;
         }
 
@@ -244,7 +250,7 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
         ) {
             $this->logger->debug(
                 $this->stepProcessor->prepareLogMessage(
-                    'Trigger skipped: Save post event ignored via filter for step %s for post #%d.',
+                    'Trigger skipped: Save post event ignored via filter for step %s and post #%d.',
                     $this->stepSlug,
                     $postId
                 )
@@ -262,7 +268,7 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
         ) {
             $this->logger->debug(
                 $this->stepProcessor->prepareLogMessage(
-                    'Trigger skipped: Infinite loop detected for step %s for post #%d.',
+                    'Trigger skipped: Infinite loop detected for step %s and post #%d.',
                     $this->stepSlug,
                     $postId
                 )
@@ -281,7 +287,7 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
         if ($this->executionSafeguard->preventDuplicateExecution($uniqueId)) {
             $this->logger->debug(
                 $this->stepProcessor->prepareLogMessage(
-                    'Trigger skipped: Duplicate execution detected for step %s for post #%d.',
+                    'Trigger skipped: Duplicate execution detected for step %s and post #%d.',
                     $this->stepSlug,
                     $postId
                 )
