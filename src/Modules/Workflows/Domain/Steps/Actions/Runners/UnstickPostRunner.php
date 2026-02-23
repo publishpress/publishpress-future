@@ -75,12 +75,10 @@ class UnstickPostRunner implements StepRunnerInterface
 
                     $unstickUsingTheModel = false;
 
-                    $this->logger->debug(
-                        $this->stepProcessor->prepareLogMessage(
-                            'Post %1$s unsticked on %2$s setting sticky status via POST',
-                            $postId,
-                            $nodeSlug
-                        )
+                    $this->logger->debugWithArgs(
+                        'Post %1$s unsticked on %2$s setting sticky status via POST',
+                        $postId,
+                        $nodeSlug
                     );
                 }
 
@@ -88,13 +86,7 @@ class UnstickPostRunner implements StepRunnerInterface
                     $postModel = call_user_func($this->expirablePostModelFactory, $postId);
                     $postModel->unstick();
 
-                    $this->logger->debug(
-                        $this->stepProcessor->prepareLogMessage(
-                            'Post %1$s unsticked on step %2$s using the model',
-                            $postId,
-                            $nodeSlug
-                        )
-                    );
+                    $this->logger->debugWithArgs('Post %1$s unsticked on step %2$s using the model', $postId, $nodeSlug);
                 }
             },
             $postId

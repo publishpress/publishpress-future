@@ -76,12 +76,10 @@ class StickPostRunner implements StepRunnerInterface
 
                     $stickUsingTheModel = false;
 
-                    $this->logger->debug(
-                        $this->stepProcessor->prepareLogMessage(
-                            'Post %1$s sticked on %2$s setting sticky status via POST',
-                            $postId,
-                            $nodeSlug
-                        )
+                    $this->logger->debugWithArgs(
+                        'Post %1$s sticked on %2$s setting sticky status via POST',
+                        $postId,
+                        $nodeSlug
                     );
                 }
 
@@ -89,13 +87,7 @@ class StickPostRunner implements StepRunnerInterface
                     $postModel = call_user_func($this->expirablePostModelFactory, $postId);
                     $postModel->stick();
 
-                    $this->logger->debug(
-                        $this->stepProcessor->prepareLogMessage(
-                            'Post %1$s sticked on step %2$s using the model',
-                            $postId,
-                            $nodeSlug
-                        )
-                    );
+                    $this->logger->debugWithArgs('Post %1$s sticked on step %2$s using the model', $postId, $nodeSlug);
                 }
             },
             $postId

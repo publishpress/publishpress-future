@@ -77,11 +77,6 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
      */
     private $stepSlug;
 
-    /**
-     * @var bool
-     */
-    private $isDebugEnabled = false;
-
     public function __construct(
         HookableInterface $hooks,
         StepProcessorInterface $stepProcessor,
@@ -112,7 +107,6 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
         $this->step = $step;
         $this->stepSlug = $this->stepProcessor->getSlugFromStep($this->step);
         $this->workflowId = $workflowId;
-        $this->isDebugEnabled = $this->logger->isDebugEnabled();
 
         $this->postCache->setup();
 
@@ -135,14 +129,10 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
     public function onAfterInsertPostCallback($postId, $post, $update)
     {
         if (! $update) {
-            if ($this->isDebugEnabled) {
-                $this->logger->debug(
-                    $this->stepProcessor->prepareLogMessage(
-                        'Trigger skipped because post #%d was saved but not updated.',
-                        $postId
-                    )
-                );
-            }
+            $this->logger->debugWithArgs(
+                'Trigger skipped because post #%d was saved but not updated.',
+                $postId
+            );
 
             return;
         }
@@ -170,16 +160,12 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
             && in_array($postBefore->post_status, ['new', 'auto-draft'], true);
 
         if ($isDirectPublish) {
-            if ($this->isDebugEnabled) {
-                $this->logger->debug(
-                    $this->stepProcessor->prepareLogMessage(
-                        'Trigger skipped: Direct publish (from "%s" to "publish") for post #%d, not a post update. '
-                        . 'Post was never saved before; OnPostUpdate requires a genuine update.',
-                        $postBefore->post_status,
-                        $postId
-                    )
-                );
-            }
+            $this->logger->debugWithArgs(
+                'Trigger skipped: Direct publish (from "%s" to "publish") for post #%d, not a post update. '
+                . 'Post was never saved before; OnPostUpdate requires a genuine update.',
+                $postBefore->post_status,
+                $postId
+            );
 
             return;
         }
@@ -212,18 +198,13 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
         ];
 
         if (! $this->postQueryValidator->validate($postQueryArgs)) {
-            if ($this->isDebugEnabled) {
-                $this->logger->debug(
-                    $this->stepProcessor->prepareLogMessage(
-                        'Trigger skipped: Post query conditions not met for step %s, post #%d (post_type: %s, '
-                        . 'post_status: %s).',
-                        $this->stepSlug,
-                        $postId,
-                        $postAfter->post_type ?? 'unknown',
-                        $postAfter->post_status ?? 'unknown'
-                    )
-                );
-            }
+            $this->logger->debugWithArgs(
+                'Trigger skipped: Post query conditions not met for step %s, post #%d (post_type: %s, post_status: %s).',
+                $this->stepSlug,
+                $postId,
+                $postAfter->post_type ?? 'unknown',
+                $postAfter->post_status ?? 'unknown'
+            );
 
             return false;
         }
@@ -248,12 +229,10 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
                 $this->step
             )
         ) {
-            $this->logger->debug(
-                $this->stepProcessor->prepareLogMessage(
-                    'Trigger skipped: Save post event ignored via filter for step %s and post #%d.',
-                    $this->stepSlug,
-                    $postId
-                )
+            $this->logger->debugWithArgs(
+                'Trigger skipped: Save post event ignored via filter for step %s and post #%d.',
+                $this->stepSlug,
+                $postId
             );
 
             return true;
@@ -266,12 +245,10 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
                 $postId
             )
         ) {
-            $this->logger->debug(
-                $this->stepProcessor->prepareLogMessage(
-                    'Trigger skipped: Infinite loop detected for step %s and post #%d.',
-                    $this->stepSlug,
-                    $postId
-                )
+            $this->logger->debugWithArgs(
+                'Trigger skipped: Infinite loop detected for step %s and post #%d.',
+                $this->stepSlug,
+                $postId
             );
 
             return true;
@@ -285,12 +262,10 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
         ]);
 
         if ($this->executionSafeguard->preventDuplicateExecution($uniqueId)) {
-            $this->logger->debug(
-                $this->stepProcessor->prepareLogMessage(
-                    'Trigger skipped: Duplicate execution detected for step %s and post #%d.',
-                    $this->stepSlug,
-                    $postId
-                )
+            $this->logger->debugWithArgs(
+                'Trigger skipped: Duplicate execution detected for step %s and post #%d.',
+                $this->stepSlug,
+                $postId
             );
 
             return true;
@@ -310,15 +285,7 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
     {
         $this->stepProcessor->triggerCallbackIsRunning();
 
-        if ($this->isDebugEnabled) {
-            $this->logger->debug(
-                $this->stepProcessor->prepareLogMessage(
-                    'Trigger fired: %s for post #%d.',
-                    $this->stepSlug,
-                    $postId
-                )
-            );
-        }
+        $this->logger->debugWithArgs('Trigger fired: %s for post #%d.', $this->stepSlug, $postId);
 
         $this->hooks->doAction(
             HooksAbstract::ACTION_WORKFLOW_TRIGGER_EXECUTED,

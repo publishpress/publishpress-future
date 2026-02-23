@@ -54,13 +54,7 @@ class DeletePostRunner implements StepRunnerInterface
 
                 $nodeSlug = $this->stepProcessor->getSlugFromStep($step);
 
-                $this->logger->debug(
-                    $this->stepProcessor->prepareLogMessage(
-                        'Post %1$s deleted on step %2$s',
-                        $postId,
-                        $nodeSlug
-                    )
-                );
+                $this->logger->debugWithArgs('Post %1$s deleted on step %2$s', $postId, $nodeSlug);
             },
             $postId
         );

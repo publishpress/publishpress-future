@@ -139,13 +139,7 @@ class OnPostWorkflowEnableRunner implements TriggerRunnerInterface
 
         $this->stepProcessor->setPostIdOnTriggerGlobalVariable($postId);
 
-        $this->logger->debug(
-            $this->stepProcessor->prepareLogMessage(
-                'Trigger fired: %s for post #%d.',
-                $this->stepSlug,
-                $postId
-            )
-        );
+        $this->logger->debugWithArgs('Trigger fired: %s for post #%d.', $this->stepSlug, $postId);
 
         $this->stepProcessor->triggerCallbackIsRunning();
 
@@ -167,26 +161,22 @@ class OnPostWorkflowEnableRunner implements TriggerRunnerInterface
                 $postId
             )
         ) {
-            $this->logger->debug(
-                $this->stepProcessor->prepareLogMessage(
-                    'Trigger skipped: Infinite loop detected for step %s and post #%d.',
-                    $this->stepSlug,
-                    $postId
-                )
+            $this->logger->debugWithArgs(
+                'Trigger skipped: Infinite loop detected for step %s and post #%d.',
+                $this->stepSlug,
+                $postId
             );
 
             return true;
         }
 
         if ($this->workflowId !== $workflowId) {
-            $this->logger->debug(
-                $this->stepProcessor->prepareLogMessage(
-                    'Trigger skipped: The workflow ID does not match for step %s and post #%d. Expected workflow ID: %d, but got: %d.',
-                    $this->stepSlug,
-                    $postId,
-                    $this->workflowId,
-                    $workflowId
-                )
+            $this->logger->debugWithArgs(
+                'Trigger skipped: The workflow ID does not match for step %s and post #%d. Expected workflow ID: %d, but got: %d.',
+                $this->stepSlug,
+                $postId,
+                $this->workflowId,
+                $workflowId
             );
 
             return true;

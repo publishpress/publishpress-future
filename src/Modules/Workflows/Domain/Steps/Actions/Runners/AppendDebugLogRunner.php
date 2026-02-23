@@ -63,7 +63,6 @@ class AppendDebugLogRunner implements StepRunnerInterface
 
                 $message = $this->executionContext->resolveExpressionsInText($message);
                 $message = 'Slug: ' . $nodeSlug . ' | ' . $message;
-                $message = $this->stepProcessor->prepareLogMessage($message, $nodeSlug);
 
                 $availableLevels = [
                     'debug',
@@ -82,12 +81,7 @@ class AppendDebugLogRunner implements StepRunnerInterface
 
                 $this->logger->{$level}($message);
 
-                $this->logger->debug(
-                    $this->stepProcessor->prepareLogMessage(
-                        'Step done (%s)',
-                        $nodeSlug
-                    )
-                );
+                $this->logger->debugWithArgs('Step done (%s)', $nodeSlug);
             }
         );
     }

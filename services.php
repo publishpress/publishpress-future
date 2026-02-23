@@ -116,6 +116,7 @@ use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnSchedu
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnUserRoleChangeRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnTermsAddedRunner;
 use PublishPress\Future\Modules\Workflows\HooksAbstract as WorkflowsHooksAbstract;
+use PublishPress\Future\Modules\Workflows\Logger\WorkflowLogger;
 use PublishPress\Future\Modules\Workflows\Infrastructure\Safety\WorkflowExecutionSafeguard;
 use PublishPress\Future\Modules\Workflows\Interfaces\AsyncStepProcessorInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\StepProcessorInterface;
@@ -905,6 +906,7 @@ return [
             }
 
             $logger = $container->get(ServicesAbstract::LOGGER);
+            $workflowLogger = new WorkflowLogger($logger, $executionContext);
             $settingsModel = $container->get(ServicesAbstract::SETTINGS);
 
             $generalStepProcessor = call_user_func(
@@ -918,7 +920,7 @@ return [
                     if ($settingsModel->getExperimentalFeaturesStatus()) {
                         $stepRunner = new OnInitRunner(
                             $generalStepProcessor,
-                            $logger,
+                            $workflowLogger,
                             $container->get(ServicesAbstract::WORKFLOW_ENGINE)
                         );
                     }
@@ -928,7 +930,7 @@ return [
                     if ($settingsModel->getExperimentalFeaturesStatus()) {
                         $stepRunner = new OnAdminInitRunner(
                             $generalStepProcessor,
-                            $logger
+                            $workflowLogger
                         );
                     }
                     break;
@@ -943,7 +945,7 @@ return [
                         $container->get(ServicesAbstract::HOOKS),
                         $generalStepProcessor,
                         $inputValidatorPostQuery,
-                        $logger,
+                        $workflowLogger,
                         $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY),
                         $container->get(ServicesAbstract::WORKFLOW_EXECUTION_SAFEGUARD),
                         $executionContext
@@ -960,7 +962,7 @@ return [
                         $container->get(ServicesAbstract::HOOKS),
                         $generalStepProcessor,
                         $inputValidatorPostQuery,
-                        $logger,
+                        $workflowLogger,
                         $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY),
                         $container->get(ServicesAbstract::POST_CACHE),
                         $container->get(ServicesAbstract::WORKFLOW_EXECUTION_SAFEGUARD),
@@ -979,7 +981,7 @@ return [
                         $generalStepProcessor,
                         $inputValidatorPostQuery,
                         $executionContext,
-                        $logger,
+                        $workflowLogger,
                         $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY),
                         $container->get(ServicesAbstract::POST_CACHE),
                         $container->get(ServicesAbstract::WORKFLOW_EXECUTION_SAFEGUARD)
@@ -989,21 +991,21 @@ return [
                 case OnPostCreateRunner::getNodeTypeName():
                     $stepRunner = new OnPostCreateRunner(
                         $generalStepProcessor,
-                        $logger
+                        $workflowLogger
                     );
                     break;
 
                 case OnPostStatusChangeRunner::getNodeTypeName():
                     $stepRunner = new OnPostStatusChangeRunner(
                         $generalStepProcessor,
-                        $logger
+                        $workflowLogger
                     );
                     break;
 
                 case OnPostScheduleRunner::getNodeTypeName():
                     $stepRunner = new OnPostScheduleRunner(
                         $generalStepProcessor,
-                        $logger
+                        $workflowLogger
                     );
                     break;
 
@@ -1017,7 +1019,7 @@ return [
                             $container->get(ServicesAbstract::HOOKS),
                             $generalStepProcessor,
                             $inputValidatorPostQuery,
-                            $logger,
+                            $workflowLogger,
                             $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY),
                             $container->get(ServicesAbstract::POST_CACHE),
                             $container->get(ServicesAbstract::WORKFLOW_EXECUTION_SAFEGUARD),
@@ -1042,7 +1044,7 @@ return [
                         $postStepProcessor,
                         $inputValidatorPostQuery,
                         $executionContext,
-                        $logger,
+                        $workflowLogger,
                         $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY),
                         $container->get(ServicesAbstract::WORKFLOW_EXECUTION_SAFEGUARD)
                     );
@@ -1053,7 +1055,7 @@ return [
                         $container->get(ServicesAbstract::HOOKS),
                         $generalStepProcessor,
                         $executionContext,
-                        $logger,
+                        $workflowLogger,
                         $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY)
                     );
                     break;
@@ -1061,42 +1063,42 @@ return [
                 case OnScheduleRunner::getNodeTypeName():
                     $stepRunner = new OnScheduleRunner(
                         $generalStepProcessor,
-                        $logger
+                        $workflowLogger
                     );
                     break;
 
                 case OnPostMetaChangeRunner::getNodeTypeName():
                     $stepRunner = new OnPostMetaChangeRunner(
                         $generalStepProcessor,
-                        $logger
+                        $workflowLogger
                     );
                     break;
 
                 case OnPostAuthorChangeRunner::getNodeTypeName():
                     $stepRunner = new OnPostAuthorChangeRunner(
                         $generalStepProcessor,
-                        $logger
+                        $workflowLogger
                     );
                     break;
 
                 case OnPostRowActionRunner::getNodeTypeName():
                     $stepRunner = new OnPostRowActionRunner(
                         $generalStepProcessor,
-                        $logger
+                        $workflowLogger
                     );
                     break;
 
                 case OnUserRoleChangeRunner::getNodeTypeName():
                     $stepRunner = new OnUserRoleChangeRunner(
                         $generalStepProcessor,
-                        $logger
+                        $workflowLogger
                     );
                     break;
 
                 case OnCustomActionRunner::getNodeTypeName():
                     $stepRunner = new OnCustomActionRunner(
                         $generalStepProcessor,
-                        $logger
+                        $workflowLogger
                     );
                     break;
 
@@ -1111,7 +1113,7 @@ return [
                     $stepRunner = new DeletePostRunner(
                         $postStepProcessor,
                         $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY),
-                        $logger
+                        $workflowLogger
                     );
                     break;
 
@@ -1125,7 +1127,7 @@ return [
                     $stepRunner = new StickPostRunner(
                         $postStepProcessor,
                         $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY),
-                        $logger
+                        $workflowLogger
                     );
                     break;
 
@@ -1139,7 +1141,7 @@ return [
                     $stepRunner = new UnstickPostRunner(
                         $postStepProcessor,
                         $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY),
-                        $logger
+                        $workflowLogger
                     );
                     break;
 
@@ -1154,7 +1156,7 @@ return [
                         $postStepProcessor,
                         $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY),
                         $container->get(ServicesAbstract::ERROR),
-                        $logger
+                        $workflowLogger
                     );
                     break;
 
@@ -1169,7 +1171,7 @@ return [
                         $postStepProcessor,
                         $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY),
                         $container->get(ServicesAbstract::ERROR),
-                        $logger
+                        $workflowLogger
                     );
                     break;
 
@@ -1184,7 +1186,7 @@ return [
                         $postStepProcessor,
                         $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY),
                         $container->get(ServicesAbstract::ERROR),
-                        $logger
+                        $workflowLogger
                     );
                     break;
 
@@ -1199,7 +1201,7 @@ return [
                         $hooks,
                         $postStepProcessor,
                         $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY),
-                        $logger
+                        $workflowLogger
                     );
                     break;
 
@@ -1208,7 +1210,7 @@ return [
                         $generalStepProcessor,
                         $container->get(ServicesAbstract::EMAIL),
                         $executionContext,
-                        $logger
+                        $workflowLogger
                     );
                     break;
 
@@ -1222,7 +1224,7 @@ return [
                     $stepRunner = new DeactivatePostWorkflowRunner(
                         $postStepProcessor,
                         $executionContext,
-                        $logger
+                        $workflowLogger
                     );
                     break;
 
@@ -1235,7 +1237,7 @@ return [
 
                     $stepRunner = new AddPostMetaRunner(
                         $postStepProcessor,
-                        $logger
+                        $workflowLogger
                     );
                     break;
 
@@ -1248,7 +1250,7 @@ return [
 
                     $stepRunner = new DeletePostMetaRunner(
                         $postStepProcessor,
-                        $logger
+                        $workflowLogger
                     );
                     break;
 
@@ -1261,7 +1263,7 @@ return [
 
                     $stepRunner = new UpdatePostMetaRunner(
                         $postStepProcessor,
-                        $logger
+                        $workflowLogger
                     );
                     break;
 
@@ -1274,7 +1276,7 @@ return [
 
                     $stepRunner = new UpdatePostRunner(
                         $postStepProcessor,
-                        $logger
+                        $workflowLogger
                     );
                     break;
 
@@ -1296,14 +1298,14 @@ return [
                     $stepRunner = new ConditionalRunner(
                         $generalStepProcessor,
                         $executionContext,
-                        $logger
+                        $workflowLogger
                     );
                     break;
 
                 case QueryPostsRunner::getNodeTypeName():
                     $stepRunner = new QueryPostsRunner(
                         $generalStepProcessor,
-                        $logger
+                        $workflowLogger
                     );
                     break;
 
@@ -1311,7 +1313,7 @@ return [
                     $stepRunner = new SendRayRunner(
                         $generalStepProcessor,
                         $executionContext,
-                        $logger
+                        $workflowLogger
                     );
                     break;
 
@@ -1319,21 +1321,21 @@ return [
                     $stepRunner = new AppendDebugLogRunner(
                         $generalStepProcessor,
                         $executionContext,
-                        $logger
+                        $workflowLogger
                     );
                     break;
 
                 case DoActionRunner::getNodeTypeName():
                     $stepRunner = new DoActionRunner(
                         $generalStepProcessor,
-                        $logger
+                        $workflowLogger
                     );
                     break;
 
                 case UserInteractionRunner::getNodeTypeName():
                     $stepRunner = new UserInteractionRunner(
                         $generalStepProcessor,
-                        $logger
+                        $workflowLogger
                     );
                     break;
             }

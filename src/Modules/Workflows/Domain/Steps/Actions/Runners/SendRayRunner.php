@@ -53,12 +53,7 @@ class SendRayRunner implements StepRunnerInterface
                 $nodeSlug = $this->stepProcessor->getSlugFromStep($step);
 
                 if (! function_exists('ray')) {
-                    $this->logger->error(
-                        $this->stepProcessor->prepareLogMessage(
-                            'Ray is not installed. Skipping step %s',
-                            $nodeSlug
-                        )
-                    );
+                    $this->logger->errorWithArgs('Ray is not installed. Skipping step %s', $nodeSlug);
 
                     return;
                 }
@@ -119,12 +114,7 @@ class SendRayRunner implements StepRunnerInterface
                     }
                 }
 
-                $this->logger->debug(
-                    $this->stepProcessor->prepareLogMessage(
-                        'Step done (%s)',
-                        $nodeSlug
-                    )
-                );
+                $this->logger->debugWithArgs('Step done (%s)', $nodeSlug);
             }
         );
     }

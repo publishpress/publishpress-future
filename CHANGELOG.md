@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Changed: Debug log now defaults to grouped by request display.
 - Changed: Move the scheduled actions "Run" button to it's own column, (Issue #1496).
 - Changed: Workflow debug log messages rewritten for clarity and consistency (format, parentheses for details, [Workflow] prefix).
+- Deprecated: StepProcessorInterface::prepareLogMessage() in favor of direct logger sprintf methods.
 - Fixed: Debug log enable/disable in Diagnostics and Tools tab now reflects the correct state immediately without needing a second page refresh.
 - Fixed: Improved reliability of the "Post is Published" and "Post is Updated" triggers by fixing how post metadata is handled on block editor and when ACF is enabled (Issue #1312).
 - Fixed: Update .pot file.

@@ -39,6 +39,9 @@ class General implements StepProcessorInterface
         $this->logger = $logger;
     }
 
+    /**
+     * @deprecated 4.10.0 Use the logger instead
+     */
     public function prepareLogMessage(string $message, ...$args): string
     {
         $message = sprintf($message, ...$args);
@@ -108,7 +111,7 @@ class General implements StepProcessorInterface
      */
     public function logError(string $message, int $workflowId, array $step)
     {
-        $this->logger->error($this->prepareLogMessage($message));
+        $this->logger->errorWithArgs($message);
     }
 
     private function isWordPressRayInstalled(): bool

@@ -77,11 +77,6 @@ class OnPostSaveRunner implements TriggerRunnerInterface
      */
     private $stepSlug;
 
-    /**
-     * @var bool
-     */
-    private $isDebugEnabled = false;
-
     public function __construct(
         HookableInterface $hooks,
         StepProcessorInterface $stepProcessor,
@@ -110,7 +105,6 @@ class OnPostSaveRunner implements TriggerRunnerInterface
         $this->step = $step;
         $this->stepSlug = $this->stepProcessor->getSlugFromStep($this->step);
         $this->workflowId = $workflowId;
-        $this->isDebugEnabled = $this->logger->isDebugEnabled();
 
         $this->hooks->addAction(
             HooksAbstract::ACTION_AFTER_INSERT_POST,
@@ -150,18 +144,13 @@ class OnPostSaveRunner implements TriggerRunnerInterface
         ];
 
         if (! $this->postQueryValidator->validate($postQueryArgs)) {
-            if ($this->isDebugEnabled) {
-                $this->logger->debug(
-                    $this->stepProcessor->prepareLogMessage(
-                        'Trigger skipped: Post query conditions not met for step %s, post #%d (post_type: %s, '
-                        . 'post_status: %s).',
-                        $this->stepSlug,
-                        $postId,
-                        $post->post_type ?? 'unknown',
-                        $post->post_status ?? 'unknown'
-                    )
-                );
-            }
+            $this->logger->debugWithArgs(
+                'Trigger skipped: Post query conditions not met for step %s, post #%d (post_type: %s, post_status: %s).',
+                $this->stepSlug,
+                $postId,
+                $post->post_type ?? 'unknown',
+                $post->post_status ?? 'unknown'
+            );
 
             return false;
         }
@@ -183,12 +172,10 @@ class OnPostSaveRunner implements TriggerRunnerInterface
                 $this->step
             )
         ) {
-            $this->logger->debug(
-                $this->stepProcessor->prepareLogMessage(
-                    'Trigger skipped: Save post event ignored via filter for step %s and post #%d.',
-                    $this->stepSlug,
-                    $postId
-                )
+            $this->logger->debugWithArgs(
+                'Trigger skipped: Save post event ignored via filter for step %s and post #%d.',
+                $this->stepSlug,
+                $postId
             );
 
             return true;
@@ -201,12 +188,10 @@ class OnPostSaveRunner implements TriggerRunnerInterface
                 $postId
             )
         ) {
-            $this->logger->debug(
-                $this->stepProcessor->prepareLogMessage(
-                    'Trigger skipped: Infinite loop detected for step %s and post #%d.',
-                    $this->stepSlug,
-                    $postId
-                )
+            $this->logger->debugWithArgs(
+                'Trigger skipped: Infinite loop detected for step %s and post #%d.',
+                $this->stepSlug,
+                $postId
             );
 
             return true;
@@ -220,12 +205,10 @@ class OnPostSaveRunner implements TriggerRunnerInterface
         ]);
 
         if ($this->executionSafeguard->preventDuplicateExecution($uniqueId)) {
-            $this->logger->debug(
-                $this->stepProcessor->prepareLogMessage(
-                    'Trigger skipped: Duplicate execution detected for step %s and post #%d.',
-                    $this->stepSlug,
-                    $postId
-                )
+            $this->logger->debugWithArgs(
+                'Trigger skipped: Duplicate execution detected for step %s and post #%d.',
+                $this->stepSlug,
+                $postId
             );
 
             return true;
@@ -238,15 +221,7 @@ class OnPostSaveRunner implements TriggerRunnerInterface
     {
         $this->stepProcessor->triggerCallbackIsRunning();
 
-        if ($this->isDebugEnabled) {
-            $this->logger->debug(
-                $this->stepProcessor->prepareLogMessage(
-                    'Trigger fired: %s for post #%d.',
-                    $this->stepSlug,
-                    $postId
-                )
-            );
-        }
+        $this->logger->debugWithArgs('Trigger fired: %s for post #%d.', $this->stepSlug, $postId);
 
         $this->hooks->doAction(
             HooksAbstract::ACTION_WORKFLOW_TRIGGER_EXECUTED,

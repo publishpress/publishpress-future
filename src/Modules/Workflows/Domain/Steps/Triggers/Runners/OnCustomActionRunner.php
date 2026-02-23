@@ -40,12 +40,7 @@ class OnCustomActionRunner implements TriggerRunnerInterface
             function ($step) {
                 $nodeSlug = $this->stepProcessor->getSlugFromStep($step);
 
-                $this->logger->debug(
-                    $this->stepProcessor->prepareLogMessage(
-                        'Step %1$s is a Pro feature, skipping',
-                        $nodeSlug
-                    )
-                );
+                $this->logger->debugWithArgs('Step %1$s is a Pro feature, skipping', $nodeSlug);
             }
         );
     }

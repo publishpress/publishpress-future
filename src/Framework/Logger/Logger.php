@@ -269,6 +269,71 @@ class Logger implements LoggerInterface
     }
 
     /**
+     * Log a debug message using sprintf-style formatting.
+     *
+     * @param string $message Message format string.
+     * @param mixed  ...$args Arguments for sprintf.
+     * @return void
+     * @since 4.10.0
+     */
+    public function debugWithArgs(string $message, ...$args): void
+    {
+        $this->debug(sprintf($message, ...$args));
+    }
+
+    /**
+     * Log an error message using sprintf-style formatting.
+     *
+     * @param string $message Message format string.
+     * @param mixed  ...$args Arguments for sprintf.
+     * @return void
+     * @since 4.10.0
+     */
+    public function errorWithArgs(string $message, ...$args): void
+    {
+        $this->error(sprintf($message, ...$args));
+    }
+
+    /**
+     * Log a warning message using sprintf-style formatting.
+     *
+     * @param string $message Message format string.
+     * @param mixed  ...$args Arguments for sprintf.
+     * @return void
+     * @since 4.10.0
+     */
+    public function warningWithArgs(string $message, ...$args): void
+    {
+        $this->warning(sprintf($message, ...$args));
+    }
+
+    /**
+     * Log an info message using sprintf-style formatting.
+     *
+     * @param string $message Message format string.
+     * @param mixed  ...$args Arguments for sprintf.
+     * @return void
+     * @since 4.10.0
+     */
+    public function infoWithArgs(string $message, ...$args): void
+    {
+        $this->info(sprintf($message, ...$args));
+    }
+
+    /**
+     * Log a notice message using sprintf-style formatting.
+     *
+     * @param string $message Message format string.
+     * @param mixed  ...$args Arguments for sprintf.
+     * @return void
+     * @since 4.10.0
+     */
+    public function noticeWithArgs(string $message, ...$args): void
+    {
+        $this->notice(sprintf($message, ...$args));
+    }
+
+    /**
      * Mark the current request as having a workflow trigger activated.
      *
      * @since 4.10.0

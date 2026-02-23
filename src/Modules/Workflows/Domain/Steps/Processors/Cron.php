@@ -803,6 +803,9 @@ class Cron implements AsyncStepProcessorInterface
         return $nodeSettings;
     }
 
+    /**
+     * @deprecated 4.10.0 Use the logger instead
+     */
     public function logError(string $message, int $workflowId, array $step)
     {
         $this->addErrorLogMessage($message);
@@ -828,6 +831,9 @@ class Cron implements AsyncStepProcessorInterface
         return $routineTree;
     }
 
+    /**
+     * @deprecated 4.10.0 Use the logger instead
+     */
     public function prepareLogMessage(string $message, ...$args): string
     {
         return $this->generalProcessor->prepareLogMessage($message, ...$args);
@@ -838,13 +844,19 @@ class Cron implements AsyncStepProcessorInterface
         $this->generalProcessor->executeSafelyWithErrorHandling($step, $callback, ...$args);
     }
 
+    /**
+     * @deprecated 4.10.0 Use the logger instead
+     */
     private function addDebugLogMessage(string $message, ...$args): void
     {
-        $this->logger->debug($this->prepareLogMessage($message, ...$args));
+        $this->logger->debugWithArgs($message, ...$args);
     }
 
+    /**
+     * @deprecated 4.10.0 Use the logger instead
+     */
     private function addErrorLogMessage(string $message, ...$args): void
     {
-        $this->logger->error($this->prepareLogMessage($message, ...$args));
+        $this->logger->errorWithArgs($message, ...$args);
     }
 }
