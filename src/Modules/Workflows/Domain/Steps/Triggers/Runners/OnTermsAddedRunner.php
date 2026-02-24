@@ -255,7 +255,7 @@ class OnTermsAddedRunner implements TriggerRunnerInterface
     {
         $this->stepProcessor->triggerCallbackIsRunning();
 
-        $this->logger->debugWithArgs('Trigger fired: %s for post #%d.', $this->stepSlug, $postId);
+        $this->logger->debugWithArgs('Trigger executed: %s for post #%d.', $this->stepSlug, $postId);
 
         $this->hooks->doAction(
             HooksAbstract::ACTION_WORKFLOW_TRIGGER_EXECUTED,
