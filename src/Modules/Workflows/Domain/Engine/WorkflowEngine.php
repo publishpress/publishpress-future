@@ -153,7 +153,7 @@ class WorkflowEngine implements WorkflowEngineInterface
 
         $this->logger->debug(
             sprintf(
-                self::LOG_PREFIX . ' Engine starting (User #%s, %s)',
+                self::LOG_PREFIX . 'Engine starting: User #%s (%s)',
                 ($currentUser->ID > 0) ? (string) $currentUser->ID : 'guest',
                 $this->engineExecutionEnvironment
             )
