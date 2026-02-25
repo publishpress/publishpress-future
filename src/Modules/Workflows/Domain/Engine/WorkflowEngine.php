@@ -25,6 +25,9 @@ use PublishPress\Future\Modules\Workflows\Interfaces\StepTypesModelInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\WorkflowModelInterface;
 use Throwable;
 
+use function random_bytes;
+use function bin2hex;
+
 class WorkflowEngine implements WorkflowEngineInterface
 {
     public const LOG_PREFIX = '[Workflow]';
@@ -554,7 +557,7 @@ class WorkflowEngine implements WorkflowEngineInterface
 
     public function generateUniqueId(): string
     {
-        return wp_generate_uuid4();
+        return bin2hex(random_bytes(16));
     }
 
     public function getExecutionContextRegistry(): ExecutionContextRegistryInterface
