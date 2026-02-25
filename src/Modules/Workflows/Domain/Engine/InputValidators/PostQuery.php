@@ -44,8 +44,6 @@ class PostQuery implements InputValidatorsInterface
     private function validateLegacyPostQuery($post, array $nodeSettings): bool
     {
         if (! $this->hasValidPost($post)) {
-            $this->logValidationFailure('Post object invalid (not an object or WP_Error)', $post);
-
             return false;
         }
 
@@ -66,8 +64,17 @@ class PostQuery implements InputValidatorsInterface
         }
 
         if (! $this->hasValidPostTerms($post, $nodeSettings)) {
+            $this->logValidationResult(
+                false,
+                'Post has none of the required terms',
+                $post,
+                ['required' => $nodeSettings['postQuery']['postTerms']]
+            );
+
             return false;
         }
+
+        $this->logValidationResult(true, 'Post query conditions evaluated to true', $post, []);
 
         return true;
     }
@@ -80,7 +87,8 @@ class PostQuery implements InputValidatorsInterface
         $json = $nodeSettings['postQuery']['json'] ?? [];
 
         if (empty($json)) {
-            $this->logValidationFailure(
+            $this->logValidationResult(
+                false,
                 'JSON Logic post query is empty (no rules configured)',
                 $post
             );
@@ -93,7 +101,8 @@ class PostQuery implements InputValidatorsInterface
         $result = $this->jsonLogicEngine->apply($json, []);
 
         if (! is_bool($result)) {
-            $this->logValidationFailure(
+            $this->logValidationResult(
+                false,
                 'JSON Logic result is not boolean',
                 $post,
                 ['result_type' => gettype($result), 'result' => $result]
@@ -103,7 +112,8 @@ class PostQuery implements InputValidatorsInterface
         }
 
         if (! $result) {
-            $this->logValidationFailure(
+            $this->logValidationResult(
+                false,
                 'JSON Logic post query conditions evaluated to false',
                 $post,
                 ['json_logic_query' => $json]
@@ -111,6 +121,8 @@ class PostQuery implements InputValidatorsInterface
 
             return false;
         }
+
+        $this->logValidationResult(true, 'JSON Logic post query conditions evaluated to true', $post, ['json_logic_query' => $json]);
 
         return true;
     }
@@ -123,6 +135,7 @@ class PostQuery implements InputValidatorsInterface
     private function hasValidPost($post)
     {
         if (! is_object($post)) {
+            throw new \Exception(esc_html('Invalid post object: ' . $post->get_error_message()));
             return false;
         }
 
@@ -137,7 +150,8 @@ class PostQuery implements InputValidatorsInterface
     {
         // Prevent to apply actions to workflows
         if ($post->post_type === Module::POST_TYPE_WORKFLOW) {
-            $this->logValidationFailure(
+            $this->logValidationResult(
+                false,
                 'Post type is workflow (restricted)',
                 $post,
                 ['configured' => [Module::POST_TYPE_WORKFLOW]]
@@ -150,7 +164,8 @@ class PostQuery implements InputValidatorsInterface
 
         // Invalidate nodes that don't specify a post type to avoid applying actions to all post types
         if (empty($settingPostTypes)) {
-            $this->logValidationFailure(
+            $this->logValidationResult(
+                false,
                 'No post types configured in step (post type filter is required)',
                 $post
             );
@@ -159,7 +174,8 @@ class PostQuery implements InputValidatorsInterface
         }
 
         if (! empty($settingPostTypes) && ! in_array($post->post_type, $settingPostTypes)) {
-            $this->logValidationFailure(
+            $this->logValidationResult(
+                false,
                 'Post type does not match',
                 $post,
                 ['post_type' => $post->post_type, 'allowed' => $settingPostTypes]
@@ -294,7 +310,7 @@ class PostQuery implements InputValidatorsInterface
      * @param object|null $post Post object if available
      * @param array<string, mixed> $context Additional context (e.g. post_type, allowed values)
      */
-    private function logValidationFailure(string $reason, $post, array $context = []): void
+    private function logValidationResult(bool $isValid, string $reason, $post, array $context = []): void
     {
         if (! $this->logger->isDebugEnabled()) {
             return;
@@ -310,7 +326,12 @@ class PostQuery implements InputValidatorsInterface
             $contextStr = ' ' . str_replace('"', '`', $json);
         }
 
-        $this->logger->debug($prefix . 'Post did not match workflow conditions: ' . $reason . '. ' . $postInfo . $contextStr);
+        if (! $isValid) {
+            $this->logger->debug($prefix . 'Post did not match workflow conditions: ' . $reason . '. ' . $postInfo . $contextStr);
+            return;
+        }
+
+        $this->logger->debug($prefix . 'Post matched workflow conditions: ' . $reason . '. ' . $postInfo . $contextStr);
     }
 
     private function getLogPrefix(): string

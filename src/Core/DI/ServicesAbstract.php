@@ -56,6 +56,8 @@ abstract class ServicesAbstract
 
     public const LOGGER = 'future.free/logger';
 
+    public const WORKFLOW_LOGGER_FACTORY = 'future.free/workflow-logger-factory';
+
     public const CRON = 'future.free/cron';
 
     public const WOO_CRON_ADAPTER = 'future.free/woo-cron-adapter';

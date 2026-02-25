@@ -137,6 +137,7 @@ use PublishPress\Future\Modules\Workflows\Interfaces\WorkflowEngineInterface;
 use PublishPress\Future\Modules\Workflows\Migrations\V040500OnScheduledStepsSchema;
 use PublishPress\Future\Modules\Debug\Migrations\V04905DebugLogRequestId;
 use PublishPress\Future\Modules\Debug\Migrations\V04906DebugLogTimestampMilliseconds;
+use PublishPress\Future\Modules\Workflows\Interfaces\ExecutionContextInterface;
 
 return [
     ServicesAbstract::PLUGIN_VERSION => PUBLISHPRESS_FUTURE_VERSION,
@@ -887,6 +888,15 @@ return [
         };
     },
 
+    ServicesAbstract::WORKFLOW_LOGGER_FACTORY => static function (ContainerInterface $container) {
+        return function (ExecutionContextInterface $executionContext) use ($container) {
+            return new WorkflowLogger(
+                $container->get(ServicesAbstract::LOGGER),
+                $executionContext
+            );
+        };
+    },
+
     ServicesAbstract::STEP_RUNNER_FACTORY => static function (ContainerInterface $container) {
         return function ($nodeName, $workflowExecutionId) use ($container) {
             $hooks = $container->get(ServicesAbstract::HOOKS);
@@ -905,8 +915,10 @@ return [
                 return $stepRunner;
             }
 
-            $logger = $container->get(ServicesAbstract::LOGGER);
-            $workflowLogger = new WorkflowLogger($logger, $executionContext);
+            $workflowLogger = call_user_func(
+                $container->get(ServicesAbstract::WORKFLOW_LOGGER_FACTORY),
+                $executionContext
+            );
             $settingsModel = $container->get(ServicesAbstract::SETTINGS);
 
             $generalStepProcessor = call_user_func(

@@ -123,10 +123,23 @@ class OnPostSaveRunner implements TriggerRunnerInterface
         );
 
         if ($this->shouldSkipDuplicateBlockEditorRequest($transientKey)) {
+
+            $this->logger->debugWithArgs(
+                'Trigger skipped: Duplicate block editor request detected for step %s and post #%d.',
+                $this->stepSlug,
+                $postId
+            );
+
             return;
         }
 
         if ($this->shouldAbortExecution($postId)) {
+            $this->logger->debugWithArgs(
+                'Trigger skipped: Execution should be aborted for step %s and post #%d.',
+                $this->stepSlug,
+                $postId
+            );
+
             return;
         }
 
@@ -145,7 +158,7 @@ class OnPostSaveRunner implements TriggerRunnerInterface
 
         if (! $this->postQueryValidator->validate($postQueryArgs)) {
             $this->logger->debugWithArgs(
-                'Trigger skipped: Post query conditions not met for step %s, post #%d (post_type: %s, post_status: %s).',
+                'Trigger skipped: Post query conditions not met for step "%s" and post #%d (post_type: %s, post_status: %s).',
                 $this->stepSlug,
                 $postId,
                 $post->post_type ?? 'unknown',
@@ -173,7 +186,7 @@ class OnPostSaveRunner implements TriggerRunnerInterface
             )
         ) {
             $this->logger->debugWithArgs(
-                'Trigger skipped: Save post event ignored via filter for step %s and post #%d.',
+                'Ignored save post event detected for step "%s" and post #%d.',
                 $this->stepSlug,
                 $postId
             );
@@ -189,7 +202,7 @@ class OnPostSaveRunner implements TriggerRunnerInterface
             )
         ) {
             $this->logger->debugWithArgs(
-                'Trigger skipped: Infinite loop detected for step %s and post #%d.',
+                'Infinite loop detected for step "%s" and post #%d.',
                 $this->stepSlug,
                 $postId
             );
@@ -206,7 +219,7 @@ class OnPostSaveRunner implements TriggerRunnerInterface
 
         if ($this->executionSafeguard->preventDuplicateExecution($uniqueId)) {
             $this->logger->debugWithArgs(
-                'Trigger skipped: Duplicate execution detected for step %s and post #%d.',
+                'Duplicate execution detected for step "%s" and post #%d.',
                 $this->stepSlug,
                 $postId
             );

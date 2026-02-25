@@ -204,6 +204,7 @@ class WorkflowEngine implements WorkflowEngineInterface
             $workflowIdsToRun
         );
 
+
         $this->logger->debug(self::LOG_PREFIX . ' Loading workflows');
 
         if (empty($workflowIdsToRun)) {
@@ -234,9 +235,9 @@ class WorkflowEngine implements WorkflowEngineInterface
 
             $this->logger->debug(
                 sprintf(
-                    self::LOG_PREFIX . ' Initializing workflow #%d (%s)',
-                    $workflowId,
-                    $workflow->getTitle()
+                    self::LOG_PREFIX . ' Initializing workflow "%s" (ID: %d)',
+                    $workflow->getTitle(),
+                    $workflowId
                 )
             );
 
@@ -258,6 +259,11 @@ class WorkflowEngine implements WorkflowEngineInterface
                 $stepType = $this->stepTypesModel->getStepType($triggerName);
 
                 if (! $stepType) {
+                    $this->logger->error(sprintf(
+                        self::LOG_PREFIX . 'Skipping trigger "%s" because step type not found',
+                        $triggerName
+                    ));
+
                     continue;
                 }
 
@@ -265,18 +271,23 @@ class WorkflowEngine implements WorkflowEngineInterface
                 $triggerRunner = call_user_func($this->stepRunnerFactory, $triggerName, $workflowExecutionId);
 
                 if (is_null($triggerRunner)) {
-                    $message = sprintf(
-                        self::LOG_PREFIX . ' Trigger not found: %s (skipping)',
+                    $this->logger->error(sprintf(
+                        self::LOG_PREFIX . 'Skipping trigger "%s" because trigger runner not found',
                         $triggerName
-                    );
-
-                    $this->logger->error($message);
+                    ));
 
                     continue;
                 }
 
                 // Ignore if there is no routine tree for this trigger
                 if (! isset($routineTree[$triggerId])) {
+                    $this->logger->debug(
+                        sprintf(
+                            self::LOG_PREFIX . 'Skipping trigger "%s" because no routine tree found',
+                            $triggerId
+                        )
+                    );
+
                     continue;
                 }
 

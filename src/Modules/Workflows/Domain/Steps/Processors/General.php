@@ -64,6 +64,15 @@ class General implements StepProcessorInterface
     {
         $nextSteps = $this->getNextSteps($step, $branch);
 
+        $this->logger->debug(
+            sprintf(
+                self::LOG_PREFIX . 'Following branch "%s" of step "%s" (next steps: %d)',
+                $branch,
+                $step['node']['data']['slug'],
+                count($nextSteps)
+            )
+        );
+
         $workflowExecutionId = $this->executionContext->getVariable('global.workflow.execution_id');
 
         foreach ($nextSteps as $nextStep) {
@@ -79,6 +88,16 @@ class General implements StepProcessorInterface
         $nextSteps = [];
         if (isset($step['next'][$branch])) {
             $nextSteps = $step['next'][$branch];
+        }
+
+        if (empty($nextSteps)) {
+            $this->logger->debug(
+                sprintf(
+                    self::LOG_PREFIX . 'No next steps found for "%s" (branch: %s)',
+                    $step['node']['data']['slug'],
+                    $branch
+                )
+            );
         }
 
         return $nextSteps;
@@ -156,6 +175,12 @@ class General implements StepProcessorInterface
         $currentRunningWorkflowId = $this->executionContext->getVariable('global.workflow.id');
 
         if (empty($currentRunningWorkflowId)) {
+            $this->logger->debug(
+                sprintf(
+                    self::LOG_PREFIX . 'No current running workflow ID found',
+                )
+            );
+
             return;
         }
 
