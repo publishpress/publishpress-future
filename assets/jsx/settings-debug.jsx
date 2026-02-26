@@ -92,6 +92,8 @@ function DebugLogAutoRefresh() {
                         onChange={(e) => setRefreshInterval(Number(e.target.value))}
                         style={{ marginLeft: '5px' }}
                     >
+                        <option value={1}>1 {text.seconds || 'seconds'}</option>
+                        <option value={3}>3 {text.seconds || 'seconds'}</option>
                         <option value={5}>5 {text.seconds || 'seconds'}</option>
                         <option value={10}>10 {text.seconds || 'seconds'}</option>
                         <option value={30}>30 {text.seconds || 'seconds'}</option>

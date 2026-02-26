@@ -1183,6 +1183,10 @@ function DebugLogAutoRefresh() {
       marginLeft: '5px'
     }
   }, /*#__PURE__*/React.createElement("option", {
+    value: 1
+  }, "1 ", text.seconds || 'seconds'), /*#__PURE__*/React.createElement("option", {
+    value: 3
+  }, "3 ", text.seconds || 'seconds'), /*#__PURE__*/React.createElement("option", {
     value: 5
   }, "5 ", text.seconds || 'seconds'), /*#__PURE__*/React.createElement("option", {
     value: 10
