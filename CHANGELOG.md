@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Deprecated: StepProcessorInterface::prepareLogMessage() in favor of direct logger sprintf methods.
 - Fixed: Debug log enable/disable in Diagnostics and Tools tab now reflects the correct state immediately without needing a second page refresh.
 - Fixed: Improved reliability of the "Post is Published" and "Post is Updated" triggers by fixing how post metadata is handled on block editor and when ACF is enabled (Issue #1312).
+- Fixed: Fixed post saved related events not triggering when revisions is saved (Issue #1582).
 - Fixed: Update .pot file.
 
 [4.9.4] - 18 December, 2025
