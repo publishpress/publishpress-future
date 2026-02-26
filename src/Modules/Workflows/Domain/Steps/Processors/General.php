@@ -12,7 +12,7 @@ use Throwable;
 
 class General implements StepProcessorInterface
 {
-    public const LOG_PREFIX = '[Workflow]   → ';
+    public const LOG_PREFIX = '[workflow.steps.processors.general] Workflow #%d → ';
 
     /**
      * @var HooksFacade
@@ -29,6 +29,11 @@ class General implements StepProcessorInterface
      */
     private $logger;
 
+    /**
+     * @var int
+     */
+    private $workflowId;
+
     public function __construct(
         HooksFacade $hooks,
         ExecutionContextInterface $executionContext,
@@ -37,13 +42,12 @@ class General implements StepProcessorInterface
         $this->hooks = $hooks;
         $this->executionContext = $executionContext;
         $this->logger = $logger;
+        $this->workflowId = $executionContext->getVariable('global.workflow.id');
     }
 
     private function getLogPrefix(): string
     {
-        $workflowId = $this->executionContext->getVariable('global.workflow.id');
-
-        return self::LOG_PREFIX . 'Workflow #' . $workflowId . ' → ';
+        return sprintf(self::LOG_PREFIX, $this->workflowId);
     }
 
     /**
@@ -82,10 +86,10 @@ class General implements StepProcessorInterface
         }
 
         $this->logger->debugWithArgs(
-            $this->getLogPrefix() . 'Executing %d next steps for step "%s" on branch "%s"',
-            $branch,
+            $this->getLogPrefix() . 'Executing %d next step(s) for step "%s" on branch "%s"',
+            count($nextSteps),
             $step['node']['data']['slug'],
-            count($nextSteps)
+            $branch
         );
 
         $workflowExecutionId = $this->executionContext->getVariable('global.workflow.execution_id');

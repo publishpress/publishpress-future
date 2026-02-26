@@ -30,7 +30,7 @@ use function bin2hex;
 
 class WorkflowEngine implements WorkflowEngineInterface
 {
-    public const LOG_PREFIX = '[Workflow] ';
+    public const LOG_PREFIX = '[workflow.engine] ';
 
     public const LOG_PREFIX_STEP = self::LOG_PREFIX . '  → ';
 
@@ -363,6 +363,7 @@ class WorkflowEngine implements WorkflowEngineInterface
         ];
 
         $executionContext->setVariable('global', $globalVariables);
+        $executionContext->setWorkflowId($workflowModel->getId());
     }
 
     public function prepareExecutionContextForTrigger(

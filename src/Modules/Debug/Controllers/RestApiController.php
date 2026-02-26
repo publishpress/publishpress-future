@@ -144,6 +144,10 @@ class RestApiController implements InitializableInterface
                 if ($previousRequestId !== null && $previousRequestId !== $requestId) {
                     $output .= $separator . "\n";
                 }
+                $isNewGroup = $previousRequestId === null || $previousRequestId !== $requestId;
+                if ($isNewGroup) {
+                    $output .= 'Request ID: ' . esc_html($requestId) . "\n";
+                }
                 $previousRequestId = $requestId;
                 $requestIdPrefix = $requestId !== '(no request id)'
                     ? '[' . $requestId . '] '
@@ -153,7 +157,7 @@ class RestApiController implements InitializableInterface
                     ? '[' . $result['request_id'] . '] '
                     : '';
             }
-            $output .= sprintf("%s%s: %s\n", $requestIdPrefix, $result['timestamp'], $result['message']);
+            $output .= sprintf("%s: %s\n", $result['timestamp'], $result['message']);
         }
 
         return $output;

@@ -15,13 +15,13 @@ use PublishPress\Future\Modules\Workflows\Interfaces\ExecutionContextInterface;
 
 /**
  * Decorator around LoggerInterface that automatically prepends the workflow
- * context prefix ([Workflow]   → Workflow #X → ) to all log messages.
+ * context prefix ([workflow.logger] → Workflow #X → ) to all log messages.
  *
  * @since 4.10.0
  */
 class WorkflowLogger implements LoggerInterface
 {
-    private const LOG_PREFIX = '[Workflow]   → ';
+    private const LOG_PREFIX = '[workflow.logger] Workflow #%d → ';
 
     /**
      * @var LoggerInterface
@@ -34,6 +34,11 @@ class WorkflowLogger implements LoggerInterface
     private $executionContext;
 
     /**
+     * @var int
+     */
+    private $workflowId;
+
+    /**
      * @param LoggerInterface           $logger           Inner logger to delegate to.
      * @param ExecutionContextInterface $executionContext  Execution context for resolving workflow ID.
      * @since 4.10.0
@@ -42,6 +47,7 @@ class WorkflowLogger implements LoggerInterface
     {
         $this->logger = $logger;
         $this->executionContext = $executionContext;
+        $this->workflowId = $executionContext->getVariable('global.workflow.id');
     }
 
     /**
@@ -53,11 +59,7 @@ class WorkflowLogger implements LoggerInterface
      */
     private function formatMessage(string $message): string
     {
-        return sprintf(
-            self::LOG_PREFIX . 'Workflow #%1$s → %2$s',
-            $this->executionContext->getVariable('global.workflow.id'),
-            $message
-        );
+        return sprintf(self::LOG_PREFIX, $this->workflowId) . $message;
     }
 
     /**

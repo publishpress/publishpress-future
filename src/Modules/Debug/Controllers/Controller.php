@@ -52,6 +52,17 @@ class Controller implements InitializableInterface
             WorkflowsHooksAbstract::ACTION_WORKFLOW_TRIGGER_EXECUTED,
             [$this, 'onWorkflowTriggerExecuted']
         );
+
+        $this->hooks->addAction(
+            CoreAbstractHooks::ACTION_SHUTDOWN,
+            [$this, 'onShutdown'],
+            PHP_INT_MAX
+        );
+    }
+
+    public function onShutdown()
+    {
+        $this->logger->debug('Shutdown');
     }
 
     /**

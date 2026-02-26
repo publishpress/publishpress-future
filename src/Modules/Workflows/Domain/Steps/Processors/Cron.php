@@ -696,14 +696,16 @@ class Cron implements AsyncStepProcessorInterface
     {
         $expandedArgs = $this->expandArguments($compactedArgs);
 
+        $workflowId = $compactedArgs['workflowId'];
+
         // Update the execution context with the expanded arguments from the original event
         $this->executionContext->setAllVariables($expandedArgs['runtimeVariables']);
+        $this->executionContext->setWorkflowId($workflowId);
 
         if ($triggerCallbackIsRunning) {
             $this->triggerCallbackIsRunning();
         }
 
-        $workflowId = $compactedArgs['workflowId'];
 
         // Check if the workflow is still active
         $workflowModel = new WorkflowModel();

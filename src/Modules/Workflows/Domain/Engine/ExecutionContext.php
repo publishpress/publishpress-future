@@ -3,6 +3,7 @@
 namespace PublishPress\Future\Modules\Workflows\Domain\Engine;
 
 use PublishPress\Future\Core\HookableInterface;
+use PublishPress\Future\Framework\Logger\LoggerInterface;
 use PublishPress\Future\Modules\Workflows\Domain\Engine\VariableResolvers\ArrayResolver;
 use PublishPress\Future\Modules\Workflows\Domain\Engine\VariableResolvers\BooleanResolver;
 use PublishPress\Future\Modules\Workflows\Domain\Engine\VariableResolvers\DatetimeResolver;
@@ -25,6 +26,8 @@ use function wp_json_encode;
 
 class ExecutionContext implements ExecutionContextInterface
 {
+    private const LOG_PREFIX = '[workflow.execution_context] Workflow #%d → ';
+
     /**
      * @var HookableInterface
      */
@@ -57,14 +60,26 @@ class ExecutionContext implements ExecutionContextInterface
      */
     private $nestedVariablesCache = [];
 
+    /**
+     * @var LoggerInterface
+     */
+    private $logger;
+
+    /**
+     * @var int
+     */
+    private $workflowId = 0;
+
     public function __construct(
         HookableInterface $hooks,
         ExecutionContextProcessorRegistryInterface $processorRegistry,
-        \Closure $expirablePostModelFactory
+        \Closure $expirablePostModelFactory,
+        LoggerInterface $logger
     ) {
         $this->hooks = $hooks;
         $this->processorRegistry = $processorRegistry;
         $this->expirablePostModelFactory = $expirablePostModelFactory;
+        $this->logger = $logger;
     }
 
     public function setAllVariables(array $runtimeVariables)
@@ -115,6 +130,12 @@ class ExecutionContext implements ExecutionContextInterface
             $expression = trim($expression);
 
             if ($expressionElements = $this->parseHelperFromVariable($expression)) {
+                $this->debugWithArgs(
+                    'Parsing helper "%s" from variable "%s"',
+                    $expressionElements['helper'],
+                    $expressionElements['variable']
+                );
+
                 $value = $this->getVariable($expressionElements['variable']);
                 $value = $this->processorRegistry->process($expressionElements['helper'], $value, $expressionElements['args']);
             } else {
@@ -147,6 +168,11 @@ class ExecutionContext implements ExecutionContextInterface
     public function resolveExpressionsInArray(array $array): array
     {
         if (empty($array)) {
+            $this->debugWithArgs(
+                'Empty array passed to resolveExpressionsInArray',
+                $array
+            );
+
             return $array;
         }
 
@@ -317,6 +343,11 @@ class ExecutionContext implements ExecutionContextInterface
 
         // If the variable is the top level, check the cache.
         if ($level === 0 && $this->hasNestedVariableInCache($variableName)) {
+            $this->debugWithArgs(
+                'Variable "%s" is in the cache, returning the value',
+                $variableName
+            );
+
             return $this->getNestedVariableValueFromCache($variableName);
         }
 
@@ -327,14 +358,31 @@ class ExecutionContext implements ExecutionContextInterface
         }
 
         if (! is_array($dataSource) && ! is_object($dataSource)) {
+            $this->debugWithArgs(
+                'Variable\'s datasource is not an array or object, returning the variable name: "%s"',
+                $variableName
+            );
+
             return $variableName;
         }
 
         if (is_array($dataSource) && !isset($dataSource[$variableNameParts[0]])) {
+            $this->debugWithArgs(
+                'Variable\'s datasource is an array but the key "%s" is not set, returning the variable name: "%s"',
+                $variableNameParts[0],
+                $variableName
+            );
+
             return $variableName;
         }
 
         if (is_object($dataSource) && !isset($dataSource->{$variableNameParts[0]})) {
+            $this->debugWithArgs(
+                'Variable\'s datasource is an object but the property "%s" is not set, returning the variable name: "%s"',
+                $variableNameParts[0],
+                $variableName
+            );
+
             return $variableName;
         }
 
@@ -352,6 +400,11 @@ class ExecutionContext implements ExecutionContextInterface
 
         // If the variable is the top level, set the value in the cache.
         if ($level === 0) {
+            $this->debugWithArgs(
+                'Setting variable "%s" in the cache',
+                $variableName
+            );
+
             $this->setNestedVariableValueInCache($variableName, $value);
         }
 
@@ -416,6 +469,22 @@ class ExecutionContext implements ExecutionContextInterface
         }
 
         return $runtimeVariables;
+    }
+
+    /**
+     * @since 4.10.0
+     */
+    public function getWorkflowId(): int
+    {
+        return $this->workflowId;
+    }
+
+    /**
+     * @since 4.10.0
+     */
+    public function setWorkflowId(int $workflowId): void
+    {
+        $this->workflowId = $workflowId;
     }
 
     private function getPostDifferences($post1, $post2)
@@ -564,7 +633,7 @@ class ExecutionContext implements ExecutionContextInterface
                     'integer' => IntegerResolver::class,
                     'node' => NodeResolver::class,
                     'post' => PostResolver::class,
-                    'terms' => TermsResolver::class,
+                    'terms' => PostTermsResolver::class,
                     'site' => SiteResolver::class,
                     'user' => UserResolver::class,
                     'workflow' => WorkflowResolver::class,
@@ -697,5 +766,13 @@ class ExecutionContext implements ExecutionContextInterface
     private function isNestedVariable(string $variableName)
     {
         return strpos($variableName, '.') !== false;
+    }
+
+    private function debugWithArgs(string $message, ...$args): void
+    {
+        $this->logger->debugWithArgs(
+            sprintf(self::LOG_PREFIX, $this->getWorkflowId()) . $message,
+            ...$args
+        );
     }
 }

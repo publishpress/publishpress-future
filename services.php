@@ -800,7 +800,8 @@ return [
         return new ExecutionContextRegistry(
             $container->get(ServicesAbstract::HOOKS),
             $container->get(ServicesAbstract::EXECUTION_CONTEXT_PROCESSOR_REGISTRY),
-            $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY)
+            $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY),
+            $container->get(ServicesAbstract::LOGGER)
         );
     },
 

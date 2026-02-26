@@ -10,7 +10,7 @@ use PublishPress\Future\Modules\Workflows\Module;
 
 class PostQuery implements InputValidatorsInterface
 {
-    private const LOG_PREFIX = '[Workflow]   → ';
+    private const LOG_PREFIX = '[workflow.input_validators.post_query] Workflow #%d → ';
 
     private ExecutionContextInterface $executionContext;
 
@@ -338,10 +338,10 @@ class PostQuery implements InputValidatorsInterface
     {
         $workflowId = $this->executionContext->getVariable('global.workflow.id');
 
-        if ($workflowId !== null && $workflowId !== '') {
-            return self::LOG_PREFIX . 'Workflow #' . $workflowId . ' → ';
+        if ($workflowId === null || $workflowId === '') {
+            $workflowId = 0;
         }
 
-        return self::LOG_PREFIX;
+        return sprintf(self::LOG_PREFIX, $workflowId);
     }
 }

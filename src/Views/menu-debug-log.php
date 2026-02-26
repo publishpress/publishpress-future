@@ -123,6 +123,10 @@ if (empty($results)) {
             if ($previousRequestId !== null && $previousRequestId !== $requestId) {
                 echo esc_html($separator) . "\n";
             }
+            $isNewGroup = $previousRequestId === null || $previousRequestId !== $requestId;
+            if ($isNewGroup) {
+                echo 'Request ID: ' . esc_html($requestId) . "\n";
+            }
             $previousRequestId = $requestId;
             $requestIdPrefix = $requestId !== '(no request id)'
                 ? '[' . esc_html($requestId) . '] '
@@ -132,7 +136,8 @@ if (empty($results)) {
                 ? '[' . esc_html($result['request_id']) . '] '
                 : '';
         }
-        printf("%s%s: %s\n", esc_html($requestIdPrefix), esc_html($result['timestamp']), esc_html($result['message']));
+
+        printf("%s: %s\n", esc_html($result['timestamp']), esc_html($result['message']));
     }
 }
 echo '</textarea>';

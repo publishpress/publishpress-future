@@ -31,7 +31,7 @@ defined('ABSPATH') or die('Direct access not allowed.');
 
 class Plugin implements InitializableInterface
 {
-    public const LOG_PREFIX = '[Plugin]';
+    public const LOG_PREFIX = '[plugin]';
 
     /**
      * @var bool
@@ -117,7 +117,7 @@ class Plugin implements InitializableInterface
     {
         \PostExpirator_Reviews::init();
 
-        $this->logger->debug(self::LOG_PREFIX . ' Reviews module ready');
+        $this->logger->debug(self::LOG_PREFIX . ' Reviews module has been initialized successfully.');
     }
 
     private function initializeCli()
@@ -128,7 +128,7 @@ class Plugin implements InitializableInterface
 
         \PostExpirator_Cli::getInstance();
 
-        $this->logger->debug(self::LOG_PREFIX . ' CLI module ready');
+        $this->logger->debug(self::LOG_PREFIX . ' CLI module has been initialized successfully.');
     }
 
     private function initializeHooks()
@@ -146,7 +146,7 @@ class Plugin implements InitializableInterface
     {
         $this->notices->init();
 
-        $this->logger->debug(self::LOG_PREFIX . ' Notices module ready');
+        $this->logger->debug(self::LOG_PREFIX . ' Notices module has been initialized successfully.');
     }
 
     private function initializeModules()
@@ -154,6 +154,7 @@ class Plugin implements InitializableInterface
         foreach ($this->modules as $module) {
             if (method_exists($module, 'initialize')) {
                 $module->initialize();
+                $this->logger->debug(self::LOG_PREFIX . ' ' . get_class($module) . ' module has been initialized successfully.');
             }
         }
     }
