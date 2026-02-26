@@ -91,6 +91,8 @@ class SendRayRunner implements StepRunnerInterface
                 // phpcs:ignore PublishPressStandards.Debug.DisallowDebugFunctions.FoundRayFunction
                 $rayMessage = ray($output);
 
+                $this->logger->debugWithArgs('Ray message sent for step "%s"', $nodeSlug);
+
                 $rayMessage->label($nodeSettings['label'] ?? '');
 
                 if (isset($nodeSettings['color'])) {
@@ -116,7 +118,7 @@ class SendRayRunner implements StepRunnerInterface
                     }
                 }
 
-                $this->logger->debugWithArgs('Step done (%s)', $nodeSlug);
+                $this->logger->debugWithArgs('Step "%s" done', $nodeSlug);
             }
         );
     }

@@ -39,6 +39,13 @@ class General implements StepProcessorInterface
         $this->logger = $logger;
     }
 
+    private function getLogPrefix(): string
+    {
+        $workflowId = $this->executionContext->getVariable('global.workflow.id');
+
+        return self::LOG_PREFIX . 'Workflow #' . $workflowId . ' → ';
+    }
+
     /**
      * @deprecated 4.10.0 Use the logger instead
      */
@@ -47,7 +54,7 @@ class General implements StepProcessorInterface
         $message = sprintf($message, ...$args);
 
         return sprintf(
-            self::LOG_PREFIX . 'Workflow #%1$s → %2$s',
+            $this->getLogPrefix() . 'Workflow #%1$s → %2$s',
             $this->executionContext->getVariable('global.workflow.id'),
             $message
         );
@@ -64,13 +71,21 @@ class General implements StepProcessorInterface
     {
         $nextSteps = $this->getNextSteps($step, $branch);
 
-        $this->logger->debug(
-            sprintf(
-                self::LOG_PREFIX . 'Following branch "%s" of step "%s" (next steps: %d)',
-                $branch,
+        if (empty($nextSteps)) {
+            $this->logger->debugWithArgs(
+                $this->getLogPrefix() . 'No next steps found for step "%s" on branch "%s"',
                 $step['node']['data']['slug'],
-                count($nextSteps)
-            )
+                $branch
+            );
+
+            return;
+        }
+
+        $this->logger->debugWithArgs(
+            $this->getLogPrefix() . 'Executing %d next steps for step "%s" on branch "%s"',
+            $branch,
+            $step['node']['data']['slug'],
+            count($nextSteps)
         );
 
         $workflowExecutionId = $this->executionContext->getVariable('global.workflow.execution_id');
@@ -88,16 +103,6 @@ class General implements StepProcessorInterface
         $nextSteps = [];
         if (isset($step['next'][$branch])) {
             $nextSteps = $step['next'][$branch];
-        }
-
-        if (empty($nextSteps)) {
-            $this->logger->debug(
-                sprintf(
-                    self::LOG_PREFIX . 'No next steps found for "%s" (branch: %s)',
-                    $step['node']['data']['slug'],
-                    $branch
-                )
-            );
         }
 
         return $nextSteps;
@@ -175,10 +180,8 @@ class General implements StepProcessorInterface
         $currentRunningWorkflowId = $this->executionContext->getVariable('global.workflow.id');
 
         if (empty($currentRunningWorkflowId)) {
-            $this->logger->debug(
-                sprintf(
-                    self::LOG_PREFIX . 'No current running workflow ID found',
-                )
+            $this->logger->debugWithArgs(
+                $this->getLogPrefix() . 'No current running workflow ID found',
             );
 
             return;
@@ -235,14 +238,13 @@ class General implements StepProcessorInterface
             call_user_func($callback, $step, ...$args);
         } catch (Throwable $th) {
             $this->logger->error(
-                sprintf(
-                    'Error executing step: %s | Workflow ID: %d | Message: %s, on file %s, line %d',
-                    $step['node']['data']['slug'] ?? 'unknown',
-                    $this->executionContext->getVariable('global.workflow.id'),
-                    $th->getMessage(),
-                    $th->getFile(),
-                    $th->getLine()
-                )
+                $this->getLogPrefix() . 'Error executing step: %s | Workflow ID: %d | Message: %s, on file %s, line %d',
+                'Error executing step: %s | Workflow ID: %d | Message: %s, on file %s, line %d',
+                $step['node']['data']['slug'] ?? 'unknown',
+                $this->executionContext->getVariable('global.workflow.id'),
+                $th->getMessage(),
+                $th->getFile(),
+                $th->getLine()
             );
         }
     }
