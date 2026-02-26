@@ -82,7 +82,9 @@ class SendRayRunner implements StepRunnerInterface
                 if ($expression === '{{input}}') {
                     $output = $this->executionContext->getAllVariables();
                     unset($output['global']);
-                } else {
+                }
+
+                if ($expression !== '{{input}}') {
                     $output = $this->executionContext->resolveExpressionsInText($expression);
                 }
 
