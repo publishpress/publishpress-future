@@ -53,7 +53,7 @@ class SendRayRunner implements StepRunnerInterface
                 $nodeSlug = $this->stepProcessor->getSlugFromStep($step);
 
                 if (! function_exists('ray')) {
-                    $this->logger->errorWithArgs('Ray is not installed. Skipping step %s', $nodeSlug);
+                    $this->logger->errorWithArgs('Ray is not available. Skipping step %s', $nodeSlug);
 
                     return;
                 }
