@@ -9,18 +9,27 @@ use function wp_json_encode;
 
 class NodeResolver implements VariableResolverInterface
 {
-    /**
-     * @var array|object
-     */
-    private $node;
+    public string $id;
+    public string $name;
+    public string $label;
+    public string $activation_timestamp;
+    public string $slug;
+    public int $postId;
 
     public function __construct($node)
     {
         if (is_object($node)) {
-            $this->node = $node->getVariable();
+            $node = $node->getVariable();
         } else {
-            $this->node = (array)$node;
+            $node = (array)$node;
         }
+
+        $this->id = (string)$node['id'];
+        $this->name = (string)$node['name'];
+        $this->label = (string)$node['label'];
+        $this->activation_timestamp = (string)$node['activation_timestamp'];
+        $this->slug = (string)$node['slug'];
+        $this->postId = (int)$node['postId'];
     }
 
     public function getType(): string
@@ -30,28 +39,11 @@ class NodeResolver implements VariableResolverInterface
 
     public function getValue(string $propertyName = '')
     {
-        switch ($propertyName) {
-            case 'ID':
-                return (int)$this->node['ID'];
-
-            case 'name':
-                return (string)$this->node['name'];
-
-            case 'label':
-                return (string)$this->node['label'];
-
-            case 'activation_timestamp':
-                return (string)$this->node['activation_timestamp'];
-
-            case 'slug':
-                return (string)$this->node['slug'];
-
-            case 'postId':
-            case 'post_id':
-                return (int)$this->node['postId'];
+        if (isset($this->$propertyName)) {
+            return $this->$propertyName;
         }
 
-        return '';
+        return null;
     }
 
     public function getValueAsString(string $property = ''): string
@@ -63,7 +55,14 @@ class NodeResolver implements VariableResolverInterface
     {
         return [
             'type' => $this->getType(),
-            'value' => $this->node
+            'value' => [
+                'id' => $this->id,
+                'name' => $this->name,
+                'label' => $this->label,
+                'activation_timestamp' => $this->activation_timestamp,
+                'slug' => $this->slug,
+                'postId' => $this->postId,
+            ]
         ];
     }
 
@@ -77,20 +76,28 @@ class NodeResolver implements VariableResolverInterface
 
     public function setValue(string $name, $value): void
     {
-        if (isset($this->node[$name])) {
-            $this->node[$name] = $value;
+        if (isset($this->$name)) {
+            $this->$name = $value;
         }
     }
 
     public function __isset($name): bool
     {
-        return in_array($name, ['ID', 'name', 'label', 'activation_timestamp', 'slug', 'postId', 'post_id']);
+        return in_array($name, ['ID', 'id', 'name', 'label', 'activation_timestamp', 'slug', 'postId', 'post_id']);
     }
 
     public function __get($name)
     {
-        if (isset($this->node[$name])) {
-            return $this->node[$name];
+        if (isset($this->$name)) {
+            return $this->$name;
+        }
+
+        if ($name === 'ID') {
+            return $this->id;
+        }
+
+        if ($name === 'post_id') {
+            return $this->postId;
         }
 
         return null;
@@ -99,10 +106,18 @@ class NodeResolver implements VariableResolverInterface
     public function __set($name, $value): void
     {
         if ($name === 'postId' || $name === 'post_id') {
-            $this->node['postId'] = (int)$value;
+            $this->postId = (int)$value;
+            return;
         }
 
-        return;
+        if ($name === 'id') {
+            $this->id = (string)$value;
+            return;
+        }
+
+        if (isset($this->$name)) {
+            $this->$name = $value;
+        }
     }
 
     public function __unset($name): void
