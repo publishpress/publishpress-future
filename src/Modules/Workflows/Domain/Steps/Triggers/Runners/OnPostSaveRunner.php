@@ -230,7 +230,7 @@ class OnPostSaveRunner implements TriggerRunnerInterface
         return false;
     }
 
-    public function processTriggerExecution($postId)
+    public function processTriggerExecution($step, $postId)
     {
         $this->stepProcessor->triggerCallbackIsRunning();
 
