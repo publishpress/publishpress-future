@@ -12,7 +12,7 @@ use Throwable;
 
 class General implements StepProcessorInterface
 {
-    public const LOG_PREFIX = '[workflow.steps.processors.general] Workflow #%d → ';
+    public const LOG_PREFIX = '[WorkflowStepsProcessorsGeneral:%d]: ';
 
     /**
      * @var HooksFacade

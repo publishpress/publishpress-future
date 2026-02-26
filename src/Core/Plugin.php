@@ -31,7 +31,7 @@ defined('ABSPATH') or die('Direct access not allowed.');
 
 class Plugin implements InitializableInterface
 {
-    public const LOG_PREFIX = '[plugin]';
+    public const LOG_PREFIX = '[Plugin]';
 
     /**
      * @var bool

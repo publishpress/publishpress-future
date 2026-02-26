@@ -26,7 +26,7 @@ use function wp_json_encode;
 
 class ExecutionContext implements ExecutionContextInterface
 {
-    private const LOG_PREFIX = '[workflow.execution_context] Workflow #%d → ';
+    private const LOG_PREFIX = '[WorkflowExecutionContext#%d]: ';
 
     /**
      * @var HookableInterface
@@ -770,6 +770,10 @@ class ExecutionContext implements ExecutionContextInterface
 
     private function debugWithArgs(string $message, ...$args): void
     {
+        if (! defined('PUBLISHPRESS_FUTURE_DEBUG_EXECUTION_CONTEXT') || ! PUBLISHPRESS_FUTURE_DEBUG_EXECUTION_CONTEXT) {
+            return;
+        }
+
         $this->logger->debugWithArgs(
             sprintf(self::LOG_PREFIX, $this->getWorkflowId()) . $message,
             ...$args

@@ -32,6 +32,10 @@ class Controller implements InitializableInterface
     {
         $this->hooks = $hooks;
         $this->logger = $logger;
+
+        if (! defined('PUBLISHPRESS_FUTURE_DEBUG_EXECUTION_CONTEXT')) {
+            define('PUBLISHPRESS_FUTURE_DEBUG_EXECUTION_CONTEXT', false);
+        }
     }
 
     public function initialize()

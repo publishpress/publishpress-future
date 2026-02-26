@@ -30,9 +30,9 @@ use function bin2hex;
 
 class WorkflowEngine implements WorkflowEngineInterface
 {
-    public const LOG_PREFIX = '[workflow.engine] ';
+    public const LOG_PREFIX = '[WorkflowEngine] ';
 
-    public const LOG_PREFIX_STEP = self::LOG_PREFIX . '  → ';
+    public const LOG_PREFIX_STEP = '[WorkflowEngine:%d]: ';
 
     /**
      * @var HookableInterface
@@ -191,7 +191,7 @@ class WorkflowEngine implements WorkflowEngineInterface
         if (! $this->logger->isDownloadLogRequested() && isset($this->engineStartTime)) {
             $elapsedMs = (int) round((microtime(true) - $this->engineStartTime) * 1000);
             $this->logger->debugWithArgs(
-                self::LOG_PREFIX . 'Engine finished processing (%d ms)',
+                self::LOG_PREFIX . 'Engine finished processing request (%d ms)',
                 $elapsedMs
             );
         }
@@ -209,13 +209,17 @@ class WorkflowEngine implements WorkflowEngineInterface
             $workflowIdsToRun
         );
 
-
-        $this->logger->debug(self::LOG_PREFIX . 'Loading workflows');
-
         if (empty($workflowIdsToRun)) {
             $this->logger->debug(self::LOG_PREFIX . 'Loading all published workflows');
 
             $workflowIdsToRun = $this->getPublishedWorkflowsIds();
+        }
+
+        if (! empty($workflowIdsToRun)) {
+            $this->logger->debugWithArgs(
+                self::LOG_PREFIX . 'Loading %d workflows',
+                count($workflowIdsToRun)
+            );
         }
 
         $stepTypes = $this->getAllStepTypes();
@@ -241,9 +245,9 @@ class WorkflowEngine implements WorkflowEngineInterface
             $workflowExecutionId = $this->generateUniqueId();
 
             $this->logger->debugWithArgs(
-                self::LOG_PREFIX . 'Initializing workflow "%s" (ID: %d) with execution id "%s"',
-                $workflow->getTitle(),
+                self::LOG_PREFIX_STEP . 'Initializing workflow "%s" with execution id "%s"',
                 $workflowId,
+                $workflow->getTitle(),
                 $workflowExecutionId
             );
 
@@ -266,6 +270,7 @@ class WorkflowEngine implements WorkflowEngineInterface
                 if (! $stepType) {
                     $this->logger->errorWithArgs(
                         self::LOG_PREFIX_STEP . 'Skipping trigger "%s" because step type not found',
+                        $workflowId,
                         $triggerName
                     );
 
@@ -278,6 +283,7 @@ class WorkflowEngine implements WorkflowEngineInterface
                 if (is_null($triggerRunner)) {
                     $this->logger->errorWithArgs(
                         self::LOG_PREFIX_STEP . 'Skipping trigger "%s" because trigger runner not found',
+                        $workflowId,
                         $triggerName
                     );
 
@@ -288,6 +294,7 @@ class WorkflowEngine implements WorkflowEngineInterface
                 if (! isset($routineTree[$triggerId])) {
                     $this->logger->debugWithArgs(
                         self::LOG_PREFIX_STEP . 'Skipping trigger "%s" because no routine tree found',
+                        $workflowId,
                         $triggerId
                     );
 
@@ -302,6 +309,7 @@ class WorkflowEngine implements WorkflowEngineInterface
                 // Setup the trigger
                 $this->logger->debugWithArgs(
                     self::LOG_PREFIX_STEP . 'Registering trigger "%s"',
+                    $workflowId,
                     $triggerStep['data']['slug']
                 );
 
@@ -321,12 +329,12 @@ class WorkflowEngine implements WorkflowEngineInterface
             }
 
             $this->logger->debugWithArgs(
-                self::LOG_PREFIX . 'Workflow #%d is ready',
+                self::LOG_PREFIX_STEP . 'Workflow is ready',
                 $workflowId
             );
         }
 
-        $this->logger->debug(self::LOG_PREFIX . 'All workflows ready');
+        $this->logger->debug(self::LOG_PREFIX . 'All workflows are ready');
 
         /**
          * Action triggered when the workflows are initialized.
@@ -408,9 +416,12 @@ class WorkflowEngine implements WorkflowEngineInterface
 
         $executionContext = $this->executionContextRegistry->getExecutionContext($workflowExecutionId);
 
+        $workflowId = $executionContext->getVariable('global.workflow.id');
+
         if (is_null($stepRunner)) {
             $message = sprintf(
                 self::LOG_PREFIX_STEP . 'Step runner not found: %s',
+                $workflowId,
                 $nodeName
             );
 
@@ -420,8 +431,8 @@ class WorkflowEngine implements WorkflowEngineInterface
         }
 
         $this->logger->debugWithArgs(
-            self::LOG_PREFIX_STEP . 'Workflow #%d → Executing step "%s"',
-            $executionContext->getVariable('global.workflow.id'),
+            self::LOG_PREFIX_STEP . 'Executing step "%s"',
+            $workflowId,
             $node['data']['slug']
         );
 
@@ -442,7 +453,9 @@ class WorkflowEngine implements WorkflowEngineInterface
     {
         try {
             if (is_null($args)) {
-                $message = self::LOG_PREFIX_STEP . 'Scheduled step runner error, no args found';
+                $message = self::LOG_PREFIX . 'Scheduled step runner error, no args found';
+
+                $this->logger->error($message);
 
                 throw new \Exception(esc_html($message));
             }
@@ -469,7 +482,7 @@ class WorkflowEngine implements WorkflowEngineInterface
             } else {
                 // Old format, when the args were saved directly in the actionsscheduler_actions table.
                 if (! isset($args['step']['node']['data']['name'])) {
-                    $message = self::LOG_PREFIX_STEP . 'Scheduled step runner error, no step name found';
+                    $message = self::LOG_PREFIX . 'Scheduled step runner error, no step name found';
 
                     $this->logger->error($message);
 
@@ -505,7 +518,7 @@ class WorkflowEngine implements WorkflowEngineInterface
             $stepRunner->actionCallback($args, $originalArgs);
         } catch (Throwable $e) {
             $this->logger->errorWithArgs(
-                self::LOG_PREFIX_STEP . 'Scheduled step runner error: %s. File: %s:%d',
+                self::LOG_PREFIX . 'Scheduled step runner error: %s. File: %s:%d',
                 $e->getMessage(),
                 $e->getFile(),
                 $e->getLine()

@@ -11,6 +11,8 @@ use PublishPress\Future\Modules\Workflows\Interfaces\StepPostRelatedProcessorInt
 
 class Post implements StepProcessorInterface, StepPostRelatedProcessorInterface
 {
+    public const LOG_PREFIX = '[WorkflowStepsProcessorsPost:%d]: ';
+
     /**
      * @var HooksFacade
      */
@@ -31,6 +33,11 @@ class Post implements StepProcessorInterface, StepPostRelatedProcessorInterface
      */
     private $logger;
 
+    /**
+     * @var int
+     */
+    private $workflowId;
+
     public function __construct(
         HooksFacade $hooks,
         StepProcessorInterface $generalProcessor,
@@ -41,6 +48,12 @@ class Post implements StepProcessorInterface, StepPostRelatedProcessorInterface
         $this->generalProcessor = $generalProcessor;
         $this->executionContext = $executionContext;
         $this->logger = $logger;
+        $this->workflowId = $executionContext->getVariable('global.workflow.id');
+    }
+
+    private function getLogPrefix(): string
+    {
+        return sprintf(self::LOG_PREFIX, $this->workflowId);
     }
 
     public function setup(array $step, callable $setupCallback): void
@@ -49,8 +62,8 @@ class Post implements StepProcessorInterface, StepPostRelatedProcessorInterface
         $nodeSettings = $this->getNodeSettings($node);
 
         if (! isset($nodeSettings['post'])) {
-            $this->addErrorLogMessage(
-                'The "post" variable is not set in the node settings for step %s',
+            $this->logger->errorWithArgs(
+                $this->getLogPrefix() . 'The "post" variable is not set in the node settings for step %s',
                 $step['node']['data']['slug']
             );
 
@@ -58,8 +71,8 @@ class Post implements StepProcessorInterface, StepPostRelatedProcessorInterface
         }
 
         if (! isset($nodeSettings['post']['variable'])) {
-            $this->addErrorLogMessage(
-                'The post.variable variable is not set in the node settings for step %s',
+            $this->logger->errorWithArgs(
+                $this->getLogPrefix() . 'The "post.variable" variable is not set in the node settings for step %s',
                 $step['node']['data']['slug']
             );
 
@@ -70,8 +83,8 @@ class Post implements StepProcessorInterface, StepPostRelatedProcessorInterface
         $posts = $this->executionContext->getVariable($nodeSettings['post']['variable']);
 
         if (empty($posts)) {
-            $this->addDebugLogMessage(
-                'Step %s didn\'t find any posts, skipping',
+            $this->logger->debugWithArgs(
+                $this->getLogPrefix() . 'Step %s didn\'t find any posts, skipping',
                 $step['node']['data']['slug']
             );
 
@@ -83,8 +96,8 @@ class Post implements StepProcessorInterface, StepPostRelatedProcessorInterface
         }
 
         foreach ($posts as $post) {
-            $this->addDebugLogMessage(
-                'Processing post %s on step %s',
+            $this->logger->debugWithArgs(
+                $this->getLogPrefix() . 'Processing post %s on step %s',
                 $post,
                 $step['node']['data']['slug']
             );

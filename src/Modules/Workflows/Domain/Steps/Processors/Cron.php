@@ -22,6 +22,8 @@ class Cron implements AsyncStepProcessorInterface
 {
     use TimestampCalculator;
 
+    public const LOG_PREFIX = '[WorkflowStepsProcessorsCron:%d]: ';
+
     public const DEFAULT_REPEAT_UNTIL_TIMES = PHP_INT_MAX;
 
     public const WHEN_TO_RUN_NOW = 'now';
@@ -190,6 +192,11 @@ class Cron implements AsyncStepProcessorInterface
         $this->expirablePostModelFactory = $expirablePostModelFactory;
     }
 
+    private function getLogPrefix(): string
+    {
+        return sprintf(self::LOG_PREFIX, $this->workflowId);
+    }
+
     public function setup(array $step, callable $actionCallback): void
     {
         try {
@@ -228,7 +235,7 @@ class Cron implements AsyncStepProcessorInterface
 
             if ($this->shouldSkipScheduling()) {
                 $this->logger->debugWithArgs(
-                    'Skipping scheduling for step %s',
+                    $this->getLogPrefix() . 'Skipping scheduling for step %s',
                     $this->stepSlug
                 );
 
@@ -245,7 +252,7 @@ class Cron implements AsyncStepProcessorInterface
             $this->scheduleAction();
         } catch (Throwable $e) {
             $this->logger->errorWithArgs(
-                'Failed to schedule workflow step "%s". File: %s:%d',
+                $this->getLogPrefix() . 'Failed to schedule workflow step "%s". File: %s:%d',
                 $this->stepSlug,
                 $e->getFile(),
                 $e->getLine()
@@ -363,7 +370,7 @@ class Cron implements AsyncStepProcessorInterface
         );
 
         $this->logger->debugWithArgs(
-            'Step "%s" scheduled for immediate execution with async action ID: %d',
+            $this->getLogPrefix() . 'Step "%s" scheduled for immediate execution with async action ID: %d',
             $this->stepSlug,
             $scheduledActionId
         );
@@ -382,7 +389,7 @@ class Cron implements AsyncStepProcessorInterface
         );
 
         $this->logger->debugWithArgs(
-            'Step %s scheduled as a single action with ID %d',
+            $this->getLogPrefix() . 'Step %s scheduled as a single action with ID %d',
             $this->stepSlug,
             $scheduledActionId
         );
@@ -401,7 +408,7 @@ class Cron implements AsyncStepProcessorInterface
         // If the action is scheduled, we need to set the action ID in the scheduled step arguments
         if ($scheduledActionId <= 0) {
             $this->logger->debugWithArgs(
-                'Failed to schedule action for step %s - no action ID was generated',
+                $this->getLogPrefix() . 'Failed to schedule action for step %s - no action ID was generated',
                 $this->stepSlug
             );
 
@@ -411,7 +418,7 @@ class Cron implements AsyncStepProcessorInterface
         $this->saveScheduledStepData($scheduledActionId);
 
         $this->logger->debugWithArgs(
-            'Successfully stored workflow step arguments for step "%s" with scheduled action ID %d',
+            $this->getLogPrefix() . 'Successfully stored workflow step arguments for step "%s" with scheduled action ID %d',
             $this->stepSlug,
             $scheduledActionId
         );
@@ -425,7 +432,7 @@ class Cron implements AsyncStepProcessorInterface
 
         if ($interval <= 0) {
             $this->logger->debugWithArgs(
-                'Cannot schedule recurring step %s: Interval value must be greater than 0.',
+                $this->getLogPrefix() . 'Cannot schedule recurring step %s: Interval value must be greater than 0.',
                 $this->stepSlug
             );
 
@@ -443,7 +450,7 @@ class Cron implements AsyncStepProcessorInterface
         );
 
         $this->logger->debugWithArgs(
-            'Step "%s" scheduled as recurring action with ID %d',
+            $this->getLogPrefix() . 'Step "%s" scheduled as recurring action with ID %d',
             $this->stepSlug,
             $scheduledActionId
         );
@@ -491,7 +498,7 @@ class Cron implements AsyncStepProcessorInterface
     private function shouldSkipScheduling(): bool
     {
         if (empty($this->timestamp)) {
-            $this->logger->debugWithArgs('Detected empty timestamp: Cannot schedule step %s', $this->stepSlug);
+            $this->logger->debugWithArgs($this->getLogPrefix() . 'Detected empty timestamp: Cannot schedule step %s', $this->stepSlug);
 
             return true;
         }
@@ -499,7 +506,7 @@ class Cron implements AsyncStepProcessorInterface
         // If a repeating action action has finished, we should not schedule it again.
         if (! $this->isSingleAction && $this->isFinished) {
             $this->logger->debugWithArgs(
-                'Detected finished step: Step %s has already finished, skipping',
+                $this->getLogPrefix() . 'Detected finished step: Step %s has already finished, skipping',
                 $this->stepSlug
             );
 
@@ -528,7 +535,7 @@ class Cron implements AsyncStepProcessorInterface
 
         if ($shouldSkip) {
             $this->logger->debugWithArgs(
-                'Skipping scheduling for step "%s" due to filter',
+                $this->getLogPrefix() . 'Skipping scheduling for step "%s" due to filter',
                 $this->stepSlug
             );
         }
@@ -568,7 +575,7 @@ class Cron implements AsyncStepProcessorInterface
     public function compactArguments(string $stepSlug, string $stepId): array
     {
         $this->logger->debugWithArgs(
-            'Compacting step %s arguments',
+            $this->getLogPrefix() . 'Compacting step %s arguments',
             $stepSlug
         );
 
@@ -601,7 +608,7 @@ class Cron implements AsyncStepProcessorInterface
     public function expandArguments(array $compactArguments): array
     {
         $this->logger->debugWithArgs(
-            'Expanding step %s arguments',
+            $this->getLogPrefix() . 'Expanding step %s arguments',
             $compactArguments['step']['nodeId']
         );
 
@@ -654,7 +661,7 @@ class Cron implements AsyncStepProcessorInterface
         $this->cancelFutureRecurringActions($originalArgs['workflowId'], $originalArgs['stepId'], $originalArgs['actionUIDHash']);
 
         $this->logger->debugWithArgs(
-            'Step %s scheduled action cancelled',
+            $this->getLogPrefix() . 'Step %s scheduled action cancelled',
             $originalArgs['stepId']
         );
     }
@@ -673,7 +680,7 @@ class Cron implements AsyncStepProcessorInterface
         );
 
         $this->logger->debugWithArgs(
-            'Scheduled cleanup of future recurring actions for step %s',
+            $this->getLogPrefix() . 'Scheduled cleanup of future recurring actions for step %s',
             $stepId
         );
     }
@@ -687,7 +694,7 @@ class Cron implements AsyncStepProcessorInterface
         $this->markStepAsFinished($actionId);
 
         $this->logger->debugWithArgs(
-            'Successfully completed scheduled action ID %d',
+            $this->getLogPrefix() . 'Successfully completed scheduled action ID %d',
             $actionId
         );
     }
@@ -715,7 +722,7 @@ class Cron implements AsyncStepProcessorInterface
 
         if (! $workflowModel->isActive()) {
             $this->logger->debugWithArgs(
-                'Workflow "%s" (ID: %d) is inactive. Scheduled action "%s" will be cancelled.',
+                $this->getLogPrefix() . 'Workflow "%s" (ID: %d) is inactive. Scheduled action "%s" will be cancelled.',
                 $workflowModel->getTitle(),
                 $workflowId,
                 $actionId
@@ -736,7 +743,7 @@ class Cron implements AsyncStepProcessorInterface
 
         if ($isRecurrent && $isFinished) {
             $this->logger->debugWithArgs(
-                'Detected finished step: Step "%s" has already finished, cancelling scheduled action',
+                $this->getLogPrefix() . 'Detected finished step: Step "%s" has already finished, cancelling scheduled action',
                 $stepSlug
             );
 
@@ -772,7 +779,7 @@ class Cron implements AsyncStepProcessorInterface
                     $markAsCompletedAfterExecution = true;
 
                     $this->logger->debugWithArgs(
-                        'Step "%s" will be executed for the last time',
+                        $this->getLogPrefix() . 'Step "%s" will be executed for the last time',
                         $stepSlug,
                         $runLimit
                     );
@@ -783,7 +790,7 @@ class Cron implements AsyncStepProcessorInterface
                     $markAsCompletedAfterExecution = true;
 
                     $this->logger->debugWithArgs(
-                        'Step "%s" has reached the run limit of %d times and will not be executed again',
+                        $this->getLogPrefix() . 'Step "%s" has reached the run limit of %d times and will not be executed again',
                         $stepSlug,
                         $runLimit
                     );
@@ -793,7 +800,7 @@ class Cron implements AsyncStepProcessorInterface
 
         if ($shouldExecute) {
             $this->logger->debugWithArgs(
-                'Executing step "%s"',
+                $this->getLogPrefix() . 'Executing step "%s"',
                 $stepSlug
             );
 
@@ -808,7 +815,7 @@ class Cron implements AsyncStepProcessorInterface
 
         if ($markAsCompletedAfterExecution) {
             $this->logger->debugWithArgs(
-                'Scheduled action with ID "%d" has been successfully completed',
+                $this->getLogPrefix() . 'Scheduled action with ID "%d" has been successfully completed',
                 $actionId
             );
 

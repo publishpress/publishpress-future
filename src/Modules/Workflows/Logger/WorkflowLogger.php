@@ -15,13 +15,13 @@ use PublishPress\Future\Modules\Workflows\Interfaces\ExecutionContextInterface;
 
 /**
  * Decorator around LoggerInterface that automatically prepends the workflow
- * context prefix ([workflow.logger] → Workflow #X → ) to all log messages.
+ * context prefix ([WorkflowEngine:X]: ) to all log messages.
  *
  * @since 4.10.0
  */
 class WorkflowLogger implements LoggerInterface
 {
-    private const LOG_PREFIX = '[workflow.logger] Workflow #%d → ';
+    private const LOG_PREFIX = '[WorkflowEngine:%d]: ';
 
     /**
      * @var LoggerInterface
