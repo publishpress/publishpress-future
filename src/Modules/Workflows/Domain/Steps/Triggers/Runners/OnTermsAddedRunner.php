@@ -111,6 +111,12 @@ class OnTermsAddedRunner implements TriggerRunnerInterface
         $post = get_post($objectId);
 
         if (!$post) {
+            $this->logger->debugWithArgs(
+                'Trigger skipped: Post not found for step %s and post #%d.',
+                $this->stepSlug,
+                $objectId
+            );
+
             return;
         }
 
@@ -119,14 +125,22 @@ class OnTermsAddedRunner implements TriggerRunnerInterface
 
         if (empty($addedTermIds)) {
             // we should only execute this if post term is added
+            $this->logger->debugWithArgs(
+                'Trigger skipped: No terms added for step %s and post #%d.',
+                $this->stepSlug,
+                $objectId
+            );
+
             return;
         }
 
         if (!$this->matchesTermsFilter($addedTermIds, $taxonomy)) {
-            return;
-        }
+            $this->logger->debugWithArgs(
+                'Trigger skipped: Terms filter not met for step %s and post #%d.',
+                $this->stepSlug,
+                $objectId
+            );
 
-        if ($this->shouldAbortExecution($objectId)) {
             return;
         }
 
@@ -168,7 +182,23 @@ class OnTermsAddedRunner implements TriggerRunnerInterface
         ];
 
         if (!$this->postQueryValidator->validate($postQueryArgs)) {
+            $this->logger->debugWithArgs(
+                'Trigger skipped: Post query conditions not met for step %s and post #%d.',
+                $this->stepSlug,
+                $objectId
+            );
+
             return false;
+        }
+
+        if ($this->shouldAbortExecution($objectId)) {
+            $this->logger->debugWithArgs(
+                'Trigger skipped: Execution should be aborted for step %s and post #%d.',
+                $this->stepSlug,
+                $objectId
+            );
+
+            return;
         }
 
         $this->stepProcessor->executeSafelyWithErrorHandling(

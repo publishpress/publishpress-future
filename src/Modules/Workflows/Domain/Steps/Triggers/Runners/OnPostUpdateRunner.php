@@ -170,10 +170,6 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
             return;
         }
 
-        if ($this->shouldAbortExecution($postId)) {
-            return;
-        }
-
         $this->executionContext->setVariable($this->stepSlug, [
             'postBefore' => new PostResolver(
                 $postBefore,
@@ -207,6 +203,16 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
             );
 
             return false;
+        }
+
+        if ($this->shouldAbortExecution($postId)) {
+            $this->logger->debugWithArgs(
+                'Trigger skipped: Execution should be aborted for step %s and post #%d.',
+                $this->stepSlug,
+                $postId
+            );
+
+            return;
         }
 
         $this->stepProcessor->executeSafelyWithErrorHandling(

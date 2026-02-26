@@ -342,14 +342,14 @@ class ExecutionContext implements ExecutionContextInterface
         );
 
         // If the variable is the top level, check the cache.
-        if ($level === 0 && $this->hasNestedVariableInCache($variableName)) {
-            $this->debugWithArgs(
-                'Variable "%s" is in the cache, returning the value',
-                $variableName
-            );
+        // if ($level === 0 && $this->hasNestedVariableInCache($variableName)) {
+        //     $this->debugWithArgs(
+        //         'Variable "%s" is in the cache, returning the value',
+        //         $variableName
+        //     );
 
-            return $this->getNestedVariableValueFromCache($variableName);
-        }
+        //     return $this->getNestedVariableValueFromCache($variableName);
+        // }
 
         $variableNameParts = explode('.', $variableName);
 
@@ -398,15 +398,15 @@ class ExecutionContext implements ExecutionContextInterface
             $level + 1
         );
 
-        // If the variable is the top level, set the value in the cache.
-        if ($level === 0) {
-            $this->debugWithArgs(
-                'Setting variable "%s" in the cache',
-                $variableName
-            );
+        // // If the variable is the top level, set the value in the cache.
+        // if ($level === 0) {
+        //     $this->debugWithArgs(
+        //         'Setting variable "%s" in the cache',
+        //         $variableName
+        //     );
 
-            $this->setNestedVariableValueInCache($variableName, $value);
-        }
+        //     $this->setNestedVariableValueInCache($variableName, $value);
+        // }
 
         return $value;
     }
@@ -715,7 +715,7 @@ class ExecutionContext implements ExecutionContextInterface
 
     private function hasNestedVariableInCache(string $variableName)
     {
-        return isset($this->nestedVariablesCache[$variableName]);
+        return isset($this->nestedVariablesCache[$variableName]) && false;
     }
 
     private function getNestedVariableValueFromCache(string $variableName)

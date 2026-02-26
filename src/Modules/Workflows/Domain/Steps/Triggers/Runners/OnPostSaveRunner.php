@@ -133,16 +133,6 @@ class OnPostSaveRunner implements TriggerRunnerInterface
             return;
         }
 
-        if ($this->shouldAbortExecution($postId)) {
-            $this->logger->debugWithArgs(
-                'Trigger skipped: Execution should be aborted for step %s and post #%d.',
-                $this->stepSlug,
-                $postId
-            );
-
-            return;
-        }
-
         $this->executionContext->setVariable($this->stepSlug, [
             'post' => new PostResolver($post, $this->hooks, '', $this->expirablePostModelFactory),
             'postId' => new IntegerResolver($postId),
@@ -166,6 +156,16 @@ class OnPostSaveRunner implements TriggerRunnerInterface
             );
 
             return false;
+        }
+
+        if ($this->shouldAbortExecution($postId)) {
+            $this->logger->debugWithArgs(
+                'Trigger skipped: Execution should be aborted for step %s and post #%d.',
+                $this->stepSlug,
+                $postId
+            );
+
+            return;
         }
 
         $this->stepProcessor->executeSafelyWithErrorHandling(

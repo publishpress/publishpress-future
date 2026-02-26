@@ -102,19 +102,6 @@ class OnPostWorkflowEnableRunner implements TriggerRunnerInterface
 
     public function triggerCallback($postId, $workflowId)
     {
-        if ($this->shouldAbortExecution($postId, $workflowId)) {
-            return;
-        }
-
-        $this->stepProcessor->executeSafelyWithErrorHandling(
-            $this->step,
-            [$this, 'processTriggerExecution'],
-            $postId
-        );
-    }
-
-    public function processTriggerExecution($step, $postId)
-    {
         $post = get_post($postId);
 
         $postQueryArgs = [
@@ -134,14 +121,37 @@ class OnPostWorkflowEnableRunner implements TriggerRunnerInterface
         $this->executionContext->setVariable('global.trigger.postId', $postId);
 
         if (! $this->postQueryValidator->validate($postQueryArgs)) {
+            $this->logger->debugWithArgs(
+                'Trigger skipped: Post query conditions not met for step %s and post #%d.',
+                $this->stepSlug,
+                $postId
+            );
+
             return false;
         }
 
         $this->stepProcessor->setPostIdOnTriggerGlobalVariable($postId);
 
-        $this->logger->debugWithArgs('Trigger executed: %s for post #%d.', $this->stepSlug, $postId);
+        if ($this->shouldAbortExecution($postId, $workflowId)) {
+            $this->logger->debugWithArgs(
+                'Trigger skipped: Execution should be aborted for step %s and post #%d.',
+                $this->stepSlug,
+                $postId
+            );
+        }
 
+        $this->stepProcessor->executeSafelyWithErrorHandling(
+            $this->step,
+            [$this, 'processTriggerExecution'],
+            $postId
+        );
+    }
+
+    public function processTriggerExecution($step, $postId)
+    {
         $this->stepProcessor->triggerCallbackIsRunning();
+
+        $this->logger->debugWithArgs('Trigger executed: %s for post #%d.', $this->stepSlug, $postId);
 
         $this->hooks->doAction(
             HooksAbstract::ACTION_WORKFLOW_TRIGGER_EXECUTED,
