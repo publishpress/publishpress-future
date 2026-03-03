@@ -1,4 +1,6 @@
 name: VIP Scans and other code checks
+permissions:
+  contents: read
 on:
   push:
     branches:
