@@ -65,7 +65,8 @@
         "szepeviktor/phpstan-wordpress": "^1.3",
         "wp-cli/i18n-command": "^2.6",
         "wp-cli/wp-cli-bundle": "^2.10",
-        "wp-coding-standards/wpcs": "^3"
+        "wp-coding-standards/wpcs": "^3",
+        "publishpress/translations": "dev-development"
     },
     "scripts": {
         "term": "dev-workspace/run",
@@ -398,6 +399,13 @@
             "rm -f dev-workspace/.cache/.last_image_update_check",
             "bash dev-workspace/scripts/services-pull-images.sh"
         ],
+        "translate": "dev-workspace/run vendor/bin/publishpress-translate --languages=de_DE,fi,fil,id_ID,ja,ko_KR,nl_NL,ru_RU,yo",
+        "translate:dry-run": "dev-workspace/run vendor/bin/publishpress-translate --dry-run",
+        "translate:download": "dev-workspace/run vendor/bin/publishpress-translate --download",
+        "translate:upload": "dev-workspace/run vendor/bin/publishpress-translate --upload",
+        "translate:custom": "dev-workspace/run vendor/bin/publishpress-translate --languages",
+        "translate:force": "dev-workspace/run vendor/bin/publishpress-translate --force",
+        "translate:force-custom": "dev-workspace/run vendor/bin/publishpress-translate --force --languages",
         "config:phpcs": "phpcs --config-set installed_paths \"../../phpcsstandards/phpcsutils,../../phpcsstandards/phpcsextra,../../automattic/vipwpcs,../../phpcompatibility/php-compatibility,../../sirbrillig/phpcs-variable-analysis,../../publishpress/publishpress-phpcs-standards/standards,../../wp-coding-standards/wpcs\"",
         "post-install-cmd": [
             "@config:phpcs"
@@ -512,7 +520,14 @@
         "container:push": "Push wp and wpcli images to registry",
         "container:push:wp": "Push WordPress dev image to registry",
         "container:push:wpcli": "Push WP-CLI image to registry",
-        "container:pull": "Pull latest Docker images"
+        "container:pull": "Pull latest Docker images",
+        "translate": "Run PublishPress Translate commands",
+        "translate:dry-run": "Run PublishPress Translate commands with dry-run mode",
+        "translate:download": "Run PublishPress Translate commands to download translations",
+        "translate:upload": "Run PublishPress Translate commands to upload translations",
+        "translate:custom": "Run PublishPress Translate commands to manage custom languages",
+        "translate:force": "Run PublishPress Translate commands to force translations",
+        "translate:force-custom": "Run PublishPress Translate commands to force translations for custom languages"
     },
     "extra": {
         "plugin-slug": "post-expirator",

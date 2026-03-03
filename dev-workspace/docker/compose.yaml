@@ -8,6 +8,8 @@ services:
         image: ${TERMINAL_IMAGE_NAME}
         profiles: ["term"]
         container_name: ${CONTAINER_NAME}_env_term
+        env_file:
+            - ../../.env
         command: ["zsh"]
         stdin_open: true
         tty: true
