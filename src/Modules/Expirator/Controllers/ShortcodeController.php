@@ -170,7 +170,7 @@ class ShortcodeController implements InitializableInterface
         if (!empty($attrs['wrapper'])) {
             $output = sprintf(
                 '<%1$s class="%2$s">%3$s</%1$s>',
-                esc_html($attrs['wrapper']),
+                tag_escape($attrs['wrapper']),
                 esc_attr($attrs['class']),
                 $output
             );
