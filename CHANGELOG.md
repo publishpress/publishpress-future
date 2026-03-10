@@ -1,7 +1,7 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-[4.10.0] - 18 February, 2026
+[4.10.0] - 11 March, 2026
 
 - Added: Add new trigger: Post is created - PRO, (Issue #1146).
 - Added: Debug log view shows total logs displayed, session count, and log size (filter-aware; shows both filtered and total when filter applied).
