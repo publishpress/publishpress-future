@@ -1,0 +1,2 @@
+<?php
+return ['domain'=>'post-expirator','plural-forms'=>NULL,'language'=>'','project-id-version'=>'PublishPress Future 4.10.0','pot-creation-date'=>'2026-02-27T16:10:19+00:00','po-revision-date'=>'YEAR-MO-DA HO:MI+ZONE','x-generator'=>'WP-CLI 2.12.0','messages'=>[]];

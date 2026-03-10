@@ -4,52 +4,51 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PublishPress Future 4.10.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/project\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: none\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-02-27T16:10:19+00:00\n"
 "PO-Revision-Date: 2026-03-02 15:23+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: none\n"
+"Language: de-DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"Language: de-DE\n"
 
-#: post-expirator.php
+#. Plugin Name of the plugin
+#. Plugin Name of the plugin
 #: post-expirator.php
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:120
-#: src/Modules/Workflows/Models/StepTypesModel.php:99, fuzzy
-#. Plugin Name of the plugin
+#: src/Modules/Workflows/Models/StepTypesModel.php:99
 msgid "PublishPress Future"
 msgstr "PublishPress Future"
 
-#: post-expirator.php, fuzzy
 #. Plugin URI of the plugin
+#: post-expirator.php
 msgid "http://wordpress.org/extend/plugins/post-expirator/"
 msgstr "http://wordpress.org/extend/plugins/post-expirator/"
 
-#: post-expirator.php
 #. Description of the plugin
+#: post-expirator.php
 msgid ""
-"PublishPress Future allows you to schedule automatic changes to posts, "
-"pages and other content types."
+"PublishPress Future allows you to schedule automatic changes to posts, pages "
+"and other content types."
 msgstr ""
 "PublishPress Future ermöglicht es Ihnen, automatische Änderungen an "
 "Beiträgen, Seiten und anderen Inhaltstypen zu planen."
 
-#: post-expirator.php, fuzzy
 #. Author of the plugin
+#: post-expirator.php
 msgid "PublishPress"
 msgstr "PublishPress"
 
-#: post-expirator.php, fuzzy
 #. Author URI of the plugin
+#: post-expirator.php
 msgid "http://publishpress.com"
 msgstr "http://publishpress.com"
 
-#: legacy/classes/Display.class.php:113
-#: legacy/classes/Display.class.php:141
+#: legacy/classes/Display.class.php:113 legacy/classes/Display.class.php:141
 msgid "You do not have permission to configure PublishPress Future."
 msgstr "Sie haben keine Berechtigung, PublishPress Future zu konfigurieren."
 
@@ -90,22 +89,23 @@ msgid "The database schema was fixed."
 msgstr "Das Datenbankschema wurde repariert."
 
 #: legacy/classes/Display.class.php:328
-msgid "The database schema could not be fixed. Please, contact the support team."
+msgid ""
+"The database schema could not be fixed. Please, contact the support team."
 msgstr ""
 "Das Datenbankschema konnte nicht repariert werden. Bitte kontaktieren Sie "
 "das Support-Team."
 
-#: legacy/classes/Display.class.php:399
-#: legacy/classes/Display.class.php:453
+#: legacy/classes/Display.class.php:399 legacy/classes/Display.class.php:453
 #: legacy/classes/Display.class.php:475
 msgid "Saved Options!"
 msgstr "Gespeicherte Optionen!"
 
-#: legacy/classes/Display.class.php:567
 #. translators: %1$s is the plugin name, %2$s is the star rating markup
+#: legacy/classes/Display.class.php:567
 #, php-format
 msgid "If you like %1$s, please leave us a %2$s rating. Thank you!"
-msgstr "Wenn Sie %1$s mögen, hinterlassen Sie uns bitte eine %2$s Bewertung. Danke!"
+msgstr ""
+"Wenn Sie %1$s mögen, hinterlassen Sie uns bitte eine %2$s Bewertung. Danke!"
 
 #: legacy/classes/Display.class.php:582
 msgid "About PublishPress Future"
@@ -135,18 +135,15 @@ msgstr "Kontakt"
 msgid "No taxonomies found"
 msgstr "Keine Taxonomien gefunden"
 
-#: services.php:150
-#: src/Modules/Settings/SettingsFacade.php:122
+#: services.php:150 src/Modules/Settings/SettingsFacade.php:122
 msgid "l F jS, Y"
 msgstr "l. F jS, Y"
 
-#: services.php:154
-#: src/Modules/Settings/SettingsFacade.php:123, fuzzy
+#: services.php:154 src/Modules/Settings/SettingsFacade.php:123
 msgid "g:ia"
 msgstr "g:ia"
 
-#: services.php:155
-#: src/Modules/Settings/SettingsFacade.php:124
+#: services.php:155 src/Modules/Settings/SettingsFacade.php:124
 msgid "Post expires at EXPIRATIONTIME on ACTIONDATE"
 msgstr "Der Beitrag läuft am EXPIRATIONTIME am ACTIONDATE ab"
 
@@ -186,24 +183,25 @@ msgstr "Importieren"
 #: src/Modules/Backup/Controllers/BackupRestApi.php:142
 msgid "Failed to get workflows. Check the logs for more details."
 msgstr ""
-"Fehler beim Abrufen der Workflows. Überprüfen Sie die Protokolle für "
-"weitere Details."
+"Fehler beim Abrufen der Workflows. Überprüfen Sie die Protokolle für weitere "
+"Details."
 
 #: src/Modules/Backup/Controllers/BackupRestApi.php:194
 msgid "Failed to export the file. Check the logs for more details."
 msgstr ""
-"Fehler beim Exportieren der Datei. Überprüfen Sie die Protokolle für "
-"weitere Details."
+"Fehler beim Exportieren der Datei. Überprüfen Sie die Protokolle für weitere "
+"Details."
 
 #: src/Modules/Backup/Controllers/BackupRestApi.php:363
 msgid "Failed to import the file. Check the logs for more details."
 msgstr ""
-"Fehler beim Importieren der Datei. Überprüfen Sie die Protokolle für "
-"weitere Details."
+"Fehler beim Importieren der Datei. Überprüfen Sie die Protokolle für weitere "
+"Details."
 
 #: src/Modules/Debug/Controllers/Controller.php:106
 msgid "You do not have sufficient permissions to access this page."
-msgstr "Sie haben nicht genügend Berechtigungen, um auf diese Seite zuzugreifen."
+msgstr ""
+"Sie haben nicht genügend Berechtigungen, um auf diese Seite zuzugreifen."
 
 #: src/Modules/Debug/Controllers/Controller.php:111
 msgid "Invalid nonce."
@@ -211,29 +209,26 @@ msgstr "Ungültiger Nonce."
 
 #: src/Modules/Debug/Migrations/V04905DebugLogRequestId.php:80
 msgid ""
-"Add request_id and trigger_activated columns to debug log table after "
-"v4.10.0"
+"Add request_id and trigger_activated columns to debug log table after v4.10.0"
 msgstr ""
-"Fügen Sie die Spalten request_id und trigger_activated zur "
-"Debug-Protokolttabelle nach v4.10.0 hinzu"
+"Fügen Sie die Spalten request_id und trigger_activated zur Debug-"
+"Protokolttabelle nach v4.10.0 hinzu"
 
 #: src/Modules/Debug/Migrations/V04906DebugLogTimestampMilliseconds.php:79
 msgid "Add millisecond precision to debug log timestamp column (v4.10.0)"
 msgstr ""
-"Fügen Sie der Debug-Protokoll-Zeitstempelspalte Millisekundenpräzision "
-"hinzu (v4.10.0)"
+"Fügen Sie der Debug-Protokoll-Zeitstempelspalte Millisekundenpräzision hinzu "
+"(v4.10.0)"
 
 #: src/Modules/Debug/Views/raw-debug-log.html.php:39
 #: src/Modules/Settings/Controllers/Controller.php:214
-#: src/Views/menu-debug-log.php:113
-#: src/Views/menu-debug-log.php:148
+#: src/Views/menu-debug-log.php:113 src/Views/menu-debug-log.php:148
 msgid "Debugging table is currently empty."
 msgstr "Die Debugging-Tabelle ist derzeit leer."
 
 #: src/Modules/Debug/Views/raw-debug-log.html.php:40
 #: src/Modules/Settings/Controllers/Controller.php:215
-#: src/Views/menu-debug-log.php:115
-#: src/Views/menu-debug-log.php:150
+#: src/Views/menu-debug-log.php:115 src/Views/menu-debug-log.php:150
 msgid "No results match the current filter."
 msgstr "Keine Ergebnisse entsprechen dem aktuellen Filter."
 
@@ -254,8 +249,7 @@ msgstr "Taxonomie"
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:131
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:132
 #: src/Modules/Expirator/Controllers/SettingsController.php:544
-#: src/Views/menu-admin.php:44
-#: src/Views/tabs-future-actions.php:51
+#: src/Views/menu-admin.php:44 src/Views/tabs-future-actions.php:51
 msgid "Future Actions"
 msgstr "Zukünftige Aktionen"
 
@@ -306,20 +300,20 @@ msgstr "Kalender anzeigen"
 msgid "Hide Calendar"
 msgstr "Kalender ausblenden"
 
+#. translators: the text between {} is the link to the settings page.
+#. translators: the text between {{}} is the link to the settings page.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:182
 #: src/Modules/Expirator/Controllers/BulkEditController.php:222
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:423
 #: src/Modules/Expirator/Controllers/QuickEditController.php:352
-#. translators: the text between {} is the link to the settings page.
-#. translators: the text between {{}} is the link to the settings page.
 msgid "Timezone is controlled by the {WordPress Settings}."
 msgstr "Die Zeitzone wird von den {WordPress-Einstellungen} gesteuert."
 
+#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:189
 #: src/Modules/Expirator/Controllers/BulkEditController.php:229
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:430
 #: src/Modules/Expirator/Controllers/QuickEditController.php:356
-#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "No %s found."
 msgstr "Keine %s gefunden."
@@ -333,38 +327,38 @@ msgstr ""
 "Sie müssen eine Taxonomie diesem Beitragstyp zuweisen, um diese Funktion zu "
 "nutzen."
 
+#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:197
 #: src/Modules/Expirator/Controllers/BulkEditController.php:243
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:438
 #: src/Modules/Expirator/Controllers/QuickEditController.php:361
-#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "New %s"
 msgstr "Neue %s"
 
+#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:199
 #: src/Modules/Expirator/Controllers/BulkEditController.php:245
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:440
 #: src/Modules/Expirator/Controllers/QuickEditController.php:363
-#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "%s to remove"
 msgstr "%s zum Entfernen"
 
+#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:201
 #: src/Modules/Expirator/Controllers/BulkEditController.php:247
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:442
 #: src/Modules/Expirator/Controllers/QuickEditController.php:365
-#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "%s to add"
 msgstr "%s zum Hinzufügen"
 
+#. translators: %s is the name of the taxonomy in singular form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:204
 #: src/Modules/Expirator/Controllers/BulkEditController.php:250
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:445
 #: src/Modules/Expirator/Controllers/QuickEditController.php:367
-#. translators: %s is the name of the taxonomy in singular form.
 #, php-format
 msgid "Search for %s"
 msgstr "Nach %s suchen"
@@ -390,12 +384,12 @@ msgstr "Wählen Sie ein Datum"
 msgid "Date cannot be in the past"
 msgstr "Das Datum darf nicht in der Vergangenheit liegen"
 
+#. translators: %s is the name of the taxonomy in singular form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:212
 #: src/Modules/Expirator/Controllers/BulkEditController.php:258
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:453
 #: src/Modules/Expirator/Controllers/QuickEditController.php:373
 #: src/Modules/Expirator/Controllers/SettingsController.php:298
-#. translators: %s is the name of the taxonomy in singular form.
 #, php-format
 msgid "Please select one or more %s"
 msgstr "Bitte wählen Sie eine oder mehrere %s aus"
@@ -470,6 +464,7 @@ msgstr "Upgrade auf Pro"
 msgid "Action Workflows"
 msgstr "Aktions-Workflows"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: src/Modules/Expirator/Controllers/PluginsListController.php:70
 #: src/Modules/Expirator/Controllers/SettingsController.php:132
 #: src/Modules/Expirator/Controllers/SettingsController.php:133
@@ -477,7 +472,6 @@ msgstr "Aktions-Workflows"
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostWorkflowEnable.php:67
 #: src/Views/tabs-settings.php:47
 #: assets/jsx/workflow-editor/components/settings-sidebar/settings-sidebar.jsx:54
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Settings"
 msgstr "Einstellungen"
 
@@ -515,7 +509,7 @@ msgstr "Protokollformat"
 msgid "List"
 msgstr "Liste"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:236, fuzzy
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:236
 msgid "Popup"
 msgstr "Popup"
 
@@ -532,9 +526,9 @@ msgstr "Ausgeführte Aktion für: %s (ID: %d)"
 msgid "Executed scheduled action"
 msgstr "Geplante Aktion ausgeführt"
 
+#. translators: %1$s is the link to the PHP strtotime function documentation, %2$s and %3$s are the opening and closing code tags. Please, do not translate the date format text, since PHP will not be able to calculate using non-english terms.
 #: src/Modules/Expirator/Controllers/SettingsController.php:252
 #: src/Views/menu-general.php:41
-#. translators: %1$s is the link to the PHP strtotime function documentation, %2$s and %3$s are the opening and closing code tags. Please, do not translate the date format text, since PHP will not be able to calculate using non-english terms.
 #, php-format
 msgid ""
 "Set the offset to use for the default action date and time. For information "
@@ -581,7 +575,8 @@ msgstr "Wählen Sie die Standardaktion für den Beitragstyp aus."
 #: src/Modules/Expirator/Controllers/SettingsController.php:274
 #: src/Views/taxonomy-field.php:14
 msgid "Select the taxonomy to be used for actions."
-msgstr "Wählen Sie die Taxonomie aus, die für die Aktionen verwendet werden soll."
+msgstr ""
+"Wählen Sie die Taxonomie aus, die für die Aktionen verwendet werden soll."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:278
 msgid "Automatically create actions"
@@ -592,8 +587,8 @@ msgid ""
 "This will automatically create an action for new posts, using the default "
 "settings on this screen"
 msgstr ""
-"Dies wird automatisch eine Aktion für neue Beiträge erstellen, basierend "
-"auf den Standardeinstellungen auf diesem Bildschirm"
+"Dies wird automatisch eine Aktion für neue Beiträge erstellen, basierend auf "
+"den Standardeinstellungen auf diesem Bildschirm"
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:281
 msgid ""
@@ -604,8 +599,7 @@ msgstr ""
 "nicht verfügbar."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:282
-#: src/Views/menu-notifications.php:116
-#: src/Views/menu-notifications.php:169
+#: src/Views/menu-notifications.php:116 src/Views/menu-notifications.php:169
 msgid "Who to Notify"
 msgstr "Wer benachrichtigt werden soll"
 
@@ -697,7 +691,8 @@ msgstr ""
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:309
 msgid "This is a Pro feature. Upgrade to unlock this functionality."
-msgstr "Dies ist eine Pro-Funktion. Upgrade, um diese Funktionalität freizuschalten."
+msgstr ""
+"Dies ist eine Pro-Funktion. Upgrade, um diese Funktionalität freizuschalten."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:459
 #: src/Modules/Settings/Controllers/Controller.php:297
@@ -725,11 +720,11 @@ msgstr "Die Länge der Spaltenargumente wurde nicht auf 1000 aktualisiert."
 msgid "Status didn't change."
 msgstr "Status hat sich nicht geändert."
 
+#. translators: 1: old post status, 2: new post status
 #: src/Modules/Expirator/ExpirationActions/ChangePostStatus.php:62
 #: src/Modules/Expirator/ExpirationActions/PostStatusToDraft.php:60
 #: src/Modules/Expirator/ExpirationActions/PostStatusToPrivate.php:60
 #: src/Modules/Expirator/ExpirationActions/PostStatusToTrash.php:60
-#. translators: 1: old post status, 2: new post status
 #, php-format
 msgid "Status has been successfully changed from \"%1$s\" to \"%2$s\"."
 msgstr "Der Status wurde erfolgreich von \"%1$s\" auf \"%2$s\" geändert."
@@ -738,14 +733,14 @@ msgstr "Der Status wurde erfolgreich von \"%1$s\" auf \"%2$s\" geändert."
 msgid "Change status"
 msgstr "Status ändern"
 
-#: src/Modules/Expirator/ExpirationActions/DeletePost.php:47
 #. translators: %s: post type singular label
+#: src/Modules/Expirator/ExpirationActions/DeletePost.php:47
 #, php-format
 msgid "%s was not deleted."
 msgstr "%s wurde nicht gelöscht."
 
-#: src/Modules/Expirator/ExpirationActions/DeletePost.php:54
 #. translators: %s: post type singular label
+#: src/Modules/Expirator/ExpirationActions/DeletePost.php:54
 #, php-format
 msgid "%s has been successfully deleted."
 msgstr "%s wurde erfolgreich gelöscht."
@@ -757,14 +752,14 @@ msgstr "%s wurde erfolgreich gelöscht."
 msgid "Delete"
 msgstr "Löschen"
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:65
 #. translators: %s is the post type singular label
+#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:65
 #, php-format
 msgid "No terms were added to the %s."
 msgstr "Es wurden keine Begriffe zum %s hinzugefügt."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:77
 #. translators: %1$s is the taxonomy label, %2$s is the post type singular label, %3$s is the list of terms added, %4$s is the list of terms on the post
+#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:77
 #, php-format
 msgid ""
 "The following terms (%1$s) were added to the %2$s: \"%3$s\". The full list "
@@ -773,55 +768,55 @@ msgstr ""
 "Die folgenden Begriffe (%1$s) wurden zum %2$s hinzugefügt: \"%3$s\". Die "
 "vollständige Liste der Begriffe auf dem Beitrag ist: %4$s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:120
 #. translators: %s is the taxonomy name (plural)
+#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:120
 #, php-format
 msgid "Add extra %s"
 msgstr "Zusätzlich %s hinzufügen"
 
+#. translators: %s is the post type singular label
 #: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:56
 #: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:56
-#. translators: %s is the post type singular label
 #, php-format
 msgid "No terms were removed from the %s."
 msgstr "Es wurden keine Begriffe vom %s entfernt."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:67
 #. translators: %1$s is the taxonomy name, %2$s is the post type singular label, %3$s is the removed terms list, %4$s is the updated terms list
+#: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:67
 #, php-format
 msgid ""
-"The following terms (%1$s) were removed from the %2$s: %3$s. The new list "
-"of terms on the post is: %4$s."
+"The following terms (%1$s) were removed from the %2$s: %3$s. The new list of "
+"terms on the post is: %4$s."
 msgstr ""
-"Die folgenden Begriffe (%1$s) wurden vom %2$s entfernt: %3$s. Die neue "
-"Liste der Begriffe auf dem Beitrag ist: %4$s."
+"Die folgenden Begriffe (%1$s) wurden vom %2$s entfernt: %3$s. Die neue Liste "
+"der Begriffe auf dem Beitrag ist: %4$s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:112
 #. translators: %s is the taxonomy name (plural)
+#: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:112
 #, php-format
 msgid "Remove selected %s"
 msgstr "Ausgewählte %s entfernen"
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:67
 #. translators: %1$s is the taxonomy name, %2$s is the post type singular label, %3$s is the list of term names
+#: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:67
 #, php-format
 msgid "The following terms (%1$s) were removed from the %2$s: %3$s."
 msgstr "Die folgenden Begriffe (%1$s) wurden vom %2$s entfernt: %3$s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:106
 #. translators: %s is the taxonomy name (plural)
+#: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:106
 #, php-format
 msgid "Remove all %s"
 msgstr "Alle %s entfernen"
 
-#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:58
 #. translators: %s is the post type singular label
+#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:58
 #, php-format
 msgid "No terms were changed on the %s."
 msgstr "Es wurden keine Begriffe im %s geändert."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:69
 #. translators: 1: taxonomy name, 2: post type singular label, 3: updated terms, 4: original terms
+#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:69
 #, php-format
 msgid ""
 "The following terms (%1$s) were set to the %2$s: \"%3$s\". The old list of "
@@ -830,29 +825,29 @@ msgstr ""
 "Die folgenden Begriffe (%1$s) wurden auf den %2$s gesetzt: \"%3$s\". Die "
 "alte Liste der Begriffe auf dem Beitrag war: %4$s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:109
 #. translators: %s is the taxonomy name (plural)
+#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:109
 #, php-format
 msgid "Replace all %s"
 msgstr "Alle %s ersetzen"
 
+#. translators: %s: new post status
 #: src/Modules/Expirator/ExpirationActions/PostStatusToDraft.php:90
 #: src/Modules/Expirator/ExpirationActions/PostStatusToPrivate.php:90
 #: src/Modules/Expirator/ExpirationActions/PostStatusToTrash.php:90
-#. translators: %s: new post status
 #, php-format
 msgid "Change status to %s"
 msgstr "Status auf %s ändern"
 
+#. translators: %s: post type singular label
 #: src/Modules/Expirator/ExpirationActions/StickPost.php:46
 #: src/Modules/Expirator/ExpirationActions/UnstickPost.php:46
-#. translators: %s: post type singular label
 #, php-format
 msgid "%s didn't change."
 msgstr "%s hat sich nicht geändert."
 
-#: src/Modules/Expirator/ExpirationActions/StickPost.php:53
 #. translators: %s: post type singular label
+#: src/Modules/Expirator/ExpirationActions/StickPost.php:53
 #, php-format
 msgid "%s has been added to stickies list."
 msgstr "%s wurde zur Liste der Haftnotizen hinzugefügt."
@@ -861,8 +856,8 @@ msgstr "%s wurde zur Liste der Haftnotizen hinzugefügt."
 msgid "Stick"
 msgstr "Festhalten"
 
-#: src/Modules/Expirator/ExpirationActions/UnstickPost.php:53
 #. translators: %s: post type singular label
+#: src/Modules/Expirator/ExpirationActions/UnstickPost.php:53
 #, php-format
 msgid "%s has been removed from stickies list."
 msgstr "%s wurde von der Liste der Haftnotizen entfernt."
@@ -907,26 +902,26 @@ msgstr "E-Mail gesendet."
 msgid "Email not sent."
 msgstr "E-Mail nicht gesendet."
 
-#: src/Modules/Expirator/Models/ExpirablePostModel.php:644
 #. translators: %1$s: post title placeholder, %2$s: notification text, %3$s: action date placeholder, %4$s: post link placeholder
+#: src/Modules/Expirator/Models/ExpirablePostModel.php:644
 #, php-format
 msgid "%1$s. %2$s on %3$s. The post link is %4$s"
 msgstr "%1$s. %2$s am %3$s. Der Beitraglink ist %4$s"
 
-#: src/Modules/Expirator/Models/ExpirablePostModel.php:662
 #. translators: %s is the post title
+#: src/Modules/Expirator/Models/ExpirablePostModel.php:662
 #, php-format
 msgid "Future Action Complete \"%s\""
 msgstr "Zukünftige Aktion abgeschlossen \"%s\""
 
-#: src/Modules/Expirator/Models/ExpirablePostModel.php:666
 #. translators: 1: is the blog name, 2: the email subject
+#: src/Modules/Expirator/Models/ExpirablePostModel.php:666
 #, fuzzy, php-format
 msgid "[%1$s] %2$s"
 msgstr "[%1$s] %2$s"
 
-#: src/Modules/Expirator/Models/PostTypeDefaultDataModel.php:156
 #. translators: %s is the date/time offset and %s is the post type.
+#: src/Modules/Expirator/Models/PostTypeDefaultDataModel.php:156
 #, php-format
 msgid ""
 "Invalid date/time offset \"%s\" for post type \"%s\". Please ensure you use "
@@ -934,11 +929,11 @@ msgid ""
 "week\"."
 msgstr ""
 "Ungültiger Datum/Uhrzeit-Versatz \"%s\" für den Beitragstyp \"%s\". Bitte "
-"stellen Sie sicher, dass Sie nur englische Begriffe für den "
-"Datum/Uhrzeit-Versatz verwenden, wie \"3 Monate\" oder \"1 Woche\"."
+"stellen Sie sicher, dass Sie nur englische Begriffe für den Datum/Uhrzeit-"
+"Versatz verwenden, wie \"3 Monate\" oder \"1 Woche\"."
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:53
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:234, fuzzy
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:234
 msgid "Status"
 msgstr "Status"
 
@@ -970,66 +965,67 @@ msgid "Cancel"
 msgstr "Abbrechen"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:77
-msgid "Cancel the action. This will prevent the action from running in the future"
+msgid ""
+"Cancel the action. This will prevent the action from running in the future"
 msgstr ""
-"Die Aktion abbrechen. Dies verhindert, dass die Aktion in Zukunft "
-"ausgeführt wird"
+"Die Aktion abbrechen. Dies verhindert, dass die Aktion in Zukunft ausgeführt "
+"wird"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:88
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:478
 msgid "Run"
 msgstr "Ausführen"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:96
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:96
 #, php-format
 msgid "%s year"
 msgid_plural "%s years"
 msgstr[0] "%s Jahr"
 msgstr[1] "%s Jahre"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:101
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:101
 #, php-format
 msgid "%s month"
 msgid_plural "%s months"
 msgstr[0] "%s Monat"
 msgstr[1] "%s Monate"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:106
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:106
 #, php-format
 msgid "%s week"
 msgid_plural "%s weeks"
 msgstr[0] "%s Woche"
 msgstr[1] "%s Wochen"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:111
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:111
 #, php-format
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] "%s Tag"
 msgstr[1] "%s Tage"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:116
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:116
 #, php-format
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] "%s Stunde"
 msgstr[1] "%s Stunden"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:121
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:121
 #, php-format
 msgid "%s minute"
 msgid_plural "%s minutes"
 msgstr[0] "%s Minute"
 msgstr[1] "%s Minuten"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:126
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:126
 #, php-format
 msgid "%s second"
 msgid_plural "%s seconds"
@@ -1081,20 +1077,20 @@ msgstr "Abgeschlossen"
 msgid "Process the action now"
 msgstr "Führen Sie die Aktion jetzt aus"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:524
 #. translators: %1$s: post type label, %2$d: post ID, %3$s: post link tag start, %4$s: post title, %5$s: post link tag end
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:524
 #, fuzzy, php-format
 msgid "%1$s: [%2$d] %3$s%4$s%5$s"
 msgstr "%1$s: [%2$d] %3$s%4$s%5$s"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:559
 #. translators: %s is the new status
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:559
 #, php-format
 msgid "New Status: %s"
 msgstr "Neuer Status: %s"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:567
 #. translators: %s is the list of terms
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:567
 #, php-format
 msgid "Terms: %s"
 msgstr "Begriffe: %s"
@@ -1107,7 +1103,7 @@ msgstr "Protokoll anzeigen"
 msgid "Action: "
 msgstr "Aktion: "
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:687, fuzzy
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:687
 msgid "Status: "
 msgstr "Status: "
 
@@ -1143,14 +1139,14 @@ msgstr "Nachricht"
 msgid "Async"
 msgstr "Asynchron"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:765
 #. translators: %s is the date interval in human readable format in the past
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:765
 #, php-format
 msgid " (%s ago)"
 msgstr " (%s vor)"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:771
 #. translators: %s is the date interval in human readable format in the present or future
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:771
 #, fuzzy, php-format
 msgid " (%s)"
 msgstr " (%s)"
@@ -1159,8 +1155,8 @@ msgstr " (%s)"
 msgid "Now!"
 msgstr "Jetzt!"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:845
 #. translators: %s: time interval
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:845
 #, php-format
 msgid "Every %s"
 msgstr "Jede %s"
@@ -1242,19 +1238,19 @@ msgid ""
 "workflow steps will be preserved before automatic removal."
 msgstr ""
 "Die Dauer in Tagen, für die abgeschlossene, fehlgeschlagene und stornierte "
-"geplante Workflow-Schritte aufbewahrt werden, bevor sie automatisch "
-"entfernt werden."
+"geplante Workflow-Schritte aufbewahrt werden, bevor sie automatisch entfernt "
+"werden."
 
 #: src/Modules/Settings/Controllers/Controller.php:273
 msgid "days"
 msgstr "Tage"
 
-#: src/Modules/VersionNotices/Module.php:95
 #. translators: %1$s and %2$s are placeholders for the link to by the Pro version
+#: src/Modules/VersionNotices/Module.php:95
 #, php-format
 msgid ""
-"You're using PublishPress Future Free. The Pro version has more features "
-"and support. %1$sUpgrade to Pro%2$s"
+"You're using PublishPress Future Free. The Pro version has more features and "
+"support. %1$sUpgrade to Pro%2$s"
 msgstr ""
 "Sie verwenden PublishPress Future Free. Die Pro-Version hat mehr Funktionen "
 "und Unterstützung. %1$sUpgrade auf Pro%2$s"
@@ -1267,8 +1263,8 @@ msgstr "Workflow manuell auslösen"
 msgid "Check and warn about past-due actions"
 msgstr "Überfällige Aktionen überprüfen und warnen"
 
-#: src/Modules/Workflows/Controllers/PastDueActions.php:148
 #. translators: %s is the admin URL to the scheduled actions page
+#: src/Modules/Workflows/Controllers/PastDueActions.php:148
 #, php-format
 msgid ""
 "You have past-due scheduled actions in PublishPress Future.\n"
@@ -1396,8 +1392,7 @@ msgstr ""
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:44
 msgid "Unpublish and change category after 15 days"
 msgstr ""
-"Entfernen Sie die Veröffentlichung und ändern Sie die Kategorie nach 15 "
-"Tagen"
+"Entfernen Sie die Veröffentlichung und ändern Sie die Kategorie nach 15 Tagen"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:45
 msgid "Move the post to draft and add a category after 15 days."
@@ -1407,7 +1402,8 @@ msgstr ""
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:49
 msgid "Add extra categories one month after publishing"
-msgstr "Fügen Sie einen Monat nach der Veröffentlichung zusätzliche Kategorien hinzu"
+msgstr ""
+"Fügen Sie einen Monat nach der Veröffentlichung zusätzliche Kategorien hinzu"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:50
 msgid "Sample workflow to add extra categories one month after publishing"
@@ -1537,7 +1533,7 @@ msgid "Schedule step is required for this workflow."
 msgstr "Ein Schritt ist für diesen Workflow erforderlich."
 
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:356
-#: src/Modules/Workflows/Controllers/ScheduledActions.php:406, fuzzy
+#: src/Modules/Workflows/Controllers/ScheduledActions.php:406
 msgid "Workflow:"
 msgstr "Workflow:"
 
@@ -1546,11 +1542,11 @@ msgid "Step:"
 msgstr "Schritt:"
 
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:410
-#: src/Modules/Workflows/Controllers/ScheduledActions.php:445, fuzzy
+#: src/Modules/Workflows/Controllers/ScheduledActions.php:445
 msgid "Trigger: "
 msgstr "Trigger: "
 
-#: src/Modules/Workflows/Controllers/ScheduledActions.php:438, fuzzy
+#: src/Modules/Workflows/Controllers/ScheduledActions.php:438
 msgid "Post:"
 msgstr "Post:"
 
@@ -1562,20 +1558,20 @@ msgstr "Schritte:"
 msgid "Workflow recurring scheduled action"
 msgstr "Workflow wiederkehrende geplante Aktion"
 
-#: src/Modules/Workflows/Controllers/ScheduledActions.php:508
 #. translators: %1$s is the recurrence, %2$s is the date
+#: src/Modules/Workflows/Controllers/ScheduledActions.php:508
 #, php-format
 msgid "%1$s until %2$s"
 msgstr "%1$s bis %2$s"
 
-#: src/Modules/Workflows/Controllers/ScheduledActions.php:518
 #. translators: %1$s is the recurrence, %2$d is the repeat times
+#: src/Modules/Workflows/Controllers/ScheduledActions.php:518
 #, php-format
 msgid "%1$s for %2$d times"
 msgstr "%1$s für %2$d Mal"
 
-#: src/Modules/Workflows/Controllers/ScheduledActions.php:528
 #. translators: %1$s is the executed times, %2$d is the total repeat times
+#: src/Modules/Workflows/Controllers/ScheduledActions.php:528
 #, fuzzy, php-format
 msgid "[%1$s/%2$d]"
 msgstr "[%1$s/%2$d]"
@@ -1602,8 +1598,8 @@ msgid ""
 "You're free to create very distinct workflows in your site, according to "
 "your needs."
 msgstr ""
-"Du bist frei, sehr unterschiedliche Workflows auf deiner Seite zu "
-"erstellen, je nach deinen Bedürfnissen."
+"Du bist frei, sehr unterschiedliche Workflows auf deiner Seite zu erstellen, "
+"je nach deinen Bedürfnissen."
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:274
 msgid "A basic workflow"
@@ -1648,8 +1644,8 @@ msgid ""
 "Click on a step to customize it. You can change the step's settings in the "
 "right sidebar."
 msgstr ""
-"Klicke auf einen Schritt, um ihn anzupassen. Du kannst die Einstellungen "
-"des Schrittes in der rechten Seitenleiste ändern."
+"Klicke auf einen Schritt, um ihn anzupassen. Du kannst die Einstellungen des "
+"Schrittes in der rechten Seitenleiste ändern."
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:294
 msgid "Workflow validation"
@@ -1687,13 +1683,13 @@ msgstr ""
 "Wenn du Fragen hast oder Hilfe benötigst, klicke auf die Hilfetaste in der "
 "oberen rechten Ecke, um auf die Unterstützungsressourcen zuzugreifen."
 
+#. translators: Blocks tab title in the block inserter.
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:236
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:19
-#. translators: Blocks tab title in the block inserter.
 msgid "Triggers"
 msgstr "Trigger"
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:280, fuzzy
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:280
 msgid "—"
 msgstr "—"
 
@@ -1772,8 +1768,8 @@ msgstr "Aktions-Workflow-Editor"
 msgid "%s updated."
 msgstr "%s aktualisiert."
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:838
 #. translators: 1: Post type singular label, 2: Revision title
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:838
 #, php-format
 msgid "%1$s restored to revision from %2$s"
 msgstr "%1$s auf Revision von %2$s wiederhergestellt"
@@ -1793,8 +1789,8 @@ msgstr "%s gespeichert."
 msgid "%s submitted."
 msgstr "%s eingereicht."
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:857
 #. translators: 1: Post type singular label, 2: Scheduled date
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:857
 #, php-format
 msgid "%1$s scheduled for: <strong>%2$s</strong>."
 msgstr "%1$s geplant für: <strong>%2$s</strong>."
@@ -1873,7 +1869,7 @@ msgstr "Wählen Sie den Beitrag aus, dem Meta-Daten hinzugefügt werden sollen."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:85
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeletePostMeta.php:85
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePostMeta.php:85, fuzzy
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePostMeta.php:85
 msgid "Meta"
 msgstr "Meta"
 
@@ -1890,8 +1886,8 @@ msgid ""
 "If enabled, only one meta value will be allowed. If disabled, multiple meta "
 "values can be added as an array."
 msgstr ""
-"Wenn aktiviert, wird nur ein Metawert erlaubt sein. Wenn deaktiviert, "
-"können mehrere Metawerte als Array hinzugefügt werden."
+"Wenn aktiviert, wird nur ein Metawert erlaubt sein. Wenn deaktiviert, können "
+"mehrere Metawerte als Array hinzugefügt werden."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:98
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeletePostMeta.php:91
@@ -2082,7 +2078,8 @@ msgstr "An das Debug-Protokoll senden"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AppendDebugLog.php:37
 msgid "This step transmits the workflow's data to the debug log."
-msgstr "Dieser Schritt überträgt die Daten des Workflows in das Debug-Protokoll."
+msgstr ""
+"Dieser Schritt überträgt die Daten des Workflows in das Debug-Protokoll."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AppendDebugLog.php:64
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AppendDebugLog.php:97
@@ -2121,7 +2118,8 @@ msgstr "Beitrag zum Statuswechsel"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ChangePostStatus.php:71
 msgid "Choose the post that will be moved to a different status."
-msgstr "Wählen Sie den Beitrag aus, der in einen anderen Status verschoben wird."
+msgstr ""
+"Wählen Sie den Beitrag aus, der in einen anderen Status verschoben wird."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ChangePostStatus.php:86
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ChangePostStatus.php:92
@@ -2134,8 +2132,8 @@ msgstr "Bedingt"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:37
 msgid ""
-"This step allows you to continue the workflow only if certain conditions "
-"are met. It is not required to have both a True and a False option."
+"This step allows you to continue the workflow only if certain conditions are "
+"met. It is not required to have both a True and a False option."
 msgstr ""
 "Dieser Schritt ermöglicht es Ihnen, den Workflow nur fortzusetzen, wenn "
 "bestimmte Bedingungen erfüllt sind. Es ist nicht erforderlich, sowohl eine "
@@ -2214,7 +2212,7 @@ msgstr ""
 "Wählen Sie den manuell aktivierenden Workflow aus, der für den ausgewählten "
 "Beitrag deaktiviert wird."
 
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeactivatePostWorkflow.php:125, fuzzy
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeactivatePostWorkflow.php:125
 msgid "Workflow"
 msgstr "Workflow"
 
@@ -2288,7 +2286,7 @@ msgid "Specify the hook that will trigger this action."
 msgstr "Geben Sie den Hook an, der diese Aktion auslösen wird."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:73
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:73, fuzzy
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:73
 msgid "Hook"
 msgstr "Hook"
 
@@ -2388,7 +2386,8 @@ msgstr "Kopie Post-Taxonomien"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DuplicatePost.php:112
 msgid "If enabled, all post taxonomies will be copied to the new post."
-msgstr "Wenn aktiviert, werden alle Post-Taxonomien in den neuen Beitrag kopiert."
+msgstr ""
+"Wenn aktiviert, werden alle Post-Taxonomien in den neuen Beitrag kopiert."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DuplicatePost.php:118
 msgid "Copy Featured Image"
@@ -2396,7 +2395,8 @@ msgstr "Kopie des hervorgehobenen Bildes"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DuplicatePost.php:119
 msgid "If enabled, the featured image will be copied to the new post."
-msgstr "Wenn aktiviert, wird das hervorgehobene Bild in den neuen Beitrag kopiert."
+msgstr ""
+"Wenn aktiviert, wird das hervorgehobene Bild in den neuen Beitrag kopiert."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DuplicatePost.php:161
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DuplicatePost.php:174
@@ -2426,7 +2426,8 @@ msgstr "Beitragsabfrage"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/QueryPosts.php:73
 msgid "The query defines the posts that will be retrieved by this action."
-msgstr "Die Abfrage definiert die Beiträge, die durch diese Aktion abgerufen werden."
+msgstr ""
+"Die Abfrage definiert die Beiträge, die durch diese Aktion abgerufen werden."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/QueryPosts.php:112
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/QueryPosts.php:125
@@ -2483,8 +2484,8 @@ msgid ""
 msgstr ""
 "Dieser Schritt ermöglicht es Ihnen, den nächsten Teil eines Workflows zu "
 "einem bestimmten Zeitpunkt oder relativ zu einem anderen Datum auszuführen. "
-"Sie können diesen Schritt auch verwenden, um den nächsten Teil des "
-"Workflows zu wiederholen."
+"Sie können diesen Schritt auch verwenden, um den nächsten Teil des Workflows "
+"zu wiederholen."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:67
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:64
@@ -2570,13 +2571,14 @@ msgstr "Nach allen Wiederholungen"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:17
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:17
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:89, fuzzy
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:89
 msgid "PublishPress Workflow: {{global.workflow.title}}"
 msgstr "PublishPress Workflow: {{global.workflow.title}}"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:22
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:22
-msgid "This is a message sent by PublishPress Workflow: {{global.workflow.title}}."
+msgid ""
+"This is a message sent by PublishPress Workflow: {{global.workflow.title}}."
 msgstr ""
 "Dies ist eine Nachricht, die von PublishPress Workflow gesendet wurde: "
 "{{global.workflow.title}}."
@@ -2642,7 +2644,8 @@ msgstr "In-Site-Benachrichtigung senden"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:50
 msgid "This step dispatches a message to the in-site notification."
-msgstr "Dieser Schritt versendet eine Nachricht an die In-Site-Benachrichtigung."
+msgstr ""
+"Dieser Schritt versendet eine Nachricht an die In-Site-Benachrichtigung."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:78
 msgid "The recipient of the in-site notification."
@@ -2667,7 +2670,7 @@ msgstr "Benachrichtigungstyp"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:118
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:108
-#: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:8, fuzzy
+#: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:8
 msgid "Info"
 msgstr "Info"
 
@@ -2773,7 +2776,8 @@ msgid "New terms"
 msgstr "Neue Begriffe"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SetPostTerm.php:83
-msgid "The terms that will be added to the posts after removing all the others."
+msgid ""
+"The terms that will be added to the posts after removing all the others."
 msgstr ""
 "Die Begriffe, die den Beiträgen hinzugefügt werden, nachdem alle anderen "
 "entfernt wurden."
@@ -2970,9 +2974,9 @@ msgid ""
 "This step requires user action before the workflow can proceed. The actions "
 "are done via the in-site notification area."
 msgstr ""
-"Dieser Schritt erfordert eine Benutzeraktion, bevor der Workflow "
-"fortgesetzt werden kann. Die Aktionen erfolgen über den "
-"Benachrichtigungsbereich auf der Seite."
+"Dieser Schritt erfordert eine Benutzeraktion, bevor der Workflow fortgesetzt "
+"werden kann. Die Aktionen erfolgen über den Benachrichtigungsbereich auf der "
+"Seite."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:64
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:168
@@ -2997,18 +3001,20 @@ msgstr ""
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:82
 msgid "Specify the message to be displayed to the responders."
-msgstr "Geben Sie die Nachricht an, die den Antwortenden angezeigt werden soll."
+msgstr ""
+"Geben Sie die Nachricht an, die den Antwortenden angezeigt werden soll."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:97
-msgid "Please select an option to continue the workflow: {{global.workflow.title}}"
+msgid ""
+"Please select an option to continue the workflow: {{global.workflow.title}}"
 msgstr ""
 "Bitte wählen Sie eine Option, um den Workflow fortzusetzen: "
 "{{global.workflow.title}}"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:129
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:201
 #: assets/jsx/workflow-editor/components/more-menu/menu-dropdown.jsx:11
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Options"
 msgstr "Optionen"
 
@@ -3087,7 +3093,8 @@ msgstr "Priorität"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:84
 msgid "The priority of the action hook. Lower values are executed first."
-msgstr "Die Priorität des Aktionshooks. Niedrigere Werte werden zuerst ausgeführt."
+msgstr ""
+"Die Priorität des Aktionshooks. Niedrigere Werte werden zuerst ausgeführt."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnInit.php:32
 msgid "On site init"
@@ -3106,8 +3113,8 @@ msgid ""
 "This trigger allows users to choose the workflow from the dropdown menu in "
 "the Future Actions options."
 msgstr ""
-"Dieser Trigger ermöglicht es den Benutzern, den Workflow aus dem "
-"Dropdown-Menü in den Future Actions-Optionen auszuwählen."
+"Dieser Trigger ermöglicht es den Benutzern, den Workflow aus dem Dropdown-"
+"Menü in den Future Actions-Optionen auszuwählen."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnLegacyActionTrigger.php:114
 msgid "Action Post"
@@ -3279,7 +3286,8 @@ msgstr "Beitrag-Meta geändert"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:37
 msgid "This trigger activates when a post meta field is changed."
-msgstr "Dieser Trigger wird aktiviert, wenn ein Beitrag-Meta-Feld geändert wird."
+msgstr ""
+"Dieser Trigger wird aktiviert, wenn ein Beitrag-Meta-Feld geändert wird."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:88
 msgid "Meta settings"
@@ -3288,15 +3296,16 @@ msgstr "Meta-Einstellungen"
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:89
 msgid "Specify the criteria for the meta to watch for changes."
 msgstr ""
-"Geben Sie die Kriterien für das Meta an, das auf Änderungen überwacht "
-"werden soll."
+"Geben Sie die Kriterien für das Meta an, das auf Änderungen überwacht werden "
+"soll."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:94
 msgid "Meta keys"
 msgstr "Meta-Schlüssel"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:95
-msgid "This field allow you to choose the post meta that will trigger this action."
+msgid ""
+"This field allow you to choose the post meta that will trigger this action."
 msgstr ""
 "Dieses Feld ermöglicht es Ihnen, das Beitrag-Meta auszuwählen, das diese "
 "Aktion auslösen wird."
@@ -3368,16 +3377,17 @@ msgid ""
 "This trigger creates a custom post row action and activates when the row "
 "action is clicked in the Posts list screen."
 msgstr ""
-"Dieser Trigger erstellt eine benutzerdefinierte Zeilenaktionsaktion und "
-"wird aktiviert, wenn die Zeilenaktion im Bildschirm der Beitragsliste "
-"angeklickt wird."
+"Dieser Trigger erstellt eine benutzerdefinierte Zeilenaktionsaktion und wird "
+"aktiviert, wenn die Zeilenaktion im Bildschirm der Beitragsliste angeklickt "
+"wird."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:91
 msgid "Row Action"
 msgstr "Zeilenaktion"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:92
-msgid "Configure the post row action that will be created in the Posts list screen."
+msgid ""
+"Configure the post row action that will be created in the Posts list screen."
 msgstr ""
 "Konfigurieren Sie die Zeilenaktionsaktion, die im Bildschirm der "
 "Beitragsliste erstellt wird."
@@ -3527,12 +3537,12 @@ msgstr "Nach Zeitplan"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:37
 msgid ""
-"This trigger allows you to run a workflow at a specific time, or relative "
-"to another date. You can also use this trigger to repeat workflows."
+"This trigger allows you to run a workflow at a specific time, or relative to "
+"another date. You can also use this trigger to repeat workflows."
 msgstr ""
 "Dieser Trigger ermöglicht es Ihnen, einen Workflow zu einem bestimmten "
-"Zeitpunkt oder relativ zu einem anderen Datum auszuführen. Sie können "
-"diesen Trigger auch verwenden, um Workflows zu wiederholen."
+"Zeitpunkt oder relativ zu einem anderen Datum auszuführen. Sie können diesen "
+"Trigger auch verwenden, um Workflows zu wiederholen."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:65
 msgid "Choose a schedule to activate the workflow."
@@ -3592,17 +3602,19 @@ msgstr "Benutzerrolle wurde geändert"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:37
 msgid "This trigger activates when a user's role is changed."
-msgstr "Dieser Trigger wird aktiviert, wenn die Rolle eines Benutzers geändert wird."
+msgstr ""
+"Dieser Trigger wird aktiviert, wenn die Rolle eines Benutzers geändert wird."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:64
 msgid "User Query"
 msgstr "Benutzerabfrage"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:65
-msgid "Specify the criteria for users whose role changes will trigger this action."
+msgid ""
+"Specify the criteria for users whose role changes will trigger this action."
 msgstr ""
-"Geben Sie die Kriterien für Benutzer an, deren Rollenänderungen diese "
-"Aktion auslösen."
+"Geben Sie die Kriterien für Benutzer an, deren Rollenänderungen diese Aktion "
+"auslösen."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:73
 msgid "User query"
@@ -3645,10 +3657,11 @@ msgid "The roles that were removed from the user."
 msgstr "Die Rollen, die vom Benutzer entfernt wurden."
 
 #: src/Modules/Workflows/Migrations/V040500OnScheduledStepsSchema.php:58
-msgid "Migrate post_id and repetition_number on scheduled steps schema after v4.5.0"
+msgid ""
+"Migrate post_id and repetition_number on scheduled steps schema after v4.5.0"
 msgstr ""
-"Migriere post_id und repetition_number im Schema der geplanten Schritte "
-"nach v4.5.0"
+"Migriere post_id und repetition_number im Schema der geplanten Schritte nach "
+"v4.5.0"
 
 #: src/Modules/Workflows/Migrations/V40000WorkflowScheduledStepsSchema.php:58
 msgid "Migrate workflow scheduled steps schema after v4.0.0"
@@ -3760,8 +3773,8 @@ msgstr "Wissensdatenbank anzeigen"
 msgid "Overdue: "
 msgstr "Überfällig: "
 
-#: src/Views/expire-column.php:77
 #. translators: %1$s opens a span tag, %2$s is the action name, %3$s ends a span tag, %4$s is the a span tag, %5$s is the a span tag, %6$s is the a span tag
+#: src/Views/expire-column.php:77
 #, php-format
 msgid "%1$s%2$s%3$s on %5$s%4$s%6$s"
 msgstr "%1$s%2$s%3$s am %5$s%4$s%6$s"
@@ -3774,7 +3787,7 @@ msgstr ""
 "Aktion wurde aufgrund eines Konfigurationsproblems nicht geplant. Bitte "
 "versuchen Sie, sie erneut zu planen."
 
-#: src/Views/menu-admin.php:27, fuzzy
+#: src/Views/menu-admin.php:27
 msgid "Metabox"
 msgstr "Metabox"
 
@@ -3783,7 +3796,8 @@ msgid "Metabox Title"
 msgstr "Metabox-Titel"
 
 #: src/Views/menu-admin.php:48
-msgid "The title of the metabox that will be displayed in the post edit screen."
+msgid ""
+"The title of the metabox that will be displayed in the post edit screen."
 msgstr ""
 "Der Titel der Metabox, der im Bearbeitungsbildschirm des Beitrags angezeigt "
 "wird."
@@ -3810,8 +3824,7 @@ msgstr "Detailliert"
 
 #: src/Views/menu-admin.php:96
 msgid ""
-"Displays all information in the Future Action column on the \"Posts\" "
-"screen."
+"Displays all information in the Future Action column on the \"Posts\" screen."
 msgstr ""
 "Zeigt alle Informationen in der Zukunftsaktionen-Spalte auf dem Bildschirm "
 "\"Beiträge\" an."
@@ -3850,14 +3863,12 @@ msgstr "Von den Seiteneinstellungen erben"
 msgid "24 hours"
 msgstr "24 Stunden"
 
-#: src/Views/menu-admin.php:162, fuzzy
+#: src/Views/menu-admin.php:162
 msgid "AM/PM"
 msgstr "AM/PM"
 
-#: src/Views/menu-admin.php:174
-#: src/Views/menu-advanced.php:99
-#: src/Views/menu-display.php:367
-#: src/Views/menu-general.php:118
+#: src/Views/menu-admin.php:174 src/Views/menu-advanced.php:99
+#: src/Views/menu-display.php:367 src/Views/menu-general.php:118
 #: src/Views/menu-notifications.php:186
 msgid "Save Changes"
 msgstr "Änderungen speichern"
@@ -3895,7 +3906,8 @@ msgid "Delete data"
 msgstr "Daten löschen"
 
 #: src/Views/menu-advanced.php:88
-msgid "Toggle between preserving or deleting data after the plugin is deactivated."
+msgid ""
+"Toggle between preserving or deleting data after the plugin is deactivated."
 msgstr ""
 "Wechseln Sie zwischen dem Speichern oder Löschen von Daten, nachdem das "
 "Plugin deaktiviert wurde."
@@ -3932,8 +3944,8 @@ msgstr "Zeitfolge"
 msgid "Show only requests with trigger activated"
 msgstr "Zeige nur Anfragen mit aktivierten Trigger"
 
-#: src/Views/menu-debug-log.php:155
 #. translators: %1$d: displayed count, %2$d: filtered total, %3$d: sessions, %4$d: total unfiltered, %5$s: filtered log size, %6$s: total log size.
+#: src/Views/menu-debug-log.php:155
 #, php-format
 msgid ""
 "Showing the latest %1$d of %2$d logs (%3$d sessions). Total in database: "
@@ -3942,16 +3954,16 @@ msgstr ""
 "Zeige die neuesten %1$d von %2$d Protokollen (%3$d Sitzungen). Insgesamt in "
 "der Datenbank: %4$d. Protokollgröße: %5$s (insgesamt: %6$s)."
 
-#: src/Views/menu-debug-log.php:165
 #. translators: %1$d: displayed count, %2$d: total count, %3$d: sessions, %4$s: log size.
+#: src/Views/menu-debug-log.php:165
 #, php-format
 msgid "Showing the latest %1$d of %2$d logs (%3$d sessions). Log size: %4$s."
 msgstr ""
 "Zeige die neuesten %1$d von %2$d Protokollen (%3$d Sitzungen). "
 "Protokollgröße: %4$s."
 
-#: src/Views/menu-debug-log.php:176
 #. translators: %1$d: filtered logs count, %2$d: sessions, %3$d: total unfiltered, %4$s: filtered log size, %5$s: total log size.
+#: src/Views/menu-debug-log.php:176
 #, php-format
 msgid ""
 "Showing all %1$d logs (%2$d sessions). Total in database: %3$d. Log size: "
@@ -3960,8 +3972,8 @@ msgstr ""
 "Zeige alle %1$d Protokolle (%2$d Sitzungen). Insgesamt in der Datenbank: "
 "%3$d. Protokollgröße: %4$s (insgesamt: %5$s)."
 
-#: src/Views/menu-debug-log.php:185
 #. translators: %1$d: total logs count, %2$d: sessions count, %3$s: log size.
+#: src/Views/menu-debug-log.php:185
 #, php-format
 msgid "Showing all %1$d logs (%2$d sessions). Log size: %3$s."
 msgstr "Zeige alle %1$d Protokolle (%2$d Sitzungen). Protokollgröße: %3$s."
@@ -3991,8 +4003,7 @@ msgstr "Erweiterte Diagnosen und Werkzeuge"
 msgid "WP-Cron Status Check"
 msgstr "WP-Cron-Statusprüfung"
 
-#: src/Views/menu-diagnostics.php:61
-#: src/Views/menu-diagnostics.php:74
+#: src/Views/menu-diagnostics.php:61 src/Views/menu-diagnostics.php:74
 msgid "Passed"
 msgstr "Bestanden"
 
@@ -4007,8 +4018,10 @@ msgstr "Datenbankschema-Überprüfung"
 #: src/Views/menu-diagnostics.php:78
 msgid "Error found on the database schema:"
 msgid_plural "Errors found on the database schema:"
-msgstr[0] "Fehler im Datenbankschema gefunden:|Fehler im Datenbankschema gefunden:"
-msgstr[1] "Fehler im Datenbankschema gefunden:|Fehler im Datenbankschema gefunden:"
+msgstr[0] ""
+"Fehler im Datenbankschema gefunden:|Fehler im Datenbankschema gefunden:"
+msgstr[1] ""
+"Fehler im Datenbankschema gefunden:|Fehler im Datenbankschema gefunden:"
 
 #: src/Views/menu-diagnostics.php:109
 msgid "Try to Fix Database"
@@ -4018,10 +4031,8 @@ msgstr "Datenbank reparieren versuchen"
 msgid "Debug Logging"
 msgstr "Debug-Protokollierung"
 
-#: src/Views/menu-diagnostics.php:122
-#: src/Views/menu-display.php:139
-#: src/Views/menu-notifications.php:67
-#: src/Views/menu-notifications.php:95
+#: src/Views/menu-diagnostics.php:122 src/Views/menu-display.php:139
+#: src/Views/menu-notifications.php:67 src/Views/menu-notifications.php:95
 #: src/Views/menu-notifications.php:150
 msgid "Enabled"
 msgstr "Aktiviert"
@@ -4038,10 +4049,8 @@ msgstr "Debug-Protokoll löschen"
 msgid "View Debug Logs"
 msgstr "Debug-Protokolle anzeigen"
 
-#: src/Views/menu-diagnostics.php:142
-#: src/Views/menu-display.php:150
-#: src/Views/menu-notifications.php:75
-#: src/Views/menu-notifications.php:104
+#: src/Views/menu-diagnostics.php:142 src/Views/menu-display.php:150
+#: src/Views/menu-notifications.php:75 src/Views/menu-notifications.php:104
 #: src/Views/menu-notifications.php:158
 msgid "Disabled"
 msgstr "Deaktiviert"
@@ -4050,7 +4059,7 @@ msgstr "Deaktiviert"
 msgid "Enable Debugging"
 msgstr "Debugging aktivieren"
 
-#: src/Views/menu-diagnostics.php:154, fuzzy
+#: src/Views/menu-diagnostics.php:154
 msgid "Spatie Ray Debug"
 msgstr "Spatie Ray Debug"
 
@@ -4092,8 +4101,8 @@ msgstr "Migrationslauf"
 
 #: src/Views/menu-diagnostics.php:185
 msgid ""
-"Migrate legacy future actions from WP Cron to the new Action Scheduler. "
-"This will run in the background and may take a while."
+"Migrate legacy future actions from WP Cron to the new Action Scheduler. This "
+"will run in the background and may take a while."
 msgstr ""
 "Übertragen Sie ältere zukünftige Aktionen von WP Cron zum neuen "
 "Aktionsplaner. Dies wird im Hintergrund ausgeführt und kann eine Weile "
@@ -4114,8 +4123,8 @@ msgid ""
 "background and may take a while."
 msgstr ""
 "Wiederherstellung von Legacy-Aktionsargumenten als Post-Meta. Dies ist "
-"nützlich, wenn Sie Probleme mit Drittanbieter-Plugins haben, die diese "
-"Daten lesen. Dies wird im Hintergrund ausgeführt und kann eine Weile dauern."
+"nützlich, wenn Sie Probleme mit Drittanbieter-Plugins haben, die diese Daten "
+"lesen. Dies wird im Hintergrund ausgeführt und kann eine Weile dauern."
 
 #: src/Views/menu-diagnostics.php:215
 msgid "Legacy Cron Schedule"
@@ -4123,8 +4132,8 @@ msgstr "Legacy Cron-Zeitplan"
 
 #: src/Views/menu-diagnostics.php:223
 msgid ""
-"The below table will show all currently scheduled cron events for the "
-"plugin with the next run time."
+"The below table will show all currently scheduled cron events for the plugin "
+"with the next run time."
 msgstr ""
 "Die folgende Tabelle zeigt alle aktuell geplanten Cron-Ereignisse für das "
 "Plugin mit der nächsten Ausführungszeit."
@@ -4140,8 +4149,7 @@ msgstr "Beiträge und Ablauf-Einstellungen"
 #: src/Views/menu-diagnostics.php:296
 msgid "This is a legacy feature and will be removed in a future version."
 msgstr ""
-"Dies ist eine Legacy-Funktion und wird in einer zukünftigen Version "
-"entfernt."
+"Dies ist eine Legacy-Funktion und wird in einer zukünftigen Version entfernt."
 
 #: src/Views/menu-display.php:34
 msgid "Default Formats"
@@ -4151,8 +4159,8 @@ msgstr "Standardformate"
 msgid "Date Format"
 msgstr "Datumsformat"
 
-#: src/Views/menu-display.php:64
 #. translators: %s is a link to the PHP date function documentation
+#: src/Views/menu-display.php:64
 #, php-format
 msgid ""
 "The default format to use when displaying the action date within a post "
@@ -4163,8 +4171,7 @@ msgstr ""
 "innerhalb eines Beitrags mit dem Shortcode oder im Footer angezeigt wird. "
 "Für Informationen zu gültigen Formatierungsoptionen siehe: %s."
 
-#: src/Views/menu-display.php:68
-#: src/Views/menu-display.php:106
+#: src/Views/menu-display.php:68 src/Views/menu-display.php:106
 msgid "PHP Date Function"
 msgstr "PHP-Datumsfunktion"
 
@@ -4172,8 +4179,8 @@ msgstr "PHP-Datumsfunktion"
 msgid "Time Format"
 msgstr "Zeitformat"
 
-#: src/Views/menu-display.php:102
 #. translators: %s is a link to the PHP date function documentation
+#: src/Views/menu-display.php:102
 #, php-format
 msgid ""
 "The default format to use when displaying the action time within a post "
@@ -4190,8 +4197,8 @@ msgstr "Beitragsfußzeilenanzeige"
 
 #: src/Views/menu-display.php:118
 msgid ""
-"Enabling this below will display the action date automatically at the end "
-"of any post which is set to run an action."
+"Enabling this below will display the action date automatically at the end of "
+"any post which is set to run an action."
 msgstr ""
 "Wenn Sie dies unten aktivieren, wird das Aktionsdatum automatisch am Ende "
 "jedes Beitrags angezeigt, der so eingestellt ist, dass eine Aktion "
@@ -4235,12 +4242,12 @@ msgstr "Das Inline-CSS, das verwendet wird, um den Fußzeilentext zu gestalten."
 msgid "Example: "
 msgstr "Beispiel: "
 
-#: src/Views/menu-display.php:243, fuzzy
+#: src/Views/menu-display.php:243
 msgid "Shortcode"
 msgstr "Shortcode"
 
-#: src/Views/menu-display.php:249
 #. translators: %s is a code tag that wraps the shortcode
+#: src/Views/menu-display.php:249
 #, php-format
 msgid ""
 "Use the %s[futureaction]%s shortcode to show when the future action will "
@@ -4276,40 +4283,39 @@ msgstr ""
 msgid "Attributes"
 msgstr "Attribute"
 
-#: src/Views/menu-display.php:308
 #. translators: %s is the shortcode code wrapped in code tags
+#: src/Views/menu-display.php:308
 #, php-format
 msgid "The following attributes are available for the %s shortcode:"
 msgstr "Die folgenden Attribute stehen für den %s Shortcode zur Verfügung:"
 
-#: src/Views/menu-display.php:315
 #. translators: %s is a code tag that wraps the shortcode attribute name
+#: src/Views/menu-display.php:315
 #, php-format
 msgid "%s - Available options:"
 msgstr "%s - Verfügbare Optionen:"
 
-#: src/Views/menu-display.php:321
 #. translators: %s is a code tag that wraps the shortcode attribute value
+#: src/Views/menu-display.php:321
 #, php-format
 msgid "%s - Displays complete date/time.  Default value."
 msgstr "%s - Zeigt das vollständige Datum/Zeit an.  Standardwert."
 
-#: src/Views/menu-display.php:327
 #. translators: %s is a code tag that wraps the shortcode attribute value
+#: src/Views/menu-display.php:327
 #, php-format
 msgid "%s - Displays date only"
 msgstr "%s - Zeigt nur das Datum an"
 
-#: src/Views/menu-display.php:333
 #. translators: %s is a code tag that wraps the shortcode attribute value
+#: src/Views/menu-display.php:333
 #, php-format
 msgid "%s - Displays time only"
 msgstr "%s - Zeigt nur die Uhrzeit an"
 
-#: src/Views/menu-display.php:345
-#: src/Views/menu-display.php:353
 #. translators: %s is a code tag that wraps the shortcode attribute dateformat
 #. translators: %s is a code tag that wraps the shortcode attribute timeformat
+#: src/Views/menu-display.php:345 src/Views/menu-display.php:353
 #, php-format
 msgid "%s - Format set here will override the value set on the settings page"
 msgstr ""
@@ -4357,15 +4363,16 @@ msgstr "E-Mail-Benachrichtigung"
 #: src/Views/menu-notifications.php:52
 msgid "Whenever an action runs, an email can be sent to alert users."
 msgstr ""
-"Wann immer eine Aktion ausgeführt wird, kann eine E-Mail gesendet werden, "
-"um Benutzer zu benachrichtigen."
+"Wann immer eine Aktion ausgeführt wird, kann eine E-Mail gesendet werden, um "
+"Benutzer zu benachrichtigen."
 
 #: src/Views/menu-notifications.php:59
 msgid "Enable Email Notification?"
 msgstr "E-Mail-Benachrichtigung aktivieren?"
 
 #: src/Views/menu-notifications.php:78
-msgid "This will enable or disable the send of email notification on future action."
+msgid ""
+"This will enable or disable the send of email notification on future action."
 msgstr ""
 "Dies aktiviert oder deaktiviert den Versand von E-Mail-Benachrichtigungen "
 "bei zukünftigen Aktionen."
@@ -4375,8 +4382,10 @@ msgid "Include Blog Administrators?"
 msgstr "Blog-Administratoren einbeziehen?"
 
 #: src/Views/menu-notifications.php:107
-msgid "This will include all users with the role of \"Administrator\" in the email."
-msgstr "Dies umfasst alle Benutzer mit der Rolle \"Administrator\" in der E-Mail."
+msgid ""
+"This will include all users with the role of \"Administrator\" in the email."
+msgstr ""
+"Dies umfasst alle Benutzer mit der Rolle \"Administrator\" in der E-Mail."
 
 #: src/Views/menu-notifications.php:123
 msgid ""
@@ -4385,16 +4394,15 @@ msgid ""
 "post type specific emails on the Defaults tab."
 msgstr ""
 "Geben Sie eine durch Kommas getrennte Liste von E-Mails ein, die "
-"benachrichtigt werden sollen, wenn die Aktion ausgeführt wird. Dies wird "
-"auf ALLE Beitragstypen angewendet. Sie können beitragstyp-spezifische "
-"E-Mails im Tab \"Standardeinstellungen\" festlegen."
+"benachrichtigt werden sollen, wenn die Aktion ausgeführt wird. Dies wird auf "
+"ALLE Beitragstypen angewendet. Sie können beitragstyp-spezifische E-Mails im "
+"Tab \"Standardeinstellungen\" festlegen."
 
 #: src/Views/menu-notifications.php:132
 msgid "Past-due Actions Notification"
 msgstr "Benachrichtigung über überfällige Aktionen"
 
-#: src/Views/menu-notifications.php:134
-#: src/Views/menu-notifications.php:161
+#: src/Views/menu-notifications.php:134 src/Views/menu-notifications.php:161
 msgid ""
 "This will enable or disable the send of email notification on past-due "
 "actions."
@@ -4440,7 +4448,7 @@ msgstr "Anzeige"
 
 #: src/Views/tabs-future-actions.php:40
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:40
-#: assets/jsx/backup-panel/components/tabs-content/import.jsx:120, fuzzy
+#: assets/jsx/backup-panel/components/tabs-content/import.jsx:120
 msgid "Admin"
 msgstr "Admin"
 
@@ -4553,8 +4561,8 @@ msgstr "Import der Einstellungen fehlgeschlagen."
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:132
 msgid "Import the plugin settings or workflows from a .json file."
 msgstr ""
-"Importieren Sie die Plugin-Einstellungen oder Workflows aus einer "
-".json-Datei."
+"Importieren Sie die Plugin-Einstellungen oder Workflows aus einer .json-"
+"Datei."
 
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:173
 msgid "Select Content to Import"
@@ -4584,7 +4592,7 @@ msgstr "Ganzzahl"
 msgid "String"
 msgstr "Zeichenfolge"
 
-#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:31, fuzzy
+#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:31
 msgid "Boolean"
 msgstr "Boolean"
 
@@ -4592,12 +4600,12 @@ msgstr "Boolean"
 msgid "Object"
 msgstr "Objekt"
 
-#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:33, fuzzy
+#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:33
 msgid "Array"
 msgstr "Array"
 
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:57
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:50, fuzzy
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:50
 msgid "null"
 msgstr "null"
 
@@ -4616,10 +4624,11 @@ msgstr "Wert"
 
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:102
 msgid "The argument name should only contain letters, numbers and underscores."
-msgstr "Der Argumentname darf nur Buchstaben, Zahlen und Unterstriche enthalten."
+msgstr ""
+"Der Argumentname darf nur Buchstaben, Zahlen und Unterstriche enthalten."
 
 #: assets/jsx/workflow-editor/components/data-fields/action-args/index.jsx:71
-#, fuzzy, js-format
+#, fuzzy
 msgid "Argument #%s"
 msgstr "Argument #%s"
 
@@ -4661,8 +4670,8 @@ msgid ""
 "Conditional logic is a Pro feature. Upgrade to create advanced conditions "
 "for your workflows."
 msgstr ""
-"Bedingte Logik ist eine Pro-Funktion. Upgrade, um erweiterte Bedingungen "
-"für Ihre Workflows zu erstellen."
+"Bedingte Logik ist eine Pro-Funktion. Upgrade, um erweiterte Bedingungen für "
+"Ihre Workflows zu erstellen."
 
 #: assets/jsx/workflow-editor/components/data-fields/conditional/components/duplicate-rule-button.jsx:10
 msgid "Duplicate Rule"
@@ -4681,12 +4690,12 @@ msgid "Dismiss the notification"
 msgstr "Benachrichtigung ablehnen"
 
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:67
-#, fuzzy, js-format
+#, fuzzy
 msgid "Option %s"
 msgstr "Option %s"
 
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:95
-#, fuzzy, js-format
+#, fuzzy
 msgid "Option #%s"
 msgstr "Option #%s"
 
@@ -4699,16 +4708,14 @@ msgid "Add a new option"
 msgstr "Eine neue Option hinzufügen"
 
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:132
-#, js-format
 msgid ""
-"You have reached the maximum number of options. You can add up to %s "
-"options."
+"You have reached the maximum number of options. You can add up to %s options."
 msgstr ""
 "Sie haben die maximale Anzahl von Optionen erreicht. Sie können bis zu %s "
 "Optionen hinzufügen."
 
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:73
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:7, fuzzy
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:7
 msgid "Name"
 msgstr "Name"
 
@@ -4718,7 +4725,8 @@ msgstr "Hinweis"
 
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:107
 msgid "The option name should only contain letters, numbers and underscores."
-msgstr "Der Optionsname darf nur Buchstaben, Zahlen und Unterstriche enthalten."
+msgstr ""
+"Der Optionsname darf nur Buchstaben, Zahlen und Unterstriche enthalten."
 
 #: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:61
 msgid "Selected in the calendar"
@@ -4775,16 +4783,15 @@ msgid "Click for more information"
 msgstr "Klicken Sie für weitere Informationen"
 
 #: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:197
-#, js-format
 msgid ""
 "For more information on formatting, see the %sPHP strtotime function%s. For "
 "example, you could enter %s+1 month%s or %s+1 week 2 days 4 hours 2 "
 "seconds%s or %snext Thursday%s. Please use only phrases in English."
 msgstr ""
-"Für weitere Informationen zur Formatierung siehe die %sPHP "
-"strtotime-Funktion%s. Zum Beispiel könnten Sie %s+1 Monat%s oder %s+1 Woche "
-"2 Tage 4 Stunden 2 Sekunden%s oder %snächsten Donnerstag%s eingeben. Bitte "
-"verwenden Sie nur Phrasen in Englisch."
+"Für weitere Informationen zur Formatierung siehe die %sPHP strtotime-"
+"Funktion%s. Zum Beispiel könnten Sie %s+1 Monat%s oder %s+1 Woche 2 Tage 4 "
+"Stunden 2 Sekunden%s oder %snächsten Donnerstag%s eingeben. Bitte verwenden "
+"Sie nur Phrasen in Englisch."
 
 #: assets/jsx/workflow-editor/components/data-fields/debug-data.jsx:39
 msgid "All received input"
@@ -4822,10 +4829,9 @@ msgstr "Beitragsstatus"
 msgid "Post Type"
 msgstr "Beitragsart"
 
+#. translators: %s is the database table name
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/column-item.jsx:10
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:10
-#. translators: %s is the database table name
-#, js-format
 msgid "Type the %s key and click on the button to insert it."
 msgstr ""
 "Geben Sie den %s-Schlüssel ein und klicken Sie auf die Schaltfläche, um ihn "
@@ -4851,7 +4857,8 @@ msgstr "Wählen Sie eine Variable aus der Liste unten aus."
 
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:185
 msgid "Type your expression here or use the variables below."
-msgstr "Geben Sie Ihren Ausdruck hier ein oder verwenden Sie die Variablen unten."
+msgstr ""
+"Geben Sie Ihren Ausdruck hier ein oder verwenden Sie die Variablen unten."
 
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:212
 msgid "Variables"
@@ -4869,13 +4876,14 @@ msgstr ""
 
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:231
 msgid "Hover over a variable to see its description."
-msgstr "Fahren Sie mit der Maus über eine Variable, um ihre Beschreibung zu sehen."
+msgstr ""
+"Fahren Sie mit der Maus über eine Variable, um ihre Beschreibung zu sehen."
 
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:8
 msgid "The name of the term."
 msgstr "Der Name des Begriffs."
 
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:13, fuzzy
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:13
 msgid "Slug"
 msgstr "Slug"
 
@@ -4899,9 +4907,8 @@ msgstr "Anzahl"
 msgid "Number of posts assigned to this term."
 msgstr "Anzahl der Beiträge, die diesem Begriff zugeordnet sind."
 
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:38
 #. translators: %s is the taxonomy label
-#, js-format
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:38
 msgid "%s terms for this post."
 msgstr "%s Begriffe für diesen Beitrag."
 
@@ -4918,7 +4925,7 @@ msgstr ""
 "herzustellen und kann ihren Namen nicht ändern, bis die Verbindung entfernt "
 "wird."
 
-#: assets/jsx/workflow-editor/components/data-fields/modal-footer.jsx:11, fuzzy
+#: assets/jsx/workflow-editor/components/data-fields/modal-footer.jsx:11
 msgid "OK"
 msgstr "OK"
 
@@ -5040,8 +5047,8 @@ msgid ""
 "Visitors can not add new comments or replies. Existing comments remain "
 "visible."
 msgstr ""
-"Besucher können keine neuen Kommentare oder Antworten hinzufügen. "
-"Vorhandene Kommentare bleiben sichtbar."
+"Besucher können keine neuen Kommentare oder Antworten hinzufügen. Vorhandene "
+"Kommentare bleiben sichtbar."
 
 #: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:97
 msgid "Enable pinbacks & trackbacks"
@@ -5057,7 +5064,8 @@ msgstr "Inhalt löschen"
 
 #: assets/jsx/workflow-editor/components/data-fields/post-filter/components/post-filter.jsx:84
 msgid "Create filters to query specific posts based on rules."
-msgstr "Filter erstellen, um bestimmte Beiträge basierend auf Regeln abzufragen."
+msgstr ""
+"Filter erstellen, um bestimmte Beiträge basierend auf Regeln abzufragen."
 
 #: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:78
 msgid "Post selection"
@@ -5116,7 +5124,7 @@ msgstr "Keine Farbe"
 msgid "Green"
 msgstr "Grün"
 
-#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:15, fuzzy
+#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:15
 msgid "Orange"
 msgstr "Orange"
 
@@ -5146,8 +5154,8 @@ msgstr "Wiederholende Aktion"
 
 #: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:131
 msgid ""
-"Choose how often this task should repeat. Select 'Non-repeating' for a "
-"one-time action or set an interval for automatic recurrence."
+"Choose how often this task should repeat. Select 'Non-repeating' for a one-"
+"time action or set an interval for automatic recurrence."
 msgstr ""
 "Wählen Sie aus, wie oft diese Aufgabe wiederholt werden soll. Wählen Sie "
 "'Nicht wiederholend' für eine einmalige Aktion oder legen Sie ein Intervall "
@@ -5160,8 +5168,8 @@ msgstr "Eindeutige Aufgabenkennung"
 #: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:154
 msgid "Define a unique ID to detect and prevent duplicate tasks."
 msgstr ""
-"Definieren Sie eine eindeutige ID, um Duplikate von Aufgaben zu erkennen "
-"und zu verhindern."
+"Definieren Sie eine eindeutige ID, um Duplikate von Aufgaben zu erkennen und "
+"zu verhindern."
 
 #: assets/jsx/workflow-editor/components/data-fields/taxonomy-terms.jsx:69
 msgid "Select the terms"
@@ -5209,14 +5217,15 @@ msgid "Edit description"
 msgstr "Beschreibung bearbeiten"
 
 #: assets/jsx/workflow-editor/components/inspector-card/index.jsx:116
-#: assets/jsx/workflow-editor/components/secondary-sidebar/node-card.jsx:16, fuzzy
+#: assets/jsx/workflow-editor/components/secondary-sidebar/node-card.jsx:16
 msgid "Pro"
 msgstr "Pro"
 
 #: assets/jsx/workflow-editor/components/inspector-card/index.jsx:132
 #: assets/jsx/workflow-editor/components/node-types/generic.jsx:319
 #: assets/jsx/workflow-editor/components/secondary-sidebar/node-card.jsx:29
-msgid "Currently this step is being skipped. Upgrade to Pro to unlock this feature."
+msgid ""
+"Currently this step is being skipped. Upgrade to Pro to unlock this feature."
 msgstr ""
 "Derzeit wird dieser Schritt übersprungen. Aktualisieren Sie auf Pro, um "
 "diese Funktion freizuschalten."
@@ -5229,24 +5238,24 @@ msgstr "Hinzufügen"
 msgid "Close"
 msgstr "Schließen"
 
-#: assets/jsx/workflow-editor/components/layout/header.jsx:140
-#: assets/jsx/workflow-editor/components/layout/header.jsx:145, fuzzy
 #. translators: button label text should, if possible, be under 16 characters.
+#: assets/jsx/workflow-editor/components/layout/header.jsx:140
+#: assets/jsx/workflow-editor/components/layout/header.jsx:145
 msgid "Auto Layout"
 msgstr "Auto Layout"
 
-#: assets/jsx/workflow-editor/components/layout/header.jsx:157
 #. translators: button label text should, if possible, be under 16 characters.
+#: assets/jsx/workflow-editor/components/layout/header.jsx:157
 msgid "Upgrade to Pro and unlock more features"
 msgstr "Upgrade auf Pro und mehr Funktionen freischalten"
 
-#: assets/jsx/workflow-editor/components/left-toolbar/redo.jsx:31
 #. translators: button label text should, if possible, be under 16 characters.
+#: assets/jsx/workflow-editor/components/left-toolbar/redo.jsx:31
 msgid "Redo"
 msgstr "Wiederholen"
 
-#: assets/jsx/workflow-editor/components/left-toolbar/undo.jsx:31
 #. translators: button label text should, if possible, be under 16 characters.
+#: assets/jsx/workflow-editor/components/left-toolbar/undo.jsx:31
 msgid "Undo"
 msgstr "Rückgängig"
 
@@ -5261,6 +5270,11 @@ msgstr "Funktion deaktiviert"
 #: assets/jsx/workflow-editor/components/more-menu/menu-feature-toggle.jsx:34
 msgid "Feature activated"
 msgstr "Funktion aktiviert"
+
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:23
+msgctxt "noun"
+msgid "View"
+msgstr "Anzeigen"
 
 #: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:27
 msgid "Fullscreen mode"
@@ -5284,7 +5298,8 @@ msgstr "Erweiterte Einstellungen"
 
 #: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:37
 msgid "Display advanced settings for the workflow, triggers and steps"
-msgstr "Erweiterte Einstellungen für den Workflow, Auslöser und Schritte anzeigen"
+msgstr ""
+"Erweiterte Einstellungen für den Workflow, Auslöser und Schritte anzeigen"
 
 #: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:38
 msgid "Advanced settings mode activated"
@@ -5395,7 +5410,6 @@ msgid "Multiple and different elements selected."
 msgstr "Mehrere und unterschiedliche Elemente ausgewählt."
 
 #: assets/jsx/workflow-editor/components/node-inspector/index.jsx:116
-#, js-format
 msgid "%d steps selected"
 msgstr "%d Schritte ausgewählt"
 
@@ -5404,7 +5418,6 @@ msgid "Multiple steps selected."
 msgstr "Mehrere Schritte ausgewählt."
 
 #: assets/jsx/workflow-editor/components/node-inspector/index.jsx:130
-#, js-format
 msgid "%d connections selected"
 msgstr "%d Verbindungen ausgewählt"
 
@@ -5418,8 +5431,8 @@ msgstr "Verbindung"
 
 #: assets/jsx/workflow-editor/components/node-inspector/index.jsx:166
 msgid ""
-"The connection between nodes in the workflow. Signifies the path along "
-"which data or control flow one node to another."
+"The connection between nodes in the workflow. Signifies the path along which "
+"data or control flow one node to another."
 msgstr ""
 "Die Verbindung zwischen Knoten im Workflow. Bedeutet den Pfad, entlang dem "
 "Daten oder Steuerung von einem Knoten zum anderen fließen."
@@ -5477,7 +5490,6 @@ msgid "No description"
 msgstr "Keine Beschreibung"
 
 #: assets/jsx/workflow-editor/components/node-types/generic.jsx:57
-#, js-format
 msgid "Unknown node: %s"
 msgstr "Unbekannter Knoten: %s"
 
@@ -5545,9 +5557,8 @@ msgstr ""
 msgid "No results found."
 msgstr "Keine Ergebnisse gefunden."
 
-#: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:101
 #. translators: %d: number of results.
-#, js-format
+#: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:101
 msgid "%d result found."
 msgid_plural "%d results found."
 msgstr[0] "%d Ergebnis gefunden.|%d Ergebnisse gefunden."
@@ -5563,16 +5574,21 @@ msgstr "Knoten"
 msgid "A tip for using the workflow editor"
 msgstr "Ein Tipp zur Verwendung des Workflow-Editors"
 
-#: assets/jsx/workflow-editor/components/secondary-sidebar/node-draggable-chip.jsx:27
 #. translators: %d: Number of blocks.
-#, js-format
+#: assets/jsx/workflow-editor/components/secondary-sidebar/node-draggable-chip.jsx:27
 msgid "%d block"
 msgid_plural "%d blocks"
 msgstr[0] "%d Block|%d Blöcke"
 msgstr[1] ""
 
-#: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:24
+#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:80
+#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:85
+msgctxt "nodes"
+msgid "Most used"
+msgstr "Am häufigsten verwendet"
+
 #. translators: Patterns tab title in the block inserter.
+#: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:24
 msgid "Actions"
 msgstr "Aktionen"
 
@@ -5597,11 +5613,12 @@ msgid ""
 "Simply double-click any step to bring up the settings sidebar for quick "
 "adjustments."
 msgstr ""
-"Doppelklicken Sie einfach auf einen beliebigen Schritt, um die "
-"Einstellungen-Seitenleiste für schnelle Anpassungen zu öffnen."
+"Doppelklicken Sie einfach auf einen beliebigen Schritt, um die Einstellungen-"
+"Seitenleiste für schnelle Anpassungen zu öffnen."
 
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:18
-msgid "Double-click the workflow pane to increase the zoom level for a closer look."
+msgid ""
+"Double-click the workflow pane to increase the zoom level for a closer look."
 msgstr ""
 "Doppelklicken Sie auf den Workflow-Bereich, um den Zoomfaktor für eine "
 "genauere Betrachtung zu erhöhen."
@@ -5611,25 +5628,31 @@ msgid ""
 "Hold down the <kbd>shift</kbd> key and double-click the workflow pane to "
 "decrease the zoom level."
 msgstr ""
-"Halten Sie die <kbd>shift</kbd>-Taste gedrückt und doppelklicken Sie auf "
-"den Workflow-Bereich, um den Zoomfaktor zu verringern."
+"Halten Sie die <kbd>shift</kbd>-Taste gedrückt und doppelklicken Sie auf den "
+"Workflow-Bereich, um den Zoomfaktor zu verringern."
 
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:26
 msgid ""
-"Easily add new steps by clicking on a step's handle and dragging it. Drop "
-"it in the workflow pane to see a floating inserter where you can type and "
+"Easily add new steps by clicking on a step's handle and dragging it. Drop it "
+"in the workflow pane to see a floating inserter where you can type and "
 "search for the step you need."
 msgstr ""
 "Fügen Sie ganz einfach neue Schritte hinzu, indem Sie auf den Griff eines "
-"Schrittes klicken und ihn ziehen. Lassen Sie ihn im Workflow-Bereich "
-"fallen, um einen schwebenden Inserter zu sehen, in dem Sie den benötigten "
-"Schritt eingeben und suchen können."
+"Schrittes klicken und ihn ziehen. Lassen Sie ihn im Workflow-Bereich fallen, "
+"um einen schwebenden Inserter zu sehen, in dem Sie den benötigten Schritt "
+"eingeben und suchen können."
 
 #: assets/jsx/workflow-editor/components/settings-sidebar/plugin-sidebar.jsx:39
 msgid "(no name)"
 msgstr "(kein Name)"
 
-#: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:37, fuzzy
+#. translators: Default label for the Workflow sidebar tab, not selected.
+#: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:23
+msgctxt "noun"
+msgid "Workflow"
+msgstr "Workflow"
+
+#: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:37
 msgid "Element"
 msgstr "Element"
 
@@ -5641,7 +5664,7 @@ msgstr "Einstellungen schließen"
 msgid "Get started"
 msgstr "Loslegen"
 
-#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:50, fuzzy
+#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:50
 msgid "Ray Debug"
 msgstr "Ray Debug"
 
@@ -5650,9 +5673,9 @@ msgid ""
 "Enable or disable the different types of debug information that is shown in "
 "Ray when this workflow is activated."
 msgstr ""
-"Aktivieren oder deaktivieren Sie die verschiedenen Arten von "
-"Debug-Informationen, die in Ray angezeigt werden, wenn dieser Workflow "
-"aktiviert ist."
+"Aktivieren oder deaktivieren Sie die verschiedenen Arten von Debug-"
+"Informationen, die in Ray angezeigt werden, wenn dieser Workflow aktiviert "
+"ist."
 
 #: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:59
 msgid "Show Queries"
@@ -5678,8 +5701,8 @@ msgstr "Sind Sie sicher, dass Sie diesen Workflow löschen möchten?"
 msgid "Move to trash"
 msgstr "In den Papierkorb verschieben"
 
-#: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:79
 #. translators: button label text should, if possible, be under 16 characters.
+#: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:79
 msgid "Publish"
 msgstr "Veröffentlichen"
 
@@ -5699,13 +5722,13 @@ msgstr "Aktualisierung..."
 msgid "Updated"
 msgstr "Aktualisiert"
 
-#: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:82
 #. translators: button label text should, if possible, be under 16 characters.
+#: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:82
 msgid "Save draft"
 msgstr "Entwurf speichern"
 
-#: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:85
 #. translators: button label text should, if possible, be under 16 characters.
+#: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:85
 msgid "Save"
 msgstr "Speichern"
 
@@ -5744,7 +5767,8 @@ msgstr "Workflow gespeichert."
 
 #: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:198
 msgid "Unable to publish the workflow. Please, try again."
-msgstr "Kann den Workflow nicht veröffentlichen. Bitte versuchen Sie es erneut."
+msgstr ""
+"Kann den Workflow nicht veröffentlichen. Bitte versuchen Sie es erneut."
 
 #: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:235
 msgid "Workflow switched to draft."
@@ -5778,7 +5802,8 @@ msgstr "Beschreibung"
 
 #: assets/jsx/workflow-editor/components/workflow-switch-to-draft-button/index.jsx:33
 msgid "Are you sure you want to unpublish this workflow?"
-msgstr "Sind Sie sicher, dass Sie diesen Workflow nicht veröffentlichen möchten?"
+msgstr ""
+"Sind Sie sicher, dass Sie diesen Workflow nicht veröffentlichen möchten?"
 
 #: assets/jsx/workflow-editor/components/workflow-switch-to-draft-button/index.jsx:52
 msgid "Draft"
@@ -5793,13 +5818,11 @@ msgid "Change manually enabled workflows"
 msgstr "Manuell aktivierte Workflows ändern"
 
 #: assets/jsx/workflow-manual-selection/example-extending-with-slot.jsx:48
-#, js-format
 msgid "Enable workflow %s"
 msgstr "Workflow %s aktivieren"
 
-#: assets/jsx/workflows-list/cancel-action/index.jsx:59
 #. translators: %s: Workflow title
-#, js-format
+#: assets/jsx/workflows-list/cancel-action/index.jsx:59
 msgid ""
 "Are you sure you want to cancel all scheduled actions for the \"%s\" "
 "workflow?"
@@ -5810,20 +5833,3 @@ msgstr ""
 #: assets/jsx/workflows-list/cancel-action/index.jsx:69
 msgid "Cancel Actions"
 msgstr "Aktionen abbrechen"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:23
-msgctxt "noun"
-msgid "View"
-msgstr "Anzeigen"
-
-#: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:23, fuzzy
-#. translators: Default label for the Workflow sidebar tab, not selected.
-msgctxt "noun"
-msgid "Workflow"
-msgstr "Workflow"
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:80
-#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:85
-msgctxt "nodes"
-msgid "Most used"
-msgstr "Am häufigsten verwendet"

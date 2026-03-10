@@ -16,10 +16,6 @@ msgstr ""
 
 #. Plugin Name of the plugin
 #. Plugin Name of the plugin
-#. Plugin Name of the plugin
-#. Plugin Name of the plugin
-#. Plugin Name of the plugin
-#. Plugin Name of the plugin
 #: post-expirator.php
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:120
 #: src/Modules/Workflows/Models/StepTypesModel.php:99
