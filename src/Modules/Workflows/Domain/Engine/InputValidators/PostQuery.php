@@ -197,7 +197,8 @@ class PostQuery implements InputValidatorsInterface
         $postId = (int) $postId;
 
         if (! empty($settingPostIds) && ! in_array($postId, $settingPostIds)) {
-            $this->logValidationFailure(
+            $this->logValidationResult(
+                false,
                 'Post ID does not match configured list',
                 is_object($post) ? $post : null,
                 ['post_id' => $postId, 'allowed' => $settingPostIds]
@@ -214,7 +215,8 @@ class PostQuery implements InputValidatorsInterface
         $settingPostStatus = $nodeSettings['postQuery']['postStatus'] ?? [];
 
         if (! empty($settingPostStatus) && ! in_array($post->post_status, $settingPostStatus)) {
-            $this->logValidationFailure(
+            $this->logValidationResult(
+                false,
                 'Post status does not match',
                 $post,
                 ['post_status' => $post->post_status, 'allowed' => $settingPostStatus]
@@ -237,7 +239,8 @@ class PostQuery implements InputValidatorsInterface
         $settingPostAuthor = $this->executionContext->resolveExpressionsInArray($settingPostAuthor);
 
         if (! in_array($post->post_author, $settingPostAuthor)) {
-            $this->logValidationFailure(
+            $this->logValidationResult(
+                false,
                 'Post author does not match',
                 $post,
                 ['post_author' => $post->post_author, 'allowed' => $settingPostAuthor]
@@ -279,7 +282,8 @@ class PostQuery implements InputValidatorsInterface
             $postTerms = wp_get_post_terms($post->ID, $taxonomy, ['fields' => 'ids']);
 
             if (is_wp_error($postTerms)) {
-                $this->logValidationFailure(
+                $this->logValidationResult(
+                    false,
                     'Failed to fetch post terms',
                     $post,
                     ['taxonomy' => $taxonomy, 'error' => $postTerms->get_error_message()]
@@ -293,7 +297,8 @@ class PostQuery implements InputValidatorsInterface
             }
         }
 
-        $this->logValidationFailure(
+        $this->logValidationResult(
+            false,
             'Post has none of the required terms',
             $post,
             ['required' => $groupedSelectedTerms]
