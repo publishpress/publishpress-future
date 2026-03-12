@@ -135,7 +135,6 @@ class PostQuery implements InputValidatorsInterface
     private function hasValidPost($post)
     {
         if (! is_object($post)) {
-            throw new \Exception(esc_html('Invalid post object: ' . $post->get_error_message()));
             return false;
         }
 
