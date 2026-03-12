@@ -31,11 +31,12 @@ class NodeResolverTest extends \lucatume\WPBrowser\TestCase\WPTestCase
     public function testGetTypeReturnsCorrectType(): void
     {
         $resolver = new NodeResolver([
-            'ID' => 34,
+            'id' => '34',
             'name' => 'Node Name',
             'label' => 'Node Label',
             'activation_timestamp' => '2021-01-01 00:00:00',
             'slug' => 'nodeSlug',
+            'postId' => 0,
         ]);
 
         $this->assertEquals('node', $resolver->getType());
@@ -44,28 +45,31 @@ class NodeResolverTest extends \lucatume\WPBrowser\TestCase\WPTestCase
     public function testGetValueAsStringReturnsCorrectValue(): void
     {
         $resolver = new NodeResolver([
-            'ID' => 34,
+            'id' => '34',
             'name' => 'Node Name',
             'label' => 'Node Label',
             'activation_timestamp' => '2021-01-01 00:00:00',
             'slug' => 'nodeSlug',
+            'postId' => 0,
         ]);
 
-        $this->assertEquals('34', $resolver->getValueAsString('ID'));
+        $this->assertEquals('34', $resolver->getValueAsString('id'));
         $this->assertEquals('Node Name', $resolver->getValueAsString('name'));
         $this->assertEquals('Node Label', $resolver->getValueAsString('label'));
         $this->assertEquals('2021-01-01 00:00:00', $resolver->getValueAsString('activation_timestamp'));
         $this->assertEquals('nodeSlug', $resolver->getValueAsString('slug'));
+        $this->assertEquals('0', $resolver->getValueAsString('postId'));
     }
 
     public function testGetValueAsStringReturnsEmptyStringWhenPropertyNotExists(): void
     {
         $resolver = new NodeResolver([
-            'ID' => 34,
+            'id' => '34',
             'name' => 'Node Name',
             'label' => 'Node Label',
             'activation_timestamp' => '2021-01-01 00:00:00',
             'slug' => 'nodeSlug',
+            'postId' => 0,
         ]);
 
         $this->assertEquals('', $resolver->getValueAsString('non_existent_property'));
@@ -74,11 +78,12 @@ class NodeResolverTest extends \lucatume\WPBrowser\TestCase\WPTestCase
     public function testGetValueAsStringReturnsEmptyStringWhenPropertyIsNull(): void
     {
         $resolver = new NodeResolver([
-            'ID' => 34,
+            'id' => '34',
             'name' => 'Node Name',
             'label' => 'Node Label',
             'activation_timestamp' => '2021-01-01 00:00:00',
             'slug' => 'nodeSlug',
+            'postId' => 0,
         ]);
 
         $this->assertEquals('', $resolver->getValueAsString('non_existent_property'));
@@ -87,11 +92,12 @@ class NodeResolverTest extends \lucatume\WPBrowser\TestCase\WPTestCase
     public function testGetValueAsStringReturnsEmptyStringWhenPropertyIsEmptyString(): void
     {
         $resolver = new NodeResolver([
-            'ID' => 34,
+            'id' => '34',
             'name' => 'Node Name',
             'label' => 'Node Label',
             'activation_timestamp' => '2021-01-01 00:00:00',
             'slug' => 'nodeSlug',
+            'postId' => 0,
         ]);
 
         $this->assertEquals('', $resolver->getValueAsString(''));
@@ -100,11 +106,12 @@ class NodeResolverTest extends \lucatume\WPBrowser\TestCase\WPTestCase
     public function testGetValueAsStringReturnsEmptyStringWhenPropertyIsFalse(): void
     {
         $resolver = new NodeResolver([
-            'ID' => 34,
+            'id' => '34',
             'name' => 'Node Name',
             'label' => 'Node Label',
             'activation_timestamp' => '2021-01-01 00:00:00',
             'slug' => 'nodeSlug',
+            'postId' => 0,
         ]);
 
         $this->assertEquals('', $resolver->getValueAsString(false));
@@ -113,7 +120,7 @@ class NodeResolverTest extends \lucatume\WPBrowser\TestCase\WPTestCase
     public function testGetValueAsStringReturnsEmptyStringWhenPropertyIsZero(): void
     {
         $resolver = new NodeResolver([
-            'ID' => 34,
+            'id' => '34',
             'name' => 'Node Name',
             'label' => 'Node Label',
             'activation_timestamp' => '2021-01-01 00:00:00',
@@ -126,11 +133,12 @@ class NodeResolverTest extends \lucatume\WPBrowser\TestCase\WPTestCase
     public function testGetValueAsStringReturnsEmptyStringWhenPropertyIsZeroString(): void
     {
         $resolver = new NodeResolver([
-            'ID' => 34,
+            'id' => '34',
             'name' => 'Node Name',
             'label' => 'Node Label',
             'activation_timestamp' => '2021-01-01 00:00:00',
             'slug' => 'nodeSlug',
+            'postId' => 0,
         ]);
 
         $this->assertEquals('', $resolver->getValueAsString('0'));
@@ -139,27 +147,30 @@ class NodeResolverTest extends \lucatume\WPBrowser\TestCase\WPTestCase
     public function testIssetReturnsTrueWhenPropertyExists(): void
     {
         $resolver = new NodeResolver([
-            'ID' => 34,
+            'id' => '34',
             'name' => 'Node Name',
             'label' => 'Node Label',
             'activation_timestamp' => '2021-01-01 00:00:00',
             'slug' => 'nodeSlug',
+            'postId' => 0,
         ]);
 
         $this->assertTrue(isset($resolver->ID));
         $this->assertTrue(isset($resolver->name));
         $this->assertTrue(isset($resolver->label));
         $this->assertTrue(isset($resolver->activation_timestamp));
+        $this->assertTrue(isset($resolver->postId));
     }
 
     public function testIssetReturnsFalseWhenPropertyDoesNotExist(): void
     {
         $resolver = new NodeResolver([
-            'ID' => 34,
+            'id' => '34',
             'name' => 'Node Name',
             'label' => 'Node Label',
             'activation_timestamp' => '2021-01-01 00:00:00',
             'slug' => 'nodeSlug',
+            'postId' => 0,
         ]);
 
         $this->assertFalse(isset($resolver->non_existent_property));
@@ -168,11 +179,12 @@ class NodeResolverTest extends \lucatume\WPBrowser\TestCase\WPTestCase
     public function testGetReturnsCorrectValueWhenPropertyExists(): void
     {
         $resolver = new NodeResolver([
-            'ID' => 34,
+            'id' => '34',
             'name' => 'Node Name',
             'label' => 'Node Label',
             'activation_timestamp' => '2021-01-01 00:00:00',
             'slug' => 'nodeSlug',
+            'postId' => 0,
         ]);
 
         $this->assertEquals(34, $resolver->ID);
@@ -180,16 +192,18 @@ class NodeResolverTest extends \lucatume\WPBrowser\TestCase\WPTestCase
         $this->assertEquals('Node Label', $resolver->label);
         $this->assertEquals('2021-01-01 00:00:00', $resolver->activation_timestamp);
         $this->assertEquals('nodeSlug', $resolver->slug);
+        $this->assertEquals('0', $resolver->postId);
     }
 
     public function testGetReturnsNullWhenPropertyDoesNotExist(): void
     {
         $resolver = new NodeResolver([
-            'ID' => 34,
+            'id' => '34',
             'name' => 'Node Name',
             'label' => 'Node Label',
             'activation_timestamp' => '2021-01-01 00:00:00',
             'slug' => 'nodeSlug',
+            'postId' => 0,
         ]);
 
         $this->assertNull($resolver->non_existent_property);
@@ -198,11 +212,12 @@ class NodeResolverTest extends \lucatume\WPBrowser\TestCase\WPTestCase
     public function testSetSetsValueDoNotChangeTheValues(): void
     {
         $resolver = new NodeResolver([
-            'ID' => 34,
+            'id' => '34',
             'name' => 'Node Name',
             'label' => 'Node Label',
             'activation_timestamp' => '2021-01-01 00:00:00',
             'slug' => 'nodeSlug',
+            'postId' => 0,
         ]);
 
         $resolver->ID = 35;
@@ -214,22 +229,25 @@ class NodeResolverTest extends \lucatume\WPBrowser\TestCase\WPTestCase
         $this->assertEquals('Node Name', $resolver->name);
         $this->assertEquals('Node Label', $resolver->label);
         $this->assertEquals('2021-01-01 00:00:00', $resolver->activation_timestamp);
+        $this->assertEquals('0', $resolver->postId);
     }
 
     public function testUnsetRemovesProperty(): void
     {
         $resolver = new NodeResolver([
-            'ID' => 34,
+            'id' => '34',
             'name' => 'Node Name',
             'label' => 'Node Label',
             'activation_timestamp' => '2021-01-01 00:00:00',
             'slug' => 'nodeSlug',
+            'postId' => 0,
         ]);
 
         unset($resolver->ID);
         unset($resolver->name);
         unset($resolver->label);
         unset($resolver->activation_timestamp);
+        unset($resolver->postId);
 
         $this->assertNotNull($resolver->ID);
         $this->assertNotNull($resolver->name);
@@ -240,11 +258,12 @@ class NodeResolverTest extends \lucatume\WPBrowser\TestCase\WPTestCase
     public function testToStringReturnsJsonEncodedArray(): void
     {
         $resolver = new NodeResolver([
-            'ID' => 34,
+            'id' => '34',
             'name' => 'Node Name',
             'label' => 'Node Label',
             'activation_timestamp' => '2021-01-01 00:00:00',
             'slug' => 'nodeSlug',
+            'postId' => 0,
         ]);
 
         $this->assertEquals('{"ID":34,"name":"Node Name","label":"Node Label","activation_timestamp":"2021-01-01 00:00:00","slug":"nodeSlug"}', (string)$resolver);
@@ -260,22 +279,24 @@ class NodeResolverTest extends \lucatume\WPBrowser\TestCase\WPTestCase
     public function testCompactReturnsCompactedArray(): void
     {
         $resolver = new NodeResolver([
-            'ID' => 34,
+            'id' => '34',
             'name' => 'Node Name',
             'label' => 'Node Label',
             'activation_timestamp' => '2021-01-01 00:00:00',
             'slug' => 'nodeSlug',
+            'postId' => 0,
         ]);
 
         $this->assertEquals(
             [
                 'type' => 'node',
                 'value' => [
-                    'ID' => 34,
+                    'id' => '34',
                     'name' => 'Node Name',
                     'label' => 'Node Label',
                     'activation_timestamp' => '2021-01-01 00:00:00',
                     'slug' => 'nodeSlug',
+                    'postId' => 0,
                 ]
             ],
             $resolver->compact()

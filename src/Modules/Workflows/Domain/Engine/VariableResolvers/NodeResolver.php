@@ -24,12 +24,28 @@ class NodeResolver implements VariableResolverInterface
             $node = (array)$node;
         }
 
-        $this->id = (string)$node['id'];
+        $this->id = '';
         $this->name = (string)$node['name'];
         $this->label = (string)$node['label'];
         $this->activation_timestamp = (string)$node['activation_timestamp'];
         $this->slug = (string)$node['slug'];
-        $this->postId = (int)$node['postId'];
+        $this->postId = 0;
+
+        if (! isset($node['id']) && isset($node['ID'])) {
+            $this->id = (string)$node['ID'];
+        }
+
+        if (isset($node['id'])) {
+            $this->id = (string)$node['id'];
+        }
+
+        if (isset($node['postId'])) {
+            $this->postId = (int)$node['postId'];
+        }
+
+        if (isset($node['post_id'])) {
+            $this->postId = (int)$node['post_id'];
+        }
     }
 
     public function getType(): string
