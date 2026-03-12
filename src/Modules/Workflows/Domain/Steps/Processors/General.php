@@ -57,11 +57,7 @@ class General implements StepProcessorInterface
     {
         $message = sprintf($message, ...$args);
 
-        return sprintf(
-            $this->getLogPrefix() . 'Workflow #%1$s → %2$s',
-            $this->executionContext->getVariable('global.workflow.id'),
-            $message
-        );
+        return $this->getLogPrefix() . $message;
     }
 
     public function setup(array $step, callable $setupCallback): void
