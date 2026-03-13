@@ -48,3 +48,5 @@ webpack.config.js
 yarn.lock
 phpstan.neon
 /.cursor
+
+.deploy-state.json

@@ -11,3 +11,5 @@
 - .DS_Store
 - .phplint.cache
 - .rsync-filters-dev-sync
+
+- .deploy-state.json

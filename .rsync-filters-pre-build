@@ -49,3 +49,5 @@
 - .env
 - .env.example
 - /.cursor
+
+- .deploy-state.json
