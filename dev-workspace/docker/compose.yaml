@@ -18,6 +18,7 @@ services:
             - ../../:/project
             - ../.cache/.npm/_logs:/root/.npm/_logs
             - ../.cache/.oh-my-zsh/log:/root/.oh-my-zsh/log
+            - ../.cache/.config/gh:/root/.config/gh
         environment:
             - INSIDE_DEV_WORKSPACE=true
             - HISTFILE=/root/.cache/.zsh_history
