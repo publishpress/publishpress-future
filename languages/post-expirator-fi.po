@@ -4,51 +4,51 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PublishPress Future 4.10.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/project\n"
-"POT-Creation-Date: 2026-02-27T16:10:19+00:00\n"
-"PO-Revision-Date: 2026-03-02 14:31+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: none\n"
-"Language: fi\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-02-27T16:10:19+00:00\n"
+"PO-Revision-Date: 2026-03-13 18:00+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Language: fi\n"
 
-#. Plugin Name of the plugin
-#. Plugin Name of the plugin
 #: post-expirator.php
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:120
 #: src/Modules/Workflows/Models/StepTypesModel.php:99
+#. Plugin Name of the plugin
 msgid "PublishPress Future"
 msgstr "PublishPress Tulevaisuus"
 
+#: post-expirator.php, fuzzy
 #. Plugin URI of the plugin
-#: post-expirator.php
 msgid "http://wordpress.org/extend/plugins/post-expirator/"
 msgstr "http://wordpress.org/extend/plugins/post-expirator/"
 
-#. Description of the plugin
 #: post-expirator.php
+#. Description of the plugin
 msgid ""
-"PublishPress Future allows you to schedule automatic changes to posts, pages "
-"and other content types."
+"PublishPress Future allows you to schedule automatic changes to posts, "
+"pages and other content types."
 msgstr ""
 "PublishPress Tulevaisuus mahdollistaa automaattisten muutosten "
 "aikatauluttamisen posteille, sivuille ja muille sisältötyypeille."
 
+#: post-expirator.php, fuzzy
 #. Author of the plugin
-#: post-expirator.php
 msgid "PublishPress"
 msgstr "PublishPress"
 
+#: post-expirator.php, fuzzy
 #. Author URI of the plugin
-#: post-expirator.php
 msgid "http://publishpress.com"
 msgstr "http://publishpress.com"
 
-#: legacy/classes/Display.class.php:113 legacy/classes/Display.class.php:141
+#: legacy/classes/Display.class.php:113
+#: legacy/classes/Display.class.php:141
 msgid "You do not have permission to configure PublishPress Future."
 msgstr "Sinulla ei ole oikeuksia konfiguroida PublishPress Tulevaisuutta."
 
@@ -89,18 +89,17 @@ msgid "The database schema was fixed."
 msgstr "Tietokannan kaavio on korjattu."
 
 #: legacy/classes/Display.class.php:328
-msgid ""
-"The database schema could not be fixed. Please, contact the support team."
-msgstr ""
-"Tietokannan kaaviota ei voitu korjata. Ole hyvä ja ota yhteyttä tukitiimiin."
+msgid "The database schema could not be fixed. Please, contact the support team."
+msgstr "Tietokannan kaaviota ei voitu korjata. Ole hyvä ja ota yhteyttä tukitiimiin."
 
-#: legacy/classes/Display.class.php:399 legacy/classes/Display.class.php:453
+#: legacy/classes/Display.class.php:399
+#: legacy/classes/Display.class.php:453
 #: legacy/classes/Display.class.php:475
 msgid "Saved Options!"
 msgstr "Tallennetut asetukset!"
 
-#. translators: %1$s is the plugin name, %2$s is the star rating markup
 #: legacy/classes/Display.class.php:567
+#. translators: %1$s is the plugin name, %2$s is the star rating markup
 #, php-format
 msgid "If you like %1$s, please leave us a %2$s rating. Thank you!"
 msgstr "Jos pidät %1$s:stä, jätä meille %2$s arvio. Kiitos!"
@@ -133,15 +132,18 @@ msgstr "Ota yhteyttä"
 msgid "No taxonomies found"
 msgstr "Ei taksonomioita löydetty"
 
-#: services.php:150 src/Modules/Settings/SettingsFacade.php:122
+#: services.php:150
+#: src/Modules/Settings/SettingsFacade.php:122, fuzzy
 msgid "l F jS, Y"
 msgstr "l F jS, Y"
 
-#: services.php:154 src/Modules/Settings/SettingsFacade.php:123
+#: services.php:154
+#: src/Modules/Settings/SettingsFacade.php:123, fuzzy
 msgid "g:ia"
 msgstr "g:ia"
 
-#: services.php:155 src/Modules/Settings/SettingsFacade.php:124
+#: services.php:155
+#: src/Modules/Settings/SettingsFacade.php:124
 msgid "Post expires at EXPIRATIONTIME on ACTIONDATE"
 msgstr "Viesti vanhenee EXPIRATIONTIME päivänä ACTIONDATE"
 
@@ -180,8 +182,7 @@ msgstr "Tuo"
 
 #: src/Modules/Backup/Controllers/BackupRestApi.php:142
 msgid "Failed to get workflows. Check the logs for more details."
-msgstr ""
-"Työnkulkujen saaminen epäonnistui. Tarkista lokit saadaksesi lisätietoja."
+msgstr "Työnkulkujen saaminen epäonnistui. Tarkista lokit saadaksesi lisätietoja."
 
 #: src/Modules/Backup/Controllers/BackupRestApi.php:194
 msgid "Failed to export the file. Check the logs for more details."
@@ -201,25 +202,27 @@ msgstr "Virheellinen nonce."
 
 #: src/Modules/Debug/Migrations/V04905DebugLogRequestId.php:80
 msgid ""
-"Add request_id and trigger_activated columns to debug log table after v4.10.0"
+"Add request_id and trigger_activated columns to debug log table after "
+"v4.10.0"
 msgstr ""
-"Lisää request_id ja trigger_activated -sarakkeet virhelokitaulukkoon version "
-"4.10.0 jälkeen"
+"Lisää request_id ja trigger_activated -sarakkeet virhelokitaulukkoon "
+"version 4.10.0 jälkeen"
 
 #: src/Modules/Debug/Migrations/V04906DebugLogTimestampMilliseconds.php:79
 msgid "Add millisecond precision to debug log timestamp column (v4.10.0)"
-msgstr ""
-"Lisää millisekunnin tarkkuus virhelokin aikaleima-sarakkeeseen (v4.10.0)"
+msgstr "Lisää millisekunnin tarkkuus virhelokin aikaleima-sarakkeeseen (v4.10.0)"
 
 #: src/Modules/Debug/Views/raw-debug-log.html.php:39
 #: src/Modules/Settings/Controllers/Controller.php:214
-#: src/Views/menu-debug-log.php:113 src/Views/menu-debug-log.php:148
+#: src/Views/menu-debug-log.php:113
+#: src/Views/menu-debug-log.php:148
 msgid "Debugging table is currently empty."
 msgstr "Virheenkorjaustaulukko on tällä hetkellä tyhjennä."
 
 #: src/Modules/Debug/Views/raw-debug-log.html.php:40
 #: src/Modules/Settings/Controllers/Controller.php:215
-#: src/Views/menu-debug-log.php:115 src/Views/menu-debug-log.php:150
+#: src/Views/menu-debug-log.php:115
+#: src/Views/menu-debug-log.php:150
 msgid "No results match the current filter."
 msgstr "Ei tuloksia vastaa nykyistä suodatinta."
 
@@ -240,7 +243,8 @@ msgstr "Taksonomia"
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:131
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:132
 #: src/Modules/Expirator/Controllers/SettingsController.php:544
-#: src/Views/menu-admin.php:44 src/Views/tabs-future-actions.php:51
+#: src/Views/menu-admin.php:44
+#: src/Views/tabs-future-actions.php:51
 msgid "Future Actions"
 msgstr "Tulevat toiminnot"
 
@@ -291,20 +295,20 @@ msgstr "Näytä kalenteri"
 msgid "Hide Calendar"
 msgstr "Piilota kalenteri"
 
-#. translators: the text between {} is the link to the settings page.
-#. translators: the text between {{}} is the link to the settings page.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:182
 #: src/Modules/Expirator/Controllers/BulkEditController.php:222
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:423
 #: src/Modules/Expirator/Controllers/QuickEditController.php:352
+#. translators: the text between {} is the link to the settings page.
+#. translators: the text between {{}} is the link to the settings page.
 msgid "Timezone is controlled by the {WordPress Settings}."
 msgstr "Aikavyöhyke on hallittu {WordPress-asetuksista}."
 
-#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:189
 #: src/Modules/Expirator/Controllers/BulkEditController.php:229
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:430
 #: src/Modules/Expirator/Controllers/QuickEditController.php:356
+#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "No %s found."
 msgstr "Ei %s löytynyt."
@@ -318,38 +322,38 @@ msgstr ""
 "Sinun on määritettävä taksonomia tälle viestityypille, jotta voit käyttää "
 "tätä ominaisuutta."
 
-#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:197
 #: src/Modules/Expirator/Controllers/BulkEditController.php:243
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:438
 #: src/Modules/Expirator/Controllers/QuickEditController.php:361
+#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "New %s"
 msgstr "Uudet %s"
 
-#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:199
 #: src/Modules/Expirator/Controllers/BulkEditController.php:245
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:440
 #: src/Modules/Expirator/Controllers/QuickEditController.php:363
+#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "%s to remove"
 msgstr "%s poistettavaksi"
 
-#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:201
 #: src/Modules/Expirator/Controllers/BulkEditController.php:247
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:442
 #: src/Modules/Expirator/Controllers/QuickEditController.php:365
+#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "%s to add"
 msgstr "%s lisättäväksi"
 
-#. translators: %s is the name of the taxonomy in singular form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:204
 #: src/Modules/Expirator/Controllers/BulkEditController.php:250
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:445
 #: src/Modules/Expirator/Controllers/QuickEditController.php:367
+#. translators: %s is the name of the taxonomy in singular form.
 #, php-format
 msgid "Search for %s"
 msgstr "Etsi %s"
@@ -375,12 +379,12 @@ msgstr "Valitse päivämäärä"
 msgid "Date cannot be in the past"
 msgstr "Päivämäärä ei voi olla menneisyydessä"
 
-#. translators: %s is the name of the taxonomy in singular form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:212
 #: src/Modules/Expirator/Controllers/BulkEditController.php:258
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:453
 #: src/Modules/Expirator/Controllers/QuickEditController.php:373
 #: src/Modules/Expirator/Controllers/SettingsController.php:298
+#. translators: %s is the name of the taxonomy in singular form.
 #, php-format
 msgid "Please select one or more %s"
 msgstr "Valitse yksi tai useampi %s"
@@ -400,8 +404,7 @@ msgstr "Ei julkaisuja valittu. Ei voida synkronoida tulevia toimintoja."
 
 #: src/Modules/Expirator/Controllers/BulkActionController.php:101
 msgid "Future Actions successfully synced with Post Metadata."
-msgstr ""
-"Tulevat toiminnot on synkronoitu onnistuneesti julkaisutietojen kanssa."
+msgstr "Tulevat toiminnot on synkronoitu onnistuneesti julkaisutietojen kanssa."
 
 #: src/Modules/Expirator/Controllers/BulkActionController.php:111
 msgid "Update Future Actions from Post Metadata"
@@ -454,7 +457,6 @@ msgstr "Päivitä Pro-versioon"
 msgid "Action Workflows"
 msgstr "Toimintojen työnkulut"
 
-#. translators: button label text should, if possible, be under 16 characters.
 #: src/Modules/Expirator/Controllers/PluginsListController.php:70
 #: src/Modules/Expirator/Controllers/SettingsController.php:132
 #: src/Modules/Expirator/Controllers/SettingsController.php:133
@@ -462,6 +464,7 @@ msgstr "Toimintojen työnkulut"
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostWorkflowEnable.php:67
 #: src/Views/tabs-settings.php:47
 #: assets/jsx/workflow-editor/components/settings-sidebar/settings-sidebar.jsx:54
+#. translators: button label text should, if possible, be under 16 characters.
 msgid "Settings"
 msgstr "Asetukset"
 
@@ -516,9 +519,9 @@ msgstr "Suoritettu toiminto: %s (ID: %d)"
 msgid "Executed scheduled action"
 msgstr "Suoritettu aikataulutettu toiminto"
 
-#. translators: %1$s is the link to the PHP strtotime function documentation, %2$s and %3$s are the opening and closing code tags. Please, do not translate the date format text, since PHP will not be able to calculate using non-english terms.
 #: src/Modules/Expirator/Controllers/SettingsController.php:252
 #: src/Views/menu-general.php:41
+#. translators: %1$s is the link to the PHP strtotime function documentation, %2$s and %3$s are the opening and closing code tags. Please, do not translate the date format text, since PHP will not be able to calculate using non-english terms.
 #, php-format
 msgid ""
 "Set the offset to use for the default action date and time. For information "
@@ -587,7 +590,8 @@ msgstr ""
 "ole käytettävissä."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:282
-#: src/Views/menu-notifications.php:116 src/Views/menu-notifications.php:169
+#: src/Views/menu-notifications.php:116
+#: src/Views/menu-notifications.php:169
 msgid "Who to Notify"
 msgstr "Kenelle ilmoitetaan"
 
@@ -691,8 +695,8 @@ msgid ""
 "The shortcode [futureaction] must be used inside the loop or with the "
 "post_id attribute."
 msgstr ""
-"Shortcodea [futureaction] on käytettävä silmukan sisällä tai post_id-"
-"attribuutin kanssa."
+"Shortcodea [futureaction] on käytettävä silmukan sisällä tai "
+"post_id-attribuutin kanssa."
 
 #: src/Modules/Expirator/DBTableSchemas/ActionArgsSchema.php:96
 msgid "The column args length was not updated to 1000."
@@ -705,11 +709,11 @@ msgstr "Sarakkeiden argumenttien pituutta ei päivitetty 1000:een."
 msgid "Status didn't change."
 msgstr "Tila ei muuttunut."
 
-#. translators: 1: old post status, 2: new post status
 #: src/Modules/Expirator/ExpirationActions/ChangePostStatus.php:62
 #: src/Modules/Expirator/ExpirationActions/PostStatusToDraft.php:60
 #: src/Modules/Expirator/ExpirationActions/PostStatusToPrivate.php:60
 #: src/Modules/Expirator/ExpirationActions/PostStatusToTrash.php:60
+#. translators: 1: old post status, 2: new post status
 #, php-format
 msgid "Status has been successfully changed from \"%1$s\" to \"%2$s\"."
 msgstr "Tila on onnistuneesti muutettu \"%1$s\":sta \"%2$s\":ksi."
@@ -718,14 +722,14 @@ msgstr "Tila on onnistuneesti muutettu \"%1$s\":sta \"%2$s\":ksi."
 msgid "Change status"
 msgstr "Vaihda tila"
 
-#. translators: %s: post type singular label
 #: src/Modules/Expirator/ExpirationActions/DeletePost.php:47
+#. translators: %s: post type singular label
 #, php-format
 msgid "%s was not deleted."
 msgstr "%s ei ollut poistettu."
 
-#. translators: %s: post type singular label
 #: src/Modules/Expirator/ExpirationActions/DeletePost.php:54
+#. translators: %s: post type singular label
 #, php-format
 msgid "%s has been successfully deleted."
 msgstr "%s on poistettu onnistuneesti."
@@ -737,14 +741,14 @@ msgstr "%s on poistettu onnistuneesti."
 msgid "Delete"
 msgstr "Poista"
 
-#. translators: %s is the post type singular label
 #: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:65
+#. translators: %s is the post type singular label
 #, php-format
 msgid "No terms were added to the %s."
 msgstr "Ei termejä lisätty %s:ään."
 
-#. translators: %1$s is the taxonomy label, %2$s is the post type singular label, %3$s is the list of terms added, %4$s is the list of terms on the post
 #: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:77
+#. translators: %1$s is the taxonomy label, %2$s is the post type singular label, %3$s is the list of terms added, %4$s is the list of terms on the post
 #, php-format
 msgid ""
 "The following terms (%1$s) were added to the %2$s: \"%3$s\". The full list "
@@ -753,86 +757,86 @@ msgstr ""
 "Seuraavat termit (%1$s) lisättiin %2$s:ään: \"%3$s\". Täydellinen lista "
 "termeistä postissa on: %4$s."
 
-#. translators: %s is the taxonomy name (plural)
 #: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:120
+#. translators: %s is the taxonomy name (plural)
 #, php-format
 msgid "Add extra %s"
 msgstr "Lisää ylimääräisiä %s"
 
-#. translators: %s is the post type singular label
 #: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:56
 #: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:56
+#. translators: %s is the post type singular label
 #, php-format
 msgid "No terms were removed from the %s."
 msgstr "Ei termejä poistettu %s:stä."
 
-#. translators: %1$s is the taxonomy name, %2$s is the post type singular label, %3$s is the removed terms list, %4$s is the updated terms list
 #: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:67
+#. translators: %1$s is the taxonomy name, %2$s is the post type singular label, %3$s is the removed terms list, %4$s is the updated terms list
 #, php-format
 msgid ""
-"The following terms (%1$s) were removed from the %2$s: %3$s. The new list of "
-"terms on the post is: %4$s."
+"The following terms (%1$s) were removed from the %2$s: %3$s. The new list "
+"of terms on the post is: %4$s."
 msgstr ""
 "Seuraavat termit (%1$s) poistettiin %2$s:stä: %3$s. Uusi lista termeistä "
 "postissa on: %4$s."
 
-#. translators: %s is the taxonomy name (plural)
 #: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:112
+#. translators: %s is the taxonomy name (plural)
 #, php-format
 msgid "Remove selected %s"
 msgstr "Poista valitut %s"
 
-#. translators: %1$s is the taxonomy name, %2$s is the post type singular label, %3$s is the list of term names
 #: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:67
+#. translators: %1$s is the taxonomy name, %2$s is the post type singular label, %3$s is the list of term names
 #, php-format
 msgid "The following terms (%1$s) were removed from the %2$s: %3$s."
 msgstr "Seuraavat termit (%1$s) poistettiin %2$s:stä: %3$s."
 
-#. translators: %s is the taxonomy name (plural)
 #: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:106
+#. translators: %s is the taxonomy name (plural)
 #, php-format
 msgid "Remove all %s"
 msgstr "Poista kaikki %s"
 
-#. translators: %s is the post type singular label
 #: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:58
+#. translators: %s is the post type singular label
 #, php-format
 msgid "No terms were changed on the %s."
 msgstr "Ei termejä muutettu %s:ssä."
 
-#. translators: 1: taxonomy name, 2: post type singular label, 3: updated terms, 4: original terms
 #: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:69
+#. translators: 1: taxonomy name, 2: post type singular label, 3: updated terms, 4: original terms
 #, php-format
 msgid ""
 "The following terms (%1$s) were set to the %2$s: \"%3$s\". The old list of "
 "terms on the post was: %4$s."
 msgstr ""
-"Seuraavat termit (%1$s) asetettiin %2$s:ään: \"%3$s\". Vanha lista termeistä "
-"postissa oli: %4$s."
+"Seuraavat termit (%1$s) asetettiin %2$s:ään: \"%3$s\". Vanha lista "
+"termeistä postissa oli: %4$s."
 
-#. translators: %s is the taxonomy name (plural)
 #: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:109
+#. translators: %s is the taxonomy name (plural)
 #, php-format
 msgid "Replace all %s"
 msgstr "Korvaa kaikki %s"
 
-#. translators: %s: new post status
 #: src/Modules/Expirator/ExpirationActions/PostStatusToDraft.php:90
 #: src/Modules/Expirator/ExpirationActions/PostStatusToPrivate.php:90
 #: src/Modules/Expirator/ExpirationActions/PostStatusToTrash.php:90
+#. translators: %s: new post status
 #, php-format
 msgid "Change status to %s"
 msgstr "Vaihda tila %s:ksi"
 
-#. translators: %s: post type singular label
 #: src/Modules/Expirator/ExpirationActions/StickPost.php:46
 #: src/Modules/Expirator/ExpirationActions/UnstickPost.php:46
+#. translators: %s: post type singular label
 #, php-format
 msgid "%s didn't change."
 msgstr "%s ei muuttunut."
 
-#. translators: %s: post type singular label
 #: src/Modules/Expirator/ExpirationActions/StickPost.php:53
+#. translators: %s: post type singular label
 #, php-format
 msgid "%s has been added to stickies list."
 msgstr "%s on lisätty kiinnitettyjen lista."
@@ -841,8 +845,8 @@ msgstr "%s on lisätty kiinnitettyjen lista."
 msgid "Stick"
 msgstr "Kiinnitä"
 
-#. translators: %s: post type singular label
 #: src/Modules/Expirator/ExpirationActions/UnstickPost.php:53
+#. translators: %s: post type singular label
 #, php-format
 msgid "%s has been removed from stickies list."
 msgstr "%s on poistettu kiinnitettyjen listasta."
@@ -872,8 +876,8 @@ msgid ""
 "Change args column length to 1000 in the table _ppfuture_actions_args after "
 "v3.1.4"
 msgstr ""
-"Muuta args-sarakkeen pituus 1000:een taulussa _ppfuture_actions_args version "
-"3.1.4 jälkeen"
+"Muuta args-sarakkeen pituus 1000:een taulussa _ppfuture_actions_args "
+"version 3.1.4 jälkeen"
 
 #: src/Modules/Expirator/Models/ExpirablePostModel.php:489
 msgid "Email is disabled."
@@ -887,26 +891,26 @@ msgstr "Sähköposti lähetetty."
 msgid "Email not sent."
 msgstr "Sähköpostia ei lähetetty."
 
-#. translators: %1$s: post title placeholder, %2$s: notification text, %3$s: action date placeholder, %4$s: post link placeholder
 #: src/Modules/Expirator/Models/ExpirablePostModel.php:644
+#. translators: %1$s: post title placeholder, %2$s: notification text, %3$s: action date placeholder, %4$s: post link placeholder
 #, php-format
 msgid "%1$s. %2$s on %3$s. The post link is %4$s"
 msgstr "%1$s. %2$s on %3$s. Viestin linkki on %4$s"
 
-#. translators: %s is the post title
 #: src/Modules/Expirator/Models/ExpirablePostModel.php:662
+#. translators: %s is the post title
 #, php-format
 msgid "Future Action Complete \"%s\""
 msgstr "Tuleva toiminto valmis \"%s\""
 
-#. translators: 1: is the blog name, 2: the email subject
 #: src/Modules/Expirator/Models/ExpirablePostModel.php:666
+#. translators: 1: is the blog name, 2: the email subject
 #, fuzzy, php-format
 msgid "[%1$s] %2$s"
 msgstr "[%1$s] %2$s"
 
-#. translators: %s is the date/time offset and %s is the post type.
 #: src/Modules/Expirator/Models/PostTypeDefaultDataModel.php:156
+#. translators: %s is the date/time offset and %s is the post type.
 #, php-format
 msgid ""
 "Invalid date/time offset \"%s\" for post type \"%s\". Please ensure you use "
@@ -950,8 +954,7 @@ msgid "Cancel"
 msgstr "Peruuta"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:77
-msgid ""
-"Cancel the action. This will prevent the action from running in the future"
+msgid "Cancel the action. This will prevent the action from running in the future"
 msgstr "Peruuta toiminto. Tämä estää toimintoa suorittamasta tulevaisuudessa"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:88
@@ -959,56 +962,56 @@ msgstr "Peruuta toiminto. Tämä estää toimintoa suorittamasta tulevaisuudessa
 msgid "Run"
 msgstr "Suorita"
 
-#. translators: %s: amount of time
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:96
+#. translators: %s: amount of time
 #, php-format
 msgid "%s year"
 msgid_plural "%s years"
 msgstr[0] "%s vuosi"
 msgstr[1] "%s vuotta"
 
-#. translators: %s: amount of time
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:101
+#. translators: %s: amount of time
 #, php-format
 msgid "%s month"
 msgid_plural "%s months"
 msgstr[0] "%s kuukausi"
 msgstr[1] "%s kuukautta"
 
-#. translators: %s: amount of time
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:106
+#. translators: %s: amount of time
 #, php-format
 msgid "%s week"
 msgid_plural "%s weeks"
 msgstr[0] "%s viikko"
 msgstr[1] "%s viikkoa"
 
-#. translators: %s: amount of time
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:111
+#. translators: %s: amount of time
 #, php-format
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] "%s päivä"
 msgstr[1] "%s päivää"
 
-#. translators: %s: amount of time
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:116
+#. translators: %s: amount of time
 #, php-format
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] "%s tunti"
 msgstr[1] "%s tuntia"
 
-#. translators: %s: amount of time
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:121
+#. translators: %s: amount of time
 #, php-format
 msgid "%s minute"
 msgid_plural "%s minutes"
 msgstr[0] "%s minuutti"
 msgstr[1] "%s minuuttia"
 
-#. translators: %s: amount of time
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:126
+#. translators: %s: amount of time
 #, php-format
 msgid "%s second"
 msgid_plural "%s seconds"
@@ -1060,20 +1063,20 @@ msgstr "Suoritettu"
 msgid "Process the action now"
 msgstr "Käsittele toiminto nyt"
 
-#. translators: %1$s: post type label, %2$d: post ID, %3$s: post link tag start, %4$s: post title, %5$s: post link tag end
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:524
+#. translators: %1$s: post type label, %2$d: post ID, %3$s: post link tag start, %4$s: post title, %5$s: post link tag end
 #, fuzzy, php-format
 msgid "%1$s: [%2$d] %3$s%4$s%5$s"
 msgstr "%1$s: [%2$d] %3$s%4$s%5$s"
 
-#. translators: %s is the new status
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:559
+#. translators: %s is the new status
 #, php-format
 msgid "New Status: %s"
 msgstr "Uusi tila: %s"
 
-#. translators: %s is the list of terms
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:567
+#. translators: %s is the list of terms
 #, php-format
 msgid "Terms: %s"
 msgstr "Ehdot: %s"
@@ -1122,14 +1125,14 @@ msgstr "Viesti"
 msgid "Async"
 msgstr "Asynkroninen"
 
-#. translators: %s is the date interval in human readable format in the past
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:765
+#. translators: %s is the date interval in human readable format in the past
 #, php-format
 msgid " (%s ago)"
 msgstr " (%s sitten)"
 
-#. translators: %s is the date interval in human readable format in the present or future
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:771
+#. translators: %s is the date interval in human readable format in the present or future
 #, fuzzy, php-format
 msgid " (%s)"
 msgstr " (%s)"
@@ -1138,8 +1141,8 @@ msgstr " (%s)"
 msgid "Now!"
 msgstr "Nyt!"
 
-#. translators: %s: time interval
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:845
+#. translators: %s: time interval
 #, php-format
 msgid "Every %s"
 msgstr "Joka %s"
@@ -1227,12 +1230,12 @@ msgstr ""
 msgid "days"
 msgstr "päivää"
 
-#. translators: %1$s and %2$s are placeholders for the link to by the Pro version
 #: src/Modules/VersionNotices/Module.php:95
+#. translators: %1$s and %2$s are placeholders for the link to by the Pro version
 #, php-format
 msgid ""
-"You're using PublishPress Future Free. The Pro version has more features and "
-"support. %1$sUpgrade to Pro%2$s"
+"You're using PublishPress Future Free. The Pro version has more features "
+"and support. %1$sUpgrade to Pro%2$s"
 msgstr ""
 "Käytät PublishPress Future Free -versiota. Pro-versiossa on enemmän "
 "ominaisuuksia ja tukea. %1$sPäivitä Pro:hon%2$s"
@@ -1245,8 +1248,8 @@ msgstr "Työnkulun manuaalinen laukaisu"
 msgid "Check and warn about past-due actions"
 msgstr "Tarkista ja varo vanhentuneista toimista"
 
-#. translators: %s is the admin URL to the scheduled actions page
 #: src/Modules/Workflows/Controllers/PastDueActions.php:148
+#. translators: %s is the admin URL to the scheduled actions page
 #, php-format
 msgid ""
 "You have past-due scheduled actions in PublishPress Future.\n"
@@ -1402,8 +1405,7 @@ msgstr "Poista postaus viikon kuluttua julkaisemisesta"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:60
 msgid "Sample workflow to delete post one week after publishing"
-msgstr ""
-"Esimerkkityönkulku postauksen poistamiseksi viikon kuluttua julkaisemisesta"
+msgstr "Esimerkkityönkulku postauksen poistamiseksi viikon kuluttua julkaisemisesta"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:64
 msgid "Remove all categories one week after publishing"
@@ -1451,8 +1453,7 @@ msgstr "Irrota postaus viikon kuluttua julkaisemisesta"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:85
 msgid "Sample workflow to unstick post one week after publishing"
-msgstr ""
-"Esimerkkityönkulku postauksen irrottamiseksi viikon kuluttua julkaisemisesta"
+msgstr "Esimerkkityönkulku postauksen irrottamiseksi viikon kuluttua julkaisemisesta"
 
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:201
 msgid "Workflow repeating scheduled step"
@@ -1473,8 +1474,7 @@ msgstr "Siivoa orpojen työnkulkujen aikataulutettujen vaiheiden argumentit"
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:217
 #, php-format
 msgid "Clean up completed scheduled steps older than %d days"
-msgstr ""
-"Siivoa valmiit aikataulutetut vaiheet, jotka ovat vanhempia kuin %d päivää"
+msgstr "Siivoa valmiit aikataulutetut vaiheet, jotka ovat vanhempia kuin %d päivää"
 
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:256
 #, php-format
@@ -1488,8 +1488,7 @@ msgstr "Suoritettiin työnkulun aikataulutettu vaihe"
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:270
 #, php-format
 msgid "Cleaned up completed scheduled steps older than %d days"
-msgstr ""
-"Siivottu valmiit aikataulutetut vaiheet, jotka ovat vanhempia kuin %d päivää"
+msgstr "Siivottu valmiit aikataulutetut vaiheet, jotka ovat vanhempia kuin %d päivää"
 
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:276
 msgid "Checked for expired actions"
@@ -1533,20 +1532,20 @@ msgstr "Vaiheet:"
 msgid "Workflow recurring scheduled action"
 msgstr "Työnkulun toistuva aikataulutettu toiminto"
 
-#. translators: %1$s is the recurrence, %2$s is the date
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:508
+#. translators: %1$s is the recurrence, %2$s is the date
 #, php-format
 msgid "%1$s until %2$s"
 msgstr "%1$s asti %2$s"
 
-#. translators: %1$s is the recurrence, %2$d is the repeat times
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:518
+#. translators: %1$s is the recurrence, %2$d is the repeat times
 #, php-format
 msgid "%1$s for %2$d times"
 msgstr "%1$s %2$d kertaa"
 
-#. translators: %1$s is the executed times, %2$d is the total repeat times
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:528
+#. translators: %1$s is the executed times, %2$d is the total repeat times
 #, fuzzy, php-format
 msgid "[%1$s/%2$d]"
 msgstr "[%1$s/%2$d]"
@@ -1632,9 +1631,9 @@ msgid ""
 "connections, or invalid values. Select the step to view the corresponding "
 "error in the sidebar."
 msgstr ""
-"Virheilmoituksia ilmestyy kaikista täyttämättömistä vaadituista asetuksista, "
-"puuttuvista liitoksista tai virheellisistä arvoista. Valitse vaihe "
-"nähdäksesi vastaava virhe sivupalkista."
+"Virheilmoituksia ilmestyy kaikista täyttämättömistä vaadituista "
+"asetuksista, puuttuvista liitoksista tai virheellisistä arvoista. Valitse "
+"vaihe nähdäksesi vastaava virhe sivupalkista."
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:299
 msgid "Publish your workflow"
@@ -1658,13 +1657,13 @@ msgstr ""
 "Jos sinulla on kysymyksiä tai tarvitset apua, napsauta oikeassa yläkulmassa "
 "olevaa apupainiketta päästäksesi tukiresursseihin."
 
-#. translators: Blocks tab title in the block inserter.
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:236
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:19
+#. translators: Blocks tab title in the block inserter.
 msgid "Triggers"
 msgstr "Laukaisijat"
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:280
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:280, fuzzy
 msgid "—"
 msgstr "—"
 
@@ -1743,8 +1742,8 @@ msgstr "Toiminta työnkulkueditori"
 msgid "%s updated."
 msgstr "%s päivitetty."
 
-#. translators: 1: Post type singular label, 2: Revision title
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:838
+#. translators: 1: Post type singular label, 2: Revision title
 #, php-format
 msgid "%1$s restored to revision from %2$s"
 msgstr "%1$s palautettu revision tilaan %2$s"
@@ -1764,8 +1763,8 @@ msgstr "%s tallennettu."
 msgid "%s submitted."
 msgstr "%s lähetetty."
 
-#. translators: 1: Post type singular label, 2: Scheduled date
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:857
+#. translators: 1: Post type singular label, 2: Scheduled date
 #, php-format
 msgid "%1$s scheduled for: <strong>%2$s</strong>."
 msgstr "%1$s aikataulutettu: <strong>%2$s</strong>."
@@ -1844,7 +1843,7 @@ msgstr "Valitse julkaisu, johon sen meta lisätään."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:85
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeletePostMeta.php:85
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePostMeta.php:85
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePostMeta.php:85, fuzzy
 msgid "Meta"
 msgstr "Meta"
 
@@ -1861,8 +1860,8 @@ msgid ""
 "If enabled, only one meta value will be allowed. If disabled, multiple meta "
 "values can be added as an array."
 msgstr ""
-"Jos käytössä, vain yksi meta-arvo sallitaan. Jos pois päältä, useita meta-"
-"arvoja voidaan lisätä taulukkoon."
+"Jos käytössä, vain yksi meta-arvo sallitaan. Jos pois päältä, useita "
+"meta-arvoja voidaan lisätä taulukkoon."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:98
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeletePostMeta.php:91
@@ -2103,8 +2102,8 @@ msgstr "Ehdollinen"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:37
 msgid ""
-"This step allows you to continue the workflow only if certain conditions are "
-"met. It is not required to have both a True and a False option."
+"This step allows you to continue the workflow only if certain conditions "
+"are met. It is not required to have both a True and a False option."
 msgstr ""
 "Tämä vaihe mahdollistaa työnkulun jatkamisen vain, jos tietyt ehdot "
 "täyttyvät. Ei ole pakollista, että sekä True- että False-vaihtoehto on "
@@ -2134,8 +2133,8 @@ msgid ""
 "Shows which path was taken: 'true' if conditions were met, or 'false' if "
 "they weren't."
 msgstr ""
-"Näyttää, mikä polku on valittu: 'true' jos ehdot täyttyivät, tai 'false' jos "
-"ne eivät täyttyneet."
+"Näyttää, mikä polku on valittu: 'true' jos ehdot täyttyivät, tai 'false' "
+"jos ne eivät täyttyneet."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:147
 msgid "True"
@@ -2154,8 +2153,8 @@ msgid ""
 "This step enables you to deactivate the \"Manually enabled via checkbox\" "
 "workflow after use."
 msgstr ""
-"Tämä vaihe mahdollistaa \"Manuaalisesti aktivoitu ruudun kautta\" -työnkulun "
-"deaktivoinnin käytön jälkeen."
+"Tämä vaihe mahdollistaa \"Manuaalisesti aktivoitu ruudun kautta\" "
+"-työnkulun deaktivoinnin käytön jälkeen."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeactivatePostWorkflow.php:68
 msgid "Select which post will have its workflow deactivated."
@@ -2542,10 +2541,8 @@ msgstr "PublishPress Työnkulku: {{global.workflow.title}}"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:22
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:22
-msgid ""
-"This is a message sent by PublishPress Workflow: {{global.workflow.title}}."
-msgstr ""
-"Tämä on PublishPress Työnkulun lähettämä viesti: {{global.workflow.title}}."
+msgid "This is a message sent by PublishPress Workflow: {{global.workflow.title}}."
+msgstr "Tämä on PublishPress Työnkulun lähettämä viesti: {{global.workflow.title}}."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:45
 msgid "Send email"
@@ -2575,8 +2572,7 @@ msgstr "Vastaanottaja"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:84
 msgid "A comma-separated list of email addresses to send the message to."
-msgstr ""
-"Pilkuilla eroteltu luettelo sähköpostiosoitteista, joihin viesti lähetetään."
+msgstr "Pilkuilla eroteltu luettelo sähköpostiosoitteista, joihin viesti lähetetään."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:92
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:142
@@ -2736,10 +2732,8 @@ msgid "New terms"
 msgstr "Uudet termit"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SetPostTerm.php:83
-msgid ""
-"The terms that will be added to the posts after removing all the others."
-msgstr ""
-"Termit, jotka lisätään kirjoituksiin kaikkien muiden poistamisen jälkeen."
+msgid "The terms that will be added to the posts after removing all the others."
+msgstr "Termit, jotka lisätään kirjoituksiin kaikkien muiden poistamisen jälkeen."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/StickPost.php:32
 msgid "Stick post"
@@ -2950,21 +2944,21 @@ msgid ""
 "interact with this step."
 msgstr ""
 "Pilkuilla eroteltu luettelo käyttäjän nimistä, id:istä, sähköposteista tai "
-"käyttäjärooleista, jotka voivat olla vuorovaikutuksessa tämän vaiheen kanssa."
+"käyttäjärooleista, jotka voivat olla vuorovaikutuksessa tämän vaiheen "
+"kanssa."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:82
 msgid "Specify the message to be displayed to the responders."
 msgstr "Määritä viesti, joka näytetään vastaajille."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:97
-msgid ""
-"Please select an option to continue the workflow: {{global.workflow.title}}"
+msgid "Please select an option to continue the workflow: {{global.workflow.title}}"
 msgstr "Valitse vaihtoehto jatkaaksesi työnkulkua: {{global.workflow.title}}"
 
-#. translators: button label text should, if possible, be under 16 characters.
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:129
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:201
 #: assets/jsx/workflow-editor/components/more-menu/menu-dropdown.jsx:11
+#. translators: button label text should, if possible, be under 16 characters.
 msgid "Options"
 msgstr "Vaihtoehdot"
 
@@ -2998,8 +2992,7 @@ msgstr "Asetukset > Asetukset"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:227
 msgid "The responders to the interactive delay, as a list of user ids."
-msgstr ""
-"Vastaajat interaktiiviseen viivästykseen, käyttäjätunnusten luettelona."
+msgstr "Vastaajat interaktiiviseen viivästykseen, käyttäjätunnusten luettelona."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:232
 msgid "Option name"
@@ -3090,8 +3083,7 @@ msgstr "Viestin kirjoittaja muuttui"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostAuthorChange.php:37
 msgid "This trigger activates when an existing post author is changed."
-msgstr ""
-"Tämä laukaisin aktivoituu, kun olemassa olevan viestin kirjoittaja muuttuu."
+msgstr "Tämä laukaisin aktivoituu, kun olemassa olevan viestin kirjoittaja muuttuu."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostAuthorChange.php:64
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostCreate.php:64
@@ -3250,10 +3242,10 @@ msgid "Meta keys"
 msgstr "Meta-avaimet"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:95
-msgid ""
-"This field allow you to choose the post meta that will trigger this action."
+msgid "This field allow you to choose the post meta that will trigger this action."
 msgstr ""
-"Tämä kenttä antaa sinun valita viestin metan, joka laukaisee tämän toiminnon."
+"Tämä kenttä antaa sinun valita viestin metan, joka laukaisee tämän "
+"toiminnon."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:123
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostSave.php:112
@@ -3322,16 +3314,15 @@ msgid ""
 "This trigger creates a custom post row action and activates when the row "
 "action is clicked in the Posts list screen."
 msgstr ""
-"Tämä laukaisin luo mukautetun rivitoiminnon ja aktivoituu, kun rivitoimintoa "
-"klikataan Viestit-listanäytössä."
+"Tämä laukaisin luo mukautetun rivitoiminnon ja aktivoituu, kun "
+"rivitoimintoa klikataan Viestit-listanäytössä."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:91
 msgid "Row Action"
 msgstr "Rivitoiminto"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:92
-msgid ""
-"Configure the post row action that will be created in the Posts list screen."
+msgid "Configure the post row action that will be created in the Posts list screen."
 msgstr "Määritä viestin rivitoiminto, joka luodaan Viestit-listanäytössä."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:100
@@ -3387,8 +3378,8 @@ msgid ""
 "Whether the action happened to an existing post or a new post. Enter True "
 "for an existing post, or False for a new post."
 msgstr ""
-"Tapahtuiko toiminto olemassa olevalle viestille vai uudelle viestille. Syötä "
-"True olemassa olevalle viestille tai False uudelle viestille."
+"Tapahtuiko toiminto olemassa olevalle viestille vai uudelle viestille. "
+"Syötä True olemassa olevalle viestille tai False uudelle viestille."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostSave.php:125
 msgid "Saved post ID"
@@ -3474,8 +3465,8 @@ msgstr "Aikataulussa"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:37
 msgid ""
-"This trigger allows you to run a workflow at a specific time, or relative to "
-"another date. You can also use this trigger to repeat workflows."
+"This trigger allows you to run a workflow at a specific time, or relative "
+"to another date. You can also use this trigger to repeat workflows."
 msgstr ""
 "Tämä laukaisin sallii työnkulun suorittamisen tietyllä hetkellä tai "
 "suhteessa toiseen päivämäärään. Voit myös käyttää tätä laukaista "
@@ -3499,8 +3490,7 @@ msgstr "Termit on lisätty julkaisuun"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnTermsAdded.php:37
 msgid "This trigger activates when taxonomy terms are added to a post."
-msgstr ""
-"Tämä laukaisin aktivoituu, kun taksonomian termejä lisätään julkaisuun."
+msgstr "Tämä laukaisin aktivoituu, kun taksonomian termejä lisätään julkaisuun."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnTermsAdded.php:88
 msgid "Terms Filter"
@@ -3543,8 +3533,7 @@ msgid "User Query"
 msgstr "Käyttäjän kysely"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:65
-msgid ""
-"Specify the criteria for users whose role changes will trigger this action."
+msgid "Specify the criteria for users whose role changes will trigger this action."
 msgstr ""
 "Määritä kriteerit käyttäjille, joiden roolin muutokset laukaisevat tämän "
 "toiminnon."
@@ -3590,16 +3579,14 @@ msgid "The roles that were removed from the user."
 msgstr "Roolit, jotka poistettiin käyttäjältä."
 
 #: src/Modules/Workflows/Migrations/V040500OnScheduledStepsSchema.php:58
-msgid ""
-"Migrate post_id and repetition_number on scheduled steps schema after v4.5.0"
+msgid "Migrate post_id and repetition_number on scheduled steps schema after v4.5.0"
 msgstr ""
 "Siirrä post_id ja toistomäärä aikataulutettujen vaiheiden kaavioon version "
 "v4.5.0 jälkeen"
 
 #: src/Modules/Workflows/Migrations/V40000WorkflowScheduledStepsSchema.php:58
 msgid "Migrate workflow scheduled steps schema after v4.0.0"
-msgstr ""
-"Siirrä työnkulun aikataulutettujen vaiheiden kaavioon version v4.0.0 jälkeen"
+msgstr "Siirrä työnkulun aikataulutettujen vaiheiden kaavioon version v4.0.0 jälkeen"
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:108
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:35
@@ -3679,8 +3666,7 @@ msgstr "Ladataan työnkulun muokkainta..."
 
 #: src/Modules/Workflows/Views/editor.html.php:18
 msgid "You need to enable JavaScript to run this app."
-msgstr ""
-"Sinun on otettava JavaScript käyttöön tämän sovelluksen suorittamiseksi."
+msgstr "Sinun on otettava JavaScript käyttöön tämän sovelluksen suorittamiseksi."
 
 #: src/Views/ad-banner-right-sidebar.php:12
 msgid "Need PublishPress Future Support?"
@@ -3697,7 +3683,8 @@ msgstr "Pyydä tukea"
 #: src/Views/ad-banner-right-sidebar.php:34
 msgid "Detailed documentation is also available on the plugin website."
 msgstr ""
-"Yksityiskohtainen dokumentaatio on myös saatavilla lisäosan verkkosivustolla."
+"Yksityiskohtainen dokumentaatio on myös saatavilla lisäosan "
+"verkkosivustolla."
 
 #: src/Views/ad-banner-right-sidebar.php:41
 msgid "View Knowledge Base"
@@ -3707,8 +3694,8 @@ msgstr "Näytä tietopohja"
 msgid "Overdue: "
 msgstr "Erääntynyt: "
 
-#. translators: %1$s opens a span tag, %2$s is the action name, %3$s ends a span tag, %4$s is the a span tag, %5$s is the a span tag, %6$s is the a span tag
 #: src/Views/expire-column.php:77
+#. translators: %1$s opens a span tag, %2$s is the action name, %3$s ends a span tag, %4$s is the a span tag, %5$s is the a span tag, %6$s is the a span tag
 #, fuzzy, php-format
 msgid "%1$s%2$s%3$s on %5$s%4$s%6$s"
 msgstr "%1$s%2$s%3$s on %5$s%4$s%6$s"
@@ -3721,7 +3708,7 @@ msgstr ""
 "Toimintoa ei voitu aikatauluttaa konfiguraatio-ongelman vuoksi. Yritä "
 "aikatauluttaa se uudelleen."
 
-#: src/Views/menu-admin.php:27
+#: src/Views/menu-admin.php:27, fuzzy
 msgid "Metabox"
 msgstr "Metabox"
 
@@ -3730,8 +3717,7 @@ msgid "Metabox Title"
 msgstr "Metaboxin otsikko"
 
 #: src/Views/menu-admin.php:48
-msgid ""
-"The title of the metabox that will be displayed in the post edit screen."
+msgid "The title of the metabox that will be displayed in the post edit screen."
 msgstr "Metaboxin otsikko, joka näytetään viestin muokkausnäytössä."
 
 #: src/Views/menu-admin.php:57
@@ -3756,9 +3742,9 @@ msgstr "Yksityiskohtainen"
 
 #: src/Views/menu-admin.php:96
 msgid ""
-"Displays all information in the Future Action column on the \"Posts\" screen."
-msgstr ""
-"Näyttää kaikki tiedot Tulevat toiminnot -sarakkeessa \"Viestit\" -näytössä."
+"Displays all information in the Future Action column on the \"Posts\" "
+"screen."
+msgstr "Näyttää kaikki tiedot Tulevat toiminnot -sarakkeessa \"Viestit\" -näytössä."
 
 #: src/Views/menu-admin.php:106
 msgid "Simplified"
@@ -3794,12 +3780,14 @@ msgstr "Peri sivuston asetuksista"
 msgid "24 hours"
 msgstr "24 tuntia"
 
-#: src/Views/menu-admin.php:162
+#: src/Views/menu-admin.php:162, fuzzy
 msgid "AM/PM"
 msgstr "AM/PM"
 
-#: src/Views/menu-admin.php:174 src/Views/menu-advanced.php:99
-#: src/Views/menu-display.php:367 src/Views/menu-general.php:118
+#: src/Views/menu-admin.php:174
+#: src/Views/menu-advanced.php:99
+#: src/Views/menu-display.php:367
+#: src/Views/menu-general.php:118
 #: src/Views/menu-notifications.php:186
 msgid "Save Changes"
 msgstr "Tallenna muutokset"
@@ -3837,8 +3825,7 @@ msgid "Delete data"
 msgstr "Poista tiedot"
 
 #: src/Views/menu-advanced.php:88
-msgid ""
-"Toggle between preserving or deleting data after the plugin is deactivated."
+msgid "Toggle between preserving or deleting data after the plugin is deactivated."
 msgstr ""
 "Vaihda tietojen säilyttämisen ja poistamisen välillä liitännäisen "
 "deaktivoimisen jälkeen."
@@ -3875,8 +3862,8 @@ msgstr "Aikajärjestys"
 msgid "Show only requests with trigger activated"
 msgstr "Näytä vain aktivoinnin laukaisemat pyynnöt"
 
-#. translators: %1$d: displayed count, %2$d: filtered total, %3$d: sessions, %4$d: total unfiltered, %5$s: filtered log size, %6$s: total log size.
 #: src/Views/menu-debug-log.php:155
+#. translators: %1$d: displayed count, %2$d: filtered total, %3$d: sessions, %4$d: total unfiltered, %5$s: filtered log size, %6$s: total log size.
 #, php-format
 msgid ""
 "Showing the latest %1$d of %2$d logs (%3$d sessions). Total in database: "
@@ -3885,15 +3872,14 @@ msgstr ""
 "Näytetään viimeisimmät %1$d %2$d lokista (%3$d istuntoa). Yhteensä "
 "tietokannassa: %4$d. Lokikoko: %5$s (yhteensä: %6$s)."
 
-#. translators: %1$d: displayed count, %2$d: total count, %3$d: sessions, %4$s: log size.
 #: src/Views/menu-debug-log.php:165
+#. translators: %1$d: displayed count, %2$d: total count, %3$d: sessions, %4$s: log size.
 #, php-format
 msgid "Showing the latest %1$d of %2$d logs (%3$d sessions). Log size: %4$s."
-msgstr ""
-"Näytetään viimeisimmät %1$d %2$d lokista (%3$d istuntoa). Lokikoko: %4$s."
+msgstr "Näytetään viimeisimmät %1$d %2$d lokista (%3$d istuntoa). Lokikoko: %4$s."
 
-#. translators: %1$d: filtered logs count, %2$d: sessions, %3$d: total unfiltered, %4$s: filtered log size, %5$s: total log size.
 #: src/Views/menu-debug-log.php:176
+#. translators: %1$d: filtered logs count, %2$d: sessions, %3$d: total unfiltered, %4$s: filtered log size, %5$s: total log size.
 #, php-format
 msgid ""
 "Showing all %1$d logs (%2$d sessions). Total in database: %3$d. Log size: "
@@ -3902,8 +3888,8 @@ msgstr ""
 "Näytetään kaikki %1$d lokia (%2$d istuntoa). Yhteensä tietokannassa: %3$d. "
 "Lokikoko: %4$s (yhteensä: %5$s)."
 
-#. translators: %1$d: total logs count, %2$d: sessions count, %3$s: log size.
 #: src/Views/menu-debug-log.php:185
+#. translators: %1$d: total logs count, %2$d: sessions count, %3$s: log size.
 #, php-format
 msgid "Showing all %1$d logs (%2$d sessions). Log size: %3$s."
 msgstr "Näytetään kaikki %1$d lokia (%2$d istuntoa). Lokikoko: %3$s."
@@ -3933,7 +3919,8 @@ msgstr "Edistyneet diagnostiikat ja työkalut"
 msgid "WP-Cron Status Check"
 msgstr "WP-Cronin tilan tarkistus"
 
-#: src/Views/menu-diagnostics.php:61 src/Views/menu-diagnostics.php:74
+#: src/Views/menu-diagnostics.php:61
+#: src/Views/menu-diagnostics.php:74
 msgid "Passed"
 msgstr "Hyväksytty"
 
@@ -3951,6 +3938,7 @@ msgid_plural "Errors found on the database schema:"
 msgstr[0] ""
 "Virhe havaittu tietokannan skeemassa:|Virheitä havaittu tietokannan "
 "skeemassa:"
+msgstr[1] ""
 
 #: src/Views/menu-diagnostics.php:109
 msgid "Try to Fix Database"
@@ -3960,8 +3948,10 @@ msgstr "Yritä korjata tietokanta"
 msgid "Debug Logging"
 msgstr "Virheiden lokitus"
 
-#: src/Views/menu-diagnostics.php:122 src/Views/menu-display.php:139
-#: src/Views/menu-notifications.php:67 src/Views/menu-notifications.php:95
+#: src/Views/menu-diagnostics.php:122
+#: src/Views/menu-display.php:139
+#: src/Views/menu-notifications.php:67
+#: src/Views/menu-notifications.php:95
 #: src/Views/menu-notifications.php:150
 msgid "Enabled"
 msgstr "Ota käyttöön"
@@ -3978,8 +3968,10 @@ msgstr "Tyhjennä virhelok"
 msgid "View Debug Logs"
 msgstr "Näytä virheenkorjauslokit"
 
-#: src/Views/menu-diagnostics.php:142 src/Views/menu-display.php:150
-#: src/Views/menu-notifications.php:75 src/Views/menu-notifications.php:104
+#: src/Views/menu-diagnostics.php:142
+#: src/Views/menu-display.php:150
+#: src/Views/menu-notifications.php:75
+#: src/Views/menu-notifications.php:104
 #: src/Views/menu-notifications.php:158
 msgid "Disabled"
 msgstr "Poistettu käytöstä"
@@ -4030,8 +4022,8 @@ msgstr "Suorita siirto"
 
 #: src/Views/menu-diagnostics.php:185
 msgid ""
-"Migrate legacy future actions from WP Cron to the new Action Scheduler. This "
-"will run in the background and may take a while."
+"Migrate legacy future actions from WP Cron to the new Action Scheduler. "
+"This will run in the background and may take a while."
 msgstr ""
 "Siirrä vanhat tulevat toiminnot WP Cronista uuteen Toimintojen aikatauluun. "
 "Tämä suoritetaan taustalla ja voi kestää jonkin aikaa."
@@ -4052,7 +4044,8 @@ msgid ""
 msgstr ""
 "Palauta vanhat toimintoargumentit Post Meta -muodossa. Tämä on hyödyllistä, "
 "jos sinulla on ongelmia kolmansien osapuolten lisäosien kanssa, jotka "
-"lukevat näitä tietoja. Tämä suoritetaan taustalla ja voi kestää jonkin aikaa."
+"lukevat näitä tietoja. Tämä suoritetaan taustalla ja voi kestää jonkin "
+"aikaa."
 
 #: src/Views/menu-diagnostics.php:215
 msgid "Legacy Cron Schedule"
@@ -4060,11 +4053,11 @@ msgstr "Vanha Cron-aikataulu"
 
 #: src/Views/menu-diagnostics.php:223
 msgid ""
-"The below table will show all currently scheduled cron events for the plugin "
-"with the next run time."
+"The below table will show all currently scheduled cron events for the "
+"plugin with the next run time."
 msgstr ""
-"Alla oleva taulukko näyttää kaikki tällä hetkellä aikataulutetut cron-"
-"tapahtumat lisäosalle seuraavalla suoritusaikalla."
+"Alla oleva taulukko näyttää kaikki tällä hetkellä aikataulutetut "
+"cron-tapahtumat lisäosalle seuraavalla suoritusaikalla."
 
 #: src/Views/menu-diagnostics.php:238
 msgid "Event"
@@ -4086,8 +4079,8 @@ msgstr "Oletusmuodot"
 msgid "Date Format"
 msgstr "Päivämäärämuoto"
 
-#. translators: %s is a link to the PHP date function documentation
 #: src/Views/menu-display.php:64
+#. translators: %s is a link to the PHP date function documentation
 #, php-format
 msgid ""
 "The default format to use when displaying the action date within a post "
@@ -4098,7 +4091,8 @@ msgstr ""
 "sisällä käyttäen lyhyttä koodia tai alatunnisteessa.  Lisätietoja voimassa "
 "olevista muotoiluvaihtoehdoista, katso: %s."
 
-#: src/Views/menu-display.php:68 src/Views/menu-display.php:106
+#: src/Views/menu-display.php:68
+#: src/Views/menu-display.php:106
 msgid "PHP Date Function"
 msgstr "PHP Päivämääräfunktio"
 
@@ -4106,8 +4100,8 @@ msgstr "PHP Päivämääräfunktio"
 msgid "Time Format"
 msgstr "Aika"
 
-#. translators: %s is a link to the PHP date function documentation
 #: src/Views/menu-display.php:102
+#. translators: %s is a link to the PHP date function documentation
 #, php-format
 msgid ""
 "The default format to use when displaying the action time within a post "
@@ -4124,8 +4118,8 @@ msgstr "Viestin alatunnisteen näyttö"
 
 #: src/Views/menu-display.php:118
 msgid ""
-"Enabling this below will display the action date automatically at the end of "
-"any post which is set to run an action."
+"Enabling this below will display the action date automatically at the end "
+"of any post which is set to run an action."
 msgstr ""
 "Tämän mahdollistaminen alla näyttää automaattisesti toiminton päivämäärän "
 "jokaisen viestin lopussa, johon on määritetty toiminto."
@@ -4162,8 +4156,7 @@ msgstr "Alatunnisteen tyyli"
 
 #: src/Views/menu-display.php:227
 msgid "The inline css which will be used to style the footer text."
-msgstr ""
-"Riville asetettu CSS, jota käytetään alatunnisteen tekstin tyylittelyyn."
+msgstr "Riville asetettu CSS, jota käytetään alatunnisteen tekstin tyylittelyyn."
 
 #: src/Views/menu-display.php:231
 msgid "Example: "
@@ -4173,8 +4166,8 @@ msgstr "Esimerkki: "
 msgid "Shortcode"
 msgstr "Lyhytkoodi"
 
-#. translators: %s is a code tag that wraps the shortcode
 #: src/Views/menu-display.php:249
+#. translators: %s is a code tag that wraps the shortcode
 #, php-format
 msgid ""
 "Use the %s[futureaction]%s shortcode to show when the future action will "
@@ -4208,39 +4201,40 @@ msgstr "Lisää CSS-luokka kääre-elementtiin mukautettua tyylittelyä varten."
 msgid "Attributes"
 msgstr "Attribuutit"
 
-#. translators: %s is the shortcode code wrapped in code tags
 #: src/Views/menu-display.php:308
+#. translators: %s is the shortcode code wrapped in code tags
 #, php-format
 msgid "The following attributes are available for the %s shortcode:"
 msgstr "Seuraavat attribuutit ovat käytettävissä %s lyhytkoodille:"
 
-#. translators: %s is a code tag that wraps the shortcode attribute name
 #: src/Views/menu-display.php:315
+#. translators: %s is a code tag that wraps the shortcode attribute name
 #, php-format
 msgid "%s - Available options:"
 msgstr "%s - Saatavilla olevat vaihtoehdot:"
 
-#. translators: %s is a code tag that wraps the shortcode attribute value
 #: src/Views/menu-display.php:321
+#. translators: %s is a code tag that wraps the shortcode attribute value
 #, php-format
 msgid "%s - Displays complete date/time.  Default value."
 msgstr "%s - Näyttää täydellisen päivämäärän/ajan. Oletusarvo."
 
-#. translators: %s is a code tag that wraps the shortcode attribute value
 #: src/Views/menu-display.php:327
+#. translators: %s is a code tag that wraps the shortcode attribute value
 #, php-format
 msgid "%s - Displays date only"
 msgstr "%s - Näyttää vain päivämäärän"
 
-#. translators: %s is a code tag that wraps the shortcode attribute value
 #: src/Views/menu-display.php:333
+#. translators: %s is a code tag that wraps the shortcode attribute value
 #, php-format
 msgid "%s - Displays time only"
 msgstr "%s - Näyttää vain ajan"
 
+#: src/Views/menu-display.php:345
+#: src/Views/menu-display.php:353
 #. translators: %s is a code tag that wraps the shortcode attribute dateformat
 #. translators: %s is a code tag that wraps the shortcode attribute timeformat
-#: src/Views/menu-display.php:345 src/Views/menu-display.php:353
 #, php-format
 msgid "%s - Format set here will override the value set on the settings page"
 msgstr "%s - Tässä asetettu muoto ylittää asetuksen sivulla asetetun arvon"
@@ -4294,8 +4288,7 @@ msgid "Enable Email Notification?"
 msgstr "Ota sähköpostihälytys käyttöön?"
 
 #: src/Views/menu-notifications.php:78
-msgid ""
-"This will enable or disable the send of email notification on future action."
+msgid "This will enable or disable the send of email notification on future action."
 msgstr ""
 "Tämä ottaa käyttöön tai poistaa käytöstä sähköpostihälytyksen lähettämisen "
 "tulevissa toiminnoissa."
@@ -4305,10 +4298,10 @@ msgid "Include Blog Administrators?"
 msgstr "Sisällytä blogin ylläpitäjät?"
 
 #: src/Views/menu-notifications.php:107
-msgid ""
-"This will include all users with the role of \"Administrator\" in the email."
+msgid "This will include all users with the role of \"Administrator\" in the email."
 msgstr ""
-"Tämä sisältää kaikki käyttäjät, joilla on \"Ylläpitäjä\" rooli sähköpostissa."
+"Tämä sisältää kaikki käyttäjät, joilla on \"Ylläpitäjä\" rooli "
+"sähköpostissa."
 
 #: src/Views/menu-notifications.php:123
 msgid ""
@@ -4317,14 +4310,16 @@ msgid ""
 "post type specific emails on the Defaults tab."
 msgstr ""
 "Syötä pilkuilla erotettu lista sähköpostiosoitteista, joista haluat saada "
-"ilmoituksen, kun toiminto suoritetaan. Tämä koskee KAIKKIA julkaisutyyppejä. "
-"Voit asettaa julkaisutyypikohtaisia sähköposteja Oletusarvot-välilehdellä."
+"ilmoituksen, kun toiminto suoritetaan. Tämä koskee KAIKKIA "
+"julkaisutyyppejä. Voit asettaa julkaisutyypikohtaisia sähköposteja "
+"Oletusarvot-välilehdellä."
 
 #: src/Views/menu-notifications.php:132
 msgid "Past-due Actions Notification"
 msgstr "Erääntyneiden toimintojen ilmoitus"
 
-#: src/Views/menu-notifications.php:134 src/Views/menu-notifications.php:161
+#: src/Views/menu-notifications.php:134
+#: src/Views/menu-notifications.php:161
 msgid ""
 "This will enable or disable the send of email notification on past-due "
 "actions."
@@ -4512,7 +4507,7 @@ msgstr "Kokonaisluku"
 msgid "String"
 msgstr "Merkkijono"
 
-#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:31
+#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:31, fuzzy
 msgid "Boolean"
 msgstr "Boolean"
 
@@ -4525,7 +4520,7 @@ msgid "Array"
 msgstr "Taulukko"
 
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:57
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:50
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:50, fuzzy
 msgid "null"
 msgstr "null"
 
@@ -4544,10 +4539,10 @@ msgstr "Arvo"
 
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:102
 msgid "The argument name should only contain letters, numbers and underscores."
-msgstr ""
-"Argumentin nimen tulisi sisältää vain kirjaimia, numeroita ja alaviivoja."
+msgstr "Argumentin nimen tulisi sisältää vain kirjaimia, numeroita ja alaviivoja."
 
 #: assets/jsx/workflow-editor/components/data-fields/action-args/index.jsx:71
+#, js-format
 msgid "Argument #%s"
 msgstr "Argumentti #%s"
 
@@ -4575,8 +4570,7 @@ msgstr "Lisää sääntö"
 msgid ""
 "Create rules that will continue the workflow only if certain conditions are "
 "met."
-msgstr ""
-"Luo sääntöjä, jotka jatkavat työnkulkua vain, jos tietyt ehdot täyttyvät."
+msgstr "Luo sääntöjä, jotka jatkavat työnkulkua vain, jos tietyt ehdot täyttyvät."
 
 #: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:59
 #: assets/jsx/workflow-editor/components/data-fields/post-filter/components/post-filter.jsx:85
@@ -4588,8 +4582,8 @@ msgid ""
 "Conditional logic is a Pro feature. Upgrade to create advanced conditions "
 "for your workflows."
 msgstr ""
-"Ehdollinen logiikka on Pro-ominaisuus. Päivitä luodaksesi edistyneitä ehtoja "
-"työnkulkuihisi."
+"Ehdollinen logiikka on Pro-ominaisuus. Päivitä luodaksesi edistyneitä "
+"ehtoja työnkulkuihisi."
 
 #: assets/jsx/workflow-editor/components/data-fields/conditional/components/duplicate-rule-button.jsx:10
 msgid "Duplicate Rule"
@@ -4608,10 +4602,12 @@ msgid "Dismiss the notification"
 msgstr "Hylkää ilmoitus"
 
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:67
+#, js-format
 msgid "Option %s"
 msgstr "Vaihtoehto %s"
 
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:95
+#, js-format
 msgid "Option #%s"
 msgstr "Vaihtoehto #%s"
 
@@ -4624,8 +4620,10 @@ msgid "Add a new option"
 msgstr "Lisää uusi vaihtoehto"
 
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:132
+#, js-format
 msgid ""
-"You have reached the maximum number of options. You can add up to %s options."
+"You have reached the maximum number of options. You can add up to %s "
+"options."
 msgstr ""
 "Olet saavuttanut vaihtoehtojen enimmäismäärän. Voit lisätä enintään %s "
 "vaihtoehtoa."
@@ -4641,8 +4639,7 @@ msgstr "Vihje"
 
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:107
 msgid "The option name should only contain letters, numbers and underscores."
-msgstr ""
-"Vaihtoehdon nimen tulee sisältää vain kirjaimia, numeroita ja alaviivoja."
+msgstr "Vaihtoehdon nimen tulee sisältää vain kirjaimia, numeroita ja alaviivoja."
 
 #: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:61
 msgid "Selected in the calendar"
@@ -4699,6 +4696,7 @@ msgid "Click for more information"
 msgstr "Napsauta saadaksesi lisätietoja"
 
 #: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:197
+#, js-format
 msgid ""
 "For more information on formatting, see the %sPHP strtotime function%s. For "
 "example, you could enter %s+1 month%s or %s+1 week 2 days 4 hours 2 "
@@ -4744,9 +4742,10 @@ msgstr "Julkaisun tila"
 msgid "Post Type"
 msgstr "Julkaisun tyyppi"
 
-#. translators: %s is the database table name
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/column-item.jsx:10
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:10
+#. translators: %s is the database table name
+#, js-format
 msgid "Type the %s key and click on the button to insert it."
 msgstr "Kirjoita %s-avain ja napsauta painiketta lisätäksesi sen."
 
@@ -4792,7 +4791,7 @@ msgstr "Vie hiiri muuttujan päälle nähdäksesi sen kuvauksen."
 msgid "The name of the term."
 msgstr "Termin nimi."
 
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:13
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:13, fuzzy
 msgid "Slug"
 msgstr "Slug"
 
@@ -4816,8 +4815,9 @@ msgstr "Luku"
 msgid "Number of posts assigned to this term."
 msgstr "Tämäntyyppisille postauksille osoitettujen määrä."
 
-#. translators: %s is the taxonomy label
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:38
+#. translators: %s is the taxonomy label
+#, js-format
 msgid "%s terms for this post."
 msgstr "%s termiä tälle postaukselle."
 
@@ -4833,7 +4833,7 @@ msgstr ""
 "Tätä vaihtoehtoa käytetään yhdistämään toiseen vaiheeseen, eikä sen nimeä "
 "voi muuttaa ennen kuin yhteys on poistettu."
 
-#: assets/jsx/workflow-editor/components/data-fields/modal-footer.jsx:11
+#: assets/jsx/workflow-editor/components/data-fields/modal-footer.jsx:11, fuzzy
 msgid "OK"
 msgstr "OK"
 
@@ -5057,11 +5057,12 @@ msgstr "Toistuva toiminto"
 
 #: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:131
 msgid ""
-"Choose how often this task should repeat. Select 'Non-repeating' for a one-"
-"time action or set an interval for automatic recurrence."
+"Choose how often this task should repeat. Select 'Non-repeating' for a "
+"one-time action or set an interval for automatic recurrence."
 msgstr ""
 "Valitse kuinka usein tämän tehtävän tulisi toistua. Valitse 'Ei toistuva' "
-"kertaluonteiselle toiminnolle tai määritä aikaväli automaattiselle toistolle."
+"kertaluonteiselle toiminnolle tai määritä aikaväli automaattiselle "
+"toistolle."
 
 #: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:148
 msgid "Unique Task Identifier"
@@ -5069,8 +5070,7 @@ msgstr "Uniikki tehtävätunnus"
 
 #: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:154
 msgid "Define a unique ID to detect and prevent duplicate tasks."
-msgstr ""
-"Määritä ainutlaatuinen ID, jotta voidaan havaita ja estää kaksoistehtävät."
+msgstr "Määritä ainutlaatuinen ID, jotta voidaan havaita ja estää kaksoistehtävät."
 
 #: assets/jsx/workflow-editor/components/data-fields/taxonomy-terms.jsx:69
 msgid "Select the terms"
@@ -5118,15 +5118,14 @@ msgid "Edit description"
 msgstr "Muokkaa kuvausta"
 
 #: assets/jsx/workflow-editor/components/inspector-card/index.jsx:116
-#: assets/jsx/workflow-editor/components/secondary-sidebar/node-card.jsx:16
+#: assets/jsx/workflow-editor/components/secondary-sidebar/node-card.jsx:16, fuzzy
 msgid "Pro"
 msgstr "Pro"
 
 #: assets/jsx/workflow-editor/components/inspector-card/index.jsx:132
 #: assets/jsx/workflow-editor/components/node-types/generic.jsx:319
 #: assets/jsx/workflow-editor/components/secondary-sidebar/node-card.jsx:29
-msgid ""
-"Currently this step is being skipped. Upgrade to Pro to unlock this feature."
+msgid "Currently this step is being skipped. Upgrade to Pro to unlock this feature."
 msgstr ""
 "Tällä hetkellä tämä vaihe ohitetaan. Päivitä Pro-versioon ottaaksesi tämän "
 "ominaisuuden käyttöön."
@@ -5139,24 +5138,24 @@ msgstr "Lisää"
 msgid "Close"
 msgstr "Sulje"
 
-#. translators: button label text should, if possible, be under 16 characters.
 #: assets/jsx/workflow-editor/components/layout/header.jsx:140
 #: assets/jsx/workflow-editor/components/layout/header.jsx:145
+#. translators: button label text should, if possible, be under 16 characters.
 msgid "Auto Layout"
 msgstr "Automaattinen asettelu"
 
-#. translators: button label text should, if possible, be under 16 characters.
 #: assets/jsx/workflow-editor/components/layout/header.jsx:157
+#. translators: button label text should, if possible, be under 16 characters.
 msgid "Upgrade to Pro and unlock more features"
 msgstr "Päivitä Pro-versioon ja avaa lisää ominaisuuksia"
 
-#. translators: button label text should, if possible, be under 16 characters.
 #: assets/jsx/workflow-editor/components/left-toolbar/redo.jsx:31
+#. translators: button label text should, if possible, be under 16 characters.
 msgid "Redo"
 msgstr "Uudelleen"
 
-#. translators: button label text should, if possible, be under 16 characters.
 #: assets/jsx/workflow-editor/components/left-toolbar/undo.jsx:31
+#. translators: button label text should, if possible, be under 16 characters.
 msgid "Undo"
 msgstr "Peruuta"
 
@@ -5171,11 +5170,6 @@ msgstr "Ominaisuus poistettu käytöstä"
 #: assets/jsx/workflow-editor/components/more-menu/menu-feature-toggle.jsx:34
 msgid "Feature activated"
 msgstr "Ominaisuus aktivoitu"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:23
-msgctxt "noun"
-msgid "View"
-msgstr "Näytä"
 
 #: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:27
 msgid "Fullscreen mode"
@@ -5310,6 +5304,7 @@ msgid "Multiple and different elements selected."
 msgstr "Useita ja erilaisia elementtejä on valittu."
 
 #: assets/jsx/workflow-editor/components/node-inspector/index.jsx:116
+#, js-format
 msgid "%d steps selected"
 msgstr "%d askelta valittu"
 
@@ -5318,6 +5313,7 @@ msgid "Multiple steps selected."
 msgstr "Useita askelia valittu."
 
 #: assets/jsx/workflow-editor/components/node-inspector/index.jsx:130
+#, js-format
 msgid "%d connections selected"
 msgstr "%d yhteyttä valittu"
 
@@ -5331,8 +5327,8 @@ msgstr "Yhteys"
 
 #: assets/jsx/workflow-editor/components/node-inspector/index.jsx:166
 msgid ""
-"The connection between nodes in the workflow. Signifies the path along which "
-"data or control flow one node to another."
+"The connection between nodes in the workflow. Signifies the path along "
+"which data or control flow one node to another."
 msgstr ""
 "Yhteys solmujen välillä työnkulussa. Ilmaisee polun, jota pitkin tieto tai "
 "ohjaus kulkee yhdestä solmusta toiseen."
@@ -5390,6 +5386,7 @@ msgid "No description"
 msgstr "Ei kuvausta"
 
 #: assets/jsx/workflow-editor/components/node-types/generic.jsx:57
+#, js-format
 msgid "Unknown node: %s"
 msgstr "Tuntematon solmu: %s"
 
@@ -5455,11 +5452,13 @@ msgstr "Käytä vasenta ja oikeaa nuolinäppäintä siirtyäksesi vaiheiden läp
 msgid "No results found."
 msgstr "Ei tuloksia löytynyt."
 
-#. translators: %d: number of results.
 #: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:101
+#. translators: %d: number of results.
+#, js-format
 msgid "%d result found."
 msgid_plural "%d results found."
 msgstr[0] "%d tulos löytyi.|%d tulosta löytyi."
+msgstr[1] ""
 
 #: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:116
 #: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:123
@@ -5471,20 +5470,16 @@ msgstr "Solmut"
 msgid "A tip for using the workflow editor"
 msgstr "Vinkki työprosessin muokkaamisen käyttämiseen"
 
-#. translators: %d: Number of blocks.
 #: assets/jsx/workflow-editor/components/secondary-sidebar/node-draggable-chip.jsx:27
+#. translators: %d: Number of blocks.
+#, js-format
 msgid "%d block"
 msgid_plural "%d blocks"
 msgstr[0] "%d lohko|%d lohkoa"
+msgstr[1] ""
 
-#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:80
-#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:85
-msgctxt "nodes"
-msgid "Most used"
-msgstr "Käytetyimmät"
-
-#. translators: Patterns tab title in the block inserter.
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:24
+#. translators: Patterns tab title in the block inserter.
 msgid "Actions"
 msgstr "Toiminnot"
 
@@ -5493,8 +5488,8 @@ msgid ""
 "Select multiple steps by pressing <kbd>cmd</kbd> and clicking on each step "
 "in the workflow."
 msgstr ""
-"Valitse useita vaiheita painamalla <kbd>cmd</kbd> ja napsauttamalla jokaista "
-"vaihetta työnkulussa."
+"Valitse useita vaiheita painamalla <kbd>cmd</kbd> ja napsauttamalla "
+"jokaista vaihetta työnkulussa."
 
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:16
 msgid ""
@@ -5513,8 +5508,7 @@ msgstr ""
 "säätöjä varten."
 
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:18
-msgid ""
-"Double-click the workflow pane to increase the zoom level for a closer look."
+msgid "Double-click the workflow pane to increase the zoom level for a closer look."
 msgstr ""
 "Kaksoisnapsauta työnkulkuikkunaa suurentaaksesi zoomaustasoa tarkempaa "
 "katselua varten."
@@ -5529,23 +5523,17 @@ msgstr ""
 
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:26
 msgid ""
-"Easily add new steps by clicking on a step's handle and dragging it. Drop it "
-"in the workflow pane to see a floating inserter where you can type and "
+"Easily add new steps by clicking on a step's handle and dragging it. Drop "
+"it in the workflow pane to see a floating inserter where you can type and "
 "search for the step you need."
 msgstr ""
 "Lisää helposti uusia vaiheita napsauttamalla vaiheen kahvaa ja vetämällä "
-"sitä. Pudota se työnkulkuikkunaan nähdäksesi kelluvan inserterin, jossa voit "
-"kirjoittaa ja etsiä tarvitsemaasi vaihetta."
+"sitä. Pudota se työnkulkuikkunaan nähdäksesi kelluvan inserterin, jossa "
+"voit kirjoittaa ja etsiä tarvitsemaasi vaihetta."
 
 #: assets/jsx/workflow-editor/components/settings-sidebar/plugin-sidebar.jsx:39
 msgid "(no name)"
 msgstr "(ei nimeä)"
-
-#. translators: Default label for the Workflow sidebar tab, not selected.
-#: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:23
-msgctxt "noun"
-msgid "Workflow"
-msgstr "Työnkulku"
 
 #: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:37
 msgid "Element"
@@ -5559,7 +5547,7 @@ msgstr "Sulje asetukset"
 msgid "Get started"
 msgstr "Aloita"
 
-#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:50
+#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:50, fuzzy
 msgid "Ray Debug"
 msgstr "Ray Debug"
 
@@ -5595,8 +5583,8 @@ msgstr "Oletko varma, että haluat poistaa tämän työnkulun?"
 msgid "Move to trash"
 msgstr "Siirrä roskakoriin"
 
-#. translators: button label text should, if possible, be under 16 characters.
 #: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:79
+#. translators: button label text should, if possible, be under 16 characters.
 msgid "Publish"
 msgstr "Julkaise"
 
@@ -5616,13 +5604,13 @@ msgstr "Päivitetään..."
 msgid "Updated"
 msgstr "Päivitetty"
 
-#. translators: button label text should, if possible, be under 16 characters.
 #: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:82
+#. translators: button label text should, if possible, be under 16 characters.
 msgid "Save draft"
 msgstr "Tallenna luonnos"
 
-#. translators: button label text should, if possible, be under 16 characters.
 #: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:85
+#. translators: button label text should, if possible, be under 16 characters.
 msgid "Save"
 msgstr "Tallenna"
 
@@ -5708,18 +5696,37 @@ msgid "Change manually enabled workflows"
 msgstr "Muuta manuaalisesti käytössä olevia työnkulkuja"
 
 #: assets/jsx/workflow-manual-selection/example-extending-with-slot.jsx:48
+#, js-format
 msgid "Enable workflow %s"
 msgstr "Ota käyttöön työnkulku %s"
 
-#. translators: %s: Workflow title
 #: assets/jsx/workflows-list/cancel-action/index.jsx:59
+#. translators: %s: Workflow title
+#, js-format
 msgid ""
 "Are you sure you want to cancel all scheduled actions for the \"%s\" "
 "workflow?"
 msgstr ""
-"Oletko varma, että haluat peruuttaa kaikki aikataulutetut toimet työnkululle "
-"\"%s\"?"
+"Oletko varma, että haluat peruuttaa kaikki aikataulutetut toimet "
+"työnkululle \"%s\"?"
 
 #: assets/jsx/workflows-list/cancel-action/index.jsx:69
 msgid "Cancel Actions"
 msgstr "Peruuta toimet"
+
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:23
+msgctxt "noun"
+msgid "View"
+msgstr "Näytä"
+
+#: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:23
+#. translators: Default label for the Workflow sidebar tab, not selected.
+msgctxt "noun"
+msgid "Workflow"
+msgstr "Työnkulku"
+
+#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:80
+#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:85
+msgctxt "nodes"
+msgid "Most used"
+msgstr "Käytetyimmät"

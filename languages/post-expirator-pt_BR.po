@@ -14,14 +14,15 @@ msgstr ""
 "X-Generator: Poedit 3.5\n"
 
 #. Plugin Name of the plugin
+#. Plugin Name of the plugin
 #: post-expirator.php
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:119
-#: src/Modules/Workflows/Models/NodeTypesModel.php:81
+#: src/Modules/Workflows/Models/NodeTypesModel.php:81, fuzzy
 msgid "PublishPress Future"
 msgstr "PublishPress Future"
 
 #. Plugin URI of the plugin
-#: post-expirator.php
+#: post-expirator.php, fuzzy
 msgid "http://wordpress.org/extend/plugins/post-expirator/"
 msgstr "http://wordpress.org/extend/plugins/post-expirator/"
 
@@ -35,12 +36,12 @@ msgstr ""
 "posts, páginas e outros tipos de conteúdo."
 
 #. Author of the plugin
-#: post-expirator.php
+#: post-expirator.php, fuzzy
 msgid "PublishPress"
 msgstr "PublishPress"
 
 #. Author URI of the plugin
-#: post-expirator.php
+#: post-expirator.php, fuzzy
 msgid "http://publishpress.com"
 msgstr "http://publishpress.com"
 
@@ -128,11 +129,11 @@ msgstr "Contato"
 msgid "No taxonomies found"
 msgstr "Não foram encontradas taxonomias"
 
-#: services.php:110 src/Modules/Settings/SettingsFacade.php:110
+#: services.php:110 src/Modules/Settings/SettingsFacade.php:110, fuzzy
 msgid "l F jS, Y"
 msgstr "l F jS, Y"
 
-#: services.php:114 src/Modules/Settings/SettingsFacade.php:111
+#: services.php:114 src/Modules/Settings/SettingsFacade.php:111, fuzzy
 msgid "g:ia"
 msgstr "g:ia"
 
@@ -371,7 +372,7 @@ msgstr "Configurações"
 msgid "Future Action"
 msgstr "Ação Futura"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:120
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:120, fuzzy
 msgid "Future"
 msgstr "Future"
 
@@ -397,7 +398,7 @@ msgstr "Formato de registro"
 msgid "List"
 msgstr "Lista"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:235
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:235, fuzzy
 msgid "Popup"
 msgstr "Popup"
 
@@ -586,7 +587,7 @@ msgid "Future Action Complete \"%s\""
 msgstr "Ação Futura Completa “%s”"
 
 #. translators: 1: is the blog name, 2: the email subject
-#: src/Modules/Expirator/Models/ExpirablePostModel.php:649
+#: src/Modules/Expirator/Models/ExpirablePostModel.php:649, fuzzy
 msgid "[%1$s] %2$s"
 msgstr "[%1$s] %2$s"
 
@@ -729,7 +730,7 @@ msgid "Completed"
 msgstr "Executado"
 
 #. translators: %1$s: post type label, %2$d: post ID, %3$s: post link tag start, %4$s: post title, %5$s: post link tag end
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:464
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:464, fuzzy
 msgid "%1$s: [%2$d] %3$s%4$s%5$s"
 msgstr "%1$s: [%2$d] %3$s%4$s%5$s"
 
@@ -751,7 +752,7 @@ msgstr "Visualizar o registro"
 msgid "Action: "
 msgstr "Ação: "
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:627
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:627, fuzzy
 msgid "Status: "
 msgstr "Status: "
 
@@ -785,7 +786,7 @@ msgid " (%s ago)"
 msgstr " (%s atrás)"
 
 #. translators: %s is the date interval in human readable format in the present or future
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:711
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:711, fuzzy
 msgid " (%s)"
 msgstr " (%s)"
 
@@ -1177,7 +1178,7 @@ msgstr "Etapa:"
 msgid "Trigger: "
 msgstr "Gatilho acionador: "
 
-#: src/Modules/Workflows/Controllers/ScheduledActions.php:347
+#: src/Modules/Workflows/Controllers/ScheduledActions.php:347, fuzzy
 msgid "Post:"
 msgstr "Post:"
 
@@ -1200,7 +1201,7 @@ msgid "%1$s for %2$d times"
 msgstr "%1$s por %2$d vezes"
 
 #. translators: %1$s: executed times, %2$d: total repeat times
-#: src/Modules/Workflows/Controllers/ScheduledActions.php:429
+#: src/Modules/Workflows/Controllers/ScheduledActions.php:429, fuzzy
 msgid "[%1$s/%2$d]"
 msgstr "[%1$s/%2$d]"
 
@@ -1322,7 +1323,7 @@ msgstr "Gatilhos"
 msgid "Preview"
 msgstr "Visualização"
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:205
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:205, fuzzy
 msgid "—"
 msgstr "—"
 
@@ -1402,7 +1403,7 @@ msgstr "Esta etapa faz a transição de um post para um status diferente."
 #: src/Modules/Workflows/Domain/NodeTypes/Actions/CorePostTermsSet.php:70
 #: src/Modules/Workflows/Domain/NodeTypes/Actions/CorePostUnstick.php:64
 #: src/Modules/Workflows/Domain/NodeTypes/Actions/CorePostUnstick.php:70
-#: src/Modules/Workflows/Models/NodeTypesModel.php:72
+#: src/Modules/Workflows/Models/NodeTypesModel.php:72, fuzzy
 msgid "Post"
 msgstr "Post"
 
@@ -1944,7 +1945,7 @@ msgstr "Post da ação"
 msgid "The post that was saved triggering the action."
 msgstr "O post que foi salvo, acionando a ação."
 
-#: src/Modules/Workflows/Models/NodeTypesModel.php:90
+#: src/Modules/Workflows/Models/NodeTypesModel.php:90, fuzzy
 msgid "Site"
 msgstr "Site"
 
@@ -2375,7 +2376,7 @@ msgstr "Herdar das configurações do site"
 msgid "24 hours"
 msgstr "24 horas"
 
-#: src/Views/menu-display.php:154
+#: src/Views/menu-display.php:154, fuzzy
 msgid "AM/PM"
 msgstr "AM/PM"
 
@@ -2429,7 +2430,7 @@ msgstr "O css em linha que será usado para estilizar o texto do rodapé."
 msgid "Example: "
 msgstr "Exemplo: "
 
-#: src/Views/menu-display.php:237
+#: src/Views/menu-display.php:237, fuzzy
 msgid "Shortcode"
 msgstr "Shortcode"
 
@@ -2552,7 +2553,7 @@ msgstr "Avançado"
 msgid "Diagnostics and Tools"
 msgstr "Diagnósticos e Ferramentas"
 
-#: components/BackupPanel.jsx:6
+#: components/BackupPanel.jsx:6, fuzzy
 msgid "Backup"
 msgstr "Backup"
 
@@ -2773,7 +2774,7 @@ msgid "Back"
 msgstr "Voltar"
 
 #: components/inspector-card/index.jsx:48
-#: components/secondary-sidebar/node-card.jsx:22
+#: components/secondary-sidebar/node-card.jsx:22, fuzzy
 msgid "Pro"
 msgstr "Pro"
 

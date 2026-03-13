@@ -4,51 +4,49 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PublishPress Future 4.10.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/project\n"
-"POT-Creation-Date: 2026-02-27T16:10:19+00:00\n"
-"PO-Revision-Date: 2026-03-02 14:47+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: none\n"
-"Language: ko-KR\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-02-27T16:10:19+00:00\n"
+"PO-Revision-Date: 2026-03-13 18:00+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"Language: ko-KR\n"
 
-#. Plugin Name of the plugin
-#. Plugin Name of the plugin
 #: post-expirator.php
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:120
 #: src/Modules/Workflows/Models/StepTypesModel.php:99
+#. Plugin Name of the plugin
 msgid "PublishPress Future"
 msgstr "퍼블리시프레스 미래"
 
+#: post-expirator.php, fuzzy
 #. Plugin URI of the plugin
-#: post-expirator.php
 msgid "http://wordpress.org/extend/plugins/post-expirator/"
 msgstr "http://wordpress.org/extend/plugins/post-expirator/"
 
+#: post-expirator.php
 #. Description of the plugin
-#: post-expirator.php
 msgid ""
-"PublishPress Future allows you to schedule automatic changes to posts, pages "
-"and other content types."
-msgstr ""
-"퍼블리시프레스 미래는 게시물, 페이지 및 기타 콘텐츠 유형에 대한 자동 변경 사"
-"항을 예약할 수 있게 해줍니다."
+"PublishPress Future allows you to schedule automatic changes to posts, "
+"pages and other content types."
+msgstr "퍼블리시프레스 미래는 게시물, 페이지 및 기타 콘텐츠 유형에 대한 자동 변경 사항을 예약할 수 있게 해줍니다."
 
-#. Author of the plugin
 #: post-expirator.php
+#. Author of the plugin
 msgid "PublishPress"
 msgstr "퍼블리시프레스"
 
+#: post-expirator.php, fuzzy
 #. Author URI of the plugin
-#: post-expirator.php
 msgid "http://publishpress.com"
 msgstr "http://publishpress.com"
 
-#: legacy/classes/Display.class.php:113 legacy/classes/Display.class.php:141
+#: legacy/classes/Display.class.php:113
+#: legacy/classes/Display.class.php:141
 msgid "You do not have permission to configure PublishPress Future."
 msgstr "퍼블리시프레스 미래를 구성할 권한이 없습니다."
 
@@ -72,9 +70,7 @@ msgstr "디버깅 테이블이 비워졌습니다"
 msgid ""
 "The legacy future actions migration has been enqueued and will run "
 "asynchronously."
-msgstr ""
-"레거시 미래 작업 마이그레이션이 대기열에 추가되었으며 비동기적으로 실행됩니"
-"다."
+msgstr "레거시 미래 작업 마이그레이션이 대기열에 추가되었으며 비동기적으로 실행됩니다."
 
 #: legacy/classes/Display.class.php:308
 msgid ""
@@ -87,17 +83,17 @@ msgid "The database schema was fixed."
 msgstr "데이터베이스 스키마가 수정되었습니다."
 
 #: legacy/classes/Display.class.php:328
-msgid ""
-"The database schema could not be fixed. Please, contact the support team."
+msgid "The database schema could not be fixed. Please, contact the support team."
 msgstr "데이터베이스 스키마를 수정할 수 없습니다. 지원 팀에 문의하십시오."
 
-#: legacy/classes/Display.class.php:399 legacy/classes/Display.class.php:453
+#: legacy/classes/Display.class.php:399
+#: legacy/classes/Display.class.php:453
 #: legacy/classes/Display.class.php:475
 msgid "Saved Options!"
 msgstr "옵션이 저장되었습니다!"
 
-#. translators: %1$s is the plugin name, %2$s is the star rating markup
 #: legacy/classes/Display.class.php:567
+#. translators: %1$s is the plugin name, %2$s is the star rating markup
 #, php-format
 msgid "If you like %1$s, please leave us a %2$s rating. Thank you!"
 msgstr "%1$s가 마음에 드신다면, %2$s 평가를 남겨주세요. 감사합니다!"
@@ -130,15 +126,18 @@ msgstr "연락하기"
 msgid "No taxonomies found"
 msgstr "발견된 분류가 없습니다"
 
-#: services.php:150 src/Modules/Settings/SettingsFacade.php:122
+#: services.php:150
+#: src/Modules/Settings/SettingsFacade.php:122, fuzzy
 msgid "l F jS, Y"
 msgstr "l F jS, Y"
 
-#: services.php:154 src/Modules/Settings/SettingsFacade.php:123
+#: services.php:154
+#: src/Modules/Settings/SettingsFacade.php:123, fuzzy
 msgid "g:ia"
 msgstr "g:ia"
 
-#: services.php:155 src/Modules/Settings/SettingsFacade.php:124
+#: services.php:155
+#: src/Modules/Settings/SettingsFacade.php:124
 msgid "Post expires at EXPIRATIONTIME on ACTIONDATE"
 msgstr "게시물이 ACTIONDATE의 EXPIRATIONTIME에 만료됩니다"
 
@@ -177,8 +176,7 @@ msgstr "가져오기"
 
 #: src/Modules/Backup/Controllers/BackupRestApi.php:142
 msgid "Failed to get workflows. Check the logs for more details."
-msgstr ""
-"워크플로우를 가져오는 데 실패했습니다. 자세한 내용은 로그를 확인하세요."
+msgstr "워크플로우를 가져오는 데 실패했습니다. 자세한 내용은 로그를 확인하세요."
 
 #: src/Modules/Backup/Controllers/BackupRestApi.php:194
 msgid "Failed to export the file. Check the logs for more details."
@@ -198,9 +196,9 @@ msgstr "유효하지 않은 nonce입니다."
 
 #: src/Modules/Debug/Migrations/V04905DebugLogRequestId.php:80
 msgid ""
-"Add request_id and trigger_activated columns to debug log table after v4.10.0"
-msgstr ""
-"v4.10.0 이후에 디버그 로그 테이블에 request_id 및 trigger_activated 열 추가"
+"Add request_id and trigger_activated columns to debug log table after "
+"v4.10.0"
+msgstr "v4.10.0 이후에 디버그 로그 테이블에 request_id 및 trigger_activated 열 추가"
 
 #: src/Modules/Debug/Migrations/V04906DebugLogTimestampMilliseconds.php:79
 msgid "Add millisecond precision to debug log timestamp column (v4.10.0)"
@@ -208,13 +206,15 @@ msgstr "디버그 로그 타임스탬프 열에 밀리초 정밀도 추가 (v4.1
 
 #: src/Modules/Debug/Views/raw-debug-log.html.php:39
 #: src/Modules/Settings/Controllers/Controller.php:214
-#: src/Views/menu-debug-log.php:113 src/Views/menu-debug-log.php:148
+#: src/Views/menu-debug-log.php:113
+#: src/Views/menu-debug-log.php:148
 msgid "Debugging table is currently empty."
 msgstr "디버깅 테이블이 현재 비어 있습니다."
 
 #: src/Modules/Debug/Views/raw-debug-log.html.php:40
 #: src/Modules/Settings/Controllers/Controller.php:215
-#: src/Views/menu-debug-log.php:115 src/Views/menu-debug-log.php:150
+#: src/Views/menu-debug-log.php:115
+#: src/Views/menu-debug-log.php:150
 msgid "No results match the current filter."
 msgstr "현재 필터와 일치하는 결과가 없습니다."
 
@@ -235,7 +235,8 @@ msgstr "분류"
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:131
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:132
 #: src/Modules/Expirator/Controllers/SettingsController.php:544
-#: src/Views/menu-admin.php:44 src/Views/tabs-future-actions.php:51
+#: src/Views/menu-admin.php:44
+#: src/Views/tabs-future-actions.php:51
 msgid "Future Actions"
 msgstr "미래 작업"
 
@@ -286,20 +287,20 @@ msgstr "캘린더 보기"
 msgid "Hide Calendar"
 msgstr "캘린더 숨기기"
 
-#. translators: the text between {} is the link to the settings page.
-#. translators: the text between {{}} is the link to the settings page.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:182
 #: src/Modules/Expirator/Controllers/BulkEditController.php:222
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:423
 #: src/Modules/Expirator/Controllers/QuickEditController.php:352
+#. translators: the text between {} is the link to the settings page.
+#. translators: the text between {{}} is the link to the settings page.
 msgid "Timezone is controlled by the {WordPress Settings}."
 msgstr "시간대는 {워드프레스 설정}에 의해 관리됩니다."
 
-#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:189
 #: src/Modules/Expirator/Controllers/BulkEditController.php:229
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:430
 #: src/Modules/Expirator/Controllers/QuickEditController.php:356
+#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "No %s found."
 msgstr "%s을(를) 찾을 수 없습니다."
@@ -311,38 +312,38 @@ msgstr "%s을(를) 찾을 수 없습니다."
 msgid "You must assign a taxonomy to this post type to use this feature."
 msgstr "이 기능을 사용하려면 이 게시물 유형에 분류를 지정해야 합니다."
 
-#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:197
 #: src/Modules/Expirator/Controllers/BulkEditController.php:243
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:438
 #: src/Modules/Expirator/Controllers/QuickEditController.php:361
+#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "New %s"
 msgstr "새 %s"
 
-#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:199
 #: src/Modules/Expirator/Controllers/BulkEditController.php:245
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:440
 #: src/Modules/Expirator/Controllers/QuickEditController.php:363
+#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "%s to remove"
 msgstr "%s 제거"
 
-#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:201
 #: src/Modules/Expirator/Controllers/BulkEditController.php:247
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:442
 #: src/Modules/Expirator/Controllers/QuickEditController.php:365
+#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "%s to add"
 msgstr "%s 추가"
 
-#. translators: %s is the name of the taxonomy in singular form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:204
 #: src/Modules/Expirator/Controllers/BulkEditController.php:250
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:445
 #: src/Modules/Expirator/Controllers/QuickEditController.php:367
+#. translators: %s is the name of the taxonomy in singular form.
 #, php-format
 msgid "Search for %s"
 msgstr "%s 검색"
@@ -368,12 +369,12 @@ msgstr "날짜 선택"
 msgid "Date cannot be in the past"
 msgstr "날짜는 과거일 수 없습니다."
 
-#. translators: %s is the name of the taxonomy in singular form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:212
 #: src/Modules/Expirator/Controllers/BulkEditController.php:258
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:453
 #: src/Modules/Expirator/Controllers/QuickEditController.php:373
 #: src/Modules/Expirator/Controllers/SettingsController.php:298
+#. translators: %s is the name of the taxonomy in singular form.
 #, php-format
 msgid "Please select one or more %s"
 msgstr "하나 이상의 %s를 선택하십시오."
@@ -446,7 +447,6 @@ msgstr "프로로 업그레이드"
 msgid "Action Workflows"
 msgstr "작업 흐름"
 
-#. translators: button label text should, if possible, be under 16 characters.
 #: src/Modules/Expirator/Controllers/PluginsListController.php:70
 #: src/Modules/Expirator/Controllers/SettingsController.php:132
 #: src/Modules/Expirator/Controllers/SettingsController.php:133
@@ -454,6 +454,7 @@ msgstr "작업 흐름"
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostWorkflowEnable.php:67
 #: src/Views/tabs-settings.php:47
 #: assets/jsx/workflow-editor/components/settings-sidebar/settings-sidebar.jsx:54
+#. translators: button label text should, if possible, be under 16 characters.
 msgid "Settings"
 msgstr "설정"
 
@@ -508,9 +509,9 @@ msgstr "실행된 작업: %s (ID: %d)"
 msgid "Executed scheduled action"
 msgstr "예약된 작업 실행됨"
 
-#. translators: %1$s is the link to the PHP strtotime function documentation, %2$s and %3$s are the opening and closing code tags. Please, do not translate the date format text, since PHP will not be able to calculate using non-english terms.
 #: src/Modules/Expirator/Controllers/SettingsController.php:252
 #: src/Views/menu-general.php:41
+#. translators: %1$s is the link to the PHP strtotime function documentation, %2$s and %3$s are the opening and closing code tags. Please, do not translate the date format text, since PHP will not be able to calculate using non-english terms.
 #, php-format
 msgid ""
 "Set the offset to use for the default action date and time. For information "
@@ -518,10 +519,9 @@ msgid ""
 "%2$s+1 week 2 days 4 hours 2 seconds%3$s or %2$snext Thursday%3$s. Please, "
 "use only terms in English."
 msgstr ""
-"기본 작업 날짜 및 시간을 사용하기 위해 사용할 오프셋을 설정합니다. 형식에 대"
-"한 정보는 %1$s를 참조하세요. 예를 들어 %2$s+1 개월%3$s 또는 %2$s+1 주 2 일 4 "
-"시간 2 초%3$s 또는 %2$s다음 목요일%3$s를 입력할 수 있습니다. 영어 용어만 사용"
-"해 주세요."
+"기본 작업 날짜 및 시간을 사용하기 위해 사용할 오프셋을 설정합니다. 형식에 대한 정보는 %1$s를 참조하세요. 예를 들어 %2$s+1 "
+"개월%3$s 또는 %2$s+1 주 2 일 4 시간 2 초%3$s 또는 %2$s다음 목요일%3$s를 입력할 수 있습니다. 영어 용어만 "
+"사용해 주세요."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:262
 msgid "Default Values"
@@ -533,8 +533,8 @@ msgid ""
 "for the corresponding post types.  These values can all be overwritten when "
 "creating/editing the post/page."
 msgstr ""
-"아래 값을 사용하여 각 게시물 유형에 대해 사용할 기본 작업/값을 설정합니다. "
-"이 값은 게시물/페이지를 생성/편집할 때 모두 덮어쓸 수 있습니다."
+"아래 값을 사용하여 각 게시물 유형에 대해 사용할 기본 작업/값을 설정합니다. 이 값은 게시물/페이지를 생성/편집할 때 모두 덮어쓸 수 "
+"있습니다."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:267
 msgid "Active"
@@ -565,19 +565,17 @@ msgstr "작업 자동 생성"
 msgid ""
 "This will automatically create an action for new posts, using the default "
 "settings on this screen"
-msgstr ""
-"이 화면의 기본 설정을 사용하여 새 게시물에 대한 작업을 자동으로 생성합니다."
+msgstr "이 화면의 기본 설정을 사용하여 새 게시물에 대한 작업을 자동으로 생성합니다."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:281
 msgid ""
 "No taxonomies found for this post type. Taxonomy actions will not be "
 "available."
-msgstr ""
-"이 게시물 유형에 대해 발견된 분류법이 없습니다. 분류법 작업을 사용할 수 없습"
-"니다."
+msgstr "이 게시물 유형에 대해 발견된 분류법이 없습니다. 분류법 작업을 사용할 수 없습니다."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:282
-#: src/Views/menu-notifications.php:116 src/Views/menu-notifications.php:169
+#: src/Views/menu-notifications.php:116
+#: src/Views/menu-notifications.php:169
 msgid "Who to Notify"
 msgstr "알림 받을 사람"
 
@@ -585,8 +583,7 @@ msgstr "알림 받을 사람"
 msgid ""
 "Enter a comma separated list of emails that you would like to be notified "
 "when the action runs."
-msgstr ""
-"작업이 실행될 때 알림을 받고 싶은 이메일의 쉼표로 구분된 목록을 입력하세요."
+msgstr "작업이 실행될 때 알림을 받고 싶은 이메일의 쉼표로 구분된 목록을 입력하세요."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:287
 #: src/Views/menu-general.php:29
@@ -660,9 +657,7 @@ msgstr "메타데이터 일정 설정 활성화"
 msgid ""
 "Checking this option will allow you to use post metadata to control the "
 "scheduling of actions."
-msgstr ""
-"이 옵션을 선택하면 게시물 메타데이터를 사용하여 작업 일정을 제어할 수 있습니"
-"다."
+msgstr "이 옵션을 선택하면 게시물 메타데이터를 사용하여 작업 일정을 제어할 수 있습니다."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:309
 msgid "This is a Pro feature. Upgrade to unlock this functionality."
@@ -677,8 +672,7 @@ msgstr "양식 유효성 검사 실패: 죄송하지만, nonce가 확인되지 �
 msgid ""
 "The shortcode [futureaction] must be used inside the loop or with the "
 "post_id attribute."
-msgstr ""
-"단축코드 [futureaction]은 루프 안이나 post_id 속성과 함께 사용해야 합니다."
+msgstr "단축코드 [futureaction]은 루프 안이나 post_id 속성과 함께 사용해야 합니다."
 
 #: src/Modules/Expirator/DBTableSchemas/ActionArgsSchema.php:96
 msgid "The column args length was not updated to 1000."
@@ -691,11 +685,11 @@ msgstr "열 인수 길이가 1000으로 업데이트되지 않았습니다."
 msgid "Status didn't change."
 msgstr "상태가 변경되지 않았습니다."
 
-#. translators: 1: old post status, 2: new post status
 #: src/Modules/Expirator/ExpirationActions/ChangePostStatus.php:62
 #: src/Modules/Expirator/ExpirationActions/PostStatusToDraft.php:60
 #: src/Modules/Expirator/ExpirationActions/PostStatusToPrivate.php:60
 #: src/Modules/Expirator/ExpirationActions/PostStatusToTrash.php:60
+#. translators: 1: old post status, 2: new post status
 #, php-format
 msgid "Status has been successfully changed from \"%1$s\" to \"%2$s\"."
 msgstr "상태가 \"%1$s\"에서 \"%2$s\"로 성공적으로 변경되었습니다."
@@ -704,14 +698,14 @@ msgstr "상태가 \"%1$s\"에서 \"%2$s\"로 성공적으로 변경되었습니�
 msgid "Change status"
 msgstr "상태 변경"
 
-#. translators: %s: post type singular label
 #: src/Modules/Expirator/ExpirationActions/DeletePost.php:47
+#. translators: %s: post type singular label
 #, php-format
 msgid "%s was not deleted."
 msgstr "%s는 삭제되지 않았습니다."
 
-#. translators: %s: post type singular label
 #: src/Modules/Expirator/ExpirationActions/DeletePost.php:54
+#. translators: %s: post type singular label
 #, php-format
 msgid "%s has been successfully deleted."
 msgstr "%s가 성공적으로 삭제되었습니다."
@@ -723,102 +717,96 @@ msgstr "%s가 성공적으로 삭제되었습니다."
 msgid "Delete"
 msgstr "삭제"
 
-#. translators: %s is the post type singular label
 #: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:65
+#. translators: %s is the post type singular label
 #, php-format
 msgid "No terms were added to the %s."
 msgstr "%s에 용어가 추가되지 않았습니다."
 
-#. translators: %1$s is the taxonomy label, %2$s is the post type singular label, %3$s is the list of terms added, %4$s is the list of terms on the post
 #: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:77
+#. translators: %1$s is the taxonomy label, %2$s is the post type singular label, %3$s is the list of terms added, %4$s is the list of terms on the post
 #, php-format
 msgid ""
 "The following terms (%1$s) were added to the %2$s: \"%3$s\". The full list "
 "of terms on the post is: %4$s."
-msgstr ""
-"다음 용어(%1$s)가 %2$s에 추가되었습니다: \"%3$s\". 게시물의 전체 용어 목록"
-"은: %4$s입니다."
+msgstr "다음 용어(%1$s)가 %2$s에 추가되었습니다: \"%3$s\". 게시물의 전체 용어 목록은: %4$s입니다."
 
-#. translators: %s is the taxonomy name (plural)
 #: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:120
+#. translators: %s is the taxonomy name (plural)
 #, php-format
 msgid "Add extra %s"
 msgstr "추가 %s"
 
-#. translators: %s is the post type singular label
 #: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:56
 #: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:56
+#. translators: %s is the post type singular label
 #, php-format
 msgid "No terms were removed from the %s."
 msgstr "%s에서 용어가 제거되지 않았습니다."
 
-#. translators: %1$s is the taxonomy name, %2$s is the post type singular label, %3$s is the removed terms list, %4$s is the updated terms list
 #: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:67
+#. translators: %1$s is the taxonomy name, %2$s is the post type singular label, %3$s is the removed terms list, %4$s is the updated terms list
 #, php-format
 msgid ""
-"The following terms (%1$s) were removed from the %2$s: %3$s. The new list of "
-"terms on the post is: %4$s."
-msgstr ""
-"다음 용어(%1$s)가 %2$s에서 제거되었습니다: %3$s. 게시물의 새 용어 목록은: "
-"%4$s입니다."
+"The following terms (%1$s) were removed from the %2$s: %3$s. The new list "
+"of terms on the post is: %4$s."
+msgstr "다음 용어(%1$s)가 %2$s에서 제거되었습니다: %3$s. 게시물의 새 용어 목록은: %4$s입니다."
 
-#. translators: %s is the taxonomy name (plural)
 #: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:112
+#. translators: %s is the taxonomy name (plural)
 #, php-format
 msgid "Remove selected %s"
 msgstr "선택한 %s 제거"
 
-#. translators: %1$s is the taxonomy name, %2$s is the post type singular label, %3$s is the list of term names
 #: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:67
+#. translators: %1$s is the taxonomy name, %2$s is the post type singular label, %3$s is the list of term names
 #, php-format
 msgid "The following terms (%1$s) were removed from the %2$s: %3$s."
 msgstr "다음 용어(%1$s)가 %2$s에서 제거되었습니다: %3$s."
 
-#. translators: %s is the taxonomy name (plural)
 #: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:106
+#. translators: %s is the taxonomy name (plural)
 #, php-format
 msgid "Remove all %s"
 msgstr "모든 %s 제거"
 
-#. translators: %s is the post type singular label
 #: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:58
+#. translators: %s is the post type singular label
 #, php-format
 msgid "No terms were changed on the %s."
 msgstr "%s에서 용어가 변경되지 않았습니다."
 
-#. translators: 1: taxonomy name, 2: post type singular label, 3: updated terms, 4: original terms
 #: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:69
+#. translators: 1: taxonomy name, 2: post type singular label, 3: updated terms, 4: original terms
 #, php-format
 msgid ""
 "The following terms (%1$s) were set to the %2$s: \"%3$s\". The old list of "
 "terms on the post was: %4$s."
-msgstr ""
-"다음 용어(%1$s)가 %2$s에 설정되었습니다: \"%3$s\". 게시물의 이전 용어 목록"
-"은: %4$s입니다."
+msgstr "다음 용어(%1$s)가 %2$s에 설정되었습니다: \"%3$s\". 게시물의 이전 용어 목록은: %4$s입니다."
 
-#. translators: %s is the taxonomy name (plural)
 #: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:109
+#. translators: %s is the taxonomy name (plural)
 #, php-format
 msgid "Replace all %s"
 msgstr "모든 %s 교체"
 
-#. translators: %s: new post status
 #: src/Modules/Expirator/ExpirationActions/PostStatusToDraft.php:90
 #: src/Modules/Expirator/ExpirationActions/PostStatusToPrivate.php:90
 #: src/Modules/Expirator/ExpirationActions/PostStatusToTrash.php:90
+#. translators: %s: new post status
 #, php-format
 msgid "Change status to %s"
 msgstr "%s로 상태 변경"
 
-#. translators: %s: post type singular label
 #: src/Modules/Expirator/ExpirationActions/StickPost.php:46
 #: src/Modules/Expirator/ExpirationActions/UnstickPost.php:46
+#. translators: %s: post type singular label
 #, php-format
 msgid "%s didn't change."
 msgstr "%s는 변경되지 않았습니다."
 
-#. translators: %s: post type singular label
 #: src/Modules/Expirator/ExpirationActions/StickPost.php:53
+#. translators: %s: post type singular label
 #, php-format
 msgid "%s has been added to stickies list."
 msgstr "%s가 고정 목록에 추가되었습니다."
@@ -827,8 +815,8 @@ msgstr "%s가 고정 목록에 추가되었습니다."
 msgid "Stick"
 msgstr "고정"
 
-#. translators: %s: post type singular label
 #: src/Modules/Expirator/ExpirationActions/UnstickPost.php:53
+#. translators: %s: post type singular label
 #, php-format
 msgid "%s has been removed from stickies list."
 msgstr "%s가 고정 목록에서 제거되었습니다."
@@ -857,8 +845,7 @@ msgstr "v3.0.1 이후 포스트 메타 데이터 복원"
 msgid ""
 "Change args column length to 1000 in the table _ppfuture_actions_args after "
 "v3.1.4"
-msgstr ""
-"v3.1.4 이후 테이블 _ppfuture_actions_args의 args 열 길이를 1000으로 변경"
+msgstr "v3.1.4 이후 테이블 _ppfuture_actions_args의 args 열 길이를 1000으로 변경"
 
 #: src/Modules/Expirator/Models/ExpirablePostModel.php:489
 msgid "Email is disabled."
@@ -872,34 +859,34 @@ msgstr "이메일이 전송되었습니다."
 msgid "Email not sent."
 msgstr "이메일이 전송되지 않았습니다."
 
-#. translators: %1$s: post title placeholder, %2$s: notification text, %3$s: action date placeholder, %4$s: post link placeholder
 #: src/Modules/Expirator/Models/ExpirablePostModel.php:644
+#. translators: %1$s: post title placeholder, %2$s: notification text, %3$s: action date placeholder, %4$s: post link placeholder
 #, php-format
 msgid "%1$s. %2$s on %3$s. The post link is %4$s"
 msgstr "%1$s. %2$s on %3$s. 포스트 링크는 %4$s 입니다"
 
-#. translators: %s is the post title
 #: src/Modules/Expirator/Models/ExpirablePostModel.php:662
+#. translators: %s is the post title
 #, php-format
 msgid "Future Action Complete \"%s\""
 msgstr "미래 액션 완료 \"%s\""
 
-#. translators: 1: is the blog name, 2: the email subject
 #: src/Modules/Expirator/Models/ExpirablePostModel.php:666
+#. translators: 1: is the blog name, 2: the email subject
 #, fuzzy, php-format
 msgid "[%1$s] %2$s"
 msgstr "[%1$s] %2$s"
 
-#. translators: %s is the date/time offset and %s is the post type.
 #: src/Modules/Expirator/Models/PostTypeDefaultDataModel.php:156
+#. translators: %s is the date/time offset and %s is the post type.
 #, php-format
 msgid ""
 "Invalid date/time offset \"%s\" for post type \"%s\". Please ensure you use "
 "only English terms for the date/time offset, such as \"3 months\" or \"1 "
 "week\"."
 msgstr ""
-"포스트 유형 \"%s\"에 대한 유효하지 않은 날짜/시간 오프셋 \"%s\". 날짜/시간 오"
-"프셋에 대해서는 \"3개월\" 또는 \"1주\"와 같은 영어 용어만 사용하세요."
+"포스트 유형 \"%s\"에 대한 유효하지 않은 날짜/시간 오프셋 \"%s\". 날짜/시간 오프셋에 대해서는 \"3개월\" 또는 "
+"\"1주\"와 같은 영어 용어만 사용하세요."
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:53
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:234
@@ -934,8 +921,7 @@ msgid "Cancel"
 msgstr "취소"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:77
-msgid ""
-"Cancel the action. This will prevent the action from running in the future"
+msgid "Cancel the action. This will prevent the action from running in the future"
 msgstr "액션을 취소합니다. 이로 인해 앞으로 액션이 실행되지 않습니다."
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:88
@@ -943,50 +929,50 @@ msgstr "액션을 취소합니다. 이로 인해 앞으로 액션이 실행되�
 msgid "Run"
 msgstr "실행"
 
-#. translators: %s: amount of time
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:96
+#. translators: %s: amount of time
 #, php-format
 msgid "%s year"
 msgid_plural "%s years"
 msgstr[0] "%s 년"
 
-#. translators: %s: amount of time
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:101
+#. translators: %s: amount of time
 #, php-format
 msgid "%s month"
 msgid_plural "%s months"
 msgstr[0] "%s 개월"
 
-#. translators: %s: amount of time
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:106
+#. translators: %s: amount of time
 #, php-format
 msgid "%s week"
 msgid_plural "%s weeks"
 msgstr[0] "%s 주"
 
-#. translators: %s: amount of time
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:111
+#. translators: %s: amount of time
 #, php-format
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] "%s 일"
 
-#. translators: %s: amount of time
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:116
+#. translators: %s: amount of time
 #, php-format
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] "%s 시간"
 
-#. translators: %s: amount of time
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:121
+#. translators: %s: amount of time
 #, php-format
 msgid "%s minute"
 msgid_plural "%s minutes"
 msgstr[0] "%s 분"
 
-#. translators: %s: amount of time
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:126
+#. translators: %s: amount of time
 #, php-format
 msgid "%s second"
 msgid_plural "%s seconds"
@@ -1037,20 +1023,20 @@ msgstr "완료됨"
 msgid "Process the action now"
 msgstr "지금 작업을 처리하세요"
 
-#. translators: %1$s: post type label, %2$d: post ID, %3$s: post link tag start, %4$s: post title, %5$s: post link tag end
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:524
+#. translators: %1$s: post type label, %2$d: post ID, %3$s: post link tag start, %4$s: post title, %5$s: post link tag end
 #, fuzzy, php-format
 msgid "%1$s: [%2$d] %3$s%4$s%5$s"
 msgstr "%1$s: [%2$d] %3$s%4$s%5$s"
 
-#. translators: %s is the new status
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:559
+#. translators: %s is the new status
 #, php-format
 msgid "New Status: %s"
 msgstr "새 상태: %s"
 
-#. translators: %s is the list of terms
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:567
+#. translators: %s is the list of terms
 #, php-format
 msgid "Terms: %s"
 msgstr "용어: %s"
@@ -1099,14 +1085,14 @@ msgstr "메시지"
 msgid "Async"
 msgstr "비동기"
 
-#. translators: %s is the date interval in human readable format in the past
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:765
+#. translators: %s is the date interval in human readable format in the past
 #, php-format
 msgid " (%s ago)"
 msgstr " (%s 전)"
 
-#. translators: %s is the date interval in human readable format in the present or future
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:771
+#. translators: %s is the date interval in human readable format in the present or future
 #, fuzzy, php-format
 msgid " (%s)"
 msgstr " (%s)"
@@ -1115,8 +1101,8 @@ msgstr " (%s)"
 msgid "Now!"
 msgstr "지금!"
 
-#. translators: %s: time interval
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:845
+#. translators: %s: time interval
 #, php-format
 msgid "Every %s"
 msgstr "매 %s"
@@ -1170,8 +1156,7 @@ msgstr "예약된 워크플로우 단계를 자동으로 제거"
 msgid ""
 "Automatically remove scheduled workflow steps that have been marked as "
 "failed, completed, or cancelled."
-msgstr ""
-"실패, 완료 또는 취소로 표시된 예약된 워크플로우 단계를 자동으로 제거합니다."
+msgstr "실패, 완료 또는 취소로 표시된 예약된 워크플로우 단계를 자동으로 제거합니다."
 
 #: src/Modules/Settings/Controllers/Controller.php:260
 msgid "Retain all scheduled workflow steps"
@@ -1183,9 +1168,8 @@ msgid ""
 "failed, completed, or cancelled. This may impact database performance over "
 "time."
 msgstr ""
-"실패, 완료 또는 취소로 표시된 단계를 포함하여 모든 예약된 워크플로우 단계를 "
-"무기한 유지합니다. 이는 시간이 지남에 따라 데이터베이스 성능에 영향을 줄 수 "
-"있습니다."
+"실패, 완료 또는 취소로 표시된 단계를 포함하여 모든 예약된 워크플로우 단계를 무기한 유지합니다. 이는 시간이 지남에 따라 데이터베이스 "
+"성능에 영향을 줄 수 있습니다."
 
 #: src/Modules/Settings/Controllers/Controller.php:268
 msgid "Retention"
@@ -1195,23 +1179,21 @@ msgstr "유지 기간"
 msgid ""
 "The duration, in days, for which completed, failed, and canceled scheduled "
 "workflow steps will be preserved before automatic removal."
-msgstr ""
-"자동 제거되기 전에 완료, 실패 및 취소된 예약된 워크플로우 단계가 보존될 기간"
-"(일)을 설정합니다."
+msgstr "자동 제거되기 전에 완료, 실패 및 취소된 예약된 워크플로우 단계가 보존될 기간(일)을 설정합니다."
 
 #: src/Modules/Settings/Controllers/Controller.php:273
 msgid "days"
 msgstr "일"
 
-#. translators: %1$s and %2$s are placeholders for the link to by the Pro version
 #: src/Modules/VersionNotices/Module.php:95
+#. translators: %1$s and %2$s are placeholders for the link to by the Pro version
 #, php-format
 msgid ""
-"You're using PublishPress Future Free. The Pro version has more features and "
-"support. %1$sUpgrade to Pro%2$s"
+"You're using PublishPress Future Free. The Pro version has more features "
+"and support. %1$sUpgrade to Pro%2$s"
 msgstr ""
-"당신은 PublishPress Future Free를 사용하고 있습니다. Pro 버전은 더 많은 기능"
-"과 지원을 제공합니다. %1$sPro로 업그레이드%2$s"
+"당신은 PublishPress Future Free를 사용하고 있습니다. Pro 버전은 더 많은 기능과 지원을 제공합니다. "
+"%1$sPro로 업그레이드%2$s"
 
 #: src/Modules/Workflows/Controllers/ManualPostTrigger.php:396
 msgid "Workflow Manual Trigger"
@@ -1221,8 +1203,8 @@ msgstr "워크플로우 수동 트리거"
 msgid "Check and warn about past-due actions"
 msgstr "기한이 지난 작업에 대해 확인 및 경고"
 
-#. translators: %s is the admin URL to the scheduled actions page
 #: src/Modules/Workflows/Controllers/PastDueActions.php:148
+#. translators: %s is the admin URL to the scheduled actions page
 #, php-format
 msgid ""
 "You have past-due scheduled actions in PublishPress Future.\n"
@@ -1492,20 +1474,20 @@ msgstr "단계:"
 msgid "Workflow recurring scheduled action"
 msgstr "작업 흐름 반복 예약 작업"
 
-#. translators: %1$s is the recurrence, %2$s is the date
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:508
+#. translators: %1$s is the recurrence, %2$s is the date
 #, php-format
 msgid "%1$s until %2$s"
 msgstr "%1$s까지 %2$s"
 
-#. translators: %1$s is the recurrence, %2$d is the repeat times
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:518
+#. translators: %1$s is the recurrence, %2$d is the repeat times
 #, php-format
 msgid "%1$s for %2$d times"
 msgstr "%1$s를 %2$d회 동안"
 
-#. translators: %1$s is the executed times, %2$d is the total repeat times
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:528
+#. translators: %1$s is the executed times, %2$d is the total repeat times
 #, fuzzy, php-format
 msgid "[%1$s/%2$d]"
 msgstr "[%1$s/%2$d]"
@@ -1519,9 +1501,7 @@ msgstr "워크플로 편집기에 오신 것을 환영합니다"
 msgid ""
 "In the PublishPress Workflow Editor, each workflow step is presented as a "
 "distinct 'node' in the workflow."
-msgstr ""
-"PublishPress 워크플로 편집기에서는 각 워크플로 단계가 워크플로의 별도의 '노"
-"드'로 표시됩니다."
+msgstr "PublishPress 워크플로 편집기에서는 각 워크플로 단계가 워크플로의 별도의 '노드'로 표시됩니다."
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:269
 msgid "Use your imagination"
@@ -1531,8 +1511,7 @@ msgstr "상상력을 발휘하세요"
 msgid ""
 "You're free to create very distinct workflows in your site, according to "
 "your needs."
-msgstr ""
-"필요에 따라 사이트에서 매우 독특한 워크플로를 자유롭게 만들 수 있습니다."
+msgstr "필요에 따라 사이트에서 매우 독특한 워크플로를 자유롭게 만들 수 있습니다."
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:274
 msgid "A basic workflow"
@@ -1542,9 +1521,7 @@ msgstr "기본 워크플로"
 msgid ""
 "Every workflow requires at least two steps connected to each other: one "
 "trigger and one action."
-msgstr ""
-"모든 워크플로는 서로 연결된 최소 두 개의 단계가 필요합니다: 하나의 트리거와 "
-"하나의 액션."
+msgstr "모든 워크플로는 서로 연결된 최소 두 개의 단계가 필요합니다: 하나의 트리거와 하나의 액션."
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:279
 msgid "Add steps to your workflow"
@@ -1554,9 +1531,7 @@ msgstr "워크플로에 단계를 추가하세요"
 msgid ""
 "Drag and drop steps to add them to your workflow. Connect the steps to "
 "create a workflow."
-msgstr ""
-"단계를 드래그 앤 드롭하여 워크플로에 추가하세요. 단계를 연결하여 워크플로를 "
-"만드세요."
+msgstr "단계를 드래그 앤 드롭하여 워크플로에 추가하세요. 단계를 연결하여 워크플로를 만드세요."
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:284
 msgid "Output and input"
@@ -1574,9 +1549,7 @@ msgstr "워크플로 사용자 정의"
 msgid ""
 "Click on a step to customize it. You can change the step's settings in the "
 "right sidebar."
-msgstr ""
-"단계를 클릭하여 사용자 정의하세요. 오른쪽 사이드바에서 단계의 설정을 변경할 "
-"수 있습니다."
+msgstr "단계를 클릭하여 사용자 정의하세요. 오른쪽 사이드바에서 단계의 설정을 변경할 수 있습니다."
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:294
 msgid "Workflow validation"
@@ -1588,8 +1561,8 @@ msgid ""
 "connections, or invalid values. Select the step to view the corresponding "
 "error in the sidebar."
 msgstr ""
-"필수 설정이 누락되었거나 연결이 빠졌거나 유효하지 않은 값이 있으면 오류 메시"
-"지가 표시됩니다. 사이드바에서 해당 단계를 선택하여 오류를 확인하세요."
+"필수 설정이 누락되었거나 연결이 빠졌거나 유효하지 않은 값이 있으면 오류 메시지가 표시됩니다. 사이드바에서 해당 단계를 선택하여 오류를 "
+"확인하세요."
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:299
 msgid "Publish your workflow"
@@ -1607,17 +1580,15 @@ msgstr "도움이 필요하신가요?"
 msgid ""
 "If you have any questions or need help, click the help button in the top "
 "right corner to access the support resources."
-msgstr ""
-"질문이 있거나 도움이 필요하시면 오른쪽 상단 모서리에 있는 도움말 버튼을 클릭"
-"하여 지원 리소스에 접근하세요."
+msgstr "질문이 있거나 도움이 필요하시면 오른쪽 상단 모서리에 있는 도움말 버튼을 클릭하여 지원 리소스에 접근하세요."
 
-#. translators: Blocks tab title in the block inserter.
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:236
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:19
+#. translators: Blocks tab title in the block inserter.
 msgid "Triggers"
 msgstr "트리거"
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:280
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:280, fuzzy
 msgid "—"
 msgstr "—"
 
@@ -1696,8 +1667,8 @@ msgstr "작업 워크플로우 편집기"
 msgid "%s updated."
 msgstr "%s 업데이트됨."
 
-#. translators: 1: Post type singular label, 2: Revision title
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:838
+#. translators: 1: Post type singular label, 2: Revision title
 #, php-format
 msgid "%1$s restored to revision from %2$s"
 msgstr "%1$s가 %2$s로 복원되었습니다."
@@ -1717,8 +1688,8 @@ msgstr "%s 저장됨."
 msgid "%s submitted."
 msgstr "%s 제출됨."
 
-#. translators: 1: Post type singular label, 2: Scheduled date
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:857
+#. translators: 1: Post type singular label, 2: Scheduled date
 #, php-format
 msgid "%1$s scheduled for: <strong>%2$s</strong>."
 msgstr "%1$s 예약됨: <strong>%2$s</strong>."
@@ -1813,9 +1784,7 @@ msgstr "단일 여부"
 msgid ""
 "If enabled, only one meta value will be allowed. If disabled, multiple meta "
 "values can be added as an array."
-msgstr ""
-"활성화되면 하나의 메타 값만 허용됩니다. 비활성화되면 여러 개의 메타 값을 배열"
-"로 추가할 수 있습니다."
+msgstr "활성화되면 하나의 메타 값만 허용됩니다. 비활성화되면 여러 개의 메타 값을 배열로 추가할 수 있습니다."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:98
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeletePostMeta.php:91
@@ -2056,11 +2025,9 @@ msgstr "조건부"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:37
 msgid ""
-"This step allows you to continue the workflow only if certain conditions are "
-"met. It is not required to have both a True and a False option."
-msgstr ""
-"이 단계는 특정 조건이 충족될 경우에만 워크플로우를 계속 진행할 수 있습니다. "
-"True 및 False 옵션이 모두 필요하지 않습니다."
+"This step allows you to continue the workflow only if certain conditions "
+"are met. It is not required to have both a True and a False option."
+msgstr "이 단계는 특정 조건이 충족될 경우에만 워크플로우를 계속 진행할 수 있습니다. True 및 False 옵션이 모두 필요하지 않습니다."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:64
 #: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:57
@@ -2085,9 +2052,7 @@ msgstr "분기"
 msgid ""
 "Shows which path was taken: 'true' if conditions were met, or 'false' if "
 "they weren't."
-msgstr ""
-"어떤 경로가 선택되었는지 보여줍니다: 조건이 충족되었다면 'true', 충족되지 않"
-"았다면 'false'입니다."
+msgstr "어떤 경로가 선택되었는지 보여줍니다: 조건이 충족되었다면 'true', 충족되지 않았다면 'false'입니다."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:147
 msgid "True"
@@ -2105,9 +2070,7 @@ msgstr "게시물의 워크플로우 비활성화"
 msgid ""
 "This step enables you to deactivate the \"Manually enabled via checkbox\" "
 "workflow after use."
-msgstr ""
-"이 단계에서는 사용 후 \"체크박스를 통해 수동으로 활성화\"된 워크플로우를 비활"
-"성화할 수 있습니다."
+msgstr "이 단계에서는 사용 후 \"체크박스를 통해 수동으로 활성화\"된 워크플로우를 비활성화할 수 있습니다."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeactivatePostWorkflow.php:68
 msgid "Select which post will have its workflow deactivated."
@@ -2187,9 +2150,7 @@ msgstr "게시물에서 삭제할 메타 키."
 msgid ""
 "Specify the meta value to delete from the post. If empty, all meta with the "
 "same key will be deleted."
-msgstr ""
-"삭제할 메타 값을 지정하십시오. 비어 있으면 동일한 키를 가진 모든 메타가 삭제"
-"됩니다."
+msgstr "삭제할 메타 값을 지정하십시오. 비어 있으면 동일한 키를 가진 모든 메타가 삭제됩니다."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:32
 msgid "Do custom action"
@@ -2227,9 +2188,7 @@ msgstr "작업 인수"
 msgid ""
 "The arguments to pass to the action. These arguments will be available as "
 "variables in subsequent workflow steps."
-msgstr ""
-"작업에 전달할 인수입니다. 이러한 인수는 이후 워크플로 단계에서 변수로 사용 가"
-"능합니다."
+msgstr "작업에 전달할 인수입니다. 이러한 인수는 이후 워크플로 단계에서 변수로 사용 가능합니다."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:113
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:122
@@ -2394,9 +2353,8 @@ msgid ""
 "or relative to another date. You can also use this step to repeat the next "
 "part of the workflow."
 msgstr ""
-"이 단계에서는 특정 시간에 또는 다른 날짜에 상대적으로 워크플로의 다음 부분을 "
-"실행할 수 있습니다. 이 단계를 사용하여 워크플로의 다음 부분을 반복할 수도 있"
-"습니다."
+"이 단계에서는 특정 시간에 또는 다른 날짜에 상대적으로 워크플로의 다음 부분을 실행할 수 있습니다. 이 단계를 사용하여 워크플로의 다음 "
+"부분을 반복할 수도 있습니다."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:67
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:64
@@ -2488,11 +2446,8 @@ msgstr "PublishPress 워크플로우: {{global.workflow.title}}"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:22
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:22
-msgid ""
-"This is a message sent by PublishPress Workflow: {{global.workflow.title}}."
-msgstr ""
-"이 메시지는 PublishPress 워크플로우에서 전송되었습니다: "
-"{{global.workflow.title}}."
+msgid "This is a message sent by PublishPress Workflow: {{global.workflow.title}}."
+msgstr "이 메시지는 PublishPress 워크플로우에서 전송되었습니다: {{global.workflow.title}}."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:45
 msgid "Send email"
@@ -2567,9 +2522,7 @@ msgstr "받는 사람들"
 msgid ""
 "A comma-separated list of user names, ids, emails or user roles to send the "
 "message to."
-msgstr ""
-"메시지를 전송할 사용자 이름, ID, 이메일 또는 사용자 역할의 쉼표로 구분된 목록"
-"입니다."
+msgstr "메시지를 전송할 사용자 이름, ID, 이메일 또는 사용자 역할의 쉼표로 구분된 목록입니다."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:113
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:103
@@ -2682,8 +2635,7 @@ msgid "New terms"
 msgstr "새로운 용어"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SetPostTerm.php:83
-msgid ""
-"The terms that will be added to the posts after removing all the others."
+msgid "The terms that will be added to the posts after removing all the others."
 msgstr "모든 다른 용어를 제거한 후 게시물에 추가될 용어입니다."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/StickPost.php:32
@@ -2706,9 +2658,7 @@ msgstr "고정할 게시물"
 msgid ""
 "Choose the post that will be marked as sticky. You can select a post "
 "variable or enter a post ID."
-msgstr ""
-"고정으로 표시될 게시물을 선택하십시오. 게시물 변수를 선택하거나 게시물 ID를 "
-"입력할 수 있습니다."
+msgstr "고정으로 표시될 게시물을 선택하십시오. 게시물 변수를 선택하거나 게시물 ID를 입력할 수 있습니다."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UnstickPost.php:32
 msgid "Unstick post"
@@ -2730,9 +2680,7 @@ msgstr "고정 해제할 게시물"
 msgid ""
 "Choose the post that will be unmarked as sticky. You can select a post "
 "variable or enter a post ID."
-msgstr ""
-"고정 해제될 게시물을 선택하십시오. 게시물 변수를 선택하거나 게시물 ID를 입력"
-"할 수 있습니다."
+msgstr "고정 해제될 게시물을 선택하십시오. 게시물 변수를 선택하거나 게시물 ID를 입력할 수 있습니다."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePost.php:32
 msgid "Update post details"
@@ -2742,9 +2690,7 @@ msgstr "게시물 세부정보 업데이트"
 msgid ""
 "This step updates key information about each post such as the data, title, "
 "content, author, and more."
-msgstr ""
-"이 단계에서는 데이터, 제목, 내용, 저자 등 각 게시물에 대한 주요 정보를 업데이"
-"트합니다."
+msgstr "이 단계에서는 데이터, 제목, 내용, 저자 등 각 게시물에 대한 주요 정보를 업데이트합니다."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePost.php:65
 msgid "Select which post will be updated."
@@ -2874,9 +2820,7 @@ msgstr "사용자 상호작용"
 msgid ""
 "This step requires user action before the workflow can proceed. The actions "
 "are done via the in-site notification area."
-msgstr ""
-"이 단계는 워크플로우가 진행되기 전에 사용자 작업이 필요합니다. 작업은 사이트 "
-"내 알림 영역을 통해 수행됩니다."
+msgstr "이 단계는 워크플로우가 진행되기 전에 사용자 작업이 필요합니다. 작업은 사이트 내 알림 영역을 통해 수행됩니다."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:64
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:168
@@ -2893,24 +2837,20 @@ msgstr "이 작업으로부터 알림을 받을 사용자를 선택하세요."
 msgid ""
 "A comma-separated list of user names, ids, emails or user roles that can "
 "interact with this step."
-msgstr ""
-"이 단계와 상호작용할 수 있는 사용자 이름, ID, 이메일 또는 사용자 역할의 쉼표"
-"로 구분된 목록입니다."
+msgstr "이 단계와 상호작용할 수 있는 사용자 이름, ID, 이메일 또는 사용자 역할의 쉼표로 구분된 목록입니다."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:82
 msgid "Specify the message to be displayed to the responders."
 msgstr "응답자에게 표시될 메시지를 지정하세요."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:97
-msgid ""
-"Please select an option to continue the workflow: {{global.workflow.title}}"
-msgstr ""
-"워크플로우를 계속 진행하기 위해 옵션을 선택하세요: {{global.workflow.title}}"
+msgid "Please select an option to continue the workflow: {{global.workflow.title}}"
+msgstr "워크플로우를 계속 진행하기 위해 옵션을 선택하세요: {{global.workflow.title}}"
 
-#. translators: button label text should, if possible, be under 16 characters.
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:129
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:201
 #: assets/jsx/workflow-editor/components/more-menu/menu-dropdown.jsx:11
+#. translators: button label text should, if possible, be under 16 characters.
 msgid "Options"
 msgstr "옵션"
 
@@ -2974,9 +2914,7 @@ msgstr "사용자 지정 작업 시"
 msgid ""
 "This trigger activates upon a custom WordPress action hook. Use it to "
 "integrate with other plugins or custom code."
-msgstr ""
-"이 트리거는 사용자 지정 WordPress 작업 훅에 따라 활성화됩니다. 다른 플러그인"
-"이나 사용자 지정 코드와 통합하는 데 사용하십시오."
+msgstr "이 트리거는 사용자 지정 WordPress 작업 훅에 따라 활성화됩니다. 다른 플러그인이나 사용자 지정 코드와 통합하는 데 사용하십시오."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:74
 msgid "The hook that will trigger this action."
@@ -3006,9 +2944,7 @@ msgstr "Future Actions 상자를 통해 수동으로 실행"
 msgid ""
 "This trigger allows users to choose the workflow from the dropdown menu in "
 "the Future Actions options."
-msgstr ""
-"이 트리거는 사용자가 Future Actions 옵션의 드롭다운 메뉴에서 워크플로우를 선"
-"택할 수 있도록 합니다."
+msgstr "이 트리거는 사용자가 Future Actions 옵션의 드롭다운 메뉴에서 워크플로우를 선택할 수 있도록 합니다."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnLegacyActionTrigger.php:114
 msgid "Action Post"
@@ -3193,8 +3129,7 @@ msgid "Meta keys"
 msgstr "메타 키"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:95
-msgid ""
-"This field allow you to choose the post meta that will trigger this action."
+msgid "This field allow you to choose the post meta that will trigger this action."
 msgstr "이 필드는 이 작업을 트리거할 게시물 메타를 선택할 수 있게 해줍니다."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:123
@@ -3261,17 +3196,14 @@ msgstr "게시물 행 작업을 통해 수동으로 실행"
 msgid ""
 "This trigger creates a custom post row action and activates when the row "
 "action is clicked in the Posts list screen."
-msgstr ""
-"이 트리거는 사용자 정의 게시물 행 작업을 생성하고 게시물 목록 화면에서 행 작"
-"업이 클릭될 때 활성화됩니다."
+msgstr "이 트리거는 사용자 정의 게시물 행 작업을 생성하고 게시물 목록 화면에서 행 작업이 클릭될 때 활성화됩니다."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:91
 msgid "Row Action"
 msgstr "행 작업"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:92
-msgid ""
-"Configure the post row action that will be created in the Posts list screen."
+msgid "Configure the post row action that will be created in the Posts list screen."
 msgstr "게시물 목록 화면에서 생성될 게시물 행 작업을 구성합니다."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:100
@@ -3312,9 +3244,7 @@ msgstr "게시물이 저장되었습니다"
 msgid ""
 "This trigger activates whenever a post is saved, regardless of whether it's "
 "newly created, imported, or updated."
-msgstr ""
-"이 트리거는 게시물이 저장될 때마다 활성화되며, 새로 생성되었든, 가져왔든, 업"
-"데이트 되었든 관계없습니다."
+msgstr "이 트리거는 게시물이 저장될 때마다 활성화되며, 새로 생성되었든, 가져왔든, 업데이트 되었든 관계없습니다."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostSave.php:118
 msgid "Is update"
@@ -3325,8 +3255,8 @@ msgid ""
 "Whether the action happened to an existing post or a new post. Enter True "
 "for an existing post, or False for a new post."
 msgstr ""
-"작업이 기존 게시물에 발생했는지 아니면 새 게시물에 발생했는지를 나타냅니다. "
-"기존 게시물에는 True를 입력하고, 새 게시물에는 False를 입력합니다."
+"작업이 기존 게시물에 발생했는지 아니면 새 게시물에 발생했는지를 나타냅니다. 기존 게시물에는 True를 입력하고, 새 게시물에는 "
+"False를 입력합니다."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostSave.php:125
 msgid "Saved post ID"
@@ -3389,9 +3319,7 @@ msgstr "체크박스를 통해 수동으로 실행"
 msgid ""
 "This trigger activates when the option is manually enabled. It can be "
 "enabled via the post editing screen or the Quick Edit panel."
-msgstr ""
-"옵션이 수동으로 활성화될 때 이 트리거가 활성화됩니다. 게시물 편집 화면이나 빠"
-"른 편집 패널을 통해 활성화할 수 있습니다."
+msgstr "옵션이 수동으로 활성화될 때 이 트리거가 활성화됩니다. 게시물 편집 화면이나 빠른 편집 패널을 통해 활성화할 수 있습니다."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostWorkflowEnable.php:68
 msgid "Settings for the trigger."
@@ -3411,11 +3339,11 @@ msgstr "일정에 따라"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:37
 msgid ""
-"This trigger allows you to run a workflow at a specific time, or relative to "
-"another date. You can also use this trigger to repeat workflows."
+"This trigger allows you to run a workflow at a specific time, or relative "
+"to another date. You can also use this trigger to repeat workflows."
 msgstr ""
-"이 트리거를 사용하면 특정 시간에 워크플로를 실행하거나 다른 날짜에 상대적으"
-"로 실행할 수 있습니다. 이 트리거를 사용하여 워크플로를 반복할 수도 있습니다."
+"이 트리거를 사용하면 특정 시간에 워크플로를 실행하거나 다른 날짜에 상대적으로 실행할 수 있습니다. 이 트리거를 사용하여 워크플로를 "
+"반복할 수도 있습니다."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:65
 msgid "Choose a schedule to activate the workflow."
@@ -3478,8 +3406,7 @@ msgid "User Query"
 msgstr "사용자 쿼리"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:65
-msgid ""
-"Specify the criteria for users whose role changes will trigger this action."
+msgid "Specify the criteria for users whose role changes will trigger this action."
 msgstr "이 작업을 트리거할 역할 변경이 있는 사용자에 대한 기준을 지정하십시오."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:73
@@ -3523,11 +3450,8 @@ msgid "The roles that were removed from the user."
 msgstr "사용자에게서 제거된 역할입니다."
 
 #: src/Modules/Workflows/Migrations/V040500OnScheduledStepsSchema.php:58
-msgid ""
-"Migrate post_id and repetition_number on scheduled steps schema after v4.5.0"
-msgstr ""
-"v4.5.0 이후에 예약된 단계 스키마에서 post_id와 repetition_number를 마이그레이"
-"션합니다."
+msgid "Migrate post_id and repetition_number on scheduled steps schema after v4.5.0"
+msgstr "v4.5.0 이후에 예약된 단계 스키마에서 post_id와 repetition_number를 마이그레이션합니다."
 
 #: src/Modules/Workflows/Migrations/V40000WorkflowScheduledStepsSchema.php:58
 msgid "Migrate workflow scheduled steps schema after v4.0.0"
@@ -3637,8 +3561,8 @@ msgstr "지식 베이스 보기"
 msgid "Overdue: "
 msgstr "연체: "
 
-#. translators: %1$s opens a span tag, %2$s is the action name, %3$s ends a span tag, %4$s is the a span tag, %5$s is the a span tag, %6$s is the a span tag
 #: src/Views/expire-column.php:77
+#. translators: %1$s opens a span tag, %2$s is the action name, %3$s ends a span tag, %4$s is the a span tag, %5$s is the a span tag, %6$s is the a span tag
 #, php-format
 msgid "%1$s%2$s%3$s on %5$s%4$s%6$s"
 msgstr "%1$s%2$s%3$s %5$s%4$s%6$s에서"
@@ -3658,8 +3582,7 @@ msgid "Metabox Title"
 msgstr "메타박스 제목"
 
 #: src/Views/menu-admin.php:48
-msgid ""
-"The title of the metabox that will be displayed in the post edit screen."
+msgid "The title of the metabox that will be displayed in the post edit screen."
 msgstr "게시물 편집 화면에 표시될 메타박스의 제목입니다."
 
 #: src/Views/menu-admin.php:57
@@ -3684,7 +3607,8 @@ msgstr "자세히"
 
 #: src/Views/menu-admin.php:96
 msgid ""
-"Displays all information in the Future Action column on the \"Posts\" screen."
+"Displays all information in the Future Action column on the \"Posts\" "
+"screen."
 msgstr "\"게시물\" 화면의 미래 작업 열에 모든 정보를 표시합니다."
 
 #: src/Views/menu-admin.php:106
@@ -3717,12 +3641,14 @@ msgstr "사이트 설정에서 상속"
 msgid "24 hours"
 msgstr "24시간"
 
-#: src/Views/menu-admin.php:162
+#: src/Views/menu-admin.php:162, fuzzy
 msgid "AM/PM"
 msgstr "AM/PM"
 
-#: src/Views/menu-admin.php:174 src/Views/menu-advanced.php:99
-#: src/Views/menu-display.php:367 src/Views/menu-general.php:118
+#: src/Views/menu-admin.php:174
+#: src/Views/menu-advanced.php:99
+#: src/Views/menu-display.php:367
+#: src/Views/menu-general.php:118
 #: src/Views/menu-notifications.php:186
 msgid "Save Changes"
 msgstr "변경 사항 저장"
@@ -3743,8 +3669,7 @@ msgstr "실험적 기능 활성화"
 msgid ""
 "Enable experimental features that are still in development and may not be "
 "fully functional."
-msgstr ""
-"아직 개발 중이며 완전히 작동하지 않을 수 있는 실험적 기능을 활성화합니다."
+msgstr "아직 개발 중이며 완전히 작동하지 않을 수 있는 실험적 기능을 활성화합니다."
 
 #: src/Views/menu-advanced.php:63
 msgid "Preserve Data After Deactivating the Plugin"
@@ -3759,8 +3684,7 @@ msgid "Delete data"
 msgstr "데이터 삭제"
 
 #: src/Views/menu-advanced.php:88
-msgid ""
-"Toggle between preserving or deleting data after the plugin is deactivated."
+msgid "Toggle between preserving or deleting data after the plugin is deactivated."
 msgstr "플러그인이 비활성화된 후 데이터 보존 또는 삭제를 전환합니다."
 
 #: src/Views/menu-debug-log.php:14
@@ -3793,34 +3717,30 @@ msgstr "시간 순서"
 msgid "Show only requests with trigger activated"
 msgstr "트리거가 활성화된 요청만 표시"
 
-#. translators: %1$d: displayed count, %2$d: filtered total, %3$d: sessions, %4$d: total unfiltered, %5$s: filtered log size, %6$s: total log size.
 #: src/Views/menu-debug-log.php:155
+#. translators: %1$d: displayed count, %2$d: filtered total, %3$d: sessions, %4$d: total unfiltered, %5$s: filtered log size, %6$s: total log size.
 #, php-format
 msgid ""
 "Showing the latest %1$d of %2$d logs (%3$d sessions). Total in database: "
 "%4$d. Log size: %5$s (total: %6$s)."
-msgstr ""
-"최신 %1$d의 %2$d 로그 (%3$d 세션)를 표시합니다. 데이터베이스의 총계: %4$d. 로"
-"그 크기: %5$s (총계: %6$s)."
+msgstr "최신 %1$d의 %2$d 로그 (%3$d 세션)를 표시합니다. 데이터베이스의 총계: %4$d. 로그 크기: %5$s (총계: %6$s)."
 
-#. translators: %1$d: displayed count, %2$d: total count, %3$d: sessions, %4$s: log size.
 #: src/Views/menu-debug-log.php:165
+#. translators: %1$d: displayed count, %2$d: total count, %3$d: sessions, %4$s: log size.
 #, php-format
 msgid "Showing the latest %1$d of %2$d logs (%3$d sessions). Log size: %4$s."
 msgstr "최신 %1$d의 %2$d 로그 (%3$d 세션)를 표시합니다. 로그 크기: %4$s."
 
-#. translators: %1$d: filtered logs count, %2$d: sessions, %3$d: total unfiltered, %4$s: filtered log size, %5$s: total log size.
 #: src/Views/menu-debug-log.php:176
+#. translators: %1$d: filtered logs count, %2$d: sessions, %3$d: total unfiltered, %4$s: filtered log size, %5$s: total log size.
 #, php-format
 msgid ""
 "Showing all %1$d logs (%2$d sessions). Total in database: %3$d. Log size: "
 "%4$s (total: %5$s)."
-msgstr ""
-"모든 %1$d 로그 (%2$d 세션)를 표시합니다. 데이터베이스의 총계: %3$d. 로그 크"
-"기: %4$s (총계: %5$s)."
+msgstr "모든 %1$d 로그 (%2$d 세션)를 표시합니다. 데이터베이스의 총계: %3$d. 로그 크기: %4$s (총계: %5$s)."
 
-#. translators: %1$d: total logs count, %2$d: sessions count, %3$s: log size.
 #: src/Views/menu-debug-log.php:185
+#. translators: %1$d: total logs count, %2$d: sessions count, %3$s: log size.
 #, php-format
 msgid "Showing all %1$d logs (%2$d sessions). Log size: %3$s."
 msgstr "모든 %1$d 로그 (%2$d 세션)를 표시합니다. 로그 크기: %3$s."
@@ -3850,7 +3770,8 @@ msgstr "고급 진단 및 도구"
 msgid "WP-Cron Status Check"
 msgstr "WP-Cron 상태 확인"
 
-#: src/Views/menu-diagnostics.php:61 src/Views/menu-diagnostics.php:74
+#: src/Views/menu-diagnostics.php:61
+#: src/Views/menu-diagnostics.php:74
 msgid "Passed"
 msgstr "통과"
 
@@ -3865,8 +3786,7 @@ msgstr "데이터베이스 스키마 확인"
 #: src/Views/menu-diagnostics.php:78
 msgid "Error found on the database schema:"
 msgid_plural "Errors found on the database schema:"
-msgstr[0] ""
-"데이터베이스 스키마에서 오류 발견:|데이터베이스 스키마에서 오류 발견:"
+msgstr[0] "데이터베이스 스키마에서 오류 발견:|데이터베이스 스키마에서 오류 발견:"
 
 #: src/Views/menu-diagnostics.php:109
 msgid "Try to Fix Database"
@@ -3876,8 +3796,10 @@ msgstr "데이터베이스 수정 시도"
 msgid "Debug Logging"
 msgstr "디버그 로깅"
 
-#: src/Views/menu-diagnostics.php:122 src/Views/menu-display.php:139
-#: src/Views/menu-notifications.php:67 src/Views/menu-notifications.php:95
+#: src/Views/menu-diagnostics.php:122
+#: src/Views/menu-display.php:139
+#: src/Views/menu-notifications.php:67
+#: src/Views/menu-notifications.php:95
 #: src/Views/menu-notifications.php:150
 msgid "Enabled"
 msgstr "활성화됨"
@@ -3894,8 +3816,10 @@ msgstr "디버그 로그 삭제"
 msgid "View Debug Logs"
 msgstr "디버그 로그 보기"
 
-#: src/Views/menu-diagnostics.php:142 src/Views/menu-display.php:150
-#: src/Views/menu-notifications.php:75 src/Views/menu-notifications.php:104
+#: src/Views/menu-diagnostics.php:142
+#: src/Views/menu-display.php:150
+#: src/Views/menu-notifications.php:75
+#: src/Views/menu-notifications.php:104
 #: src/Views/menu-notifications.php:158
 msgid "Disabled"
 msgstr "비활성화됨"
@@ -3916,9 +3840,7 @@ msgstr "스파티 레이 감지됨"
 msgid ""
 "Spatie Ray Debug is detected. The \"Send to Ray\" workflow step will be "
 "available in the workflow editor."
-msgstr ""
-"스파티 레이 디버그가 감지되었습니다. \"레이로 전송\" 작업 단계가 작업 흐름 편"
-"집기에서 사용 가능해질 것입니다."
+msgstr "스파티 레이 디버그가 감지되었습니다. \"레이로 전송\" 작업 단계가 작업 흐름 편집기에서 사용 가능해질 것입니다."
 
 #: src/Views/menu-diagnostics.php:164
 msgid "Spatie Ray Not Detected"
@@ -3929,8 +3851,8 @@ msgid ""
 "Spatie Ray Debug is not detected. This is not an error, but the \"Send to "
 "Ray\" workflow step will not be available in the workflow editor."
 msgstr ""
-"스파티 레이 디버그가 감지되지 않았습니다. 이는 오류가 아니며, \"레이로 전송"
-"\" 작업 단계가 작업 흐름 편집기에서 사용 불가능할 것입니다."
+"스파티 레이 디버그가 감지되지 않았습니다. 이는 오류가 아니며, \"레이로 전송\" 작업 단계가 작업 흐름 편집기에서 사용 불가능할 "
+"것입니다."
 
 #: src/Views/menu-diagnostics.php:169
 msgid "Learn more about Spatie Ray"
@@ -3946,11 +3868,9 @@ msgstr "마이그레이션 실행"
 
 #: src/Views/menu-diagnostics.php:185
 msgid ""
-"Migrate legacy future actions from WP Cron to the new Action Scheduler. This "
-"will run in the background and may take a while."
-msgstr ""
-"WP 크론에서 새로운 작업 스케줄러로 구형 미래 작업을 마이그레이션합니다. 이는 "
-"백그라운드에서 실행되며 시간이 걸릴 수 있습니다."
+"Migrate legacy future actions from WP Cron to the new Action Scheduler. "
+"This will run in the background and may take a while."
+msgstr "WP 크론에서 새로운 작업 스케줄러로 구형 미래 작업을 마이그레이션합니다. 이는 백그라운드에서 실행되며 시간이 걸릴 수 있습니다."
 
 #: src/Views/menu-diagnostics.php:195
 msgid "Restore Legacy Action Arguments"
@@ -3966,9 +3886,8 @@ msgid ""
 "issues with 3rd party plugins that read that data. This will run in the "
 "background and may take a while."
 msgstr ""
-"구형 작업 인수를 게시물 메타로 복원합니다. 이는 해당 데이터를 읽는 서드파티 "
-"플러그인에 문제가 있는 경우 유용합니다. 이는 백그라운드에서 실행되며 시간이 "
-"걸릴 수 있습니다."
+"구형 작업 인수를 게시물 메타로 복원합니다. 이는 해당 데이터를 읽는 서드파티 플러그인에 문제가 있는 경우 유용합니다. 이는 "
+"백그라운드에서 실행되며 시간이 걸릴 수 있습니다."
 
 #: src/Views/menu-diagnostics.php:215
 msgid "Legacy Cron Schedule"
@@ -3976,11 +3895,9 @@ msgstr "구형 크론 일정"
 
 #: src/Views/menu-diagnostics.php:223
 msgid ""
-"The below table will show all currently scheduled cron events for the plugin "
-"with the next run time."
-msgstr ""
-"아래 표는 다음 실행 시간을 포함하여 플러그인에 대해 현재 예약된 모든 크론 이"
-"벤트를 보여줍니다."
+"The below table will show all currently scheduled cron events for the "
+"plugin with the next run time."
+msgstr "아래 표는 다음 실행 시간을 포함하여 플러그인에 대해 현재 예약된 모든 크론 이벤트를 보여줍니다."
 
 #: src/Views/menu-diagnostics.php:238
 msgid "Event"
@@ -4002,18 +3919,19 @@ msgstr "기본 형식"
 msgid "Date Format"
 msgstr "날짜 형식"
 
-#. translators: %s is a link to the PHP date function documentation
 #: src/Views/menu-display.php:64
+#. translators: %s is a link to the PHP date function documentation
 #, php-format
 msgid ""
 "The default format to use when displaying the action date within a post "
 "using the shortcode or within the footer.  For information on valid "
 "formatting options, see: %s."
 msgstr ""
-"짧은 코드나 바닥글을 사용하여 게시물 내에서 작업 날짜를 표시할 때 사용할 기"
-"본 형식입니다. 유효한 형식 옵션에 대한 정보는 다음을 참조하십시오: %s."
+"짧은 코드나 바닥글을 사용하여 게시물 내에서 작업 날짜를 표시할 때 사용할 기본 형식입니다. 유효한 형식 옵션에 대한 정보는 다음을 "
+"참조하십시오: %s."
 
-#: src/Views/menu-display.php:68 src/Views/menu-display.php:106
+#: src/Views/menu-display.php:68
+#: src/Views/menu-display.php:106
 msgid "PHP Date Function"
 msgstr "PHP 날짜 함수"
 
@@ -4021,16 +3939,16 @@ msgstr "PHP 날짜 함수"
 msgid "Time Format"
 msgstr "시간 형식"
 
-#. translators: %s is a link to the PHP date function documentation
 #: src/Views/menu-display.php:102
+#. translators: %s is a link to the PHP date function documentation
 #, php-format
 msgid ""
 "The default format to use when displaying the action time within a post "
 "using the shortcode or within the footer.  For information on valid "
 "formatting options, see: %s."
 msgstr ""
-"짧은 코드나 바닥글을 사용하여 게시물 내에서 작업 시간을 표시할 때 사용할 기"
-"본 형식입니다. 유효한 형식 옵션에 대한 정보는 다음을 참조하십시오: %s."
+"짧은 코드나 바닥글을 사용하여 게시물 내에서 작업 시간을 표시할 때 사용할 기본 형식입니다. 유효한 형식 옵션에 대한 정보는 다음을 "
+"참조하십시오: %s."
 
 #: src/Views/menu-display.php:116
 msgid "Post Footer Display"
@@ -4038,11 +3956,9 @@ msgstr "게시물 바닥글 표시"
 
 #: src/Views/menu-display.php:118
 msgid ""
-"Enabling this below will display the action date automatically at the end of "
-"any post which is set to run an action."
-msgstr ""
-"아래를 활성화하면 작업이 실행되도록 설정된 게시물의 끝에 작업 날짜가 자동으"
-"로 표시됩니다."
+"Enabling this below will display the action date automatically at the end "
+"of any post which is set to run an action."
+msgstr "아래를 활성화하면 작업이 실행되도록 설정된 게시물의 끝에 작업 날짜가 자동으로 표시됩니다."
 
 #: src/Views/menu-display.php:127
 msgid "Show in Post Footer?"
@@ -4052,9 +3968,7 @@ msgstr "게시물 바닥글에 표시하시겠습니까?"
 msgid ""
 "This will enable or disable displaying the future action date in the post "
 "footer."
-msgstr ""
-"이 설정은 게시물 바닥글에 미래 작업 날짜를 표시할지 여부를 활성화하거나 비활"
-"성화합니다."
+msgstr "이 설정은 게시물 바닥글에 미래 작업 날짜를 표시할지 여부를 활성화하거나 비활성화합니다."
 
 #: src/Views/menu-display.php:164
 msgid "Footer Contents"
@@ -4065,9 +3979,7 @@ msgid ""
 "Enter the text you would like to appear at the bottom of every post which "
 "has an action scheduled.  The following placeholders will be replaced with "
 "the future action date in the following format:"
-msgstr ""
-"작업이 예정된 모든 게시물의 하단에 나타나길 원하는 텍스트를 입력하세요. 다음 "
-"자리 표시자는 다음 형식의 미래 작업 날짜로 대체됩니다:"
+msgstr "작업이 예정된 모든 게시물의 하단에 나타나길 원하는 텍스트를 입력하세요. 다음 자리 표시자는 다음 형식의 미래 작업 날짜로 대체됩니다:"
 
 #: src/Views/menu-display.php:216
 msgid "Footer Style"
@@ -4085,15 +3997,15 @@ msgstr "예: "
 msgid "Shortcode"
 msgstr "짧은 코드"
 
-#. translators: %s is a code tag that wraps the shortcode
 #: src/Views/menu-display.php:249
+#. translators: %s is a code tag that wraps the shortcode
 #, php-format
 msgid ""
 "Use the %s[futureaction]%s shortcode to show when the future action will "
 "occur. You can add this shortcode anywhere in your post content."
 msgstr ""
-"미래 작업이 발생할 때를 표시하기 위해 %s[futureaction]%s 짧은 코드를 사용하세"
-"요. 이 짧은 코드는 게시물 내용의 아무 곳에나 추가할 수 있습니다."
+"미래 작업이 발생할 때를 표시하기 위해 %s[futureaction]%s 짧은 코드를 사용하세요. 이 짧은 코드는 게시물 내용의 아무 "
+"곳에나 추가할 수 있습니다."
 
 #: src/Views/menu-display.php:259
 msgid "Shortcode Wrapper"
@@ -4103,9 +4015,7 @@ msgstr "짧은 코드 래퍼"
 msgid ""
 "The shortcode output will be wrapped in the selected HTML tag, allowing you "
 "to control its structure and styling."
-msgstr ""
-"짧은 코드 출력은 선택한 HTML 태그로 래핑되어 구조와 스타일을 제어할 수 있습니"
-"다."
+msgstr "짧은 코드 출력은 선택한 HTML 태그로 래핑되어 구조와 스타일을 제어할 수 있습니다."
 
 #: src/Views/menu-display.php:289
 msgid "Wrapper Class"
@@ -4119,39 +4029,40 @@ msgstr "사용자 정의 스타일을 위한 래퍼 요소에 CSS 클래스를 �
 msgid "Attributes"
 msgstr "속성"
 
-#. translators: %s is the shortcode code wrapped in code tags
 #: src/Views/menu-display.php:308
+#. translators: %s is the shortcode code wrapped in code tags
 #, php-format
 msgid "The following attributes are available for the %s shortcode:"
 msgstr "%s 단축코드에 사용할 수 있는 속성은 다음과 같습니다:"
 
-#. translators: %s is a code tag that wraps the shortcode attribute name
 #: src/Views/menu-display.php:315
+#. translators: %s is a code tag that wraps the shortcode attribute name
 #, php-format
 msgid "%s - Available options:"
 msgstr "%s - 사용 가능한 옵션:"
 
-#. translators: %s is a code tag that wraps the shortcode attribute value
 #: src/Views/menu-display.php:321
+#. translators: %s is a code tag that wraps the shortcode attribute value
 #, php-format
 msgid "%s - Displays complete date/time.  Default value."
 msgstr "%s - 전체 날짜/시간을 표시합니다. 기본값입니다."
 
-#. translators: %s is a code tag that wraps the shortcode attribute value
 #: src/Views/menu-display.php:327
+#. translators: %s is a code tag that wraps the shortcode attribute value
 #, php-format
 msgid "%s - Displays date only"
 msgstr "%s - 날짜만 표시합니다."
 
-#. translators: %s is a code tag that wraps the shortcode attribute value
 #: src/Views/menu-display.php:333
+#. translators: %s is a code tag that wraps the shortcode attribute value
 #, php-format
 msgid "%s - Displays time only"
 msgstr "%s - 시간만 표시합니다."
 
+#: src/Views/menu-display.php:345
+#: src/Views/menu-display.php:353
 #. translators: %s is a code tag that wraps the shortcode attribute dateformat
 #. translators: %s is a code tag that wraps the shortcode attribute timeformat
-#: src/Views/menu-display.php:345 src/Views/menu-display.php:353
 #, php-format
 msgid "%s - Format set here will override the value set on the settings page"
 msgstr "%s - 여기 설정된 형식은 설정 페이지에서 설정된 값을 덮어씁니다."
@@ -4194,26 +4105,22 @@ msgstr "이메일 알림"
 
 #: src/Views/menu-notifications.php:52
 msgid "Whenever an action runs, an email can be sent to alert users."
-msgstr ""
-"작업이 실행될 때마다 사용자에게 알림을 보내기 위해 이메일을 보낼 수 있습니다."
+msgstr "작업이 실행될 때마다 사용자에게 알림을 보내기 위해 이메일을 보낼 수 있습니다."
 
 #: src/Views/menu-notifications.php:59
 msgid "Enable Email Notification?"
 msgstr "이메일 알림 활성화?"
 
 #: src/Views/menu-notifications.php:78
-msgid ""
-"This will enable or disable the send of email notification on future action."
-msgstr ""
-"이 설정은 미래 작업에 대한 이메일 알림의 전송을 활성화하거나 비활성화합니다."
+msgid "This will enable or disable the send of email notification on future action."
+msgstr "이 설정은 미래 작업에 대한 이메일 알림의 전송을 활성화하거나 비활성화합니다."
 
 #: src/Views/menu-notifications.php:86
 msgid "Include Blog Administrators?"
 msgstr "블로그 관리자 포함?"
 
 #: src/Views/menu-notifications.php:107
-msgid ""
-"This will include all users with the role of \"Administrator\" in the email."
+msgid "This will include all users with the role of \"Administrator\" in the email."
 msgstr "이메일에는 \"관리자\" 역할을 가진 모든 사용자가 포함됩니다."
 
 #: src/Views/menu-notifications.php:123
@@ -4222,20 +4129,19 @@ msgid ""
 "when the action runs.  This will be applied to ALL post types.  You can set "
 "post type specific emails on the Defaults tab."
 msgstr ""
-"작업이 실행될 때 알림을 받고 싶은 이메일의 쉼표로 구분된 목록을 입력하세요. "
-"이는 모든 게시물 유형에 적용됩니다. 기본 탭에서 게시물 유형별 이메일을 설정"
-"할 수 있습니다."
+"작업이 실행될 때 알림을 받고 싶은 이메일의 쉼표로 구분된 목록을 입력하세요. 이는 모든 게시물 유형에 적용됩니다. 기본 탭에서 게시물 "
+"유형별 이메일을 설정할 수 있습니다."
 
 #: src/Views/menu-notifications.php:132
 msgid "Past-due Actions Notification"
 msgstr "기한 초과 작업 알림"
 
-#: src/Views/menu-notifications.php:134 src/Views/menu-notifications.php:161
+#: src/Views/menu-notifications.php:134
+#: src/Views/menu-notifications.php:161
 msgid ""
 "This will enable or disable the send of email notification on past-due "
 "actions."
-msgstr ""
-"이는 기한 초과 작업에 대한 이메일 알림 발송을 활성화하거나 비활성화합니다."
+msgstr "이는 기한 초과 작업에 대한 이메일 알림 발송을 활성화하거나 비활성화합니다."
 
 #: src/Views/menu-notifications.php:142
 msgid "Enable Past-due Actions Notification?"
@@ -4245,9 +4151,7 @@ msgstr "기한 초과 작업 알림 활성화?"
 msgid ""
 "Enter a comma separate list of emails that you would like to be notified "
 "when past-due actions are detected."
-msgstr ""
-"기한 초과 작업이 감지될 때 알림을 받고 싶은 이메일의 쉼표로 구분된 목록을 입"
-"력하세요."
+msgstr "기한 초과 작업이 감지될 때 알림을 받고 싶은 이메일의 쉼표로 구분된 목록을 입력하세요."
 
 #: src/Views/tabs-future-actions.php:20
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:24
@@ -4365,8 +4269,8 @@ msgid ""
 "Export the plugin settings and workflows to a .json file. This file can be "
 "imported later to restore the data or migrate to another site."
 msgstr ""
-"플러그인 설정 및 워크플로를 .json 파일로 내보냅니다. 이 파일은 나중에 데이터"
-"를 복원하거나 다른 사이트로 마이그레이션하는 데 사용될 수 있습니다."
+"플러그인 설정 및 워크플로를 .json 파일로 내보냅니다. 이 파일은 나중에 데이터를 복원하거나 다른 사이트로 마이그레이션하는 데 "
+"사용될 수 있습니다."
 
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:105
 msgid "Exporting..."
@@ -4429,7 +4333,7 @@ msgid "Array"
 msgstr "배열"
 
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:57
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:50
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:50, fuzzy
 msgid "null"
 msgstr "null"
 
@@ -4451,6 +4355,7 @@ msgid "The argument name should only contain letters, numbers and underscores."
 msgstr "인수 이름은 문자, 숫자 및 밑줄만 포함해야 합니다."
 
 #: assets/jsx/workflow-editor/components/data-fields/action-args/index.jsx:71
+#, js-format
 msgid "Argument #%s"
 msgstr "인수 #%s"
 
@@ -4489,9 +4394,7 @@ msgstr "규칙 편집"
 msgid ""
 "Conditional logic is a Pro feature. Upgrade to create advanced conditions "
 "for your workflows."
-msgstr ""
-"조건부 논리는 Pro 기능입니다. 워크플로우를 위한 고급 조건을 만들기 위해 업그"
-"레이드하세요."
+msgstr "조건부 논리는 Pro 기능입니다. 워크플로우를 위한 고급 조건을 만들기 위해 업그레이드하세요."
 
 #: assets/jsx/workflow-editor/components/data-fields/conditional/components/duplicate-rule-button.jsx:10
 msgid "Duplicate Rule"
@@ -4510,10 +4413,12 @@ msgid "Dismiss the notification"
 msgstr "알림 해제"
 
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:67
+#, js-format
 msgid "Option %s"
 msgstr "옵션 %s"
 
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:95
+#, js-format
 msgid "Option #%s"
 msgstr "옵션 #%s"
 
@@ -4526,8 +4431,10 @@ msgid "Add a new option"
 msgstr "새 옵션 추가"
 
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:132
+#, js-format
 msgid ""
-"You have reached the maximum number of options. You can add up to %s options."
+"You have reached the maximum number of options. You can add up to %s "
+"options."
 msgstr "최대 옵션 수에 도달했습니다. 최대 %s 개의 옵션을 추가할 수 있습니다."
 
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:73
@@ -4581,9 +4488,7 @@ msgstr "날짜 소스"
 msgid ""
 "Click the button to choose a custom date source from variables that can "
 "provide a date."
-msgstr ""
-"버튼을 클릭하여 날짜를 제공할 수 있는 변수에서 사용자 정의 날짜 소스를 선택하"
-"세요."
+msgstr "버튼을 클릭하여 날짜를 제공할 수 있는 변수에서 사용자 정의 날짜 소스를 선택하세요."
 
 #: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:159
 msgid "Offset"
@@ -4598,14 +4503,14 @@ msgid "Click for more information"
 msgstr "자세한 정보를 보려면 클릭하세요"
 
 #: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:197
+#, js-format
 msgid ""
 "For more information on formatting, see the %sPHP strtotime function%s. For "
 "example, you could enter %s+1 month%s or %s+1 week 2 days 4 hours 2 "
 "seconds%s or %snext Thursday%s. Please use only phrases in English."
 msgstr ""
-"형식 지정에 대한 자세한 내용은 %sPHP strtotime 함수%s를 참조하세요. 예를 들"
-"어, %s+1 개월%s 또는 %s+1 주 2일 4시간 2초%s 또는 %s다음 목요일%s을 입력할 "
-"수 있습니다. 영어로만 구문을 사용하세요."
+"형식 지정에 대한 자세한 내용은 %sPHP strtotime 함수%s를 참조하세요. 예를 들어, %s+1 개월%s 또는 %s+1 주 "
+"2일 4시간 2초%s 또는 %s다음 목요일%s을 입력할 수 있습니다. 영어로만 구문을 사용하세요."
 
 #: assets/jsx/workflow-editor/components/data-fields/debug-data.jsx:39
 msgid "All received input"
@@ -4643,9 +4548,10 @@ msgstr "게시물 상태"
 msgid "Post Type"
 msgstr "게시물 유형"
 
-#. translators: %s is the database table name
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/column-item.jsx:10
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:10
+#. translators: %s is the database table name
+#, js-format
 msgid "Type the %s key and click on the button to insert it."
 msgstr "%s 키를 입력하고 버튼을 클릭하여 삽입하세요."
 
@@ -4715,8 +4621,9 @@ msgstr "개수"
 msgid "Number of posts assigned to this term."
 msgstr "이 용어에 할당된 게시물 수."
 
-#. translators: %s is the taxonomy label
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:38
+#. translators: %s is the taxonomy label
+#, js-format
 msgid "%s terms for this post."
 msgstr "%s 개의 용어가 이 게시물에 있습니다."
 
@@ -4728,9 +4635,7 @@ msgstr "더 알아보기"
 msgid ""
 "This option is used to connect to another step and cannot have its name "
 "changed until the connection is removed."
-msgstr ""
-"이 옵션은 다른 단계에 연결하는 데 사용되며 연결이 제거될 때까지 이름을 변경"
-"할 수 없습니다."
+msgstr "이 옵션은 다른 단계에 연결하는 데 사용되며 연결이 제거될 때까지 이름을 변경할 수 없습니다."
 
 #: assets/jsx/workflow-editor/components/data-fields/modal-footer.jsx:11
 msgid "OK"
@@ -4851,9 +4756,7 @@ msgstr "방문자는 새로운 댓글과 답글을 추가할 수 있습니다."
 msgid ""
 "Visitors can not add new comments or replies. Existing comments remain "
 "visible."
-msgstr ""
-"방문자는 새로운 댓글이나 답글을 추가할 수 없습니다. 기존 댓글은 계속 표시됩니"
-"다."
+msgstr "방문자는 새로운 댓글이나 답글을 추가할 수 없습니다. 기존 댓글은 계속 표시됩니다."
 
 #: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:97
 msgid "Enable pinbacks & trackbacks"
@@ -4956,11 +4859,9 @@ msgstr "반복 작업"
 
 #: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:131
 msgid ""
-"Choose how often this task should repeat. Select 'Non-repeating' for a one-"
-"time action or set an interval for automatic recurrence."
-msgstr ""
-"이 작업이 얼마나 자주 반복될지를 선택하십시오. 한 번만 실행할 경우 '비반"
-"복'을 선택하거나 자동 반복을 위한 간격을 설정하십시오."
+"Choose how often this task should repeat. Select 'Non-repeating' for a "
+"one-time action or set an interval for automatic recurrence."
+msgstr "이 작업이 얼마나 자주 반복될지를 선택하십시오. 한 번만 실행할 경우 '비반복'을 선택하거나 자동 반복을 위한 간격을 설정하십시오."
 
 #: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:148
 msgid "Unique Task Identifier"
@@ -5023,11 +4924,8 @@ msgstr "프로"
 #: assets/jsx/workflow-editor/components/inspector-card/index.jsx:132
 #: assets/jsx/workflow-editor/components/node-types/generic.jsx:319
 #: assets/jsx/workflow-editor/components/secondary-sidebar/node-card.jsx:29
-msgid ""
-"Currently this step is being skipped. Upgrade to Pro to unlock this feature."
-msgstr ""
-"현재 이 단계를 건너뛰고 있습니다. 이 기능을 잠금 해제하려면 프로로 업그레이드"
-"하십시오."
+msgid "Currently this step is being skipped. Upgrade to Pro to unlock this feature."
+msgstr "현재 이 단계를 건너뛰고 있습니다. 이 기능을 잠금 해제하려면 프로로 업그레이드하십시오."
 
 #: assets/jsx/workflow-editor/components/layout/header.jsx:129
 msgid "Add"
@@ -5037,24 +4935,24 @@ msgstr "추가"
 msgid "Close"
 msgstr "닫기"
 
-#. translators: button label text should, if possible, be under 16 characters.
 #: assets/jsx/workflow-editor/components/layout/header.jsx:140
 #: assets/jsx/workflow-editor/components/layout/header.jsx:145
+#. translators: button label text should, if possible, be under 16 characters.
 msgid "Auto Layout"
 msgstr "자동 레이아웃"
 
-#. translators: button label text should, if possible, be under 16 characters.
 #: assets/jsx/workflow-editor/components/layout/header.jsx:157
+#. translators: button label text should, if possible, be under 16 characters.
 msgid "Upgrade to Pro and unlock more features"
 msgstr "프로로 업그레이드하고 더 많은 기능 잠금 해제"
 
-#. translators: button label text should, if possible, be under 16 characters.
 #: assets/jsx/workflow-editor/components/left-toolbar/redo.jsx:31
+#. translators: button label text should, if possible, be under 16 characters.
 msgid "Redo"
 msgstr "다시 실행"
 
-#. translators: button label text should, if possible, be under 16 characters.
 #: assets/jsx/workflow-editor/components/left-toolbar/undo.jsx:31
+#. translators: button label text should, if possible, be under 16 characters.
 msgid "Undo"
 msgstr "실행 취소"
 
@@ -5069,11 +4967,6 @@ msgstr "기능 비활성화됨"
 #: assets/jsx/workflow-editor/components/more-menu/menu-feature-toggle.jsx:34
 msgid "Feature activated"
 msgstr "기능 활성화됨"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:23
-msgctxt "noun"
-msgid "View"
-msgstr "보기"
 
 #: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:27
 msgid "Fullscreen mode"
@@ -5133,8 +5026,7 @@ msgstr "컨트롤 패널 표시"
 msgid ""
 "Display the controls panel with buttons to zoon in, zoom out, fit the view "
 "and lock the viewport"
-msgstr ""
-"줌 인, 줌 아웃, 뷰 맞춤 및 뷰포트 잠금을 위한 버튼이 포함된 컨트롤 패널 표시"
+msgstr "줌 인, 줌 아웃, 뷰 맞춤 및 뷰포트 잠금을 위한 버튼이 포함된 컨트롤 패널 표시"
 
 #: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:59
 msgid "Tools"
@@ -5207,6 +5099,7 @@ msgid "Multiple and different elements selected."
 msgstr "여러 개의 서로 다른 요소가 선택되었습니다."
 
 #: assets/jsx/workflow-editor/components/node-inspector/index.jsx:116
+#, js-format
 msgid "%d steps selected"
 msgstr "%d 단계 선택됨"
 
@@ -5215,6 +5108,7 @@ msgid "Multiple steps selected."
 msgstr "여러 단계가 선택되었습니다."
 
 #: assets/jsx/workflow-editor/components/node-inspector/index.jsx:130
+#, js-format
 msgid "%d connections selected"
 msgstr "%d 연결 선택됨"
 
@@ -5228,11 +5122,9 @@ msgstr "연결"
 
 #: assets/jsx/workflow-editor/components/node-inspector/index.jsx:166
 msgid ""
-"The connection between nodes in the workflow. Signifies the path along which "
-"data or control flow one node to another."
-msgstr ""
-"워크플로우 내의 노드 간의 연결입니다. 데이터 또는 제어가 한 노드에서 다른 노"
-"드로 흐르는 경로를 나타냅니다."
+"The connection between nodes in the workflow. Signifies the path along "
+"which data or control flow one node to another."
+msgstr "워크플로우 내의 노드 간의 연결입니다. 데이터 또는 제어가 한 노드에서 다른 노드로 흐르는 경로를 나타냅니다."
 
 #: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:83
 msgid "Step Data Flow"
@@ -5287,6 +5179,7 @@ msgid "No description"
 msgstr "설명이 없습니다"
 
 #: assets/jsx/workflow-editor/components/node-types/generic.jsx:57
+#, js-format
 msgid "Unknown node: %s"
 msgstr "알 수 없는 노드: %s"
 
@@ -5352,8 +5245,9 @@ msgstr "단계 간 이동하려면 왼쪽 및 오른쪽 화살표 키를 사용�
 msgid "No results found."
 msgstr "결과를 찾을 수 없습니다."
 
-#. translators: %d: number of results.
 #: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:101
+#. translators: %d: number of results.
+#, js-format
 msgid "%d result found."
 msgid_plural "%d results found."
 msgstr[0] "%d 결과가 발견되었습니다."
@@ -5368,20 +5262,15 @@ msgstr "노드"
 msgid "A tip for using the workflow editor"
 msgstr "워크플로 편집기 사용을 위한 팁"
 
-#. translators: %d: Number of blocks.
 #: assets/jsx/workflow-editor/components/secondary-sidebar/node-draggable-chip.jsx:27
+#. translators: %d: Number of blocks.
+#, js-format
 msgid "%d block"
 msgid_plural "%d blocks"
 msgstr[0] "%d 블록"
 
-#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:80
-#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:85
-msgctxt "nodes"
-msgid "Most used"
-msgstr "가장 많이 사용됨"
-
-#. translators: Patterns tab title in the block inserter.
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:24
+#. translators: Patterns tab title in the block inserter.
 msgid "Actions"
 msgstr "작업"
 
@@ -5389,56 +5278,42 @@ msgstr "작업"
 msgid ""
 "Select multiple steps by pressing <kbd>cmd</kbd> and clicking on each step "
 "in the workflow."
-msgstr ""
-"워크플로우에서 각 단계를 클릭하면서 <kbd>cmd</kbd> 키를 눌러 여러 단계를 선택"
-"하세요."
+msgstr "워크플로우에서 각 단계를 클릭하면서 <kbd>cmd</kbd> 키를 눌러 여러 단계를 선택하세요."
 
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:16
 msgid ""
 "Drag steps from the inserter and drop them directly into your workflow for "
 "easy customization."
-msgstr ""
-"삽입기에서 단계를 드래그하여 워크플로우에 직접 드롭하여 쉽게 사용자 정의할 "
-"수 있습니다."
+msgstr "삽입기에서 단계를 드래그하여 워크플로우에 직접 드롭하여 쉽게 사용자 정의할 수 있습니다."
 
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:17
 msgid ""
 "Simply double-click any step to bring up the settings sidebar for quick "
 "adjustments."
-msgstr ""
-"빠른 조정을 위해 아무 단계에서나 더블 클릭하여 설정 사이드바를 불러오세요."
+msgstr "빠른 조정을 위해 아무 단계에서나 더블 클릭하여 설정 사이드바를 불러오세요."
 
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:18
-msgid ""
-"Double-click the workflow pane to increase the zoom level for a closer look."
+msgid "Double-click the workflow pane to increase the zoom level for a closer look."
 msgstr "워크플로우 창을 더블 클릭하여 확대 수준을 높여 자세히 살펴보세요."
 
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:20
 msgid ""
 "Hold down the <kbd>shift</kbd> key and double-click the workflow pane to "
 "decrease the zoom level."
-msgstr ""
-"<kbd>shift</kbd> 키를 누른 채로 워크플로우 창을 더블 클릭하여 확대 수준을 낮"
-"추세요."
+msgstr "<kbd>shift</kbd> 키를 누른 채로 워크플로우 창을 더블 클릭하여 확대 수준을 낮추세요."
 
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:26
 msgid ""
-"Easily add new steps by clicking on a step's handle and dragging it. Drop it "
-"in the workflow pane to see a floating inserter where you can type and "
+"Easily add new steps by clicking on a step's handle and dragging it. Drop "
+"it in the workflow pane to see a floating inserter where you can type and "
 "search for the step you need."
 msgstr ""
-"단계의 핸들을 클릭하고 드래그하여 쉽게 새 단계를 추가하세요. 워크플로우 창에 "
-"드롭하면 필요한 단계를 입력하고 검색할 수 있는 플로팅 삽입기가 나타납니다."
+"단계의 핸들을 클릭하고 드래그하여 쉽게 새 단계를 추가하세요. 워크플로우 창에 드롭하면 필요한 단계를 입력하고 검색할 수 있는 플로팅 "
+"삽입기가 나타납니다."
 
 #: assets/jsx/workflow-editor/components/settings-sidebar/plugin-sidebar.jsx:39
 msgid "(no name)"
 msgstr "(이름 없음)"
-
-#. translators: Default label for the Workflow sidebar tab, not selected.
-#: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:23
-msgctxt "noun"
-msgid "Workflow"
-msgstr "워크플로우"
 
 #: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:37
 msgid "Element"
@@ -5460,9 +5335,7 @@ msgstr "레이 디버그"
 msgid ""
 "Enable or disable the different types of debug information that is shown in "
 "Ray when this workflow is activated."
-msgstr ""
-"이 워크플로우가 활성화될 때 레이에서 표시되는 다양한 유형의 디버그 정보를 활"
-"성화하거나 비활성화합니다."
+msgstr "이 워크플로우가 활성화될 때 레이에서 표시되는 다양한 유형의 디버그 정보를 활성화하거나 비활성화합니다."
 
 #: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:59
 msgid "Show Queries"
@@ -5488,8 +5361,8 @@ msgstr "이 워크플로우를 삭제하시겠습니까?"
 msgid "Move to trash"
 msgstr "휴지통으로 이동"
 
-#. translators: button label text should, if possible, be under 16 characters.
 #: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:79
+#. translators: button label text should, if possible, be under 16 characters.
 msgid "Publish"
 msgstr "발행"
 
@@ -5509,13 +5382,13 @@ msgstr "업데이트 중..."
 msgid "Updated"
 msgstr "업데이트 완료"
 
-#. translators: button label text should, if possible, be under 16 characters.
 #: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:82
+#. translators: button label text should, if possible, be under 16 characters.
 msgid "Save draft"
 msgstr "초안 저장"
 
-#. translators: button label text should, if possible, be under 16 characters.
 #: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:85
+#. translators: button label text should, if possible, be under 16 characters.
 msgid "Save"
 msgstr "저장"
 
@@ -5601,11 +5474,13 @@ msgid "Change manually enabled workflows"
 msgstr "수동으로 활성화된 워크플로우 변경"
 
 #: assets/jsx/workflow-manual-selection/example-extending-with-slot.jsx:48
+#, js-format
 msgid "Enable workflow %s"
 msgstr "워크플로우 %s 활성화"
 
-#. translators: %s: Workflow title
 #: assets/jsx/workflows-list/cancel-action/index.jsx:59
+#. translators: %s: Workflow title
+#, js-format
 msgid ""
 "Are you sure you want to cancel all scheduled actions for the \"%s\" "
 "workflow?"
@@ -5614,3 +5489,20 @@ msgstr "\"%s\" 워크플로우에 대한 모든 예약된 작업을 취소하시
 #: assets/jsx/workflows-list/cancel-action/index.jsx:69
 msgid "Cancel Actions"
 msgstr "작업 취소"
+
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:23
+msgctxt "noun"
+msgid "View"
+msgstr "보기"
+
+#: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:23
+#. translators: Default label for the Workflow sidebar tab, not selected.
+msgctxt "noun"
+msgid "Workflow"
+msgstr "워크플로우"
+
+#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:80
+#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:85
+msgctxt "nodes"
+msgid "Most used"
+msgstr "가장 많이 사용됨"
