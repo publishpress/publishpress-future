@@ -1,11 +1,11 @@
 "use strict";
 (self["webpackChunkpost_expirator"] = self["webpackChunkpost_expirator"] || []).push([["assets_jsx_workflow-editor_components_flow-editor_auto-layout_elk_jsx"],{
 
-/***/ "./assets/jsx/workflow-editor/components/flow-editor/auto-layout/elk.jsx":
+/***/ "./assets/jsx/workflow-editor/components/flow-editor/auto-layout/elk.jsx"
 /*!*******************************************************************************!*\
   !*** ./assets/jsx/workflow-editor/components/flow-editor/auto-layout/elk.jsx ***!
   \*******************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -157,7 +157,7 @@ var useLayoutedElements = function useLayoutedElements(_ref) {
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (useLayoutedElements);
 
-/***/ })
+/***/ }
 
 }]);
 //# sourceMappingURL=assets_jsx_workflow-editor_components_flow-editor_auto-layout_elk_jsx.js.map

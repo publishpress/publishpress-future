@@ -2,11 +2,11 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./node_modules/@wordpress/api-fetch/build-module/index.js":
+/***/ "./node_modules/@wordpress/api-fetch/build-module/index.js"
 /*!*****************************************************************!*\
   !*** ./node_modules/@wordpress/api-fetch/build-module/index.js ***!
   \*****************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -203,13 +203,13 @@ apiFetch.createThemePreviewMiddleware = _middlewares_theme_preview__WEBPACK_IMPO
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (apiFetch);
 //# sourceMappingURL=index.js.map
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/@wordpress/api-fetch/build-module/middlewares/fetch-all-middleware.js":
+/***/ "./node_modules/@wordpress/api-fetch/build-module/middlewares/fetch-all-middleware.js"
 /*!********************************************************************************************!*\
   !*** ./node_modules/@wordpress/api-fetch/build-module/middlewares/fetch-all-middleware.js ***!
   \********************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -344,13 +344,13 @@ const fetchAllMiddleware = async (options, next) => {
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (fetchAllMiddleware);
 //# sourceMappingURL=fetch-all-middleware.js.map
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/@wordpress/api-fetch/build-module/middlewares/http-v1.js":
+/***/ "./node_modules/@wordpress/api-fetch/build-module/middlewares/http-v1.js"
 /*!*******************************************************************************!*\
   !*** ./node_modules/@wordpress/api-fetch/build-module/middlewares/http-v1.js ***!
   \*******************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -401,13 +401,13 @@ const httpV1Middleware = (options, next) => {
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (httpV1Middleware);
 //# sourceMappingURL=http-v1.js.map
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/@wordpress/api-fetch/build-module/middlewares/media-upload.js":
+/***/ "./node_modules/@wordpress/api-fetch/build-module/middlewares/media-upload.js"
 /*!************************************************************************************!*\
   !*** ./node_modules/@wordpress/api-fetch/build-module/middlewares/media-upload.js ***!
   \************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -494,13 +494,13 @@ const mediaUploadMiddleware = (options, next) => {
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (mediaUploadMiddleware);
 //# sourceMappingURL=media-upload.js.map
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/@wordpress/api-fetch/build-module/middlewares/namespace-endpoint.js":
+/***/ "./node_modules/@wordpress/api-fetch/build-module/middlewares/namespace-endpoint.js"
 /*!******************************************************************************************!*\
   !*** ./node_modules/@wordpress/api-fetch/build-module/middlewares/namespace-endpoint.js ***!
   \******************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -531,13 +531,13 @@ const namespaceAndEndpointMiddleware = (options, next) => {
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (namespaceAndEndpointMiddleware);
 //# sourceMappingURL=namespace-endpoint.js.map
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/@wordpress/api-fetch/build-module/middlewares/nonce.js":
+/***/ "./node_modules/@wordpress/api-fetch/build-module/middlewares/nonce.js"
 /*!*****************************************************************************!*\
   !*** ./node_modules/@wordpress/api-fetch/build-module/middlewares/nonce.js ***!
   \*****************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -577,13 +577,13 @@ function createNonceMiddleware(nonce) {
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createNonceMiddleware);
 //# sourceMappingURL=nonce.js.map
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/@wordpress/api-fetch/build-module/middlewares/preloading.js":
+/***/ "./node_modules/@wordpress/api-fetch/build-module/middlewares/preloading.js"
 /*!**********************************************************************************!*\
   !*** ./node_modules/@wordpress/api-fetch/build-module/middlewares/preloading.js ***!
   \**********************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -656,13 +656,13 @@ function prepareResponse(responseData, parse) {
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createPreloadingMiddleware);
 //# sourceMappingURL=preloading.js.map
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/@wordpress/api-fetch/build-module/middlewares/root-url.js":
+/***/ "./node_modules/@wordpress/api-fetch/build-module/middlewares/root-url.js"
 /*!********************************************************************************!*\
   !*** ./node_modules/@wordpress/api-fetch/build-module/middlewares/root-url.js ***!
   \********************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -706,13 +706,13 @@ const createRootURLMiddleware = rootURL => (options, next) => {
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createRootURLMiddleware);
 //# sourceMappingURL=root-url.js.map
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/@wordpress/api-fetch/build-module/middlewares/theme-preview.js":
+/***/ "./node_modules/@wordpress/api-fetch/build-module/middlewares/theme-preview.js"
 /*!*************************************************************************************!*\
   !*** ./node_modules/@wordpress/api-fetch/build-module/middlewares/theme-preview.js ***!
   \*************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -761,13 +761,13 @@ const createThemePreviewMiddleware = themePath => (options, next) => {
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createThemePreviewMiddleware);
 //# sourceMappingURL=theme-preview.js.map
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/@wordpress/api-fetch/build-module/middlewares/user-locale.js":
+/***/ "./node_modules/@wordpress/api-fetch/build-module/middlewares/user-locale.js"
 /*!***********************************************************************************!*\
   !*** ./node_modules/@wordpress/api-fetch/build-module/middlewares/user-locale.js ***!
   \***********************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -799,13 +799,13 @@ const userLocaleMiddleware = (options, next) => {
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (userLocaleMiddleware);
 //# sourceMappingURL=user-locale.js.map
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/@wordpress/api-fetch/build-module/utils/response.js":
+/***/ "./node_modules/@wordpress/api-fetch/build-module/utils/response.js"
 /*!**************************************************************************!*\
   !*** ./node_modules/@wordpress/api-fetch/build-module/utils/response.js ***!
   \**************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -890,18 +890,19 @@ function parseAndThrowError(response, shouldParseResponse = true) {
 }
 //# sourceMappingURL=response.js.map
 
-/***/ }),
+/***/ },
 
-/***/ "./node_modules/react-dom/client.js":
+/***/ "./node_modules/react-dom/client.js"
 /*!******************************************!*\
   !*** ./node_modules/react-dom/client.js ***!
   \******************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+(__unused_webpack_module, exports, __webpack_require__) {
 
 
 
 var m = __webpack_require__(/*! react-dom */ "react-dom");
-if (false) {} else {
+if (false) // removed by dead control flow
+{} else {
   var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
   exports.createRoot = function(c, o) {
     i.usingClientEntryPoint = true;
@@ -922,47 +923,47 @@ if (false) {} else {
 }
 
 
-/***/ }),
+/***/ },
 
-/***/ "react-dom":
-/*!***************************!*\
-  !*** external "ReactDOM" ***!
-  \***************************/
-/***/ ((module) => {
-
-module.exports = ReactDOM;
-
-/***/ }),
-
-/***/ "@wordpress/element":
+/***/ "@wordpress/element"
 /*!*****************************!*\
   !*** external "wp.element" ***!
   \*****************************/
-/***/ ((module) => {
+(module) {
 
 module.exports = wp.element;
 
-/***/ }),
+/***/ },
 
-/***/ "@wordpress/i18n":
+/***/ "@wordpress/i18n"
 /*!**************************!*\
   !*** external "wp.i18n" ***!
   \**************************/
-/***/ ((module) => {
+(module) {
 
 module.exports = wp.i18n;
 
-/***/ }),
+/***/ },
 
-/***/ "@wordpress/url":
+/***/ "@wordpress/url"
 /*!*************************!*\
   !*** external "wp.url" ***!
   \*************************/
-/***/ ((module) => {
+(module) {
 
 module.exports = wp.url;
 
-/***/ })
+/***/ },
+
+/***/ "react-dom"
+/*!***************************!*\
+  !*** external "ReactDOM" ***!
+  \***************************/
+(module) {
+
+module.exports = ReactDOM;
+
+/***/ }
 
 /******/ 	});
 /************************************************************************/
@@ -975,6 +976,12 @@ module.exports = wp.url;
 /******/ 		var cachedModule = __webpack_module_cache__[moduleId];
 /******/ 		if (cachedModule !== undefined) {
 /******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Check if module exists (development only)
+/******/ 		if (__webpack_modules__[moduleId] === undefined) {
+/******/ 			var e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {

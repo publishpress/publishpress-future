@@ -2,11 +2,11 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./assets/jsx/components/FutureActionPanelAfterActionField.jsx":
+/***/ "./assets/jsx/components/FutureActionPanelAfterActionField.jsx"
 /*!*********************************************************************!*\
   !*** ./assets/jsx/components/FutureActionPanelAfterActionField.jsx ***!
   \*********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -31,47 +31,47 @@ var FutureActionPanelAfterActionFieldSlot = function FutureActionPanelAfterActio
 FutureActionPanelAfterActionField.Slot = FutureActionPanelAfterActionFieldSlot;
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FutureActionPanelAfterActionField);
 
-/***/ }),
+/***/ },
 
-/***/ "@publishpress/i18n":
+/***/ "@publishpress/i18n"
 /*!************************************!*\
   !*** external "publishpress.i18n" ***!
   \************************************/
-/***/ ((module) => {
+(module) {
 
 module.exports = publishpress.i18n;
 
-/***/ }),
+/***/ },
 
-/***/ "@wordpress/components":
+/***/ "@wordpress/components"
 /*!********************************!*\
   !*** external "wp.components" ***!
   \********************************/
-/***/ ((module) => {
+(module) {
 
 module.exports = wp.components;
 
-/***/ }),
+/***/ },
 
-/***/ "@wordpress/data":
+/***/ "@wordpress/data"
 /*!**************************!*\
   !*** external "wp.data" ***!
   \**************************/
-/***/ ((module) => {
+(module) {
 
 module.exports = wp.data;
 
-/***/ }),
+/***/ },
 
-/***/ "@wordpress/element":
+/***/ "@wordpress/element"
 /*!*****************************!*\
   !*** external "wp.element" ***!
   \*****************************/
-/***/ ((module) => {
+(module) {
 
 module.exports = wp.element;
 
-/***/ })
+/***/ }
 
 /******/ 	});
 /************************************************************************/
@@ -84,6 +84,12 @@ module.exports = wp.element;
 /******/ 		var cachedModule = __webpack_module_cache__[moduleId];
 /******/ 		if (cachedModule !== undefined) {
 /******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Check if module exists (development only)
+/******/ 		if (__webpack_modules__[moduleId] === undefined) {
+/******/ 			var e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
