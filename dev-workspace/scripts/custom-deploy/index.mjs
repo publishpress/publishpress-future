@@ -3,6 +3,8 @@
 import { runDeploy } from '../deploy/engine.mjs';
 import {
   preflight,
+  gitConfig,
+  githubAuth,
   branchSetup,
   mergeHotfixes,
   depDryRun,
@@ -31,6 +33,8 @@ import {
 
 runDeploy([
   preflight,
+  gitConfig,
+  githubAuth,
   branchSetup,
   mergeHotfixes,
   depDryRun,

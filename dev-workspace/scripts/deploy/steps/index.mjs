@@ -1,4 +1,6 @@
 export { default as preflight } from './preflight.mjs';
+export { default as gitConfig } from './git-config.mjs';
+export { default as githubAuth } from './github-auth.mjs';
 export { default as branchSetup } from './branch-setup.mjs';
 export { default as mergeHotfixes } from './merge-hotfixes.mjs';
 export { default as depDryRun } from './dep-dry-run.mjs';

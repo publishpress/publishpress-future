@@ -128,6 +128,11 @@ async function runStep(step, ctx, state) {
   }
 
   // type === 'auto'
+  // setup() runs once before the spinner — safe to use interactive prompts here.
+  if (typeof step.setup === 'function') {
+    await step.setup(ctx);
+  }
+
   while (true) {
     const s = spinner();
     s.start(step.label);
