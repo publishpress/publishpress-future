@@ -30,9 +30,14 @@ To release the Pro plugin please make sure to check all the checkboxes below.
 - [ ] Run `composer test Integration` to run Integration tests and verify all tests pass successfully.
 
 **Localization**
-- [ ] Update `.pot` file
-- [ ] Run `composer build:lang` to build translation files and commit the changes.
-- [ ] Add to CHANGELOG.md
+- [ ] Run `composer translate` to regenerate AI-assisted translations.
+- [ ] Make sure to commit all i18n/translation updates together.
+- [ ] Open a GitHub issue titled `Translation Update for Release v<version>`, and assign it to `@wocmultimedia` (lead translator for ES, FR, IT).
+- [ ] Pause the release and wait for `@wocmultimedia` to review and confirm or close the translation issue.
+- [ ] After approval, run `composer translate:download` to fetch updated translations from the
+translation management service.
+- [ ] Run `composer translate:compile` to generate all language files (MO, JSON, PHP)
+- [ ] Add a summary of these changes in `CHANGELOG.md`.
 
 **Version & Documentation**
 - [ ] Update CHANGELOG.md with user-friendly descriptions
