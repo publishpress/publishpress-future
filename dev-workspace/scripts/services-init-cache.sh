@@ -16,7 +16,8 @@ fi
 [[ -d $CACHE_PATH/.npm/_logs ]] || mkdir -p $CACHE_PATH/.npm/_logs
 [[ -d $CACHE_PATH/.composer/cache ]] || mkdir -p $CACHE_PATH/.composer/cache
 [[ -d $CACHE_PATH/.oh-my-zsh/log ]] || mkdir -p $CACHE_PATH/.oh-my-zsh/log
+[[ -d $CACHE_PATH/.git ]] || mkdir -p $CACHE_PATH/.git
 [[ -f $CACHE_PATH/.zsh_history ]] || touch $CACHE_PATH/.zsh_history
 [[ -f $CACHE_PATH/.bash_history ]] || touch $CACHE_PATH/.bash_history
 [[ -f $CACHE_PATH/.composer/auth.json ]] || echo '{}' > $CACHE_PATH/.composer/auth.json
-[[ -f $CACHE_PATH/.gitconfig ]] || touch $CACHE_PATH/.gitconfig
+[[ -f $CACHE_PATH/.git/config ]] || touch $CACHE_PATH/.git/config
