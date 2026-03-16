@@ -7,11 +7,14 @@ ONE_DAY_IN_SECONDS=86400
 UPDATE_CHECK_INTERVAL=$ONE_DAY_IN_SECONDS
 
 run_terminal_service() {
-    local git_setup='if [ -n "$GIT_USER_NAME" ]; then git config --global user.name "$GIT_USER_NAME"; fi; if [ -n "$GIT_USER_EMAIL" ]; then git config --global user.email "$GIT_USER_EMAIL"; fi'
     if [ $# -eq 0 ]; then
-        docker compose -f docker/compose.yaml run -e DROPBOX_ACCESS_TOKEN=$DROPBOX_ACCESS_TOKEN --rm terminal zsh -lc "$git_setup; exec zsh"
+        docker compose -f docker/compose.yaml run -e DROPBOX_ACCESS_TOKEN=$DROPBOX_ACCESS_TOKEN --rm terminal zsh -lc 'if [ -n "$GIT_USER_NAME" ]; then git config --global user.name "$GIT_USER_NAME"; fi; if [ -n "$GIT_USER_EMAIL" ]; then git config --global user.email "$GIT_USER_EMAIL"; fi; exec zsh'
     else
-        docker compose -f docker/compose.yaml run -e DROPBOX_ACCESS_TOKEN=$DROPBOX_ACCESS_TOKEN --rm terminal zsh -lc "$git_setup; $*"
+        docker compose -f docker/compose.yaml run -e DROPBOX_ACCESS_TOKEN=$DROPBOX_ACCESS_TOKEN --rm terminal sh -c '
+            [ -n "$GIT_USER_NAME" ] && git config --global user.name "$GIT_USER_NAME"
+            [ -n "$GIT_USER_EMAIL" ] && git config --global user.email "$GIT_USER_EMAIL"
+            exec "$@"
+        ' _ "$@"
     fi
 }
 
@@ -53,8 +56,8 @@ else
     fi
     configure_git_identity_existing_container "$RUNNING_CONTAINER"
     if [ $# -eq 0 ]; then
-        docker exec -it $RUNNING_CONTAINER zsh
+        docker exec -it "$RUNNING_CONTAINER" zsh
     else
-        docker exec -it $RUNNING_CONTAINER zsh -c "$@"
+        docker exec -it "$RUNNING_CONTAINER" "$@"
     fi
 fi

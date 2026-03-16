@@ -52,9 +52,10 @@ services:
             - ../.cache/logs/db_test:/var/log/mysql
             - ./wp/db/conf.d/my.cnf:/etc/mysql/conf.d/my.cnf
         healthcheck:
-            test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
-            start_period: 10s
-            retries: 3
+            test: ["CMD", "mariadb-admin", "ping", "-u", "root", "--password=root"]
+            start_period: 30s
+            interval: 5s
+            retries: 10
     wp_test:
         build: ./wp/wordpress
         profiles: ["test"]
@@ -88,7 +89,9 @@ services:
             - mailhog
         healthcheck:
             test: ["CMD", "test", "-f", "/var/www/html/wp-config.php"]
-            retries: 3
+            start_period: 120s
+            interval: 5s
+            retries: 10
         extra_hosts:
             - "host.docker.internal:host-gateway"
     wp_test_cli:
@@ -111,7 +114,7 @@ services:
             - ./wp/wordpress/conf.d/99-custom.ini:/usr/local/etc/php/conf.d/99-custom.ini
         depends_on:
             wp_test:
-                condition: service_healthy
+                condition: service_started
             db_test:
                 condition: service_healthy
             mailhog:

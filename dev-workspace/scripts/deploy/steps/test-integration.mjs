@@ -1,9 +1,10 @@
 export default {
   id: 'test_integration',
-  label: 'Integration tests',
+  label: 'Integration tests (run externally)',
   phase: 'Testing',
-  type: 'auto',
-  run: async (ctx) => {
-    await ctx.exec('vendor/bin/codecept run Integration');
-  },
+  type: 'manual',
+  instructions:
+    'Run Integration tests outside this deploy container (browser-capable environment), then continue.\n\n' +
+    'Suggested command:\n' +
+    '  composer test Integration',
 };
