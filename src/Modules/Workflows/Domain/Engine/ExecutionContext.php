@@ -70,6 +70,11 @@ class ExecutionContext implements ExecutionContextInterface
      */
     private $workflowId = 0;
 
+    /**
+     * @var bool
+     */
+    private $nestedVariablesCacheEnabled;
+
     public function __construct(
         HookableInterface $hooks,
         ExecutionContextProcessorRegistryInterface $processorRegistry,
@@ -80,6 +85,10 @@ class ExecutionContext implements ExecutionContextInterface
         $this->processorRegistry = $processorRegistry;
         $this->expirablePostModelFactory = $expirablePostModelFactory;
         $this->logger = $logger;
+
+        // We are using a flag for the nested variables cache because it is not fully tested.
+        $this->nestedVariablesCacheEnabled = defined('PUBLISHPRESS_FUTURE_VARIABLES_CACHE')
+            && constant('PUBLISHPRESS_FUTURE_VARIABLES_CACHE');
     }
 
     public function setAllVariables(array $runtimeVariables)
@@ -341,15 +350,17 @@ class ExecutionContext implements ExecutionContextInterface
             $dataSource
         );
 
-        // If the variable is the top level, check the cache.
-        // if ($level === 0 && $this->hasNestedVariableInCache($variableName)) {
-        //     $this->debugWithArgs(
-        //         'Variable "%s" is in the cache, returning the value',
-        //         $variableName
-        //     );
+        if ($this->nestedVariablesCacheEnabled) {
+            // If the variable is the top level, check the cache.
+            if ($level === 0 && $this->hasNestedVariableInCache($variableName)) {
+                $this->debugWithArgs(
+                    'Variable "%s" is in the cache, returning the value',
+                    $variableName
+                );
 
-        //     return $this->getNestedVariableValueFromCache($variableName);
-        // }
+                return $this->getNestedVariableValueFromCache($variableName);
+            }
+        }
 
         $variableNameParts = explode('.', $variableName);
 
@@ -398,15 +409,17 @@ class ExecutionContext implements ExecutionContextInterface
             $level + 1
         );
 
-        // // If the variable is the top level, set the value in the cache.
-        // if ($level === 0) {
-        //     $this->debugWithArgs(
-        //         'Setting variable "%s" in the cache',
-        //         $variableName
-        //     );
+        if ($this->nestedVariablesCacheEnabled) {
+            // If the variable is the top level, set the value in the cache.
+            if ($level === 0) {
+                $this->debugWithArgs(
+                    'Setting variable "%s" in the cache',
+                    $variableName
+                );
 
-        //     $this->setNestedVariableValueInCache($variableName, $value);
-        // }
+                $this->setNestedVariableValueInCache($variableName, $value);
+            }
+        }
 
         return $value;
     }
