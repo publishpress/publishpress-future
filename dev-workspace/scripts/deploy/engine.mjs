@@ -1,5 +1,5 @@
 import { intro, outro, spinner, confirm, select, text, note, log, cancel } from '@clack/prompts';
-import { createWriteStream, mkdirSync } from 'fs';
+import { createWriteStream, mkdirSync, writeFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { Context } from './context.mjs';
@@ -16,9 +16,18 @@ function stripAnsi(str) {
 }
 
 function setupLogFile() {
-  mkdirSync(CACHE_DIR, { recursive: true });
+  try {
+    mkdirSync(CACHE_DIR, { recursive: true });
+  } catch {
+    return null;
+  }
   const logPath = resolve(CACHE_DIR, 'deploy.log');
-  logStream = createWriteStream(logPath, { flags: 'a' });
+  try {
+    writeFileSync(logPath, '', 'utf8');
+    logStream = createWriteStream(logPath, { flags: 'a' });
+  } catch {
+    return null;
+  }
 
   const origStdoutWrite = process.stdout.write.bind(process.stdout);
   const origStderrWrite = process.stderr.write.bind(process.stderr);
@@ -311,7 +320,7 @@ export async function runDeploy(pipeline) {
   process.on('SIGTERM', handleSignal);
 
   intro('PublishPress Future — Deploy Wizard');
-  log.info('Debug log: dev-workspace/.cache/deploy.log');
+  if (logPath) log.info('Debug log: dev-workspace/.cache/deploy.log');
 
   const existingState = loadState();
   let state;
