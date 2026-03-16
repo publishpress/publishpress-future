@@ -17,6 +17,7 @@ msgstr ""
 "Language: ko-KR\n"
 
 #: post-expirator.php
+#: post-expirator.php
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:120
 #: src/Modules/Workflows/Models/StepTypesModel.php:99
 #. Plugin Name of the plugin
