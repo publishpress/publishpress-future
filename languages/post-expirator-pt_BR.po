@@ -15,6 +15,7 @@ msgstr ""
 
 #. Plugin Name of the plugin
 #. Plugin Name of the plugin
+#. Plugin Name of the plugin
 #: post-expirator.php
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:119
 #: src/Modules/Workflows/Models/NodeTypesModel.php:81, fuzzy
