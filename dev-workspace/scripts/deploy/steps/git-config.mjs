@@ -12,8 +12,14 @@ export default {
     const nameResult = await ctx.execCapture('git config --global user.name');
     const emailResult = await ctx.execCapture('git config --global user.email');
 
-    const name = nameResult.stdout.trim();
-    const email = emailResult.stdout.trim();
+    let name = nameResult.stdout.trim();
+    let email = emailResult.stdout.trim();
+
+    // Prefer env vars (from .env) before prompting
+    if (!name && process.env.GIT_USER_NAME) ctx.data._gitName = process.env.GIT_USER_NAME.trim();
+    if (!email && process.env.GIT_USER_EMAIL) ctx.data._gitEmail = process.env.GIT_USER_EMAIL.trim();
+    if (ctx.data._gitName) name = ctx.data._gitName;
+    if (ctx.data._gitEmail) email = ctx.data._gitEmail;
 
     if (name && email) return; // already configured
 
