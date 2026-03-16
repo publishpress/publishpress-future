@@ -123,7 +123,6 @@ class OnPostSaveRunner implements TriggerRunnerInterface
         );
 
         if ($this->shouldSkipDuplicateBlockEditorRequest($transientKey)) {
-
             $this->logger->debugWithArgs(
                 'Trigger skipped: Duplicate block editor request detected for step %s and post #%d.',
                 $this->stepSlug,
