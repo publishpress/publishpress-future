@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added: Workflow engine logs "Engine finished processing" on shutdown when debug is enabled.
 - Added: Added cache for workflow execution context variables to increase performance when resolving variables repeated times (Issue #1581).
 - Added: Added new language files for German, Finnish, Filipino, Indonesian, Japanese, Korean, Russian, and Yoruba translations.
+- Added: Added new constant `PUBLISHPRESS_FUTURE_VARIABLES_CACHE` as a flag to enable a experimental cache for context variables in the workflow execution.
 - Changed: Debug log now defaults to grouped by request display.
 - Changed: Move the scheduled actions "Run" button to it's own column, (Issue #1496).
 - Changed: Workflow debug log messages rewritten for clarity and consistency (format, parentheses for details, [Workflow] prefix).
