@@ -46,6 +46,24 @@ export class Context {
     });
   }
 
+  async execInteractive(cmd) {
+    // Run command with stdio inherited so the user can interact (e.g. gh auth login).
+    // Use when prompts must be visible and the user must respond in the same terminal.
+    const { spawn } = await import('child_process');
+    return new Promise((resolve, reject) => {
+      const child = spawn(cmd, { shell: true, stdio: 'inherit' });
+      child.on('close', (code) => {
+        if (code === 0) {
+          resolve();
+        } else {
+          const err = new Error(`Command failed (exit ${code}): ${cmd}`);
+          err.exitCode = code;
+          reject(err);
+        }
+      });
+    });
+  }
+
   async execCapture(cmd, { timeout = 0 } = {}) {
     // Run command and return { stdout, stderr, code } without streaming or throwing.
     // timeout: optional ms limit; 0 = no limit.
