@@ -117,7 +117,7 @@
         "check:lint": "dev-workspace/run phplint --no-cache",
         "check:cs": "dev-workspace/run phpcs",
         "check:stan": "dev-workspace/run phpstan",
-        "check:longpath": "dev-workspace/run bash -c \"if [ ! -d 'dist/post-expirator' ]; then composer build:dir; fi && longpath dist/post-expirator/\"",
+        "check:longpath": "dev-workspace/run composer build:dir && dev-workspace/run longpath dist/post-expirator",
         "check:pot-diff": "dev-workspace/run php dev-workspace/scripts/php/bin/pptk pot:diff https://raw.githubusercontent.com/publishpress/PublishPress-Future/refs/heads/main/languages/post-expirator.pot ./languages/post-expirator.pot",
         "check:pot-diff-md": "dev-workspace/run php dev-workspace/scripts/php/bin/pptk pot:diff https://raw.githubusercontent.com/publishpress/PublishPress-Future/refs/heads/main/languages/post-expirator.pot ./languages/post-expirator.pot -m",
         "fix:php": [
@@ -238,7 +238,7 @@
         ],
         "test": [
             "dev-workspace/scripts/ensure-not-container.sh",
-            "vendor/bin/codecept run $@"
+            "bash dev-workspace/scripts/tests-run.sh $@"
         ],
         "test:up": [
             "dev-workspace/scripts/ensure-not-container.sh",
