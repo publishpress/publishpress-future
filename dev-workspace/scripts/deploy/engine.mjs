@@ -1,6 +1,40 @@
 import { intro, outro, spinner, confirm, select, text, note, log, cancel } from '@clack/prompts';
+import { createWriteStream, mkdirSync } from 'fs';
+import { resolve, dirname } from 'path';
+import { fileURLToPath } from 'url';
 import { Context } from './context.mjs';
 import { loadState, saveState, deleteState, createFreshState } from './state.mjs';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const REPO_ROOT = resolve(__dirname, '../../..'); // up to repo root from dev-workspace/scripts/deploy/
+const CACHE_DIR = resolve(REPO_ROOT, 'dev-workspace/.cache');
+
+let logStream = null;
+
+function stripAnsi(str) {
+  return str.replace(/\x1B\[[0-9;]*[A-Za-z]/g, '');
+}
+
+function setupLogFile() {
+  mkdirSync(CACHE_DIR, { recursive: true });
+  const logPath = resolve(CACHE_DIR, 'deploy.log');
+  logStream = createWriteStream(logPath, { flags: 'a' });
+
+  const origStdoutWrite = process.stdout.write.bind(process.stdout);
+  const origStderrWrite = process.stderr.write.bind(process.stderr);
+
+  process.stdout.write = (chunk, encoding, callback) => {
+    logStream.write(stripAnsi(typeof chunk === 'string' ? chunk : chunk.toString()));
+    return origStdoutWrite(chunk, encoding, callback);
+  };
+
+  process.stderr.write = (chunk, encoding, callback) => {
+    logStream.write(stripAnsi(typeof chunk === 'string' ? chunk : chunk.toString()));
+    return origStderrWrite(chunk, encoding, callback);
+  };
+
+  return logPath;
+}
 
 function printOutput(err) {
   const stdout = (err.stdout || '').trim();
@@ -262,18 +296,22 @@ function getNextStep(pipeline, state) {
 }
 
 export async function runDeploy(pipeline) {
+  const logPath = setupLogFile();
+
   let currentState = null;
   const handleSignal = () => {
     if (currentState) {
       saveState(currentState);
       process.stdout.write('\nProgress saved. Run `composer deploy` to resume.\n');
     }
+    if (logStream) logStream.end();
     process.exit(0);
   };
   process.on('SIGINT', handleSignal);
   process.on('SIGTERM', handleSignal);
 
   intro('PublishPress Future — Deploy Wizard');
+  log.info('Debug log: dev-workspace/.cache/deploy.log');
 
   const existingState = loadState();
   let state;
@@ -348,4 +386,6 @@ export async function runDeploy(pipeline) {
   const skipped = state.skippedSteps.length;
 
   outro(`Deployment complete! ${done} steps completed, ${skipped} skipped of ${total} total.`);
+
+  if (logStream) logStream.end();
 }
