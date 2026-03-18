@@ -1,62 +1,82 @@
 ---
-name: Release the Free version (team only)
-about: Describes default checklist for the plugin's release process.
-title: Release v[VERSION]
+name: Release Free Plugin (Team Only)
+about: Step-by-step checklist for releasing the Free plugin version.
+title: Release Free Plugin v[VERSION]
 labels: release
 assignees: ''
 type: task
 ---
 
-To release the Free plugin please make sure to check all the checkboxes below.
+Before releasing the Free plugin, ensure every step in this checklist is completed.
 
-### Pre-release Checklist
+> **Release principle:** Prioritize quality over velocity for all standard releases.
+> For urgent/security releases, maintain essential quality and security checks while balancing delivery speed responsibly.
+
+### Pre-Release Preparation Checklist
+
+**GitHub Milestone**
+- [ ] Verify the GitHub milestone for `<version>` exists and all associated issues and pull requests are closed — resolve or defer any open items before proceeding
 
 **Branch Setup**
-- [ ] Create release branch `release-<version>` from development branch
-- [ ] Merge hotfixes/features into release branch (direct merge or PR)
+- [ ] Create a new branch named `release-<version>` from the latest `development` branch
+- [ ] Integrate all required hotfixes and new features into the release branch (via direct merge or pull request), ensuring all code has undergone code review (self-review or review by another team member)
 
 **Dependencies**
-- [ ] Run `composer update --no-dev --dry-run` to check for updates
-- [ ] If updating dependencies: `composer update the/lib:version-constraint`
-- [ ] Lock versions if needed (use exact version numbers)
-- [ ] Document dependency changes in changelog
-- [ ] Review Dependabot warnings/PRs, fix real issues
+- [ ] Run `composer update --no-dev --dry-run` and review the output for dependencies needing updates
+- [ ] Update any required dependencies with `composer update <vendor/package>:"<version-constraint>"`
+- [ ] List all dependency changes (with versions) in `CHANGELOG.md`
+- [ ] Review and resolve open Dependabot pull requests and alerts
+
+**Build Assets**
+- [ ] Build JS/CSS files by running `composer build:assets` (if applicable)
 
 **Code Quality**
-- [ ] Build JS files: `composer build:js` (if applicable)
-- [ ] Run `composer check` to run check the code and make sure no warnings or errors.
-- [ ] Run `composer test Unit` to run the Unit tests and verify all tests pass successfully.
-- [ ] Run `composer test Integration` to run Integration tests and verify all tests pass successfully.
+- [ ] Run `composer check` to verify the codebase has no warnings or errors
+- [ ] Run `composer test Unit` to execute Unit tests and confirm all tests pass
+- [ ] Run `composer test Integration` to execute Integration tests and confirm all tests pass
+
+**RC Package & Pre-Release Team Review**
+> ⚠️ This step must be completed **before** starting the Localization phase. Text changes from team feedback directly affect translatable strings, so translations should only be updated after all copy is finalized.
+- [ ] Build a Release Candidate (RC) package with `composer build` and share it with the team via the `#testing` Slack channel for acceptance/pre-release testing — name the RC using the format `<version>-rc.1`, `<version>-rc.2`, etc. (e.g. `2.14.1-rc.1`), incrementing the RC number for each new build sent to the team
+- [ ] Collect and address feedback from the team (functional issues, copy/text changes, UI wording, etc.)
+- [ ] Apply any required fixes or text changes to the release branch — revisit earlier steps (Branch Setup, Dependencies, Build Assets, Code Quality) as needed before re-building the RC
+- [ ] Re-build and re-share the RC (incrementing the RC number) if any changes were made
+- [ ] Confirm with the team that the RC is approved and no further text changes are expected before proceeding to Localization
 
 **Localization**
-- [ ] Run `composer translate` to regenerate AI-assisted translations.
-- [ ] Make sure to commit all i18n/translation updates together.
-- [ ] Open a GitHub issue titled `Translation Update for Release v<version>`, and assign it to `@wocmultimedia` (lead translator for ES, FR, IT).
-- [ ] Pause the release and wait for `@wocmultimedia` to review and confirm or close the translation issue.
-- [ ] After approval, run `composer translate:download` to fetch updated translations from the
-translation management service.
-- [ ] Run `composer translate:compile` to generate all language files (MO, JSON, PHP)
-- [ ] Add a summary of these changes in `CHANGELOG.md`.
+- [ ] Run `composer translate` to update AI-assisted translations
+- [ ] Commit all translation/i18n updates together
+- [ ] Open a GitHub issue titled `Translation Update for Release v<version>` and assign it to `@wocmultimedia`
+- [ ] Wait for `@wocmultimedia` to review and confirm/close the translation issue. Expect this may take 1–2 days. Quality is better than velocity for regular releases. For urgent/security releases, proceed without updated translations when needed, but communicate clearly with the translator and team. Do **not** disclose sensitive vulnerability details until the security release is published
+- [ ] After the translator responds, run `composer translate:download` to fetch the latest translations
+  - Skip this step for urgent or security releases
+- [ ] Run `composer translate:compile` to generate language files (MO, JSON, PHP)
+- [ ] Add a summary of translation changes to `CHANGELOG.md`
+- [ ] Commit compiled translation files and `CHANGELOG.md` updates to the release branch
 
 **Version & Documentation**
-- [ ] Update CHANGELOG.md with user-friendly descriptions
-- [ ] Verify release date in CHANGELOG.md
-- [ ] Run `composer set:version <version>` to update version numbers in plugin files.
-- [ ] Commit all changes to release branch
+- [ ] Review `CHANGELOG.md` and refine user-facing descriptions as needed
+- [ ] Verify the release date in `CHANGELOG.md` is correct
+- [ ] Run `composer set:version <version>` to update plugin version numbers in all required files
+- [ ] Commit the version and changelog updates to the release branch
 
 **Build & Test**
-- [ ] Build package: `composer build` (creates `./dist` package)
-- [ ] Send package to team for testing
+- [ ] Build the release package with `composer build` (generates the package in `./dist`)
+- [ ] Review the `composer build` output and confirm the package file list is correct
+  - Ensure configuration and development-only files are excluded from the final package
+  - If needed, update `.rsync-filters-pre-build`, `.rsync-filters-post-build`, `.distignore`, and `.gitattributes`
+- [ ] Share the generated package with the team for testing via the `#testing` Slack channel
 
-### Release
+### Release & Deployment
 
-- [ ] PR and merge `release-<version>` → `master`
-- [ ] Merge `master` → `development`
-- [ ] Create GitHub release (tag from `master` branch)
-  - Triggers automatic SVN deployment
+- [ ] Open a PR and merge `release-<version>` into `master`
+- [ ] Merge `master` back into `development`
+- [ ] Create the GitHub release using a tag from `master`
+  - This triggers the automatic SVN deployment
 
-### Post-release
+### Post-Release Validation
 
-- [ ] Monitor [GitHub Actions](https://github.com/publishpress/publishpress-future/actions)
-- [ ] Verify [WordPress.org plugin page](https://wordpress.org/plugins/post-expirator/)
-- [ ] Test update on staging site
+- [ ] Monitor [GitHub Actions](https://github.com/publishpress/publishpress-future/actions) and confirm all release and deployment workflows complete successfully
+- [ ] Verify the [WordPress.org plugin page](https://wordpress.org/plugins/post-expirator/) shows the new version and updated release information
+- [ ] Test updating to the new version on a staging site and run a basic smoke test of core functionality
+- [ ] Close the GitHub milestone for `<version>`
