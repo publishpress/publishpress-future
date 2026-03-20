@@ -2,6 +2,8 @@
 
 namespace Tests;
 
+use PublishPress\Future\Framework\Database\DBTableSchemaHandler;
+
 class NoTransactionWPTestCase extends \lucatume\WPBrowser\TestCase\WPTestCase
 {
     protected static $ignore_files;
@@ -152,6 +154,7 @@ class NoTransactionWPTestCase extends \lucatume\WPBrowser\TestCase\WPTestCase
     {
         global $wpdb;
         $wpdb->query('DROP TABLE IF EXISTS `' . $tableName . '`');
+        DBTableSchemaHandler::clearTableExistenceCache($tableName);
     }
 
     protected function dropTableIndex($tableName, $indexName): void

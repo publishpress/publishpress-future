@@ -25,6 +25,10 @@ class DebugLogSchemaTest extends NoTransactionWPTestCase
         global $wpdb;
 
         $this->wpdb = $wpdb;
+
+        // Tests use NoTransactionWPTestCase::dropTable(), not DBTableSchemaHandler::dropTable(),
+        // so clear cached existence results before each case.
+        DBTableSchemaHandler::clearTableExistenceCache();
     }
 
     protected function tearDown(): void

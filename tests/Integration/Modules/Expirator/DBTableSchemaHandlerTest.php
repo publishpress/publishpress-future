@@ -24,6 +24,13 @@ class DBTableSchemaHandlerTest extends NoTransactionWPTestCase
         $this->wpdb = $wpdb;
     }
 
+    protected function tearDown(): void
+    {
+        DBTableSchemaHandler::clearTableExistenceCache();
+
+        parent::tearDown();
+    }
+
     protected function getHandler(string $tableName): DBTableSchemaHandlerInterface
     {
         $handler = new DBTableSchemaHandler($this->wpdb);
