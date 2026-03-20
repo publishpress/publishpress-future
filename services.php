@@ -16,6 +16,7 @@ use PublishPress\Future\Core\HooksAbstract;
 use PublishPress\Future\Core\Paths;
 use PublishPress\Future\Core\Plugin;
 use PublishPress\Future\Framework\Cache\GenericCacheHandler;
+use PublishPress\Future\Framework\Database\DatabaseSchemaMaintainer;
 use PublishPress\Future\Framework\Database\DBTableSchemaHandler;
 use PublishPress\Future\Framework\Logger\DBTableSchemas\DebugLogSchema;
 use PublishPress\Future\Framework\Logger\Logger;
@@ -775,6 +776,15 @@ return [
         return new WorkflowScheduledStepsSchema(
             $schemaHandler,
             $container->get(ServicesAbstract::HOOKS)
+        );
+    },
+
+    ServicesAbstract::DATABASE_SCHEMA_MAINTAINER => static function (ContainerInterface $container) {
+        return new DatabaseSchemaMaintainer(
+            $container->get(ServicesAbstract::HOOKS),
+            $container->get(ServicesAbstract::DB_TABLE_ACTION_ARGS_SCHEMA),
+            $container->get(ServicesAbstract::DB_TABLE_DEBUG_LOG_SCHEMA),
+            $container->get(ServicesAbstract::DB_TABLE_WORKFLOW_SCHEDULED_STEPS_SCHEMA)
         );
     },
 

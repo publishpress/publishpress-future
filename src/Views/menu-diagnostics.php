@@ -69,6 +69,12 @@ $rayDebugIsInstalled = function_exists('ray');
                     <th scope="row"><?php
                         esc_html_e('Database Schema Check', 'post-expirator'); ?></th>
                     <td>
+                        <p class="description" style="margin-top:0;">
+                            <?php esc_html_e(
+                                'After activating the plugin, tables are updated automatically on the next page load. Use the button below if you still see schema errors.',
+                                'post-expirator'
+                            ); ?>
+                        </p>
                         <?php if ($isSchemaHealthOk) : ?>
                             <i class="dashicons dashicons-yes pe-status pe-status-enabled"></i> <span><?php
                                 esc_html_e('Passed', 'post-expirator'); ?></span>
