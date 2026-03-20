@@ -171,6 +171,9 @@ class Plugin implements InitializableInterface
          */
         do_action(HooksAbstract::ACTION_ACTIVATE_PLUGIN);
 
+        // Full DB repair runs on the next request in manageUpgrade() once the container is loaded.
+        update_option('pp_future_pending_db_schema_repair', '1', false);
+
         SettingsFacade::setDefaultSettings();
 
         // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.flush_rewrite_rules_flush_rewrite_rules -- Needed during plugin activation for rewrite rules
@@ -192,6 +195,8 @@ class Plugin implements InitializableInterface
     {
         try {
             $container = Container::getInstance();
+
+            $this->runPendingDatabaseSchemaRepair($container);
 
             // Check for current version, if not exists, run activation
             $version = get_option('postexpiratorVersion');
@@ -339,6 +344,28 @@ class Plugin implements InitializableInterface
             }
         } catch (Throwable $th) {
             $this->logger->error('Error managing upgrade: ' . $th->getMessage());
+        }
+    }
+
+    /**
+     * Runs after plugin activation (see install.php) once the container is available.
+     */
+    private function runPendingDatabaseSchemaRepair(Container $container): void
+    {
+        $pending = get_option('pp_future_pending_db_schema_repair');
+        if (empty($pending)) {
+            return;
+        }
+
+        delete_option('pp_future_pending_db_schema_repair');
+
+        try {
+            $container->get(ServicesAbstract::DATABASE_SCHEMA_MAINTAINER)->repairAllSchemas();
+        } catch (Throwable $th) {
+            update_option('pp_future_pending_db_schema_repair', '1', false);
+            $this->logger->error(
+                self::LOG_PREFIX . ' Pending database schema repair failed: ' . $th->getMessage()
+            );
         }
     }
 

@@ -130,6 +130,8 @@ abstract class ServicesAbstract
 
     public const MIGRATIONS_FACTORY = 'future.free/migrations';
 
+    public const DATABASE_SCHEMA_MAINTAINER = 'future.free/database-schema-maintainer';
+
     public const NOTICES = 'future.free/notices-facade';
 
     public const DB_TABLE_SCHEMA_HANDLER_FACTORY = 'future.free/db-table-schema/handler-factory';

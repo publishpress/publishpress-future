@@ -83,16 +83,22 @@ try {
     }
     Autoloader::register();
 
-    function loadDependencies()
+    /**
+     * Bootstrap the DI container and legacy autoload. Safe to call multiple times.
+     */
+    function loadPluginDependencies()
     {
         if (defined('PUBLISHPRESS_FUTURE_LOADED_DEPENDENCIES')) {
             return;
         }
 
-        $pluginFile = __FILE__;
+        require_once PUBLISHPRESS_FUTURE_LIB_VENDOR_PATH . '/publishpress/psr-container/lib/autoload.php';
+        require_once PUBLISHPRESS_FUTURE_LIB_VENDOR_PATH . '/publishpress/pimple-pimple/lib/autoload.php';
 
         $services = require PUBLISHPRESS_FUTURE_BASE_PATH . '/services.php';
         $container = new Container($services);
+
+        $pluginFile = PUBLISHPRESS_FUTURE_PLUGIN_FILE;
 
         require_once PUBLISHPRESS_FUTURE_BASE_PATH . '/legacy/defines.php';
         require_once PUBLISHPRESS_FUTURE_BASE_PATH . '/legacy/deprecated.php';
@@ -115,7 +121,7 @@ try {
     add_action('init', function () {
         $container = null;
         try {
-            loadDependencies();
+            loadPluginDependencies();
 
             $container = Container::getInstance();
             $container->get(ServicesAbstract::PLUGIN)->initialize();

@@ -27,21 +27,10 @@ class Settings implements InitializableInterface
 
     public function initialize()
     {
-        // Quick Edit
-        $this->hooks->addAction(
-            SettingsHooksAbstract::ACTION_FIX_DB_SCHEMA,
-            [$this, 'fixDbSchema']
-        );
-
         $this->hooks->addFilter(
             SettingsHooksAbstract::FILTER_SCHEMA_IS_HEALTHY,
             [$this, 'isSchemaHealthy']
         );
-    }
-
-    public function fixDbSchema(): void
-    {
-        $this->workflowScheduledStepsSchema->fixTable();
     }
 
     public function isSchemaHealthy($isHealthy): bool

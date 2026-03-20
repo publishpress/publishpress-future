@@ -10,7 +10,7 @@ if (! function_exists(__NAMESPACE__ . '\\uninstall')) {
 
     function uninstall()
     {
-        loadDependencies();
+        loadPluginDependencies();
         Plugin::onDeactivate();
     }
 }

@@ -3,6 +3,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 [4.10.0] - 11 March, 2026
 
+- Changed: Improve performance on large multisites by memoizing table existence checks, using `information_schema` instead of `SHOW TABLES LIKE`, and creating the debug log table only on first use.
 - Added: Add new trigger: Post is created - PRO, (Issue #1146).
 - Added: Debug log view shows total logs displayed, session count, and log size (filter-aware; shows both filtered and total when filter applied).
 - Added: Debug log timestamps now include milliseconds.
