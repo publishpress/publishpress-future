@@ -65,9 +65,13 @@ Before releasing the Pro plugin, ensure every step in this checklist is complete
 - [ ] Commit the updated .pot file if changes are detected
 - [ ] Run `composer translate` to update AI-assisted translations
 - [ ] Commit all translation/i18n updates together
-- [ ] Create a GitHub issue titled `Translation Update for Release v<version>` and assign it to Angelo (`@wocmultimedia`).
+- [ ] Create translation review issues:
+    - [ ] For ES, FR, and IT: Open a GitHub issue titled `Translate and Review ES, FR, and IT for Release v<version>` and assign it to `@wocmultimedia`.
+    - [ ] For PT-BR: Open a GitHub issue titled `Translate and Review PT-BR for Release v<version>` and assign it to `@ValdemirMaran`.
       **Do not** append any ZIP package, .pot file, or translation files in the issue — just provide the issue and description.
-- [ ] Wait for `@wocmultimedia` to review and confirm/close the translation issue. Expect this may take 1–2 days. Quality is better than velocity for regular releases. For urgent/security releases, proceed without updated translations when needed, but communicate clearly with the translator and team. Do **not** disclose sensitive vulnerability details until the security release is published
+- [ ] Follow up on translation issues (Expect this may take 1–2 days per language. Quality is better than velocity for regular releases. For urgent/security releases, proceed without updated translations when needed, but communicate clearly with the translator and team. Do **not** disclose sensitive vulnerability details until the security release is published.):
+    - [ ] Wait for `@wocmultimedia` (ES, FR, IT) to review and confirm/close the translation issue(s).
+    - [ ] Wait for `@ValdemirMaran` (PT-BR) to review and confirm/close the translation issue(s).
 - [ ] After the translator responds, run `composer translate:download` to fetch the latest translations
   - Skip this step for urgent or security releases
 - [ ] If you make any manual edits to language files, run `composer translate:upload` to synchronize your changes with the translation system before proceeding.
