@@ -86,7 +86,7 @@ try {
     /**
      * Bootstrap the DI container and legacy autoload. Safe to call multiple times.
      */
-    function loadPluginDependencies(): void
+    function loadPluginDependencies()
     {
         if (defined('PUBLISHPRESS_FUTURE_LOADED_DEPENDENCIES')) {
             return;
