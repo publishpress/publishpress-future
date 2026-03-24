@@ -12,14 +12,11 @@ use PublishPress\Future\Modules\Workflows\Interfaces\ExecutionContextInterface;
 use PublishPress\Future\Framework\Logger\LoggerInterface;
 use PublishPress\Future\Modules\Workflows\Domain\Engine\VariableResolvers\IntegerResolver;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnPostPublish;
-use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\Traits\BlockEditorRequestDetector;
 use PublishPress\Future\Modules\Workflows\Interfaces\PostCacheInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\WorkflowExecutionSafeguardInterface;
 
 class OnPostPublishRunner implements TriggerRunnerInterface
 {
-    use BlockEditorRequestDetector;
-
     /**
      * Transient expiration time in seconds.
      *
@@ -33,13 +30,6 @@ class OnPostPublishRunner implements TriggerRunnerInterface
      * @var string
      */
     private const POST_PUBLISHED_TRANSIENT_KEY = 'pp_future_post_published_%d_%d';
-
-    /**
-     * Transient key for block editor request. Format: pp_future_block_editor_publish_request_{post_id}_{workflow_id}.
-     *
-     * @var string
-     */
-    private const BLOCK_EDITOR_REQUEST_TRANSIENT_KEY = 'pp_future_block_editor_publish_request_%d_%d';
 
     /**
      * @var HookableInterface
@@ -165,6 +155,10 @@ class OnPostPublishRunner implements TriggerRunnerInterface
 
     public function onAfterInsertPostCallback($postId, $post, $update)
     {
+        if ($post->post_type === 'revision') {
+            return;
+        }
+
         // Do we have the post published flag?
         if (! $this->hasFlag(self::POST_PUBLISHED_TRANSIENT_KEY, $postId)) {
             $this->logger->debugWithArgs(
@@ -176,22 +170,6 @@ class OnPostPublishRunner implements TriggerRunnerInterface
         }
 
         $this->disableFlag(self::POST_PUBLISHED_TRANSIENT_KEY, $postId);
-
-        $transientKey = sprintf(
-            self::BLOCK_EDITOR_REQUEST_TRANSIENT_KEY,
-            $postId,
-            $this->workflowId
-        );
-
-        if ($this->shouldSkipDuplicateBlockEditorRequest($transientKey)) {
-            $this->logger->debugWithArgs(
-                'Trigger skipped: Duplicate block editor request detected for step "%s" and post #%d.',
-                $this->stepSlug,
-                $postId
-            );
-
-            return;
-        }
 
         $postCache = $this->getPostCacheForPostId($postId);
         $postBefore = $postCache['postBefore'] ?? null;
