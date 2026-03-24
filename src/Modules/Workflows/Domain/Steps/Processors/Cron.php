@@ -497,7 +497,7 @@ class Cron implements AsyncStepProcessorInterface
 
     private function shouldSkipScheduling(): bool
     {
-        if (empty($this->timestamp)) {
+        if (empty($this->timestamp) && $this->whenToRun !== self::WHEN_TO_RUN_NOW) {
             $this->logger->debugWithArgs($this->getLogPrefix() . 'Detected empty timestamp: Cannot schedule step %s', $this->stepSlug);
 
             return true;
