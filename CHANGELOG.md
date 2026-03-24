@@ -3,7 +3,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 [4.10.0] - 11 March, 2026
 
-- Changed: Improve performance on large multisites by memoizing table existence checks, using `information_schema` instead of `SHOW TABLES LIKE`, and creating the debug log table only on first use.
 - Added: Add new trigger: Post is created - PRO, (Issue #1146).
 - Added: Debug log view shows total logs displayed, session count, and log size (filter-aware; shows both filtered and total when filter applied).
 - Added: Debug log timestamps now include milliseconds.
@@ -19,12 +18,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Changed: Move the scheduled actions "Run" button to it's own column, (Issue #1496).
 - Changed: Workflow debug log messages rewritten for clarity and consistency (format, parentheses for details, [Workflow] prefix).
 - Changed: Replace UUID generation with a more secure method in the workflow's execution ID, also incresing performance on huge sites (Issue #1579).
-- Deprecated: StepProcessorInterface::prepareLogMessage() in favor of direct logger sprintf methods.
-- Fixed: Improved performance by eliminating repeated SHOW TABLES LIKE queries (Issue #1597).
+- Fixed: Improve performance on large multisites by memoizing table existence checks, using `information_schema` instead of `SHOW TABLES LIKE`, and creating the debug log table only on first use (Issue #1597).
 - Fixed: Debug log enable/disable in Diagnostics and Tools tab now reflects the correct state immediately without needing a second page refresh.
 - Fixed: Improved reliability of the "Post is Published" and "Post is Updated" triggers by fixing how post metadata is handled on block editor and when ACF is enabled (Issue #1312).
 - Fixed: Fixed post saved related events not triggering when revisions is saved (Issue #1582).
 - Fixed: Update .pot file.
+- Deprecated: StepProcessorInterface::prepareLogMessage() in favor of direct logger sprintf methods.
 
 [4.9.4] - 18 December, 2025
 
