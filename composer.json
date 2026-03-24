@@ -66,7 +66,7 @@
         "wp-cli/i18n-command": "^2.6",
         "wp-cli/wp-cli-bundle": "^2.10",
         "wp-coding-standards/wpcs": "^3",
-        "publishpress/translations": "dev-development"
+        "publishpress/translations": "^1"
     },
     "scripts": {
         "term": "dev-workspace/run",
