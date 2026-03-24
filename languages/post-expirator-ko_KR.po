@@ -17,9 +17,10 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: post-expirator.php:4
+#: post-expirator.php:4
 #. Plugin Name of the plugin
 msgid "PublishPress Future Free"
-msgstr "퍼블리시프레스 퓨처 무료"
+msgstr "PublishPress Future Free"
 
 #: post-expirator.php:5, fuzzy
 #. Plugin URI of the plugin

@@ -5,32 +5,33 @@ msgstr ""
 "Project-Id-Version: Plugins - PublishPress Future: Automatically Unpublish "
 "WordPress Posts - Stable (latest release)\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/project\n"
-"POT-Creation-Date: 2026-02-27T16:10:19+00:00\n"
-"PO-Revision-Date: 2026-03-16 20:44+0100\n"
-"Last-Translator: Anderson Grüdtner Martins <anderson@publishpress.com>\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2026-03-24T19:11:12+00:00\n"
+"PO-Revision-Date: 2026-03-06 17:39+0000\n"
+"Last-Translator: Angelo Giammarresi <info@wocmultimedia.biz>\n"
+"Language-Team: Spanish <https://weblate.publishpress.com/projects/"
+"publishpress-future/post-expirator/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 3.7\n"
+"X-Generator: Weblate 5.14.3\n"
 
 #. Plugin Name of the plugin
 #. Plugin Name of the plugin
-#: post-expirator.php
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:120
-#: src/Modules/Workflows/Models/StepTypesModel.php:99, fuzzy
-msgid "PublishPress Future"
-msgstr "PublishPress Future"
+#: post-expirator.php:4
+#, fuzzy
+#| msgid "PublishPress Future"
+msgid "PublishPress Future Free"
+msgstr "PublishPress Future Free"
 
 #. Plugin URI of the plugin
-#: post-expirator.php
+#: post-expirator.php:5
 msgid "http://wordpress.org/extend/plugins/post-expirator/"
 msgstr "https://es.wordpress.org/plugins/post-expirator/"
 
 #. Description of the plugin
-#: post-expirator.php
+#: post-expirator.php:6
 msgid ""
 "PublishPress Future allows you to schedule automatic changes to posts, pages "
 "and other content types."
@@ -39,12 +40,12 @@ msgstr ""
 "páginas y otros tipos de contenido."
 
 #. Author of the plugin
-#: post-expirator.php, fuzzy
+#: post-expirator.php:7
 msgid "PublishPress"
 msgstr "PublishPress"
 
 #. Author URI of the plugin
-#: post-expirator.php
+#: post-expirator.php:9
 msgid "http://publishpress.com"
 msgstr "https://publishpress.com"
 
@@ -134,15 +135,15 @@ msgstr "Contacto"
 msgid "No taxonomies found"
 msgstr "No se han encontrado taxonomías"
 
-#: services.php:150 src/Modules/Settings/SettingsFacade.php:122
+#: services.php:151 src/Modules/Settings/SettingsFacade.php:122
 msgid "l F jS, Y"
 msgstr "l, j F Y"
 
-#: services.php:154 src/Modules/Settings/SettingsFacade.php:123, fuzzy
+#: services.php:155 src/Modules/Settings/SettingsFacade.php:123
 msgid "g:ia"
 msgstr "g:ia"
 
-#: services.php:155 src/Modules/Settings/SettingsFacade.php:124
+#: services.php:156 src/Modules/Settings/SettingsFacade.php:124
 msgid "Post expires at EXPIRATIONTIME on ACTIONDATE"
 msgstr "La entrada caduca en EXPIRATIONTIME el ACTIONDATE"
 
@@ -489,7 +490,12 @@ msgstr "Ninguna acción Future"
 msgid "Invalid date time offset."
 msgstr "Desplazamiento de fecha y hora no válido."
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:121, fuzzy
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:120
+#: src/Modules/Workflows/Models/StepTypesModel.php:99
+msgid "PublishPress Future"
+msgstr "PublishPress Future"
+
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:121
 msgid "Future"
 msgstr "Future"
 
@@ -655,7 +661,7 @@ msgstr "Fecha calculada"
 #: src/Modules/Expirator/Controllers/SettingsController.php:360
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:130
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:120
-#: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:11, fuzzy
+#: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:11
 msgid "Error"
 msgstr "Error"
 
@@ -919,7 +925,7 @@ msgstr "Caducidad de la entrada completada «%s»"
 
 #. translators: 1: is the blog name, 2: the email subject
 #: src/Modules/Expirator/Models/ExpirablePostModel.php:666
-#, fuzzy, php-format
+#, php-format
 msgid "[%1$s] %2$s"
 msgstr "[%1$s] %2$s"
 
@@ -1080,7 +1086,7 @@ msgstr "Ejecuta la acción ahora"
 
 #. translators: %1$s: post type label, %2$d: post ID, %3$s: post link tag start, %4$s: post title, %5$s: post link tag end
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:524
-#, fuzzy, php-format
+#, php-format
 msgid "%1$s: [%2$d] %3$s%4$s%5$s"
 msgstr "%1$s: [%2$d] %3$s%4$s%5$s"
 
@@ -1117,7 +1123,7 @@ msgid "Scheduled date: "
 msgstr "Fecha programada: "
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:713
-#: src/Views/menu-diagnostics.php:235
+#: src/Views/menu-diagnostics.php:241
 msgid "Date"
 msgstr "Fecha"
 
@@ -1148,7 +1154,7 @@ msgstr " (hace %s)"
 
 #. translators: %s is the date interval in human readable format in the present or future
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:771
-#, fuzzy, php-format
+#, php-format
 msgid " (%s)"
 msgstr " (%s)"
 
@@ -1570,7 +1576,7 @@ msgstr "%1$s por %2$d veces"
 
 #. translators: %1$s is the executed times, %2$d is the total repeat times
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:528
-#, fuzzy, php-format
+#, php-format
 msgid "[%1$s/%2$d]"
 msgstr "[%1$s/%2$d]"
 
@@ -1685,7 +1691,7 @@ msgstr ""
 msgid "Triggers"
 msgstr "Disparadores"
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:280, fuzzy
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:280
 msgid "—"
 msgstr "—"
 
@@ -1812,7 +1818,7 @@ msgstr "Sí"
 
 #: src/Modules/Workflows/Domain/Engine/VariableResolvers/BooleanResolver.php:31
 #: src/Modules/Workflows/Domain/Engine/VariableResolvers/BooleanResolver.php:77
-#: assets/jsx/workflows-list/cancel-action/index.jsx:75, fuzzy
+#: assets/jsx/workflows-list/cancel-action/index.jsx:75
 msgid "No"
 msgstr "No"
 
@@ -1865,7 +1871,7 @@ msgstr "Elige la entrada a la que se añadirá su meta."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:85
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeletePostMeta.php:85
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePostMeta.php:85, fuzzy
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePostMeta.php:85
 msgid "Meta"
 msgstr "Meta"
 
@@ -2734,7 +2740,7 @@ msgstr "Datos de salida"
 msgid "Label"
 msgstr "Etiqueta"
 
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendRay.php:83, fuzzy
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendRay.php:83
 msgid "Color"
 msgstr "Color"
 
@@ -3678,7 +3684,7 @@ msgid "Messages"
 msgstr "Mensajes"
 
 #: src/Modules/Workflows/Models/WorkflowModel.php:476
-#, fuzzy, php-format
+#, php-format
 msgid "%s #2"
 msgstr "%s #2"
 
@@ -3820,8 +3826,8 @@ msgid ""
 "Displays only the icon and date/time in the Future Action column on the "
 "\"Posts\" screen."
 msgstr ""
-"Muestra solo el el icono y la fecha/hora en la columna «Acción de Future» en "
-"la pantalla «Entradas»."
+"Muestra solo el icono y la fecha/hora en la columna «Acción de Future» en la "
+"pantalla «Entradas»."
 
 #: src/Views/menu-admin.php:118
 msgid "Future Actions Editor"
@@ -3845,7 +3851,7 @@ msgstr "Heredar desde los ajustes del sitio"
 msgid "24 hours"
 msgstr "24 horas"
 
-#: src/Views/menu-admin.php:162, fuzzy
+#: src/Views/menu-admin.php:162
 msgid "AM/PM"
 msgstr "AM/PM"
 
@@ -3986,7 +3992,7 @@ msgstr "Herramientas y diagnósticos avanzados"
 msgid "WP-Cron Status Check"
 msgstr "Comprobación del estado de WP-Cron"
 
-#: src/Views/menu-diagnostics.php:61 src/Views/menu-diagnostics.php:74
+#: src/Views/menu-diagnostics.php:61 src/Views/menu-diagnostics.php:80
 msgid "Passed"
 msgstr "Aprobado"
 
@@ -3998,57 +4004,63 @@ msgstr "WP Cron desactivado"
 msgid "Database Schema Check"
 msgstr "Comprobación del esquema de la base de datos"
 
-#: src/Views/menu-diagnostics.php:78
+#: src/Views/menu-diagnostics.php:73
+msgid ""
+"After activating the plugin, tables are updated automatically on the next "
+"page load. Use the button below if you still see schema errors."
+msgstr ""
+
+#: src/Views/menu-diagnostics.php:84
 msgid "Error found on the database schema:"
 msgid_plural "Errors found on the database schema:"
 msgstr[0] "Se ha detectado un error en el esquema de la base de datos:"
 msgstr[1] "Se han detectado unos errores en el esquema de la base de datos:"
 
-#: src/Views/menu-diagnostics.php:109
+#: src/Views/menu-diagnostics.php:115
 msgid "Try to Fix Database"
 msgstr "Intentar corregir la base de datos"
 
-#: src/Views/menu-diagnostics.php:118
+#: src/Views/menu-diagnostics.php:124
 msgid "Debug Logging"
 msgstr "Registro de depuración"
 
-#: src/Views/menu-diagnostics.php:122 src/Views/menu-display.php:139
+#: src/Views/menu-diagnostics.php:128 src/Views/menu-display.php:139
 #: src/Views/menu-notifications.php:67 src/Views/menu-notifications.php:95
 #: src/Views/menu-notifications.php:150
 msgid "Enabled"
 msgstr "Activado"
 
-#: src/Views/menu-diagnostics.php:125
+#: src/Views/menu-diagnostics.php:131
 msgid "Disable Debugging"
 msgstr "Desactivar depuración"
 
-#: src/Views/menu-diagnostics.php:131
+#: src/Views/menu-diagnostics.php:137
 msgid "Purge Debug Log"
 msgstr "Purgar el registro de depuración"
 
-#: src/Views/menu-diagnostics.php:139
+#: src/Views/menu-diagnostics.php:145
 msgid "View Debug Logs"
 msgstr "Ver registro de depuración"
 
-#: src/Views/menu-diagnostics.php:142 src/Views/menu-display.php:150
+#: src/Views/menu-diagnostics.php:148 src/Views/menu-display.php:150
 #: src/Views/menu-notifications.php:75 src/Views/menu-notifications.php:104
 #: src/Views/menu-notifications.php:158
 msgid "Disabled"
 msgstr "Desactivado"
 
-#: src/Views/menu-diagnostics.php:145
+#: src/Views/menu-diagnostics.php:151
 msgid "Enable Debugging"
 msgstr "Activar depuración"
 
-#: src/Views/menu-diagnostics.php:154
+#: src/Views/menu-diagnostics.php:160
 msgid "Spatie Ray Debug"
 msgstr "Depuración de Spatie Ray"
 
-#: src/Views/menu-diagnostics.php:158
+#: src/Views/menu-diagnostics.php:164
 msgid "Spatie Ray Detected"
 msgstr "Spatie Ray detectado"
 
-#: src/Views/menu-diagnostics.php:160
+#: src/Views/menu-diagnostics.php:166
 msgid ""
 "Spatie Ray Debug is detected. The \"Send to Ray\" workflow step will be "
 "available in the workflow editor."
@@ -4056,11 +4068,11 @@ msgstr ""
 "Se ha detectado la depuración de Spatie Ray. El paso del flujo de trabajo "
 "«Enviar a Ray» estará disponible en el editor de flujos de trabajo."
 
-#: src/Views/menu-diagnostics.php:164
+#: src/Views/menu-diagnostics.php:170
 msgid "Spatie Ray Not Detected"
 msgstr "Spatie Ray no detectado"
 
-#: src/Views/menu-diagnostics.php:166
+#: src/Views/menu-diagnostics.php:172
 msgid ""
 "Spatie Ray Debug is not detected. This is not an error, but the \"Send to "
 "Ray\" workflow step will not be available in the workflow editor."
@@ -4069,19 +4081,19 @@ msgstr ""
 "pero el paso del flujo de trabajo «Enviar a Ray» no estará disponible en el "
 "editor de flujos de trabajo."
 
-#: src/Views/menu-diagnostics.php:169
+#: src/Views/menu-diagnostics.php:175
 msgid "Learn more about Spatie Ray"
 msgstr "Leer más sobre Spatie Ray"
 
-#: src/Views/menu-diagnostics.php:178
+#: src/Views/menu-diagnostics.php:184
 msgid "Migrate Legacy Future Actions"
 msgstr "Migrar las acciones heredadas de Future"
 
-#: src/Views/menu-diagnostics.php:182
+#: src/Views/menu-diagnostics.php:188
 msgid "Run Migration"
 msgstr "Ejecutar migración"
 
-#: src/Views/menu-diagnostics.php:185
+#: src/Views/menu-diagnostics.php:191
 msgid ""
 "Migrate legacy future actions from WP Cron to the new Action Scheduler. This "
 "will run in the background and may take a while."
@@ -4089,15 +4101,15 @@ msgstr ""
 "Migrar las acciones heredadas de Future de WP Cron al nuevo Programador de "
 "acciones. Esto se ejecutará en segundo plano y puede tomar un tiempo."
 
-#: src/Views/menu-diagnostics.php:195
+#: src/Views/menu-diagnostics.php:201
 msgid "Restore Legacy Action Arguments"
 msgstr "Restaura los argumentos de acción heredados"
 
-#: src/Views/menu-diagnostics.php:199
+#: src/Views/menu-diagnostics.php:205
 msgid "Run Data Restoration"
 msgstr "Ejecutar la restauración de datos"
 
-#: src/Views/menu-diagnostics.php:202
+#: src/Views/menu-diagnostics.php:208
 msgid ""
 "Restore legacy action arguments as Post Meta. This is useful if you have "
 "issues with 3rd party plugins that read that data. This will run in the "
@@ -4107,11 +4119,11 @@ msgstr ""
 "tienes problemas con plugins de terceros que leen esos datos. Esto se "
 "ejecutará en segundo plano y puede tomar un tiempo."
 
-#: src/Views/menu-diagnostics.php:215
+#: src/Views/menu-diagnostics.php:221
 msgid "Legacy Cron Schedule"
 msgstr "Programación de Cron heredado"
 
-#: src/Views/menu-diagnostics.php:223
+#: src/Views/menu-diagnostics.php:229
 msgid ""
 "The below table will show all currently scheduled cron events for the plugin "
 "with the next run time."
@@ -4119,15 +4131,15 @@ msgstr ""
 "La siguiente tabla mostrará todos los eventos cron actualmente programados "
 "para el plugin con la próxima hora de ejecución."
 
-#: src/Views/menu-diagnostics.php:238
+#: src/Views/menu-diagnostics.php:244
 msgid "Event"
 msgstr "Evento"
 
-#: src/Views/menu-diagnostics.php:241
+#: src/Views/menu-diagnostics.php:247
 msgid "Posts and expiration settings"
 msgstr "Ajustes de entradas y caducidad"
 
-#: src/Views/menu-diagnostics.php:296
+#: src/Views/menu-diagnostics.php:302
 msgid "This is a legacy feature and will be removed in a future version."
 msgstr ""
 "Se trata de una característica heredada que se eliminará en una versión "
@@ -4225,7 +4237,7 @@ msgstr ""
 msgid "Example: "
 msgstr "Ejemplo: "
 
-#: src/Views/menu-display.php:243, fuzzy
+#: src/Views/menu-display.php:243
 msgid "Shortcode"
 msgstr "Shortcode"
 
@@ -4413,7 +4425,7 @@ msgstr "Tipos de contenido"
 
 #: src/Views/tabs-future-actions.php:25
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:28
-#: assets/jsx/backup-panel/components/tabs-content/import.jsx:108, fuzzy
+#: assets/jsx/backup-panel/components/tabs-content/import.jsx:108
 msgid "General"
 msgstr "General"
 
@@ -4583,12 +4595,12 @@ msgstr "Booleano"
 msgid "Object"
 msgstr "Asunto"
 
-#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:33, fuzzy
+#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:33
 msgid "Array"
 msgstr "Array"
 
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:57
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:50, fuzzy
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:50
 msgid "null"
 msgstr "null"
 
@@ -4659,7 +4671,7 @@ msgstr ""
 msgid "Duplicate Rule"
 msgstr "Duplicar regla"
 
-#: assets/jsx/workflow-editor/components/data-fields/conditional/components/not-toggle.jsx:30, fuzzy
+#: assets/jsx/workflow-editor/components/data-fields/conditional/components/not-toggle.jsx:30
 msgid "Not"
 msgstr "Not"
 
@@ -4753,7 +4765,7 @@ msgstr ""
 msgid "Offset"
 msgstr "Desfase"
 
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:181, fuzzy
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:181
 msgid "Error: "
 msgstr "Error: "
 
@@ -4836,7 +4848,7 @@ msgstr "Selecciona una variable de la siguiente lista."
 msgid "Type your expression here or use the variables below."
 msgstr "Escribe aquí tu expresión o utiliza las variables de abajo."
 
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:212, fuzzy
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:212
 msgid "Variables"
 msgstr "Variables"
 
@@ -4856,7 +4868,7 @@ msgstr "Pasa el cursor por encima de una variable para ver su descripción."
 msgid "The name of the term."
 msgstr "El nombre del término."
 
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:13, fuzzy
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:13
 msgid "Slug"
 msgstr "Slug"
 
@@ -4897,7 +4909,7 @@ msgstr ""
 "Esta opción se utiliza para conectarse a otro paso y no se puede cambiar su "
 "nombre hasta que se elimine la conexión."
 
-#: assets/jsx/workflow-editor/components/data-fields/modal-footer.jsx:11, fuzzy
+#: assets/jsx/workflow-editor/components/data-fields/modal-footer.jsx:11
 msgid "OK"
 msgstr "OK"
 
@@ -5185,7 +5197,7 @@ msgid "Edit description"
 msgstr "Editar descripción"
 
 #: assets/jsx/workflow-editor/components/inspector-card/index.jsx:116
-#: assets/jsx/workflow-editor/components/secondary-sidebar/node-card.jsx:16, fuzzy
+#: assets/jsx/workflow-editor/components/secondary-sidebar/node-card.jsx:16
 msgid "Pro"
 msgstr "Pro"
 
@@ -5394,7 +5406,7 @@ msgstr "%d conexiones seleccionadas"
 
 #: assets/jsx/workflow-editor/components/node-inspector/index.jsx:133
 msgid "Multiple connections selected."
-msgstr "Múltiples conexiones seleccionadas"
+msgstr "Múltiples conexiones seleccionadas."
 
 #: assets/jsx/workflow-editor/components/node-inspector/index.jsx:165
 msgid "Connection"
@@ -5446,7 +5458,7 @@ msgstr "Este paso recibe el siguiente paso de variables de ámbito:"
 
 #: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:140
 msgid "This step does not have any step scoped variables."
-msgstr "Este paso no tiene ningún paso de variables de ámbito"
+msgstr "Este paso no tiene ningún paso de variables de ámbito."
 
 #: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:145
 msgid "Global Variables"
