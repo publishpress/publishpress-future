@@ -17,7 +17,6 @@ msgstr ""
 "Language: id-ID\n"
 
 #: post-expirator.php:4
-#: post-expirator.php:4
 #: post-expirator.php:4, fuzzy
 #. Plugin Name of the plugin
 msgid "PublishPress Future Free"
