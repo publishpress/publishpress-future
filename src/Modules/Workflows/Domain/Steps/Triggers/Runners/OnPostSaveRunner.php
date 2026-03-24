@@ -14,19 +14,9 @@ use PublishPress\Future\Framework\Logger\LoggerInterface;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnPostSave;
 use PublishPress\Future\Modules\Workflows\Interfaces\ExecutionContextInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\WorkflowExecutionSafeguardInterface;
-use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\Traits\BlockEditorRequestDetector;
 
 class OnPostSaveRunner implements TriggerRunnerInterface
 {
-    use BlockEditorRequestDetector;
-
-    /**
-     * Transient key for block editor save request. Format: pp_future_block_editor_save_request_{post_id}_{workflow_id}.
-     *
-     * @var string
-     */
-    private const BLOCK_EDITOR_REQUEST_TRANSIENT_KEY = 'pp_future_block_editor_save_request_%d_%d';
-
     /**
      * @var HookableInterface
      */
@@ -116,19 +106,7 @@ class OnPostSaveRunner implements TriggerRunnerInterface
 
     public function onAfterInsertPostCallback($postId, $post, $update)
     {
-        $transientKey = sprintf(
-            self::BLOCK_EDITOR_REQUEST_TRANSIENT_KEY,
-            $postId,
-            $this->workflowId
-        );
-
-        if ($this->shouldSkipDuplicateBlockEditorRequest($transientKey)) {
-            $this->logger->debugWithArgs(
-                'Trigger skipped: Duplicate block editor request detected for step %s and post #%d.',
-                $this->stepSlug,
-                $postId
-            );
-
+        if ($post->post_type === 'revision') {
             return;
         }
 
