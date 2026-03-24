@@ -390,7 +390,7 @@
             "rm -f dev-workspace/.cache/.last_image_update_check",
             "bash dev-workspace/scripts/services-pull-images.sh"
         ],
-        "translate": "dev-workspace/run vendor/bin/publishpress-translate --languages=de_DE,fi,fil,id_ID,ja,ko_KR,nl_NL,ru_RU,yo",
+        "translate": "dev-workspace/run vendor/bin/publishpress-translate --languages=de_DE,fi,fil,id_ID,ja,ko_KR,nl_NL,ru_RU,yor",
         "translate:dry-run": "dev-workspace/run vendor/bin/publishpress-translate --dry-run",
         "translate:download": "dev-workspace/run vendor/bin/publishpress-translate --download",
         "translate:upload": "dev-workspace/run vendor/bin/publishpress-translate --upload",
