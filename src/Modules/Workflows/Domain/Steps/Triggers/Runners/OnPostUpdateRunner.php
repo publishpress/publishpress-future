@@ -14,14 +14,9 @@ use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnPo
 use PublishPress\Future\Modules\Workflows\Interfaces\ExecutionContextInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\PostCacheInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\WorkflowExecutionSafeguardInterface;
-use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\Traits\BlockEditorRequestDetector;
 
 class OnPostUpdateRunner implements TriggerRunnerInterface
 {
-    use BlockEditorRequestDetector;
-
-    private const BLOCK_EDITOR_REQUEST_TRANSIENT_KEY = 'pp_future_block_editor_update_request_%d_%d';
-
     /**
      * @var HookableInterface
      */
@@ -128,22 +123,16 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
      */
     public function onAfterInsertPostCallback($postId, $post, $update)
     {
+        if ($post->post_type === 'revision') {
+            return;
+        }
+
         if (! $update) {
             $this->logger->debugWithArgs(
                 'Trigger skipped because post #%d was saved but not updated.',
                 $postId
             );
 
-            return;
-        }
-
-        $transientKey = sprintf(
-            self::BLOCK_EDITOR_REQUEST_TRANSIENT_KEY,
-            $postId,
-            $this->workflowId
-        );
-
-        if ($this->shouldSkipDuplicateBlockEditorRequest($transientKey)) {
             return;
         }
 
