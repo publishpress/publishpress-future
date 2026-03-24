@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Changed: Workflow debug log messages rewritten for clarity and consistency (format, parentheses for details, [Workflow] prefix).
 - Changed: Replace UUID generation with a more secure method in the workflow's execution ID, also incresing performance on huge sites (Issue #1579).
 - Deprecated: StepProcessorInterface::prepareLogMessage() in favor of direct logger sprintf methods.
+- Fixed: Improved performance by eliminating repeated SHOW TABLES LIKE queries (Issue #1597).
 - Fixed: Debug log enable/disable in Diagnostics and Tools tab now reflects the correct state immediately without needing a second page refresh.
 - Fixed: Improved reliability of the "Post is Published" and "Post is Updated" triggers by fixing how post metadata is handled on block editor and when ACF is enabled (Issue #1312).
 - Fixed: Fixed post saved related events not triggering when revisions is saved (Issue #1582).
