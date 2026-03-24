@@ -1,5 +1,5 @@
 # Copyright (C) 2026 PublishPress
-# This file is distributed under the same license as the PublishPress Future plugin.
+# This file is distributed under the same license as the PublishPress Future Free plugin.
 msgid ""
 msgstr ""
 "Project-Id-Version: PublishPress Future 4.10.0\n"
@@ -10,25 +10,24 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-02-27T16:10:19+00:00\n"
-"PO-Revision-Date: 2026-03-16 21:27+0000\n"
+"PO-Revision-Date: 2026-03-24 19:13+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "Language: id-ID\n"
 
-#: post-expirator.php
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:120
-#: src/Modules/Workflows/Models/StepTypesModel.php:99, fuzzy
+#: post-expirator.php:4
+#: post-expirator.php:4, fuzzy
 #. Plugin Name of the plugin
-msgid "PublishPress Future"
-msgstr "PublishPress Future"
+msgid "PublishPress Future Free"
+msgstr "PublishPress Future Free"
 
-#: post-expirator.php, fuzzy
+#: post-expirator.php:5, fuzzy
 #. Plugin URI of the plugin
 msgid "http://wordpress.org/extend/plugins/post-expirator/"
 msgstr "http://wordpress.org/extend/plugins/post-expirator/"
 
-#: post-expirator.php
+#: post-expirator.php:6
 #. Description of the plugin
 msgid ""
 "PublishPress Future allows you to schedule automatic changes to posts, "
@@ -37,12 +36,12 @@ msgstr ""
 "PublishPress Future memungkinkan Anda untuk menjadwalkan perubahan otomatis "
 "pada pos, halaman, dan jenis konten lainnya."
 
-#: post-expirator.php, fuzzy
+#: post-expirator.php:7, fuzzy
 #. Author of the plugin
 msgid "PublishPress"
 msgstr "PublishPress"
 
-#: post-expirator.php, fuzzy
+#: post-expirator.php:9, fuzzy
 #. Author URI of the plugin
 msgid "http://publishpress.com"
 msgstr "http://publishpress.com"
@@ -134,17 +133,17 @@ msgstr "Hubungi"
 msgid "No taxonomies found"
 msgstr "Tidak ada taksonomi yang ditemukan"
 
-#: services.php:150
+#: services.php:151
 #: src/Modules/Settings/SettingsFacade.php:122, fuzzy
 msgid "l F jS, Y"
 msgstr "l F jS, Y"
 
-#: services.php:154
+#: services.php:155
 #: src/Modules/Settings/SettingsFacade.php:123, fuzzy
 msgid "g:ia"
 msgstr "g:ia"
 
-#: services.php:155
+#: services.php:156
 #: src/Modules/Settings/SettingsFacade.php:124
 msgid "Post expires at EXPIRATIONTIME on ACTIONDATE"
 msgstr "Pos akan kedaluwarsa pada EXPIRATIONTIME di ACTIONDATE"
@@ -483,6 +482,11 @@ msgstr "Tidak ada tindakan masa depan"
 #: src/Modules/Expirator/Controllers/RestAPIController.php:249
 msgid "Invalid date time offset."
 msgstr "Offset tanggal waktu tidak valid."
+
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:120
+#: src/Modules/Workflows/Models/StepTypesModel.php:99, fuzzy
+msgid "PublishPress Future"
+msgstr "PublishPress Future"
 
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:121
 msgid "Future"
@@ -1097,7 +1101,7 @@ msgid "Scheduled date: "
 msgstr "Tanggal yang dijadwalkan: "
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:713
-#: src/Views/menu-diagnostics.php:235
+#: src/Views/menu-diagnostics.php:241
 msgid "Date"
 msgstr "Tanggal"
 
@@ -3916,7 +3920,7 @@ msgid "WP-Cron Status Check"
 msgstr "Pemeriksaan Status WP-Cron"
 
 #: src/Views/menu-diagnostics.php:61
-#: src/Views/menu-diagnostics.php:74
+#: src/Views/menu-diagnostics.php:80
 msgid "Passed"
 msgstr "Lulus"
 
@@ -3928,22 +3932,30 @@ msgstr "WP Cron Dinonaktifkan"
 msgid "Database Schema Check"
 msgstr "Pemeriksaan Skema Database"
 
-#: src/Views/menu-diagnostics.php:78
+#: src/Views/menu-diagnostics.php:73
+msgid ""
+"After activating the plugin, tables are updated automatically on the next "
+"page load. Use the button below if you still see schema errors."
+msgstr ""
+"Setelah mengaktifkan plugin, tabel akan diperbarui secara otomatis pada "
+"pemuatan halaman berikutnya. Gunakan tombol di bawah jika Anda masih "
+"melihat kesalahan skema."
+
+#: src/Views/menu-diagnostics.php:84
 msgid "Error found on the database schema:"
 msgid_plural "Errors found on the database schema:"
-msgstr[0] ""
-"Kesalahan ditemukan pada skema database:|Kesalahan ditemukan pada skema "
-"database:"
+msgstr[0] "Kesalahan ditemukan pada skema database:"
+msgstr[1] "Kesalahan ditemukan pada skema database:"
 
-#: src/Views/menu-diagnostics.php:109
+#: src/Views/menu-diagnostics.php:115
 msgid "Try to Fix Database"
 msgstr "Coba Perbaiki Database"
 
-#: src/Views/menu-diagnostics.php:118
+#: src/Views/menu-diagnostics.php:124
 msgid "Debug Logging"
 msgstr "Pencatatan Debug"
 
-#: src/Views/menu-diagnostics.php:122
+#: src/Views/menu-diagnostics.php:128
 #: src/Views/menu-display.php:139
 #: src/Views/menu-notifications.php:67
 #: src/Views/menu-notifications.php:95
@@ -3951,19 +3963,19 @@ msgstr "Pencatatan Debug"
 msgid "Enabled"
 msgstr "Diaktifkan"
 
-#: src/Views/menu-diagnostics.php:125
+#: src/Views/menu-diagnostics.php:131
 msgid "Disable Debugging"
 msgstr "Nonaktifkan Debugging"
 
-#: src/Views/menu-diagnostics.php:131
+#: src/Views/menu-diagnostics.php:137
 msgid "Purge Debug Log"
 msgstr "Bersihkan Log Debug"
 
-#: src/Views/menu-diagnostics.php:139
+#: src/Views/menu-diagnostics.php:145
 msgid "View Debug Logs"
 msgstr "Lihat Log Debug"
 
-#: src/Views/menu-diagnostics.php:142
+#: src/Views/menu-diagnostics.php:148
 #: src/Views/menu-display.php:150
 #: src/Views/menu-notifications.php:75
 #: src/Views/menu-notifications.php:104
@@ -3971,19 +3983,19 @@ msgstr "Lihat Log Debug"
 msgid "Disabled"
 msgstr "Dinonaktifkan"
 
-#: src/Views/menu-diagnostics.php:145
+#: src/Views/menu-diagnostics.php:151
 msgid "Enable Debugging"
 msgstr "Aktifkan Debugging"
 
-#: src/Views/menu-diagnostics.php:154
+#: src/Views/menu-diagnostics.php:160
 msgid "Spatie Ray Debug"
 msgstr "Debug Spatie Ray"
 
-#: src/Views/menu-diagnostics.php:158
+#: src/Views/menu-diagnostics.php:164
 msgid "Spatie Ray Detected"
 msgstr "Spatie Ray Terdeteksi"
 
-#: src/Views/menu-diagnostics.php:160
+#: src/Views/menu-diagnostics.php:166
 msgid ""
 "Spatie Ray Debug is detected. The \"Send to Ray\" workflow step will be "
 "available in the workflow editor."
@@ -3991,11 +4003,11 @@ msgstr ""
 "Debug Spatie Ray terdeteksi. Langkah alur kerja \"Kirim ke Ray\" akan "
 "tersedia di editor alur kerja."
 
-#: src/Views/menu-diagnostics.php:164
+#: src/Views/menu-diagnostics.php:170
 msgid "Spatie Ray Not Detected"
 msgstr "Spatie Ray Tidak Terdeteksi"
 
-#: src/Views/menu-diagnostics.php:166
+#: src/Views/menu-diagnostics.php:172
 msgid ""
 "Spatie Ray Debug is not detected. This is not an error, but the \"Send to "
 "Ray\" workflow step will not be available in the workflow editor."
@@ -4003,19 +4015,19 @@ msgstr ""
 "Debug Spatie Ray tidak terdeteksi. Ini bukan kesalahan, tetapi langkah alur "
 "kerja \"Kirim ke Ray\" tidak akan tersedia di editor alur kerja."
 
-#: src/Views/menu-diagnostics.php:169
+#: src/Views/menu-diagnostics.php:175
 msgid "Learn more about Spatie Ray"
 msgstr "Pelajari lebih lanjut tentang Spatie Ray"
 
-#: src/Views/menu-diagnostics.php:178
+#: src/Views/menu-diagnostics.php:184
 msgid "Migrate Legacy Future Actions"
 msgstr "Migrasi Tindakan Masa Depan Lama"
 
-#: src/Views/menu-diagnostics.php:182
+#: src/Views/menu-diagnostics.php:188
 msgid "Run Migration"
 msgstr "Jalankan Migrasi"
 
-#: src/Views/menu-diagnostics.php:185
+#: src/Views/menu-diagnostics.php:191
 msgid ""
 "Migrate legacy future actions from WP Cron to the new Action Scheduler. "
 "This will run in the background and may take a while."
@@ -4023,15 +4035,15 @@ msgstr ""
 "Migrasi tindakan masa depan lama dari WP Cron ke Penjadwal Tindakan baru. "
 "Ini akan berjalan di latar belakang dan mungkin memerlukan waktu."
 
-#: src/Views/menu-diagnostics.php:195
+#: src/Views/menu-diagnostics.php:201
 msgid "Restore Legacy Action Arguments"
 msgstr "Pulihkan Argumen Tindakan Lama"
 
-#: src/Views/menu-diagnostics.php:199
+#: src/Views/menu-diagnostics.php:205
 msgid "Run Data Restoration"
 msgstr "Jalankan Pemulihan Data"
 
-#: src/Views/menu-diagnostics.php:202
+#: src/Views/menu-diagnostics.php:208
 msgid ""
 "Restore legacy action arguments as Post Meta. This is useful if you have "
 "issues with 3rd party plugins that read that data. This will run in the "
@@ -4041,11 +4053,11 @@ msgstr ""
 "memiliki masalah dengan plugin pihak ketiga yang membaca data tersebut. Ini "
 "akan berjalan di latar belakang dan mungkin memerlukan waktu."
 
-#: src/Views/menu-diagnostics.php:215
+#: src/Views/menu-diagnostics.php:221
 msgid "Legacy Cron Schedule"
 msgstr "Jadwal Cron Lama"
 
-#: src/Views/menu-diagnostics.php:223
+#: src/Views/menu-diagnostics.php:229
 msgid ""
 "The below table will show all currently scheduled cron events for the "
 "plugin with the next run time."
@@ -4053,15 +4065,15 @@ msgstr ""
 "Tabel di bawah ini akan menunjukkan semua acara cron yang dijadwalkan saat "
 "ini untuk plugin dengan waktu jalankan berikutnya."
 
-#: src/Views/menu-diagnostics.php:238
+#: src/Views/menu-diagnostics.php:244
 msgid "Event"
 msgstr "Acara"
 
-#: src/Views/menu-diagnostics.php:241
+#: src/Views/menu-diagnostics.php:247
 msgid "Posts and expiration settings"
 msgstr "Pengaturan pos dan kedaluwarsa"
 
-#: src/Views/menu-diagnostics.php:296
+#: src/Views/menu-diagnostics.php:302
 msgid "This is a legacy feature and will be removed in a future version."
 msgstr "Ini adalah fitur lama dan akan dihapus di versi mendatang."
 

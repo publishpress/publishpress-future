@@ -1,5 +1,5 @@
 # Copyright (C) 2026 PublishPress
-# This file is distributed under the same license as the PublishPress Future plugin.
+# This file is distributed under the same license as the PublishPress Future Free plugin.
 msgid ""
 msgstr ""
 "Project-Id-Version: PublishPress Future 4.10.0\n"
@@ -10,37 +10,35 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-02-27T16:10:19+00:00\n"
-"PO-Revision-Date: 2026-03-16 21:27+0000\n"
+"PO-Revision-Date: 2026-03-24 19:13+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
+"Language: ko_KR\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"Language: ko-KR\n"
 
-#: post-expirator.php
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:120
-#: src/Modules/Workflows/Models/StepTypesModel.php:99
+#: post-expirator.php:4
 #. Plugin Name of the plugin
-msgid "PublishPress Future"
-msgstr "퍼블리시프레스 미래"
+msgid "PublishPress Future Free"
+msgstr "퍼블리시프레스 퓨처 무료"
 
-#: post-expirator.php, fuzzy
+#: post-expirator.php:5, fuzzy
 #. Plugin URI of the plugin
 msgid "http://wordpress.org/extend/plugins/post-expirator/"
 msgstr "http://wordpress.org/extend/plugins/post-expirator/"
 
-#: post-expirator.php
+#: post-expirator.php:6
 #. Description of the plugin
 msgid ""
 "PublishPress Future allows you to schedule automatic changes to posts, "
 "pages and other content types."
 msgstr "퍼블리시프레스 미래는 게시물, 페이지 및 기타 콘텐츠 유형에 대한 자동 변경 사항을 예약할 수 있게 해줍니다."
 
-#: post-expirator.php
+#: post-expirator.php:7
 #. Author of the plugin
 msgid "PublishPress"
 msgstr "퍼블리시프레스"
 
-#: post-expirator.php, fuzzy
+#: post-expirator.php:9, fuzzy
 #. Author URI of the plugin
 msgid "http://publishpress.com"
 msgstr "http://publishpress.com"
@@ -126,17 +124,17 @@ msgstr "연락하기"
 msgid "No taxonomies found"
 msgstr "발견된 분류가 없습니다"
 
-#: services.php:150
+#: services.php:151
 #: src/Modules/Settings/SettingsFacade.php:122, fuzzy
 msgid "l F jS, Y"
 msgstr "l F jS, Y"
 
-#: services.php:154
+#: services.php:155
 #: src/Modules/Settings/SettingsFacade.php:123, fuzzy
 msgid "g:ia"
 msgstr "g:ia"
 
-#: services.php:155
+#: services.php:156
 #: src/Modules/Settings/SettingsFacade.php:124
 msgid "Post expires at EXPIRATIONTIME on ACTIONDATE"
 msgstr "게시물이 ACTIONDATE의 EXPIRATIONTIME에 만료됩니다"
@@ -471,6 +469,11 @@ msgstr "향후 작업 없음"
 #: src/Modules/Expirator/Controllers/RestAPIController.php:249
 msgid "Invalid date time offset."
 msgstr "유효하지 않은 날짜 및 시간 오프셋입니다."
+
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:120
+#: src/Modules/Workflows/Models/StepTypesModel.php:99
+msgid "PublishPress Future"
+msgstr "퍼블리시프레스 미래"
 
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:121
 msgid "Future"
@@ -1062,7 +1065,7 @@ msgid "Scheduled date: "
 msgstr "예정된 날짜: "
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:713
-#: src/Views/menu-diagnostics.php:235
+#: src/Views/menu-diagnostics.php:241
 msgid "Date"
 msgstr "날짜"
 
@@ -3771,7 +3774,7 @@ msgid "WP-Cron Status Check"
 msgstr "WP-Cron 상태 확인"
 
 #: src/Views/menu-diagnostics.php:61
-#: src/Views/menu-diagnostics.php:74
+#: src/Views/menu-diagnostics.php:80
 msgid "Passed"
 msgstr "통과"
 
@@ -3783,20 +3786,26 @@ msgstr "WP Cron 비활성화됨"
 msgid "Database Schema Check"
 msgstr "데이터베이스 스키마 확인"
 
-#: src/Views/menu-diagnostics.php:78
+#: src/Views/menu-diagnostics.php:73
+msgid ""
+"After activating the plugin, tables are updated automatically on the next "
+"page load. Use the button below if you still see schema errors."
+msgstr "플러그인을 활성화한 후 다음 페이지 로드 시 테이블이 자동으로 업데이트됩니다. 여전히 스키마 오류가 보이는 경우 아래 버튼을 사용하세요."
+
+#: src/Views/menu-diagnostics.php:84
 msgid "Error found on the database schema:"
 msgid_plural "Errors found on the database schema:"
-msgstr[0] "데이터베이스 스키마에서 오류 발견:|데이터베이스 스키마에서 오류 발견:"
+msgstr[0] "데이터베이스 스키마에서 오류 발견:"
 
-#: src/Views/menu-diagnostics.php:109
+#: src/Views/menu-diagnostics.php:115
 msgid "Try to Fix Database"
 msgstr "데이터베이스 수정 시도"
 
-#: src/Views/menu-diagnostics.php:118
+#: src/Views/menu-diagnostics.php:124
 msgid "Debug Logging"
 msgstr "디버그 로깅"
 
-#: src/Views/menu-diagnostics.php:122
+#: src/Views/menu-diagnostics.php:128
 #: src/Views/menu-display.php:139
 #: src/Views/menu-notifications.php:67
 #: src/Views/menu-notifications.php:95
@@ -3804,19 +3813,19 @@ msgstr "디버그 로깅"
 msgid "Enabled"
 msgstr "활성화됨"
 
-#: src/Views/menu-diagnostics.php:125
+#: src/Views/menu-diagnostics.php:131
 msgid "Disable Debugging"
 msgstr "디버깅 비활성화"
 
-#: src/Views/menu-diagnostics.php:131
+#: src/Views/menu-diagnostics.php:137
 msgid "Purge Debug Log"
 msgstr "디버그 로그 삭제"
 
-#: src/Views/menu-diagnostics.php:139
+#: src/Views/menu-diagnostics.php:145
 msgid "View Debug Logs"
 msgstr "디버그 로그 보기"
 
-#: src/Views/menu-diagnostics.php:142
+#: src/Views/menu-diagnostics.php:148
 #: src/Views/menu-display.php:150
 #: src/Views/menu-notifications.php:75
 #: src/Views/menu-notifications.php:104
@@ -3824,29 +3833,29 @@ msgstr "디버그 로그 보기"
 msgid "Disabled"
 msgstr "비활성화됨"
 
-#: src/Views/menu-diagnostics.php:145
+#: src/Views/menu-diagnostics.php:151
 msgid "Enable Debugging"
 msgstr "디버깅 활성화"
 
-#: src/Views/menu-diagnostics.php:154
+#: src/Views/menu-diagnostics.php:160
 msgid "Spatie Ray Debug"
 msgstr "스파티 레이 디버그"
 
-#: src/Views/menu-diagnostics.php:158
+#: src/Views/menu-diagnostics.php:164
 msgid "Spatie Ray Detected"
 msgstr "스파티 레이 감지됨"
 
-#: src/Views/menu-diagnostics.php:160
+#: src/Views/menu-diagnostics.php:166
 msgid ""
 "Spatie Ray Debug is detected. The \"Send to Ray\" workflow step will be "
 "available in the workflow editor."
 msgstr "스파티 레이 디버그가 감지되었습니다. \"레이로 전송\" 작업 단계가 작업 흐름 편집기에서 사용 가능해질 것입니다."
 
-#: src/Views/menu-diagnostics.php:164
+#: src/Views/menu-diagnostics.php:170
 msgid "Spatie Ray Not Detected"
 msgstr "스파티 레이 미감지"
 
-#: src/Views/menu-diagnostics.php:166
+#: src/Views/menu-diagnostics.php:172
 msgid ""
 "Spatie Ray Debug is not detected. This is not an error, but the \"Send to "
 "Ray\" workflow step will not be available in the workflow editor."
@@ -3854,33 +3863,33 @@ msgstr ""
 "스파티 레이 디버그가 감지되지 않았습니다. 이는 오류가 아니며, \"레이로 전송\" 작업 단계가 작업 흐름 편집기에서 사용 불가능할 "
 "것입니다."
 
-#: src/Views/menu-diagnostics.php:169
+#: src/Views/menu-diagnostics.php:175
 msgid "Learn more about Spatie Ray"
 msgstr "스파티 레이에 대해 더 알아보기"
 
-#: src/Views/menu-diagnostics.php:178
+#: src/Views/menu-diagnostics.php:184
 msgid "Migrate Legacy Future Actions"
 msgstr "구형 미래 작업 마이그레이션"
 
-#: src/Views/menu-diagnostics.php:182
+#: src/Views/menu-diagnostics.php:188
 msgid "Run Migration"
 msgstr "마이그레이션 실행"
 
-#: src/Views/menu-diagnostics.php:185
+#: src/Views/menu-diagnostics.php:191
 msgid ""
 "Migrate legacy future actions from WP Cron to the new Action Scheduler. "
 "This will run in the background and may take a while."
 msgstr "WP 크론에서 새로운 작업 스케줄러로 구형 미래 작업을 마이그레이션합니다. 이는 백그라운드에서 실행되며 시간이 걸릴 수 있습니다."
 
-#: src/Views/menu-diagnostics.php:195
+#: src/Views/menu-diagnostics.php:201
 msgid "Restore Legacy Action Arguments"
 msgstr "구형 작업 인수 복원"
 
-#: src/Views/menu-diagnostics.php:199
+#: src/Views/menu-diagnostics.php:205
 msgid "Run Data Restoration"
 msgstr "데이터 복원 실행"
 
-#: src/Views/menu-diagnostics.php:202
+#: src/Views/menu-diagnostics.php:208
 msgid ""
 "Restore legacy action arguments as Post Meta. This is useful if you have "
 "issues with 3rd party plugins that read that data. This will run in the "
@@ -3889,25 +3898,25 @@ msgstr ""
 "구형 작업 인수를 게시물 메타로 복원합니다. 이는 해당 데이터를 읽는 서드파티 플러그인에 문제가 있는 경우 유용합니다. 이는 "
 "백그라운드에서 실행되며 시간이 걸릴 수 있습니다."
 
-#: src/Views/menu-diagnostics.php:215
+#: src/Views/menu-diagnostics.php:221
 msgid "Legacy Cron Schedule"
 msgstr "구형 크론 일정"
 
-#: src/Views/menu-diagnostics.php:223
+#: src/Views/menu-diagnostics.php:229
 msgid ""
 "The below table will show all currently scheduled cron events for the "
 "plugin with the next run time."
 msgstr "아래 표는 다음 실행 시간을 포함하여 플러그인에 대해 현재 예약된 모든 크론 이벤트를 보여줍니다."
 
-#: src/Views/menu-diagnostics.php:238
+#: src/Views/menu-diagnostics.php:244
 msgid "Event"
 msgstr "이벤트"
 
-#: src/Views/menu-diagnostics.php:241
+#: src/Views/menu-diagnostics.php:247
 msgid "Posts and expiration settings"
 msgstr "게시물 및 만료 설정"
 
-#: src/Views/menu-diagnostics.php:296
+#: src/Views/menu-diagnostics.php:302
 msgid "This is a legacy feature and will be removed in a future version."
 msgstr "이는 구형 기능이며 향후 버전에서 제거될 것입니다."
 

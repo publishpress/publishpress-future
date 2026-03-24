@@ -1,5 +1,5 @@
 # Copyright (C) 2026 PublishPress
-# This file is distributed under the same license as the PublishPress Future plugin.
+# This file is distributed under the same license as the PublishPress Future Free plugin.
 msgid ""
 msgstr ""
 "Project-Id-Version: PublishPress Future 4.10.0\n"
@@ -10,25 +10,24 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-02-27T16:10:19+00:00\n"
-"PO-Revision-Date: 2026-03-16 21:27+0000\n"
+"PO-Revision-Date: 2026-03-24 19:13+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
-"Language: yo\n"
+"Language: yor\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: post-expirator.php
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:120
-#: src/Modules/Workflows/Models/StepTypesModel.php:99, fuzzy
+#: post-expirator.php:4
+#: post-expirator.php:4, fuzzy
 #. Plugin Name of the plugin
-msgid "PublishPress Future"
-msgstr "PublishPress Future"
+msgid "PublishPress Future Free"
+msgstr "PublishPress Future Free"
 
-#: post-expirator.php, fuzzy
+#: post-expirator.php:5, fuzzy
 #. Plugin URI of the plugin
 msgid "http://wordpress.org/extend/plugins/post-expirator/"
 msgstr "http://wordpress.org/extend/plugins/post-expirator/"
 
-#: post-expirator.php
+#: post-expirator.php:6
 #. Description of the plugin
 msgid ""
 "PublishPress Future allows you to schedule automatic changes to posts, "
@@ -37,12 +36,12 @@ msgstr ""
 "PublishPress Future ngbanilaaye fun ọ lati gbero awọn ayipada aifọwọyi si "
 "awọn ifiweranṣẹ, awọn oju-iwe ati awọn iru akoonu miiran."
 
-#: post-expirator.php, fuzzy
+#: post-expirator.php:7, fuzzy
 #. Author of the plugin
 msgid "PublishPress"
 msgstr "PublishPress"
 
-#: post-expirator.php, fuzzy
+#: post-expirator.php:9, fuzzy
 #. Author URI of the plugin
 msgid "http://publishpress.com"
 msgstr "http://publishpress.com"
@@ -132,17 +131,17 @@ msgstr "Kan si"
 msgid "No taxonomies found"
 msgstr "Ko si awọn taxonomies ti a ri"
 
-#: services.php:150
+#: services.php:151
 #: src/Modules/Settings/SettingsFacade.php:122, fuzzy
 msgid "l F jS, Y"
 msgstr "l F jS, Y"
 
-#: services.php:154
+#: services.php:155
 #: src/Modules/Settings/SettingsFacade.php:123, fuzzy
 msgid "g:ia"
 msgstr "g:ia"
 
-#: services.php:155
+#: services.php:156
 #: src/Modules/Settings/SettingsFacade.php:124
 msgid "Post expires at EXPIRATIONTIME on ACTIONDATE"
 msgstr "Ìkọ̀wé parí ní EXPIRATIONTIME lórí ACTIONDATE"
@@ -479,6 +478,11 @@ msgstr "Ko si iṣẹ iwaju"
 #: src/Modules/Expirator/Controllers/RestAPIController.php:249
 msgid "Invalid date time offset."
 msgstr "Aago akoko ti ko wulo."
+
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:120
+#: src/Modules/Workflows/Models/StepTypesModel.php:99, fuzzy
+msgid "PublishPress Future"
+msgstr "PublishPress Future"
 
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:121
 msgid "Future"
@@ -1089,7 +1093,7 @@ msgid "Scheduled date: "
 msgstr "Ọjọ ti a ṣeto: "
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:713
-#: src/Views/menu-diagnostics.php:235
+#: src/Views/menu-diagnostics.php:241
 msgid "Date"
 msgstr "Ọjọ"
 
@@ -3871,7 +3875,7 @@ msgid "WP-Cron Status Check"
 msgstr "Ṣayẹwo Ipo WP-Cron"
 
 #: src/Views/menu-diagnostics.php:61
-#: src/Views/menu-diagnostics.php:74
+#: src/Views/menu-diagnostics.php:80
 msgid "Passed"
 msgstr "Gba"
 
@@ -3883,20 +3887,28 @@ msgstr "WP Cron Dena"
 msgid "Database Schema Check"
 msgstr "Ṣayẹwo Àkọsílẹ̀ Ìpamọ́"
 
-#: src/Views/menu-diagnostics.php:78
+#: src/Views/menu-diagnostics.php:73
+msgid ""
+"After activating the plugin, tables are updated automatically on the next "
+"page load. Use the button below if you still see schema errors."
+msgstr ""
+"Lẹ́yìn tí a bá ṣiṣẹ́ plugin náà, àwọn tábìlì yóò ṣe àtúnṣe láìsí ìdí lẹ́yìn "
+"ìkànsí ojúewé tó tẹ̀lé. Lo bọtini ni isalẹ ti o ba ṣi rí aṣiṣe schema."
+
+#: src/Views/menu-diagnostics.php:84
 msgid "Error found on the database schema:"
 msgid_plural "Errors found on the database schema:"
 msgstr[0] "Àṣìṣe kan ti a ri lori àkọsílẹ̀ ìpamọ́:"
 
-#: src/Views/menu-diagnostics.php:109
+#: src/Views/menu-diagnostics.php:115
 msgid "Try to Fix Database"
 msgstr "Gbiyanju Lati Ṣatunṣe Ìpamọ́"
 
-#: src/Views/menu-diagnostics.php:118
+#: src/Views/menu-diagnostics.php:124
 msgid "Debug Logging"
 msgstr "Iwe Ìkànsí Àìlò"
 
-#: src/Views/menu-diagnostics.php:122
+#: src/Views/menu-diagnostics.php:128
 #: src/Views/menu-display.php:139
 #: src/Views/menu-notifications.php:67
 #: src/Views/menu-notifications.php:95
@@ -3904,19 +3916,19 @@ msgstr "Iwe Ìkànsí Àìlò"
 msgid "Enabled"
 msgstr "Mu ṣiṣẹ"
 
-#: src/Views/menu-diagnostics.php:125
+#: src/Views/menu-diagnostics.php:131
 msgid "Disable Debugging"
 msgstr "Dena Ìkànsí Àìlò"
 
-#: src/Views/menu-diagnostics.php:131
+#: src/Views/menu-diagnostics.php:137
 msgid "Purge Debug Log"
 msgstr "Pàrí Iwe Ìkànsí Àìlò"
 
-#: src/Views/menu-diagnostics.php:139
+#: src/Views/menu-diagnostics.php:145
 msgid "View Debug Logs"
 msgstr "Wo Awọn igbasilẹ Debug"
 
-#: src/Views/menu-diagnostics.php:142
+#: src/Views/menu-diagnostics.php:148
 #: src/Views/menu-display.php:150
 #: src/Views/menu-notifications.php:75
 #: src/Views/menu-notifications.php:104
@@ -3924,19 +3936,19 @@ msgstr "Wo Awọn igbasilẹ Debug"
 msgid "Disabled"
 msgstr "Ti dènà"
 
-#: src/Views/menu-diagnostics.php:145
+#: src/Views/menu-diagnostics.php:151
 msgid "Enable Debugging"
 msgstr "Mu Debugging ṣiṣẹ"
 
-#: src/Views/menu-diagnostics.php:154, fuzzy
+#: src/Views/menu-diagnostics.php:160, fuzzy
 msgid "Spatie Ray Debug"
 msgstr "Spatie Ray Debug"
 
-#: src/Views/menu-diagnostics.php:158
+#: src/Views/menu-diagnostics.php:164
 msgid "Spatie Ray Detected"
 msgstr "Spatie Ray ti wa ni awari"
 
-#: src/Views/menu-diagnostics.php:160
+#: src/Views/menu-diagnostics.php:166
 msgid ""
 "Spatie Ray Debug is detected. The \"Send to Ray\" workflow step will be "
 "available in the workflow editor."
@@ -3944,11 +3956,11 @@ msgstr ""
 "Spatie Ray Debug ni a ti wa ni awari. Igbese iṣẹ \"Firanṣẹ si Ray\" yoo wa "
 "ni olutọpa iṣẹ."
 
-#: src/Views/menu-diagnostics.php:164
+#: src/Views/menu-diagnostics.php:170
 msgid "Spatie Ray Not Detected"
 msgstr "Spatie Ray Kò Ti Wa Ni Awari"
 
-#: src/Views/menu-diagnostics.php:166
+#: src/Views/menu-diagnostics.php:172
 msgid ""
 "Spatie Ray Debug is not detected. This is not an error, but the \"Send to "
 "Ray\" workflow step will not be available in the workflow editor."
@@ -3956,19 +3968,19 @@ msgstr ""
 "Spatie Ray Debug ko ti wa ni awari. Eyi kii ṣe aṣiṣe, ṣugbọn igbese iṣẹ "
 "\"Firanṣẹ si Ray\" ko ni wa ni olutọpa iṣẹ."
 
-#: src/Views/menu-diagnostics.php:169
+#: src/Views/menu-diagnostics.php:175
 msgid "Learn more about Spatie Ray"
 msgstr "Kọ ẹkọ diẹ sii nipa Spatie Ray"
 
-#: src/Views/menu-diagnostics.php:178
+#: src/Views/menu-diagnostics.php:184
 msgid "Migrate Legacy Future Actions"
 msgstr "Gbe Awọn Iṣe ọjọ iwaju atijọ"
 
-#: src/Views/menu-diagnostics.php:182
+#: src/Views/menu-diagnostics.php:188
 msgid "Run Migration"
 msgstr "Ṣiṣe Gbe"
 
-#: src/Views/menu-diagnostics.php:185
+#: src/Views/menu-diagnostics.php:191
 msgid ""
 "Migrate legacy future actions from WP Cron to the new Action Scheduler. "
 "This will run in the background and may take a while."
@@ -3976,15 +3988,15 @@ msgstr ""
 "Gbe awọn iṣe ọjọ iwaju atijọ lati WP Cron si tuntun Action Scheduler. Eyi "
 "yoo ṣiṣẹ ni abẹlẹ ati pe o le gba akoko diẹ."
 
-#: src/Views/menu-diagnostics.php:195
+#: src/Views/menu-diagnostics.php:201
 msgid "Restore Legacy Action Arguments"
 msgstr "Tun Awọn Arukọ Iṣe Atijọ ṣe"
 
-#: src/Views/menu-diagnostics.php:199
+#: src/Views/menu-diagnostics.php:205
 msgid "Run Data Restoration"
 msgstr "Ṣiṣe Imularada Data"
 
-#: src/Views/menu-diagnostics.php:202
+#: src/Views/menu-diagnostics.php:208
 msgid ""
 "Restore legacy action arguments as Post Meta. This is useful if you have "
 "issues with 3rd party plugins that read that data. This will run in the "
@@ -3994,11 +4006,11 @@ msgstr ""
 "pẹlu awọn afikun ẹgbẹ 3rd ti o ka data yẹn. Eyi yoo ṣiṣẹ ni abẹlẹ ati pe o "
 "le gba akoko diẹ."
 
-#: src/Views/menu-diagnostics.php:215
+#: src/Views/menu-diagnostics.php:221
 msgid "Legacy Cron Schedule"
 msgstr "Akoko Cron Atijọ"
 
-#: src/Views/menu-diagnostics.php:223
+#: src/Views/menu-diagnostics.php:229
 msgid ""
 "The below table will show all currently scheduled cron events for the "
 "plugin with the next run time."
@@ -4006,15 +4018,15 @@ msgstr ""
 "Tabili ni isalẹ yoo fi gbogbo awọn iṣẹlẹ cron ti a ti ṣeto lọwọlọwọ han fun "
 "afikun pẹlu akoko ṣiṣe atẹle."
 
-#: src/Views/menu-diagnostics.php:238
+#: src/Views/menu-diagnostics.php:244
 msgid "Event"
 msgstr "Iṣẹlẹ"
 
-#: src/Views/menu-diagnostics.php:241
+#: src/Views/menu-diagnostics.php:247
 msgid "Posts and expiration settings"
 msgstr "Awọn Ifiweranṣẹ ati awọn eto ipari"
 
-#: src/Views/menu-diagnostics.php:296
+#: src/Views/menu-diagnostics.php:302
 msgid "This is a legacy feature and will be removed in a future version."
 msgstr "Eyi jẹ ẹya atijọ ati pe yoo yọkuro ni ẹya iwaju."
 
@@ -5389,7 +5401,7 @@ msgstr "Kò sí abajade tí a rí."
 #, js-format
 msgid "%d result found."
 msgid_plural "%d results found."
-msgstr[0] "%d abajade ni a rí.|%d awọn abajade ni a rí."
+msgstr[0] "%d abajade ni a rí."
 
 #: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:116
 #: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:123
@@ -5406,7 +5418,7 @@ msgstr "Ìtẹ́sí fún lílo olùṣàkóso iṣẹ́"
 #, js-format
 msgid "%d block"
 msgid_plural "%d blocks"
-msgstr[0] "%d àpótí|%d àwọn àpótí"
+msgstr[0] "%d àpótí"
 
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:24
 #. translators: Patterns tab title in the block inserter.

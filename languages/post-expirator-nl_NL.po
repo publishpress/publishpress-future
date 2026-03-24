@@ -1,5 +1,5 @@
 # Copyright (C) 2026 PublishPress
-# This file is distributed under the same license as the PublishPress Future plugin.
+# This file is distributed under the same license as the PublishPress Future Free plugin.
 msgid ""
 msgstr ""
 "Project-Id-Version: PublishPress Future 4.10.0\n"
@@ -10,25 +10,24 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-02-27T16:10:19+00:00\n"
-"PO-Revision-Date: 2026-03-16 21:27+0000\n"
+"PO-Revision-Date: 2026-03-24 19:13+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Language: nl-NL\n"
 
-#: post-expirator.php
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:120
-#: src/Modules/Workflows/Models/StepTypesModel.php:99
+#: post-expirator.php:4
+#: post-expirator.php:4, fuzzy
 #. Plugin Name of the plugin
-msgid "PublishPress Future"
-msgstr "PublishPress Toekomst"
+msgid "PublishPress Future Free"
+msgstr "PublishPress Future Free"
 
-#: post-expirator.php, fuzzy
+#: post-expirator.php:5, fuzzy
 #. Plugin URI of the plugin
 msgid "http://wordpress.org/extend/plugins/post-expirator/"
 msgstr "http://wordpress.org/extend/plugins/post-expirator/"
 
-#: post-expirator.php
+#: post-expirator.php:6
 #. Description of the plugin
 msgid ""
 "PublishPress Future allows you to schedule automatic changes to posts, "
@@ -37,12 +36,12 @@ msgstr ""
 "PublishPress Toekomst stelt je in staat om automatische wijzigingen aan "
 "berichten, pagina's en andere contenttypes te plannen."
 
-#: post-expirator.php, fuzzy
+#: post-expirator.php:7, fuzzy
 #. Author of the plugin
 msgid "PublishPress"
 msgstr "PublishPress"
 
-#: post-expirator.php, fuzzy
+#: post-expirator.php:9, fuzzy
 #. Author URI of the plugin
 msgid "http://publishpress.com"
 msgstr "http://publishpress.com"
@@ -136,17 +135,17 @@ msgstr "Contact"
 msgid "No taxonomies found"
 msgstr "Geen taxonomieën gevonden"
 
-#: services.php:150
+#: services.php:151
 #: src/Modules/Settings/SettingsFacade.php:122, fuzzy
 msgid "l F jS, Y"
 msgstr "l F jS, Y"
 
-#: services.php:154
+#: services.php:155
 #: src/Modules/Settings/SettingsFacade.php:123, fuzzy
 msgid "g:ia"
 msgstr "g:ia"
 
-#: services.php:155
+#: services.php:156
 #: src/Modules/Settings/SettingsFacade.php:124
 msgid "Post expires at EXPIRATIONTIME on ACTIONDATE"
 msgstr "Bericht vervalt op EXPIRATIONTIME op ACTIONDATE"
@@ -493,6 +492,11 @@ msgstr "Geen toekomstige actie"
 #: src/Modules/Expirator/Controllers/RestAPIController.php:249
 msgid "Invalid date time offset."
 msgstr "Ongeldig datum-tijd offset."
+
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:120
+#: src/Modules/Workflows/Models/StepTypesModel.php:99
+msgid "PublishPress Future"
+msgstr "PublishPress Toekomst"
 
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:121
 msgid "Future"
@@ -1116,7 +1120,7 @@ msgid "Scheduled date: "
 msgstr "Geplande datum: "
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:713
-#: src/Views/menu-diagnostics.php:235
+#: src/Views/menu-diagnostics.php:241
 msgid "Date"
 msgstr "Datum"
 
@@ -3959,7 +3963,7 @@ msgid "WP-Cron Status Check"
 msgstr "WP-Cron Statuscontrole"
 
 #: src/Views/menu-diagnostics.php:61
-#: src/Views/menu-diagnostics.php:74
+#: src/Views/menu-diagnostics.php:80
 msgid "Passed"
 msgstr "Geslaagd"
 
@@ -3971,21 +3975,30 @@ msgstr "WP Cron Uitgeschakeld"
 msgid "Database Schema Check"
 msgstr "Database Schema Controle"
 
-#: src/Views/menu-diagnostics.php:78
+#: src/Views/menu-diagnostics.php:73
+msgid ""
+"After activating the plugin, tables are updated automatically on the next "
+"page load. Use the button below if you still see schema errors."
+msgstr ""
+"Na het activeren van de plugin worden de tabellen automatisch bijgewerkt "
+"bij de volgende pagina-laad. Gebruik de knop hieronder als je nog steeds "
+"schemafouten ziet."
+
+#: src/Views/menu-diagnostics.php:84
 msgid "Error found on the database schema:"
 msgid_plural "Errors found on the database schema:"
 msgstr[0] "Fout gevonden in het databaseschema:|Fouten gevonden in het databaseschema:"
 msgstr[1] "Fouten gevonden in het databaseschema:"
 
-#: src/Views/menu-diagnostics.php:109
+#: src/Views/menu-diagnostics.php:115
 msgid "Try to Fix Database"
 msgstr "Probeer Database te Repareren"
 
-#: src/Views/menu-diagnostics.php:118, fuzzy
+#: src/Views/menu-diagnostics.php:124, fuzzy
 msgid "Debug Logging"
 msgstr "Debug Logging"
 
-#: src/Views/menu-diagnostics.php:122
+#: src/Views/menu-diagnostics.php:128
 #: src/Views/menu-display.php:139
 #: src/Views/menu-notifications.php:67
 #: src/Views/menu-notifications.php:95
@@ -3993,19 +4006,19 @@ msgstr "Debug Logging"
 msgid "Enabled"
 msgstr "Ingeschakeld"
 
-#: src/Views/menu-diagnostics.php:125
+#: src/Views/menu-diagnostics.php:131
 msgid "Disable Debugging"
 msgstr "Schakel Debugging Uit"
 
-#: src/Views/menu-diagnostics.php:131
+#: src/Views/menu-diagnostics.php:137
 msgid "Purge Debug Log"
 msgstr "Verwijder Debug Log"
 
-#: src/Views/menu-diagnostics.php:139
+#: src/Views/menu-diagnostics.php:145
 msgid "View Debug Logs"
 msgstr "Bekijk Debug Logs"
 
-#: src/Views/menu-diagnostics.php:142
+#: src/Views/menu-diagnostics.php:148
 #: src/Views/menu-display.php:150
 #: src/Views/menu-notifications.php:75
 #: src/Views/menu-notifications.php:104
@@ -4013,19 +4026,19 @@ msgstr "Bekijk Debug Logs"
 msgid "Disabled"
 msgstr "Uitgeschakeld"
 
-#: src/Views/menu-diagnostics.php:145
+#: src/Views/menu-diagnostics.php:151
 msgid "Enable Debugging"
 msgstr "Debugging inschakelen"
 
-#: src/Views/menu-diagnostics.php:154, fuzzy
+#: src/Views/menu-diagnostics.php:160, fuzzy
 msgid "Spatie Ray Debug"
 msgstr "Spatie Ray Debug"
 
-#: src/Views/menu-diagnostics.php:158
+#: src/Views/menu-diagnostics.php:164
 msgid "Spatie Ray Detected"
 msgstr "Spatie Ray Gedetecteerd"
 
-#: src/Views/menu-diagnostics.php:160
+#: src/Views/menu-diagnostics.php:166
 msgid ""
 "Spatie Ray Debug is detected. The \"Send to Ray\" workflow step will be "
 "available in the workflow editor."
@@ -4033,11 +4046,11 @@ msgstr ""
 "Spatie Ray Debug is gedetecteerd. De \"Verzenden naar Ray\" workflowstap "
 "zal beschikbaar zijn in de workflow-editor."
 
-#: src/Views/menu-diagnostics.php:164
+#: src/Views/menu-diagnostics.php:170
 msgid "Spatie Ray Not Detected"
 msgstr "Spatie Ray Niet Gedetecteerd"
 
-#: src/Views/menu-diagnostics.php:166
+#: src/Views/menu-diagnostics.php:172
 msgid ""
 "Spatie Ray Debug is not detected. This is not an error, but the \"Send to "
 "Ray\" workflow step will not be available in the workflow editor."
@@ -4046,19 +4059,19 @@ msgstr ""
 "\"Verzenden naar Ray\" workflowstap zal niet beschikbaar zijn in de "
 "workflow-editor."
 
-#: src/Views/menu-diagnostics.php:169
+#: src/Views/menu-diagnostics.php:175
 msgid "Learn more about Spatie Ray"
 msgstr "Leer meer over Spatie Ray"
 
-#: src/Views/menu-diagnostics.php:178
+#: src/Views/menu-diagnostics.php:184
 msgid "Migrate Legacy Future Actions"
 msgstr "Migreer Legacy Toekomstige Acties"
 
-#: src/Views/menu-diagnostics.php:182
+#: src/Views/menu-diagnostics.php:188
 msgid "Run Migration"
 msgstr "Voer Migratie Uit"
 
-#: src/Views/menu-diagnostics.php:185
+#: src/Views/menu-diagnostics.php:191
 msgid ""
 "Migrate legacy future actions from WP Cron to the new Action Scheduler. "
 "This will run in the background and may take a while."
@@ -4066,15 +4079,15 @@ msgstr ""
 "Migreer legacy toekomstige acties van WP Cron naar de nieuwe Actieplanner. "
 "Dit zal op de achtergrond worden uitgevoerd en kan enige tijd duren."
 
-#: src/Views/menu-diagnostics.php:195
+#: src/Views/menu-diagnostics.php:201
 msgid "Restore Legacy Action Arguments"
 msgstr "Herstel Legacy Actie Argumenten"
 
-#: src/Views/menu-diagnostics.php:199
+#: src/Views/menu-diagnostics.php:205
 msgid "Run Data Restoration"
 msgstr "Voer Gegevensherstel Uit"
 
-#: src/Views/menu-diagnostics.php:202
+#: src/Views/menu-diagnostics.php:208
 msgid ""
 "Restore legacy action arguments as Post Meta. This is useful if you have "
 "issues with 3rd party plugins that read that data. This will run in the "
@@ -4084,11 +4097,11 @@ msgstr ""
 "heeft met 3e partij plugins die die gegevens lezen. Dit zal op de "
 "achtergrond worden uitgevoerd en kan enige tijd duren."
 
-#: src/Views/menu-diagnostics.php:215
+#: src/Views/menu-diagnostics.php:221
 msgid "Legacy Cron Schedule"
 msgstr "Legacy Cron Schema"
 
-#: src/Views/menu-diagnostics.php:223
+#: src/Views/menu-diagnostics.php:229
 msgid ""
 "The below table will show all currently scheduled cron events for the "
 "plugin with the next run time."
@@ -4096,15 +4109,15 @@ msgstr ""
 "De onderstaande tabel toont alle momenteel geplande cron-evenementen voor "
 "de plugin met de volgende uitvoeringstijd."
 
-#: src/Views/menu-diagnostics.php:238
+#: src/Views/menu-diagnostics.php:244
 msgid "Event"
 msgstr "Evenement"
 
-#: src/Views/menu-diagnostics.php:241
+#: src/Views/menu-diagnostics.php:247
 msgid "Posts and expiration settings"
 msgstr "Berichten en vervaldatums"
 
-#: src/Views/menu-diagnostics.php:296
+#: src/Views/menu-diagnostics.php:302
 msgid "This is a legacy feature and will be removed in a future version."
 msgstr ""
 "Dit is een legacy functie en zal in een toekomstige versie worden "
@@ -5498,8 +5511,8 @@ msgstr "Geen resultaten gevonden."
 #, js-format
 msgid "%d result found."
 msgid_plural "%d results found."
-msgstr[0] "%d resultaat gevonden.|%d resultaten gevonden."
-msgstr[1] ""
+msgstr[0] "%d resultaat gevonden."
+msgstr[1] "%d resultaten gevonden."
 
 #: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:116
 #: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:123
@@ -5516,8 +5529,8 @@ msgstr "Een tip voor het gebruik van de workflow-editor"
 #, js-format
 msgid "%d block"
 msgid_plural "%d blocks"
-msgstr[0] "%d blok|%d blokken"
-msgstr[1] ""
+msgstr[0] "%d blok"
+msgstr[1] "%d blokken"
 
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:24
 #. translators: Patterns tab title in the block inserter.

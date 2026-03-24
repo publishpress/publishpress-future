@@ -1,5 +1,5 @@
 # Copyright (C) 2026 PublishPress
-# This file is distributed under the same license as the PublishPress Future plugin.
+# This file is distributed under the same license as the PublishPress Future Free plugin.
 msgid ""
 msgstr ""
 "Project-Id-Version: PublishPress Future 4.10.0\n"
@@ -10,25 +10,24 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-02-27T16:10:19+00:00\n"
-"PO-Revision-Date: 2026-03-16 21:27+0000\n"
+"PO-Revision-Date: 2026-03-24 19:13+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Language: fi\n"
 
-#: post-expirator.php
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:120
-#: src/Modules/Workflows/Models/StepTypesModel.php:99
+#: post-expirator.php:4
+#: post-expirator.php:4, fuzzy
 #. Plugin Name of the plugin
-msgid "PublishPress Future"
-msgstr "PublishPress Tulevaisuus"
+msgid "PublishPress Future Free"
+msgstr "PublishPress Future Free"
 
-#: post-expirator.php, fuzzy
+#: post-expirator.php:5, fuzzy
 #. Plugin URI of the plugin
 msgid "http://wordpress.org/extend/plugins/post-expirator/"
 msgstr "http://wordpress.org/extend/plugins/post-expirator/"
 
-#: post-expirator.php
+#: post-expirator.php:6
 #. Description of the plugin
 msgid ""
 "PublishPress Future allows you to schedule automatic changes to posts, "
@@ -37,12 +36,12 @@ msgstr ""
 "PublishPress Tulevaisuus mahdollistaa automaattisten muutosten "
 "aikatauluttamisen posteille, sivuille ja muille sisältötyypeille."
 
-#: post-expirator.php, fuzzy
+#: post-expirator.php:7, fuzzy
 #. Author of the plugin
 msgid "PublishPress"
 msgstr "PublishPress"
 
-#: post-expirator.php, fuzzy
+#: post-expirator.php:9, fuzzy
 #. Author URI of the plugin
 msgid "http://publishpress.com"
 msgstr "http://publishpress.com"
@@ -132,17 +131,17 @@ msgstr "Ota yhteyttä"
 msgid "No taxonomies found"
 msgstr "Ei taksonomioita löydetty"
 
-#: services.php:150
+#: services.php:151
 #: src/Modules/Settings/SettingsFacade.php:122, fuzzy
 msgid "l F jS, Y"
 msgstr "l F jS, Y"
 
-#: services.php:154
+#: services.php:155
 #: src/Modules/Settings/SettingsFacade.php:123, fuzzy
 msgid "g:ia"
 msgstr "g:ia"
 
-#: services.php:155
+#: services.php:156
 #: src/Modules/Settings/SettingsFacade.php:124
 msgid "Post expires at EXPIRATIONTIME on ACTIONDATE"
 msgstr "Viesti vanhenee EXPIRATIONTIME päivänä ACTIONDATE"
@@ -481,6 +480,11 @@ msgstr "Ei tulevaa toimintoa"
 #: src/Modules/Expirator/Controllers/RestAPIController.php:249
 msgid "Invalid date time offset."
 msgstr "Virheellinen aikavyöhyke."
+
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:120
+#: src/Modules/Workflows/Models/StepTypesModel.php:99
+msgid "PublishPress Future"
+msgstr "PublishPress Tulevaisuus"
 
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:121
 msgid "Future"
@@ -1102,7 +1106,7 @@ msgid "Scheduled date: "
 msgstr "Aikataulutettu päivämäärä: "
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:713
-#: src/Views/menu-diagnostics.php:235
+#: src/Views/menu-diagnostics.php:241
 msgid "Date"
 msgstr "Päivämäärä"
 
@@ -3920,7 +3924,7 @@ msgid "WP-Cron Status Check"
 msgstr "WP-Cronin tilan tarkistus"
 
 #: src/Views/menu-diagnostics.php:61
-#: src/Views/menu-diagnostics.php:74
+#: src/Views/menu-diagnostics.php:80
 msgid "Passed"
 msgstr "Hyväksytty"
 
@@ -3932,23 +3936,30 @@ msgstr "WP Cron pois käytöstä"
 msgid "Database Schema Check"
 msgstr "Tietokannan skeeman tarkistus"
 
-#: src/Views/menu-diagnostics.php:78
+#: src/Views/menu-diagnostics.php:73
+msgid ""
+"After activating the plugin, tables are updated automatically on the next "
+"page load. Use the button below if you still see schema errors."
+msgstr ""
+"Kun laajennus on aktivoitu, taulukot päivitetään automaattisesti "
+"seuraavalla sivun latauksella. Käytä alla olevaa painiketta, jos näet "
+"edelleen skeemavirheitä."
+
+#: src/Views/menu-diagnostics.php:84
 msgid "Error found on the database schema:"
 msgid_plural "Errors found on the database schema:"
-msgstr[0] ""
-"Virhe havaittu tietokannan skeemassa:|Virheitä havaittu tietokannan "
-"skeemassa:"
-msgstr[1] ""
+msgstr[0] "Virhe havaittu tietokannan skeemassa:"
+msgstr[1] "Virheitä havaittu tietokannan skeemassa:"
 
-#: src/Views/menu-diagnostics.php:109
+#: src/Views/menu-diagnostics.php:115
 msgid "Try to Fix Database"
 msgstr "Yritä korjata tietokanta"
 
-#: src/Views/menu-diagnostics.php:118
+#: src/Views/menu-diagnostics.php:124
 msgid "Debug Logging"
 msgstr "Virheiden lokitus"
 
-#: src/Views/menu-diagnostics.php:122
+#: src/Views/menu-diagnostics.php:128
 #: src/Views/menu-display.php:139
 #: src/Views/menu-notifications.php:67
 #: src/Views/menu-notifications.php:95
@@ -3956,19 +3967,19 @@ msgstr "Virheiden lokitus"
 msgid "Enabled"
 msgstr "Ota käyttöön"
 
-#: src/Views/menu-diagnostics.php:125
+#: src/Views/menu-diagnostics.php:131
 msgid "Disable Debugging"
 msgstr "Poista virheiden lokitus käytöstä"
 
-#: src/Views/menu-diagnostics.php:131
+#: src/Views/menu-diagnostics.php:137
 msgid "Purge Debug Log"
 msgstr "Tyhjennä virhelok"
 
-#: src/Views/menu-diagnostics.php:139
+#: src/Views/menu-diagnostics.php:145
 msgid "View Debug Logs"
 msgstr "Näytä virheenkorjauslokit"
 
-#: src/Views/menu-diagnostics.php:142
+#: src/Views/menu-diagnostics.php:148
 #: src/Views/menu-display.php:150
 #: src/Views/menu-notifications.php:75
 #: src/Views/menu-notifications.php:104
@@ -3976,19 +3987,19 @@ msgstr "Näytä virheenkorjauslokit"
 msgid "Disabled"
 msgstr "Poistettu käytöstä"
 
-#: src/Views/menu-diagnostics.php:145
+#: src/Views/menu-diagnostics.php:151
 msgid "Enable Debugging"
 msgstr "Ota virheenkorjaus käyttöön"
 
-#: src/Views/menu-diagnostics.php:154
+#: src/Views/menu-diagnostics.php:160
 msgid "Spatie Ray Debug"
 msgstr "Spatie Ray -virheenkorjaus"
 
-#: src/Views/menu-diagnostics.php:158
+#: src/Views/menu-diagnostics.php:164
 msgid "Spatie Ray Detected"
 msgstr "Spatie Ray havaittu"
 
-#: src/Views/menu-diagnostics.php:160
+#: src/Views/menu-diagnostics.php:166
 msgid ""
 "Spatie Ray Debug is detected. The \"Send to Ray\" workflow step will be "
 "available in the workflow editor."
@@ -3996,11 +4007,11 @@ msgstr ""
 "Spatie Ray -virheenkorjaus on havaittu. \"Lähetä Raylle\" -työprosessin "
 "vaihe on saatavilla työprosessin muokkaimessa."
 
-#: src/Views/menu-diagnostics.php:164
+#: src/Views/menu-diagnostics.php:170
 msgid "Spatie Ray Not Detected"
 msgstr "Spatie Ray ei havaittu"
 
-#: src/Views/menu-diagnostics.php:166
+#: src/Views/menu-diagnostics.php:172
 msgid ""
 "Spatie Ray Debug is not detected. This is not an error, but the \"Send to "
 "Ray\" workflow step will not be available in the workflow editor."
@@ -4008,19 +4019,19 @@ msgstr ""
 "Spatie Ray -virheenkorjausta ei havaittu. Tämä ei ole virhe, mutta \"Lähetä "
 "Raylle\" -työprosessin vaihe ei ole saatavilla työprosessin muokkaimessa."
 
-#: src/Views/menu-diagnostics.php:169
+#: src/Views/menu-diagnostics.php:175
 msgid "Learn more about Spatie Ray"
 msgstr "Lue lisää Spatie Raysta"
 
-#: src/Views/menu-diagnostics.php:178
+#: src/Views/menu-diagnostics.php:184
 msgid "Migrate Legacy Future Actions"
 msgstr "Siirrä vanhat tulevat toiminnot"
 
-#: src/Views/menu-diagnostics.php:182
+#: src/Views/menu-diagnostics.php:188
 msgid "Run Migration"
 msgstr "Suorita siirto"
 
-#: src/Views/menu-diagnostics.php:185
+#: src/Views/menu-diagnostics.php:191
 msgid ""
 "Migrate legacy future actions from WP Cron to the new Action Scheduler. "
 "This will run in the background and may take a while."
@@ -4028,15 +4039,15 @@ msgstr ""
 "Siirrä vanhat tulevat toiminnot WP Cronista uuteen Toimintojen aikatauluun. "
 "Tämä suoritetaan taustalla ja voi kestää jonkin aikaa."
 
-#: src/Views/menu-diagnostics.php:195
+#: src/Views/menu-diagnostics.php:201
 msgid "Restore Legacy Action Arguments"
 msgstr "Palauta vanhat toimintoargumentit"
 
-#: src/Views/menu-diagnostics.php:199
+#: src/Views/menu-diagnostics.php:205
 msgid "Run Data Restoration"
 msgstr "Suorita tietojen palautus"
 
-#: src/Views/menu-diagnostics.php:202
+#: src/Views/menu-diagnostics.php:208
 msgid ""
 "Restore legacy action arguments as Post Meta. This is useful if you have "
 "issues with 3rd party plugins that read that data. This will run in the "
@@ -4047,11 +4058,11 @@ msgstr ""
 "lukevat näitä tietoja. Tämä suoritetaan taustalla ja voi kestää jonkin "
 "aikaa."
 
-#: src/Views/menu-diagnostics.php:215
+#: src/Views/menu-diagnostics.php:221
 msgid "Legacy Cron Schedule"
 msgstr "Vanha Cron-aikataulu"
 
-#: src/Views/menu-diagnostics.php:223
+#: src/Views/menu-diagnostics.php:229
 msgid ""
 "The below table will show all currently scheduled cron events for the "
 "plugin with the next run time."
@@ -4059,15 +4070,15 @@ msgstr ""
 "Alla oleva taulukko näyttää kaikki tällä hetkellä aikataulutetut "
 "cron-tapahtumat lisäosalle seuraavalla suoritusaikalla."
 
-#: src/Views/menu-diagnostics.php:238
+#: src/Views/menu-diagnostics.php:244
 msgid "Event"
 msgstr "Tapahtuma"
 
-#: src/Views/menu-diagnostics.php:241
+#: src/Views/menu-diagnostics.php:247
 msgid "Posts and expiration settings"
 msgstr "Viesti ja vanhentumisasetukset"
 
-#: src/Views/menu-diagnostics.php:296
+#: src/Views/menu-diagnostics.php:302
 msgid "This is a legacy feature and will be removed in a future version."
 msgstr "Tämä on vanha ominaisuus, joka poistetaan tulevassa versiossa."
 
@@ -5457,8 +5468,8 @@ msgstr "Ei tuloksia löytynyt."
 #, js-format
 msgid "%d result found."
 msgid_plural "%d results found."
-msgstr[0] "%d tulos löytyi.|%d tulosta löytyi."
-msgstr[1] ""
+msgstr[0] "%d tulos löytyi."
+msgstr[1] "%d tulosta löytyi."
 
 #: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:116
 #: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:123
@@ -5475,8 +5486,8 @@ msgstr "Vinkki työprosessin muokkaamisen käyttämiseen"
 #, js-format
 msgid "%d block"
 msgid_plural "%d blocks"
-msgstr[0] "%d lohko|%d lohkoa"
-msgstr[1] ""
+msgstr[0] "%d lohko"
+msgstr[1] "%d lohkoa"
 
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:24
 #. translators: Patterns tab title in the block inserter.
