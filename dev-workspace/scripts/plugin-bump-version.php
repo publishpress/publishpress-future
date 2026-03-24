@@ -35,6 +35,10 @@ function isValideVersion($version): bool
 
 function askForNewVersion(): string
 {
+    $currentVersion = getCurrentVersion();
+
+    echo "Current version: " . $currentVersion . "\n";
+
     $newVersion = readline("Enter new version: ");
 
     return $newVersion;
@@ -109,12 +113,7 @@ function updateVersionInComposerJson($newVersion): void
     file_put_contents(COMPOSER_JSON_PATH, json_encode($composerJson, JSON_PRETTY_PRINT));
 }
 
-updateVersionConstantInMainPluginFile(VERSION_CONSTANT, NEW_VERSION);
-updateVersionInMainPluginFileHeader(NEW_VERSION);
-// updateVersionInComposerJson(NEW_VERSION);
-
-if (isStableVersion(NEW_VERSION)) {
-    updateVersionInReadme(NEW_VERSION);
+function getCurrentVersion(): string
+{
+    return exec('pversion');
 }
-
-echo "Version updated to " . NEW_VERSION . "\n";
