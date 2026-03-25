@@ -1,20 +1,29 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-[UNRELEASED]
+[4.10.0] - 25 March, 2026
 
-- Added: Add new trigger: Post is inserted - PRO, (Issue #1146)
-- Added: Debug log view shows total logs displayed, session count, and log size (filter-aware; shows both filtered and total when filter applied)
-- Added: Debug log timestamps now include milliseconds
-- Added: Debug log filter to show only requests where a workflow trigger was activated
-- Added: Debug log request_id column for request correlation, with migration for existing sites
-- Added: Debug log display option to toggle between time sequence and grouped by request views
-- Added: Workflow engine logs "Engine finished processing" on shutdown when debug is enabled
-- Changed: Debug log now defaults to grouped by request display
+- Added: Add new trigger: Post is created - PRO, (Issue #1146).
+- Added: Debug log view shows total logs displayed, session count, and log size (filter-aware; shows both filtered and total when filter applied).
+- Added: Debug log timestamps now include milliseconds.
+- Added: Debug log filter to show only requests where a workflow trigger was activated.
+- Added: Debug log request_id column for request correlation, with migration for existing sites.
+- Added: Debug log display option to toggle between time sequence and grouped by request views.
+- Added: Debug log autorefresh option.
+- Added: Workflow engine logs "Engine finished processing" on shutdown when debug is enabled.
+- Added: Added cache for workflow execution context variables to increase performance when resolving variables repeated times, disabled by default (Issue #1581).
+- Added: Added new language files for German, Finnish, Filipino, Indonesian, Japanese, Korean, Russian, and Yoruba translations.
+- Added: Added new constant `PUBLISHPRESS_FUTURE_VARIABLES_CACHE` as a flag to enable a experimental cache for context variables in the workflow execution (Issue #1581).
+- Changed: Debug log now defaults to grouped by request display.
 - Changed: Move the scheduled actions "Run" button to it's own column, (Issue #1496).
-- Changed: Workflow debug log messages rewritten for clarity and consistency (format, parentheses for details, [Workflow] prefix)
-- Fixed: Debug log enable/disable in Diagnostics and Tools tab now reflects the correct state immediately without needing a second page refresh
+- Changed: Workflow debug log messages rewritten for clarity and consistency (format, parentheses for details, [Workflow] prefix).
+- Changed: Replace UUID generation with a more secure method in the workflow's execution ID, also incresing performance on huge sites (Issue #1579).
+- Fixed: Improve performance on large multisites by memoizing table existence checks, using `information_schema` instead of `SHOW TABLES LIKE`, and creating the debug log table only on first use (Issue #1597).
+- Fixed: Debug log enable/disable in Diagnostics and Tools tab now reflects the correct state immediately without needing a second page refresh.
 - Fixed: Improved reliability of the "Post is Published" and "Post is Updated" triggers by fixing how post metadata is handled on block editor and when ACF is enabled (Issue #1312).
+- Fixed: Fixed post saved related events not triggering when revisions is saved (Issue #1582).
+- Fixed: Update .pot file.
+- Deprecated: StepProcessorInterface::prepareLogMessage() in favor of direct logger sprintf methods.
 
 [4.9.4] - 18 December, 2025
 

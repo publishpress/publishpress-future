@@ -97,6 +97,7 @@ echo '<div class="pp-debug-log-option">';
 echo '<label class="pp-checkbox-label"><input type="checkbox" name="trigger_activated_only" value="1" ' . ($triggerActivatedOnly ? 'checked' : '') . ' onchange="this.form.submit()"> ' . esc_html__('Show only requests with trigger activated', 'post-expirator') . '</label>';
 echo '</div>';
 echo '</form>';
+echo '<div id="pp-debug-log-autorefresh"></div>';
 echo '</div>';
 
 $separator = str_repeat('-', 60);
@@ -122,6 +123,10 @@ if (empty($results)) {
             if ($previousRequestId !== null && $previousRequestId !== $requestId) {
                 echo esc_html($separator) . "\n";
             }
+            $isNewGroup = $previousRequestId === null || $previousRequestId !== $requestId;
+            if ($isNewGroup) {
+                echo 'Request ID: ' . esc_html($requestId) . "\n";
+            }
             $previousRequestId = $requestId;
             $requestIdPrefix = $requestId !== '(no request id)'
                 ? '[' . esc_html($requestId) . '] '
@@ -131,7 +136,8 @@ if (empty($results)) {
                 ? '[' . esc_html($result['request_id']) . '] '
                 : '';
         }
-        printf("%s%s: %s\n", esc_html($requestIdPrefix), esc_html($result['timestamp']), esc_html($result['message']));
+
+        printf("%s: %s\n", esc_html($result['timestamp']), esc_html($result['message']));
     }
 }
 echo '</textarea>';

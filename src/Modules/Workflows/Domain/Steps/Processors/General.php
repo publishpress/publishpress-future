@@ -12,7 +12,7 @@ use Throwable;
 
 class General implements StepProcessorInterface
 {
-    public const LOG_PREFIX = '[Workflow]   → ';
+    public const LOG_PREFIX = '[WorkflowStepsProcessorsGeneral:%d]: ';
 
     /**
      * @var HooksFacade
@@ -29,6 +29,11 @@ class General implements StepProcessorInterface
      */
     private $logger;
 
+    /**
+     * @var int
+     */
+    private $workflowId;
+
     public function __construct(
         HooksFacade $hooks,
         ExecutionContextInterface $executionContext,
@@ -37,17 +42,22 @@ class General implements StepProcessorInterface
         $this->hooks = $hooks;
         $this->executionContext = $executionContext;
         $this->logger = $logger;
+        $this->workflowId = $executionContext->getVariable('global.workflow.id');
     }
 
+    private function getLogPrefix(): string
+    {
+        return sprintf(self::LOG_PREFIX, $this->workflowId);
+    }
+
+    /**
+     * @deprecated 4.10.0 Use the logger instead
+     */
     public function prepareLogMessage(string $message, ...$args): string
     {
         $message = sprintf($message, ...$args);
 
-        return sprintf(
-            self::LOG_PREFIX . 'Workflow #%1$s → %2$s',
-            $this->executionContext->getVariable('global.workflow.id'),
-            $message
-        );
+        return $this->getLogPrefix() . $message;
     }
 
     public function setup(array $step, callable $setupCallback): void
@@ -60,6 +70,23 @@ class General implements StepProcessorInterface
     public function runNextSteps(array $step, string $branch = 'output'): void
     {
         $nextSteps = $this->getNextSteps($step, $branch);
+
+        if (empty($nextSteps)) {
+            $this->logger->debugWithArgs(
+                $this->getLogPrefix() . 'No next steps found for step "%s" on branch "%s"',
+                $step['node']['data']['slug'],
+                $branch
+            );
+
+            return;
+        }
+
+        $this->logger->debugWithArgs(
+            $this->getLogPrefix() . 'Executing %d next step(s) for step "%s" on branch "%s"',
+            count($nextSteps),
+            $step['node']['data']['slug'],
+            $branch
+        );
 
         $workflowExecutionId = $this->executionContext->getVariable('global.workflow.execution_id');
 
@@ -108,7 +135,7 @@ class General implements StepProcessorInterface
      */
     public function logError(string $message, int $workflowId, array $step)
     {
-        $this->logger->error($this->prepareLogMessage($message));
+        $this->logger->errorWithArgs($message);
     }
 
     private function isWordPressRayInstalled(): bool
@@ -153,6 +180,10 @@ class General implements StepProcessorInterface
         $currentRunningWorkflowId = $this->executionContext->getVariable('global.workflow.id');
 
         if (empty($currentRunningWorkflowId)) {
+            $this->logger->debugWithArgs(
+                $this->getLogPrefix() . 'No current running workflow ID found',
+            );
+
             return;
         }
 
@@ -207,14 +238,13 @@ class General implements StepProcessorInterface
             call_user_func($callback, $step, ...$args);
         } catch (Throwable $th) {
             $this->logger->error(
-                sprintf(
-                    'Error executing step: %s | Workflow ID: %d | Message: %s, on file %s, line %d',
-                    $step['node']['data']['slug'] ?? 'unknown',
-                    $this->executionContext->getVariable('global.workflow.id'),
-                    $th->getMessage(),
-                    $th->getFile(),
-                    $th->getLine()
-                )
+                $this->getLogPrefix() . 'Error executing step: %s | Workflow ID: %d | Message: %s, on file %s, line %d',
+                'Error executing step: %s | Workflow ID: %d | Message: %s, on file %s, line %d',
+                $step['node']['data']['slug'] ?? 'unknown',
+                $this->executionContext->getVariable('global.workflow.id'),
+                $th->getMessage(),
+                $th->getFile(),
+                $th->getLine()
             );
         }
     }

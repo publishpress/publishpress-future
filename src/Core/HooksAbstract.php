@@ -10,6 +10,8 @@ defined('ABSPATH') or die('Direct access not allowed.');
 
 abstract class HooksAbstract
 {
+    public const ACTION_SHUTDOWN = 'shutdown';
+
     public const ACTION_INIT = 'init';
 
     public const ACTION_ADMIN_INIT = 'admin_init';

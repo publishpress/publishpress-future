@@ -165,6 +165,64 @@ class Controller implements InitializableInterface
             // phpcs:ignore WordPress.Security.NonceVerification.Recommended
             $tab = isset($_GET['tab']) ? sanitize_key($_GET['tab']) : '';
 
+            if ($tab === 'viewdebug') {
+                wp_enqueue_script(
+                    'publishpress-future-settings-debug',
+                    Plugin::getScriptUrl('settingsDebug'),
+                    ['wp-element', 'wp-api-fetch'],
+                    PUBLISHPRESS_FUTURE_VERSION,
+                    true
+                );
+
+                wp_enqueue_script('wp-element');
+                wp_enqueue_script('wp-api-fetch');
+
+                $filterNonceAction = 'publishpress_future_debug_log_filter';
+                $filterSubmitted = isset($_POST['_pp_future_debug_filter_nonce'])
+                    && wp_verify_nonce(sanitize_key($_POST['_pp_future_debug_filter_nonce']), $filterNonceAction);
+
+                $allowedLogCounts = [500, 700, 1000, 2500, 5000, 7500, 10000];
+                if ($filterSubmitted) {
+                    // phpcs:ignore WordPress.Security.NonceVerification.Missing
+                    $postedLogCount = isset($_POST['log_count']) ? (int) $_POST['log_count'] : 500;
+                    // phpcs:ignore WordPress.Security.NonceVerification.Missing
+                    $postedGroupBy = isset($_POST['group_by_request']) ? (int) $_POST['group_by_request'] : 1;
+                    $currentLogCount = in_array($postedLogCount, $allowedLogCounts, true) ? $postedLogCount : 500;
+                    $groupByRequest = ($postedGroupBy === 0 || $postedGroupBy === 1) ? $postedGroupBy : 1;
+                    // phpcs:ignore WordPress.Security.NonceVerification.Missing
+                    $triggerActivatedOnly = isset($_POST['trigger_activated_only']) ? 1 : 0;
+                } else {
+                    $currentLogCount = 500;
+                    $groupByRequest = 1;
+                    $triggerActivatedOnly = 0;
+                }
+
+                wp_localize_script(
+                    'publishpress-future-settings-debug',
+                    'publishpressFutureSettingsDebug',
+                    [
+                        'nonce' => wp_create_nonce('wp_rest'),
+                        'apiRoot' => rest_url('publishpress-future/v1/debug-log'),
+                        'text' => [
+                            'autoRefresh' => __('Auto-refresh', 'post-expirator'),
+                            'refreshInterval' => __('Refresh interval:', 'post-expirator'),
+                            'seconds' => __('seconds', 'post-expirator'),
+                            'lastRefreshed' => __('Last refreshed:', 'post-expirator'),
+                            'secondsAgo' => __('seconds ago', 'post-expirator'),
+                            'refreshing' => __('Refreshing...', 'post-expirator'),
+                            'refreshError' => __('Failed to refresh log data.', 'post-expirator'),
+                            'emptyLog' => __('Debugging table is currently empty.', 'post-expirator'),
+                            'noResults' => __('No results match the current filter.', 'post-expirator'),
+                        ],
+                        'initialState' => [
+                            'log_count' => $currentLogCount,
+                            'group_by_request' => $groupByRequest,
+                            'trigger_activated_only' => $triggerActivatedOnly,
+                        ],
+                    ]
+                );
+            }
+
             if ((!$tab && $defaultTab === 'advanced') || ($tab === 'advanced')) {
                 wp_enqueue_script(
                     'publishpress-future-settings-advanced-panel',

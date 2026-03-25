@@ -10,6 +10,7 @@ use PublishPress\Future\Framework\Logger\LoggerInterface;
 use PublishPress\Future\Framework\ModuleInterface;
 use PublishPress\Future\Framework\WordPress\Facade\HooksFacade;
 use PublishPress\Future\Modules\Debug\Controllers\Controller;
+use PublishPress\Future\Modules\Debug\Controllers\RestApiController;
 
 defined('ABSPATH') or die('Direct access not allowed.');
 
@@ -31,6 +32,11 @@ final class Module implements ModuleInterface
     private $controller;
 
     /**
+     * @var RestApiController
+     */
+    private $restApiController;
+
+    /**
      * @param HooksFacade $hooks
      * @param LoggerInterface $logger
      */
@@ -39,7 +45,8 @@ final class Module implements ModuleInterface
         $this->hooks = $hooks;
         $this->logger = $logger;
 
-        $this->controller = $this->getController();
+        $this->controller = new Controller($this->hooks, $this->logger);
+        $this->restApiController = new RestApiController($this->hooks, $this->logger);
     }
 
     /**
@@ -48,10 +55,6 @@ final class Module implements ModuleInterface
     public function initialize()
     {
         $this->controller->initialize();
-    }
-
-    private function getController()
-    {
-        return new Controller($this->hooks, $this->logger);
+        $this->restApiController->initialize();
     }
 }

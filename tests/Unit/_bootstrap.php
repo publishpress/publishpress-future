@@ -2,6 +2,24 @@
 
 define('ABSPATH', '/tmp');
 
+if (! defined('DB_NAME')) {
+    define('DB_NAME', 'wordpress_unit_tests');
+}
+
+if (! function_exists('is_admin')) {
+    function is_admin()
+    {
+        return false;
+    }
+}
+
+if (! function_exists('absint')) {
+    function absint($maybeint)
+    {
+        return (int) $maybeint;
+    }
+}
+
 use PublishPress\Future\Core\Autoloader;
 
 if (! defined('PUBLISHPRESS_FUTURE_LIB_VENDOR_PATH')) {

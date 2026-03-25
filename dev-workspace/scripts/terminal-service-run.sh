@@ -7,7 +7,20 @@ ONE_DAY_IN_SECONDS=86400
 UPDATE_CHECK_INTERVAL=$ONE_DAY_IN_SECONDS
 
 run_terminal_service() {
-    docker compose -f docker/compose.yaml run -e DROPBOX_ACCESS_TOKEN=$DROPBOX_ACCESS_TOKEN --rm terminal "$@"
+    if [ $# -eq 0 ]; then
+        docker compose -f docker/compose.yaml run -e DROPBOX_ACCESS_TOKEN=$DROPBOX_ACCESS_TOKEN --rm terminal zsh -lc 'if [ -n "$GIT_USER_NAME" ]; then git config --global user.name "$GIT_USER_NAME"; fi; if [ -n "$GIT_USER_EMAIL" ]; then git config --global user.email "$GIT_USER_EMAIL"; fi; exec zsh'
+    else
+        docker compose -f docker/compose.yaml run -e DROPBOX_ACCESS_TOKEN=$DROPBOX_ACCESS_TOKEN --rm terminal sh -c '
+            [ -n "$GIT_USER_NAME" ] && git config --global user.name "$GIT_USER_NAME"
+            [ -n "$GIT_USER_EMAIL" ] && git config --global user.email "$GIT_USER_EMAIL"
+            exec "$@"
+        ' _ "$@"
+    fi
+}
+
+configure_git_identity_existing_container() {
+    local container_id=$1
+    docker exec -i "$container_id" zsh -lc 'if [ -n "$GIT_USER_NAME" ]; then git config --global user.name "$GIT_USER_NAME"; fi; if [ -n "$GIT_USER_EMAIL" ]; then git config --global user.email "$GIT_USER_EMAIL"; fi'
 }
 
 bash ./scripts/services-pull-images.sh --daily
@@ -41,9 +54,10 @@ else
     if [ "$HAS_NO_COMMAND" = false ]; then
         echo "Running existing container"
     fi
+    configure_git_identity_existing_container "$RUNNING_CONTAINER"
     if [ $# -eq 0 ]; then
-        docker exec -it $RUNNING_CONTAINER zsh
+        docker exec -it "$RUNNING_CONTAINER" zsh
     else
-        docker exec -it $RUNNING_CONTAINER zsh -c "$@"
+        docker exec -it "$RUNNING_CONTAINER" "$@"
     fi
 fi

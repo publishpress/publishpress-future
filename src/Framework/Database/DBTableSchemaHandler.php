@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * Database table schema handler with cached existence checks.
+ *
+ * @package     PublishPress\Future
+ * @author      PublishPress
+ * @copyright   Copyright (c) 2026, PublishPress
+ * @license     GPLv2 or later
+ */
+
 namespace PublishPress\Future\Framework\Database;
 
 use PublishPress\Future\Framework\Database\Interfaces\DBTableSchemaHandlerInterface;
@@ -11,6 +20,13 @@ defined('ABSPATH') or die('Direct access not allowed.');
 
 class DBTableSchemaHandler implements DBTableSchemaHandlerInterface
 {
+    /**
+     * Per-request memoization of isTableExistent() keyed by full table name.
+     *
+     * @var array<string, bool>
+     */
+    private static $tableExistenceCache = [];
+
     /**
      * @var wpdb
      */
@@ -25,6 +41,18 @@ class DBTableSchemaHandler implements DBTableSchemaHandlerInterface
      * @var array
      */
     private $schemaErrors = [];
+
+    /**
+     * Clears the per-request static table existence cache (tests, after DROP/migrate).
+     *
+     * @return void
+     *
+     * @since 4.10.1
+     */
+    public static function clearTableExistenceCache(): void
+    {
+        self::$tableExistenceCache = [];
+    }
 
     public function __construct($wpdb)
     {
@@ -50,20 +78,31 @@ class DBTableSchemaHandler implements DBTableSchemaHandlerInterface
     {
         $tableName = $this->getTableName();
 
+        if (array_key_exists($tableName, self::$tableExistenceCache)) {
+            return self::$tableExistenceCache[$tableName];
+        }
+
+        // information_schema + LIMIT 1 avoids expensive SHOW TABLES scans on huge multisites.
         $query = $this->wpdb->prepare(
-            "SHOW TABLES LIKE %s",
+            'SELECT 1 FROM information_schema.tables WHERE table_schema = %s AND table_name = %s LIMIT 1',
+            DB_NAME,
             $tableName
         );
 
-        $table = $this->wpdb->get_var($query);
+        $row = $this->wpdb->get_var($query);
+        $exists = $row !== null && $row !== '';
 
-        return $table === $tableName;
+        self::$tableExistenceCache[$tableName] = $exists;
+
+        return $exists;
     }
 
     public function createTable(array $columns, array $indexes): bool
     {
         $charsetCollate = $this->wpdb->get_charset_collate();
         $tableName = $this->getTableName();
+
+        unset(self::$tableExistenceCache[$tableName]);
 
         $columnsSql = '';
         foreach ($columns as $columnName => $columnDefinition) {
@@ -109,14 +148,26 @@ class DBTableSchemaHandler implements DBTableSchemaHandlerInterface
             // Check both possible key formats
             if (isset($result[$tableKey])) {
                 $message = $result[$tableKey];
-                return strpos($message, "Created table") !== false
-                    || strpos($message, "Updated table") !== false;
+                if (
+                    strpos($message, "Created table") !== false
+                    || strpos($message, "Updated table") !== false
+                ) {
+                    self::$tableExistenceCache[$tableName] = true;
+
+                    return true;
+                }
             }
 
             if (isset($result[$tableKeyWithBackticks])) {
                 $message = $result[$tableKeyWithBackticks];
-                return strpos($message, "Created table") !== false
-                    || strpos($message, "Updated table") !== false;
+                if (
+                    strpos($message, "Created table") !== false
+                    || strpos($message, "Updated table") !== false
+                ) {
+                    self::$tableExistenceCache[$tableName] = true;
+
+                    return true;
+                }
             }
         }
 
@@ -134,6 +185,8 @@ class DBTableSchemaHandler implements DBTableSchemaHandlerInterface
                 $tableName // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
             )
         );
+
+        unset(self::$tableExistenceCache[$tableName]);
 
         return (bool)$result;
     }

@@ -126,7 +126,7 @@ class DebugLogSchema implements DBTableSchemaInterface
     /**
      * Add request_id column to the table if it does not exist.
      *
-     * @since 4.9.5
+     * @since 4.10.0
      * @return void
      */
     public function addRequestIdColumnIfMissing(): void
@@ -146,7 +146,7 @@ class DebugLogSchema implements DBTableSchemaInterface
     /**
      * Add trigger_activated column to the table if it does not exist.
      *
-     * @since 4.9.5
+     * @since 4.10.0
      * @return void
      */
     public function addTriggerActivatedColumnIfMissing(): void
@@ -166,7 +166,7 @@ class DebugLogSchema implements DBTableSchemaInterface
     /**
      * Add millisecond precision to the timestamp column if missing.
      *
-     * @since 4.9.5
+     * @since 4.10.0
      * @return void
      */
     public function addTimestampMillisecondsSupport(): void

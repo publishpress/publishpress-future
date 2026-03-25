@@ -1,4 +1,6 @@
 name: Unit and Integration Tests
+permissions:
+  contents: read
 on:
   push:
     branches:

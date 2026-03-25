@@ -22,7 +22,7 @@ defined('ABSPATH') or die('Direct access not allowed.');
 /**
  * Migration to add request_id and trigger_activated columns to the debug log table.
  *
- * @since 4.9.5
+ * @since 4.10.0
  */
 class V04905DebugLogRequestId implements MigrationInterface
 {
@@ -77,7 +77,7 @@ class V04905DebugLogRequestId implements MigrationInterface
     public function formatLogActionColumn($text, $row)
     {
         if ($row['hook'] === self::HOOK) {
-            return __('Add request_id and trigger_activated columns to debug log table after v4.9.5', 'post-expirator');
+            return __('Add request_id and trigger_activated columns to debug log table after v4.10.0', 'post-expirator');
         }
 
         return $text;

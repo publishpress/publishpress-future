@@ -24,8 +24,8 @@ class PostCache implements PostCacheInterface
         $this->hooks->addAction(HooksAbstract::ACTION_PRE_POST_UPDATE, [$this, 'storeCacheBeforeUpdate'], 15);
         $this->hooks->addAction(HooksAbstract::ACTION_POST_UPDATED, [$this, 'storeCacheAfterUpdate'], 15, 3);
 
-        $this->hooks->addFilter(HooksAbstract::ACTION_WP_INSERT_POST_DATA, [$this, 'storeCacheBeforeInsert'], 9999);
-        $this->hooks->addAction(HooksAbstract::ACTION_SAVE_POST, [$this, 'storeCacheAfterInsert'], 10, 2);
+        $this->hooks->addFilter(HooksAbstract::ACTION_WP_INSERT_POST_DATA, [$this, 'storeCacheBeforeCreated'], 9999);
+        $this->hooks->addAction(HooksAbstract::ACTION_SAVE_POST, [$this, 'storeCacheAfterCreated'], 10, 2);
 
         $this->hooks->addAction(HooksAbstract::ACTION_TRANSITION_POST_STATUS, [$this, 'storeCacheAfterTransition'], 15, 3);
 
@@ -71,7 +71,7 @@ class PostCache implements PostCacheInterface
     }
 
     /**
-     * Stores cache data before a post is inserted.
+     * Stores cache data before a post is created.
      *
      * This method captures the post state before it is saved to the database.
      *
@@ -79,7 +79,7 @@ class PostCache implements PostCacheInterface
      *
      * @return array The data array.
      */
-    public function storeCacheBeforeInsert(array $data): array
+    public function storeCacheBeforeCreated(array $data): array
     {
         // If no ID is set, we are inserting a new post and temporarily store the data in the cache[0] index.
         $postId = $data['ID'] ?? 0;
@@ -97,7 +97,7 @@ class PostCache implements PostCacheInterface
     }
 
     /**
-     * Stores cache data after a post is inserted or updated.
+     * Stores cache data after a post is created or updated.
      *
      * This method captures the post state after it has been saved to the database.
      *
@@ -106,7 +106,7 @@ class PostCache implements PostCacheInterface
      *
      * @return void
      */
-    public function storeCacheAfterInsert(int $postId, \WP_Post $post): void
+    public function storeCacheAfterCreated(int $postId, \WP_Post $post): void
     {
         $this->ensureCacheExists($postId);
 
@@ -250,6 +250,37 @@ class PostCache implements PostCacheInterface
         $addedIds = array_diff($afterIds, $beforeIds);
 
         return $addedIds;
+    }
+
+    /**
+     * Updates the postAfter entry in the cache for a given post ID.
+     *
+     * @param int      $postId The post ID.
+     * @param \WP_Post $post   The fresh post object to store as postAfter.
+     *
+     * @return void
+     */
+    public function setPostAfter(int $postId, \WP_Post $post): void
+    {
+        $this->ensureCacheExists($postId);
+        $this->cache[$postId]['postAfter'] = $post;
+        $this->cache[$postId]['permalinkAfter'] = $this->getPostPermalink($postId);
+    }
+
+    /**
+     * Restores the postBefore entry in the cache for a given post ID.
+     * Used to preserve the original pre-edit state when subsequent saves
+     * (e.g. from ACF calling wp_update_post) would otherwise overwrite it.
+     *
+     * @param int      $postId The post ID.
+     * @param \WP_Post $post   The post object to store as postBefore.
+     *
+     * @return void
+     */
+    public function setPostBefore(int $postId, \WP_Post $post): void
+    {
+        $this->ensureCacheExists($postId);
+        $this->cache[$postId]['postBefore'] = $post;
     }
 
     /**

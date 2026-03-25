@@ -98,13 +98,7 @@ class OnLegacyActionTriggerRunner implements TriggerRunnerInterface
                 $this->stepProcessor->triggerCallbackIsRunning();
 
 
-                $this->logger->debug(
-                    $this->stepProcessor->prepareLogMessage(
-                        'Trigger fired (%s, Post #%d)',
-                        $nodeSlug,
-                        $postId
-                    )
-                );
+                $this->logger->debugWithArgs('Trigger fired (%s, Post #%d)', $nodeSlug, $postId);
 
                 $this->hooks->doAction(
                     HooksAbstract::ACTION_WORKFLOW_TRIGGER_EXECUTED,

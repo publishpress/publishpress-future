@@ -408,6 +408,10 @@ p.description,
     gap: 15px 25px;
 }
 
+#pp-debug-log-autorefresh {
+    margin-top: 15px;
+}
+
 .pp-debug-log-option {
     display: flex;
     align-items: center;

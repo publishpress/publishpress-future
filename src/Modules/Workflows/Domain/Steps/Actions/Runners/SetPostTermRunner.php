@@ -69,21 +69,9 @@ class SetPostTermRunner implements StepRunnerInterface
                 $nodeSlug = $this->stepProcessor->getSlugFromStep($step);
 
                 if ($resultIsError) {
-                    $this->logger->error(
-                        $this->stepProcessor->prepareLogMessage(
-                            'Error updating post %1$s terms on step %2$s',
-                            $postId,
-                            $nodeSlug
-                        )
-                    );
+                    $this->logger->errorWithArgs('Error updating post %1$s terms on step %2$s', $postId, $nodeSlug);
                 } else {
-                    $this->logger->debug(
-                        $this->stepProcessor->prepareLogMessage(
-                            'Post %1$s terms updated on step %2$s',
-                            $postId,
-                            $nodeSlug
-                        )
-                    );
+                    $this->logger->debugWithArgs('Post %1$s terms updated on step %2$s', $postId, $nodeSlug);
                 }
             },
             $postId,

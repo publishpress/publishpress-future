@@ -106,7 +106,7 @@ interface LoggerInterface
     /**
      * Mark the current request as having a workflow trigger activated.
      *
-     * @since 4.9.5
+     * @since 4.10.0
      * @return void
      */
     public function markCurrentRequestHasTriggerActivated();
@@ -155,4 +155,54 @@ interface LoggerInterface
      * @return bool
      */
     public function isDebugEnabled();
+
+    /**
+     * Log a debug message using sprintf-style formatting.
+     *
+     * @param string $message Message format string.
+     * @param mixed  ...$args Arguments for sprintf.
+     * @return void
+     * @since 4.10.0
+     */
+    public function debugWithArgs(string $message, ...$args): void;
+
+    /**
+     * Log an error message using sprintf-style formatting.
+     *
+     * @param string $message Message format string.
+     * @param mixed  ...$args Arguments for sprintf.
+     * @return void
+     * @since 4.10.0
+     */
+    public function errorWithArgs(string $message, ...$args): void;
+
+    /**
+     * Log a warning message using sprintf-style formatting.
+     *
+     * @param string $message Message format string.
+     * @param mixed  ...$args Arguments for sprintf.
+     * @return void
+     * @since 4.10.0
+     */
+    public function warningWithArgs(string $message, ...$args): void;
+
+    /**
+     * Log an info message using sprintf-style formatting.
+     *
+     * @param string $message Message format string.
+     * @param mixed  ...$args Arguments for sprintf.
+     * @return void
+     * @since 4.10.0
+     */
+    public function infoWithArgs(string $message, ...$args): void;
+
+    /**
+     * Log a notice message using sprintf-style formatting.
+     *
+     * @param string $message Message format string.
+     * @param mixed  ...$args Arguments for sprintf.
+     * @return void
+     * @since 4.10.0
+     */
+    public function noticeWithArgs(string $message, ...$args): void;
 }

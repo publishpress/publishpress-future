@@ -8,7 +8,15 @@ services:
         image: ${TERMINAL_IMAGE_NAME}
         profiles: ["term"]
         container_name: ${CONTAINER_NAME}_env_term
-        command: ["zsh"]
+        env_file:
+            - ../../.env
+        command:
+            - sh
+            - -c
+            - |
+              [ -n "$$GIT_USER_NAME" ] && git config --global user.name "$$GIT_USER_NAME"
+              [ -n "$$GIT_USER_EMAIL" ] && git config --global user.email "$$GIT_USER_EMAIL"
+              exec zsh
         stdin_open: true
         tty: true
         working_dir: "/project"
@@ -16,11 +24,14 @@ services:
             - ../../:/project
             - ../.cache/.npm/_logs:/root/.npm/_logs
             - ../.cache/.oh-my-zsh/log:/root/.oh-my-zsh/log
+            - ../.cache/.config/gh:/root/.config/gh
+            - ../.cache/.git:/root/.git
         environment:
             - INSIDE_DEV_WORKSPACE=true
             - HISTFILE=/root/.cache/.zsh_history
             - NPM_CONFIG_CACHE=/root/.cache/.npm
             - COMPOSER_HOME=/root/.cache/.composer
+            - GIT_CONFIG_GLOBAL=/root/.git/config
     ##############################################################################
     # Tests
     ##############################################################################
@@ -41,9 +52,10 @@ services:
             - ../.cache/logs/db_test:/var/log/mysql
             - ./wp/db/conf.d/my.cnf:/etc/mysql/conf.d/my.cnf
         healthcheck:
-            test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
-            start_period: 10s
-            retries: 3
+            test: ["CMD", "mariadb-admin", "ping", "-u", "root", "--password=root"]
+            start_period: 30s
+            interval: 5s
+            retries: 10
     wp_test:
         build: ./wp/wordpress
         profiles: ["test"]
@@ -77,7 +89,9 @@ services:
             - mailhog
         healthcheck:
             test: ["CMD", "test", "-f", "/var/www/html/wp-config.php"]
-            retries: 3
+            start_period: 120s
+            interval: 5s
+            retries: 10
         extra_hosts:
             - "host.docker.internal:host-gateway"
     wp_test_cli:
@@ -100,7 +114,7 @@ services:
             - ./wp/wordpress/conf.d/99-custom.ini:/usr/local/etc/php/conf.d/99-custom.ini
         depends_on:
             wp_test:
-                condition: service_healthy
+                condition: service_started
             db_test:
                 condition: service_healthy
             mailhog:

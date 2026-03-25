@@ -51,4 +51,14 @@ interface ExecutionContextInterface
      * @since 4.6.0
      */
     public function expandRuntimeVariables(array $compactedVariables, bool $isLegacyCompact = false): array;
+
+    /**
+     * @since 4.10.0
+     */
+    public function getWorkflowId(): int;
+
+    /**
+     * @since 4.10.0
+     */
+    public function setWorkflowId(int $workflowId): void;
 }

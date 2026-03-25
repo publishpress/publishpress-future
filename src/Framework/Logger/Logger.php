@@ -6,6 +6,7 @@
 
 namespace PublishPress\Future\Framework\Logger;
 
+use PublishPress\Future\Framework\Database\DBTableSchemaHandler;
 use PublishPress\Future\Framework\Logger\LogLevelAbstract as LogLevel;
 use PublishPress\Future\Framework\WordPress\Facade\DatabaseFacade;
 use PublishPress\Future\Framework\WordPress\Facade\SiteFacade;
@@ -15,6 +16,13 @@ defined('ABSPATH') or die('Direct access not allowed.');
 
 class Logger implements LoggerInterface
 {
+    /**
+     * Tables for which ensureDebugTableExists() has already run this request.
+     *
+     * @var array<string, true>
+     */
+    private static $debugTableEnsured = [];
+
     /**
      * @var string
      */
@@ -50,22 +58,56 @@ class Logger implements LoggerInterface
 
         // FIXME: Rename the table to something like ppfuture_debug_log and use a schema class.
         $this->dbTableName = $this->db->getTablePrefix() . 'postexpirator_debug';
-
-        $this->initialize();
     }
 
-    private function initialize()
+    /**
+     * Clears lazy debug-table ensure state (test isolation; optional tooling).
+     *
+     * @return void
+     *
+     * @since 4.10.1
+     */
+    public static function resetDebugTableEnsureCacheForTesting(): void
     {
-        if ($this->databaseTableDoNotExists()) {
+        self::$debugTableEnsured = [];
+    }
+
+    /**
+     * Ensures the debug log table exists before the first DB access in this request.
+     *
+     * @return void
+     *
+     * @since 4.10.1
+     */
+    private function ensureDebugTableExists(): void
+    {
+        if (isset(self::$debugTableEnsured[$this->dbTableName])) {
+            return;
+        }
+
+        if (! $this->debugDatabaseTableExists()) {
             $this->createDatabaseTable();
         }
+
+        self::$debugTableEnsured[$this->dbTableName] = true;
     }
 
-    private function databaseTableDoNotExists()
+    /**
+     * @return bool
+     *
+     * @since 4.10.1
+     */
+    private function debugDatabaseTableExists(): bool
     {
-        $databaseTableName = $this->getDatabaseTableName();
+        $query = $this->db->prepare(
+            'SELECT 1 FROM information_schema.tables WHERE table_schema = %s AND table_name = %s LIMIT 1',
+            DB_NAME,
+            $this->dbTableName
+        );
 
-        return $this->db->getVar("SHOW TABLES LIKE '$databaseTableName'") !== $this->dbTableName;
+        $row = $this->db->getVar($query);
+
+        return $row !== null && $row !== '';
     }
 
     private function getDatabaseTableName()
@@ -91,6 +133,8 @@ class Logger implements LoggerInterface
 
     public function deleteLogs()
     {
+        $this->ensureDebugTableExists();
+
         $databaseTableName = $this->getDatabaseTableName();
 
         $this->db->query("TRUNCATE TABLE $databaseTableName");
@@ -111,7 +155,7 @@ class Logger implements LoggerInterface
     public function isDownloadLogRequested()
     {
         // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-        return is_admin() && isset($_GET['action']) && $_GET['action'] === 'publishpress_future_debug_log';
+        return \is_admin() && isset($_GET['action']) && $_GET['action'] === 'publishpress_future_debug_log';
     }
 
     /**
@@ -133,6 +177,8 @@ class Logger implements LoggerInterface
         if ($this->isDownloadLogRequested()) {
             return;
         }
+
+        $this->ensureDebugTableExists();
 
         $levelDescription = strtoupper($level);
 
@@ -269,9 +315,90 @@ class Logger implements LoggerInterface
     }
 
     /**
+     * Log a debug message using sprintf-style formatting.
+     *
+     * @param string $message Message format string.
+     * @param mixed  ...$args Arguments for sprintf.
+     * @return void
+     * @since 4.10.0
+     */
+    public function debugWithArgs(string $message, ...$args): void
+    {
+        if (! $this->isDebugEnabled()) {
+            return;
+        }
+
+        $this->debug(sprintf($message, ...$args));
+    }
+
+    /**
+     * Log an error message using sprintf-style formatting.
+     *
+     * @param string $message Message format string.
+     * @param mixed  ...$args Arguments for sprintf.
+     * @return void
+     * @since 4.10.0
+     */
+    public function errorWithArgs(string $message, ...$args): void
+    {
+        $this->error(sprintf($message, ...$args));
+    }
+
+    /**
+     * Log a warning message using sprintf-style formatting.
+     *
+     * @param string $message Message format string.
+     * @param mixed  ...$args Arguments for sprintf.
+     * @return void
+     * @since 4.10.0
+     */
+    public function warningWithArgs(string $message, ...$args): void
+    {
+        if (! $this->isDebugEnabled()) {
+            return;
+        }
+
+        $this->warning(sprintf($message, ...$args));
+    }
+
+    /**
+     * Log an info message using sprintf-style formatting.
+     *
+     * @param string $message Message format string.
+     * @param mixed  ...$args Arguments for sprintf.
+     * @return void
+     * @since 4.10.0
+     */
+    public function infoWithArgs(string $message, ...$args): void
+    {
+        if (! $this->isDebugEnabled()) {
+            return;
+        }
+
+        $this->info(sprintf($message, ...$args));
+    }
+
+    /**
+     * Log a notice message using sprintf-style formatting.
+     *
+     * @param string $message Message format string.
+     * @param mixed  ...$args Arguments for sprintf.
+     * @return void
+     * @since 4.10.0
+     */
+    public function noticeWithArgs(string $message, ...$args): void
+    {
+        if (! $this->isDebugEnabled()) {
+            return;
+        }
+
+        $this->notice(sprintf($message, ...$args));
+    }
+
+    /**
      * Mark the current request as having a workflow trigger activated.
      *
-     * @since 4.9.5
+     * @since 4.10.0
      * @return void
      */
     public function markCurrentRequestHasTriggerActivated(): void
@@ -279,6 +406,8 @@ class Logger implements LoggerInterface
         if (! $this->isDebugEnabled()) {
             return;
         }
+
+        $this->ensureDebugTableExists();
 
         $databaseTableName = $this->getDatabaseTableName();
 
@@ -296,6 +425,8 @@ class Logger implements LoggerInterface
      */
     public function fetchAll($triggerActivatedOnly = false)
     {
+        $this->ensureDebugTableExists();
+
         $databaseTableName = $this->getDatabaseTableName();
         $where = '';
 
@@ -314,8 +445,10 @@ class Logger implements LoggerInterface
      */
     public function fetchLatest($limit = 100, $triggerActivatedOnly = false)
     {
+        $this->ensureDebugTableExists();
+
         $databaseTableName = $this->getDatabaseTableName();
-        $limit = absint($limit);
+        $limit = \absint($limit);
         $where = '';
 
         if ($triggerActivatedOnly) {
@@ -336,6 +469,8 @@ class Logger implements LoggerInterface
      */
     public function getTotalLogs($triggerActivatedOnly = false)
     {
+        $this->ensureDebugTableExists();
+
         $databaseTableName = $this->getDatabaseTableName();
         $where = '';
 
@@ -352,6 +487,8 @@ class Logger implements LoggerInterface
      */
     public function getLogSizeInBytes($triggerActivatedOnly = false)
     {
+        $this->ensureDebugTableExists();
+
         $databaseTableName = $this->getDatabaseTableName();
         $where = '';
 
@@ -370,5 +507,8 @@ class Logger implements LoggerInterface
         $databaseTableName = $this->getDatabaseTableName();
 
         $this->db->dropTable($databaseTableName);
+
+        unset(self::$debugTableEnsured[$this->dbTableName]);
+        DBTableSchemaHandler::clearTableExistenceCache();
     }
 }

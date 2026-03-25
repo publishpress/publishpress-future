@@ -108,7 +108,7 @@ class SendEmailRunner implements StepRunnerInterface
     {
         $message .= ' | Slug: ' . $this->stepSlug;
 
-        $this->logger->debug($this->stepProcessor->prepareLogMessage($message, ...$args));
+        $this->logger->debugWithArgs($message, ...$args);
     }
 
     private function getRecipients(array $nodeSettings): array

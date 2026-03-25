@@ -3,6 +3,7 @@
 namespace PublishPress\Future\Modules\Workflows\Domain\Engine;
 
 use PublishPress\Future\Core\HookableInterface;
+use PublishPress\Future\Framework\Logger\LoggerInterface;
 use PublishPress\Future\Modules\Workflows\Domain\Engine\VariableResolvers\ArrayResolver;
 use PublishPress\Future\Modules\Workflows\Domain\Engine\VariableResolvers\BooleanResolver;
 use PublishPress\Future\Modules\Workflows\Domain\Engine\VariableResolvers\DatetimeResolver;
@@ -25,6 +26,8 @@ use function wp_json_encode;
 
 class ExecutionContext implements ExecutionContextInterface
 {
+    private const LOG_PREFIX = '[WorkflowExecutionContext#%d]: ';
+
     /**
      * @var HookableInterface
      */
@@ -50,18 +53,47 @@ class ExecutionContext implements ExecutionContextInterface
      */
     private $expirablePostModelFactory;
 
+    /**
+     * Cache for nested variable values (e.g., "post1.meta.title").
+     *
+     * @var array
+     */
+    private $nestedVariablesCache = [];
+
+    /**
+     * @var LoggerInterface
+     */
+    private $logger;
+
+    /**
+     * @var int
+     */
+    private $workflowId = 0;
+
+    /**
+     * @var bool
+     */
+    private $nestedVariablesCacheEnabled;
+
     public function __construct(
         HookableInterface $hooks,
         ExecutionContextProcessorRegistryInterface $processorRegistry,
-        \Closure $expirablePostModelFactory
+        \Closure $expirablePostModelFactory,
+        LoggerInterface $logger
     ) {
         $this->hooks = $hooks;
         $this->processorRegistry = $processorRegistry;
         $this->expirablePostModelFactory = $expirablePostModelFactory;
+        $this->logger = $logger;
+
+        // We are using a flag for the nested variables cache because it is not fully tested.
+        $this->nestedVariablesCacheEnabled = defined('PUBLISHPRESS_FUTURE_VARIABLES_CACHE')
+            && constant('PUBLISHPRESS_FUTURE_VARIABLES_CACHE');
     }
 
     public function setAllVariables(array $runtimeVariables)
     {
+        $this->clearNestedVariablesCache();
         $this->runtimeVariables = $runtimeVariables;
     }
 
@@ -77,7 +109,7 @@ class ExecutionContext implements ExecutionContextInterface
 
     public function setVariable(string $variableName, $variableValue)
     {
-        if (strpos($variableName, '.') !== false) {
+        if ($this->isNestedVariable($variableName)) {
             $this->setVariableInNestedArray($variableName, $variableValue, $this->runtimeVariables);
         } else {
             $this->runtimeVariables[$variableName] = $variableValue;
@@ -107,6 +139,12 @@ class ExecutionContext implements ExecutionContextInterface
             $expression = trim($expression);
 
             if ($expressionElements = $this->parseHelperFromVariable($expression)) {
+                $this->debugWithArgs(
+                    'Parsing helper "%s" from variable "%s"',
+                    $expressionElements['helper'],
+                    $expressionElements['variable']
+                );
+
                 $value = $this->getVariable($expressionElements['variable']);
                 $value = $this->processorRegistry->process($expressionElements['helper'], $value, $expressionElements['args']);
             } else {
@@ -139,6 +177,11 @@ class ExecutionContext implements ExecutionContextInterface
     public function resolveExpressionsInArray(array $array): array
     {
         if (empty($array)) {
+            $this->debugWithArgs(
+                'Empty array passed to resolveExpressionsInArray',
+                $array
+            );
+
             return $array;
         }
 
@@ -289,7 +332,7 @@ class ExecutionContext implements ExecutionContextInterface
         return (string) $variableName;
     }
 
-    private function getVariableValueFromNestedVariable(string $variableName, $dataSource)
+    private function getVariableValueFromNestedVariable(string $variableName, $dataSource, int $level = 0)
     {
         $variableName = trim($variableName, '{}');
 
@@ -307,61 +350,107 @@ class ExecutionContext implements ExecutionContextInterface
             $dataSource
         );
 
-        $originalVariableName = $variableName;
-        $variableName = explode('.', $variableName);
+        if ($this->nestedVariablesCacheEnabled) {
+            // If the variable is the top level, check the cache.
+            if ($level === 0 && $this->hasNestedVariableInCache($variableName)) {
+                $this->debugWithArgs(
+                    'Variable "%s" is in the cache, returning the value',
+                    $variableName
+                );
 
-        if (count($variableName) === 1) {
-            return $this->getVariableValue($variableName[0], $dataSource);
-        } else {
-            if (is_array($dataSource) && !isset($dataSource[$variableName[0]])) {
-                return $originalVariableName;
+                return $this->getNestedVariableValueFromCache($variableName);
             }
-
-            if (is_object($dataSource)) {
-                if (!isset($dataSource->{$variableName[0]})) {
-                    return $originalVariableName;
-                }
-            }
-
-            if (is_array($dataSource)) {
-                $currentVariableSource = $dataSource[$variableName[0]];
-            } else {
-                $currentVariableSource = $dataSource->{$variableName[0]};
-            }
-
-            $variableName = array_slice($variableName, 1);
-
-            return $this->getVariableValueFromNestedVariable(
-                implode('.', $variableName),
-                $currentVariableSource
-            );
         }
 
-        return $originalVariableName;
+        $variableNameParts = explode('.', $variableName);
+
+        if (count($variableNameParts) === 1) {
+            return $this->getVariableValue($variableNameParts[0], $dataSource);
+        }
+
+        if (! is_array($dataSource) && ! is_object($dataSource)) {
+            $this->debugWithArgs(
+                'Variable\'s datasource is not an array or object, returning the variable name: "%s"',
+                $variableName
+            );
+
+            return $variableName;
+        }
+
+        if (is_array($dataSource) && !isset($dataSource[$variableNameParts[0]])) {
+            $this->debugWithArgs(
+                'Variable\'s datasource is an array but the key "%s" is not set, returning the variable name: "%s"',
+                $variableNameParts[0],
+                $variableName
+            );
+
+            return $variableName;
+        }
+
+        if (is_object($dataSource) && !isset($dataSource->{$variableNameParts[0]})) {
+            $this->debugWithArgs(
+                'Variable\'s datasource is an object but the property "%s" is not set, returning the variable name: "%s"',
+                $variableNameParts[0],
+                $variableName
+            );
+
+            return $variableName;
+        }
+
+        $currentVariableSource = is_array($dataSource) ?
+            $dataSource[$variableNameParts[0]] :
+            $dataSource->{$variableNameParts[0]};
+
+        $variableNameParts = array_slice($variableNameParts, 1);
+
+        $value = $this->getVariableValueFromNestedVariable(
+            implode('.', $variableNameParts),
+            $currentVariableSource,
+            $level + 1
+        );
+
+        if ($this->nestedVariablesCacheEnabled) {
+            // If the variable is the top level, set the value in the cache.
+            if ($level === 0) {
+                $this->debugWithArgs(
+                    'Setting variable "%s" in the cache',
+                    $variableName
+                );
+
+                $this->setNestedVariableValueInCache($variableName, $value);
+            }
+        }
+
+        return $value;
     }
 
-    private function setVariableInNestedArray(string $variableName, $variableValue, &$dataSource)
+    private function setVariableInNestedArray(string $variableName, $variableValue, &$dataSource, int $level = 0)
     {
-        $variableName = explode('.', $variableName);
+        $variableNameParts = explode('.', $variableName);
 
-        if (count($variableName) === 1) {
+        if (count($variableNameParts) === 1) {
             if (is_array($dataSource)) {
-                $dataSource[$variableName[0]] = $variableValue;
+                $dataSource[$variableNameParts[0]] = $variableValue;
             } elseif (is_object($dataSource) && $dataSource instanceof VariableResolverInterface) {
-                $dataSource->setValue($variableName[0], $variableValue);
+                $dataSource->setValue($variableNameParts[0], $variableValue);
             } else {
-                $dataSource->{$variableName[0]} = $variableValue;
+                $dataSource->{$variableNameParts[0]} = $variableValue;
             }
         } else {
-            if (!isset($dataSource[$variableName[0]])) {
-                $dataSource[$variableName[0]] = [];
+            if (!isset($dataSource[$variableNameParts[0]])) {
+                $dataSource[$variableNameParts[0]] = [];
             }
 
             $this->setVariableInNestedArray(
-                implode('.', array_slice($variableName, 1)),
+                implode('.', array_slice($variableNameParts, 1)),
                 $variableValue,
-                $dataSource[$variableName[0]]
+                $dataSource[$variableNameParts[0]],
+                $level + 1
             );
+
+            if ($level === 0) {
+                $this->setNestedVariableValueInCache($variableName, $variableValue);
+            }
         }
     }
 
@@ -393,6 +482,22 @@ class ExecutionContext implements ExecutionContextInterface
         }
 
         return $runtimeVariables;
+    }
+
+    /**
+     * @since 4.10.0
+     */
+    public function getWorkflowId(): int
+    {
+        return $this->workflowId;
+    }
+
+    /**
+     * @since 4.10.0
+     */
+    public function setWorkflowId(int $workflowId): void
+    {
+        $this->workflowId = $workflowId;
     }
 
     private function getPostDifferences($post1, $post2)
@@ -541,7 +646,7 @@ class ExecutionContext implements ExecutionContextInterface
                     'integer' => IntegerResolver::class,
                     'node' => NodeResolver::class,
                     'post' => PostResolver::class,
-                    'terms' => TermsResolver::class,
+                    'terms' => PostTermsResolver::class,
                     'site' => SiteResolver::class,
                     'user' => UserResolver::class,
                     'workflow' => WorkflowResolver::class,
@@ -619,5 +724,72 @@ class ExecutionContext implements ExecutionContextInterface
         }
 
         return $runtimeVariables;
+    }
+
+    private function hasNestedVariableInCache(string $variableName)
+    {
+        return isset($this->nestedVariablesCache[$variableName]) && false;
+    }
+
+    private function getNestedVariableValueFromCache(string $variableName)
+    {
+        if ($this->hasNestedVariableInCache($variableName)) {
+            return $this->nestedVariablesCache[$variableName];
+        }
+
+        return null;
+    }
+
+    private function setNestedVariableValueInCache(string $variableName, $variableValue)
+    {
+        if (! is_array($variableValue) && ! is_object($variableValue)) {
+            $this->nestedVariablesCache[$variableName] = $variableValue;
+            return;
+        }
+
+        if (is_array($variableValue)) {
+            $this->setNestedVariableValueInCacheForArray($variableName, $variableValue);
+            return;
+        }
+
+        $this->setNestedVariableValueInCacheForObject($variableName, $variableValue);
+    }
+
+    private function setNestedVariableValueInCacheForArray(string $variableName, $variableValue)
+    {
+        foreach ($variableValue as $key => $value) {
+            $this->setNestedVariableValueInCache($variableName . '.' . $key, $value);
+        }
+    }
+
+    private function setNestedVariableValueInCacheForObject(string $variableName, $variableValue)
+    {
+        $objectProperties = get_object_vars($variableValue);
+
+        foreach ($objectProperties as $key => $value) {
+            $this->setNestedVariableValueInCache($variableName . '.' . $key, $value);
+        }
+    }
+
+    private function clearNestedVariablesCache()
+    {
+        $this->nestedVariablesCache = [];
+    }
+
+    private function isNestedVariable(string $variableName)
+    {
+        return strpos($variableName, '.') !== false;
+    }
+
+    private function debugWithArgs(string $message, ...$args): void
+    {
+        if (! defined('PUBLISHPRESS_FUTURE_DEBUG_EXECUTION_CONTEXT') || ! PUBLISHPRESS_FUTURE_DEBUG_EXECUTION_CONTEXT) {
+            return;
+        }
+
+        $this->logger->debugWithArgs(
+            sprintf(self::LOG_PREFIX, $this->getWorkflowId()) . $message,
+            ...$args
+        );
     }
 }

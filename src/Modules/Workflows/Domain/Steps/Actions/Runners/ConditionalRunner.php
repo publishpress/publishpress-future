@@ -62,12 +62,7 @@ class ConditionalRunner implements StepRunnerInterface
                     'branch' => 'true',
                 ]);
 
-                $this->logger->debug(
-                    $this->stepProcessor->prepareLogMessage(
-                        'Step %1$s is a Pro feature, skipping to the true branch',
-                        $nodeSlug
-                    )
-                );
+                $this->logger->debugWithArgs('Step %1$s is a Pro feature, following to the true branch', $nodeSlug);
 
                 $this->stepProcessor->runNextSteps($step);
             }

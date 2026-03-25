@@ -32,6 +32,10 @@ class Controller implements InitializableInterface
     {
         $this->hooks = $hooks;
         $this->logger = $logger;
+
+        if (! defined('PUBLISHPRESS_FUTURE_DEBUG_EXECUTION_CONTEXT')) {
+            define('PUBLISHPRESS_FUTURE_DEBUG_EXECUTION_CONTEXT', false);
+        }
     }
 
     public function initialize()
@@ -52,12 +56,23 @@ class Controller implements InitializableInterface
             WorkflowsHooksAbstract::ACTION_WORKFLOW_TRIGGER_EXECUTED,
             [$this, 'onWorkflowTriggerExecuted']
         );
+
+        $this->hooks->addAction(
+            CoreAbstractHooks::ACTION_SHUTDOWN,
+            [$this, 'onShutdown'],
+            PHP_INT_MAX
+        );
+    }
+
+    public function onShutdown()
+    {
+        $this->logger->debug('Shutdown');
     }
 
     /**
      * Mark the current request in the debug log when a workflow trigger is executed.
      *
-     * @since 4.9.5
+     * @since 4.10.0
      * @return void
      */
     public function onWorkflowTriggerExecuted(): void

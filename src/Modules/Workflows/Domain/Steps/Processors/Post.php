@@ -11,6 +11,8 @@ use PublishPress\Future\Modules\Workflows\Interfaces\StepPostRelatedProcessorInt
 
 class Post implements StepProcessorInterface, StepPostRelatedProcessorInterface
 {
+    public const LOG_PREFIX = '[WorkflowStepsProcessorsPost:%d]: ';
+
     /**
      * @var HooksFacade
      */
@@ -31,6 +33,11 @@ class Post implements StepProcessorInterface, StepPostRelatedProcessorInterface
      */
     private $logger;
 
+    /**
+     * @var int
+     */
+    private $workflowId;
+
     public function __construct(
         HooksFacade $hooks,
         StepProcessorInterface $generalProcessor,
@@ -41,6 +48,12 @@ class Post implements StepProcessorInterface, StepPostRelatedProcessorInterface
         $this->generalProcessor = $generalProcessor;
         $this->executionContext = $executionContext;
         $this->logger = $logger;
+        $this->workflowId = $executionContext->getVariable('global.workflow.id');
+    }
+
+    private function getLogPrefix(): string
+    {
+        return sprintf(self::LOG_PREFIX, $this->workflowId);
     }
 
     public function setup(array $step, callable $setupCallback): void
@@ -49,8 +62,8 @@ class Post implements StepProcessorInterface, StepPostRelatedProcessorInterface
         $nodeSettings = $this->getNodeSettings($node);
 
         if (! isset($nodeSettings['post'])) {
-            $this->addErrorLogMessage(
-                'The "post" variable is not set in the node settings for step %s',
+            $this->logger->errorWithArgs(
+                $this->getLogPrefix() . 'The "post" variable is not set in the node settings for step %s',
                 $step['node']['data']['slug']
             );
 
@@ -58,8 +71,8 @@ class Post implements StepProcessorInterface, StepPostRelatedProcessorInterface
         }
 
         if (! isset($nodeSettings['post']['variable'])) {
-            $this->addErrorLogMessage(
-                'The post.variable variable is not set in the node settings for step %s',
+            $this->logger->errorWithArgs(
+                $this->getLogPrefix() . 'The "post.variable" variable is not set in the node settings for step %s',
                 $step['node']['data']['slug']
             );
 
@@ -70,8 +83,8 @@ class Post implements StepProcessorInterface, StepPostRelatedProcessorInterface
         $posts = $this->executionContext->getVariable($nodeSettings['post']['variable']);
 
         if (empty($posts)) {
-            $this->addDebugLogMessage(
-                'Step %s didn\'t find any posts, skipping',
+            $this->logger->debugWithArgs(
+                $this->getLogPrefix() . 'Step %s didn\'t find any posts, skipping',
                 $step['node']['data']['slug']
             );
 
@@ -83,8 +96,8 @@ class Post implements StepProcessorInterface, StepPostRelatedProcessorInterface
         }
 
         foreach ($posts as $post) {
-            $this->addDebugLogMessage(
-                'Processing post %s on step %s',
+            $this->logger->debugWithArgs(
+                $this->getLogPrefix() . 'Processing post %s on step %s',
                 $post,
                 $step['node']['data']['slug']
             );
@@ -132,6 +145,9 @@ class Post implements StepProcessorInterface, StepPostRelatedProcessorInterface
         return $this->generalProcessor->getNodeSettings($node);
     }
 
+    /**
+     * @deprecated 4.10.0 Use the logger instead
+     */
     public function logError(string $message, int $workflowId, array $step)
     {
         $this->addErrorLogMessage($message);
@@ -142,6 +158,9 @@ class Post implements StepProcessorInterface, StepPostRelatedProcessorInterface
         $this->generalProcessor->triggerCallbackIsRunning();
     }
 
+    /**
+     * @deprecated 4.10.0 Use the logger instead
+     */
     public function prepareLogMessage(string $message, ...$args): string
     {
         return $this->generalProcessor->prepareLogMessage($message, ...$args);
@@ -152,14 +171,20 @@ class Post implements StepProcessorInterface, StepPostRelatedProcessorInterface
         $this->generalProcessor->executeSafelyWithErrorHandling($step, $callback, ...$args);
     }
 
+    /**
+     * @deprecated 4.10.0 Use the logger instead
+     */
     private function addDebugLogMessage(string $message, ...$args): void
     {
-        $this->logger->debug($this->prepareLogMessage($message, ...$args));
+        $this->logger->debugWithArgs($message, ...$args);
     }
 
+    /**
+     * @deprecated 4.10.0 Use the logger instead
+     */
     private function addErrorLogMessage(string $message, ...$args): void
     {
-        $this->logger->error($this->prepareLogMessage($message, ...$args));
+        $this->logger->errorWithArgs($message, ...$args);
     }
 
     public function setPostIdOnTriggerGlobalVariable(int $postId): void

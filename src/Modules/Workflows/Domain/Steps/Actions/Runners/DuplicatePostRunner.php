@@ -42,12 +42,7 @@ class DuplicatePostRunner implements StepRunnerInterface
         $this->stepProcessor->executeSafelyWithErrorHandling(
             $step,
             function ($step) {
-                $this->logger->debug(
-                    $this->stepProcessor->prepareLogMessage(
-                        'Step %1$s is a Pro feature, skipping',
-                        $this->stepProcessor->getSlugFromStep($step)
-                    )
-                );
+                $this->logger->debugWithArgs('Step %1$s is a Pro feature, skipping', $this->stepProcessor->getSlugFromStep($step));
             }
         );
     }

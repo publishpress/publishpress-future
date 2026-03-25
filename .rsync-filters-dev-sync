@@ -36,3 +36,5 @@
 - /version.txt
 - /webpack.config.js
 - /yarn.lock
+
+- /.deploy-state.json

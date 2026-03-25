@@ -117,7 +117,7 @@ class Plugin implements InitializableInterface
     {
         \PostExpirator_Reviews::init();
 
-        $this->logger->debug(self::LOG_PREFIX . ' Reviews module ready');
+        $this->logger->debug(self::LOG_PREFIX . ' Reviews module has been initialized successfully.');
     }
 
     private function initializeCli()
@@ -128,7 +128,7 @@ class Plugin implements InitializableInterface
 
         \PostExpirator_Cli::getInstance();
 
-        $this->logger->debug(self::LOG_PREFIX . ' CLI module ready');
+        $this->logger->debug(self::LOG_PREFIX . ' CLI module has been initialized successfully.');
     }
 
     private function initializeHooks()
@@ -146,7 +146,7 @@ class Plugin implements InitializableInterface
     {
         $this->notices->init();
 
-        $this->logger->debug(self::LOG_PREFIX . ' Notices module ready');
+        $this->logger->debug(self::LOG_PREFIX . ' Notices module has been initialized successfully.');
     }
 
     private function initializeModules()
@@ -154,6 +154,7 @@ class Plugin implements InitializableInterface
         foreach ($this->modules as $module) {
             if (method_exists($module, 'initialize')) {
                 $module->initialize();
+                $this->logger->debug(self::LOG_PREFIX . ' ' . get_class($module) . ' module has been initialized successfully.');
             }
         }
     }
@@ -169,6 +170,9 @@ class Plugin implements InitializableInterface
          * `plugins_loaded` or `init` because this hook will be executed before those actions.
          */
         do_action(HooksAbstract::ACTION_ACTIVATE_PLUGIN);
+
+        // Full DB repair runs on the next request in manageUpgrade() once the container is loaded.
+        update_option('pp_future_pending_db_schema_repair', '1', false);
 
         SettingsFacade::setDefaultSettings();
 
@@ -191,6 +195,8 @@ class Plugin implements InitializableInterface
     {
         try {
             $container = Container::getInstance();
+
+            $this->runPendingDatabaseSchemaRepair($container);
 
             // Check for current version, if not exists, run activation
             $version = get_option('postexpiratorVersion');
@@ -320,7 +326,7 @@ class Plugin implements InitializableInterface
                     );
                 }
 
-                if (version_compare($version, '4.9.5', '<')) {
+                if (version_compare($version, '4.10.0', '<')) {
                     $container->get(ServicesAbstract::HOOKS)->doAction(
                         V04905DebugLogRequestId::HOOK
                     );
@@ -338,6 +344,28 @@ class Plugin implements InitializableInterface
             }
         } catch (Throwable $th) {
             $this->logger->error('Error managing upgrade: ' . $th->getMessage());
+        }
+    }
+
+    /**
+     * Runs after plugin activation (see install.php) once the container is available.
+     */
+    private function runPendingDatabaseSchemaRepair(Container $container): void
+    {
+        $pending = get_option('pp_future_pending_db_schema_repair');
+        if (empty($pending)) {
+            return;
+        }
+
+        delete_option('pp_future_pending_db_schema_repair');
+
+        try {
+            $container->get(ServicesAbstract::DATABASE_SCHEMA_MAINTAINER)->repairAllSchemas();
+        } catch (Throwable $th) {
+            update_option('pp_future_pending_db_schema_repair', '1', false);
+            $this->logger->error(
+                self::LOG_PREFIX . ' Pending database schema repair failed: ' . $th->getMessage()
+            );
         }
     }
 

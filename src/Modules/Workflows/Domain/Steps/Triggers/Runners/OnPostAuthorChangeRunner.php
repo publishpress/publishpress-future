@@ -42,12 +42,7 @@ class OnPostAuthorChangeRunner implements TriggerRunnerInterface
 
                 $nodeSlug = $this->stepProcessor->getSlugFromStep($step);
 
-                $this->logger->debug(
-                    $this->stepProcessor->prepareLogMessage(
-                        'Step %1$s is a Pro feature, skipping',
-                        $nodeSlug
-                    )
-                );
+                $this->logger->debugWithArgs('Step %1$s is a Pro feature, skipping', $nodeSlug);
             }
         );
     }

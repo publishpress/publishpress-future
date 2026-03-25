@@ -68,12 +68,10 @@ class ChangePostStatusRunner implements StepRunnerInterface
                 $newStatus = $nodeSettings['newStatus']['status'];
 
                 if ($oldStatus === $newStatus) {
-                    $this->logger->debug(
-                        $this->stepProcessor->prepareLogMessage(
-                            'Post status is the same, skipping | Post ID: %1$s | Slug: %2$s',
-                            $postId,
-                            $nodeSlug
-                        )
+                    $this->logger->debugWithArgs(
+                        'Post status is the same, skipping | Post ID: %1$s | Slug: %2$s',
+                        $postId,
+                        $nodeSlug
                     );
 
                     return;
@@ -82,24 +80,16 @@ class ChangePostStatusRunner implements StepRunnerInterface
                 if ('publish' === $newStatus) {
                     $postModel->publish();
 
-                    $this->logger->debug(
-                        $this->stepProcessor->prepareLogMessage(
-                            'Post published | Post ID: %1$s | Slug: %2$s',
-                            $postId,
-                            $nodeSlug
-                        )
-                    );
+                    $this->logger->debugWithArgs('Post published | Post ID: %1$s | Slug: %2$s', $postId, $nodeSlug);
                 } else {
                     $postModel->setPostStatus($newStatus);
 
-                    $this->logger->debug(
-                        $this->stepProcessor->prepareLogMessage(
-                            'Post status changed from %1$s to %2$s | Post ID: %3$s | Slug: %4$s',
-                            $oldStatus,
-                            $newStatus,
-                            $postId,
-                            $nodeSlug
-                        )
+                    $this->logger->debugWithArgs(
+                        'Post status changed from %1$s to %2$s | Post ID: %3$s | Slug: %4$s',
+                        $oldStatus,
+                        $newStatus,
+                        $postId,
+                        $nodeSlug
                     );
                 }
 

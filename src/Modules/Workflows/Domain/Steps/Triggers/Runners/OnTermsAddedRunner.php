@@ -67,6 +67,11 @@ class OnTermsAddedRunner implements TriggerRunnerInterface
      */
     private $executionContext;
 
+    /**
+     * @var string
+     */
+    private $stepSlug;
+
     public function __construct(
         HookableInterface $hooks,
         StepProcessorInterface $stepProcessor,
@@ -96,6 +101,7 @@ class OnTermsAddedRunner implements TriggerRunnerInterface
     {
         $this->step = $step;
         $this->workflowId = $workflowId;
+        $this->stepSlug = $this->stepProcessor->getSlugFromStep($this->step);
         $this->postCache->setup();
         $this->hooks->addAction(HooksAbstract::ACTION_SET_OBJECT_TERMS, [$this, 'triggerCallback'], 20, 6);
     }
@@ -105,24 +111,36 @@ class OnTermsAddedRunner implements TriggerRunnerInterface
         $post = get_post($objectId);
 
         if (!$post) {
+            $this->logger->debugWithArgs(
+                'Trigger skipped: Post not found for step %s and post #%d.',
+                $this->stepSlug,
+                $objectId
+            );
+
             return;
         }
-
-        $stepSlug = $this->stepProcessor->getSlugFromStep($this->step);
 
         // Get added terms from post cache
         $addedTermIds = $this->postCache->getAddedTermsIds($objectId, $taxonomy);
 
         if (empty($addedTermIds)) {
             // we should only execute this if post term is added
+            $this->logger->debugWithArgs(
+                'Trigger skipped: No terms added for step %s and post #%d.',
+                $this->stepSlug,
+                $objectId
+            );
+
             return;
         }
 
         if (!$this->matchesTermsFilter($addedTermIds, $taxonomy)) {
-            return;
-        }
+            $this->logger->debugWithArgs(
+                'Trigger skipped: Terms filter not met for step %s and post #%d.',
+                $this->stepSlug,
+                $objectId
+            );
 
-        if ($this->shouldAbortExecution($objectId, $stepSlug)) {
             return;
         }
 
@@ -132,7 +150,7 @@ class OnTermsAddedRunner implements TriggerRunnerInterface
         $postBefore = $cache['postBefore'] ?? $post;
         $postAfter = $cache['postAfter'] ?? $post;
 
-        $this->executionContext->setVariable($stepSlug, [
+        $this->executionContext->setVariable($this->stepSlug, [
             'postBefore' => new PostResolver(
                 $postBefore,
                 $this->hooks,
@@ -164,7 +182,23 @@ class OnTermsAddedRunner implements TriggerRunnerInterface
         ];
 
         if (!$this->postQueryValidator->validate($postQueryArgs)) {
+            $this->logger->debugWithArgs(
+                'Trigger skipped: Post query conditions not met for step %s and post #%d.',
+                $this->stepSlug,
+                $objectId
+            );
+
             return false;
+        }
+
+        if ($this->shouldAbortExecution($objectId)) {
+            $this->logger->debugWithArgs(
+                'Trigger skipped: Execution should be aborted for step %s and post #%d.',
+                $this->stepSlug,
+                $objectId
+            );
+
+            return;
         }
 
         $this->stepProcessor->executeSafelyWithErrorHandling(
@@ -196,7 +230,7 @@ class OnTermsAddedRunner implements TriggerRunnerInterface
         return true;
     }
 
-    private function shouldAbortExecution($postId, $stepSlug): bool
+    private function shouldAbortExecution($postId): bool
     {
         if (
             $this->hooks->applyFilters(
@@ -206,12 +240,7 @@ class OnTermsAddedRunner implements TriggerRunnerInterface
                 $this->step
             )
         ) {
-            $this->logger->debug(
-                $this->stepProcessor->prepareLogMessage(
-                    'Ignoring terms added event for step %s',
-                    $stepSlug
-                )
-            );
+            $this->logger->debugWithArgs('Ignoring terms added event for step %s', $this->stepSlug);
 
             return true;
         }
@@ -223,11 +252,10 @@ class OnTermsAddedRunner implements TriggerRunnerInterface
                 $postId
             )
         ) {
-            $this->logger->debug(
-                $this->stepProcessor->prepareLogMessage(
-                    'Infinite loop detected for step %s, skipping',
-                    $stepSlug
-                )
+            $this->logger->debugWithArgs(
+                'Trigger skipped: Infinite loop detected for step %s and post #%d.',
+                $this->stepSlug,
+                $postId
             );
 
             return true;
@@ -241,11 +269,10 @@ class OnTermsAddedRunner implements TriggerRunnerInterface
         ]);
 
         if ($this->executionSafeguard->preventDuplicateExecution($uniqueId)) {
-            $this->logger->debug(
-                $this->stepProcessor->prepareLogMessage(
-                    'Duplicate execution detected for step %s, skipping',
-                    $stepSlug
-                )
+            $this->logger->debugWithArgs(
+                'Trigger skipped: Duplicate execution detected for step %s and post #%d.',
+                $this->stepSlug,
+                $postId
             );
 
             return true;
@@ -254,19 +281,11 @@ class OnTermsAddedRunner implements TriggerRunnerInterface
         return false;
     }
 
-    public function processTriggerExecution($postId)
+    public function processTriggerExecution($step, $postId)
     {
-        $stepSlug = $this->stepProcessor->getSlugFromStep($this->step);
-
         $this->stepProcessor->triggerCallbackIsRunning();
 
-        $this->logger->debug(
-            $this->stepProcessor->prepareLogMessage(
-                'Trigger fired (%s, Post #%d)',
-                $stepSlug,
-                $postId
-            )
-        );
+        $this->logger->debugWithArgs('Trigger executed: %s for post #%d.', $this->stepSlug, $postId);
 
         $this->hooks->doAction(
             HooksAbstract::ACTION_WORKFLOW_TRIGGER_EXECUTED,

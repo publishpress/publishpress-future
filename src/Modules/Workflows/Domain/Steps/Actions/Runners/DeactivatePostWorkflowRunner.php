@@ -61,13 +61,7 @@ class DeactivatePostWorkflowRunner implements StepRunnerInterface
 
                 $nodeSlug = $this->stepProcessor->getSlugFromStep($step);
 
-                $this->logger->debug(
-                    $this->stepProcessor->prepareLogMessage(
-                        'Workflow disabled on %1$s completed for post %2$s',
-                        $nodeSlug,
-                        $postId
-                    )
-                );
+                $this->logger->debugWithArgs('Workflow disabled on %1$s completed for post %2$s', $nodeSlug, $postId);
             },
             $postId,
             $nodeSettings
