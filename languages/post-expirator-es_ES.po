@@ -55,11 +55,11 @@ msgstr "No tienes permisos para configurar PublishPress Future."
 
 #: legacy/classes/Display.class.php:157
 msgid "Debug is disabled"
-msgstr "﻿Depuración desactivada"
+msgstr "Depuración desactivada"
 
 #: legacy/classes/Display.class.php:279
 msgid "Debugging Disabled"
-msgstr "﻿Depuración desactivada"
+msgstr "Depuración desactivada"
 
 #: legacy/classes/Display.class.php:285
 msgid "Debugging Enabled"
