@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+ENV_FILE=""
+
 show_help() {
     echo "Usage: $0 [command]"
     echo ""
@@ -14,15 +16,19 @@ show_help() {
 }
 
 check_env_file() {
-    if [[ ! -f .env ]]; then
-        echo "Error: .env file not found in the root directory. Please run 'cp .env.example .env' to create it."
+    if [[ -f ../.env ]]; then
+        ENV_FILE="../.env"
+    elif [[ -f ./.env ]]; then
+        ENV_FILE="./.env"
+    else
+        echo "Error: .env file not found. Run 'cp .env.example .env' to create it."
         exit 1
     fi
 }
 
 set_env_file() {
     set -a
-    source .env
+    source "$ENV_FILE"
     set +a
 }
 
