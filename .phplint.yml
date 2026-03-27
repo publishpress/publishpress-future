@@ -16,5 +16,5 @@ exclude:
   - node_modules
   - dev-workspace
   - cache
-  - .cache
+  - dev-workspace-cache
   - assets
