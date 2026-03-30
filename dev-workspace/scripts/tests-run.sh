@@ -14,7 +14,7 @@ CACHE_DB="$REPO_ROOT/dev-workspace/.cache/db_test"
 
 if [[ ! -d "$CACHE_DB" ]] || [[ -z "$(ls -A "$CACHE_DB" 2>/dev/null)" ]]; then
     echo "Test DB cache not found — starting test environment..."
-    (cd "$REPO_ROOT/dev-workspace" && bash ./scripts/env.sh up test)
+    (cd "$REPO_ROOT/dev-workspace" && bash ./scripts/server.sh up test)
 fi
 
 (cd "$REPO_ROOT" && vendor/bin/codecept run "$@")
