@@ -17,6 +17,7 @@
   },
   "scripts": {
     "term": "dev-workspace/scripts/run.sh",
+    "term:stop": "dev-workspace/scripts/stop.sh",
     "build:full": [
       "@build:js",
       "@translate:compile",
@@ -64,6 +65,7 @@
     "check:lint": "dev-workspace/scripts/run.sh phplint --no-cache",
     "check:cs": "dev-workspace/scripts/run.sh phpcs",
     "check:stan": "dev-workspace/scripts/run.sh phpstan",
+    "check:deps": "dev-workspace/scripts/run.sh php ./dev-workspace/scripts/check-dependencies.sh ./lib publishpress/publishpress-future",
     "check:longpath": "dev-workspace/scripts/run.sh composer build:dir && dev-workspace/scripts/run.sh longpath dist/${PP_PLUGIN_SLUG}",
     "check:pot-diff": "dev-workspace/scripts/run.sh php dev-workspace/scripts/php/bin/pptk pot:diff https://raw.githubusercontent.com/${PP_PLUGIN_GITHUB_REPO}/refs/heads/main/languages/${PP_PLUGIN_LANG_DOMAIN}.pot ./languages/${PP_PLUGIN_LANG_DOMAIN}.pot",
     "check:pot-diff-md": "dev-workspace/scripts/run.sh php dev-workspace/scripts/php/bin/pptk pot:diff https://raw.githubusercontent.com/${PP_PLUGIN_GITHUB_REPO}/refs/heads/main/languages/${PP_PLUGIN_LANG_DOMAIN}.pot ./languages/${PP_PLUGIN_LANG_DOMAIN}.pot -m",
@@ -71,11 +73,12 @@
       "dev-workspace/scripts/run.sh php-cs-fixer fix .",
       "dev-workspace/scripts/run.sh phpcbf --standard=.phpcs.xml"
     ],
+    "fix:deps": "dev-workspace/scripts/run.sh php ./dev-workspace/scripts/merge-dependencies.sh ./lib publishpress/publishpress-future",
     "metrics": "dev-workspace/scripts/run.sh phpmetrics --report-html=metrics --exclude=vendor,lib/vendor,tests,dist,dev-workspace,.claude,.cursor,.github,.wordpress-org,.git,.zed,docs,languages.",
     "up": [
       "@test:up",
       "@wp:up",
-      "@env:info"
+      "@server:info"
     ],
     "down": [
       "@test:down",
@@ -85,7 +88,7 @@
       "@wp:stop",
       "@test:stop"
     ],
-    "env:info": [
+    "server:info": [
       "@wp:info",
       "@test:info"
     ],
@@ -371,10 +374,12 @@
     "check:lint": "Check PHP syntax with phplint",
     "check:cs": "Check PHP coding standards with PHPCS",
     "check:stan": "Run PHPStan static analysis",
+    "check:deps": "Check if lib dependencies match the Free plugin dependencies",
     "check:longpath": "Check for long paths in the build",
     "check:pot-diff": "Compare POT file with main branch",
     "check:pot-diff-md": "Compare POT file with main branch (Markdown)",
     "fix:php": "Fix PHP coding standards (CS-Fixer and phpcbf)",
+    "fix:deps": "Merge Free plugin lib dependencies into the lib composer.json",
     "sync:local": "Watch and sync plugin files to local dev site",
     "sync:local:once": "Sync plugin files once to local dev site",
     "test:driver": "Start the ChromeDriver server",
@@ -420,7 +425,7 @@
     "up": "Start both test and WordPress dev environments",
     "down": "Stop and remove both environments",
     "stop": "Stop both environments without removing containers",
-    "env:info": "Show info for both environments",
+    "server:info": "Show info for both environments",
     "refresh": "Refresh both environments",
     "clean": "Clean both environments",
     "logs": "Show logs for both environments",
@@ -441,9 +446,6 @@
     "container:build": "Build wp and wpcli Docker images",
     "container:build:wp": "Build the WordPress dev Docker image",
     "container:build:wpcli": "Build the WP-CLI Docker image",
-    "container:push": "Push wp and wpcli images to registry",
-    "container:push:wp": "Push WordPress dev image to registry",
-    "container:push:wpcli": "Push WP-CLI image to registry",
     "container:pull": "Pull latest Docker images",
     "translate": "Run PublishPress Translate commands",
     "translate:dry-run": "Run PublishPress Translate commands with dry-run mode",
