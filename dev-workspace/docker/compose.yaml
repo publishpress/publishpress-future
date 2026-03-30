@@ -57,9 +57,8 @@ services:
             interval: 5s
             retries: 10
     wp_test:
-        build: ./wp/wordpress
         profiles: ["test"]
-        image: ${WP_IMAGE_NAME}
+        image: publishpress/dev-workspace-wordpress:wordpress-6.9-php-8.5
         container_name: ${CONTAINER_NAME}_env_wp_test
         restart: always
         environment:
@@ -95,8 +94,7 @@ services:
         extra_hosts:
             - "host.docker.internal:host-gateway"
     wp_test_cli:
-        build: ./wp/wpcli
-        image: ${WPCLI_IMAGE_NAME}
+        image: publishpress/dev-workspace-wpcli:wpcli-2-php-8.5
         profiles: ["test"]
         container_name: ${CONTAINER_NAME}_env_wp_test_cli
         environment:
