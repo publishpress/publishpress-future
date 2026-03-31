@@ -111,7 +111,7 @@ service_info() {
 }
 
 if [[ $1 == "up" ]]; then
-  # Create the mailhog cache directory if it doesn't exist
+  bash ./scripts/services-init-cache.sh
   mkdir -p "$MAILHOG_CACHE/maildir"
 
   service_up
