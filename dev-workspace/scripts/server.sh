@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-# If not in the `dev-workspace` directory, change to it
-if [[ ! $(pwd) =~ .*dev-workspace$ ]]; then
-  cd dev-workspace
-fi
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+
+cd "$REPO_ROOT/dev-workspace"
 
 set -a
-source ../.env
+source "$REPO_ROOT/.env"
 set +a
 
 if [[ $# -eq 0 ]] || [[ $1 == "-h" ]]; then
@@ -17,7 +17,7 @@ fi
 PROFILE="${2:-dev}"
 
 COMPOSE_FILE=docker/compose.yaml
-CACHE_BASE_PATH=$(pwd)/dev-workspace-cache
+CACHE_BASE_PATH=$REPO_ROOT/dev-workspace-cache
 WP_CACHE=$CACHE_BASE_PATH/wp_${PROFILE}
 DB_CACHE=$CACHE_BASE_PATH/db_${PROFILE}
 

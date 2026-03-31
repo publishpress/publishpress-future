@@ -33,7 +33,7 @@ set_env_file() {
 }
 
 run_in_dev_workspace() {
-    if [ -z "$INSIDE_DEV_WORKSPACE" ]; then
+    if [ -z "$INSIDE_DEV_CONTAINER" ]; then
         echo "Initializing dev-workspace environment. Please wait..."
 
         # If not in the `dev-workspace` directory, change to it

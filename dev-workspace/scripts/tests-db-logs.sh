@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 
-# If not in the `dev-workspace` directory, change to it
-if [[ ! $(pwd) =~ .*dev-workspace$ ]]; then
-  cd dev-workspace
-fi
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+
+cd "$REPO_ROOT/dev-workspace"
 
 set -a
-source /project/.env
+source "$REPO_ROOT/.env"
 set +a
 
 DB_CONTAINER_NAME=${CONTAINER_NAME}_env_db_test
-DB_LOGS_FILE="${PWD}/dev-workspace-cache/logs/db_test/general.log"
+DB_LOGS_FILE="$REPO_ROOT/dev-workspace-cache/logs/db_test/general.log"
 
 run_mysql_query() {
   docker exec -i $DB_CONTAINER_NAME bash -c "mysql -u root -proot -e '$1' 2>&1 | grep  -v \"Using a password\""

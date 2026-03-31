@@ -2,12 +2,12 @@ name: ${CONTAINER_NAME}
 
 services:
     ##############################################################################
-    # Terminal
+    # Shell
     ##############################################################################
-    terminal:
+    shell:
         image: ${TERMINAL_IMAGE_NAME}
-        profiles: ["term"]
-        container_name: ${CONTAINER_NAME}_env_term
+        profiles: ["shell"]
+        container_name: ${CONTAINER_NAME}_env_shell
         env_file:
             - ../../.env
         command:
@@ -27,7 +27,7 @@ services:
             - ../dev-workspace-cache/.config/gh:/root/.config/gh
             - ../dev-workspace-cache/.git:/root/.git
         environment:
-            - INSIDE_DEV_WORKSPACE=true
+            - INSIDE_DEV_CONTAINER=true
             - HISTFILE=/root/.cache/.zsh_history
             - NPM_CONFIG_CACHE=/root/.cache/.npm
             - COMPOSER_HOME=/root/.cache/.composer
