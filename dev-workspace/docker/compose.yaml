@@ -68,7 +68,7 @@ services:
             WORDPRESS_DB_NAME: wordpress
             WORDPRESS_DEBUG: true
         ports:
-            - "8011:80"
+            - "${WP_TESTS_HTTP_PORT:-8011}:80"
         volumes:
           - ../../dev-workspace-cache/wp_test:/var/www/html/
           - ../../:/var/www/html/wp-content/plugins/post-expirator
@@ -122,7 +122,7 @@ services:
             - db_test
             - mailhog
         working_dir: /var/www/html
-        command: ["/bin/sh", "-c", "sh /tmp/prepare-wp.sh http://localhost:8011 future-free-wp_test"]
+        command: ["/bin/sh", "-c", "sh /tmp/prepare-wp.sh http://localhost:${WP_TESTS_HTTP_PORT:-8011} future-free-wp_test"]
         extra_hosts:
             - "host.docker.internal:host-gateway"
 
