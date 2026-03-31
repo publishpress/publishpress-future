@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Script to build a plugin and create a zip file from source code.
+# Script to pack a plugin into a directory and create a zip file from it.
 
 # Enable pipefail so pipelines return the exit code of the first failing command
 set -o pipefail
@@ -23,17 +23,17 @@ tmp_internal_vendor_dir="${tmp_build_dir}/lib"
 
 # Function to display help text
 show_help() {
-    echo "Usage: build.sh [command]"
+    echo "Usage: pack.sh [command]"
     echo "Commands:"
-    echo "  dir          Build the plugin to the dist directory."
-    echo "  zip          Build the plugin and create a zip file."
+    echo "  dir          Pack the plugin to the dist directory."
+    echo "  zip          Pack the plugin and create a zip file."
     echo "  clean        Clean the dist directory."
     echo "  version      Get the plugin version."
     echo ""
     echo "Options:"
     echo "  -h, --help   Show this help message."
     echo "  HIDE_HEADER  Set this environment variable to '1' to hide the header when running the script."
-    echo "               HIDE_HEADER=1 build.sh build"
+    echo "               HIDE_HEADER=1 pack.sh build"
 }
 
 # Check if user wants to see help or no command is provided
