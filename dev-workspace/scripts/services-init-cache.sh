@@ -1,15 +1,6 @@
 #!/usr/bin/env bash
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
-
-set -a
-source "$REPO_ROOT/.env"
-set +a
-
-if [[ "$CACHE_PATH" != /* ]]; then
-    CACHE_PATH="$REPO_ROOT/$CACHE_PATH"
-fi
+source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/env-init.sh"
 
 # If the legacy dir "cache" exists, move its content to $CACHE_PATH and remove it.
 if [[ -d "cache" ]]; then

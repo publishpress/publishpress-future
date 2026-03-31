@@ -1,13 +1,7 @@
 #!/usr/bin/env bash
 
-# If not in the `dev-workspace` directory, change to it
-if [[ ! $(pwd) =~ .*dev-workspace$ ]]; then
-  cd dev-workspace
-fi
-
-set -a
-source /project/.env
-set +a
+source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/env-init.sh"
+cd "$REPO_ROOT/dev-workspace"
 
 DB_EXPORT_FILE=/var/www/html/wp-content/plugins/$PLUGIN_SLUG/tests/Support/Data/dump.sql
 

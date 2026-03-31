@@ -8,9 +8,9 @@
 # Usage: tests-run.sh [codecept args...]
 #
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
-CACHE_DB="$REPO_ROOT/dev-workspace-cache/db_test"
+source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/env-init.sh"
+
+CACHE_DB="$CACHE_PATH/db_test"
 
 if [[ ! -d "$CACHE_DB" ]] || [[ -z "$(ls -A "$CACHE_DB" 2>/dev/null)" ]]; then
     echo "Test DB cache not found — starting test environment..."

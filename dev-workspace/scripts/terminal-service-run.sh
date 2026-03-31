@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/env-init.sh"
+
 bash ./scripts/services-init-cache.sh
 
 CACHE_NAME_LAST_UPDATE="$CACHE_PATH/.last_image_update_check"

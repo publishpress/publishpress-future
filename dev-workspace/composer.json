@@ -18,7 +18,8 @@
   "scripts": {
     "dev:shell": "dev-workspace/scripts/run.sh",
     "dev:shell:stop": "dev-workspace/scripts/stop.sh",
-    "build": [
+    "build": "@pack:zip",
+    "build:all": [
       "@build:js",
       "@translate:compile",
       "@pack:zip"
@@ -229,7 +230,8 @@
   "scripts-descriptions": {
     "dev:shell": "Run a command inside the dev-workspace container or open a new terminal",
     "dev:shell:stop": "Stop spawned dev shell processes",
-    "build": "Build JavaScript, compile translations, then pack the plugin (zip)",
+    "build": "Create the distributable zip package",
+    "build:all": "Build JavaScript, compile translations, then pack the plugin (zip) and build an unpacked plugin directory under dist",
     "pack:zip": "Create the distributable zip package",
     "pack:dir": "Build an unpacked plugin directory under dist",
     "pack:clean": "Clean build output from the packaging step",
