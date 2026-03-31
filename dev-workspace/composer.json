@@ -16,17 +16,16 @@
     }
   },
   "scripts": {
-    "term": "dev-workspace/scripts/run.sh",
-    "term:stop": "dev-workspace/scripts/stop.sh",
-    "build:full": [
+    "dev:shell": "dev-workspace/scripts/run.sh",
+    "dev:shell:stop": "dev-workspace/scripts/stop.sh",
+    "build": [
       "@build:js",
       "@translate:compile",
-      "@build"
+      "@pack:zip"
     ],
-    "build": "@build:zip",
-    "build:zip": "dev-workspace/scripts/run.sh dev-workspace/scripts/build.sh zip",
-    "build:dir": "dev-workspace/scripts/run.sh dev-workspace/scripts/build.sh dir",
-    "build:clean": "dev-workspace/scripts/run.sh dev-workspace/scripts/build.sh clean",
+    "pack:zip": "dev-workspace/scripts/run.sh dev-workspace/scripts/build.sh zip",
+    "pack:dir": "dev-workspace/scripts/run.sh dev-workspace/scripts/build.sh dir",
+    "pack:clean": "dev-workspace/scripts/run.sh dev-workspace/scripts/build.sh clean",
     "build:js-prod": "dev-workspace/scripts/run.sh cross-env NODE_ENV=production npx webpack --progress",
     "build:js-dev": "dev-workspace/scripts/run.sh cross-env NODE_ENV=development npx webpack --progress",
     "build:js": [
@@ -36,10 +35,10 @@
     "profile:js": "dev-workspace/scripts/run.sh cross-env NODE_ENV=production npx webpack --profile",
     "watch:js": "dev-workspace/scripts/run.sh cross-env NODE_ENV=development npx webpack --watch --progress",
     "get:version": "dev-workspace/scripts/run.sh dev-workspace/scripts/build.sh version",
-    "check": [
+    "check:all": [
       "@check:php",
-      "@check:lint",
-      "@check:cs",
+      "@lint:php",
+      "@lint:phpcs",
       "@check:longpath"
     ],
     "check:php": [
@@ -62,106 +61,17 @@
     "check:php-8.3": "dev-workspace/scripts/run.sh phpcs --standard=.phpcs-php-compatibility.xml --runtime-set testVersion 8.3",
     "check:php-8.4": "dev-workspace/scripts/run.sh phpcs --standard=.phpcs-php-compatibility.xml --runtime-set testVersion 8.4",
     "check:php-8.5": "dev-workspace/scripts/run.sh phpcs --standard=.phpcs-php-compatibility.xml --runtime-set testVersion 8.5",
-    "check:lint": "dev-workspace/scripts/run.sh phplint --no-cache",
-    "check:cs": "dev-workspace/scripts/run.sh phpcs",
-    "check:stan": "dev-workspace/scripts/run.sh phpstan",
-    "check:deps": "dev-workspace/scripts/run.sh php ./dev-workspace/scripts/check-dependencies.sh ./lib publishpress/publishpress-future",
-    "check:longpath": "dev-workspace/scripts/run.sh composer build:dir && dev-workspace/scripts/run.sh longpath dist/${PP_PLUGIN_SLUG}",
-    "check:pot-diff": "dev-workspace/scripts/run.sh php dev-workspace/scripts/php/bin/pptk pot:diff https://raw.githubusercontent.com/${PP_PLUGIN_GITHUB_REPO}/refs/heads/main/languages/${PP_PLUGIN_LANG_DOMAIN}.pot ./languages/${PP_PLUGIN_LANG_DOMAIN}.pot",
-    "check:pot-diff-md": "dev-workspace/scripts/run.sh php dev-workspace/scripts/php/bin/pptk pot:diff https://raw.githubusercontent.com/${PP_PLUGIN_GITHUB_REPO}/refs/heads/main/languages/${PP_PLUGIN_LANG_DOMAIN}.pot ./languages/${PP_PLUGIN_LANG_DOMAIN}.pot -m",
-    "fix:php": [
+    "lint:php": "dev-workspace/scripts/run.sh phplint --no-cache",
+    "check:deps": "dev-workspace/scripts/run.sh php ./dev-workspace/scripts/check-dependencies.sh ./lib ${PP_PLUGIN_COMPOSER_PACKAGE}",
+    "check:longpath": "dev-workspace/scripts/run.sh composer pack:dir && dev-workspace/scripts/run.sh longpath dist/${PP_PLUGIN_SLUG}",
+    "lint:phpcs": "dev-workspace/scripts/run.sh phpcs",
+    "qa:phpstan": "dev-workspace/scripts/run.sh phpstan",
+    "fix:cs": [
       "dev-workspace/scripts/run.sh php-cs-fixer fix .",
       "dev-workspace/scripts/run.sh phpcbf --standard=.phpcs.xml"
     ],
-    "fix:deps": "dev-workspace/scripts/run.sh php ./dev-workspace/scripts/merge-dependencies.sh ./lib publishpress/publishpress-future",
+    "fix:deps": "dev-workspace/scripts/run.sh php ./dev-workspace/scripts/merge-dependencies.sh ./lib ${PP_PLUGIN_COMPOSER_PACKAGE}",
     "metrics": "dev-workspace/scripts/run.sh phpmetrics --report-html=metrics --exclude=vendor,lib/vendor,tests,dist,dev-workspace,.claude,.cursor,.github,.wordpress-org,.git,.zed,docs,languages.",
-    "up": [
-      "@test:up",
-      "@wp:up",
-      "@server:info"
-    ],
-    "down": [
-      "@test:down",
-      "@wp:down"
-    ],
-    "stop": [
-      "@wp:stop",
-      "@test:stop"
-    ],
-    "server:info": [
-      "@wp:info",
-      "@test:info"
-    ],
-    "refresh": [
-      "@wp:refresh",
-      "@test:refresh"
-    ],
-    "clean": [
-      "@wp:clear",
-      "@test:clean"
-    ],
-    "logs": [
-      "@wp:logs",
-      "@test:logs"
-    ],
-    "wp:logs": [
-      "dev-workspace/scripts/ensure-not-container.sh",
-      "bash -c 'cd dev-workspace && set -a && source ../.env && set +a && docker compose -f docker/compose.yaml --profile dev logs --tail=100'"
-    ],
-    "test:logs": [
-      "dev-workspace/scripts/ensure-not-container.sh",
-      "bash -c 'cd dev-workspace && set -a && source ../.env && set +a && docker compose -f docker/compose.yaml --profile test logs --tail=100'"
-    ],
-    "wpcli:tests": [
-      "dev-workspace/scripts/ensure-not-container.sh",
-      "bash dev-workspace/scripts/tests-wp-cli.sh wp_test_cli $@"
-    ],
-    "wpcli:dev": [
-      "dev-workspace/scripts/ensure-not-container.sh",
-      "bash dev-workspace/scripts/tests-wp-cli.sh wp_dev_cli $@"
-    ],
-    "wp:up": [
-      "dev-workspace/scripts/ensure-not-container.sh",
-      "bash dev-workspace/scripts/server.sh up dev",
-      "@wp:info"
-    ],
-    "wp:stop": [
-      "dev-workspace/scripts/ensure-not-container.sh",
-      "bash dev-workspace/scripts/server.sh stop dev"
-    ],
-    "wp:down": [
-      "dev-workspace/scripts/ensure-not-container.sh",
-      "bash dev-workspace/scripts/server.sh down dev"
-    ],
-    "wp:restart": [
-      "dev-workspace/scripts/ensure-not-container.sh",
-      "bash dev-workspace/scripts/server.sh restart dev"
-    ],
-    "wp:clear": [
-      "dev-workspace/scripts/ensure-not-container.sh",
-      "bash dev-workspace/scripts/server.sh cleanup dev",
-      "@wp:clear-cache"
-    ],
-    "wp:clear-logs": [
-      "dev-workspace/scripts/ensure-not-container.sh",
-      "rm -f dev-workspace-cache/logs/db_dev/"
-    ],
-    "wp:clear-cache": [
-      "dev-workspace/scripts/ensure-not-container.sh",
-      "rm -rf dev-workspace-cache/wp_dev",
-      "rm -rf dev-workspace-cache/db_dev"
-    ],
-    "wp:refresh": [
-      "dev-workspace/scripts/ensure-not-container.sh",
-      "bash dev-workspace/scripts/server.sh refresh dev"
-    ],
-    "wp:info": [
-      "dev-workspace/scripts/ensure-not-container.sh",
-      "bash dev-workspace/scripts/server.sh info dev"
-    ],
-    "lib:install": "dev-workspace/scripts/run.sh composer install $@",
-    "lib:update": "dev-workspace/scripts/run.sh composer update $@",
-    "lib:update:lib": "dev-workspace/scripts/run.sh composer update --working-dir=./lib $@",
     "sync:local": [
       "dev-workspace/scripts/ensure-not-container.sh",
       "bash dev-workspace/scripts/local-sync.sh --watch"
@@ -211,6 +121,10 @@
       "dev-workspace/scripts/ensure-not-container.sh",
       "bash dev-workspace/scripts/server.sh stop test"
     ],
+    "test:logs": [
+      "dev-workspace/scripts/ensure-not-container.sh",
+      "bash -c 'cd dev-workspace && set -a && source ../.env && set +a && docker compose -f docker/compose.yaml --profile test logs --tail=500'"
+    ],
     "test:clean": [
       "dev-workspace/scripts/ensure-not-container.sh",
       "bash dev-workspace/scripts/server.sh cleanup test",
@@ -254,30 +168,9 @@
       "dev-workspace/scripts/ensure-not-container.sh",
       "composer codecept gherkin:steps $@"
     ],
-    "test:all": [
-      "dev-workspace/scripts/ensure-not-container.sh",
-      "vendor/bin/codecept run Unit",
-      "vendor/bin/codecept run Integration"
-    ],
     "test:coverage": [
       "dev-workspace/scripts/ensure-not-container.sh",
       "vendor/bin/codecept run --coverage --coverage-html $@"
-    ],
-    "test:unit": [
-      "dev-workspace/scripts/ensure-not-container.sh",
-      "vendor/bin/codecept run Unit $@"
-    ],
-    "test:integration": [
-      "dev-workspace/scripts/ensure-not-container.sh",
-      "vendor/bin/codecept run Integration $@"
-    ],
-    "test:acceptance": [
-      "dev-workspace/scripts/ensure-not-container.sh",
-      "vendor/bin/codecept run Acceptance $@"
-    ],
-    "test:end-to-end": [
-      "dev-workspace/scripts/ensure-not-container.sh",
-      "vendor/bin/codecept run EndToEnd $@"
     ],
     "test:debug": [
       "dev-workspace/scripts/ensure-not-container.sh",
@@ -302,19 +195,9 @@
       "bash ./dev-workspace/scripts/pr-link.sh"
     ],
     "deploy": "dev-workspace/scripts/run.sh node ./dev-workspace/scripts/custom-deploy/index.mjs",
-    "pre-commit-check": [
-      "@check",
-      "@test:unit",
-      "@test:integration"
-    ],
     "after-pr-merge": [
       "dev-workspace/scripts/ensure-not-container.sh",
       "bash dev-workspace/scripts/after-pr-merge.sh"
-    ],
-    "container:pull": [
-      "dev-workspace/scripts/ensure-not-container.sh",
-      "rm -f dev-workspace-cache/.last_image_update_check",
-      "bash dev-workspace/scripts/services-pull-images.sh"
     ],
     "translate": "dev-workspace/scripts/run.sh vendor/bin/publishpress-translate --languages=de_DE,fi,fil,id_ID,ja,ko_KR,nl_NL,ru_RU,yor",
     "translate:dry-run": "dev-workspace/scripts/run.sh vendor/bin/publishpress-translate --dry-run",
@@ -344,26 +227,22 @@
     "pre-install-cmd": "[ -f lib/composer.json ] && composer install --working-dir=./lib || true"
   },
   "scripts-descriptions": {
-    "term": "Run a command inside the dev-workspace container or open a new terminal",
-    "build": "Build the plugin zip package",
-    "build:all": "Build JavaScript, language files, and the plugin",
-    "build:zip": "Build the distributable zip package",
-    "build:dir": "Build the plugin in a directory",
-    "build:clean": "Clean the build directory",
-    "build:js-prod": "Build JavaScript in production mode",
-    "build:js-dev": "Build JavaScript in development mode",
-    "build:js": "Build JavaScript in production and development mode",
-    "profile:js": "Generate a profile of the JavaScript build",
-    "translate:pot": "Generate the POT file from PHP and JSX",
-    "translate:mo": "Generate MO files from language files",
-    "translate:json": "Generate JSON translation files for JavaScript",
-    "translate:php": "Generate PHP language files (WP 6.5+)",
-    "translate:compile": "Generate all language files (POT, MO, JSON, PHP)",
-    "watch:js": "Watch JavaScript files for changes and rebuild",
-    "get:version": "Get the plugin version",
-    "check": "Run PHP compatibility, lint, coding standards, long path checks",
-    "check:php": "Check PHP compatibility for all supported versions",
-    "check:php-5.6": "Check PHP 5.6 compatibility (main file only)",
+    "dev:shell": "Run a command inside the dev-workspace container or open a new terminal",
+    "dev:shell:stop": "Stop spawned dev shell processes",
+    "build": "Build JavaScript, compile translations, then pack the plugin (zip)",
+    "pack:zip": "Create the distributable zip package",
+    "pack:dir": "Build an unpacked plugin directory under dist",
+    "pack:clean": "Clean build output from the packaging step",
+    "build:js-prod": "Build JavaScript assets for production",
+    "build:js-dev": "Build JavaScript assets for development",
+    "build:js": "Build JavaScript for production and development",
+    "profile:js": "Profile the JavaScript webpack build",
+    "watch:js": "Watch JavaScript sources and rebuild on change",
+    "get:version": "Print the plugin version from the build metadata",
+    "check:all": "Run PHP compatibility, phplint, PHPCS, and long-path checks",
+    "check:php": "Run PHP compatibility checks for all configured PHP versions",
+    "check:php-5.6": "Check PHP 5.6 compatibility (main plugin file only)",
+    "check:php-7.2": "Check PHP 7.2 compatibility (main plugin file only)",
     "check:php-7.4": "Check PHP 7.4 compatibility",
     "check:php-8.0": "Check PHP 8.0 compatibility",
     "check:php-8.1": "Check PHP 8.1 compatibility",
@@ -371,88 +250,64 @@
     "check:php-8.3": "Check PHP 8.3 compatibility",
     "check:php-8.4": "Check PHP 8.4 compatibility",
     "check:php-8.5": "Check PHP 8.5 compatibility",
-    "check:lint": "Check PHP syntax with phplint",
-    "check:cs": "Check PHP coding standards with PHPCS",
-    "check:stan": "Run PHPStan static analysis",
-    "check:deps": "Check if lib dependencies match the Free plugin dependencies",
-    "check:longpath": "Check for long paths in the build",
-    "check:pot-diff": "Compare POT file with main branch",
-    "check:pot-diff-md": "Compare POT file with main branch (Markdown)",
-    "fix:php": "Fix PHP coding standards (CS-Fixer and phpcbf)",
-    "fix:deps": "Merge Free plugin lib dependencies into the lib composer.json",
-    "sync:local": "Watch and sync plugin files to local dev site",
-    "sync:local:once": "Sync plugin files once to local dev site",
-    "test:driver": "Start the ChromeDriver server",
-    "test:clean": "Clean test environment, cache, and Codeception",
-    "test:clean-cache": "Remove test cache files",
-    "test:clean-logs": "Remove test database logs",
-    "test:db-export": "Export test database to SQL file",
-    "test:db-import": "Import SQL file into test database",
-    "test:db-logs": "Show test database logs",
-    "test:down": "Stop and remove test containers",
-    "test:info": "Show test environment information",
-    "test:refresh": "Refresh the test environment",
+    "lint:php": "Lint PHP syntax with phplint",
+    "lint:phpcs": "Check PHP coding standards with PHPCS",
+    "qa:phpstan": "Run PHPStan static analysis",
+    "check:deps": "Verify lib Composer dependencies against the free plugin package",
+    "check:longpath": "Pack an unpacked build and scan for Windows long-path issues",
+    "fix:cs": "Auto-fix coding standards (PHP-CS-Fixer and PHPCBF)",
+    "fix:deps": "Merge free-plugin lib dependencies into lib/composer.json",
+    "metrics": "Generate a PHPMetrics HTML report",
+    "sync:local": "Watch and rsync the plugin to a local WordPress site",
+    "sync:local:once": "Rsync the plugin once to a local WordPress site",
+    "sync:local:stop": "Stop the local file watcher sync process",
+    "sync:remote": "Watch and sync the plugin to a remote dev site",
+    "sync:remote:once": "Sync the plugin once to a remote dev site",
+    "sync:remote:stop": "Stop the remote sync watcher process",
+    "test": "Run Codeception tests (pass suite or options as arguments)",
+    "test:up": "Start the Docker-based test environment",
+    "test:down": "Stop and remove the test environment containers",
     "test:restart": "Restart the test environment",
-    "test:stop": "Stop the test environment",
-    "test:up": "Start the test environment",
-    "test:all": "Run unit and integration tests",
-    "wp:up": "Start the WordPress dev environment",
-    "wp:stop": "Stop the WordPress dev environment",
-    "wp:down": "Stop and remove WordPress dev containers",
-    "wp:restart": "Restart the WordPress dev environment",
-    "wp:clear": "Clean WordPress dev environment and cache",
-    "wp:clear-logs": "Remove WordPress dev database logs",
-    "wp:clear-cache": "Remove WordPress dev cache files",
-    "wp:refresh": "Refresh the WordPress dev environment",
-    "wp:info": "Show WordPress dev environment information",
-    "lib:install": "Run composer install in dev-workspace",
-    "lib:update": "Run composer update in dev-workspace",
-    "lib:update:lib": "Run composer update for lib directory",
-    "wpcli:tests": "Run WP-CLI in the test environment",
-    "wpcli:dev": "Run WP-CLI in the WordPress dev environment",
-    "test:snippets": "Show unimplemented Gherkin snippets",
-    "test:steps": "Show all Gherkin steps",
-    "test": "Run tests (optional: suite or arguments)",
-    "test:debug": "Run tests with Xdebug",
-    "codecept": "Run Codeception commands",
-    "docker:cleanup": "Remove unused Docker resources",
-    "config:phpcs": "Configure PHP CodeSniffer installed paths",
-    "info:versions": "Show main tool versions",
-    "set:version": "Set the plugin version",
-    "pre-release": "Create release branch and pull request",
-    "pr-link": "Get the PR URL for the release branch",
-    "deploy": "Run the interactive deployment wizard",
-    "up": "Start both test and WordPress dev environments",
-    "down": "Stop and remove both environments",
-    "stop": "Stop both environments without removing containers",
-    "server:info": "Show info for both environments",
-    "refresh": "Refresh both environments",
-    "clean": "Clean both environments",
-    "logs": "Show logs for both environments",
-    "wp:logs": "Show WordPress dev Docker logs",
-    "test:logs": "Show test Docker logs",
-    "test:coverage": "Generate test coverage report",
-    "test:unit": "Run unit tests",
-    "test:integration": "Run integration tests",
-    "test:acceptance": "Run acceptance tests",
-    "test:end-to-end": "Run end-to-end tests",
-    "sync:local:stop": "Stop the local sync process",
-    "sync:remote": "Watch and sync plugin files to remote dev site",
-    "sync:remote:once": "Sync plugin files once to remote dev site",
-    "sync:remote:stop": "Stop the remote sync process",
-    "pre-commit-check": "Run checks, unit and integration tests",
-    "after-pr-merge": "Run post-merge tasks",
-    "metrics": "Generate PHP metrics report",
-    "container:build": "Build wp and wpcli Docker images",
-    "container:build:wp": "Build the WordPress dev Docker image",
-    "container:build:wpcli": "Build the WP-CLI Docker image",
-    "container:pull": "Pull latest Docker images",
-    "translate": "Run PublishPress Translate commands",
-    "translate:dry-run": "Run PublishPress Translate commands with dry-run mode",
-    "translate:download": "Run PublishPress Translate commands to download translations",
-    "translate:upload": "Run PublishPress Translate commands to upload translations",
-    "translate:custom": "Run PublishPress Translate commands to manage custom languages",
-    "translate:force": "Run PublishPress Translate commands to force translations",
-    "translate:force-custom": "Run PublishPress Translate commands to force translations for custom languages"
+    "test:stop": "Stop the test environment without removing containers",
+    "test:logs": "Tail Docker logs for the test profile",
+    "test:clean": "Clean the test environment, caches, and Codeception output",
+    "test:clean-cache": "Remove test WordPress and database cache directories",
+    "test:clean-logs": "Remove test database log files",
+    "test:db-export": "Export the test database to SQL",
+    "test:db-import": "Import SQL into the test database",
+    "test:db-logs": "Show test database container logs",
+    "test:info": "Show URLs and ports for the test environment",
+    "test:refresh": "Refresh the test environment (reinstall / reset as configured)",
+    "test:driver": "Start ChromeDriver for browser tests",
+    "test:snippets": "List missing Gherkin step snippets",
+    "test:steps": "List registered Gherkin step definitions",
+    "test:coverage": "Run Codeception with HTML coverage output",
+    "test:debug": "Run Codeception with Xdebug enabled",
+    "codecept": "Run Codeception CLI (pass codecept arguments)",
+    "docker:cleanup": "Prune unused Docker data",
+    "info:versions": "Print versions of main dev tools",
+    "set:version": "Bump the plugin version in project files",
+    "pre-release": "Prepare a release branch and open a pull request",
+    "pr-link": "Print the release PR URL for the current branch",
+    "deploy": "Run the interactive deployment helper",
+    "after-pr-merge": "Run repository post-merge housekeeping",
+    "translate": "Run PublishPress Translate for the default language set",
+    "translate:dry-run": "PublishPress Translate dry run",
+    "translate:download": "Download translations via PublishPress Translate",
+    "translate:upload": "Upload translations via PublishPress Translate",
+    "translate:custom": "PublishPress Translate with a custom language list",
+    "translate:force": "PublishPress Translate with force overwrite",
+    "translate:force-custom": "PublishPress Translate force mode for custom languages",
+    "translate:compile": "Compile MO, JSON, and PHP translation files",
+    "translate:pot": "Generate the POT file from PHP and JSX sources",
+    "translate:mo": "Generate MO files from PO files",
+    "translate:json": "Generate JSON translation files for JavaScript",
+    "translate:php": "Generate PHP translation files for WordPress 6.5+",
+    "config:phpcs": "Configure PHPCS installed_paths for this project",
+    "post-install-cmd": "After install: configure PHPCS paths",
+    "post-update-cmd": "After update: configure PHPCS paths",
+    "pre-autoload-dump": "Dump lib autoload when lib/composer.json exists",
+    "pre-update-cmd": "Update lib dependencies before the root update",
+    "pre-install-cmd": "Install lib dependencies before the root install"
   }
 }

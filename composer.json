@@ -85,6 +85,7 @@
         "plugin-folder": "post-expirator",
         "version-constant": "PUBLISHPRESS_FUTURE_VERSION",
         "plugin-lang-domain": "post-expirator",
-        "plugin-github-repo": "publishpress/PublishPress-Future"
+        "plugin-github-repo": "publishpress/publishpress-future",
+        "plugin-composer-package": "publishpress/publishpress-future"
     }
 }

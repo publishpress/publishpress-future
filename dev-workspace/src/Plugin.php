@@ -40,6 +40,7 @@ class Plugin implements PluginInterface, Capable
             'plugin-slug'        => 'PP_PLUGIN_SLUG',
             'plugin-lang-domain' => 'PP_PLUGIN_LANG_DOMAIN',
             'plugin-github-repo' => 'PP_PLUGIN_GITHUB_REPO',
+            'plugin-composer-package' => 'PP_PLUGIN_COMPOSER_PACKAGE',
         ];
         foreach ($map as $extraKey => $envKey) {
             if (isset($extra[$extraKey])) {

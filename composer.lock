@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ea3bbddeaf8b2cb1780a8ea9a7ca6d5c",
+    "content-hash": "2b81c97747a1fe543ba040c35f2a525c",
     "packages": [],
     "packages-dev": [
         {
@@ -63,28 +63,28 @@
         },
         {
             "name": "behat/behat",
-            "version": "v3.29.0",
+            "version": "v3.30.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Behat/Behat.git",
-                "reference": "51bdf81639a14645c5d2c06926f4aa37d204921b"
+                "reference": "be4af8c803a1ed589409a8a2eed01f9fb858e11d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Behat/Behat/zipball/51bdf81639a14645c5d2c06926f4aa37d204921b",
-                "reference": "51bdf81639a14645c5d2c06926f4aa37d204921b",
+                "url": "https://api.github.com/repos/Behat/Behat/zipball/be4af8c803a1ed589409a8a2eed01f9fb858e11d",
+                "reference": "be4af8c803a1ed589409a8a2eed01f9fb858e11d",
                 "shasum": ""
             },
             "require": {
-                "behat/gherkin": "^4.12.0",
+                "behat/gherkin": "^4.15.0",
                 "composer-runtime-api": "^2.2",
                 "composer/xdebug-handler": "^1.4 || ^2.0 || ^3.0",
                 "ext-mbstring": "*",
                 "nikic/php-parser": "^4.19.2 || ^5.2",
-                "php": ">=8.1 <8.6",
+                "php": ">=8.2 <8.6",
                 "psr/container": "^1.0 || ^2.0",
                 "symfony/config": "^5.4 || ^6.4 || ^7.0",
-                "symfony/console": "^5.4 || ^6.4 || ^7.0",
+                "symfony/console": "^5.4.9 || ^6.4 || ^7.0",
                 "symfony/dependency-injection": "^5.4 || ^6.4 || ^7.0",
                 "symfony/event-dispatcher": "^5.4 || ^6.4 || ^7.0",
                 "symfony/translation": "^5.4 || ^6.4 || ^7.0",
@@ -93,7 +93,7 @@
             "require-dev": {
                 "opis/json-schema": "^2.5",
                 "php-cs-fixer/shim": "^3.89",
-                "phpstan/phpstan": "^2.0",
+                "phpstan/phpstan": "2.1.18",
                 "phpunit/phpunit": "^9.6",
                 "rector/rector": "2.1.7",
                 "sebastian/diff": "^4.0",
@@ -147,7 +147,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Behat/Behat/issues",
-                "source": "https://github.com/Behat/Behat/tree/v3.29.0"
+                "source": "https://github.com/Behat/Behat/tree/v3.30.0"
             },
             "funding": [
                 {
@@ -163,7 +163,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-12-11T09:51:30+00:00"
+            "time": "2026-03-26T17:26:12+00:00"
         },
         {
             "name": "behat/gherkin",
@@ -1310,16 +1310,16 @@
         },
         {
             "name": "composer/ca-bundle",
-            "version": "1.5.10",
+            "version": "1.5.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/ca-bundle.git",
-                "reference": "961a5e4056dd2e4a2eedcac7576075947c28bf63"
+                "reference": "68ff39175e8e94a4bb1d259407ce51a6a60f09e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/961a5e4056dd2e4a2eedcac7576075947c28bf63",
-                "reference": "961a5e4056dd2e4a2eedcac7576075947c28bf63",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/68ff39175e8e94a4bb1d259407ce51a6a60f09e6",
+                "reference": "68ff39175e8e94a4bb1d259407ce51a6a60f09e6",
                 "shasum": ""
             },
             "require": {
@@ -1366,7 +1366,7 @@
             "support": {
                 "irc": "irc://irc.freenode.org/composer",
                 "issues": "https://github.com/composer/ca-bundle/issues",
-                "source": "https://github.com/composer/ca-bundle/tree/1.5.10"
+                "source": "https://github.com/composer/ca-bundle/tree/1.5.11"
             },
             "funding": [
                 {
@@ -1378,20 +1378,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-12-08T15:06:51+00:00"
+            "time": "2026-03-30T09:16:10+00:00"
         },
         {
             "name": "composer/class-map-generator",
-            "version": "1.7.1",
+            "version": "1.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/class-map-generator.git",
-                "reference": "8f5fa3cc214230e71f54924bd0197a3bcc705eb1"
+                "reference": "6a9c2f0970022ab00dc58c07d0685dd712f2231b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/class-map-generator/zipball/8f5fa3cc214230e71f54924bd0197a3bcc705eb1",
-                "reference": "8f5fa3cc214230e71f54924bd0197a3bcc705eb1",
+                "url": "https://api.github.com/repos/composer/class-map-generator/zipball/6a9c2f0970022ab00dc58c07d0685dd712f2231b",
+                "reference": "6a9c2f0970022ab00dc58c07d0685dd712f2231b",
                 "shasum": ""
             },
             "require": {
@@ -1435,7 +1435,7 @@
             ],
             "support": {
                 "issues": "https://github.com/composer/class-map-generator/issues",
-                "source": "https://github.com/composer/class-map-generator/tree/1.7.1"
+                "source": "https://github.com/composer/class-map-generator/tree/1.7.2"
             },
             "funding": [
                 {
@@ -1447,7 +1447,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-12-29T13:15:25+00:00"
+            "time": "2026-03-30T15:36:56+00:00"
         },
         {
             "name": "composer/composer",
@@ -5872,7 +5872,7 @@
             "dist": {
                 "type": "path",
                 "url": "dev-workspace",
-                "reference": "d6a88b6288e295a8c3b7ac7417c08fb89e154ec1"
+                "reference": "38ce9e60a4dde909d8588142ad3a9f5d3d8c8ac7"
             },
             "require": {
                 "composer-plugin-api": "^2.0"
@@ -5887,49 +5887,49 @@
                 }
             },
             "scripts": {
-                "term": [
-                    "dev-workspace/run"
+                "dev:shell": [
+                    "dev-workspace/scripts/run.sh"
                 ],
-                "build:full": [
-                    "@build:js",
-                    "@translate:compile",
-                    "@build"
+                "dev:shell:stop": [
+                    "dev-workspace/scripts/stop.sh"
                 ],
                 "build": [
-                    "@build:zip"
+                    "@build:js",
+                    "@translate:compile",
+                    "@pack"
                 ],
-                "build:zip": [
-                    "dev-workspace/run build zip"
+                "pack:zip": [
+                    "dev-workspace/scripts/run.sh dev-workspace/scripts/build.sh zip"
                 ],
-                "build:dir": [
-                    "dev-workspace/run build dir"
+                "pack:dir": [
+                    "dev-workspace/scripts/run.sh dev-workspace/scripts/build.sh dir"
                 ],
-                "build:clean": [
-                    "dev-workspace/run build clean"
+                "pack:clean": [
+                    "dev-workspace/scripts/run.sh dev-workspace/scripts/build.sh clean"
                 ],
                 "build:js-prod": [
-                    "dev-workspace/run cross-env NODE_ENV=production npx webpack --progress"
+                    "dev-workspace/scripts/run.sh cross-env NODE_ENV=production npx webpack --progress"
                 ],
                 "build:js-dev": [
-                    "dev-workspace/run cross-env NODE_ENV=development npx webpack --progress"
+                    "dev-workspace/scripts/run.sh cross-env NODE_ENV=development npx webpack --progress"
                 ],
                 "build:js": [
                     "@build:js-prod",
                     "@build:js-dev"
                 ],
                 "profile:js": [
-                    "dev-workspace/run cross-env NODE_ENV=production npx webpack --profile"
+                    "dev-workspace/scripts/run.sh cross-env NODE_ENV=production npx webpack --profile"
                 ],
                 "watch:js": [
-                    "dev-workspace/run cross-env NODE_ENV=development npx webpack --watch --progress"
+                    "dev-workspace/scripts/run.sh cross-env NODE_ENV=development npx webpack --watch --progress"
                 ],
                 "get:version": [
-                    "dev-workspace/run /scripts/build version"
+                    "dev-workspace/scripts/run.sh dev-workspace/scripts/build.sh version"
                 ],
-                "check": [
+                "check:all": [
                     "@check:php",
-                    "@check:lint",
-                    "@check:cs",
+                    "@lint:php",
+                    "@lint:phpcs",
                     "@check:longpath"
                 ],
                 "check:php": [
@@ -5944,149 +5944,56 @@
                     "@check:php-8.5"
                 ],
                 "check:php-5.6": [
-                    "dev-workspace/run phpcs --standard=.phpcs-php-compatibility.xml --runtime-set testVersion 5.6 ./${PP_PLUGIN_SLUG}.php"
+                    "dev-workspace/scripts/run.sh phpcs --standard=.phpcs-php-compatibility.xml --runtime-set testVersion 5.6 ./${PP_PLUGIN_SLUG}.php"
                 ],
                 "check:php-7.2": [
-                    "dev-workspace/run phpcs --standard=.phpcs-php-compatibility.xml --runtime-set testVersion 7.2 ./${PP_PLUGIN_SLUG}.php"
+                    "dev-workspace/scripts/run.sh phpcs --standard=.phpcs-php-compatibility.xml --runtime-set testVersion 7.2 ./${PP_PLUGIN_SLUG}.php"
                 ],
                 "check:php-7.4": [
-                    "dev-workspace/run phpcs --standard=.phpcs-php-compatibility.xml --runtime-set testVersion 7.4"
+                    "dev-workspace/scripts/run.sh phpcs --standard=.phpcs-php-compatibility.xml --runtime-set testVersion 7.4"
                 ],
                 "check:php-8.0": [
-                    "dev-workspace/run phpcs --standard=.phpcs-php-compatibility.xml --runtime-set testVersion 8.0"
+                    "dev-workspace/scripts/run.sh phpcs --standard=.phpcs-php-compatibility.xml --runtime-set testVersion 8.0"
                 ],
                 "check:php-8.1": [
-                    "dev-workspace/run phpcs --standard=.phpcs-php-compatibility.xml --runtime-set testVersion 8.1"
+                    "dev-workspace/scripts/run.sh phpcs --standard=.phpcs-php-compatibility.xml --runtime-set testVersion 8.1"
                 ],
                 "check:php-8.2": [
-                    "dev-workspace/run phpcs --standard=.phpcs-php-compatibility.xml --runtime-set testVersion 8.2"
+                    "dev-workspace/scripts/run.sh phpcs --standard=.phpcs-php-compatibility.xml --runtime-set testVersion 8.2"
                 ],
                 "check:php-8.3": [
-                    "dev-workspace/run phpcs --standard=.phpcs-php-compatibility.xml --runtime-set testVersion 8.3"
+                    "dev-workspace/scripts/run.sh phpcs --standard=.phpcs-php-compatibility.xml --runtime-set testVersion 8.3"
                 ],
                 "check:php-8.4": [
-                    "dev-workspace/run phpcs --standard=.phpcs-php-compatibility.xml --runtime-set testVersion 8.4"
+                    "dev-workspace/scripts/run.sh phpcs --standard=.phpcs-php-compatibility.xml --runtime-set testVersion 8.4"
                 ],
                 "check:php-8.5": [
-                    "dev-workspace/run phpcs --standard=.phpcs-php-compatibility.xml --runtime-set testVersion 8.5"
+                    "dev-workspace/scripts/run.sh phpcs --standard=.phpcs-php-compatibility.xml --runtime-set testVersion 8.5"
                 ],
-                "check:lint": [
-                    "dev-workspace/run phplint --no-cache"
+                "lint:php": [
+                    "dev-workspace/scripts/run.sh phplint --no-cache"
                 ],
-                "check:cs": [
-                    "dev-workspace/run phpcs"
-                ],
-                "check:stan": [
-                    "dev-workspace/run phpstan"
+                "check:deps": [
+                    "dev-workspace/scripts/run.sh php ./dev-workspace/scripts/check-dependencies.sh ./lib ${PP_PLUGIN_COMPOSER_PACKAGE}"
                 ],
                 "check:longpath": [
-                    "dev-workspace/run composer build:dir && dev-workspace/run longpath dist/${PP_PLUGIN_SLUG}"
+                    "dev-workspace/scripts/run.sh composer pack:dir && dev-workspace/scripts/run.sh longpath dist/${PP_PLUGIN_SLUG}"
                 ],
-                "check:pot-diff": [
-                    "dev-workspace/run php dev-workspace/scripts/php/bin/pptk pot:diff https://raw.githubusercontent.com/${PP_PLUGIN_GITHUB_REPO}/refs/heads/main/languages/${PP_PLUGIN_LANG_DOMAIN}.pot ./languages/${PP_PLUGIN_LANG_DOMAIN}.pot"
+                "lint:phpcs": [
+                    "dev-workspace/scripts/run.sh phpcs"
                 ],
-                "check:pot-diff-md": [
-                    "dev-workspace/run php dev-workspace/scripts/php/bin/pptk pot:diff https://raw.githubusercontent.com/${PP_PLUGIN_GITHUB_REPO}/refs/heads/main/languages/${PP_PLUGIN_LANG_DOMAIN}.pot ./languages/${PP_PLUGIN_LANG_DOMAIN}.pot -m"
+                "qa:phpstan": [
+                    "dev-workspace/scripts/run.sh phpstan"
                 ],
-                "fix:php": [
-                    "dev-workspace/run php-cs-fixer fix .",
-                    "dev-workspace/run phpcbf --standard=.phpcs.xml"
+                "fix:cs": [
+                    "dev-workspace/scripts/run.sh php-cs-fixer fix .",
+                    "dev-workspace/scripts/run.sh phpcbf --standard=.phpcs.xml"
+                ],
+                "fix:deps": [
+                    "dev-workspace/scripts/run.sh php ./dev-workspace/scripts/merge-dependencies.sh ./lib ${PP_PLUGIN_COMPOSER_PACKAGE}"
                 ],
                 "metrics": [
-                    "dev-workspace/run phpmetrics --report-html=metrics --exclude=vendor,lib/vendor,tests,dist,dev-workspace,.claude,.cursor,.github,.wordpress-org,.git,.zed,docs,languages."
-                ],
-                "up": [
-                    "@test:up",
-                    "@wp:up",
-                    "@env:info"
-                ],
-                "down": [
-                    "@test:down",
-                    "@wp:down"
-                ],
-                "stop": [
-                    "@wp:stop",
-                    "@test:stop"
-                ],
-                "env:info": [
-                    "@wp:info",
-                    "@test:info"
-                ],
-                "refresh": [
-                    "@wp:refresh",
-                    "@test:refresh"
-                ],
-                "clean": [
-                    "@wp:clear",
-                    "@test:clean"
-                ],
-                "logs": [
-                    "@wp:logs",
-                    "@test:logs"
-                ],
-                "wp:logs": [
-                    "dev-workspace/scripts/ensure-not-container.sh",
-                    "bash -c 'cd dev-workspace && set -a && source ../.env && set +a && docker compose -f docker/compose.yaml --profile dev logs --tail=100'"
-                ],
-                "test:logs": [
-                    "dev-workspace/scripts/ensure-not-container.sh",
-                    "bash -c 'cd dev-workspace && set -a && source ../.env && set +a && docker compose -f docker/compose.yaml --profile test logs --tail=100'"
-                ],
-                "wpcli:tests": [
-                    "dev-workspace/scripts/ensure-not-container.sh",
-                    "bash dev-workspace/scripts/tests-wp-cli.sh wp_test_cli $@"
-                ],
-                "wpcli:dev": [
-                    "dev-workspace/scripts/ensure-not-container.sh",
-                    "bash dev-workspace/scripts/tests-wp-cli.sh wp_dev_cli $@"
-                ],
-                "wp:up": [
-                    "dev-workspace/scripts/ensure-not-container.sh",
-                    "bash dev-workspace/scripts/env.sh up dev",
-                    "@wp:info"
-                ],
-                "wp:stop": [
-                    "dev-workspace/scripts/ensure-not-container.sh",
-                    "bash dev-workspace/scripts/env.sh stop dev"
-                ],
-                "wp:down": [
-                    "dev-workspace/scripts/ensure-not-container.sh",
-                    "bash dev-workspace/scripts/env.sh down dev"
-                ],
-                "wp:restart": [
-                    "dev-workspace/scripts/ensure-not-container.sh",
-                    "bash dev-workspace/scripts/env.sh restart dev"
-                ],
-                "wp:clear": [
-                    "dev-workspace/scripts/ensure-not-container.sh",
-                    "bash dev-workspace/scripts/env.sh cleanup dev",
-                    "@wp:clear-cache"
-                ],
-                "wp:clear-logs": [
-                    "dev-workspace/scripts/ensure-not-container.sh",
-                    "rm -f dev-workspace/.cache/logs/db_dev/"
-                ],
-                "wp:clear-cache": [
-                    "dev-workspace/scripts/ensure-not-container.sh",
-                    "rm -rf dev-workspace/.cache/wp_dev",
-                    "rm -rf dev-workspace/.cache/db_dev"
-                ],
-                "wp:refresh": [
-                    "dev-workspace/scripts/ensure-not-container.sh",
-                    "bash dev-workspace/scripts/env.sh refresh dev"
-                ],
-                "wp:info": [
-                    "dev-workspace/scripts/ensure-not-container.sh",
-                    "bash dev-workspace/scripts/env.sh info dev"
-                ],
-                "lib:install": [
-                    "dev-workspace/run composer install $@"
-                ],
-                "lib:update": [
-                    "dev-workspace/run composer update $@"
-                ],
-                "lib:update:lib": [
-                    "dev-workspace/run composer update --working-dir=./lib $@"
+                    "dev-workspace/scripts/run.sh phpmetrics --report-html=metrics --exclude=vendor,lib/vendor,tests,dist,dev-workspace,.claude,.cursor,.github,.wordpress-org,.git,.zed,docs,languages."
                 ],
                 "sync:local": [
                     "dev-workspace/scripts/ensure-not-container.sh",
@@ -6118,7 +6025,7 @@
                 ],
                 "test:up": [
                     "dev-workspace/scripts/ensure-not-container.sh",
-                    "bash dev-workspace/scripts/env.sh up test",
+                    "bash dev-workspace/scripts/server.sh up test",
                     "@test:info"
                 ],
                 "test:driver": [
@@ -6127,30 +6034,34 @@
                 ],
                 "test:down": [
                     "dev-workspace/scripts/ensure-not-container.sh",
-                    "bash dev-workspace/scripts/env.sh down test"
+                    "bash dev-workspace/scripts/server.sh down test"
                 ],
                 "test:restart": [
                     "dev-workspace/scripts/ensure-not-container.sh",
-                    "bash dev-workspace/scripts/env.sh restart test"
+                    "bash dev-workspace/scripts/server.sh restart test"
                 ],
                 "test:stop": [
                     "dev-workspace/scripts/ensure-not-container.sh",
-                    "bash dev-workspace/scripts/env.sh stop test"
+                    "bash dev-workspace/scripts/server.sh stop test"
+                ],
+                "test:logs": [
+                    "dev-workspace/scripts/ensure-not-container.sh",
+                    "bash -c 'cd dev-workspace && set -a && source ../.env && set +a && docker compose -f docker/compose.yaml --profile test logs --tail=500'"
                 ],
                 "test:clean": [
                     "dev-workspace/scripts/ensure-not-container.sh",
-                    "bash dev-workspace/scripts/env.sh cleanup test",
+                    "bash dev-workspace/scripts/server.sh cleanup test",
                     "@test:clean-cache",
                     "composer codecept clean"
                 ],
                 "test:clean-logs": [
                     "dev-workspace/scripts/ensure-not-container.sh",
-                    "rm -f dev-workspace/.cache/logs/db_test/"
+                    "rm -f dev-workspace-cache/logs/db_test/"
                 ],
                 "test:clean-cache": [
                     "dev-workspace/scripts/ensure-not-container.sh",
-                    "rm -rf dev-workspace/.cache/wp_test",
-                    "rm -rf dev-workspace/.cache/db_test"
+                    "rm -rf dev-workspace-cache/wp_test",
+                    "rm -rf dev-workspace-cache/db_test"
                 ],
                 "test:db-export": [
                     "dev-workspace/scripts/ensure-not-container.sh",
@@ -6166,11 +6077,11 @@
                 ],
                 "test:info": [
                     "dev-workspace/scripts/ensure-not-container.sh",
-                    "bash dev-workspace/scripts/env.sh info test"
+                    "bash dev-workspace/scripts/server.sh info test"
                 ],
                 "test:refresh": [
                     "dev-workspace/scripts/ensure-not-container.sh",
-                    "bash dev-workspace/scripts/env.sh refresh test"
+                    "bash dev-workspace/scripts/server.sh refresh test"
                 ],
                 "test:snippets": [
                     "dev-workspace/scripts/ensure-not-container.sh",
@@ -6180,30 +6091,9 @@
                     "dev-workspace/scripts/ensure-not-container.sh",
                     "composer codecept gherkin:steps $@"
                 ],
-                "test:all": [
-                    "dev-workspace/scripts/ensure-not-container.sh",
-                    "vendor/bin/codecept run Unit",
-                    "vendor/bin/codecept run Integration"
-                ],
                 "test:coverage": [
                     "dev-workspace/scripts/ensure-not-container.sh",
                     "vendor/bin/codecept run --coverage --coverage-html $@"
-                ],
-                "test:unit": [
-                    "dev-workspace/scripts/ensure-not-container.sh",
-                    "vendor/bin/codecept run Unit $@"
-                ],
-                "test:integration": [
-                    "dev-workspace/scripts/ensure-not-container.sh",
-                    "vendor/bin/codecept run Integration $@"
-                ],
-                "test:acceptance": [
-                    "dev-workspace/scripts/ensure-not-container.sh",
-                    "vendor/bin/codecept run Acceptance $@"
-                ],
-                "test:end-to-end": [
-                    "dev-workspace/scripts/ensure-not-container.sh",
-                    "vendor/bin/codecept run EndToEnd $@"
                 ],
                 "test:debug": [
                     "dev-workspace/scripts/ensure-not-container.sh",
@@ -6218,10 +6108,10 @@
                     "docker system prune -f"
                 ],
                 "info:versions": [
-                    "dev-workspace/run bash ./dev-workspace/scripts/dependency-versions.sh"
+                    "dev-workspace/scripts/run.sh bash ./dev-workspace/scripts/dependency-versions.sh"
                 ],
                 "set:version": [
-                    "dev-workspace/run php ./dev-workspace/scripts/plugin-bump-version.php \"$@\""
+                    "dev-workspace/scripts/run.sh php ./dev-workspace/scripts/plugin-bump-version.php \"$@\""
                 ],
                 "pre-release": [
                     "dev-workspace/scripts/ensure-not-container.sh",
@@ -6232,7 +6122,7 @@
                     "bash ./dev-workspace/scripts/pr-link.sh"
                 ],
                 "deploy": [
-                    "dev-workspace/run node ./dev-workspace/scripts/custom-deploy/index.mjs"
+                    "dev-workspace/scripts/run.sh node ./dev-workspace/scripts/custom-deploy/index.mjs"
                 ],
                 "pre-commit-check": [
                     "@check",
@@ -6243,55 +6133,26 @@
                     "dev-workspace/scripts/ensure-not-container.sh",
                     "bash dev-workspace/scripts/after-pr-merge.sh"
                 ],
-                "container:build": [
-                    "@container:build:wp",
-                    "@container:build:wpcli"
-                ],
-                "container:build:wp": [
-                    "dev-workspace/scripts/ensure-not-container.sh",
-                    "docker compose -f dev-workspace/docker/compose.yaml --env-file .env build wp"
-                ],
-                "container:build:wpcli": [
-                    "dev-workspace/scripts/ensure-not-container.sh",
-                    "docker compose -f dev-workspace/docker/compose.yaml --env-file .env build wpcli"
-                ],
-                "container:push": [
-                    "@container:push:wp",
-                    "@container:push:wpcli"
-                ],
-                "container:push:wp": [
-                    "dev-workspace/scripts/ensure-not-container.sh",
-                    "bash dev-workspace/scripts/push-wp.sh"
-                ],
-                "container:push:wpcli": [
-                    "dev-workspace/scripts/ensure-not-container.sh",
-                    "bash dev-workspace/scripts/push-wpcli.sh"
-                ],
-                "container:pull": [
-                    "dev-workspace/scripts/ensure-not-container.sh",
-                    "rm -f dev-workspace/.cache/.last_image_update_check",
-                    "bash dev-workspace/scripts/services-pull-images.sh"
-                ],
                 "translate": [
-                    "dev-workspace/run vendor/bin/publishpress-translate --languages=de_DE,fi,fil,id_ID,ja,ko_KR,nl_NL,ru_RU,yor"
+                    "dev-workspace/scripts/run.sh vendor/bin/publishpress-translate --languages=de_DE,fi,fil,id_ID,ja,ko_KR,nl_NL,ru_RU,yor"
                 ],
                 "translate:dry-run": [
-                    "dev-workspace/run vendor/bin/publishpress-translate --dry-run"
+                    "dev-workspace/scripts/run.sh vendor/bin/publishpress-translate --dry-run"
                 ],
                 "translate:download": [
-                    "dev-workspace/run vendor/bin/publishpress-translate --download"
+                    "dev-workspace/scripts/run.sh vendor/bin/publishpress-translate --download"
                 ],
                 "translate:upload": [
-                    "dev-workspace/run vendor/bin/publishpress-translate --upload"
+                    "dev-workspace/scripts/run.sh vendor/bin/publishpress-translate --upload"
                 ],
                 "translate:custom": [
-                    "dev-workspace/run vendor/bin/publishpress-translate --languages"
+                    "dev-workspace/scripts/run.sh vendor/bin/publishpress-translate --languages"
                 ],
                 "translate:force": [
-                    "dev-workspace/run vendor/bin/publishpress-translate --force"
+                    "dev-workspace/scripts/run.sh vendor/bin/publishpress-translate --force"
                 ],
                 "translate:force-custom": [
-                    "dev-workspace/run vendor/bin/publishpress-translate --force --languages"
+                    "dev-workspace/scripts/run.sh vendor/bin/publishpress-translate --force --languages"
                 ],
                 "translate:compile": [
                     "@translate:mo",
@@ -6299,16 +6160,16 @@
                     "@translate:php"
                 ],
                 "translate:pot": [
-                    "dev-workspace/run wp i18n make-pot . ./languages/${PP_PLUGIN_LANG_DOMAIN}.pot --domain=${PP_PLUGIN_LANG_DOMAIN} --exclude=dev-workspace,.wordpress-org,.github,dist,tests,lib,tmp,doc,*.js,*.js.map --allow-root"
+                    "dev-workspace/scripts/run.sh wp i18n make-pot . ./languages/${PP_PLUGIN_LANG_DOMAIN}.pot --domain=${PP_PLUGIN_LANG_DOMAIN} --exclude=dev-workspace,.wordpress-org,.github,dist,tests,lib,tmp,doc,*.js,*.js.map --allow-root"
                 ],
                 "translate:mo": [
-                    "dev-workspace/run wp i18n make-mo ./languages ./languages --allow-root"
+                    "dev-workspace/scripts/run.sh wp i18n make-mo ./languages ./languages --allow-root"
                 ],
                 "translate:json": [
-                    "dev-workspace/run bash ./dev-workspace/scripts/lang-make-json.sh"
+                    "dev-workspace/scripts/run.sh bash ./dev-workspace/scripts/lang-make-json.sh"
                 ],
                 "translate:php": [
-                    "dev-workspace/run wp i18n make-php ./languages --allow-root"
+                    "dev-workspace/scripts/run.sh wp i18n make-php ./languages --allow-root"
                 ],
                 "config:phpcs": [
                     "phpcs --config-set installed_paths \"../../phpcsstandards/phpcsutils,../../phpcsstandards/phpcsextra,../../automattic/vipwpcs,../../phpcompatibility/php-compatibility,../../sirbrillig/phpcs-variable-analysis,../../publishpress/publishpress-phpcs-standards/standards,../../wp-coding-standards/wpcs\""
@@ -8534,16 +8395,16 @@
         },
         {
             "name": "spatie/ray",
-            "version": "1.47.0",
+            "version": "1.48.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/ray.git",
-                "reference": "3112acb6a7fbcefe35f6e47b1dc13341ff5bc5ce"
+                "reference": "974ac9c6e315033ab8ace883d60e094522f88ede"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/ray/zipball/3112acb6a7fbcefe35f6e47b1dc13341ff5bc5ce",
-                "reference": "3112acb6a7fbcefe35f6e47b1dc13341ff5bc5ce",
+                "url": "https://api.github.com/repos/spatie/ray/zipball/974ac9c6e315033ab8ace883d60e094522f88ede",
+                "reference": "974ac9c6e315033ab8ace883d60e094522f88ede",
                 "shasum": ""
             },
             "require": {
@@ -8603,7 +8464,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/ray/issues",
-                "source": "https://github.com/spatie/ray/tree/1.47.0"
+                "source": "https://github.com/spatie/ray/tree/1.48.0"
             },
             "funding": [
                 {
@@ -8615,7 +8476,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2026-02-20T20:42:26+00:00"
+            "time": "2026-03-31T12:44:31+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
@@ -13092,16 +12953,16 @@
         },
         {
             "name": "wp-cli/php-cli-tools",
-            "version": "v0.12.8",
+            "version": "v0.12.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/php-cli-tools.git",
-                "reference": "9cbf9946ebe3462005b642de69ccd65753981517"
+                "reference": "c3d25138ce46a66647ec0dc9b17bf300338494aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/php-cli-tools/zipball/9cbf9946ebe3462005b642de69ccd65753981517",
-                "reference": "9cbf9946ebe3462005b642de69ccd65753981517",
+                "url": "https://api.github.com/repos/wp-cli/php-cli-tools/zipball/c3d25138ce46a66647ec0dc9b17bf300338494aa",
+                "reference": "c3d25138ce46a66647ec0dc9b17bf300338494aa",
                 "shasum": ""
             },
             "require": {
@@ -13149,9 +13010,9 @@
             ],
             "support": {
                 "issues": "https://github.com/wp-cli/php-cli-tools/issues",
-                "source": "https://github.com/wp-cli/php-cli-tools/tree/v0.12.8"
+                "source": "https://github.com/wp-cli/php-cli-tools/tree/v0.12.9"
             },
-            "time": "2026-03-16T15:18:29+00:00"
+            "time": "2026-03-29T11:12:54+00:00"
         },
         {
             "name": "wp-cli/rewrite-command",
@@ -13796,16 +13657,16 @@
         },
         {
             "name": "wp-cli/wp-config-transformer",
-            "version": "v1.4.4",
+            "version": "v1.4.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-config-transformer.git",
-                "reference": "b0fda07aac51317404f5e56dc8953ea899bc7bce"
+                "reference": "8f5e66c717a7371dfb6559086880bee528aee858"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-config-transformer/zipball/b0fda07aac51317404f5e56dc8953ea899bc7bce",
-                "reference": "b0fda07aac51317404f5e56dc8953ea899bc7bce",
+                "url": "https://api.github.com/repos/wp-cli/wp-config-transformer/zipball/8f5e66c717a7371dfb6559086880bee528aee858",
+                "reference": "8f5e66c717a7371dfb6559086880bee528aee858",
                 "shasum": ""
             },
             "require": {
@@ -13839,9 +13700,9 @@
             "homepage": "https://github.com/wp-cli/wp-config-transformer",
             "support": {
                 "issues": "https://github.com/wp-cli/wp-config-transformer/issues",
-                "source": "https://github.com/wp-cli/wp-config-transformer/tree/v1.4.4"
+                "source": "https://github.com/wp-cli/wp-config-transformer/tree/v1.4.5"
             },
-            "time": "2026-01-22T09:07:20+00:00"
+            "time": "2026-03-20T07:28:10+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
