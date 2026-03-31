@@ -144,12 +144,12 @@
     ],
     "wp:clear-logs": [
       "dev-workspace/scripts/ensure-not-container.sh",
-      "rm -f dev-workspace/.cache/logs/db_dev/"
+      "rm -f dev-workspace-cache/logs/db_dev/"
     ],
     "wp:clear-cache": [
       "dev-workspace/scripts/ensure-not-container.sh",
-      "rm -rf dev-workspace/.cache/wp_dev",
-      "rm -rf dev-workspace/.cache/db_dev"
+      "rm -rf dev-workspace-cache/wp_dev",
+      "rm -rf dev-workspace-cache/db_dev"
     ],
     "wp:refresh": [
       "dev-workspace/scripts/ensure-not-container.sh",
@@ -219,12 +219,12 @@
     ],
     "test:clean-logs": [
       "dev-workspace/scripts/ensure-not-container.sh",
-      "rm -f dev-workspace/.cache/logs/db_test/"
+      "rm -f dev-workspace-cache/logs/db_test/"
     ],
     "test:clean-cache": [
       "dev-workspace/scripts/ensure-not-container.sh",
-      "rm -rf dev-workspace/.cache/wp_test",
-      "rm -rf dev-workspace/.cache/db_test"
+      "rm -rf dev-workspace-cache/wp_test",
+      "rm -rf dev-workspace-cache/db_test"
     ],
     "test:db-export": [
       "dev-workspace/scripts/ensure-not-container.sh",
@@ -313,7 +313,7 @@
     ],
     "container:pull": [
       "dev-workspace/scripts/ensure-not-container.sh",
-      "rm -f dev-workspace/.cache/.last_image_update_check",
+      "rm -f dev-workspace-cache/.last_image_update_check",
       "bash dev-workspace/scripts/services-pull-images.sh"
     ],
     "translate": "dev-workspace/scripts/run.sh vendor/bin/publishpress-translate --languages=de_DE,fi,fil,id_ID,ja,ko_KR,nl_NL,ru_RU,yor",

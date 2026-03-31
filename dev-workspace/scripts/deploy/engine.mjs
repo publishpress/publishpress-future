@@ -7,7 +7,7 @@ import { loadState, saveState, deleteState, createFreshState } from './state.mjs
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = resolve(__dirname, '../../..'); // up to repo root from dev-workspace/scripts/deploy/
-const CACHE_DIR = resolve(REPO_ROOT, 'dev-workspace/.cache');
+const CACHE_DIR = resolve(REPO_ROOT, 'dev-workspace-cache');
 
 let logStream = null;
 
@@ -320,7 +320,7 @@ export async function runDeploy(pipeline) {
   process.on('SIGTERM', handleSignal);
 
   intro('PublishPress Future — Deploy Wizard');
-  if (logPath) log.info('Debug log: dev-workspace/.cache/deploy.log');
+  if (logPath) log.info('Debug log: dev-workspace-cache/deploy.log');
 
   const existingState = loadState();
   let state;

@@ -68,7 +68,7 @@ For stopping, you can use:
 ```bash
 composer test:down
 ```
-Test files will be cached inside the `dev-workspace/.cache` directory.
+Test files will be cached inside the `dev-workspace-cache` directory.
 
 ### Running all tests
 

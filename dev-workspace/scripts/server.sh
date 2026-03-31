@@ -17,7 +17,7 @@ fi
 PROFILE="${2:-dev}"
 
 COMPOSE_FILE=docker/compose.yaml
-CACHE_BASE_PATH=$(pwd)/.cache
+CACHE_BASE_PATH=$(pwd)/dev-workspace-cache
 WP_CACHE=$CACHE_BASE_PATH/wp_${PROFILE}
 DB_CACHE=$CACHE_BASE_PATH/db_${PROFILE}
 

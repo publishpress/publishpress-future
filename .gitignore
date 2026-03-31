@@ -17,7 +17,7 @@ ray.php
 /version.txt
 /lib/vendor/woocommerce/action-scheduler/changelog.txt
 /cache
-/.cache
+/dev-workspace-cache
 .phplint.cache*
 
 /tests-*
@@ -30,8 +30,6 @@ gh_token.txt
 .env
 # VS Code user-specific settings
 .vscode/
-
-publishpress-future.code-workspace
 
 .phpactor.json
 

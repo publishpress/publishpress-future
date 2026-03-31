@@ -10,7 +10,7 @@ source /project/.env
 set +a
 
 DB_CONTAINER_NAME=${CONTAINER_NAME}_env_db_test
-DB_LOGS_FILE="${PWD}/.cache/logs/db_test/general.log"
+DB_LOGS_FILE="${PWD}/dev-workspace-cache/logs/db_test/general.log"
 
 run_mysql_query() {
   docker exec -i $DB_CONTAINER_NAME bash -c "mysql -u root -proot -e '$1' 2>&1 | grep  -v \"Using a password\""

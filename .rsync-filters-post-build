@@ -1,6 +1,7 @@
 - .deploy-state.json
 - .distignore
 - .DS_Store
+- /dev-workspace-cache
 - .git
 - .gitattributes
 - .github

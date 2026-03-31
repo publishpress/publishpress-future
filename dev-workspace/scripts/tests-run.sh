@@ -10,7 +10,7 @@
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
-CACHE_DB="$REPO_ROOT/dev-workspace/.cache/db_test"
+CACHE_DB="$REPO_ROOT/dev-workspace-cache/db_test"
 
 if [[ ! -d "$CACHE_DB" ]] || [[ -z "$(ls -A "$CACHE_DB" 2>/dev/null)" ]]; then
     echo "Test DB cache not found — starting test environment..."

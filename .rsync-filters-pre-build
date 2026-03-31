@@ -1,6 +1,6 @@
 
 - .babelrc
-- .cache
+- /dev-workspace-cache
 - .deploy-state.json
 - .distignore
 - .env

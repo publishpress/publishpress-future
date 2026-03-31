@@ -16,7 +16,7 @@ parameters:
         - dist
         - languages
         - node_modules
-        - dev-workspace
+        - dev-workspace-cache
         - cache
         - .cache
 rules:

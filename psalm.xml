@@ -18,6 +18,8 @@
             <directory name="vendor" />
             <directory name="assets" />
             <directory name="dist" />
+            <directory name="dev-workspace-cache" />
+            <directory name="languages" />
         </ignoreFiles>
     </projectFiles>
 </psalm>
