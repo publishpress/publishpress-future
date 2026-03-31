@@ -78,36 +78,43 @@ get_container_id() {
 }
 
 service_info() {
+  local BOLD='\033[1m'
+  local DIM='\033[2m'
+  local CYAN='\033[0;36m'
+  local GREEN='\033[0;32m'
+  local YELLOW='\033[0;33m'
+  local NC='\033[0m'
+
   WP_PORT=$(get_wp_port wp_${PROFILE})
   DB_PORT=$(get_db_port db_${PROFILE})
   MAILHOG_PORT_8025=$(get_mailhog_port_8025)
   MAILHOG_PORT_1025=$(get_mailhog_port_1025)
 
-  echo "=============================================="
-  echo "WordPress Development Information"
-  echo "=============================================="
-  echo "Site URL:       http://$WP_DOMAIN:$WP_PORT"
-  echo "Admin URL:      http://$WP_DOMAIN:$WP_PORT/wp-admin"
-  echo "Login:          $WP_ADMIN_USER / $WP_ADMIN_PASSWORD"
-  echo "Root Directory: $WP_CACHE"
-  echo "Container ID:   $(get_container_id wp_${PROFILE})"
   echo ""
-  echo "DB Url:         mysql://$WP_DB_USER:$WP_DB_PASS@$WP_DB_HOST:$DB_PORT"
-  echo "DB Name:        $WP_DB_NAME"
-  echo "DB Host:        $WP_DB_HOST:$DB_PORT"
-  echo "DB User:        $WP_DB_USER"
-  echo "DB Pass:        $WP_DB_PASS"
-  echo "Data Directory: $WP_DB_CACHE"
-  echo "Container ID:   $(get_container_id db_${PROFILE})"
+  echo -e "${BOLD}  WordPress ${DIM}(${PROFILE})${NC}"
+  echo -e "  ──────────────────────────────────────────"
+  echo -e "  Site URL       ${CYAN}http://$WP_DOMAIN:$WP_PORT${NC}"
+  echo -e "  Admin URL      ${CYAN}http://$WP_DOMAIN:$WP_PORT/wp-admin${NC}"
+  echo -e "  Login          ${GREEN}$WP_ADMIN_USER${NC} / ${GREEN}$WP_ADMIN_PASSWORD${NC}"
+  echo -e "  Root dir       ${DIM}$WP_CACHE${NC}"
+  echo -e "  Container      ${DIM}$(get_container_id wp_${PROFILE})${NC}"
   echo ""
-  echo "=============================================="
-  echo "Mail Information"
-  echo "=============================================="
-  echo "Web Interface:  http://$WP_DOMAIN:$MAILHOG_PORT_8025"
-  echo "SMTP Server:    smtp://$WP_DOMAIN:$MAILHOG_PORT_1025"
-  echo "Container ID:   $(get_container_id mailhog)"
+  echo -e "${BOLD}  Database${NC}"
+  echo -e "  ──────────────────────────────────────────"
+  echo -e "  Host           ${CYAN}$WP_DB_HOST:$DB_PORT${NC}"
+  echo -e "  Name           $WP_DB_NAME"
+  echo -e "  User           ${GREEN}$WP_DB_USER${NC}"
+  echo -e "  Password       ${GREEN}$WP_DB_PASS${NC}"
+  echo -e "  URL            ${DIM}mysql://$WP_DB_USER:$WP_DB_PASS@$WP_DB_HOST:$DB_PORT/$WP_DB_NAME${NC}"
+  echo -e "  Data dir       ${DIM}$DB_CACHE${NC}"
+  echo -e "  Container      ${DIM}$(get_container_id db_${PROFILE})${NC}"
   echo ""
-  echo "=============================================="
+  echo -e "${BOLD}  Mail ${DIM}(MailHog)${NC}"
+  echo -e "  ──────────────────────────────────────────"
+  echo -e "  Web UI         ${CYAN}http://$WP_DOMAIN:$MAILHOG_PORT_8025${NC}"
+  echo -e "  SMTP           ${YELLOW}smtp://$WP_DOMAIN:$MAILHOG_PORT_1025${NC}"
+  echo -e "  Container      ${DIM}$(get_container_id mailhog)${NC}"
+  echo ""
 }
 
 if [[ $1 == "up" ]]; then
