@@ -3,6 +3,11 @@
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/env-init.sh"
 cd "$REPO_ROOT/dev-workspace"
 
+if ! docker info &>/dev/null; then
+  echo -e "\033[0;31mError: Docker is not running. Please start Docker and try again.\033[0m"
+  exit 1
+fi
+
 if [[ $# -eq 0 ]] || [[ $1 == "-h" ]]; then
   echo "Usage: $0 [up|stop|down|clenaup|refresh|info]"
   exit 1
