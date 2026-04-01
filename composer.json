@@ -28,15 +28,6 @@
         },
         "process-timeout": 0
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "dev-workspace",
-            "options": {
-                "symlink": true
-            }
-        }
-    ],
     "prefer-stable": true,
     "minimum-stability": "stable",
     "require": {
