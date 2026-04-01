@@ -1,0 +1,8 @@
+
+- .DS_Store
+- .phplint.cache
+- .rsync-filters-dev-sync
+- .rsync-filters-post-build
+- .rsync-filters-pre-build
+- /lib/vendor/bin
+- composer.lock
