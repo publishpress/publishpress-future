@@ -556,10 +556,8 @@ class ScheduledActions implements InitializableInterface
 
     public function enqueueScripts($hook)
     {
-        if (
-            'future_page_publishpress-future-scheduled-actions' !== $hook
-            && 'admin_page_publishpress-future-scheduled-actions' !== $hook
-        ) {
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Only comparing admin page slug; no form action.
+        if (! isset($_GET['page']) || sanitize_key(wp_unslash($_GET['page'])) !== 'publishpress-future-scheduled-actions') {
             return;
         }
 
