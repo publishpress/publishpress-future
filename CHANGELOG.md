@@ -1,6 +1,10 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+[UNRELEASED]
+
+- Fixed: Updated Intance Protection libary fixing translations.
+
 [4.10.0] - 25 March, 2026
 
 - Added: Add new trigger: Post is created - PRO, (Issue #1146).
