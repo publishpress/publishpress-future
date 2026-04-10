@@ -48,6 +48,7 @@ define('PUBLISHPRESS_FUTURE_SRC_PATH', __DIR__ . '/src');
 define('PUBLISHPRESS_FUTURE_PLUGIN_FILE', __FILE__);
 define('PUBLISHPRESS_FUTURE_ASSETS_URL', plugins_url('assets', __FILE__));
 define('PUBLISHPRESS_FUTURE_LOADED', true);
+define('PUBLISHPRESS_FUTURE_LANGUAGES_PATH', __DIR__ . '/languages');
 
 if (! defined('PUBLISHPRESS_FUTURE_WORKFLOW_EXPERIMENTAL')) {
     define('PUBLISHPRESS_FUTURE_WORKFLOW_EXPERIMENTAL', false);
@@ -115,7 +116,7 @@ try {
     HooksFacade::registerDeactivationHook(PUBLISHPRESS_FUTURE_PLUGIN_FILE, __NAMESPACE__ . '\\uninstall');
 
     add_action('init', function () {
-        load_plugin_textdomain('post-expirator', false, basename(dirname(PUBLISHPRESS_FUTURE_PLUGIN_FILE)) . '/languages/');
+        load_plugin_textdomain('post-expirator', false, PUBLISHPRESS_FUTURE_LANGUAGES_PATH);
     });
 
     add_action('init', function () {
