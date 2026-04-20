@@ -32,6 +32,7 @@ gh_token.txt
 .vscode/
 
 publishpress-future.code-workspace
+/dev-workspace-cache
 
 .phpactor.json
 

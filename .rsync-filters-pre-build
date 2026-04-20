@@ -24,7 +24,7 @@
 - /builder
 - /cache
 - /cs
-- /dev-workspace
+- /dev-workspace-cache
 - /dist
 - /docs
 - /node_modules

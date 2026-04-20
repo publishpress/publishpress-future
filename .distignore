@@ -21,6 +21,7 @@
 /.wordpress-org
 /cache
 /dev-workspace
+/dev-workspace-cache
 /dist
 /docs
 /lib/composer.json
