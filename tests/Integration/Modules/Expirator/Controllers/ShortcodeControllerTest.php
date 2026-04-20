@@ -36,7 +36,7 @@ class ShortcodeControllerTest extends \lucatume\WPBrowser\TestCase\WPTestCase
         return $postId;
     }
 
-    public function test_futureaction_span_wrapper_outputs_span_with_formatted_date(): void
+    public function testFutureactionSpanWrapperOutputsSpanWithFormattedDate(): void
     {
         $postId = $this->createPostWithScheduledExpiration();
 
@@ -54,7 +54,7 @@ class ShortcodeControllerTest extends \lucatume\WPBrowser\TestCase\WPTestCase
         $this->assertStringContainsString('</span>', $output);
     }
 
-    public function test_futureaction_unsafe_wrapper_falls_back_to_div_without_injected_markup(): void
+    public function estFutureactionUnsafeWrapperFallsBackToDivWithoutInjectedMarkup(): void
     {
         $postId = $this->createPostWithScheduledExpiration();
 
