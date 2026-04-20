@@ -22,7 +22,7 @@
 - /codeception.yml
 - /composer.json
 - /composer.lock
-- /dev-workspace
+- /dev-workspace-cache
 - /dist
 - /docs
 - /jsconfig.json

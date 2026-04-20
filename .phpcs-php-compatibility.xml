@@ -23,7 +23,6 @@
     <exclude-pattern>/dist/*</exclude-pattern>
     <exclude-pattern>/languages/*</exclude-pattern>
     <exclude-pattern>/node_modules/*</exclude-pattern>
-    <exclude-pattern>/dev-workspace/*</exclude-pattern>
     <exclude-pattern>/dev-workspace-cache/*</exclude-pattern>
     <exclude-pattern>/cache/*</exclude-pattern>
     <exclude-pattern>/.cache/*</exclude-pattern>

@@ -44,10 +44,18 @@ jobs:
         run: |
           cp $GITHUB_WORKSPACE/.env.example $GITHUB_WORKSPACE/.env
 
-      - name: Prepare composer
-        run: |
-          $GITHUB_WORKSPACE/dev-workspace/run composer validate
-          $GITHUB_WORKSPACE/dev-workspace/run composer install
+      - name: Composer validation
+        uses: php-actions/composer@v6
+        with:
+          php_version: "8.4"
+          php_extensions: zip mysqli
+          command: validate
+
+      - name: Composer install
+        uses: php-actions/composer@v6
+        with:
+          php_version: "8.4"
+          php_extensions: zip mysqli
 
       - name: Start services
         run: |

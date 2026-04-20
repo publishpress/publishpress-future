@@ -25,6 +25,9 @@
 assets/js/*.map
 codeceptjs/output
 gh_token.txt
+
+publishpress-future.code-workspace
+.deploy-state.json
 node_modules
 ray.php
 report.csv

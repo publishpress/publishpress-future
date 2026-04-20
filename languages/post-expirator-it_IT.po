@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Plugins - PublishPress Future: Automatically Unpublish "
 "WordPress Posts - Stable (latest release)\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/project\n"
-"POT-Creation-Date: 2026-03-24T19:11:12+00:00\n"
-"PO-Revision-Date: 2026-03-06 17:39+0000\n"
+"POT-Creation-Date: 2026-04-10T20:34:37+00:00\n"
+"PO-Revision-Date: 2026-04-11 11:57+0200\n"
 "Last-Translator: Angelo Giammarresi <info@wocmultimedia.biz>\n"
 "Language-Team: Italian <https://weblate.publishpress.com/projects/"
 "publishpress-future/post-expirator/it/>\n"
@@ -15,15 +15,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14.3\n"
+"X-Generator: Poedit 3.7\n"
 
 #. Plugin Name of the plugin
-#. Plugin Name of the plugin
 #: post-expirator.php:4
-#, fuzzy
-#| msgid "PublishPress Future"
 msgid "PublishPress Future Free"
-msgstr "PublishPress Future Free"
+msgstr "PublishPress Future"
 
 #. Plugin URI of the plugin
 #: post-expirator.php:5
@@ -135,15 +132,15 @@ msgstr "Contatto"
 msgid "No taxonomies found"
 msgstr "Nessuna tassonomia trovata"
 
-#: services.php:151 src/Modules/Settings/SettingsFacade.php:122
+#: services.php:152 src/Modules/Settings/SettingsFacade.php:122
 msgid "l F jS, Y"
 msgstr "l j F Y"
 
-#: services.php:155 src/Modules/Settings/SettingsFacade.php:123
+#: services.php:156 src/Modules/Settings/SettingsFacade.php:123
 msgid "g:ia"
 msgstr "G:i"
 
-#: services.php:156 src/Modules/Settings/SettingsFacade.php:124
+#: services.php:157 src/Modules/Settings/SettingsFacade.php:124
 msgid "Post expires at EXPIRATIONTIME on ACTIONDATE"
 msgstr "L'articolo scade alle EXPIRATIONTIME del ACTIONDATE"
 
@@ -166,17 +163,25 @@ msgstr "Scostamento data e ora vuoto."
 msgid "Invalid date time offset"
 msgstr "Scostamento data e ora non valido"
 
-#: src/Modules/Backup/Controllers/BackupAdminPage.php:163
+#: src/Modules/Backup/Controllers/BackupAdminPage.php:164
+#: assets/js/backupPanel.js:34 assets/js/backupPanel.js:692
+#: assets/js/backupPanel.js:722
 #: assets/jsx/backup-panel/components/backup-panel.jsx:10
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:77
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:105
+#: assets/js/backupPanel.js:10 assets/js/backupPanel.js:553
+#: assets/js/backupPanel.js:581
 msgid "Export"
 msgstr "Esporta"
 
-#: src/Modules/Backup/Controllers/BackupAdminPage.php:168
+#: src/Modules/Backup/Controllers/BackupAdminPage.php:169
+#: assets/js/backupPanel.js:37 assets/js/backupPanel.js:543
+#: assets/js/backupPanel.js:1251
 #: assets/jsx/backup-panel/components/backup-panel.jsx:14
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-import.jsx:106
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:131
+#: assets/js/backupPanel.js:14 assets/js/backupPanel.js:443
+#: assets/js/backupPanel.js:939
 msgid "Import"
 msgstr "Importa"
 
@@ -220,13 +225,13 @@ msgstr ""
 "debug (v4.10.0)"
 
 #: src/Modules/Debug/Views/raw-debug-log.html.php:39
-#: src/Modules/Settings/Controllers/Controller.php:214
+#: src/Modules/Settings/Controllers/Controller.php:215
 #: src/Views/menu-debug-log.php:113 src/Views/menu-debug-log.php:148
 msgid "Debugging table is currently empty."
 msgstr "La tabella di debug è attualmente vuota."
 
 #: src/Modules/Debug/Views/raw-debug-log.html.php:40
-#: src/Modules/Settings/Controllers/Controller.php:215
+#: src/Modules/Settings/Controllers/Controller.php:216
 #: src/Views/menu-debug-log.php:115 src/Views/menu-debug-log.php:150
 msgid "No results match the current filter."
 msgstr "Nessun risultato corrisponde al filtro attuale."
@@ -420,7 +425,9 @@ msgid "Future Action Update"
 msgstr "Aggiornamento azioni Future"
 
 #: src/Modules/Expirator/Controllers/BulkEditController.php:237
+#: assets/js/workflowManualSelectionBulkEdit.js:154
 #: assets/jsx/workflow-manual-selection/bulk-edit/fieldset.jsx:72
+#: assets/js/workflowManualSelectionBulkEdit.js:98
 msgid "— No Change —"
 msgstr "— Non cambiare —"
 
@@ -454,11 +461,19 @@ msgstr "Aggiorna a Pro"
 #: src/Modules/Workflows/Controllers/ManualPostTrigger.php:461
 #: src/Modules/Workflows/Controllers/PostType.php:49
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:181
+#: assets/js/backupPanel.js:512 assets/js/backupPanel.js:698
+#: assets/js/workflowManualSelectionBlockEditor.js:2162
+#: assets/js/workflowManualSelectionBulkEdit.js:167
+#: assets/js/workflowManualSelectionQuickEdit.js:2220
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-import.jsx:68
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:83
 #: assets/jsx/workflow-manual-selection/block-editor/index.jsx:49
 #: assets/jsx/workflow-manual-selection/bulk-edit/fieldset.jsx:88
 #: assets/jsx/workflow-manual-selection/quick-edit/index.jsx:73
+#: assets/js/backupPanel.js:405 assets/js/backupPanel.js:559
+#: assets/js/workflowManualSelectionBlockEditor.js:1627
+#: assets/js/workflowManualSelectionBulkEdit.js:114
+#: assets/js/workflowManualSelectionQuickEdit.js:1690
 msgid "Action Workflows"
 msgstr "Flussi di lavoro di azione"
 
@@ -498,34 +513,34 @@ msgstr "Future"
 
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:140
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:141
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:323
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:324
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:47
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:788
 msgid "Scheduled Actions"
 msgstr "Azioni programmate"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:218
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:219
 msgid "Log format"
 msgstr "Formato del registro"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:226
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:227
 msgid "List"
 msgstr "Elenco"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:236
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:237
 msgid "Popup"
 msgstr "Popup"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:304
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:305
 msgid "Unknown post"
 msgstr "Articolo sconosciuto"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:307
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:308
 #, php-format
 msgid "Executed action for: %s (ID: %d)"
 msgstr "Azione eseguita per: %s (ID: %d)"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:312
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:313
 msgid "Executed scheduled action"
 msgstr "Azione programmata eseguita"
 
@@ -698,7 +713,7 @@ msgstr ""
 "Questa è una funzionalità Pro. Aggiorna per sbloccare questa funzionalità."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:459
-#: src/Modules/Settings/Controllers/Controller.php:297
+#: src/Modules/Settings/Controllers/Controller.php:298
 msgid "Form Validation Failure: Sorry, your nonce did not verify."
 msgstr "Errore di convalida del modulo: il nonce non è stato verificato."
 
@@ -962,7 +977,9 @@ msgstr "Esegui ora"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:76
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:89
+#: assets/js/backupPanel.js:726
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:109
+#: assets/js/backupPanel.js:585
 msgid "Cancel"
 msgstr "Annulla"
 
@@ -1170,43 +1187,43 @@ msgstr "Non ripetibile"
 msgid "No Scheduled Actions."
 msgstr "Nessuna azione programmata."
 
-#: src/Modules/Settings/Controllers/Controller.php:207
+#: src/Modules/Settings/Controllers/Controller.php:208
 msgid "Auto-refresh"
 msgstr "Aggiornamento automatico"
 
-#: src/Modules/Settings/Controllers/Controller.php:208
+#: src/Modules/Settings/Controllers/Controller.php:209
 msgid "Refresh interval:"
 msgstr "Intervallo di aggiornamento:"
 
-#: src/Modules/Settings/Controllers/Controller.php:209
+#: src/Modules/Settings/Controllers/Controller.php:210
 msgid "seconds"
 msgstr "secondi"
 
-#: src/Modules/Settings/Controllers/Controller.php:210
+#: src/Modules/Settings/Controllers/Controller.php:211
 msgid "Last refreshed:"
 msgstr "Ultimo aggiornamento:"
 
-#: src/Modules/Settings/Controllers/Controller.php:211
+#: src/Modules/Settings/Controllers/Controller.php:212
 msgid "seconds ago"
 msgstr "secondi fa"
 
-#: src/Modules/Settings/Controllers/Controller.php:212
+#: src/Modules/Settings/Controllers/Controller.php:213
 msgid "Refreshing..."
 msgstr "Aggiornamento in corso…"
 
-#: src/Modules/Settings/Controllers/Controller.php:213
+#: src/Modules/Settings/Controllers/Controller.php:214
 msgid "Failed to refresh log data."
 msgstr "Impossibile aggiornare i dati di registro."
 
-#: src/Modules/Settings/Controllers/Controller.php:251
+#: src/Modules/Settings/Controllers/Controller.php:252
 msgid "Scheduled Workflow Steps Cleanup"
 msgstr "Pulizia dei passaggi programmati del flusso di lavoro"
 
-#: src/Modules/Settings/Controllers/Controller.php:252
+#: src/Modules/Settings/Controllers/Controller.php:253
 msgid "Automatically remove scheduled workflow steps"
 msgstr "Rimuovi automaticamente i passaggi del flusso di lavoro programmati"
 
-#: src/Modules/Settings/Controllers/Controller.php:256
+#: src/Modules/Settings/Controllers/Controller.php:257
 msgid ""
 "Automatically remove scheduled workflow steps that have been marked as "
 "failed, completed, or cancelled."
@@ -1214,11 +1231,11 @@ msgstr ""
 "Rimuovi automaticamente i passaggi del flusso di lavoro programmati che sono "
 "stati contrassegnati come falliti, completati o annullati."
 
-#: src/Modules/Settings/Controllers/Controller.php:260
+#: src/Modules/Settings/Controllers/Controller.php:261
 msgid "Retain all scheduled workflow steps"
 msgstr "Mantieni tutti i passaggi programmati del flusso di lavoro"
 
-#: src/Modules/Settings/Controllers/Controller.php:264
+#: src/Modules/Settings/Controllers/Controller.php:265
 msgid ""
 "Retain all scheduled workflow steps indefinitely, including those marked as "
 "failed, completed, or cancelled. This may impact database performance over "
@@ -1228,11 +1245,11 @@ msgstr ""
 "indefinito, incluso quelli contrassegnati come falliti, completati o "
 "annullati. Questo nel tempo potrebbe influenzare la prestazione del database."
 
-#: src/Modules/Settings/Controllers/Controller.php:268
+#: src/Modules/Settings/Controllers/Controller.php:269
 msgid "Retention"
 msgstr "Mantieni"
 
-#: src/Modules/Settings/Controllers/Controller.php:269
+#: src/Modules/Settings/Controllers/Controller.php:270
 msgid ""
 "The duration, in days, for which completed, failed, and canceled scheduled "
 "workflow steps will be preserved before automatic removal."
@@ -1241,7 +1258,7 @@ msgstr ""
 "programmati completati, non riusciti e annullati saranno conservati prima "
 "della rimozione automatica."
 
-#: src/Modules/Settings/Controllers/Controller.php:273
+#: src/Modules/Settings/Controllers/Controller.php:274
 msgid "days"
 msgstr "giorni"
 
@@ -1710,7 +1727,9 @@ msgid "Cancel all actions scheduled for this workflow"
 msgstr "Annulla tutte le azioni programmate per questo flusso di lavoro"
 
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:641
+#: assets/js/workflowsListCancelAction.js:692
 #: assets/jsx/workflows-list/cancel-action/index.jsx:51
+#: assets/js/workflowsListCancelAction.js:489
 msgid "Cancel Scheduled Actions"
 msgstr "Annulla le azioni programmate"
 
@@ -1816,7 +1835,9 @@ msgstr "Sì"
 
 #: src/Modules/Workflows/Domain/Engine/VariableResolvers/BooleanResolver.php:31
 #: src/Modules/Workflows/Domain/Engine/VariableResolvers/BooleanResolver.php:77
+#: assets/js/workflowsListCancelAction.js:713
 #: assets/jsx/workflows-list/cancel-action/index.jsx:75
+#: assets/js/workflowsListCancelAction.js:513
 msgid "No"
 msgstr "No"
 
@@ -3978,8 +3999,9 @@ msgstr ""
 msgid "Copy Debug Log"
 msgstr "Copiaa il registro di debug"
 
-#: src/Views/menu-debug-log.php:206
+#: src/Views/menu-debug-log.php:206 assets/js/backupPanel.js:834
 #: assets/jsx/backup-panel/components/tabs-content/hooks/export.jsx:76
+#: assets/js/backupPanel.js:667
 msgid "Download"
 msgstr "Scarica"
 
@@ -4016,6 +4038,9 @@ msgid ""
 "After activating the plugin, tables are updated automatically on the next "
 "page load. Use the button below if you still see schema errors."
 msgstr ""
+"Dopo l'attivazione del plugin, le tabelle verranno aggiornate "
+"automaticamente al prossimo caricamento della pagina. Usa il pulsante sotto "
+"se continui a vedere errori di schema."
 
 #: src/Views/menu-diagnostics.php:84
 msgid "Error found on the database schema:"
@@ -4424,40 +4449,52 @@ msgstr ""
 "Inserisci un elenco di email separate da virgola a cui vuoi inviare una "
 "notifica quando vengono riscontrate azioni scadute."
 
-#: src/Views/tabs-future-actions.php:20
+#: src/Views/tabs-future-actions.php:20 assets/js/backupPanel.js:649
+#: assets/js/backupPanel.js:1232
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:24
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:104
+#: assets/js/backupPanel.js:500 assets/js/backupPanel.js:912
 msgid "Post Types"
 msgstr "Tipi di contenuto"
 
-#: src/Views/tabs-future-actions.php:25
+#: src/Views/tabs-future-actions.php:25 assets/js/backupPanel.js:652
+#: assets/js/backupPanel.js:1235
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:28
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:108
+#: assets/js/backupPanel.js:504 assets/js/backupPanel.js:916
 msgid "General"
 msgstr "Generale"
 
-#: src/Views/tabs-future-actions.php:30
+#: src/Views/tabs-future-actions.php:30 assets/js/backupPanel.js:655
+#: assets/js/backupPanel.js:1238
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:32
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:112
+#: assets/js/backupPanel.js:508 assets/js/backupPanel.js:920
 msgid "Notifications"
 msgstr "Notifiche"
 
-#: src/Views/tabs-future-actions.php:35
+#: src/Views/tabs-future-actions.php:35 assets/js/backupPanel.js:658
+#: assets/js/backupPanel.js:1241
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:36
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:116
+#: assets/js/backupPanel.js:512 assets/js/backupPanel.js:924
 msgid "Display"
 msgstr "Visualizza"
 
-#: src/Views/tabs-future-actions.php:40
+#: src/Views/tabs-future-actions.php:40 assets/js/backupPanel.js:661
+#: assets/js/backupPanel.js:1244
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:40
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:120
+#: assets/js/backupPanel.js:516 assets/js/backupPanel.js:928
 msgid "Admin"
 msgstr "Amministratore"
 
-#: src/Views/tabs-settings.php:23
+#: src/Views/tabs-settings.php:23 assets/js/backupPanel.js:664
+#: assets/js/backupPanel.js:1247
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:44
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:124
 #: assets/jsx/workflow-editor/components/node-types/generic.jsx:248
+#: assets/js/backupPanel.js:520 assets/js/backupPanel.js:932
 msgid "Advanced"
 msgstr "Avanzate"
 
@@ -4465,77 +4502,111 @@ msgstr "Avanzate"
 msgid "Diagnostics and Tools"
 msgstr "Diagnostica e strumenti"
 
+#: assets/js/backupPanel.js:104
 #: assets/jsx/backup-panel/components/file-dropzone/index.jsx:22
+#: assets/js/backupPanel.js:75
 msgid "Drop a .json file here"
 msgstr "Rilascia un file .json qui"
 
+#: assets/js/backupPanel.js:104
 #: assets/jsx/backup-panel/components/file-dropzone/index.jsx:23
+#: assets/js/backupPanel.js:76
 msgid "or"
 msgstr "o"
 
+#: assets/js/backupPanel.js:108
 #: assets/jsx/backup-panel/components/file-dropzone/index.jsx:30
+#: assets/js/backupPanel.js:83
 msgid "Select a .json file"
 msgstr "Seleziona un file .json"
 
+#: assets/js/backupPanel.js:110 assets/js/backupPanel.js:1283
 #: assets/jsx/backup-panel/components/file-dropzone/index.jsx:35
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:164
+#: assets/js/backupPanel.js:88 assets/js/backupPanel.js:972
 msgid "Selected file"
 msgstr "File selezionato"
 
+#: assets/js/backupPanel.js:110 assets/js/backupPanel.js:1285
 #: assets/jsx/backup-panel/components/file-dropzone/index.jsx:36
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:165
+#: assets/js/backupPanel.js:89 assets/js/backupPanel.js:973
 msgid "File size"
 msgstr "Dimensione file"
 
+#: assets/js/backupPanel.js:144
 #: assets/jsx/backup-panel/components/json-preview.jsx:15
 #: assets/jsx/workflow-editor/components/loading-message/index.jsx:7
 #: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:18
+#: assets/js/backupPanel.js:110
 msgid "Loading..."
 msgstr "Caricamento in corso…"
 
+#: assets/js/backupPanel.js:202
 #: assets/jsx/backup-panel/components/selectable-list/index.jsx:22
+#: assets/js/backupPanel.js:143
 msgid "Select all"
 msgstr "Seleziona tutto"
 
+#: assets/js/backupPanel.js:205
 #: assets/jsx/backup-panel/components/selectable-list/index.jsx:23
+#: assets/js/backupPanel.js:144
 msgid "Unselect all"
 msgstr "Deseleziona tutto"
 
+#: assets/js/backupPanel.js:406
 #: assets/jsx/backup-panel/components/tabs-content/components/settings-list.jsx:24
+#: assets/js/backupPanel.js:318
 msgid "No items found."
 msgstr "Nessun elemento trovato."
 
+#: assets/js/backupPanel.js:408
 #: assets/jsx/backup-panel/components/tabs-content/components/settings-list.jsx:30
+#: assets/js/backupPanel.js:324
 msgid "Loading items, please wait..."
 msgstr "Caricamento degli elementi in corso, attendi…"
 
+#: assets/js/backupPanel.js:508
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-import.jsx:62
+#: assets/js/backupPanel.js:399
 msgid "Select the content you want to import."
 msgstr "Seleziona il contenuto che vuoi importare."
 
+#: assets/js/backupPanel.js:525 assets/js/backupPanel.js:709
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-import.jsx:83
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:94
+#: assets/js/backupPanel.js:420 assets/js/backupPanel.js:570
 msgid "Action Settings"
 msgstr "Impostazioni delle azioni"
 
+#: assets/js/backupPanel.js:536
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-import.jsx:96
+#: assets/js/backupPanel.js:433
 msgid "No workflows or settings found in the file."
 msgstr "Nessun flusso di lavoro o impostazioni trovati nel file."
 
+#: assets/js/backupPanel.js:546 assets/js/backupPanel.js:581
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-import.jsx:110
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-preview.jsx:14
+#: assets/js/backupPanel.js:447 assets/js/backupPanel.js:469
 msgid "Cancel and select a different file"
 msgstr "Annulla e seleziona un file differente"
 
+#: assets/js/backupPanel.js:673
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:59
+#: assets/js/backupPanel.js:535
 msgid "Settings exported successfully."
 msgstr "Impostazioni esportate correttamente."
 
+#: assets/js/backupPanel.js:674
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:60
+#: assets/js/backupPanel.js:536
 msgid "Failed to export settings."
 msgstr "Impossibile esportare le impostazioni."
 
+#: assets/js/backupPanel.js:693
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:78
+#: assets/js/backupPanel.js:554
 msgid ""
 "Export the plugin settings and workflows to a .json file. This file can be "
 "imported later to restore the data or migrate to another site."
@@ -4544,46 +4615,97 @@ msgstr ""
 "Questo file potrà essere importato in seguito per ripristinare i dati o "
 "migrarli in un altro sito."
 
+#: assets/js/backupPanel.js:722
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:105
+#: assets/js/backupPanel.js:581
 msgid "Exporting..."
 msgstr "Esportazione in corso…"
 
+#: assets/js/backupPanel.js:918
 #: assets/jsx/backup-panel/components/tabs-content/hooks/file-validation.jsx:8
+#: assets/js/backupPanel.js:725
 msgid "Invalid file type. Please upload a .json file."
 msgstr "Tipo di fila non valido. Carica un file .json."
 
+#: assets/js/backupPanel.js:1005
 #: assets/jsx/backup-panel/components/tabs-content/hooks/settings-import.jsx:34
+#: assets/js/backupPanel.js:774
 msgid "Settings imported successfully."
 msgstr "Impostazioni importate correttamente."
 
+#: assets/js/backupPanel.js:1021
 #: assets/jsx/backup-panel/components/tabs-content/hooks/settings-import.jsx:50
+#: assets/js/backupPanel.js:790
 msgid "Failed to import settings."
 msgstr "Impossibile importare le impostazioni."
 
+#: assets/js/backupPanel.js:1252
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:132
+#: assets/js/backupPanel.js:940
 msgid "Import the plugin settings or workflows from a .json file."
 msgstr ""
 "Importa le impostazioni del plugin o i flussi di lavoro da un file .json."
 
+#: assets/js/backupPanel.js:1289
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:173
+#: assets/js/backupPanel.js:981
 msgid "Select Content to Import"
 msgstr "Seleziona il contenuto da importare"
 
+#: assets/js/backupPanel.js:1293
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:178
+#: assets/js/backupPanel.js:986
 msgid "Raw Data Preview"
 msgstr "Anteprima dei dati completi"
 
+#: assets/js/blockEditor.js:1752 assets/js/bulkEdit.js:1752
+#: assets/js/classicEditor.js:1752 assets/js/quickEdit.js:1752
+#: assets/js/settingsGeneral.js:1752 assets/js/settingsPostTypes.js:1752
 #: assets/jsx/components/PostTypesSettingsPanels.jsx:81
+#: assets/js/blockEditor.js:1587 assets/js/bulkEdit.js:1587
+#: assets/js/classicEditor.js:1587 assets/js/quickEdit.js:1587
+#: assets/js/settingsGeneral.js:1587 assets/js/settingsPostTypes.js:1587
 msgid "Select a post type to edit:"
 msgstr "Seleziona un tipo di contenuto da modificare:"
 
-#: assets/jsx/legacy-action/index.jsx:78
+#: assets/js/legacyAction.js:230 assets/jsx/legacy-action/index.jsx:78
+#: assets/js/legacyAction.js:153
 msgid "Workflow to trigger"
 msgstr "Flusso di lavoro da innescare"
 
-#: assets/jsx/legacy-action/index.jsx:90
+#: assets/js/legacyAction.js:241 assets/jsx/legacy-action/index.jsx:90
+#: assets/js/legacyAction.js:165
 msgid "No compatible workflows available."
 msgstr "Non sono disponibili flussi di lavoro compatibili."
+
+#: assets/js/workflowManualSelectionBulkEdit.js:157
+#: assets/jsx/workflow-manual-selection/bulk-edit/fieldset.jsx:76
+#: assets/js/workflowManualSelectionBulkEdit.js:102
+msgid "Change manually enabled workflows"
+msgstr "Modifica dei flussi di lavoro abilitati manualmente"
+
+#. translators: %s: Workflow title
+#: assets/js/workflowsListCancelAction.js:702
+#: assets/jsx/workflows-list/cancel-action/index.jsx:59
+#: assets/js/workflowsListCancelAction.js:497
+msgid ""
+"Are you sure you want to cancel all scheduled actions for the \"%s\" "
+"workflow?"
+msgstr ""
+"Vuoi davvero annullare tutte le azioni programmate per il flusso di lavoro "
+"\"%s\"?"
+
+#: assets/js/workflowsListCancelAction.js:708
+#: assets/jsx/workflows-list/cancel-action/index.jsx:69
+#: assets/js/workflowsListCancelAction.js:507
+msgid "Cancel Actions"
+msgstr "Annulla azioni"
+
+#: assets/jsx/i18n.jsx:174 assets/jsx/i18n.jsx:176
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d elemento"
+msgstr[1] "%d elementi"
 
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:29
 msgid "Integer"
@@ -5793,26 +5915,9 @@ msgstr "Bozza"
 msgid "Switch to draft"
 msgstr "Passa alla bozza"
 
-#: assets/jsx/workflow-manual-selection/bulk-edit/fieldset.jsx:76
-msgid "Change manually enabled workflows"
-msgstr "Modifica dei flussi di lavoro abilitati manualmente"
-
 #: assets/jsx/workflow-manual-selection/example-extending-with-slot.jsx:48
 msgid "Enable workflow %s"
 msgstr "Abilita il flusso di lavoro %s"
-
-#. translators: %s: Workflow title
-#: assets/jsx/workflows-list/cancel-action/index.jsx:59
-msgid ""
-"Are you sure you want to cancel all scheduled actions for the \"%s\" "
-"workflow?"
-msgstr ""
-"Vuoi davvero annullare tutte le azioni programmate per il flusso di lavoro "
-"\"%s\"?"
-
-#: assets/jsx/workflows-list/cancel-action/index.jsx:69
-msgid "Cancel Actions"
-msgstr "Annulla azioni"
 
 #, php-format
 #~ msgid "Showing all %d results. The approximate size of the log is %s."

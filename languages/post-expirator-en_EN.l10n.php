@@ -1,2 +1,2 @@
 <?php
-return ['domain'=>'post-expirator','plural-forms'=>NULL,'language'=>'','project-id-version'=>'PublishPress Future Free 4.10.0-beta.1','pot-creation-date'=>'2026-03-24T19:11:12+00:00','po-revision-date'=>'YEAR-MO-DA HO:MI+ZONE','x-generator'=>'WP-CLI 2.12.0','messages'=>[]];
+return ['domain'=>'post-expirator','plural-forms'=>NULL,'language'=>'','project-id-version'=>'PublishPress Future Free 4.10.0','pot-creation-date'=>'2026-04-10T20:34:37+00:00','po-revision-date'=>'YEAR-MO-DA HO:MI+ZONE','x-generator'=>'WP-CLI 2.13.0-alpha','messages'=>[]];

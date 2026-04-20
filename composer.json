@@ -21,9 +21,10 @@
         },
         "allow-plugins": {
             "publishpress/dev-workspace": true,
-            "php-http/discovery": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "phpstan/extension-installer": true
+            "phpstan/extension-installer": true,
+            "automattic/jetpack-autoloader": true,
+            "php-http/discovery": true
         },
         "process-timeout": 0
     },
@@ -34,7 +35,7 @@
         "ext-json": "*"
     },
     "require-dev": {
-        "publishpress/dev-workspace": "^1.1"
+        "publishpress/dev-workspace": "dev-development"
     },
     "extra": {
         "plugin-slug": "post-expirator",

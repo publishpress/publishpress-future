@@ -27,6 +27,7 @@
 /cache export-ignore
 /composer.lock
 /dev-workspace export-ignore
+/dev-workspace-cache export-ignore
 /dist export-ignore
 /docs export-ignore
 /vendor export-ignore
