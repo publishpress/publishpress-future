@@ -48,23 +48,26 @@
         },
         {
             "name": "publishpress/instance-protection",
-            "version": "v1.0.3",
-            "version_normalized": "1.0.3.0",
+            "version": "2.1.0",
+            "version_normalized": "2.1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/publishpress/library-instance-protection.git",
-                "reference": "6a4e7038c95fac43264b1d61a5cdae2b1e3cc4ee"
+                "reference": "24289afd5ac8f1f4098a22a45cab3939c02db15f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/publishpress/library-instance-protection/zipball/6a4e7038c95fac43264b1d61a5cdae2b1e3cc4ee",
-                "reference": "6a4e7038c95fac43264b1d61a5cdae2b1e3cc4ee",
+                "url": "https://api.github.com/repos/publishpress/library-instance-protection/zipball/24289afd5ac8f1f4098a22a45cab3939c02db15f",
+                "reference": "24289afd5ac8f1f4098a22a45cab3939c02db15f",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6.20"
+                "php": ">=7.2.5"
             },
-            "time": "2022-10-28T16:14:03+00:00",
+            "require-dev": {
+                "publishpress/translations": "dev-development"
+            },
+            "time": "2025-12-09T00:25:13+00:00",
             "type": "library",
             "installation-source": "dist",
             "notification-url": "https://packagist.org/downloads/",
@@ -84,7 +87,7 @@
             ],
             "support": {
                 "issues": "https://github.com/publishpress/library-instance-protection/issues",
-                "source": "https://github.com/publishpress/library-instance-protection/tree/v1.0.3"
+                "source": "https://github.com/publishpress/library-instance-protection/tree/2.1.0"
             },
             "install-path": "../publishpress/instance-protection"
         },

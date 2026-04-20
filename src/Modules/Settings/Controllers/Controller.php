@@ -132,7 +132,8 @@ class Controller implements InitializableInterface
     public function onAdminEnqueueScript($screenId)
     {
         try {
-            if ($screenId !== 'future_page_publishpress-future-settings') {
+            // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Only comparing admin page slug; no form action.
+            if (! isset($_GET['page']) || sanitize_key(wp_unslash($_GET['page'])) !== 'publishpress-future-settings') {
                 return;
             }
 

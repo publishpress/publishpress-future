@@ -29,9 +29,9 @@
             'dev_requirement' => false,
         ),
         'publishpress/instance-protection' => array(
-            'pretty_version' => 'v1.0.3',
-            'version' => '1.0.3.0',
-            'reference' => '6a4e7038c95fac43264b1d61a5cdae2b1e3cc4ee',
+            'pretty_version' => '2.1.0',
+            'version' => '2.1.0.0',
+            'reference' => '24289afd5ac8f1f4098a22a45cab3939c02db15f',
             'type' => 'library',
             'install_path' => __DIR__ . '/../publishpress/instance-protection',
             'aliases' => array(),

@@ -16,7 +16,7 @@
 .rsync-filters-pre-build
 .vscode
 *.code-workspace
-/.cache
+/dev-workspace-cache
 /.cursor
 /.wordpress-org
 /cache

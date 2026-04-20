@@ -92,6 +92,7 @@ Before releasing the Pro plugin, ensure every step in this checklist is complete
 - [ ] Review the `composer build` output and confirm the package file list is correct
   - Ensure configuration and development-only files are excluded from the final package
   - If needed, update `.rsync-filters-pre-build`, `.rsync-filters-post-build`, `.distignore`, and `.gitattributes`
+  - Shared pack excludes live in `vendor/puublishpress/dev-workspace/.rsync-filters-pre-build.default` and related files; use `composer run pack:dir:with-debug` only when the package must include source maps or JSX sources
 - [ ] Share the generated package with the team for testing via the `#testing` Slack channel
 
 ### Release & Deployment

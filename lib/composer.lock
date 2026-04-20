@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b54ba3f02c1133211e0d94cb0cf09863",
+    "content-hash": "19d7932229acb0c813f07d45e3b99693",
     "packages": [
         {
             "name": "jwadhams/json-logic-php",
@@ -51,20 +51,23 @@
         },
         {
             "name": "publishpress/instance-protection",
-            "version": "v1.0.3",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/publishpress/library-instance-protection.git",
-                "reference": "6a4e7038c95fac43264b1d61a5cdae2b1e3cc4ee"
+                "reference": "24289afd5ac8f1f4098a22a45cab3939c02db15f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/publishpress/library-instance-protection/zipball/6a4e7038c95fac43264b1d61a5cdae2b1e3cc4ee",
-                "reference": "6a4e7038c95fac43264b1d61a5cdae2b1e3cc4ee",
+                "url": "https://api.github.com/repos/publishpress/library-instance-protection/zipball/24289afd5ac8f1f4098a22a45cab3939c02db15f",
+                "reference": "24289afd5ac8f1f4098a22a45cab3939c02db15f",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6.20"
+                "php": ">=7.2.5"
+            },
+            "require-dev": {
+                "publishpress/translations": "dev-development"
             },
             "type": "library",
             "notification-url": "https://packagist.org/downloads/",
@@ -84,9 +87,9 @@
             ],
             "support": {
                 "issues": "https://github.com/publishpress/library-instance-protection/issues",
-                "source": "https://github.com/publishpress/library-instance-protection/tree/v1.0.3"
+                "source": "https://github.com/publishpress/library-instance-protection/tree/2.1.0"
             },
-            "time": "2022-10-28T16:14:03+00:00"
+            "time": "2025-12-09T00:25:13+00:00"
         },
         {
             "name": "publishpress/pimple-pimple",

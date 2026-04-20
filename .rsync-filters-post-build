@@ -1,14 +1,1 @@
-- .deploy-state.json
-- .distignore
-- .DS_Store
-- .git
-- .gitattributes
-- .github
-- .gitignore
-- .phplint.cache
-- .rsync-filters-dev-sync
-- .rsync-filters-post-build
-- .rsync-filters-pre-build
-- /lib/vendor/bin
-- /vendor
-- composer.lock
+# Plugin-specific post-build excludes (optional).
