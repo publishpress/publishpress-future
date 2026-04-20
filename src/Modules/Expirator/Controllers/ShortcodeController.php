@@ -167,10 +167,14 @@ class ShortcodeController implements InitializableInterface
             $defaultDateTimeFormat
         );
 
+        $wrapper = ($attrs['wrapper'] === tag_escape($attrs['wrapper']))
+            ? strtolower(trim($attrs['wrapper']))
+            : 'div';
+
         if (!empty($attrs['wrapper'])) {
             $output = sprintf(
                 '<%1$s class="%2$s">%3$s</%1$s>',
-                esc_html($attrs['wrapper']),
+                esc_html($wrapper),
                 esc_attr($attrs['class']),
                 $output
             );

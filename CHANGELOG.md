@@ -1,6 +1,11 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+[4.10.1] - 20 April, 2026
+
+- Fixed: Update language strings.
+- Security: Stored XSS via `[futureaction]` shortcode (CVE-2026-5247, CVSS 5.5 Medium). Insufficient input sanitization allowed authenticated attackers (administrator-level or lower-privileged users when the shortcode is available to them) to inject arbitrary web scripts into pages. Thanks to zaim for the responsible disclosure.
+
 [4.10.0] - 25 March, 2026
 
 - Added: Add new trigger: Post is created - PRO, (Issue #1146).

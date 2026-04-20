@@ -45,20 +45,20 @@ jobs:
 
       - name: Show version of tools inside the dev-workspace
         run: |
-          $GITHUB_WORKSPACE/dev-workspace/run composer info:versions
+          $GITHUB_WORKSPACE/vendor/publishpress/dev-workspace/scripts/run.sh bash -c "git config --global --add safe.directory /project && composer info:versions
 
       - name: Run PHP check
         run: |
-          $GITHUB_WORKSPACE/dev-workspace/run composer check:php
+          $GITHUB_WORKSPACE/vendor/publishpress/dev-workspace/scripts/run.sh bash -c "git config --global --add safe.directory /project && composer check:php
 
       - name: Run Lint check
         run: |
-          $GITHUB_WORKSPACE/dev-workspace/run composer check:lint
+          $GITHUB_WORKSPACE/vendor/publishpress/dev-workspace/scripts/run.sh bash -c "git config --global --add safe.directory /project && composer check:lint
 
       - name: Run PHPCS check
         run: |
-          $GITHUB_WORKSPACE/dev-workspace/run composer check:cs
+          $GITHUB_WORKSPACE/vendor/publishpress/dev-workspace/scripts/run.sh bash -c "git config --global --add safe.directory /project && composer check:cs
 
       - name: Run Long Path check
         run: |
-          $GITHUB_WORKSPACE/dev-workspace/run composer check:longpath
+          $GITHUB_WORKSPACE/vendor/publishpress/dev-workspace/scripts/run.sh bash -c "git config --global --add safe.directory /project && composer check:longpath
