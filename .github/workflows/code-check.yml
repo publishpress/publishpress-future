@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - 'main'
+      - 'hotfix/github-workflows'
 
   pull_request:
     branches:
@@ -22,7 +23,7 @@ on:
 jobs:
   check:
     name: Check the code
-    runs-on: ubuntu-latest
+    runs-on: publishpress-runner
     steps:
       - name: Setup tmate session for Debugging, if inputs.tmate_enabled is true
         uses: mxschmitt/action-tmate@v3
