@@ -23,7 +23,7 @@ on:
 jobs:
   check:
     name: Check the code
-    runs-on: publishpress-runner
+    runs-on: publishpress-release
     steps:
       - name: Setup tmate session for Debugging, if inputs.tmate_enabled is true
         uses: mxschmitt/action-tmate@v3
