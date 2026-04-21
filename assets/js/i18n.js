@@ -133,14 +133,11 @@ var data = function (_window$publishpressI, _window$publishpressI2) {
 var __ = function __(text) {
   var _data$locale_data;
   var domain = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+  if (!domain) {
+    return (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)(text);
+  }
   if (domain && (_data$locale_data = data.locale_data) !== null && _data$locale_data !== void 0 && (_data$locale_data = _data$locale_data[domain]) !== null && _data$locale_data !== void 0 && _data$locale_data[text] && data.locale_data[domain][text][0]) {
     return data.locale_data[domain][text][0];
-  }
-  for (var key in data.locale_data) {
-    var _data$locale_data$key;
-    if ((_data$locale_data$key = data.locale_data[key]) !== null && _data$locale_data$key !== void 0 && _data$locale_data$key[text] && data.locale_data[key][text][0]) {
-      return data.locale_data[key][text][0];
-    }
   }
   return (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)(text, domain);
 };
