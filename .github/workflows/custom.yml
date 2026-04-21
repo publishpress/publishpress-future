@@ -1,0 +1,39 @@
+name: Custom workflow
+permissions:
+  contents: read
+on:
+  push:
+    branches:
+      - '*'
+
+  pull_request:
+    branches:
+      - '*'
+
+  workflow_call:
+
+  workflow_dispatch:
+    inputs:
+      tmate_enabled:
+        type: boolean
+        description: 'Enable "tmate" for debugging'
+        required: false
+        default: false
+jobs:
+  check:
+    name: Custom workflow
+    runs-on: publishpress-release
+    steps:
+      - name: Setup tmate session for Debugging, if inputs.tmate_enabled is true
+        uses: mxschmitt/action-tmate@v3
+        if: ${{ inputs.tmate_enabled }}
+        timeout-minutes: 10
+        with:
+          detached: true
+
+      - name: Checkout code
+        uses: actions/checkout@master
+
+      - name: List files
+        run: |
+          ls -la $GITHUB_WORKSPACE
