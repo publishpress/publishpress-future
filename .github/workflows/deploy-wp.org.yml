@@ -42,16 +42,20 @@ jobs:
       - name: Get the plugin version number
         id: get-version
         run: |
-          PACKAGE_NAME=$(jq -r '.extra["plugin-name"]' composer.json)
-          VERSION=$($GITHUB_WORKSPACE/vendor/publishpress/dev-workspace/scripts/plugin-version.sh)
-          echo "package_name=${PACKAGE_NAME}" >> "$GITHUB_OUTPUT"
-          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+          PLUGIN_SLUG=$(jq -r '.extra["plugin-slug"]' composer.json)
+          PLUGIN_FOLDER=$(jq -r '.extra["plugin-folder"]' composer.json)
+          PLUGIN_NAME=$(jq -r '.extra["plugin-name"]' composer.json)
+          PLUGIN_VERSION=$($GITHUB_WORKSPACE/vendor/publishpress/dev-workspace/scripts/plugin-version.sh)
+          echo "plugin_slug=${PLUGIN_SLUG}" >> "$GITHUB_OUTPUT"
+          echo "plugin_folder=${PLUGIN_FOLDER}" >> "$GITHUB_OUTPUT"
+          echo "plugin_name=${PLUGIN_NAME}" >> "$GITHUB_OUTPUT"
+          echo "plugin_version=${PLUGIN_VERSION}" >> "$GITHUB_OUTPUT"
 
       - name: Upload release asset
         # softprops/action-gh-release@v3.0.0
         uses: softprops/action-gh-release@b4309332981a82ec1c5618f44dd2e27cc8bfbfda
         with:
-          files: ${{ github.workspace }}/dist/${{ steps.get-version.outputs.package_name }}-${{ steps.get-version.outputs.version }}.zip
+          files: ${{ github.workspace }}/dist/${{ steps.get-version.outputs.plugin_name }}-${{ steps.get-version.outputs.plugin_version }}.zip
 
       - name: WordPress.org plugin deploy
         # 10up/action-wordpress-plugin-deploy@v2.3.0
@@ -59,5 +63,5 @@ jobs:
         env:
           SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
           SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
-          SLUG: post-expirator
-          BUILD_DIR: ${{ github.workspace }}/dist/post-expirator
+          SLUG: ${{ steps.get-version.outputs.plugin_slug }}
+          BUILD_DIR: ${{ github.workspace }}/dist/${{ steps.get-version.outputs.plugin_folder }}
