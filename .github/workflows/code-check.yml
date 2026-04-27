@@ -21,38 +21,34 @@ jobs:
     name: Check the code
     runs-on: [self-hosted, precheck]
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         # actions/checkout@v6.0.2
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
 
-      - name: Create .env file
+      - name: Create root .env from template
         run: |
           cp $GITHUB_WORKSPACE/.env.example $GITHUB_WORKSPACE/.env
 
-      - name: Create .env file
-        run: |
-          cp $GITHUB_WORKSPACE/.env.example $GITHUB_WORKSPACE/.env
-
-      - name: Validate the composer.json file
+      - name: Validate composer.json
         run: composer validate
 
-      - name: Install the dependencies
+      - name: Install Composer dependencies
         run: composer install
 
-      - name: Show the version of the tools inside the dev-workspace
+      - name: Show dev-workspace tool versions
         run: composer info:version
 
       - name: Add dev-workspace scripts to PATH
         run: echo "$DEV_SCRIPTS_DIR" >> "$GITHUB_PATH"
 
-      - name: Run PHP check
+      - name: Run PHP compatibility check
         run: |
           composer check:php
 
-      - name: Run Lint check
+      - name: Run PHP lint check
         run: |
-          composer check:lint
+          composer lint:php
 
-      - name: Run PHPCS check
+      - name: Run PHPCS lint check
         run: |
-          composer check:cs
+          composer lint:phpcs
