@@ -5,7 +5,7 @@ on:
   push:
     branches:
       - 'main'
-      - 'hotfix/github-workflows'
+      - 'hotfix/github-workflow'
 
   pull_request:
     branches:
@@ -13,53 +13,46 @@ on:
 
   workflow_call:
 
-  workflow_dispatch:
-    inputs:
-      tmate_enabled:
-        type: boolean
-        description: 'Enable "tmate" for debugging'
-        required: false
-        default: false
+env:
+  DEV_SCRIPTS_DIR: ${{ github.workspace }}/vendor/publishpress/dev-workspace/scripts
+
 jobs:
   check:
     name: Check the code
-    runs-on: publishpress-release
+    runs-on: [self-hosted, precheck]
     steps:
-      - name: Setup tmate session for Debugging, if inputs.tmate_enabled is true
-        uses: mxschmitt/action-tmate@v3
-        if: ${{ inputs.tmate_enabled }}
-        timeout-minutes: 10
-        with:
-          detached: true
-
       - name: Checkout code
-        uses: actions/checkout@master
+        # actions/checkout@v6.0.2
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
 
       - name: Create .env file
         run: |
           cp $GITHUB_WORKSPACE/.env.example $GITHUB_WORKSPACE/.env
 
-      - name: Prepare composer
+      - name: Create .env file
         run: |
-          $GITHUB_WORKSPACE/dev-workspace/run composer validate
-          $GITHUB_WORKSPACE/dev-workspace/run composer install
+          cp $GITHUB_WORKSPACE/.env.example $GITHUB_WORKSPACE/.env
 
-      - name: Show version of tools inside the dev-workspace
-        run: |
-          $GITHUB_WORKSPACE/vendor/publishpress/dev-workspace/scripts/run.sh bash -c "git config --global --add safe.directory /project && composer info:versions
+      - name: Validate the composer.json file
+        run: composer validate
+
+      - name: Install the dependencies
+        run: composer install
+
+      - name: Show the version of the tools inside the dev-workspace
+        run: composer info:version
+
+      - name: Add dev-workspace scripts to PATH
+        run: echo "$DEV_SCRIPTS_DIR" >> "$GITHUB_PATH"
 
       - name: Run PHP check
         run: |
-          $GITHUB_WORKSPACE/vendor/publishpress/dev-workspace/scripts/run.sh bash -c "git config --global --add safe.directory /project && composer check:php
+          composer check:php
 
       - name: Run Lint check
         run: |
-          $GITHUB_WORKSPACE/vendor/publishpress/dev-workspace/scripts/run.sh bash -c "git config --global --add safe.directory /project && composer check:lint
+          composer check:lint
 
       - name: Run PHPCS check
         run: |
-          $GITHUB_WORKSPACE/vendor/publishpress/dev-workspace/scripts/run.sh bash -c "git config --global --add safe.directory /project && composer check:cs
-
-      - name: Run Long Path check
-        run: |
-          $GITHUB_WORKSPACE/vendor/publishpress/dev-workspace/scripts/run.sh bash -c "git config --global --add safe.directory /project && composer check:longpath
+          composer check:cs
