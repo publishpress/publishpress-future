@@ -4,8 +4,10 @@ permissions:
 on:
   push:
     branches:
-      - 'main'
-      - 'hotfix/github-workflow'
+      - 'master'
+      - 'development'
+      - 'release/*'
+      - 'release-*'
 
   pull_request:
     branches:

@@ -4,13 +4,11 @@ permissions:
 on:
   push:
     branches:
-      - 'main'
-
-  workflow_dispatch:
+      - 'master'
 
 jobs:
   deploy-to-trunk:
-    name: Deploy assets/readme to trunk
+    name: Deploy assets/readme to WordPress.org
     runs-on: ubuntu-latest
     steps:
       - name: WordPress.org plugin asset/readme update
