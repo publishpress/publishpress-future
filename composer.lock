@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "81554f91df63b7863d92c7be4928a6e0",
+    "content-hash": "8be9de7afd260d98b637ce6e26951520",
     "packages": [],
     "packages-dev": [
         {
@@ -5887,16 +5887,16 @@
         },
         {
             "name": "publishpress/dev-workspace",
-            "version": "dev-development",
+            "version": "dev-custom-runners",
             "source": {
                 "type": "git",
                 "url": "https://github.com/publishpress/dev-workspace.git",
-                "reference": "67dfca765cea14f25fa3735283cd9439851769e9"
+                "reference": "b3ea61d9632b54d5007032173eb454bffd2d00fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/publishpress/dev-workspace/zipball/67dfca765cea14f25fa3735283cd9439851769e9",
-                "reference": "67dfca765cea14f25fa3735283cd9439851769e9",
+                "url": "https://api.github.com/repos/publishpress/dev-workspace/zipball/b3ea61d9632b54d5007032173eb454bffd2d00fb",
+                "reference": "b3ea61d9632b54d5007032173eb454bffd2d00fb",
                 "shasum": ""
             },
             "require": {
@@ -5936,7 +5936,6 @@
                 "wp-cli/wp-cli-bundle": "^2.10",
                 "wp-coding-standards/wpcs": "^3"
             },
-            "default-branch": true,
             "type": "composer-plugin",
             "extra": {
                 "class": "PublishPress\\DevWorkspace\\Plugin"
@@ -5953,9 +5952,9 @@
             "description": "Shared Composer scripts for PublishPress plugins",
             "support": {
                 "issues": "https://github.com/publishpress/dev-workspace/issues",
-                "source": "https://github.com/publishpress/dev-workspace/tree/development"
+                "source": "https://github.com/publishpress/dev-workspace/tree/custom-runners"
             },
-            "time": "2026-04-22T13:26:39+00:00"
+            "time": "2026-04-27T15:29:14+00:00"
         },
         {
             "name": "publishpress/publishpress-phpcs-standards",
