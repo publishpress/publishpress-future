@@ -35,7 +35,7 @@
         "ext-json": "*"
     },
     "require-dev": {
-        "publishpress/dev-workspace": "dev-development"
+        "publishpress/dev-workspace": "dev-custom-runners"
     },
     "extra": {
         "plugin-slug": "post-expirator",
