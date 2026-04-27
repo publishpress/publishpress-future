@@ -5,9 +5,9 @@ on:
   push:
     branches:
       - 'main'
-      - 'develop'
       - 'release/*'
       - 'release-*'
+      - 'hotfix/github-workflow'
 
   pull_request:
     branches:
@@ -16,65 +16,32 @@ on:
   workflow_call:
 
   workflow_dispatch:
-    inputs:
-      tmate_enabled:
-        type: boolean
-        description: 'Enable "tmate" for debugging'
-        required: false
-        default: false
+
 jobs:
   check:
     name: Test the code
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, pretest]
     steps:
-      - name: Setup tmate session for Debugging, if inputs.tmate_enabled is true
-        uses: mxschmitt/action-tmate@v3
-        if: ${{ inputs.tmate_enabled }}
-        timeout-minutes: 10
-        with:
-          detached: true
-
       - name: Checkout code
-        uses: actions/checkout@master
+        # actions/checkout@v6.0.2
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
 
-      - name: Verify Docker installation
-        run: docker --version
-
-      - name: Create .env file
+      - name: Create root .env from template
         run: |
           cp $GITHUB_WORKSPACE/.env.example $GITHUB_WORKSPACE/.env
 
-      - name: Composer validation
-        uses: php-actions/composer@v6
-        with:
-          php_version: "8.4"
-          php_extensions: zip mysqli
-          command: validate
+      - name: Validate composer.json
+        run: composer validate
 
-      - name: Composer install
-        uses: php-actions/composer@v6
-        with:
-          php_version: "8.4"
-          php_extensions: zip mysqli
+      - name: Install Composer dependencies
+        run: composer install
 
-      - name: Start services
-        run: |
-          composer test:up
+      - name: Show dev-workspace tool versions
+        run: composer info:version
 
-      - name: Fix permissions
-        run: |
-          docker exec future_free_env_wp_test chmod -R 777 /var/www/html/wp-content
-
-      - name: Remove WordPress maintenance file if exists
-        run: |
-          docker exec future_free_env_wp_test rm -f /var/www/html/.maintenance || true
+      - name: Add dev-workspace scripts to PATH
+        run: echo "$DEV_SCRIPTS_DIR" >> "$GITHUB_PATH"
 
       - name: Run Unit Tests
         run: |
           composer test Unit
-
-      - name: Run Integration Tests
-        run: |
-          composer test Integration
-
-

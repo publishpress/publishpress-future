@@ -4,12 +4,6 @@ on:
     types: [ released ]
 
   workflow_dispatch:
-    inputs:
-      tmate_enabled:
-        type: boolean
-        description: 'Enable "tmate" for debugging.'
-        required: false
-        default: false
 
 jobs:
   code-check:
@@ -20,68 +14,50 @@ jobs:
   deploy-wp-org:
     name: Deploy the new tag
     needs: [code-check]
-    runs-on: ubuntu-latest
+    runs-on: release,self-hosted
     steps:
-      - name: Install Linux packages
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y iproute2 subversion
-
-      - name: Setup tmate session for Debugging, if inputs.tmate_enabled is true
-        uses: mxschmitt/action-tmate@v3
-        if: ${{ inputs.tmate_enabled }}
-        timeout-minutes: 10
-        with:
-          detached: true
-
       - name: Checkout code
-        uses: actions/checkout@master
+        # actions/checkout@v6.0.2
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
 
-      - name: Configure git to trust the repository
-        run: |
-          git config --global --add safe.directory $GITHUB_WORKSPACE
-          git config --global --add safe.directory .
-
-      - name: Create .env file
+      - name: Create root .env from template
         run: |
           cp $GITHUB_WORKSPACE/.env.example $GITHUB_WORKSPACE/.env
 
-      - name: Composer validation
-        uses: php-actions/composer@v6
-        with:
-          php_version: "8.4"
-          php_extensions: zip mysqli
-          command: validate
+      - name: Validate composer.json
+        run: composer validate
 
-      - name: Composer install
-        uses: php-actions/composer@v6
-        with:
-          php_version: "8.4"
-          php_extensions: zip mysqli
+      - name: Install Composer dependencies
+        run: composer install
 
-      - name: Show version of tools inside the dev-workspace
+      - name: Show dev-workspace tool versions
+        run: composer info:version
+
+      - name: Add dev-workspace scripts to PATH
+        run: echo "$DEV_SCRIPTS_DIR" >> "$GITHUB_PATH"
+
+      - name: Build the plugin package
+        run: composer build
+
+      - name: Get the plugin version number
+        id: get-version
         run: |
-          $GITHUB_WORKSPACE/vendor/publishpress/dev-workspace/scripts/run.sh composer info:versions
+          PACKAGE_NAME=$(jq -r '.extra["plugin-name"]' composer.json)
+          VERSION=$($GITHUB_WORKSPACE/vendor/publishpress/dev-workspace/scripts/plugin-version.sh)
+          echo "package_name=${PACKAGE_NAME}" >> "$GITHUB_OUTPUT"
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
 
-      - name: Build the package using ./dev-workspace
-        run: |
-          $GITHUB_WORKSPACE/vendor/publishpress/dev-workspace/scripts/run.sh composer build
+      - name: Upload release asset
+        # softprops/action-gh-release@v3.0.0
+        uses: softprops/action-gh-release@b4309332981a82ec1c5618f44dd2e27cc8bfbfda
+        with:
+          files: ${{ github.workspace }}/dist/${{ steps.get-version.outputs.package_name }}-${{ steps.get-version.outputs.version }}.zip
 
       - name: WordPress.org plugin deploy
-        uses: 10up/action-wordpress-plugin-deploy@stable
+        # 10up/action-wordpress-plugin-deploy@v2.3.0
+        uses: 10up/action-wordpress-plugin-deploy@54bd289b8525fd23a5c365ec369185f2966529c2
         env:
           SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
           SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
           SLUG: post-expirator
           BUILD_DIR: ${{ github.workspace }}/dist/post-expirator
-
-      - name: Get the plugin version number
-        id: get-version
-        run: |
-          VERSION=$($GITHUB_WORKSPACE/vendor/publishpress/dev-workspace/scripts/run.sh pversion | tail -n 1 | tr -d '\n\r' | xargs)
-          echo "version=${VERSION}" >> $GITHUB_OUTPUT
-
-      - name: Upload release asset
-        uses: softprops/action-gh-release@v2
-        with:
-          files: ${{ github.workspace }}/dist/publishpress-future-${{ steps.get-version.outputs.version }}.zip
