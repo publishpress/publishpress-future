@@ -12,4 +12,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: WordPress.org plugin asset/readme update
-        uses: publishpress/github-workflows/.github/workflows/deploy-free-assets.yml@development
+        uses: publishpress/github-workflows/.github/workflows/deploy-free-assets.yml@v1.0.0

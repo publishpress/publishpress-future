@@ -19,4 +19,4 @@ on:
 
 jobs:
   check:
-    uses: publishpress/github-workflows/.github/workflows/code-check.yml@development
+    uses: publishpress/github-workflows/.github/workflows/code-check.yml@v1.0.0
