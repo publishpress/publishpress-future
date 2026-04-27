@@ -1,0 +1,17 @@
+name: Deploy assets/readme to WordPress.org
+permissions:
+  contents: read
+on:
+  push:
+    branches:
+      - 'main'
+
+  workflow_dispatch:
+
+jobs:
+  deploy-to-trunk:
+    name: Deploy assets/readme to trunk
+    runs-on: ubuntu-latest
+    steps:
+      - name: WordPress.org plugin asset/readme update
+        uses: publishpress/github-workflows/.github/workflows/deploy-free-assets.yml@development

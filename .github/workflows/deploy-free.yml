@@ -1,0 +1,16 @@
+name: Deploy plugin to WordPress.org
+on:
+  release:
+    types: [ released ]
+
+  workflow_dispatch:
+
+jobs:
+  code-check:
+    name: Check the code
+    uses: ./.github/workflows/code-check.yml
+    secrets: inherit
+
+  deploy-wp-org:
+    uses: publishpress/github-workflows/.github/workflows/deploy-free.yml@development
+    needs: [code-check]

@@ -1,10 +1,12 @@
-name: VIP Scans and other code checks
+name: Unit and Integration Tests
 permissions:
   contents: read
 on:
   push:
     branches:
       - 'main'
+      - 'release/*'
+      - 'release-*'
       - 'hotfix/github-workflow'
 
   pull_request:
@@ -17,4 +19,4 @@ on:
 
 jobs:
   check:
-    uses: publishpress/github-workflows/.github/workflows/code-check.yml@development
+    uses: publishpress/github-workflows/.github/workflows/unit-tests.yml@development
