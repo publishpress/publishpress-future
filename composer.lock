@@ -5891,12 +5891,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/publishpress/dev-workspace.git",
-                "reference": "f7171538468dc1e35e8293fe58e0e79376fc3bda"
+                "reference": "dd50b6811168fd45a65cdc5023755b2941d76bc9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/publishpress/dev-workspace/zipball/f7171538468dc1e35e8293fe58e0e79376fc3bda",
-                "reference": "f7171538468dc1e35e8293fe58e0e79376fc3bda",
+                "url": "https://api.github.com/repos/publishpress/dev-workspace/zipball/dd50b6811168fd45a65cdc5023755b2941d76bc9",
+                "reference": "dd50b6811168fd45a65cdc5023755b2941d76bc9",
                 "shasum": ""
             },
             "require": {
@@ -5954,7 +5954,7 @@
                 "issues": "https://github.com/publishpress/dev-workspace/issues",
                 "source": "https://github.com/publishpress/dev-workspace/tree/custom-runners"
             },
-            "time": "2026-04-28T21:16:39+00:00"
+            "time": "2026-04-28T21:28:10+00:00"
         },
         {
             "name": "publishpress/publishpress-phpcs-standards",
