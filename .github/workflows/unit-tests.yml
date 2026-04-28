@@ -19,4 +19,5 @@ on:
 
 jobs:
   check:
-    uses: publishpress/github-workflows/.github/workflows/unit-tests.yml@ubuntu-latest
+    # v2.0.0
+    uses: publishpress/github-workflows/.github/workflows/unit-tests.yml@0f5e3a3488accd905de7b26e9d57364e303837f5
