@@ -19,4 +19,4 @@ on:
 
 jobs:
   check:
-    uses: publishpress/github-workflows/.github/workflows/unit-tests.yml@v1.0.0
+    uses: publishpress/github-workflows/.github/workflows/unit-tests.yml@ubuntu-latest
