@@ -10,5 +10,5 @@ jobs:
     secrets: inherit
 
   deploy-wp-org:
-    uses: publishpress/github-workflows/.github/workflows/deploy-free.yml@v1.0.0
+    uses: publishpress/github-workflows/.github/workflows/deploy-free.yml@ubuntu-latest
     needs: [code-check]
