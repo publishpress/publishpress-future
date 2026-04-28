@@ -8,8 +8,4 @@ on:
 
 jobs:
   deploy-to-trunk:
-    name: Deploy assets/readme to WordPress.org
-    runs-on: ubuntu-latest
-    steps:
-      - name: WordPress.org plugin asset/readme update
-        uses: publishpress/github-workflows/.github/workflows/deploy-free-assets.yml@ubuntu-latest
+    uses: publishpress/github-workflows/.github/workflows/deploy-free-assets.yml@ubuntu-latest
