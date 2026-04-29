@@ -1,6 +1,10 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+[4.10.2] - 29 April, 2026
+
+
+
 [4.10.1] - 20 April, 2026
 
 - Fixed: Update language strings.
