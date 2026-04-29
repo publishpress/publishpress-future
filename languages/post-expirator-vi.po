@@ -478,10 +478,6 @@ msgstr "Múi giờ không hợp lệ."
 msgid "PublishPress Future"
 msgstr "PublishPress Tương lai"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:121
-msgid "Future"
-msgstr "Tương lai"
-
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:140
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:141
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:323

@@ -487,10 +487,6 @@ msgstr "Nieprawidłowy offset daty i czasu."
 msgid "PublishPress Future"
 msgstr "PublishPress Future"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:121
-msgid "Future"
-msgstr "Zaplanowane"
-
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:140
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:141
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:323

@@ -504,10 +504,6 @@ msgstr "유효하지 않은 날짜 및 시간 오프셋입니다."
 msgid "PublishPress Future"
 msgstr "퍼블리시프레스 미래"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:121
-msgid "Future"
-msgstr "미래"
-
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:140
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:141
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:323

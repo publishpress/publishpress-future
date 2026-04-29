@@ -486,10 +486,6 @@ msgstr "Desplazamiento de fecha y hora no válido."
 msgid "PublishPress Future"
 msgstr "PublishPress Future"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:121, fuzzy
-msgid "Future"
-msgstr "Future"
-
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:140
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:141
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:324
