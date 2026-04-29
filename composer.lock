@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8be9de7afd260d98b637ce6e26951520",
+    "content-hash": "f73957b1f8061b40ef5d69f121bc0a67",
     "packages": [],
     "packages-dev": [
         {
@@ -5887,16 +5887,16 @@
         },
         {
             "name": "publishpress/dev-workspace",
-            "version": "dev-custom-runners",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/publishpress/dev-workspace.git",
-                "reference": "b18a2f6bcb316d87c1cbab537f0510e69838af51"
+                "reference": "006f16ead7adedd0337c331ee53c349ad00446c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/publishpress/dev-workspace/zipball/b18a2f6bcb316d87c1cbab537f0510e69838af51",
-                "reference": "b18a2f6bcb316d87c1cbab537f0510e69838af51",
+                "url": "https://api.github.com/repos/publishpress/dev-workspace/zipball/006f16ead7adedd0337c331ee53c349ad00446c0",
+                "reference": "006f16ead7adedd0337c331ee53c349ad00446c0",
                 "shasum": ""
             },
             "require": {
@@ -5952,9 +5952,9 @@
             "description": "Shared Composer scripts for PublishPress plugins",
             "support": {
                 "issues": "https://github.com/publishpress/dev-workspace/issues",
-                "source": "https://github.com/publishpress/dev-workspace/tree/custom-runners"
+                "source": "https://github.com/publishpress/dev-workspace/tree/1.2.0"
             },
-            "time": "2026-04-29T14:07:15+00:00"
+            "time": "2026-04-29T14:12:03+00:00"
         },
         {
             "name": "publishpress/publishpress-phpcs-standards",
@@ -13528,9 +13528,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "publishpress/dev-workspace": 20
-    },
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
