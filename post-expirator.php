@@ -26,6 +26,7 @@ use PublishPress\Future\Core\DI\Container;
 use PublishPress\Future\Core\DI\ServicesAbstract;
 use PublishPress\Future\Framework\Logger\LoggerInterface;
 use PublishPress\Future\Framework\WordPress\Facade\HooksFacade;
+use PublishPress\BundledTranslations\BundledTranslations;
 use Throwable;
 
 defined('ABSPATH') or die('Direct access not allowed.');
@@ -78,6 +79,7 @@ try {
     }
 
     require_once PUBLISHPRESS_FUTURE_LIB_VENDOR_PATH . '/woocommerce/action-scheduler/action-scheduler.php';
+    require_once PUBLISHPRESS_FUTURE_LIB_VENDOR_PATH . '/publishpress/bundled-translations/core/include.php';
 
     if (! class_exists('PublishPress\Future\Core\Autoloader')) {
         require_once PUBLISHPRESS_FUTURE_SRC_PATH . '/Core/Autoloader.php';
@@ -117,6 +119,19 @@ try {
 
     add_action('init', function () {
         load_plugin_textdomain('post-expirator', false, PUBLISHPRESS_FUTURE_LANGUAGES_PATH);
+    });
+
+    add_action('plugins_loaded', function () {
+        if (! class_exists('PublishPress\\BundledTranslations\\BundledTranslations')) {
+            return;
+        }
+
+        $bundledTranslations = new BundledTranslations(
+            'post-expirator',
+            PUBLISHPRESS_FUTURE_LANGUAGES_PATH,
+            PUBLISHPRESS_FUTURE_PLUGIN_FILE
+        );
+        $bundledTranslations->init();
     });
 
     add_action('init', function () {

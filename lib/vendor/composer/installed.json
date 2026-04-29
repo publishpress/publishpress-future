@@ -47,6 +47,60 @@
             "install-path": "../jwadhams/json-logic-php"
         },
         {
+            "name": "publishpress/bundled-translations",
+            "version": "1.0.0",
+            "version_normalized": "1.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/publishpress/library-bundled-translations.git",
+                "reference": "e69381e8695fa8e6de3fc9c9d534a133ab856532"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/publishpress/library-bundled-translations/zipball/e69381e8695fa8e6de3fc9c9d534a133ab856532",
+                "reference": "e69381e8695fa8e6de3fc9c9d534a133ab856532",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5"
+            },
+            "require-dev": {
+                "publishpress/dev-workspace": "^1.0",
+                "publishpress/version-loader-generator": "^1.0"
+            },
+            "time": "2026-04-17T14:05:17+00:00",
+            "type": "library",
+            "extra": {
+                "generator": {
+                    "src-dir": "core",
+                    "lib-class-test": "class_exists('PublishPress\\BundledTranslations\\BundledTranslations')",
+                    "action-register-priority": "-200",
+                    "action-initialize-priority": "-190"
+                }
+            },
+            "installation-source": "dist",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "PublishPress",
+                    "email": "help@publishpress.com"
+                }
+            ],
+            "description": "Forces WordPress plugins to use their bundled translations instead of global translations from wordpress.org.",
+            "homepage": "http://publishpress.com/",
+            "keywords": [
+                "wordpress plugin"
+            ],
+            "support": {
+                "issues": "https://github.com/publishpress/library-bundled-translations/issues",
+                "source": "https://github.com/publishpress/library-bundled-translations/tree/v1.0.0"
+            },
+            "install-path": "../publishpress/bundled-translations"
+        },
+        {
             "name": "publishpress/instance-protection",
             "version": "2.1.0",
             "version_normalized": "2.1.0.0",

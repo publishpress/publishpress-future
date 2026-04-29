@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "19d7932229acb0c813f07d45e3b99693",
+    "content-hash": "7958ffaf82590145995cfcd086c91c67",
     "packages": [
         {
             "name": "jwadhams/json-logic-php",
@@ -48,6 +48,57 @@
                 "source": "https://github.com/jwadhams/json-logic-php/tree/1.5.1"
             },
             "time": "2024-07-09T15:20:54+00:00"
+        },
+        {
+            "name": "publishpress/bundled-translations",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/publishpress/library-bundled-translations.git",
+                "reference": "e69381e8695fa8e6de3fc9c9d534a133ab856532"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/publishpress/library-bundled-translations/zipball/e69381e8695fa8e6de3fc9c9d534a133ab856532",
+                "reference": "e69381e8695fa8e6de3fc9c9d534a133ab856532",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5"
+            },
+            "require-dev": {
+                "publishpress/dev-workspace": "^1.0",
+                "publishpress/version-loader-generator": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "generator": {
+                    "src-dir": "core",
+                    "lib-class-test": "class_exists('PublishPress\\BundledTranslations\\BundledTranslations')",
+                    "action-register-priority": "-200",
+                    "action-initialize-priority": "-190"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "PublishPress",
+                    "email": "help@publishpress.com"
+                }
+            ],
+            "description": "Forces WordPress plugins to use their bundled translations instead of global translations from wordpress.org.",
+            "homepage": "http://publishpress.com/",
+            "keywords": [
+                "wordpress plugin"
+            ],
+            "support": {
+                "issues": "https://github.com/publishpress/library-bundled-translations/issues",
+                "source": "https://github.com/publishpress/library-bundled-translations/tree/v1.0.0"
+            },
+            "time": "2026-04-17T14:05:17+00:00"
         },
         {
             "name": "publishpress/instance-protection",
