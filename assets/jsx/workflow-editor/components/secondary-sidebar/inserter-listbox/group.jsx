@@ -2,7 +2,7 @@
  * WordPress dependencies
  */
 import { forwardRef, useEffect, useState } from '@wordpress/element';
-import { __ } from '@publishpress/i18n';
+import { __ } from '@wordpress/i18n';
 import { speak } from '@wordpress/a11y';
 
 function InserterListboxGroup(props, ref) {

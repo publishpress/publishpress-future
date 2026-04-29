@@ -1,5 +1,5 @@
 import { useEffect, useCallback } from '@wordpress/element';
-import { __ } from '@publishpress/i18n';
+import { __ } from '@wordpress/i18n';
 
 const StatusChangeHandler = () => {
     const handleStatusChangeClick = useCallback((e) => {

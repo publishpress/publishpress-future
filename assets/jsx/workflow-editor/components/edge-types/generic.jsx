@@ -7,7 +7,7 @@ import {
 import { store as workflowStore } from '../workflow-store';
 import { useSelect, useDispatch } from '@wordpress/data';
 import { Popover, Toolbar, ToolbarGroup, ToolbarButton } from '@wordpress/components';
-import { __ } from '@publishpress/i18n';
+import { __ } from '@wordpress/i18n';
 
 export function GenericEdge({
     id,

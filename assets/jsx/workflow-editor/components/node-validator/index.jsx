@@ -2,7 +2,7 @@ import { store as workflowStore } from "../workflow-store";
 import { store as editorStore } from "../editor-store";
 import { useDispatch, useSelect } from "@wordpress/data";
 import { useEffect, useMemo, useCallback } from "@wordpress/element";
-import { __, sprintf } from "@publishpress/i18n";
+import { __, sprintf } from "@wordpress/i18n";
 import { nodeHasIncomers, nodeHasOutgoers, getNodeIncomersRecursively } from "../../utils";
 import isEmail from "validator/lib/isEmail";
 import isInt from "validator/lib/isInt";

@@ -1,4 +1,4 @@
-import { __, sprintf } from "@publishpress/i18n";
+import { __, sprintf } from "@wordpress/i18n";
 import { useState } from "@wordpress/element";
 import { TextControl, Button } from "@wordpress/components";
 

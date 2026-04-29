@@ -1,5 +1,5 @@
 import { useState, useCallback, useMemo } from '@wordpress/element';
-import { __ } from "@publishpress/i18n";
+import { __ } from "@wordpress/i18n";
 import { VisuallyHidden, SearchControl } from '@wordpress/components';
 import { useSelect, select } from '@wordpress/data';
 import { Tips } from './tips';

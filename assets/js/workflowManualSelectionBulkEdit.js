@@ -72,8 +72,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/api-fetch */ "./node_modules/@wordpress/api-fetch/build-module/index.js");
-/* harmony import */ var _publishpress_i18n__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @publishpress/i18n */ "@publishpress/i18n");
-/* harmony import */ var _publishpress_i18n__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_publishpress_i18n__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__);
 function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
@@ -151,10 +151,10 @@ function Fieldset(_ref) {
     });
   }, [workflowsWithManualTrigger, selectedWorkflows]);
   var strategyOptions = [{
-    label: (0,_publishpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('— No Change —', 'post-expirator'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('— No Change —', 'post-expirator'),
     value: 'no-change'
   }, {
-    label: (0,_publishpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('Change manually enabled workflows', 'post-expirator'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('Change manually enabled workflows', 'post-expirator'),
     value: 'change'
   }];
   return /*#__PURE__*/React.createElement(React.Fragment, null, controls.length > 0 && /*#__PURE__*/React.createElement("div", {
@@ -164,7 +164,7 @@ function Fieldset(_ref) {
     name: "future_workflow_view",
     value: context
   }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-    label: (0,_publishpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('Action Workflows', 'post-expirator'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('Action Workflows', 'post-expirator'),
     name: "future_workflow_manual_strategy",
     value: strategy,
     options: strategyOptions,
@@ -2048,16 +2048,6 @@ function styleTagTransform(css, styleElement) {
   }
 }
 module.exports = styleTagTransform;
-
-/***/ },
-
-/***/ "@publishpress/i18n"
-/*!************************************!*\
-  !*** external "publishpress.i18n" ***!
-  \************************************/
-(module) {
-
-module.exports = publishpress.i18n;
 
 /***/ },
 

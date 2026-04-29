@@ -1,4 +1,4 @@
-import { __ } from '@publishpress/i18n';
+import { __ } from '@wordpress/i18n';
 import { useState, useEffect } from '@wordpress/element';
 
 import ImportTab from './tabs-content/import';

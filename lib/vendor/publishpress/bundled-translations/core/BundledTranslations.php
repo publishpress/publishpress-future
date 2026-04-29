@@ -52,6 +52,7 @@ class BundledTranslations
         }
 
         add_filter('load_textdomain_mofile', [$this, 'filterMoFile'], 10, 2);
+        add_filter('load_script_translation_file', [$this, 'filterScriptTranslationFile'], 10, 3);
     }
 
     /**
@@ -100,5 +101,34 @@ class BundledTranslations
         }
 
         return $pluginMofile;
+    }
+
+    /**
+     * Filter the script translation file path to use the plugin's bundled translations
+     * when WordPress tries to load from the global languages directory.
+     *
+     * @param string $file Path to the script translation file.
+     * @param string $handle Script handle.
+     * @param string $domain Text domain.
+     * @return string Filtered path to the script translation file.
+     */
+    public function filterScriptTranslationFile(string $file, string $handle, string $domain): string
+    {
+        if ($domain !== $this->domain) {
+            return $file;
+        }
+
+        if (false === strpos($file, WP_LANG_DIR . '/plugins/')) {
+            return $file;
+        }
+
+        $locale = determine_locale();
+        $pluginScriptTranslationFile = $this->languagesDir . '/' . $this->domain . '-' . $locale . '.json';
+
+        if (! file_exists($pluginScriptTranslationFile)) {
+            return $file;
+        }
+
+        return $pluginScriptTranslationFile;
     }
 }

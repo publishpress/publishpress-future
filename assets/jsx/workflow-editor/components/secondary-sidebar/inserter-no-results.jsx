@@ -1,7 +1,7 @@
 /**
  * WordPress dependencies
  */
-import { __ } from '@publishpress/i18n';
+import { __ } from '@wordpress/i18n';
 import { Icon, blockDefault } from '@wordpress/icons';
 
 export function InserterNoResults() {

@@ -1,7 +1,7 @@
 import { dispatch, select } from '@wordpress/data';
 import { apiFetch } from '@wordpress/data-controls';
 import { STORE_NAME } from './name';
-import { __ } from '@publishpress/i18n';
+import { __ } from '@wordpress/i18n';
 
 const { apiUrl, nonce, workflowNonce } = window.futureWorkflowEditor;
 

@@ -3,7 +3,7 @@ import {
     __experimentalHStack as HStack,
     __experimentalVStack as VStack,
 } from '@wordpress/components';
-import { __ } from '@publishpress/i18n';
+import { __ } from '@wordpress/i18n';
 import { SettingsList } from '../settings-list';
 import { useState, useEffect } from '@wordpress/element';
 

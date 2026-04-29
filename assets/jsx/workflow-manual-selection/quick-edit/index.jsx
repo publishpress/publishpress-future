@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client';
 import { Fieldset } from '../fieldset';
-import { __ } from '@publishpress/i18n';
+import { __ } from '@wordpress/i18n';
 
 import './css/style.css';
 

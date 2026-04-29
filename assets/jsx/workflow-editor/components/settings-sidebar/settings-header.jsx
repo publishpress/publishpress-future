@@ -2,7 +2,7 @@
  * WordPress dependencies
  */
 import { TabPanel } from '../../components/tab-panel';
-import { __, _x } from '@publishpress/i18n';
+import { __, _x } from '@wordpress/i18n';
 import { useDispatch, useSelect } from '@wordpress/data';
 
 /**

@@ -1,5 +1,5 @@
 import { PanelRow, Animate } from "@wordpress/components";
-import { __ } from "@publishpress/i18n";
+import { __ } from "@wordpress/i18n";
 import PersistentPanelBody from "../persistent-panel-body";
 import { useSelect } from "@wordpress/data";
 import { store as workflowStore } from '../workflow-store';

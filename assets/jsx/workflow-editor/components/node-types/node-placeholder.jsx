@@ -1,5 +1,5 @@
 import { memo } from '@wordpress/element';
-import { __ } from '@publishpress/i18n';
+import { __ } from '@wordpress/i18n';
 import {
     NODE_TYPE_ACTION,
     NODE_TYPE_ADVANCED,

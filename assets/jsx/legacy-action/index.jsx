@@ -1,5 +1,5 @@
 import { PanelRow, SelectControl } from '@wordpress/components';
-import { __ } from '@publishpress/i18n';
+import { __ } from '@wordpress/i18n';
 import { useSelect, dispatch } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
 

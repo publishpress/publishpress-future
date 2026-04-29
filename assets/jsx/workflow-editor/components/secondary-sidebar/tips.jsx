@@ -1,7 +1,7 @@
 /**
  * WordPress dependencies
  */
-import { __ } from '@publishpress/i18n';
+import { __ } from '@wordpress/i18n';
 import { createInterpolateElement, useState } from '@wordpress/element';
 import { Tip } from '@wordpress/components';
 

@@ -6,7 +6,6 @@ module.exports = {
     mode: NODE_ENV,
     devtool: NODE_ENV === 'development' ? 'source-map' : false,
     entry: {
-        i18n: "./assets/jsx/i18n.jsx",
         settingsPostTypes: "./assets/jsx/settings-post-types.jsx",
         settingsGeneral: "./assets/jsx/settings-general.jsx",
         blockEditor: "./assets/jsx/block-editor.jsx",
@@ -68,7 +67,6 @@ module.exports = {
         "@wordpress/hooks": "wp.hooks",
         "@wordpress/url": "wp.url",
         "@wordpress/i18n": "wp.i18n",
-        'wp': 'wp',
-        '@publishpress/i18n': 'publishpress.i18n'
+        'wp': 'wp'
     },
 };

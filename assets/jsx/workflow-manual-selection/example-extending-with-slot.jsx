@@ -1,4 +1,4 @@
-import { __, sprintf } from '@publishpress/i18n';
+import { __, sprintf } from '@wordpress/i18n';
 import { useSelect, dispatch } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
 

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7958ffaf82590145995cfcd086c91c67",
+    "content-hash": "f8aa363ead005634346dd4119eae320a",
     "packages": [
         {
             "name": "jwadhams/json-logic-php",
@@ -51,16 +51,16 @@
         },
         {
             "name": "publishpress/bundled-translations",
-            "version": "1.0.0",
+            "version": "dev-andergmartins/js-translations",
             "source": {
                 "type": "git",
                 "url": "https://github.com/publishpress/library-bundled-translations.git",
-                "reference": "e69381e8695fa8e6de3fc9c9d534a133ab856532"
+                "reference": "c0366490d96603087a456a82ed9986d760abd749"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/publishpress/library-bundled-translations/zipball/e69381e8695fa8e6de3fc9c9d534a133ab856532",
-                "reference": "e69381e8695fa8e6de3fc9c9d534a133ab856532",
+                "url": "https://api.github.com/repos/publishpress/library-bundled-translations/zipball/c0366490d96603087a456a82ed9986d760abd749",
+                "reference": "c0366490d96603087a456a82ed9986d760abd749",
                 "shasum": ""
             },
             "require": {
@@ -96,9 +96,9 @@
             ],
             "support": {
                 "issues": "https://github.com/publishpress/library-bundled-translations/issues",
-                "source": "https://github.com/publishpress/library-bundled-translations/tree/v1.0.0"
+                "source": "https://github.com/publishpress/library-bundled-translations/tree/andergmartins/js-translations"
             },
-            "time": "2026-04-17T14:05:17+00:00"
+            "time": "2026-04-29T17:03:33+00:00"
         },
         {
             "name": "publishpress/instance-protection",
@@ -565,8 +565,10 @@
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": {},
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "publishpress/bundled-translations": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

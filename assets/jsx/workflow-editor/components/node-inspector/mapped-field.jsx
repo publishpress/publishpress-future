@@ -1,5 +1,5 @@
 import PostQuery from "../data-fields/post-query";
-import { __, sprintf } from "@publishpress/i18n";
+import { __, sprintf } from "@wordpress/i18n";
 import Schedule from "../data-fields/schedule";
 import DebugData from "../data-fields/debug-data";
 import RayColor from "../data-fields/ray-color";

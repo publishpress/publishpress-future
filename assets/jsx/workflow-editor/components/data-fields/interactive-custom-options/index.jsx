@@ -1,7 +1,7 @@
 import { select } from "@wordpress/data";
 import { store as workflowStore } from "../../workflow-store";
 import { CustomOptions } from "../custom-options";
-import { __ } from "@publishpress/i18n";
+import { __ } from "@wordpress/i18n";
 
 export function InteractiveCustomOptions(props) {
     /**

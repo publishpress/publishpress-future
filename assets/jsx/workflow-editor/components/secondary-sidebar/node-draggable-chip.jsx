@@ -1,7 +1,7 @@
 /**
  * WordPress dependencies
  */
-import { _n, sprintf } from '@publishpress/i18n';
+import { _n, sprintf } from '@wordpress/i18n';
 import { Flex, FlexItem } from '@wordpress/components';
 import { dragHandle } from '@wordpress/icons';
 
