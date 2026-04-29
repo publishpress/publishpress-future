@@ -3,7 +3,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 [4.10.2] - 29 April, 2026
 
-
+- Fixed: WordPress.org translations now correctly take priority over custom or AI-generated strings, ensuring consistent language display while still merging all available sources.
 
 [4.10.1] - 20 April, 2026
 
