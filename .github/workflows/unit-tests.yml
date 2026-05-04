@@ -2,16 +2,11 @@ name: Unit and Integration Tests
 permissions:
   contents: read
 on:
-  push:
+  pull_request:
     branches:
-      - 'master'
       - 'development'
       - 'release/*'
       - 'release-*'
-
-  pull_request:
-    branches:
-      - '*'
 
   workflow_call:
 
@@ -20,4 +15,4 @@ on:
 jobs:
   check:
     # v2.0.0
-    uses: publishpress/github-workflows/.github/workflows/unit-tests.yml@0f5e3a3488accd905de7b26e9d57364e303837f5
+    uses: publishpress/github-workflows/.github/workflows/unit-tests.yml@master

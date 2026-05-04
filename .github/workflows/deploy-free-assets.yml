@@ -9,4 +9,4 @@ on:
 jobs:
   deploy-to-trunk:
     # v2.0.0
-    uses: publishpress/github-workflows/.github/workflows/deploy-free-assets.yml@0f5e3a3488accd905de7b26e9d57364e303837f5
+    uses: publishpress/github-workflows/.github/workflows/deploy-free-assets.yml@master
