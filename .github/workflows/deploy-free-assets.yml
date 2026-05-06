@@ -7,6 +7,5 @@ on:
       - 'master'
 
 jobs:
-  deploy-to-trunk:
-    # v2.0.0
-    uses: publishpress/github-workflows/.github/workflows/deploy-free-assets.yml@master
+  deploy-assets:
+    uses: publishpress/github-workflows/.github/workflows/deploy-free-assets.yml@v3

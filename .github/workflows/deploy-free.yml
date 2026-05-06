@@ -9,7 +9,14 @@ jobs:
     uses: ./.github/workflows/code-check.yml
     secrets: inherit
 
+  run-unit-tests:
+    name: Run unit tests
+    uses: ./.github/workflows/unit-tests.yml
+    secrets: inherit
+
   deploy-wp-org:
-    # v2.0.0
-    uses: publishpress/github-workflows/.github/workflows/deploy-free.yml@master
+    permissions:
+      contents: write
+    uses: publishpress/github-workflows/.github/workflows/deploy-free.yml@v3
     needs: [code-check]
+    secrets: inherit
