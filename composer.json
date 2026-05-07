@@ -45,8 +45,5 @@
         "plugin-lang-domain": "post-expirator",
         "plugin-github-repo": "publishpress/publishpress-future",
         "plugin-composer-package": "publishpress/publishpress-future"
-    },
-    "scripts": {
-        "ws": "vendor/publishpress/dev-workspace/scripts/run.sh composer $@"
     }
 }
