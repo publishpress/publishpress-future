@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-02-27T16:10:19+00:00\n"
-"PO-Revision-Date: 2026-04-28 16:17+0000\n"
+"POT-Creation-Date: 2026-04-29T14:19:02+00:00\n"
+"PO-Revision-Date: 2026-05-07 20:54+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "Language: yor\n"
@@ -170,7 +170,7 @@ msgstr "Àkókò ọjọ́ àkópọ̀ tí kò sí."
 msgid "Invalid date time offset"
 msgstr "Àkókò ọjọ́ àkópọ̀ tí kò tọ́"
 
-#: src/Modules/Backup/Controllers/BackupAdminPage.php:163
+#: src/Modules/Backup/Controllers/BackupAdminPage.php:164
 #: assets/js/backupPanel.js:34
 #: assets/js/backupPanel.js:692
 #: assets/js/backupPanel.js:722
@@ -183,7 +183,7 @@ msgstr "Àkókò ọjọ́ àkópọ̀ tí kò tọ́"
 msgid "Export"
 msgstr "Rà"
 
-#: src/Modules/Backup/Controllers/BackupAdminPage.php:168
+#: src/Modules/Backup/Controllers/BackupAdminPage.php:169
 #: assets/js/backupPanel.js:37
 #: assets/js/backupPanel.js:543
 #: assets/js/backupPanel.js:1251
@@ -229,14 +229,14 @@ msgid "Add millisecond precision to debug log timestamp column (v4.10.0)"
 msgstr "Fi ìtọ́kasi milisẹ́kóndì kun tábìlì àmì àkókò ìwé ìròyìn (v4.10.0)"
 
 #: src/Modules/Debug/Views/raw-debug-log.html.php:39
-#: src/Modules/Settings/Controllers/Controller.php:214
+#: src/Modules/Settings/Controllers/Controller.php:215
 #: src/Views/menu-debug-log.php:113
 #: src/Views/menu-debug-log.php:148
 msgid "Debugging table is currently empty."
 msgstr "Tábìlì ìmúlòlùfẹ́ jẹ́ àìmọ̀ sí báyìí."
 
 #: src/Modules/Debug/Views/raw-debug-log.html.php:40
-#: src/Modules/Settings/Controllers/Controller.php:215
+#: src/Modules/Settings/Controllers/Controller.php:216
 #: src/Views/menu-debug-log.php:115
 #: src/Views/menu-debug-log.php:150
 msgid "No results match the current filter."
@@ -509,42 +509,36 @@ msgstr "Ko si iṣẹ iwaju"
 msgid "Invalid date time offset."
 msgstr "Aago akoko ti ko wulo."
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:120
-#: src/Modules/Workflows/Models/StepTypesModel.php:99
-#, fuzzy
-msgid "PublishPress Future"
-msgstr "PublishPress Future"
-
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:140
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:141
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:323
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:324
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:47
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:788
 msgid "Scheduled Actions"
 msgstr "Awọn Iṣẹ ti a ti ṣeto"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:218
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:219
 msgid "Log format"
 msgstr "Fọọmu log"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:226
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:227
 msgid "List"
 msgstr "Atokọ"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:236
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:237
 msgid "Popup"
 msgstr "Ibi-ìkó"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:304
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:305
 msgid "Unknown post"
 msgstr "Ipo ti a ko mọ"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:307
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:308
 #, php-format
 msgid "Executed action for: %s (ID: %d)"
 msgstr "Iṣe ti a ṣe fun: %s (ID: %d)"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:312
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:313
 msgid "Executed scheduled action"
 msgstr "Iṣe ti a ti ṣeto"
 
@@ -711,7 +705,7 @@ msgid "This is a Pro feature. Upgrade to unlock this functionality."
 msgstr "Eyi jẹ ẹya Pro. Mu ilọsiwaju lati ṣii iṣẹ ṣiṣe yii."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:459
-#: src/Modules/Settings/Controllers/Controller.php:297
+#: src/Modules/Settings/Controllers/Controller.php:298
 msgid "Form Validation Failure: Sorry, your nonce did not verify."
 msgstr "Ikuna idanwo fọọmu: E ma binu, nonce rẹ ko ni idanwo."
 
@@ -1176,43 +1170,43 @@ msgstr "Ko tunṣe"
 msgid "No Scheduled Actions."
 msgstr "Ko si Awọn Iṣe Ti a Ṣeto."
 
-#: src/Modules/Settings/Controllers/Controller.php:207
+#: src/Modules/Settings/Controllers/Controller.php:208
 msgid "Auto-refresh"
 msgstr "Aifọwọyi-tun"
 
-#: src/Modules/Settings/Controllers/Controller.php:208
+#: src/Modules/Settings/Controllers/Controller.php:209
 msgid "Refresh interval:"
 msgstr "Akoko imudojuiwọn:"
 
-#: src/Modules/Settings/Controllers/Controller.php:209
+#: src/Modules/Settings/Controllers/Controller.php:210
 msgid "seconds"
 msgstr "aaya"
 
-#: src/Modules/Settings/Controllers/Controller.php:210
+#: src/Modules/Settings/Controllers/Controller.php:211
 msgid "Last refreshed:"
 msgstr "Imudojuiwọn ikẹhin:"
 
-#: src/Modules/Settings/Controllers/Controller.php:211
+#: src/Modules/Settings/Controllers/Controller.php:212
 msgid "seconds ago"
 msgstr "ṣẹkẹsẹ diẹ"
 
-#: src/Modules/Settings/Controllers/Controller.php:212
+#: src/Modules/Settings/Controllers/Controller.php:213
 msgid "Refreshing..."
 msgstr "Nṣiṣẹ..."
 
-#: src/Modules/Settings/Controllers/Controller.php:213
+#: src/Modules/Settings/Controllers/Controller.php:214
 msgid "Failed to refresh log data."
 msgstr "Ikuna lati tun data log."
 
-#: src/Modules/Settings/Controllers/Controller.php:251
+#: src/Modules/Settings/Controllers/Controller.php:252
 msgid "Scheduled Workflow Steps Cleanup"
 msgstr "Igbesẹ Itọju Workflow ti a ti ṣeto"
 
-#: src/Modules/Settings/Controllers/Controller.php:252
+#: src/Modules/Settings/Controllers/Controller.php:253
 msgid "Automatically remove scheduled workflow steps"
 msgstr "Yọ awọn igbesẹ workflow ti a ti ṣeto laifọwọyi"
 
-#: src/Modules/Settings/Controllers/Controller.php:256
+#: src/Modules/Settings/Controllers/Controller.php:257
 msgid ""
 "Automatically remove scheduled workflow steps that have been marked as "
 "failed, completed, or cancelled."
@@ -1220,11 +1214,11 @@ msgstr ""
 "Yọ awọn igbesẹ workflow ti a ti ṣeto laifọwọyi ti a ti samisi bi ikuna, ti "
 "pari, tabi ti fagile."
 
-#: src/Modules/Settings/Controllers/Controller.php:260
+#: src/Modules/Settings/Controllers/Controller.php:261
 msgid "Retain all scheduled workflow steps"
 msgstr "Pa gbogbo awọn igbesẹ workflow ti a ti ṣeto"
 
-#: src/Modules/Settings/Controllers/Controller.php:264
+#: src/Modules/Settings/Controllers/Controller.php:265
 msgid ""
 "Retain all scheduled workflow steps indefinitely, including those marked as "
 "failed, completed, or cancelled. This may impact database performance over "
@@ -1234,11 +1228,11 @@ msgstr ""
 "samisi bi ikuna, ti pari, tabi ti fagile. Eyi le ni ipa lori iṣẹ ṣiṣe ibi "
 "ipamọ data lori akoko."
 
-#: src/Modules/Settings/Controllers/Controller.php:268
+#: src/Modules/Settings/Controllers/Controller.php:269
 msgid "Retention"
 msgstr "Iduro"
 
-#: src/Modules/Settings/Controllers/Controller.php:269
+#: src/Modules/Settings/Controllers/Controller.php:270
 msgid ""
 "The duration, in days, for which completed, failed, and canceled scheduled "
 "workflow steps will be preserved before automatic removal."
@@ -1246,7 +1240,7 @@ msgstr ""
 "Akoko, ni awọn ọjọ, fun eyiti awọn igbesẹ workflow ti a ti pari, ikuna, ati "
 "ti fagile yoo wa ni fipamọ ṣaaju yiyọ laifọwọyi."
 
-#: src/Modules/Settings/Controllers/Controller.php:273
+#: src/Modules/Settings/Controllers/Controller.php:274
 msgid "days"
 msgstr "ọjọ"
 
@@ -3588,6 +3582,11 @@ msgstr ""
 #: src/Modules/Workflows/Migrations/V40000WorkflowScheduledStepsSchema.php:58
 msgid "Migrate workflow scheduled steps schema after v4.0.0"
 msgstr "Gbe awọn ilana igbesẹ iṣẹ-ṣiṣe ti a ṣeto lẹhin v4.0.0"
+
+#: src/Modules/Workflows/Models/StepTypesModel.php:99
+#, fuzzy
+msgid "PublishPress Future"
+msgstr "PublishPress Future"
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:108
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:35

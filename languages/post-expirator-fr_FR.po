@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Plugins - PublishPress Future: Automatically Unpublish "
 "WordPress Posts - Stable (latest release)\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/project\n"
-"POT-Creation-Date: 2026-04-10T20:34:37+00:00\n"
+"POT-Creation-Date: 2026-04-29T14:19:02+00:00\n"
 "PO-Revision-Date: 2026-04-11 11:56+0200\n"
 "Last-Translator: Angelo Giammarresi <info@wocmultimedia.biz>\n"
 "Language-Team: French <https://weblate.publishpress.com/projects/"
@@ -23,7 +23,7 @@ msgid "PublishPress Future Free"
 msgstr "La publication a été créée"
 
 #. Plugin URI of the plugin
-#: post-expirator.php:5, fuzzy
+#: post-expirator.php:5
 msgid "http://wordpress.org/extend/plugins/post-expirator/"
 msgstr "http://wordpress.org/extend/plugins/post-expirator/"
 
@@ -40,7 +40,7 @@ msgid "PublishPress"
 msgstr "PublishPress"
 
 #. Author URI of the plugin
-#: post-expirator.php:9, fuzzy
+#: post-expirator.php:9
 msgid "http://publishpress.com"
 msgstr "http://publishpress.com"
 
@@ -108,7 +108,7 @@ msgstr "À propos"
 msgid "Future Documentation"
 msgstr "Documentation de Future"
 
-#: legacy/classes/Display.class.php:592, fuzzy
+#: legacy/classes/Display.class.php:592
 msgid "Documentation"
 msgstr "Documentation"
 
@@ -116,7 +116,7 @@ msgstr "Documentation"
 msgid "Contact the PublishPress team"
 msgstr "Contacter l’équipe PublishPress"
 
-#: legacy/classes/Display.class.php:600, fuzzy
+#: legacy/classes/Display.class.php:600
 msgid "Contact"
 msgstr "Contact"
 
@@ -124,15 +124,15 @@ msgstr "Contact"
 msgid "No taxonomies found"
 msgstr "Aucune taxonomie trouvée"
 
-#: services.php:152 src/Modules/Settings/SettingsFacade.php:122
+#: services.php:151 src/Modules/Settings/SettingsFacade.php:122
 msgid "l F jS, Y"
 msgstr "I j F Y"
 
-#: services.php:156 src/Modules/Settings/SettingsFacade.php:123
+#: services.php:155 src/Modules/Settings/SettingsFacade.php:123
 msgid "g:ia"
 msgstr "g\\hia"
 
-#: services.php:157 src/Modules/Settings/SettingsFacade.php:124
+#: services.php:156 src/Modules/Settings/SettingsFacade.php:124
 msgid "Post expires at EXPIRATIONTIME on ACTIONDATE"
 msgstr "La publication expire à la date d’expiration (EXPIRATIONTIME) de la date d’action (ACTIONDATE)."
 
@@ -261,7 +261,7 @@ msgstr "Catégories"
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:64
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:64
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:153
-#: assets/jsx/workflow-editor/components/node-types/generic.jsx:246, fuzzy
+#: assets/jsx/workflow-editor/components/node-types/generic.jsx:246
 msgid "Action"
 msgstr "Action"
 
@@ -480,11 +480,6 @@ msgstr "Aucune action future"
 #: src/Modules/Expirator/Controllers/RestAPIController.php:249
 msgid "Invalid date time offset."
 msgstr "Décalage de la date et de l’heure invalide."
-
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:120
-#: src/Modules/Workflows/Models/StepTypesModel.php:99, fuzzy
-msgid "PublishPress Future"
-msgstr "PublishPress Future"
 
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:140
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:141
@@ -877,7 +872,7 @@ msgstr "Action Future terminée « %s »"
 
 #. translators: 1: is the blog name, 2: the email subject
 #: src/Modules/Expirator/Models/ExpirablePostModel.php:666
-#, fuzzy, php-format
+#, php-format
 msgid "[%1$s] %2$s"
 msgstr "[%1$s] %2$s"
 
@@ -895,7 +890,7 @@ msgstr "Le décalage de date/heure « %s » est invalide pour le type de publi
 msgid "Status"
 msgstr "État"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:55, fuzzy
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:55
 msgid "Arguments"
 msgstr "Arguments"
 
@@ -1074,7 +1069,7 @@ msgid "Scheduled date: "
 msgstr "Date planifiée : "
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:713
-#: src/Views/menu-diagnostics.php:241, fuzzy
+#: src/Views/menu-diagnostics.php:241
 msgid "Date"
 msgstr "Date"
 
@@ -1089,7 +1084,7 @@ msgstr "Date"
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:81
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:95
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:178
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:195, fuzzy
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:195
 msgid "Message"
 msgstr "Message"
 
@@ -1105,7 +1100,7 @@ msgstr " (il y a %s)"
 
 #. translators: %s is the date interval in human readable format in the present or future
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:771
-#, fuzzy, php-format
+#, php-format
 msgid " (%s)"
 msgstr " (%s)"
 
@@ -1493,7 +1488,7 @@ msgstr "%1$s pour %2$d fois"
 
 #. translators: %1$s is the executed times, %2$d is the total repeat times
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:528
-#, fuzzy, php-format
+#, php-format
 msgid "[%1$s/%2$d]"
 msgstr "[%1$s/%2$d]"
 
@@ -1591,7 +1586,7 @@ msgstr "Si vous avez des questions ou si vous avez besoin d’aide, cliquez sur 
 msgid "Triggers"
 msgstr "Déclencheurs"
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:280, fuzzy
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:280
 msgid "—"
 msgstr "—"
 
@@ -2037,13 +2032,13 @@ msgid ""
 msgstr "Cette étape vous permet de poursuivre le flux de travail uniquement si certaines conditions sont satisfaites. Il n’est pas nécessaire d’avoir une option « Vrai » et une option « Faux »."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:64
-#: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:57, fuzzy
+#: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:57
 msgid "Condition"
 msgstr "Condition"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:73
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:99
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:100, fuzzy
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:100
 msgid "Conditions"
 msgstr "Conditions"
 
@@ -2537,7 +2532,7 @@ msgstr "Type de notification"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:118
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:108
-#: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:8, fuzzy
+#: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:8
 msgid "Info"
 msgstr "Info"
 
@@ -2562,7 +2557,7 @@ msgid "Message > Subject"
 msgstr "Message > Objet"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:184
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:196, fuzzy
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:196
 msgid "Message > Message"
 msgstr "Message > Message"
 
@@ -2858,7 +2853,7 @@ msgstr "Veuillez sélectionner une option pour poursuivre le flux de travail : 
 #. translators: button label text should, if possible, be under 16 characters.
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:129
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:201
-#: assets/jsx/workflow-editor/components/more-menu/menu-dropdown.jsx:11, fuzzy
+#: assets/jsx/workflow-editor/components/more-menu/menu-dropdown.jsx:11
 msgid "Options"
 msgstr "Options"
 
@@ -2886,7 +2881,7 @@ msgstr "Refuser le flux de travail"
 msgid "Responders > Responders"
 msgstr "Répondants/répondantes > Répondants/répondantes"
 
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:202, fuzzy
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:202
 msgid "Options > Options"
 msgstr "Options > Options"
 
@@ -3465,12 +3460,16 @@ msgstr "Migration de post_id et de repetition_number sur le schéma des étapes 
 msgid "Migrate workflow scheduled steps schema after v4.0.0"
 msgstr "Migrer le schéma des étapes planifiées du flux de travail après la v4.0.0"
 
+#: src/Modules/Workflows/Models/StepTypesModel.php:99
+msgid "PublishPress Future"
+msgstr "PublishPress Future"
+
 #: src/Modules/Workflows/Models/StepTypesModel.php:108
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:35
 msgid "User"
 msgstr "Utilisateur/utilisatrice"
 
-#: src/Modules/Workflows/Models/StepTypesModel.php:117, fuzzy
+#: src/Modules/Workflows/Models/StepTypesModel.php:117
 msgid "Site"
 msgstr "Site"
 
@@ -3492,12 +3491,12 @@ msgstr "Débogage"
 msgid "Data Query"
 msgstr "Requête de données"
 
-#: src/Modules/Workflows/Models/StepTypesModel.php:162, fuzzy
+#: src/Modules/Workflows/Models/StepTypesModel.php:162
 msgid "Messages"
 msgstr "Messages"
 
 #: src/Modules/Workflows/Models/WorkflowModel.php:476
-#, fuzzy, php-format
+#, php-format
 msgid "%s #2"
 msgstr "%s #2"
 
@@ -3649,7 +3648,7 @@ msgstr "Hérite de réglages du site"
 msgid "24 hours"
 msgstr "24 heures"
 
-#: src/Views/menu-admin.php:162, fuzzy
+#: src/Views/menu-admin.php:162
 msgid "AM/PM"
 msgstr "AM/PM"
 
@@ -4170,7 +4169,7 @@ msgstr "Général"
 #: assets/js/backupPanel.js:1238
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:32
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:112
-#: assets/js/backupPanel.js:508 assets/js/backupPanel.js:920, fuzzy
+#: assets/js/backupPanel.js:508 assets/js/backupPanel.js:920
 msgid "Notifications"
 msgstr "Notifications"
 
@@ -4403,12 +4402,6 @@ msgstr ""
 msgid "Cancel Actions"
 msgstr "Annuler actions"
 
-#: assets/jsx/i18n.jsx:174 assets/jsx/i18n.jsx:176
-msgid "%d item"
-msgid_plural "%d items"
-msgstr[0] "%d élément"
-msgstr[1] "%d éléments"
-
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:29
 msgid "Integer"
 msgstr "Entier"
@@ -4430,7 +4423,7 @@ msgid "Array"
 msgstr "Tableau"
 
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:57
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:50, fuzzy
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:50
 msgid "null"
 msgstr "null"
 
@@ -4453,7 +4446,7 @@ msgstr ""
 "Le nom de l’argument ne doit contenir que des lettres, des chiffres et des "
 "tirets bas."
 
-#: assets/jsx/workflow-editor/components/data-fields/action-args/index.jsx:71, fuzzy
+#: assets/jsx/workflow-editor/components/data-fields/action-args/index.jsx:71
 msgid "Argument #%s"
 msgstr "Argument #%s"
 
@@ -4502,7 +4495,7 @@ msgstr ""
 msgid "Duplicate Rule"
 msgstr "Dupliquer règle"
 
-#: assets/jsx/workflow-editor/components/data-fields/conditional/components/not-toggle.jsx:30, fuzzy
+#: assets/jsx/workflow-editor/components/data-fields/conditional/components/not-toggle.jsx:30
 msgid "Not"
 msgstr "Not"
 
@@ -4514,11 +4507,11 @@ msgstr "Ignorer"
 msgid "Dismiss the notification"
 msgstr "Ignorer la notification"
 
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:67, fuzzy
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:67
 msgid "Option %s"
 msgstr "Option %s"
 
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:95, fuzzy
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:95
 msgid "Option #%s"
 msgstr "Option #%s"
 
@@ -4681,7 +4674,7 @@ msgstr "Sélectionner une variable dans la liste ci-dessous."
 msgid "Type your expression here or use the variables below."
 msgstr "Saisir votre expression ici ou utiliser les variables ci-dessous."
 
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:212, fuzzy
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:212
 msgid "Variables"
 msgstr "Variables"
 
@@ -4703,7 +4696,7 @@ msgstr "Survoler une variable pour en voir la description."
 msgid "The name of the term."
 msgstr "Le nom du terme."
 
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:13, fuzzy
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:13
 msgid "Slug"
 msgstr "Slug"
 
@@ -4744,7 +4737,7 @@ msgstr ""
 "Cette option est utilisée pour se connecter à une autre étape et son nom ne "
 "peut être modifié tant que la connexion n’est pas supprimée."
 
-#: assets/jsx/workflow-editor/components/data-fields/modal-footer.jsx:11, fuzzy
+#: assets/jsx/workflow-editor/components/data-fields/modal-footer.jsx:11
 msgid "OK"
 msgstr "OK"
 
@@ -4945,7 +4938,7 @@ msgstr "Aucune couleur"
 msgid "Green"
 msgstr "Vert"
 
-#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:15, fuzzy
+#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:15
 msgid "Orange"
 msgstr "Orange"
 
@@ -5036,7 +5029,7 @@ msgid "Edit description"
 msgstr "Modifier la description"
 
 #: assets/jsx/workflow-editor/components/inspector-card/index.jsx:116
-#: assets/jsx/workflow-editor/components/secondary-sidebar/node-card.jsx:16, fuzzy
+#: assets/jsx/workflow-editor/components/secondary-sidebar/node-card.jsx:16
 msgid "Pro"
 msgstr "Pro"
 
@@ -5356,7 +5349,7 @@ msgstr "Recherche de déclencheurs et d’étapes"
 msgid "Click to add a trigger"
 msgstr "Cliquer pour ajouter un déclencheur"
 
-#: assets/jsx/workflow-editor/components/node-validation-panel/index.jsx:19, fuzzy
+#: assets/jsx/workflow-editor/components/node-validation-panel/index.jsx:19
 msgid "Validation"
 msgstr "Validation"
 
@@ -5409,7 +5402,7 @@ msgid "Most used"
 msgstr "Les plus utilisés"
 
 #. translators: Patterns tab title in the block inserter.
-#: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:24, fuzzy
+#: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:24
 msgid "Actions"
 msgstr "Actions"
 
@@ -5614,7 +5607,7 @@ msgstr "Résumé"
 msgid "Title"
 msgstr "Titre"
 
-#: assets/jsx/workflow-editor/components/workflow-summary/index.jsx:57, fuzzy
+#: assets/jsx/workflow-editor/components/workflow-summary/index.jsx:57
 msgid "Description"
 msgstr "Description"
 
@@ -5633,6 +5626,14 @@ msgstr "Passer en brouillon"
 #: assets/jsx/workflow-manual-selection/example-extending-with-slot.jsx:48
 msgid "Enable workflow %s"
 msgstr "Activer le flux de travail %s"
+
+#~ msgid "%d item"
+#~ msgid_plural "%d items"
+#~ msgstr[0] "%d élément"
+#~ msgstr[1] "%d éléments"
+
+#~ msgid "Future"
+#~ msgstr "Future"
 
 #, php-format
 #~ msgid "Showing all %d results. The approximate size of the log is %s."

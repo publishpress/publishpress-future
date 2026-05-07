@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-04-20T21:23:03+00:00\n"
-"PO-Revision-Date: 2026-04-28 17:09+0000\n"
+"POT-Creation-Date: 2026-04-29T14:19:02+00:00\n"
+"PO-Revision-Date: 2026-05-07 21:13+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "Language: vi\n"
@@ -28,6 +28,15 @@ msgstr "http://wordpress.org/extend/plugins/post-expirator/"
 
 #: post-expirator.php:6
 #. Description of the plugin
+msgid ""
+"PublishPress Future allows you to schedule automatic changes to posts, "
+"pages and other content types."
+msgstr ""
+"PublishPress Future cho phép bạn lên lịch các thay đổi tự động cho các bài "
+"viết, trang và các loại nội dung khác."
+
+#: post-expirator.php:7
+#. Author of the plugin
 msgid "PublishPress"
 msgstr "PublishPress"
 
@@ -58,6 +67,22 @@ msgid "Debugging Table Emptied"
 msgstr "Bảng gỡ lỗi đã được xóa"
 
 #: legacy/classes/Display.class.php:299
+msgid ""
+"The legacy future actions migration has been enqueued and will run "
+"asynchronously."
+msgstr ""
+"Quá trình chuyển đổi hành động tương lai kế thừa đã được đưa vào hàng đợi "
+"và sẽ chạy không đồng bộ."
+
+#: legacy/classes/Display.class.php:308
+msgid ""
+"The legacy actions arguments restoration has been enqueued and will run "
+"asynchronously."
+msgstr ""
+"Quá trình khôi phục các tham số hành động kế thừa đã được đưa vào hàng đợi "
+"và sẽ chạy không đồng bộ."
+
+#: legacy/classes/Display.class.php:323
 msgid "The database schema was fixed."
 msgstr "Sơ đồ cơ sở dữ liệu đã được sửa chữa."
 
@@ -141,7 +166,7 @@ msgstr "Offset thời gian ngày tháng trống."
 msgid "Invalid date time offset"
 msgstr "Offset thời gian ngày tháng không hợp lệ"
 
-#: src/Modules/Backup/Controllers/BackupAdminPage.php:163
+#: src/Modules/Backup/Controllers/BackupAdminPage.php:164
 #: assets/js/backupPanel.js:34
 #: assets/js/backupPanel.js:692
 #: assets/js/backupPanel.js:722
@@ -154,7 +179,7 @@ msgstr "Offset thời gian ngày tháng không hợp lệ"
 msgid "Export"
 msgstr "Xuất"
 
-#: src/Modules/Backup/Controllers/BackupAdminPage.php:168
+#: src/Modules/Backup/Controllers/BackupAdminPage.php:169
 #: assets/js/backupPanel.js:37
 #: assets/js/backupPanel.js:543
 #: assets/js/backupPanel.js:1251
@@ -188,18 +213,26 @@ msgid "Invalid nonce."
 msgstr "Nonce không hợp lệ."
 
 #: src/Modules/Debug/Migrations/V04905DebugLogRequestId.php:80
+msgid ""
+"Add request_id and trigger_activated columns to debug log table after "
+"v4.10.0"
+msgstr ""
+"Thêm các cột request_id và trigger_activated vào bảng nhật ký gỡ lỗi sau "
+"phiên bản v4.10.0"
+
+#: src/Modules/Debug/Migrations/V04906DebugLogTimestampMilliseconds.php:79
 msgid "Add millisecond precision to debug log timestamp column (v4.10.0)"
 msgstr "Thêm độ chính xác mili giây vào cột dấu thời gian nhật ký gỡ lỗi (v4.10.0)"
 
 #: src/Modules/Debug/Views/raw-debug-log.html.php:39
-#: src/Modules/Settings/Controllers/Controller.php:214
+#: src/Modules/Settings/Controllers/Controller.php:215
 #: src/Views/menu-debug-log.php:113
 #: src/Views/menu-debug-log.php:148
 msgid "Debugging table is currently empty."
 msgstr "Bảng gỡ lỗi hiện đang trống."
 
 #: src/Modules/Debug/Views/raw-debug-log.html.php:40
-#: src/Modules/Settings/Controllers/Controller.php:215
+#: src/Modules/Settings/Controllers/Controller.php:216
 #: src/Views/menu-debug-log.php:115
 #: src/Views/menu-debug-log.php:150
 msgid "No results match the current filter."
@@ -473,41 +506,36 @@ msgstr "Không có hành động tương lai"
 msgid "Invalid date time offset."
 msgstr "Múi giờ không hợp lệ."
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:120
-#: src/Modules/Workflows/Models/StepTypesModel.php:99
-msgid "PublishPress Future"
-msgstr "PublishPress Tương lai"
-
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:140
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:141
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:323
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:324
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:47
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:788
 msgid "Scheduled Actions"
 msgstr "Hành động Đã lên lịch"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:218
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:219
 msgid "Log format"
 msgstr "Định dạng nhật ký"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:226
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:227
 msgid "List"
 msgstr "Danh sách"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:236, fuzzy
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:237, fuzzy
 msgid "Popup"
 msgstr "Popup"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:304
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:305
 msgid "Unknown post"
 msgstr "Bài viết không xác định"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:307
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:308
 #, php-format
 msgid "Executed action for: %s (ID: %d)"
 msgstr "Hành động đã thực thi cho: %s (ID: %d)"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:312
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:313
 msgid "Executed scheduled action"
 msgstr "Hành động đã lên lịch được thực thi"
 
@@ -515,10 +543,32 @@ msgstr "Hành động đã lên lịch được thực thi"
 #: src/Views/menu-general.php:41
 #. translators: %1$s is the link to the PHP strtotime function documentation, %2$s and %3$s are the opening and closing code tags. Please, do not translate the date format text, since PHP will not be able to calculate using non-english terms.
 #, php-format
+msgid ""
+"Set the offset to use for the default action date and time. For information "
+"on formatting, see %1$s. For example, you could enter %2$s+1 month%3$s or "
+"%2$s+1 week 2 days 4 hours 2 seconds%3$s or %2$snext Thursday%3$s. Please, "
+"use only terms in English."
+msgstr ""
+"Đặt độ lệch để sử dụng cho ngày và giờ hành động mặc định. Để biết thông "
+"tin về định dạng, xem %1$s. Ví dụ, bạn có thể nhập %2$s+1 tháng%3$s hoặc "
+"%2$s+1 tuần 2 ngày 4 giờ 2 giây%3$s hoặc %2$sthứ Năm tới%3$s. Vui lòng chỉ "
+"sử dụng các thuật ngữ bằng tiếng Anh."
+
+#: src/Modules/Expirator/Controllers/SettingsController.php:262
 msgid "Default Values"
 msgstr "Giá trị Mặc định"
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:263
+msgid ""
+"Use the values below to set the default actions/values to be used for each "
+"for the corresponding post types.  These values can all be overwritten when "
+"creating/editing the post/page."
+msgstr ""
+"Sử dụng các giá trị bên dưới để đặt các hành động/giá trị mặc định cho từng "
+"loại bài viết tương ứng. Các giá trị này có thể bị ghi đè khi tạo/chỉnh sửa "
+"bài viết/trang."
+
+#: src/Modules/Expirator/Controllers/SettingsController.php:267
 msgid "Active"
 msgstr "Kích hoạt"
 
@@ -544,10 +594,35 @@ msgid "Automatically create actions"
 msgstr "Tự động tạo hành động"
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:279
+msgid ""
+"This will automatically create an action for new posts, using the default "
+"settings on this screen"
+msgstr ""
+"Điều này sẽ tự động tạo một hành động cho các bài viết mới, sử dụng các cài "
+"đặt mặc định trên màn hình này"
+
+#: src/Modules/Expirator/Controllers/SettingsController.php:281
+msgid ""
+"No taxonomies found for this post type. Taxonomy actions will not be "
+"available."
+msgstr ""
+"Không tìm thấy taxonomies cho loại bài viết này. Các hành động taxonomy sẽ "
+"không khả dụng."
+
+#: src/Modules/Expirator/Controllers/SettingsController.php:282
+#: src/Views/menu-notifications.php:116
+#: src/Views/menu-notifications.php:169
 msgid "Who to Notify"
 msgstr "Ai được thông báo"
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:283
+msgid ""
+"Enter a comma separated list of emails that you would like to be notified "
+"when the action runs."
+msgstr "Danh sách địa chỉ email cách nhau bằng dấu phẩy để gửi thông điệp đến."
+
+#: src/Modules/Expirator/Controllers/SettingsController.php:287
+#: src/Views/menu-general.php:29
 msgid "Default Date/Time Offset"
 msgstr "Độ lệch Ngày/Giờ Mặc định"
 
@@ -617,15 +692,32 @@ msgid "Enable metadata scheduling"
 msgstr "Bật lịch trình siêu dữ liệu"
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:308
+#, fuzzy
+msgid ""
+"Checking this option will allow you to use post metadata to control the "
+"scheduling of actions."
+msgstr ""
+"Việc chọn tùy chọn này sẽ cho phép bạn chuyển bài viết sang trạng thái tùy "
+"chỉnh."
+
+#: src/Modules/Expirator/Controllers/SettingsController.php:309
 msgid "This is a Pro feature. Upgrade to unlock this functionality."
 msgstr "Đây là một tính năng Pro. Nâng cấp để mở khóa chức năng này."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:459
-#: src/Modules/Settings/Controllers/Controller.php:297
+#: src/Modules/Settings/Controllers/Controller.php:298
 msgid "Form Validation Failure: Sorry, your nonce did not verify."
 msgstr "Lỗi xác thực biểu mẫu: Xin lỗi, nonce của bạn không được xác thực."
 
 #: src/Modules/Expirator/Controllers/ShortcodeController.php:95
+msgid ""
+"The shortcode [futureaction] must be used inside the loop or with the "
+"post_id attribute."
+msgstr ""
+"Shortcode [futureaction] phải được sử dụng bên trong vòng lặp hoặc với "
+"thuộc tính post_id."
+
+#: src/Modules/Expirator/DBTableSchemas/ActionArgsSchema.php:96
 msgid "The column args length was not updated to 1000."
 msgstr "Độ dài tham số cột không được cập nhật thành 1000."
 
@@ -677,6 +769,14 @@ msgstr "Không có thuật ngữ nào được thêm vào %s."
 #: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:77
 #. translators: %1$s is the taxonomy label, %2$s is the post type singular label, %3$s is the list of terms added, %4$s is the list of terms on the post
 #, php-format
+msgid ""
+"The following terms (%1$s) were added to the %2$s: \"%3$s\". The full list "
+"of terms on the post is: %4$s."
+msgstr "Các thuật ngữ sau (%1$s) đã bị xóa khỏi %2$s: %3$s."
+
+#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:120
+#. translators: %s is the taxonomy name (plural)
+#, php-format
 msgid "Add extra %s"
 msgstr "Thêm %s bổ sung"
 
@@ -689,6 +789,14 @@ msgstr "Không có thuật ngữ nào bị xóa khỏi %s."
 
 #: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:67
 #. translators: %1$s is the taxonomy name, %2$s is the post type singular label, %3$s is the removed terms list, %4$s is the updated terms list
+#, php-format
+msgid ""
+"The following terms (%1$s) were removed from the %2$s: %3$s. The new list "
+"of terms on the post is: %4$s."
+msgstr "Các thuật ngữ sau (%1$s) đã bị xóa khỏi %2$s: %3$s."
+
+#: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:112
+#. translators: %s is the taxonomy name (plural)
 #, php-format
 msgid "Remove selected %s"
 msgstr "Xóa %s đã chọn"
@@ -713,6 +821,14 @@ msgstr "Không có thuật ngữ nào bị thay đổi trên %s."
 
 #: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:69
 #. translators: 1: taxonomy name, 2: post type singular label, 3: updated terms, 4: original terms
+#, php-format
+msgid ""
+"The following terms (%1$s) were set to the %2$s: \"%3$s\". The old list of "
+"terms on the post was: %4$s."
+msgstr "Các thuật ngữ sau (%1$s) đã bị xóa khỏi %2$s: %3$s."
+
+#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:109
+#. translators: %s is the taxonomy name (plural)
 #, php-format
 msgid "Replace all %s"
 msgstr "Thay thế tất cả %s"
@@ -769,6 +885,14 @@ msgid "Restore post meta data after v3.0.1"
 msgstr "Khôi phục dữ liệu meta bài viết sau v3.0.1"
 
 #: src/Modules/Expirator/Migrations/V30104ArgsColumnLength.php:62
+msgid ""
+"Change args column length to 1000 in the table _ppfuture_actions_args after "
+"v3.1.4"
+msgstr ""
+"Thay đổi chiều dài cột args thành 1000 trong bảng _ppfuture_actions_args "
+"sau phiên bản v3.1.4"
+
+#: src/Modules/Expirator/Models/ExpirablePostModel.php:489
 msgid "Email is disabled."
 msgstr "Email đã bị vô hiệu hóa."
 
@@ -801,6 +925,17 @@ msgstr "[%1$s] %2$s"
 #: src/Modules/Expirator/Models/PostTypeDefaultDataModel.php:156
 #. translators: %s is the date/time offset and %s is the post type.
 #, php-format
+msgid ""
+"Invalid date/time offset \"%s\" for post type \"%s\". Please ensure you use "
+"only English terms for the date/time offset, such as \"3 months\" or \"1 "
+"week\"."
+msgstr ""
+"Độ lệch ngày/giờ không hợp lệ \"%s\" cho loại bài viết \"%s\". Vui lòng đảm "
+"bảo rằng bạn chỉ sử dụng các thuật ngữ bằng tiếng Anh cho độ lệch ngày/giờ, "
+"chẳng hạn như \"3 tháng\" hoặc \"1 tuần\"."
+
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:53
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:234
 msgid "Status"
 msgstr "Trạng thái"
 
@@ -1029,57 +1164,90 @@ msgstr "Không lặp lại"
 msgid "No Scheduled Actions."
 msgstr "Không có hành động đã lên lịch."
 
-#: src/Modules/Settings/Controllers/Controller.php:207
+#: src/Modules/Settings/Controllers/Controller.php:208
 msgid "Auto-refresh"
 msgstr "Tự động làm mới"
 
-#: src/Modules/Settings/Controllers/Controller.php:208
+#: src/Modules/Settings/Controllers/Controller.php:209
 msgid "Refresh interval:"
 msgstr "Khoảng thời gian làm mới:"
 
-#: src/Modules/Settings/Controllers/Controller.php:209
+#: src/Modules/Settings/Controllers/Controller.php:210
 msgid "seconds"
 msgstr "giây"
 
-#: src/Modules/Settings/Controllers/Controller.php:210
+#: src/Modules/Settings/Controllers/Controller.php:211
 msgid "Last refreshed:"
 msgstr "Cập nhật cuối cùng:"
 
-#: src/Modules/Settings/Controllers/Controller.php:211
+#: src/Modules/Settings/Controllers/Controller.php:212
 msgid "seconds ago"
 msgstr "cách đây vài giây"
 
-#: src/Modules/Settings/Controllers/Controller.php:212
+#: src/Modules/Settings/Controllers/Controller.php:213
 msgid "Refreshing..."
 msgstr "Đang làm mới..."
 
-#: src/Modules/Settings/Controllers/Controller.php:213
+#: src/Modules/Settings/Controllers/Controller.php:214
 msgid "Failed to refresh log data."
 msgstr "Không thể làm mới dữ liệu nhật ký."
 
-#: src/Modules/Settings/Controllers/Controller.php:251
+#: src/Modules/Settings/Controllers/Controller.php:252
 msgid "Scheduled Workflow Steps Cleanup"
 msgstr "Dọn dẹp các bước quy trình đã lên lịch"
 
-#: src/Modules/Settings/Controllers/Controller.php:252
+#: src/Modules/Settings/Controllers/Controller.php:253
 msgid "Automatically remove scheduled workflow steps"
 msgstr "Tự động xóa các bước quy trình đã lên lịch"
 
-#: src/Modules/Settings/Controllers/Controller.php:256
+#: src/Modules/Settings/Controllers/Controller.php:257
+#, fuzzy
+msgid ""
+"Automatically remove scheduled workflow steps that have been marked as "
+"failed, completed, or cancelled."
+msgstr "Tự động xóa các bước quy trình đã lên lịch"
+
+#: src/Modules/Settings/Controllers/Controller.php:261
 msgid "Retain all scheduled workflow steps"
 msgstr "Giữ lại tất cả các bước quy trình đã lên lịch"
 
-#: src/Modules/Settings/Controllers/Controller.php:264
+#: src/Modules/Settings/Controllers/Controller.php:265
+msgid ""
+"Retain all scheduled workflow steps indefinitely, including those marked as "
+"failed, completed, or cancelled. This may impact database performance over "
+"time."
+msgstr ""
+"Giữ lại tất cả các bước quy trình làm việc đã lên lịch vô thời hạn, bao gồm "
+"cả những bước được đánh dấu là thất bại, hoàn thành hoặc bị hủy. Điều này "
+"có thể ảnh hưởng đến hiệu suất cơ sở dữ liệu theo thời gian."
+
+#: src/Modules/Settings/Controllers/Controller.php:269
 msgid "Retention"
 msgstr "Thời gian lưu giữ"
 
-#: src/Modules/Settings/Controllers/Controller.php:269
+#: src/Modules/Settings/Controllers/Controller.php:270
+msgid ""
+"The duration, in days, for which completed, failed, and canceled scheduled "
+"workflow steps will be preserved before automatic removal."
+msgstr ""
+"Thời gian, tính bằng ngày, trong đó các bước quy trình làm việc đã hoàn "
+"thành, thất bại và bị hủy sẽ được bảo tồn trước khi tự động xóa."
+
+#: src/Modules/Settings/Controllers/Controller.php:274
 msgid "days"
 msgstr "ngày"
 
 #: src/Modules/VersionNotices/Module.php:95
 #. translators: %1$s and %2$s are placeholders for the link to by the Pro version
 #, php-format
+msgid ""
+"You're using PublishPress Future Free. The Pro version has more features "
+"and support. %1$sUpgrade to Pro%2$s"
+msgstr ""
+"Bạn đang sử dụng PublishPress Future Free. Phiên bản Pro có nhiều tính năng "
+"và hỗ trợ hơn. %1$sNâng cấp lên Pro%2$s"
+
+#: src/Modules/Workflows/Controllers/ManualPostTrigger.php:396
 msgid "Workflow Manual Trigger"
 msgstr "Kích hoạt quy trình thủ công"
 
@@ -1090,6 +1258,16 @@ msgstr "Kiểm tra và cảnh báo về các hành động quá hạn"
 #: src/Modules/Workflows/Controllers/PastDueActions.php:148
 #. translators: %s is the admin URL to the scheduled actions page
 #, php-format
+msgid ""
+"You have past-due scheduled actions in PublishPress Future.\n"
+"\n"
+"Please check them at %s"
+msgstr ""
+"Bạn có các hành động đã lên lịch quá hạn trong PublishPress Future.\n"
+"\n"
+"Vui lòng kiểm tra chúng tại %s"
+
+#: src/Modules/Workflows/Controllers/PastDueActions.php:155
 msgid "[PublishPress Future] Past-due Actions Found"
 msgstr "[PublishPress Future] Đã tìm thấy các hành động quá hạn"
 
@@ -1372,18 +1550,51 @@ msgid "Welcome to the workflow editor"
 msgstr "Chào mừng bạn đến với trình chỉnh sửa quy trình làm việc"
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:265
+msgid ""
+"In the PublishPress Workflow Editor, each workflow step is presented as a "
+"distinct 'node' in the workflow."
+msgstr ""
+"Trong Trình chỉnh sửa Quy trình làm việc PublishPress, mỗi bước quy trình "
+"làm việc được trình bày dưới dạng một 'node' riêng biệt trong quy trình làm "
+"việc."
+
+#: src/Modules/Workflows/Controllers/WorkflowEditor.php:269
 msgid "Use your imagination"
 msgstr "Sử dụng trí tưởng tượng của bạn"
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:270
+msgid ""
+"You're free to create very distinct workflows in your site, according to "
+"your needs."
+msgstr ""
+"Bạn hoàn toàn có thể tạo ra các quy trình làm việc rất khác biệt trên trang "
+"web của mình, theo nhu cầu của bạn."
+
+#: src/Modules/Workflows/Controllers/WorkflowEditor.php:274
 msgid "A basic workflow"
 msgstr "Một quy trình làm việc cơ bản"
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:275
+msgid ""
+"Every workflow requires at least two steps connected to each other: one "
+"trigger and one action."
+msgstr ""
+"Mỗi quy trình làm việc yêu cầu ít nhất hai bước được kết nối với nhau: một "
+"kích hoạt và một hành động."
+
+#: src/Modules/Workflows/Controllers/WorkflowEditor.php:279
 msgid "Add steps to your workflow"
 msgstr "Thêm bước vào quy trình làm việc của bạn"
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:280
+msgid ""
+"Drag and drop steps to add them to your workflow. Connect the steps to "
+"create a workflow."
+msgstr ""
+"Kéo và thả các bước để thêm chúng vào quy trình làm việc của bạn. Kết nối "
+"các bước để tạo thành một quy trình làm việc."
+
+#: src/Modules/Workflows/Controllers/WorkflowEditor.php:284
 msgid "Output and input"
 msgstr "Đầu ra và đầu vào"
 
@@ -1396,10 +1607,28 @@ msgid "Customize the workflow"
 msgstr "Tùy chỉnh quy trình làm việc"
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:290
+msgid ""
+"Click on a step to customize it. You can change the step's settings in the "
+"right sidebar."
+msgstr ""
+"Nhấp vào một bước để tùy chỉnh nó. Bạn có thể thay đổi các cài đặt của bước "
+"trong thanh bên phải."
+
+#: src/Modules/Workflows/Controllers/WorkflowEditor.php:294
 msgid "Workflow validation"
 msgstr "Xác thực quy trình làm việc"
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:295
+msgid ""
+"Error messages will appear for any unfilled required settings, missed "
+"connections, or invalid values. Select the step to view the corresponding "
+"error in the sidebar."
+msgstr ""
+"Thông báo lỗi sẽ xuất hiện cho bất kỳ cài đặt bắt buộc nào chưa được điền, "
+"các kết nối bị bỏ lỡ, hoặc các giá trị không hợp lệ. Chọn bước để xem lỗi "
+"tương ứng trong thanh bên."
+
+#: src/Modules/Workflows/Controllers/WorkflowEditor.php:299
 msgid "Publish your workflow"
 msgstr "Xuất bản quy trình làm việc của bạn"
 
@@ -1414,6 +1643,16 @@ msgid "Need help?"
 msgstr "Cần giúp đỡ?"
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:305
+msgid ""
+"If you have any questions or need help, click the help button in the top "
+"right corner to access the support resources."
+msgstr ""
+"Nếu bạn có bất kỳ câu hỏi nào hoặc cần hỗ trợ, hãy nhấp vào nút trợ giúp ở "
+"góc trên bên phải để truy cập các tài nguyên hỗ trợ."
+
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:236
+#: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:19
+#. translators: Blocks tab title in the block inserter.
 msgid "Triggers"
 msgstr "Kích hoạt"
 
@@ -1614,6 +1853,17 @@ msgid "Is single"
 msgstr "Là một"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:92
+msgid ""
+"If enabled, only one meta value will be allowed. If disabled, multiple meta "
+"values can be added as an array."
+msgstr ""
+"Nếu được bật, chỉ một giá trị meta sẽ được cho phép. Nếu bị tắt, nhiều giá "
+"trị meta có thể được thêm vào dưới dạng một mảng."
+
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:98
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeletePostMeta.php:91
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePostMeta.php:91
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:165, fuzzy
 msgid "Meta key"
 msgstr "Meta key"
 
@@ -1850,6 +2100,15 @@ msgid "Conditional"
 msgstr "Điều kiện"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:37
+msgid ""
+"This step allows you to continue the workflow only if certain conditions "
+"are met. It is not required to have both a True and a False option."
+msgstr ""
+"Bước này cho phép bạn tiếp tục quy trình làm việc chỉ khi các điều kiện "
+"nhất định được đáp ứng. Không bắt buộc phải có cả tùy chọn đúng và sai."
+
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:64
+#: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:57
 msgid "Condition"
 msgstr "Điều kiện"
 
@@ -1868,6 +2127,14 @@ msgid "Branch"
 msgstr "Nhánh"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:125
+msgid ""
+"Shows which path was taken: 'true' if conditions were met, or 'false' if "
+"they weren't."
+msgstr ""
+"Hiển thị con đường đã được chọn: 'true' nếu các điều kiện được đáp ứng, "
+"hoặc 'false' nếu không."
+
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:147
 msgid "True"
 msgstr "Đúng"
 
@@ -1880,6 +2147,14 @@ msgid "Deactivate workflow for post"
 msgstr "Vô hiệu hóa quy trình làm việc cho bài viết"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeactivatePostWorkflow.php:37
+msgid ""
+"This step enables you to deactivate the \"Manually enabled via checkbox\" "
+"workflow after use."
+msgstr ""
+"Bước này cho phép bạn vô hiệu hóa quy trình \"Được kích hoạt thủ công qua "
+"hộp kiểm\" sau khi sử dụng."
+
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeactivatePostWorkflow.php:68
 msgid "Select which post will have its workflow deactivated."
 msgstr "Chọn bài viết nào sẽ có quy trình làm việc bị vô hiệu hóa."
 
@@ -1896,6 +2171,12 @@ msgid "Workflow to Deactivate"
 msgstr "Quy trình làm việc để Vô hiệu hóa"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeactivatePostWorkflow.php:95
+msgid ""
+"Choose the manually enabling workflow that will be deactivated for the "
+"selected post."
+msgstr "Chọn quy trình kích hoạt thủ công sẽ được vô hiệu hóa cho bài viết đã chọn."
+
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeactivatePostWorkflow.php:125
 msgid "Workflow"
 msgstr "Quy trình làm việc"
 
@@ -1948,6 +2229,14 @@ msgid "The meta key to delete from the post."
 msgstr "Khóa meta để xóa khỏi bài viết."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeletePostMeta.php:98
+msgid ""
+"Specify the meta value to delete from the post. If empty, all meta with the "
+"same key will be deleted."
+msgstr ""
+"Chỉ định giá trị meta để xóa khỏi bài viết. Nếu để trống, tất cả các meta "
+"có cùng khóa sẽ bị xóa."
+
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:32
 msgid "Do custom action"
 msgstr "Thực hiện hành động tùy chỉnh"
 
@@ -1980,6 +2269,15 @@ msgstr "Tham số hành động"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:84
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:96
+msgid ""
+"The arguments to pass to the action. These arguments will be available as "
+"variables in subsequent workflow steps."
+msgstr ""
+"Các đối số để truyền vào hành động. Những đối số này sẽ có sẵn dưới dạng "
+"các biến trong các bước quy trình làm việc tiếp theo."
+
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:113
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:122
 msgid "The action hook is required."
 msgstr "Hook hành động là bắt buộc."
 
@@ -2077,6 +2375,13 @@ msgid "Query posts"
 msgstr "Truy vấn bài viết"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/QueryPosts.php:37
+#, fuzzy
+msgid ""
+"This step defines the posts that will be passed to the next step in the "
+"workflow."
+msgstr "Truy vấn xác định các bài viết sẽ được lấy bởi hành động này."
+
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/QueryPosts.php:72
 msgid "Post query"
 msgstr "Truy vấn bài viết"
 
@@ -2132,6 +2437,17 @@ msgid "Schedule delay"
 msgstr "Lịch trình trì hoãn"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:37
+msgid ""
+"This step allows you to run the next part of a workflow at a specific time, "
+"or relative to another date. You can also use this step to repeat the next "
+"part of the workflow."
+msgstr ""
+"Bước này cho phép bạn chạy phần tiếp theo của quy trình làm việc vào một "
+"thời điểm cụ thể, hoặc tương đối với một ngày khác. Bạn cũng có thể sử dụng "
+"bước này để lặp lại phần tiếp theo của quy trình làm việc."
+
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:67
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:64
 msgid "Schedule"
 msgstr "Lịch trình"
 
@@ -2295,6 +2611,14 @@ msgid "Recipients"
 msgstr "Người nhận"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:84
+#, fuzzy
+msgid ""
+"A comma-separated list of user names, ids, emails or user roles to send the "
+"message to."
+msgstr "Danh sách địa chỉ email cách nhau bằng dấu phẩy để gửi thông điệp đến."
+
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:113
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:103
 msgid "Notification type"
 msgstr "Loại thông báo"
 
@@ -2426,6 +2750,13 @@ msgid "Post to Stick"
 msgstr "Bài viết để Ghim"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/StickPost.php:71
+#, fuzzy
+msgid ""
+"Choose the post that will be marked as sticky. You can select a post "
+"variable or enter a post ID."
+msgstr "Chọn bài đăng sẽ được di chuyển đến trạng thái khác."
+
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UnstickPost.php:32
 msgid "Unstick post"
 msgstr "Bỏ ghim bài viết"
 
@@ -2442,10 +2773,25 @@ msgid "Post to Unstick"
 msgstr "Bài viết để Bỏ ghim"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UnstickPost.php:71
+#, fuzzy
+msgid ""
+"Choose the post that will be unmarked as sticky. You can select a post "
+"variable or enter a post ID."
+msgstr "Chọn bài đăng sẽ được di chuyển đến trạng thái khác."
+
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePost.php:32
 msgid "Update post details"
 msgstr "Cập nhật chi tiết bài viết"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePost.php:37
+msgid ""
+"This step updates key information about each post such as the data, title, "
+"content, author, and more."
+msgstr ""
+"Bước này cập nhật thông tin chính về mỗi bài viết như dữ liệu, tiêu đề, nội "
+"dung, tác giả, và hơn thế nữa."
+
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePost.php:65
 msgid "Select which post will be updated."
 msgstr "Chọn bài viết nào sẽ được cập nhật."
 
@@ -2570,6 +2916,18 @@ msgid "User interaction"
 msgstr "Tương tác của người dùng"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:37
+msgid ""
+"This step requires user action before the workflow can proceed. The actions "
+"are done via the in-site notification area."
+msgstr ""
+"Bước này yêu cầu hành động của người dùng trước khi quy trình làm việc có "
+"thể tiến hành. Các hành động được thực hiện qua khu vực thông báo trong "
+"trang web."
+
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:64
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:168
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:183
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:226
 msgid "Responders"
 msgstr "Người phản hồi"
 
@@ -2578,6 +2936,14 @@ msgid "Choose which users will see notifications from this action."
 msgstr "Chọn những người dùng nào sẽ thấy thông báo từ hành động này."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:70
+msgid ""
+"A comma-separated list of user names, ids, emails or user roles that can "
+"interact with this step."
+msgstr ""
+"Danh sách tên người dùng, id, email hoặc vai trò người dùng được phân tách "
+"bằng dấu phẩy có thể tương tác với bước này."
+
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:82
 msgid "Specify the message to be displayed to the responders."
 msgstr "Chỉ định thông điệp sẽ được hiển thị cho những người phản hồi."
 
@@ -2651,6 +3017,14 @@ msgid "On custom action"
 msgstr "Khi hành động tùy chỉnh"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:37
+msgid ""
+"This trigger activates upon a custom WordPress action hook. Use it to "
+"integrate with other plugins or custom code."
+msgstr ""
+"Kích hoạt này xảy ra khi một hook hành động WordPress tùy chỉnh được gọi. "
+"Sử dụng nó để tích hợp với các plugin khác hoặc mã tùy chỉnh."
+
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:74
 msgid "The hook that will trigger this action."
 msgstr "Hook sẽ kích hoạt hành động này."
 
@@ -2675,6 +3049,14 @@ msgid "Manually run via Future Actions box"
 msgstr "Chạy thủ công qua hộp Tác vụ Tương lai"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnLegacyActionTrigger.php:59
+msgid ""
+"This trigger allows users to choose the workflow from the dropdown menu in "
+"the Future Actions options."
+msgstr ""
+"Kích hoạt này cho phép người dùng chọn quy trình từ menu thả xuống trong "
+"các tùy chọn Hành động Tương lai."
+
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnLegacyActionTrigger.php:114
 msgid "Action Post"
 msgstr "Hành động Đăng"
 
@@ -2871,6 +3253,14 @@ msgid "The post that triggered this action."
 msgstr "Bài viết đã kích hoạt hành động này."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:154
+msgid ""
+"The action taken when the meta key is changed: 'added', 'updated' or "
+"'deleted'."
+msgstr ""
+"Hành động được thực hiện khi khóa meta được thay đổi: 'thêm', 'cập nhật' "
+"hoặc 'xóa'."
+
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:160
 msgid "The meta ID."
 msgstr "ID meta."
 
@@ -2915,6 +3305,15 @@ msgid "Manually run via posts row action"
 msgstr "Chạy thủ công qua hành động hàng bài viết"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:37
+#, fuzzy
+msgid ""
+"This trigger creates a custom post row action and activates when the row "
+"action is clicked in the Posts list screen."
+msgstr ""
+"Cấu hình hành động hàng bài viết sẽ được tạo trong màn hình danh sách Bài "
+"viết."
+
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:91
 msgid "Row Action"
 msgstr "Hành động hàng"
 
@@ -2941,6 +3340,13 @@ msgid "Ask for confirmation"
 msgstr "Yêu cầu xác nhận"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:113
+#, fuzzy
+msgid ""
+"If enabled, the user will be asked to confirm the action before it is "
+"executed."
+msgstr "Nếu được kích hoạt, hình đại diện sẽ được sao chép sang bài viết mới."
+
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:119
 msgid "Are you sure you want to run this action?"
 msgstr "Bạn có chắc chắn muốn thực hiện hành động này không?"
 
@@ -2953,10 +3359,26 @@ msgid "Post is saved"
 msgstr "Bài viết đã được lưu"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostSave.php:37
+msgid ""
+"This trigger activates whenever a post is saved, regardless of whether it's "
+"newly created, imported, or updated."
+msgstr ""
+"Kích hoạt này xảy ra bất cứ khi nào một bài viết được lưu, bất kể nó được "
+"tạo mới, nhập khẩu, hoặc cập nhật."
+
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostSave.php:118
 msgid "Is update"
 msgstr "Có cập nhật"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostSave.php:119
+msgid ""
+"Whether the action happened to an existing post or a new post. Enter True "
+"for an existing post, or False for a new post."
+msgstr ""
+"Liệu hành động xảy ra đối với một bài viết đã tồn tại hay một bài viết mới. "
+"Nhập True cho bài viết đã tồn tại, hoặc False cho bài viết mới."
+
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostSave.php:125
 msgid "Saved post ID"
 msgstr "ID bài viết đã lưu"
 
@@ -3014,6 +3436,14 @@ msgid "Manually run via checkbox"
 msgstr "Chạy thủ công qua hộp kiểm"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostWorkflowEnable.php:37
+msgid ""
+"This trigger activates when the option is manually enabled. It can be "
+"enabled via the post editing screen or the Quick Edit panel."
+msgstr ""
+"Kích hoạt này xảy ra khi tùy chọn được kích hoạt thủ công. Nó có thể được "
+"kích hoạt qua màn hình chỉnh sửa bài viết hoặc bảng Chỉnh sửa Nhanh."
+
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostWorkflowEnable.php:68
 msgid "Settings for the trigger."
 msgstr "Cài đặt cho kích hoạt."
 
@@ -3030,6 +3460,15 @@ msgid "On schedule"
 msgstr "Theo lịch trình"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:37
+msgid ""
+"This trigger allows you to run a workflow at a specific time, or relative "
+"to another date. You can also use this trigger to repeat workflows."
+msgstr ""
+"Kích hoạt này cho phép bạn chạy một quy trình làm việc vào một thời điểm cụ "
+"thể, hoặc tương đối với một ngày khác. Bạn cũng có thể sử dụng kích hoạt "
+"này để lặp lại các quy trình làm việc."
+
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:65
 msgid "Choose a schedule to activate the workflow."
 msgstr "Chọn một lịch trình để kích hoạt quy trình công việc."
 
@@ -3145,6 +3584,10 @@ msgstr ""
 msgid "Migrate workflow scheduled steps schema after v4.0.0"
 msgstr "Di chuyển sơ đồ các bước theo lịch trình của workflow sau v4.0.0"
 
+#: src/Modules/Workflows/Models/StepTypesModel.php:99
+msgid "PublishPress Future"
+msgstr "PublishPress Tương lai"
+
 #: src/Modules/Workflows/Models/StepTypesModel.php:108
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:35, fuzzy
 msgid "User"
@@ -3256,6 +3699,14 @@ msgid "%1$s%2$s%3$s on %5$s%4$s%6$s"
 msgstr "%1$s%2$s%3$s trên %5$s%4$s%6$s"
 
 #: src/Views/expire-column.php:115
+msgid ""
+"Action was not scheduled due to a configuration issue. Please attempt to "
+"schedule it again."
+msgstr ""
+"Hành động không được lên lịch do vấn đề cấu hình. Vui lòng cố gắng lên lịch "
+"lại."
+
+#: src/Views/menu-admin.php:27, fuzzy
 msgid "Metabox"
 msgstr "Metabox"
 
@@ -3288,10 +3739,26 @@ msgid "Detailed"
 msgstr "Chi tiết"
 
 #: src/Views/menu-admin.php:96
+msgid ""
+"Displays all information in the Future Action column on the \"Posts\" "
+"screen."
+msgstr ""
+"Hiển thị tất cả thông tin trong cột Hành động Tương lai trên màn hình \"Bài "
+"viết\"."
+
+#: src/Views/menu-admin.php:106
 msgid "Simplified"
 msgstr "Đơn giản hóa"
 
 #: src/Views/menu-admin.php:108
+msgid ""
+"Displays only the icon and date/time in the Future Action column on the "
+"\"Posts\" screen."
+msgstr ""
+"Hiển thị chỉ biểu tượng và ngày/giờ trong cột Hành động Tương lai trên màn "
+"hình \"Bài viết\"."
+
+#: src/Views/menu-admin.php:118
 msgid "Future Actions Editor"
 msgstr "Trình chỉnh sửa hành động tương lai"
 
@@ -3338,6 +3805,14 @@ msgid "Enable experimental features"
 msgstr "Bật tính năng thử nghiệm"
 
 #: src/Views/menu-advanced.php:51
+msgid ""
+"Enable experimental features that are still in development and may not be "
+"fully functional."
+msgstr ""
+"Bật các tính năng thử nghiệm vẫn đang trong quá trình phát triển và có thể "
+"không hoạt động hoàn toàn."
+
+#: src/Views/menu-advanced.php:63
 msgid "Preserve Data After Deactivating the Plugin"
 msgstr "Bảo tồn dữ liệu sau khi vô hiệu hóa plugin"
 
@@ -3358,6 +3833,14 @@ msgid "Debug Log"
 msgstr "Nhật ký gỡ lỗi"
 
 #: src/Views/menu-debug-log.php:16
+msgid ""
+"Below is a dump of the debugging table, this should be useful for "
+"troubleshooting."
+msgstr ""
+"Dưới đây là một bản sao của bảng gỡ lỗi, điều này sẽ hữu ích cho việc khắc "
+"phục sự cố."
+
+#: src/Views/menu-debug-log.php:83
 msgid "Number of logs to display:"
 msgstr "Số lượng nhật ký hiển thị:"
 
@@ -3380,6 +3863,16 @@ msgstr "Chỉ hiển thị các yêu cầu với kích hoạt kích hoạt"
 #: src/Views/menu-debug-log.php:155
 #. translators: %1$d: displayed count, %2$d: filtered total, %3$d: sessions, %4$d: total unfiltered, %5$s: filtered log size, %6$s: total log size.
 #, php-format
+msgid ""
+"Showing the latest %1$d of %2$d logs (%3$d sessions). Total in database: "
+"%4$d. Log size: %5$s (total: %6$s)."
+msgstr ""
+"Đang hiển thị %1$d trong số %2$d nhật ký (%3$d phiên). Kích thước nhật ký: "
+"%4$s."
+
+#: src/Views/menu-debug-log.php:165
+#. translators: %1$d: displayed count, %2$d: total count, %3$d: sessions, %4$s: log size.
+#, php-format
 msgid "Showing the latest %1$d of %2$d logs (%3$d sessions). Log size: %4$s."
 msgstr ""
 "Đang hiển thị %1$d trong số %2$d nhật ký (%3$d phiên). Kích thước nhật ký: "
@@ -3387,6 +3880,14 @@ msgstr ""
 
 #: src/Views/menu-debug-log.php:176
 #. translators: %1$d: filtered logs count, %2$d: sessions, %3$d: total unfiltered, %4$s: filtered log size, %5$s: total log size.
+#, php-format
+msgid ""
+"Showing all %1$d logs (%2$d sessions). Total in database: %3$d. Log size: "
+"%4$s (total: %5$s)."
+msgstr "Đang hiển thị tất cả %1$d nhật ký (%2$d phiên). Kích thước nhật ký: %3$s."
+
+#: src/Views/menu-debug-log.php:185
+#. translators: %1$d: total logs count, %2$d: sessions count, %3$s: log size.
 #, php-format
 msgid "Showing all %1$d logs (%2$d sessions). Log size: %3$s."
 msgstr "Đang hiển thị tất cả %1$d nhật ký (%2$d phiên). Kích thước nhật ký: %3$s."
@@ -3432,6 +3933,14 @@ msgid "Database Schema Check"
 msgstr "Kiểm tra sơ đồ cơ sở dữ liệu"
 
 #: src/Views/menu-diagnostics.php:73
+msgid ""
+"After activating the plugin, tables are updated automatically on the next "
+"page load. Use the button below if you still see schema errors."
+msgstr ""
+"Sau khi kích hoạt plugin, các bảng sẽ được cập nhật tự động trong lần tải "
+"trang tiếp theo. Sử dụng nút dưới đây nếu bạn vẫn thấy lỗi lược đồ."
+
+#: src/Views/menu-diagnostics.php:84
 msgid "Error found on the database schema:"
 msgid_plural "Errors found on the database schema:"
 msgstr[0] "Đã tìm thấy lỗi trên sơ đồ cơ sở dữ liệu:"
@@ -3485,10 +3994,26 @@ msgid "Spatie Ray Detected"
 msgstr "Đã phát hiện Spatie Ray"
 
 #: src/Views/menu-diagnostics.php:166
+msgid ""
+"Spatie Ray Debug is detected. The \"Send to Ray\" workflow step will be "
+"available in the workflow editor."
+msgstr ""
+"Phát hiện Spatie Ray Debug. Bước quy trình \"Gửi đến Ray\" sẽ có sẵn trong "
+"trình soạn thảo quy trình."
+
+#: src/Views/menu-diagnostics.php:170
 msgid "Spatie Ray Not Detected"
 msgstr "Không phát hiện Spatie Ray"
 
 #: src/Views/menu-diagnostics.php:172
+msgid ""
+"Spatie Ray Debug is not detected. This is not an error, but the \"Send to "
+"Ray\" workflow step will not be available in the workflow editor."
+msgstr ""
+"Không phát hiện Spatie Ray Debug. Đây không phải là lỗi, nhưng bước quy "
+"trình \"Gửi đến Ray\" sẽ không có sẵn trong trình soạn thảo quy trình."
+
+#: src/Views/menu-diagnostics.php:175
 msgid "Learn more about Spatie Ray"
 msgstr "Tìm hiểu thêm về Spatie Ray"
 
@@ -3501,6 +4026,14 @@ msgid "Run Migration"
 msgstr "Chạy Chuyển đổi"
 
 #: src/Views/menu-diagnostics.php:191
+msgid ""
+"Migrate legacy future actions from WP Cron to the new Action Scheduler. "
+"This will run in the background and may take a while."
+msgstr ""
+"Di chuyển các hành động tương lai cũ từ WP Cron sang Lịch trình Hành động "
+"mới. Điều này sẽ chạy ở chế độ nền và có thể mất một thời gian."
+
+#: src/Views/menu-diagnostics.php:201
 msgid "Restore Legacy Action Arguments"
 msgstr "Khôi phục Tham số Hành động Cũ"
 
@@ -3509,10 +4042,28 @@ msgid "Run Data Restoration"
 msgstr "Chạy Khôi phục Dữ liệu"
 
 #: src/Views/menu-diagnostics.php:208
+msgid ""
+"Restore legacy action arguments as Post Meta. This is useful if you have "
+"issues with 3rd party plugins that read that data. This will run in the "
+"background and may take a while."
+msgstr ""
+"Khôi phục các đối số hành động cũ dưới dạng Meta Bài viết. Điều này hữu ích "
+"nếu bạn gặp vấn đề với các plugin bên thứ ba đọc dữ liệu đó. Điều này sẽ "
+"chạy ở chế độ nền và có thể mất một thời gian."
+
+#: src/Views/menu-diagnostics.php:221
 msgid "Legacy Cron Schedule"
 msgstr "Lịch Trình Cron Cũ"
 
 #: src/Views/menu-diagnostics.php:229
+msgid ""
+"The below table will show all currently scheduled cron events for the "
+"plugin with the next run time."
+msgstr ""
+"Bảng dưới đây sẽ hiển thị tất cả các sự kiện cron hiện đang được lên lịch "
+"cho plugin với thời gian chạy tiếp theo."
+
+#: src/Views/menu-diagnostics.php:244
 msgid "Event"
 msgstr "Sự kiện"
 
@@ -3535,6 +4086,17 @@ msgstr "Định dạng Ngày"
 #: src/Views/menu-display.php:64
 #. translators: %s is a link to the PHP date function documentation
 #, php-format
+msgid ""
+"The default format to use when displaying the action date within a post "
+"using the shortcode or within the footer.  For information on valid "
+"formatting options, see: %s."
+msgstr ""
+"Định dạng mặc định để sử dụng khi hiển thị ngày hành động trong một bài "
+"viết bằng cách sử dụng shortcode hoặc trong chân trang. Để biết thông tin "
+"về các tùy chọn định dạng hợp lệ, xem: %s."
+
+#: src/Views/menu-display.php:68
+#: src/Views/menu-display.php:106
 msgid "PHP Date Function"
 msgstr "Hàm Ngày PHP"
 
@@ -3545,18 +4107,55 @@ msgstr "Định dạng Thời gian"
 #: src/Views/menu-display.php:102
 #. translators: %s is a link to the PHP date function documentation
 #, php-format
+msgid ""
+"The default format to use when displaying the action time within a post "
+"using the shortcode or within the footer.  For information on valid "
+"formatting options, see: %s."
+msgstr ""
+"Định dạng mặc định để sử dụng khi hiển thị thời gian hành động trong một "
+"bài viết bằng cách sử dụng shortcode hoặc trong chân trang. Để biết thông "
+"tin về các tùy chọn định dạng hợp lệ, xem: %s."
+
+#: src/Views/menu-display.php:116
 msgid "Post Footer Display"
 msgstr "Hiển thị Chân Trang Bài Viết"
 
 #: src/Views/menu-display.php:118
+msgid ""
+"Enabling this below will display the action date automatically at the end "
+"of any post which is set to run an action."
+msgstr ""
+"Bật tùy chọn này bên dưới sẽ tự động hiển thị ngày hành động ở cuối bất kỳ "
+"bài viết nào được thiết lập để chạy một hành động."
+
+#: src/Views/menu-display.php:127
 msgid "Show in Post Footer?"
 msgstr "Hiển thị trong Chân Trang Bài Viết?"
 
 #: src/Views/menu-display.php:154
+#, fuzzy
+msgid ""
+"This will enable or disable displaying the future action date in the post "
+"footer."
+msgstr ""
+"Điều này sẽ bật hoặc tắt việc gửi thông báo qua email cho các hành động "
+"trong tương lai."
+
+#: src/Views/menu-display.php:164
 msgid "Footer Contents"
 msgstr "Nội dung Chân Trang"
 
 #: src/Views/menu-display.php:175
+msgid ""
+"Enter the text you would like to appear at the bottom of every post which "
+"has an action scheduled.  The following placeholders will be replaced with "
+"the future action date in the following format:"
+msgstr ""
+"Nhập văn bản bạn muốn xuất hiện ở cuối mỗi bài viết có hành động đã được "
+"lên lịch. Các biến thể sau sẽ được thay thế bằng ngày hành động tương lai "
+"theo định dạng sau:"
+
+#: src/Views/menu-display.php:216
 msgid "Footer Style"
 msgstr "Phong cách Chân Trang"
 
@@ -3575,10 +4174,27 @@ msgstr "Shortcode"
 #: src/Views/menu-display.php:249
 #. translators: %s is a code tag that wraps the shortcode
 #, php-format
+msgid ""
+"Use the %s[futureaction]%s shortcode to show when the future action will "
+"occur. You can add this shortcode anywhere in your post content."
+msgstr ""
+"Sử dụng shortcode %s[futureaction]%s để hiển thị khi hành động tương lai sẽ "
+"xảy ra. Bạn có thể thêm shortcode này ở bất kỳ đâu trong nội dung bài viết "
+"của bạn."
+
+#: src/Views/menu-display.php:259
 msgid "Shortcode Wrapper"
 msgstr "Bọc Shortcode"
 
 #: src/Views/menu-display.php:279
+msgid ""
+"The shortcode output will be wrapped in the selected HTML tag, allowing you "
+"to control its structure and styling."
+msgstr ""
+"Đầu ra của shortcode sẽ được bọc trong thẻ HTML đã chọn, cho phép bạn kiểm "
+"soát cấu trúc và kiểu dáng của nó."
+
+#: src/Views/menu-display.php:289, fuzzy
 msgid "Wrapper Class"
 msgstr "Wrapper Class"
 
@@ -3691,15 +4307,48 @@ msgstr ""
 "email."
 
 #: src/Views/menu-notifications.php:123
+msgid ""
+"Enter a comma separate list of emails that you would like to be notified "
+"when the action runs.  This will be applied to ALL post types.  You can set "
+"post type specific emails on the Defaults tab."
+msgstr ""
+"Nhập danh sách email ngăn cách bằng dấu phẩy mà bạn muốn nhận thông báo khi "
+"hành động được thực hiện. Điều này sẽ được áp dụng cho TẤT CẢ các loại bài "
+"viết. Bạn có thể đặt email cụ thể cho loại bài viết trên tab Mặc định."
+
+#: src/Views/menu-notifications.php:132
 msgid "Past-due Actions Notification"
 msgstr "Thông báo Hành động Quá hạn"
 
 #: src/Views/menu-notifications.php:134
 #: src/Views/menu-notifications.php:161
+#, fuzzy
+msgid ""
+"This will enable or disable the send of email notification on past-due "
+"actions."
+msgstr ""
+"Điều này sẽ bật hoặc tắt việc gửi thông báo qua email cho các hành động "
+"trong tương lai."
+
+#: src/Views/menu-notifications.php:142
 msgid "Enable Past-due Actions Notification?"
 msgstr "Có bật thông báo Hành động Quá hạn không?"
 
 #: src/Views/menu-notifications.php:175
+msgid ""
+"Enter a comma separate list of emails that you would like to be notified "
+"when past-due actions are detected."
+msgstr ""
+"Nhập danh sách email ngăn cách bằng dấu phẩy mà bạn muốn nhận thông báo khi "
+"phát hiện hành động quá hạn."
+
+#: src/Views/tabs-future-actions.php:20
+#: assets/js/backupPanel.js:649
+#: assets/js/backupPanel.js:1232
+#: assets/jsx/backup-panel/components/tabs-content/export.jsx:24
+#: assets/jsx/backup-panel/components/tabs-content/import.jsx:104
+#: assets/js/backupPanel.js:500
+#: assets/js/backupPanel.js:912, fuzzy
 msgid "Post Types"
 msgstr "Post Types"
 
@@ -3871,6 +4520,16 @@ msgstr "Xuất cài đặt thất bại."
 #: assets/js/backupPanel.js:693
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:78
 #: assets/js/backupPanel.js:554
+msgid ""
+"Export the plugin settings and workflows to a .json file. This file can be "
+"imported later to restore the data or migrate to another site."
+msgstr ""
+"Xuất cài đặt và quy trình của plugin sang tệp .json. Tệp này có thể được "
+"nhập lại sau để khôi phục dữ liệu hoặc di chuyển sang trang web khác."
+
+#: assets/js/backupPanel.js:722
+#: assets/jsx/backup-panel/components/tabs-content/export.jsx:105
+#: assets/js/backupPanel.js:581
 msgid "Exporting..."
 msgstr "Đang xuất..."
 
@@ -3948,7 +4607,15 @@ msgstr "Thay đổi workflows được kích hoạt thủ công"
 #: assets/jsx/workflows-list/cancel-action/index.jsx:59
 #: assets/js/workflowsListCancelAction.js:497
 #. translators: %s: Workflow title
-#, js-format
+#, fuzzy
+msgid ""
+"Are you sure you want to cancel all scheduled actions for the \"%s\" "
+"workflow?"
+msgstr "Bạn có chắc chắn muốn xóa quy trình này không?"
+
+#: assets/js/workflowsListCancelAction.js:708
+#: assets/jsx/workflows-list/cancel-action/index.jsx:69
+#: assets/js/workflowsListCancelAction.js:507
 msgid "Cancel Actions"
 msgstr "Hủy Hành Động"
 
@@ -4020,10 +4687,27 @@ msgid "Add Rule"
 msgstr "Thêm Quy Tắc"
 
 #: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:58
+msgid ""
+"Create rules that will continue the workflow only if certain conditions are "
+"met."
+msgstr ""
+"Tạo quy tắc sẽ tiếp tục quy trình làm việc chỉ khi các điều kiện nhất định "
+"được đáp ứng."
+
+#: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:59
+#: assets/jsx/workflow-editor/components/data-fields/post-filter/components/post-filter.jsx:85
 msgid "Edit rules"
 msgstr "Chỉnh sửa quy tắc"
 
 #: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:60
+msgid ""
+"Conditional logic is a Pro feature. Upgrade to create advanced conditions "
+"for your workflows."
+msgstr ""
+"Logic điều kiện là một tính năng Pro. Nâng cấp để tạo các điều kiện nâng "
+"cao cho quy trình làm việc của bạn."
+
+#: assets/jsx/workflow-editor/components/data-fields/conditional/components/duplicate-rule-button.jsx:10
 msgid "Duplicate Rule"
 msgstr "Nhân bản Quy Tắc"
 
@@ -4059,6 +4743,13 @@ msgstr "Thêm một tùy chọn mới"
 
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:132
 #, js-format
+msgid ""
+"You have reached the maximum number of options. You can add up to %s "
+"options."
+msgstr "Bạn đã đạt đến số lượng tùy chọn tối đa. Bạn có thể thêm tối đa %s tùy chọn."
+
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:73
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:7
 msgid "Name"
 msgstr "Tên"
 
@@ -4105,6 +4796,12 @@ msgid "Date source"
 msgstr "Nguồn ngày"
 
 #: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:147
+msgid ""
+"Click the button to choose a custom date source from variables that can "
+"provide a date."
+msgstr "Nhấn nút để chọn nguồn ngày tùy chỉnh từ các biến có thể cung cấp một ngày."
+
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:159
 msgid "Offset"
 msgstr "Bù đắp"
 
@@ -4118,6 +4815,16 @@ msgstr "Nhấn để biết thêm thông tin"
 
 #: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:197
 #, js-format
+msgid ""
+"For more information on formatting, see the %sPHP strtotime function%s. For "
+"example, you could enter %s+1 month%s or %s+1 week 2 days 4 hours 2 "
+"seconds%s or %snext Thursday%s. Please use only phrases in English."
+msgstr ""
+"Để biết thêm thông tin về định dạng, hãy xem %s hàm PHP strtotime %s. Ví "
+"dụ, bạn có thể nhập %s+1 tháng %s hoặc %s+1 tuần 2 ngày 4 giờ 2 giây %s "
+"hoặc %s thứ N tuần tới %s. Vui lòng chỉ sử dụng các cụm từ bằng tiếng Anh."
+
+#: assets/jsx/workflow-editor/components/data-fields/debug-data.jsx:39
 msgid "All received input"
 msgstr "Tất cả đầu vào đã nhận"
 
@@ -4237,6 +4944,14 @@ msgid "Learn more"
 msgstr "Tìm hiểu thêm"
 
 #: assets/jsx/workflow-editor/components/data-fields/interactive-custom-options/index.jsx:30
+msgid ""
+"This option is used to connect to another step and cannot have its name "
+"changed until the connection is removed."
+msgstr ""
+"Tùy chọn này được sử dụng để kết nối với một bước khác và không thể thay "
+"đổi tên cho đến khi kết nối được gỡ bỏ."
+
+#: assets/jsx/workflow-editor/components/data-fields/modal-footer.jsx:11, fuzzy
 msgid "OK"
 msgstr "OK"
 
@@ -4352,6 +5067,13 @@ msgid "Visitors can add new comments and replies."
 msgstr "Khách truy cập có thể thêm bình luận và phản hồi mới."
 
 #: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:58
+#, fuzzy
+msgid ""
+"Visitors can not add new comments or replies. Existing comments remain "
+"visible."
+msgstr "Khách truy cập có thể thêm bình luận và phản hồi mới."
+
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:97
 msgid "Enable pinbacks & trackbacks"
 msgstr "Kích hoạt pinbacks & trackbacks"
 
@@ -4451,6 +5173,14 @@ msgid "Repeating Action"
 msgstr "Hành động lặp lại"
 
 #: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:131
+msgid ""
+"Choose how often this task should repeat. Select 'Non-repeating' for a "
+"one-time action or set an interval for automatic recurrence."
+msgstr ""
+"Chọn tần suất mà nhiệm vụ này nên lặp lại. Chọn 'Không lặp lại' cho một "
+"hành động một lần hoặc đặt một khoảng thời gian cho việc lặp lại tự động."
+
+#: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:148
 msgid "Unique Task Identifier"
 msgstr "Mã định danh nhiệm vụ duy nhất"
 
@@ -4612,6 +5342,14 @@ msgid "Display the controls panel"
 msgstr "Hiển thị bảng điều khiển"
 
 #: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:54
+msgid ""
+"Display the controls panel with buttons to zoon in, zoom out, fit the view "
+"and lock the viewport"
+msgstr ""
+"Hiển thị bảng điều khiển điều khiển với các nút để phóng to, thu nhỏ, vừa "
+"vặn với chế độ xem và khóa khung nhìn"
+
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:59
 msgid "Tools"
 msgstr "Công cụ"
 
@@ -4704,6 +5442,14 @@ msgid "Connection"
 msgstr "Kết nối"
 
 #: assets/jsx/workflow-editor/components/node-inspector/index.jsx:166
+msgid ""
+"The connection between nodes in the workflow. Signifies the path along "
+"which data or control flow one node to another."
+msgstr ""
+"Kết nối giữa các nút trong quy trình làm việc. Biểu thị con đường mà dữ "
+"liệu hoặc điều khiển chảy từ nút này sang nút khác."
+
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:83
 msgid "Step Data Flow"
 msgstr "Dòng dữ liệu bước"
 
@@ -4852,10 +5598,51 @@ msgid "Actions"
 msgstr "Actions"
 
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:10
+msgid ""
+"Select multiple steps by pressing <kbd>cmd</kbd> and clicking on each step "
+"in the workflow."
+msgstr ""
+"Chọn nhiều bước bằng cách nhấn <kbd>cmd</kbd> và nhấp vào từng bước trong "
+"quy trình làm việc."
+
+#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:16
+msgid ""
+"Drag steps from the inserter and drop them directly into your workflow for "
+"easy customization."
+msgstr ""
+"Kéo các bước từ bộ chèn và thả chúng trực tiếp vào quy trình làm việc của "
+"bạn để dễ dàng tùy chỉnh."
+
+#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:17
+msgid ""
+"Simply double-click any step to bring up the settings sidebar for quick "
+"adjustments."
+msgstr ""
+"Chỉ cần nhấp đúp vào bất kỳ bước nào để hiển thị thanh bên cài đặt cho các "
+"điều chỉnh nhanh chóng."
+
+#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:18
 msgid "Double-click the workflow pane to increase the zoom level for a closer look."
 msgstr "Nhấp đúp vào bảng quy trình làm việc để tăng mức phóng to để xem gần hơn."
 
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:20
+#, fuzzy
+msgid ""
+"Hold down the <kbd>shift</kbd> key and double-click the workflow pane to "
+"decrease the zoom level."
+msgstr "Nhấp đúp vào bảng quy trình làm việc để tăng mức phóng to để xem gần hơn."
+
+#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:26
+msgid ""
+"Easily add new steps by clicking on a step's handle and dragging it. Drop "
+"it in the workflow pane to see a floating inserter where you can type and "
+"search for the step you need."
+msgstr ""
+"Dễ dàng thêm bước mới bằng cách nhấp vào tay cầm của một bước và kéo nó. "
+"Thả nó vào bảng quy trình làm việc để xem bộ chèn nổi, nơi bạn có thể nhập "
+"và tìm kiếm bước bạn cần."
+
+#: assets/jsx/workflow-editor/components/settings-sidebar/plugin-sidebar.jsx:39
 msgid "(no name)"
 msgstr "(không có tên)"
 
@@ -4876,6 +5663,14 @@ msgid "Ray Debug"
 msgstr "Ray Debug"
 
 #: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:55
+msgid ""
+"Enable or disable the different types of debug information that is shown in "
+"Ray when this workflow is activated."
+msgstr ""
+"Bật hoặc tắt các loại thông tin gỡ lỗi khác nhau được hiển thị trong Ray "
+"khi quy trình làm việc này được kích hoạt."
+
+#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:59
 msgid "Show Queries"
 msgstr "Hiển thị Truy vấn"
 
@@ -5019,6 +5814,14 @@ msgstr "Xem"
 
 #: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:23
 #. translators: Default label for the Workflow sidebar tab, not selected.
+#, fuzzy
 msgctxt "noun"
+msgid "Workflow"
+msgstr "Quy trình làm việc"
+
+#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:80
+#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:85
+#, fuzzy
+msgctxt "nodes"
 msgid "Most used"
 msgstr "Sử dụng nhiều nhất"

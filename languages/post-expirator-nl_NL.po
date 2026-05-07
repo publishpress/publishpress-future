@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-02-27T16:10:19+00:00\n"
-"PO-Revision-Date: 2026-04-28 16:17+0000\n"
+"POT-Creation-Date: 2026-04-29T14:19:02+00:00\n"
+"PO-Revision-Date: 2026-05-07 20:54+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
@@ -173,7 +173,7 @@ msgstr "Lege datumtijd offset."
 msgid "Invalid date time offset"
 msgstr "Ongeldige datumtijd offset"
 
-#: src/Modules/Backup/Controllers/BackupAdminPage.php:163
+#: src/Modules/Backup/Controllers/BackupAdminPage.php:164
 #: assets/js/backupPanel.js:34
 #: assets/js/backupPanel.js:692
 #: assets/js/backupPanel.js:722
@@ -186,7 +186,7 @@ msgstr "Ongeldige datumtijd offset"
 msgid "Export"
 msgstr "Export"
 
-#: src/Modules/Backup/Controllers/BackupAdminPage.php:168
+#: src/Modules/Backup/Controllers/BackupAdminPage.php:169
 #: assets/js/backupPanel.js:37
 #: assets/js/backupPanel.js:543
 #: assets/js/backupPanel.js:1251
@@ -238,14 +238,14 @@ msgid "Add millisecond precision to debug log timestamp column (v4.10.0)"
 msgstr "Millisecondeprecisie aan debug log tijdstempel kolom toegevoegd (v4.10.0)"
 
 #: src/Modules/Debug/Views/raw-debug-log.html.php:39
-#: src/Modules/Settings/Controllers/Controller.php:214
+#: src/Modules/Settings/Controllers/Controller.php:215
 #: src/Views/menu-debug-log.php:113
 #: src/Views/menu-debug-log.php:148
 msgid "Debugging table is currently empty."
 msgstr "Debugging tabel is momenteel leeg."
 
 #: src/Modules/Debug/Views/raw-debug-log.html.php:40
-#: src/Modules/Settings/Controllers/Controller.php:215
+#: src/Modules/Settings/Controllers/Controller.php:216
 #: src/Views/menu-debug-log.php:115
 #: src/Views/menu-debug-log.php:150
 msgid "No results match the current filter."
@@ -521,41 +521,36 @@ msgstr "Geen toekomstige actie"
 msgid "Invalid date time offset."
 msgstr "Ongeldige datumtijd offset."
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:120
-#: src/Modules/Workflows/Models/StepTypesModel.php:99, fuzzy
-msgid "PublishPress Future"
-msgstr "PublishPress Future"
-
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:140
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:141
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:323
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:324
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:47
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:788
 msgid "Scheduled Actions"
 msgstr "Geplande acties"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:218, fuzzy
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:219, fuzzy
 msgid "Log format"
 msgstr "Log format"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:226
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:227
 msgid "List"
 msgstr "Lijst"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:236
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:237
 msgid "Popup"
 msgstr "Pop-up"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:304
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:305
 msgid "Unknown post"
 msgstr "Onbekend bericht"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:307
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:308
 #, php-format
 msgid "Executed action for: %s (ID: %d)"
 msgstr "Uitgevoerde actie voor: %s (ID: %d)"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:312
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:313
 msgid "Executed scheduled action"
 msgstr "Uitgevoerde geplande actie"
 
@@ -727,7 +722,7 @@ msgid "This is a Pro feature. Upgrade to unlock this functionality."
 msgstr "Dit is een Pro functie. Upgrade om deze functie te ontgrendelen."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:459
-#: src/Modules/Settings/Controllers/Controller.php:297
+#: src/Modules/Settings/Controllers/Controller.php:298
 msgid "Form Validation Failure: Sorry, your nonce did not verify."
 msgstr "Formulier validatie fout: je nonce is niet geverifieerd."
 
@@ -1203,43 +1198,43 @@ msgstr "Niet herhalend"
 msgid "No Scheduled Actions."
 msgstr "Geen geplande acties."
 
-#: src/Modules/Settings/Controllers/Controller.php:207
+#: src/Modules/Settings/Controllers/Controller.php:208
 msgid "Auto-refresh"
 msgstr "Automatisch verversen"
 
-#: src/Modules/Settings/Controllers/Controller.php:208
+#: src/Modules/Settings/Controllers/Controller.php:209
 msgid "Refresh interval:"
 msgstr "Vernieuwingsinterval:"
 
-#: src/Modules/Settings/Controllers/Controller.php:209
+#: src/Modules/Settings/Controllers/Controller.php:210
 msgid "seconds"
 msgstr "seconden"
 
-#: src/Modules/Settings/Controllers/Controller.php:210
+#: src/Modules/Settings/Controllers/Controller.php:211
 msgid "Last refreshed:"
 msgstr "Laatst ververst:"
 
-#: src/Modules/Settings/Controllers/Controller.php:211
+#: src/Modules/Settings/Controllers/Controller.php:212
 msgid "seconds ago"
 msgstr "seconden geleden"
 
-#: src/Modules/Settings/Controllers/Controller.php:212
+#: src/Modules/Settings/Controllers/Controller.php:213
 msgid "Refreshing..."
 msgstr "Aan het verversen..."
 
-#: src/Modules/Settings/Controllers/Controller.php:213
+#: src/Modules/Settings/Controllers/Controller.php:214
 msgid "Failed to refresh log data."
 msgstr "Loggegevens verversen is mislukt."
 
-#: src/Modules/Settings/Controllers/Controller.php:251
+#: src/Modules/Settings/Controllers/Controller.php:252
 msgid "Scheduled Workflow Steps Cleanup"
 msgstr "Geplande workflow stappen opschonen"
 
-#: src/Modules/Settings/Controllers/Controller.php:252
+#: src/Modules/Settings/Controllers/Controller.php:253
 msgid "Automatically remove scheduled workflow steps"
 msgstr "Geplande workflowstappen automatisch verwijderen"
 
-#: src/Modules/Settings/Controllers/Controller.php:256
+#: src/Modules/Settings/Controllers/Controller.php:257
 msgid ""
 "Automatically remove scheduled workflow steps that have been marked as "
 "failed, completed, or cancelled."
@@ -1247,11 +1242,11 @@ msgstr ""
 "Verwijder automatisch geplande workflowstappen die zijn gemarkeerd als "
 "mislukt, afgerond of geannuleerd."
 
-#: src/Modules/Settings/Controllers/Controller.php:260
+#: src/Modules/Settings/Controllers/Controller.php:261
 msgid "Retain all scheduled workflow steps"
 msgstr "Alle geplande workflowstappen bewaren"
 
-#: src/Modules/Settings/Controllers/Controller.php:264
+#: src/Modules/Settings/Controllers/Controller.php:265
 msgid ""
 "Retain all scheduled workflow steps indefinitely, including those marked as "
 "failed, completed, or cancelled. This may impact database performance over "
@@ -1261,11 +1256,11 @@ msgstr ""
 "stappen die zijn gemarkeerd als mislukt, afgerond of geannuleerd. Dit kan "
 "na verloop van tijd de databaseprestaties beïnvloeden."
 
-#: src/Modules/Settings/Controllers/Controller.php:268
+#: src/Modules/Settings/Controllers/Controller.php:269
 msgid "Retention"
 msgstr "Retentie"
 
-#: src/Modules/Settings/Controllers/Controller.php:269
+#: src/Modules/Settings/Controllers/Controller.php:270
 msgid ""
 "The duration, in days, for which completed, failed, and canceled scheduled "
 "workflow steps will be preserved before automatic removal."
@@ -1273,7 +1268,7 @@ msgstr ""
 "De duur, in dagen, waarvoor afgeronde, mislukte en geannuleerde geplande "
 "workflowstappen worden bewaard voordat ze automatisch worden verwijderd."
 
-#: src/Modules/Settings/Controllers/Controller.php:273
+#: src/Modules/Settings/Controllers/Controller.php:274
 msgid "days"
 msgstr "dagen"
 
@@ -3670,6 +3665,10 @@ msgstr ""
 msgid "Migrate workflow scheduled steps schema after v4.0.0"
 msgstr "Schema geplande stappen workflow migreren na v4.0.0"
 
+#: src/Modules/Workflows/Models/StepTypesModel.php:99, fuzzy
+msgid "PublishPress Future"
+msgstr "PublishPress Future"
+
 #: src/Modules/Workflows/Models/StepTypesModel.php:108
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:35
 msgid "User"
@@ -4772,7 +4771,7 @@ msgstr ""
 "bevatten."
 
 #: assets/jsx/workflow-editor/components/data-fields/action-args/index.jsx:71
-#, fuzzy, js-format
+#, fuzzy
 msgid "Argument #%s"
 msgstr "Argument #%s"
 

@@ -9,13 +9,14 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-02-27T16:10:19+00:00\n"
-"PO-Revision-Date: 2026-04-28 16:17+0000\n"
+"POT-Creation-Date: 2026-04-29T14:19:02+00:00\n"
+"PO-Revision-Date: 2026-05-07 20:54+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator|| n % 10 == 6 || n % 10 == 9);|| n % 10 == 6 || n "
 "% 10 == 9);:\n"
 "|| n % 10 == 6 || n % 10 == 9);\n"
 "Language: fil\n"
+"|| n % 10 == 6 || n % 10 == 9);: \n"
 "Plural-Forms: nplurals=2; plural=n != 1 && n != 2 && n != 3 && (n % 10 == 4 || n % 10 == 6 || n % 10 == 9);\n"
 
 #: post-expirator.php:4
@@ -174,7 +175,7 @@ msgstr "Walang laman na petsa ng oras ng offset."
 msgid "Invalid date time offset"
 msgstr "Hindi wasto ang petsa ng oras ng offset"
 
-#: src/Modules/Backup/Controllers/BackupAdminPage.php:163
+#: src/Modules/Backup/Controllers/BackupAdminPage.php:164
 #: assets/js/backupPanel.js:34
 #: assets/js/backupPanel.js:692
 #: assets/js/backupPanel.js:722
@@ -187,7 +188,7 @@ msgstr "Hindi wasto ang petsa ng oras ng offset"
 msgid "Export"
 msgstr "I-export"
 
-#: src/Modules/Backup/Controllers/BackupAdminPage.php:168
+#: src/Modules/Backup/Controllers/BackupAdminPage.php:169
 #: assets/js/backupPanel.js:37
 #: assets/js/backupPanel.js:543
 #: assets/js/backupPanel.js:1251
@@ -239,14 +240,14 @@ msgid "Add millisecond precision to debug log timestamp column (v4.10.0)"
 msgstr "Idagdag ang milisecond precision sa timestamp column ng debug log (v4.10.0)"
 
 #: src/Modules/Debug/Views/raw-debug-log.html.php:39
-#: src/Modules/Settings/Controllers/Controller.php:214
+#: src/Modules/Settings/Controllers/Controller.php:215
 #: src/Views/menu-debug-log.php:113
 #: src/Views/menu-debug-log.php:148
 msgid "Debugging table is currently empty."
 msgstr "Ang talahanayan ng debugging ay kasalukuyang walang laman."
 
 #: src/Modules/Debug/Views/raw-debug-log.html.php:40
-#: src/Modules/Settings/Controllers/Controller.php:215
+#: src/Modules/Settings/Controllers/Controller.php:216
 #: src/Views/menu-debug-log.php:115
 #: src/Views/menu-debug-log.php:150
 msgid "No results match the current filter."
@@ -521,43 +522,37 @@ msgstr "Walang kinabukasan na aksyon"
 msgid "Invalid date time offset."
 msgstr "Hindi wastong offset ng petsa at oras."
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:120
-#: src/Modules/Workflows/Models/StepTypesModel.php:99
-#, fuzzy
-msgid "PublishPress Future"
-msgstr "PublishPress Future"
-
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:140
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:141
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:323
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:324
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:47
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:788
 msgid "Scheduled Actions"
 msgstr "Naka-schedule na Aksyon"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:218
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:219
 msgid "Log format"
 msgstr "Format ng log"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:226
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:227
 msgid "List"
 msgstr "Listahan"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:236
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:237
 #, fuzzy
 msgid "Popup"
 msgstr "Popup"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:304
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:305
 msgid "Unknown post"
 msgstr "Hindi kilalang post"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:307
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:308
 #, php-format
 msgid "Executed action for: %s (ID: %d)"
 msgstr "Isinagawang aksyon para sa: %s (ID: %d)"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:312
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:313
 msgid "Executed scheduled action"
 msgstr "Isinagawang naka-iskedyul na aksyon"
 
@@ -733,7 +728,7 @@ msgstr ""
 "ito."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:459
-#: src/Modules/Settings/Controllers/Controller.php:297
+#: src/Modules/Settings/Controllers/Controller.php:298
 msgid "Form Validation Failure: Sorry, your nonce did not verify."
 msgstr "Nabigong Pag-verify ng Form: Paumanhin, ang iyong nonce ay hindi na-verify."
 
@@ -1205,44 +1200,44 @@ msgstr "Hindi nauulit"
 msgid "No Scheduled Actions."
 msgstr "Walang Nakatakdang Mga Aksyon."
 
-#: src/Modules/Settings/Controllers/Controller.php:207
+#: src/Modules/Settings/Controllers/Controller.php:208
 #, fuzzy
 msgid "Auto-refresh"
 msgstr "Auto-refresh"
 
-#: src/Modules/Settings/Controllers/Controller.php:208
+#: src/Modules/Settings/Controllers/Controller.php:209
 msgid "Refresh interval:"
 msgstr "Agwat ng pag-refresh:"
 
-#: src/Modules/Settings/Controllers/Controller.php:209
+#: src/Modules/Settings/Controllers/Controller.php:210
 msgid "seconds"
 msgstr "segundo"
 
-#: src/Modules/Settings/Controllers/Controller.php:210
+#: src/Modules/Settings/Controllers/Controller.php:211
 msgid "Last refreshed:"
 msgstr "Huling na-refresh:"
 
-#: src/Modules/Settings/Controllers/Controller.php:211
+#: src/Modules/Settings/Controllers/Controller.php:212
 msgid "seconds ago"
 msgstr "ilang segundo na ang nakalipas"
 
-#: src/Modules/Settings/Controllers/Controller.php:212
+#: src/Modules/Settings/Controllers/Controller.php:213
 msgid "Refreshing..."
 msgstr "Nire-refresh..."
 
-#: src/Modules/Settings/Controllers/Controller.php:213
+#: src/Modules/Settings/Controllers/Controller.php:214
 msgid "Failed to refresh log data."
 msgstr "Nabigong i-refresh ang datos ng log."
 
-#: src/Modules/Settings/Controllers/Controller.php:251
+#: src/Modules/Settings/Controllers/Controller.php:252
 msgid "Scheduled Workflow Steps Cleanup"
 msgstr "Naka-schedule na Paglilinis ng mga Hakbang sa Workflow"
 
-#: src/Modules/Settings/Controllers/Controller.php:252
+#: src/Modules/Settings/Controllers/Controller.php:253
 msgid "Automatically remove scheduled workflow steps"
 msgstr "Awtomatikong alisin ang naka-schedule na mga hakbang sa workflow"
 
-#: src/Modules/Settings/Controllers/Controller.php:256
+#: src/Modules/Settings/Controllers/Controller.php:257
 msgid ""
 "Automatically remove scheduled workflow steps that have been marked as "
 "failed, completed, or cancelled."
@@ -1250,11 +1245,11 @@ msgstr ""
 "Awtomatikong alisin ang naka-schedule na mga hakbang sa workflow na "
 "minarkahan bilang nabigo, nakumpleto, o kinansela."
 
-#: src/Modules/Settings/Controllers/Controller.php:260
+#: src/Modules/Settings/Controllers/Controller.php:261
 msgid "Retain all scheduled workflow steps"
 msgstr "Panatilihin ang lahat ng naka-schedule na mga hakbang sa workflow"
 
-#: src/Modules/Settings/Controllers/Controller.php:264
+#: src/Modules/Settings/Controllers/Controller.php:265
 msgid ""
 "Retain all scheduled workflow steps indefinitely, including those marked as "
 "failed, completed, or cancelled. This may impact database performance over "
@@ -1265,11 +1260,11 @@ msgstr ""
 "kinansela. Maaaring makaapekto ito sa pagganap ng database sa paglipas ng "
 "panahon."
 
-#: src/Modules/Settings/Controllers/Controller.php:268
+#: src/Modules/Settings/Controllers/Controller.php:269
 msgid "Retention"
 msgstr "Pagpapanatili"
 
-#: src/Modules/Settings/Controllers/Controller.php:269
+#: src/Modules/Settings/Controllers/Controller.php:270
 msgid ""
 "The duration, in days, for which completed, failed, and canceled scheduled "
 "workflow steps will be preserved before automatic removal."
@@ -1278,7 +1273,7 @@ msgstr ""
 "kinanselang naka-schedule na mga hakbang sa workflow ay mapapanatili bago "
 "ang awtomatikong pag-aalis."
 
-#: src/Modules/Settings/Controllers/Controller.php:273
+#: src/Modules/Settings/Controllers/Controller.php:274
 msgid "days"
 msgstr "mga araw"
 
@@ -3695,6 +3690,11 @@ msgid "Migrate workflow scheduled steps schema after v4.0.0"
 msgstr ""
 "I-migrate ang iskema ng mga nakatakdang hakbang ng workflow pagkatapos ng "
 "v4.0.0"
+
+#: src/Modules/Workflows/Models/StepTypesModel.php:99
+#, fuzzy
+msgid "PublishPress Future"
+msgstr "PublishPress Future"
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:108
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:35

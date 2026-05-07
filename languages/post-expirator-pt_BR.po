@@ -12,17 +12,16 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-03-24T19:11:12+00:00\n"
-"PO-Revision-Date: 2026-04-28 16:17+0000\n"
-"X-Generator: Weblate 5.14.3\n"
+"PO-Revision-Date: 2026-05-07 20:54+0000\n"
+"X-Generator: Weblate 5.17.1\n"
 "X-Domain: post-expirator\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "Language: pt-BR\n"
 
-#: post-expirator.php:4
+#: post-expirator.php:4, fuzzy
 #. Plugin Name of the plugin
-#, fuzzy
 msgid "PublishPress Future Free"
-msgstr "PublishPress Future"
+msgstr "PublishPress Future Free"
 
 #: post-expirator.php:5
 #. Plugin URI of the plugin
@@ -176,7 +175,7 @@ msgstr "Deslocamento de data e hora vazio."
 msgid "Invalid date time offset"
 msgstr "Deslocamento de data e hora inválido"
 
-#: src/Modules/Backup/Controllers/BackupAdminPage.php:163
+#: src/Modules/Backup/Controllers/BackupAdminPage.php:164
 #: assets/js/backupPanel.js:34
 #: assets/js/backupPanel.js:692
 #: assets/js/backupPanel.js:722
@@ -189,7 +188,7 @@ msgstr "Deslocamento de data e hora inválido"
 msgid "Export"
 msgstr "Exportar"
 
-#: src/Modules/Backup/Controllers/BackupAdminPage.php:168
+#: src/Modules/Backup/Controllers/BackupAdminPage.php:169
 #: assets/js/backupPanel.js:37
 #: assets/js/backupPanel.js:543
 #: assets/js/backupPanel.js:1251
@@ -229,24 +228,24 @@ msgid ""
 "Add request_id and trigger_activated columns to debug log table after "
 "v4.10.0"
 msgstr ""
-"Adicionar colunas request_id e trigger_activated à tabela de log de "
-"depuração após a v4.10.0"
+"Adicionar as colunas “request_id” e “trigger_activated” à tabela de "
+"registro de depuração após a versão 4.10.0"
 
 #: src/Modules/Debug/Migrations/V04906DebugLogTimestampMilliseconds.php:79
 msgid "Add millisecond precision to debug log timestamp column (v4.10.0)"
 msgstr ""
-"Adicionar precisão em milissegundos à coluna de timestamp do log de "
+"Adicionar precisão em milissegundos à coluna de data e hora do registro de "
 "depuração (v4.10.0)"
 
 #: src/Modules/Debug/Views/raw-debug-log.html.php:39
-#: src/Modules/Settings/Controllers/Controller.php:214
+#: src/Modules/Settings/Controllers/Controller.php:215
 #: src/Views/menu-debug-log.php:113
 #: src/Views/menu-debug-log.php:148
 msgid "Debugging table is currently empty."
 msgstr "A tabela de depuração está vazia no momento."
 
 #: src/Modules/Debug/Views/raw-debug-log.html.php:40
-#: src/Modules/Settings/Controllers/Controller.php:215
+#: src/Modules/Settings/Controllers/Controller.php:216
 #: src/Views/menu-debug-log.php:115
 #: src/Views/menu-debug-log.php:150
 msgid "No results match the current filter."
@@ -520,43 +519,37 @@ msgstr "Nenhuma ação futura"
 msgid "Invalid date time offset."
 msgstr "Deslocamento de data e hora inválido."
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:120
-#: src/Modules/Workflows/Models/StepTypesModel.php:99
-#, fuzzy
-msgid "PublishPress Future"
-msgstr "PublishPress Future"
-
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:140
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:141
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:323
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:324
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:47
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:788
 msgid "Scheduled Actions"
 msgstr "Ações agendadas"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:218
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:219
 msgid "Log format"
 msgstr "Formato do registro"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:226
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:227
 msgid "List"
 msgstr "Lista"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:236
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:237
 #, fuzzy
 msgid "Popup"
 msgstr "Pop-up"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:304
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:305
 msgid "Unknown post"
 msgstr "Post desconhecido"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:307
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:308
 #, php-format
 msgid "Executed action for: %s (ID: %d)"
 msgstr "Ação executada para: %s (ID: %d)"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:312
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:313
 msgid "Executed scheduled action"
 msgstr "Ação agendada executada"
 
@@ -727,7 +720,7 @@ msgid "This is a Pro feature. Upgrade to unlock this functionality."
 msgstr "Este é um recurso Pro. Atualize para ter acesso a esta funcionalidade."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:459
-#: src/Modules/Settings/Controllers/Controller.php:297
+#: src/Modules/Settings/Controllers/Controller.php:298
 msgid "Form Validation Failure: Sorry, your nonce did not verify."
 msgstr "Falha na validação do formulário: Seu nonce não foi verificado."
 
@@ -1201,43 +1194,43 @@ msgstr "Não se repete"
 msgid "No Scheduled Actions."
 msgstr "Nenhuma ação agendada."
 
-#: src/Modules/Settings/Controllers/Controller.php:207
+#: src/Modules/Settings/Controllers/Controller.php:208
 msgid "Auto-refresh"
 msgstr "Atualização automática"
 
-#: src/Modules/Settings/Controllers/Controller.php:208
-msgid "Refresh interval:"
-msgstr "Intervalo de atualização:"
-
 #: src/Modules/Settings/Controllers/Controller.php:209
+msgid "Refresh interval:"
+msgstr "Intervalo da atualização:"
+
+#: src/Modules/Settings/Controllers/Controller.php:210
 msgid "seconds"
 msgstr "segundos"
 
-#: src/Modules/Settings/Controllers/Controller.php:210
+#: src/Modules/Settings/Controllers/Controller.php:211
 msgid "Last refreshed:"
 msgstr "Última atualização:"
 
-#: src/Modules/Settings/Controllers/Controller.php:211
+#: src/Modules/Settings/Controllers/Controller.php:212
 msgid "seconds ago"
 msgstr "segundos atrás"
 
-#: src/Modules/Settings/Controllers/Controller.php:212
-msgid "Refreshing..."
-msgstr "Atualizando..."
-
 #: src/Modules/Settings/Controllers/Controller.php:213
-msgid "Failed to refresh log data."
-msgstr "Falha ao atualizar os dados do log."
+msgid "Refreshing..."
+msgstr "Atualizando…"
 
-#: src/Modules/Settings/Controllers/Controller.php:251
+#: src/Modules/Settings/Controllers/Controller.php:214
+msgid "Failed to refresh log data."
+msgstr "Falha ao atualizar os dados do registro."
+
+#: src/Modules/Settings/Controllers/Controller.php:252
 msgid "Scheduled Workflow Steps Cleanup"
 msgstr "Limpeza das etapas agendadas do fluxo de trabalho"
 
-#: src/Modules/Settings/Controllers/Controller.php:252
+#: src/Modules/Settings/Controllers/Controller.php:253
 msgid "Automatically remove scheduled workflow steps"
 msgstr "Remover automaticamente etapas agendadas do fluxo de trabalho"
 
-#: src/Modules/Settings/Controllers/Controller.php:256
+#: src/Modules/Settings/Controllers/Controller.php:257
 msgid ""
 "Automatically remove scheduled workflow steps that have been marked as "
 "failed, completed, or cancelled."
@@ -1245,11 +1238,11 @@ msgstr ""
 "Remova automaticamente as etapas do fluxo de trabalho agendado que foram "
 "marcadas como com falha, concluídas ou canceladas."
 
-#: src/Modules/Settings/Controllers/Controller.php:260
+#: src/Modules/Settings/Controllers/Controller.php:261
 msgid "Retain all scheduled workflow steps"
 msgstr "Reter todas as etapas agendadas do fluxo de trabalho"
 
-#: src/Modules/Settings/Controllers/Controller.php:264
+#: src/Modules/Settings/Controllers/Controller.php:265
 msgid ""
 "Retain all scheduled workflow steps indefinitely, including those marked as "
 "failed, completed, or cancelled. This may impact database performance over "
@@ -1259,11 +1252,11 @@ msgstr ""
 "inclusive aquelas marcadas como com falha, concluídas ou canceladas. Isso "
 "pode afetar o desempenho do banco de dados ao longo do tempo."
 
-#: src/Modules/Settings/Controllers/Controller.php:268
+#: src/Modules/Settings/Controllers/Controller.php:269
 msgid "Retention"
 msgstr "Retenção"
 
-#: src/Modules/Settings/Controllers/Controller.php:269
+#: src/Modules/Settings/Controllers/Controller.php:270
 msgid ""
 "The duration, in days, for which completed, failed, and canceled scheduled "
 "workflow steps will be preserved before automatic removal."
@@ -1272,7 +1265,7 @@ msgstr ""
 "concluídas, com falha e canceladas serão preservadas antes da remoção "
 "automática."
 
-#: src/Modules/Settings/Controllers/Controller.php:273
+#: src/Modules/Settings/Controllers/Controller.php:274
 msgid "days"
 msgstr "dias"
 
@@ -3267,11 +3260,11 @@ msgstr "O ID do post que foi atualizado."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostCreate.php:32
 msgid "Post is created"
-msgstr "Post é criado"
+msgstr "O post foi criado"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostCreate.php:37
 msgid "This trigger activates when a new post is created."
-msgstr "Este acionador ativa quando um novo post é criado."
+msgstr "Este acionador é ativado quando um novo post é criado."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostCreate.php:109
 msgid "Created post"
@@ -3662,6 +3655,11 @@ msgstr ""
 "Migrar a estrutura de etapas agendadas do fluxo de trabalho após a versão "
 "4.0.0"
 
+#: src/Modules/Workflows/Models/StepTypesModel.php:99
+#, fuzzy
+msgid "PublishPress Future"
+msgstr "PublishPress Future"
+
 #: src/Modules/Workflows/Models/StepTypesModel.php:108
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:35
 msgid "User"
@@ -3921,11 +3919,11 @@ msgstr "Número de registros a serem exibidos:"
 
 #: src/Views/menu-debug-log.php:92
 msgid "Display:"
-msgstr "Exibir:"
+msgstr "Exibição:"
 
 #: src/Views/menu-debug-log.php:93
 msgid "Grouped by request"
-msgstr "Agrupado por solicitação"
+msgstr "Agrupados por solicitação"
 
 #: src/Views/menu-debug-log.php:94
 msgid "Time sequence"
@@ -3933,7 +3931,7 @@ msgstr "Sequência de tempo"
 
 #: src/Views/menu-debug-log.php:97
 msgid "Show only requests with trigger activated"
-msgstr "Mostrar apenas solicitações com gatilho ativado"
+msgstr "Mostrar apenas solicitações com o acionador ativado"
 
 #: src/Views/menu-debug-log.php:155
 #. translators: %1$d: displayed count, %2$d: filtered total, %3$d: sessions, %4$d: total unfiltered, %5$s: filtered log size, %6$s: total log size.
@@ -3942,14 +3940,16 @@ msgid ""
 "Showing the latest %1$d of %2$d logs (%3$d sessions). Total in database: "
 "%4$d. Log size: %5$s (total: %6$s)."
 msgstr ""
-"Mostrando os últimos %1$d de %2$d logs (%3$d sessões). Total no banco de "
-"dados: %4$d. Tamanho do log: %5$s (total: %6$s)."
+"Exibindo os últimos %1$d de %2$d registros (%3$d sessões). Total no banco "
+"de dados: %4$d. Tamanho do registro: %5$s (total: %6$s)."
 
 #: src/Views/menu-debug-log.php:165
 #. translators: %1$d: displayed count, %2$d: total count, %3$d: sessions, %4$s: log size.
 #, php-format
 msgid "Showing the latest %1$d of %2$d logs (%3$d sessions). Log size: %4$s."
-msgstr "Mostrando os últimos %1$d de %2$d logs (%3$d sessões). Tamanho do log: %4$s."
+msgstr ""
+"Exibindo os últimos %1$d de %2$d registros (%3$d sessões). Tamanho do "
+"registro: %4$s."
 
 #: src/Views/menu-debug-log.php:176
 #. translators: %1$d: filtered logs count, %2$d: sessions, %3$d: total unfiltered, %4$s: filtered log size, %5$s: total log size.
@@ -3958,14 +3958,14 @@ msgid ""
 "Showing all %1$d logs (%2$d sessions). Total in database: %3$d. Log size: "
 "%4$s (total: %5$s)."
 msgstr ""
-"Mostrando todos os %1$d logs (%2$d sessões). Total no banco de dados: %3$d. "
-"Tamanho do log: %4$s (total: %5$s)."
+"Exibindo todos os %1$d registros (%2$d sessões). Total no banco de dados: "
+"%3$d. Tamanho do registro: %4$s (total: %5$s)."
 
 #: src/Views/menu-debug-log.php:185
 #. translators: %1$d: total logs count, %2$d: sessions count, %3$s: log size.
 #, php-format
 msgid "Showing all %1$d logs (%2$d sessions). Log size: %3$s."
-msgstr "Mostrando todos os %1$d logs (%2$d sessões). Tamanho do log: %3$s."
+msgstr "Exibindo todos os %1$d registros (%2$d sessões). Tamanho do registro: %3$s."
 
 #: src/Views/menu-debug-log.php:203
 msgid "Copy Debug Log"
@@ -3980,7 +3980,7 @@ msgstr "Baixar"
 
 #: src/Views/menu-debug-log.php:209
 msgid "View Full Log in New Tab"
-msgstr "Ver Log Completo em Nova Aba"
+msgstr "Ver registro completo em uma nova aba"
 
 #: src/Views/menu-debug-log.php:220
 msgid "Debug log copied to clipboard!"
@@ -4012,8 +4012,9 @@ msgid ""
 "After activating the plugin, tables are updated automatically on the next "
 "page load. Use the button below if you still see schema errors."
 msgstr ""
-"Após ativar o plugin, as tabelas são atualizadas automaticamente na próxima "
-"carga da página. Use o botão abaixo se você ainda ver erros de esquema."
+"Após ativar o plugin, as tabelas serão atualizadas automaticamente no "
+"próximo carregamento da página. Use o botão abaixo, se ainda houver erros "
+"de esquema."
 
 #: src/Views/menu-diagnostics.php:84
 msgid "Error found on the database schema:"

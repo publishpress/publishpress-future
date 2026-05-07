@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-02-27T16:10:19+00:00\n"
-"PO-Revision-Date: 2026-04-28 16:17+0000\n"
+"POT-Creation-Date: 2026-04-29T14:19:02+00:00\n"
+"PO-Revision-Date: 2026-05-07 20:54+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -172,7 +172,7 @@ msgstr "Offset waktu tanggal kosong."
 msgid "Invalid date time offset"
 msgstr "Offset waktu tanggal tidak valid"
 
-#: src/Modules/Backup/Controllers/BackupAdminPage.php:163
+#: src/Modules/Backup/Controllers/BackupAdminPage.php:164
 #: assets/js/backupPanel.js:34
 #: assets/js/backupPanel.js:692
 #: assets/js/backupPanel.js:722
@@ -185,7 +185,7 @@ msgstr "Offset waktu tanggal tidak valid"
 msgid "Export"
 msgstr "Ekspor"
 
-#: src/Modules/Backup/Controllers/BackupAdminPage.php:168
+#: src/Modules/Backup/Controllers/BackupAdminPage.php:169
 #: assets/js/backupPanel.js:37
 #: assets/js/backupPanel.js:543
 #: assets/js/backupPanel.js:1251
@@ -231,14 +231,14 @@ msgid "Add millisecond precision to debug log timestamp column (v4.10.0)"
 msgstr "Tambahkan presisi milidetik ke kolom timestamp log debug (v4.10.0)"
 
 #: src/Modules/Debug/Views/raw-debug-log.html.php:39
-#: src/Modules/Settings/Controllers/Controller.php:214
+#: src/Modules/Settings/Controllers/Controller.php:215
 #: src/Views/menu-debug-log.php:113
 #: src/Views/menu-debug-log.php:148
 msgid "Debugging table is currently empty."
 msgstr "Tabel debug saat ini masih kosong."
 
 #: src/Modules/Debug/Views/raw-debug-log.html.php:40
-#: src/Modules/Settings/Controllers/Controller.php:215
+#: src/Modules/Settings/Controllers/Controller.php:216
 #: src/Views/menu-debug-log.php:115
 #: src/Views/menu-debug-log.php:150
 msgid "No results match the current filter."
@@ -512,43 +512,37 @@ msgstr "Tidak ada tindakan future"
 msgid "Invalid date time offset."
 msgstr "Offset tanggal waktu tidak valid."
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:120
-#: src/Modules/Workflows/Models/StepTypesModel.php:99
-#, fuzzy
-msgid "PublishPress Future"
-msgstr "PublishPress Future"
-
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:140
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:141
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:323
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:324
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:47
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:788
 msgid "Scheduled Actions"
 msgstr "Tindakan Terjadwal"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:218
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:219
 msgid "Log format"
 msgstr "Format log"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:226
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:227
 msgid "List"
 msgstr "Daftar"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:236
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:237
 #, fuzzy
 msgid "Popup"
 msgstr "Popup"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:304
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:305
 msgid "Unknown post"
 msgstr "Pos tidak diketahui"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:307
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:308
 #, php-format
 msgid "Executed action for: %s (ID: %d)"
 msgstr "Tindakan yang dieksekusi untuk: %s (ID: %d)"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:312
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:313
 msgid "Executed scheduled action"
 msgstr "Tindakan terjadwal yang dieksekusi"
 
@@ -719,7 +713,7 @@ msgid "This is a Pro feature. Upgrade to unlock this functionality."
 msgstr "Ini adalah fitur Pro. Tingkatkan untuk membuka kunci fungsionalitas ini."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:459
-#: src/Modules/Settings/Controllers/Controller.php:297
+#: src/Modules/Settings/Controllers/Controller.php:298
 msgid "Form Validation Failure: Sorry, your nonce did not verify."
 msgstr "Gagal Validasi Formulir: Maaf, nonce Anda tidak diverifikasi."
 
@@ -1187,43 +1181,43 @@ msgstr "Tidak berulang"
 msgid "No Scheduled Actions."
 msgstr "Tidak ada Aksi yang Dijadwalkan."
 
-#: src/Modules/Settings/Controllers/Controller.php:207
+#: src/Modules/Settings/Controllers/Controller.php:208
 msgid "Auto-refresh"
 msgstr "Pembaruan otomatis"
 
-#: src/Modules/Settings/Controllers/Controller.php:208
+#: src/Modules/Settings/Controllers/Controller.php:209
 msgid "Refresh interval:"
 msgstr "Interval pembaruan:"
 
-#: src/Modules/Settings/Controllers/Controller.php:209
+#: src/Modules/Settings/Controllers/Controller.php:210
 msgid "seconds"
 msgstr "detik"
 
-#: src/Modules/Settings/Controllers/Controller.php:210
+#: src/Modules/Settings/Controllers/Controller.php:211
 msgid "Last refreshed:"
 msgstr "Terakhir diperbarui:"
 
-#: src/Modules/Settings/Controllers/Controller.php:211
+#: src/Modules/Settings/Controllers/Controller.php:212
 msgid "seconds ago"
 msgstr "detik yang lalu"
 
-#: src/Modules/Settings/Controllers/Controller.php:212
+#: src/Modules/Settings/Controllers/Controller.php:213
 msgid "Refreshing..."
 msgstr "Memuat ulang..."
 
-#: src/Modules/Settings/Controllers/Controller.php:213
+#: src/Modules/Settings/Controllers/Controller.php:214
 msgid "Failed to refresh log data."
 msgstr "Gagal memuat ulang data log."
 
-#: src/Modules/Settings/Controllers/Controller.php:251
+#: src/Modules/Settings/Controllers/Controller.php:252
 msgid "Scheduled Workflow Steps Cleanup"
 msgstr "Pembersihan Langkah Alur Kerja Terjadwal"
 
-#: src/Modules/Settings/Controllers/Controller.php:252
+#: src/Modules/Settings/Controllers/Controller.php:253
 msgid "Automatically remove scheduled workflow steps"
 msgstr "Secara otomatis menghapus langkah alur kerja terjadwal"
 
-#: src/Modules/Settings/Controllers/Controller.php:256
+#: src/Modules/Settings/Controllers/Controller.php:257
 msgid ""
 "Automatically remove scheduled workflow steps that have been marked as "
 "failed, completed, or cancelled."
@@ -1231,11 +1225,11 @@ msgstr ""
 "Secara otomatis menghapus langkah alur kerja terjadwal yang telah ditandai "
 "sebagai gagal, selesai, atau dibatalkan."
 
-#: src/Modules/Settings/Controllers/Controller.php:260
+#: src/Modules/Settings/Controllers/Controller.php:261
 msgid "Retain all scheduled workflow steps"
 msgstr "Pertahankan semua langkah alur kerja terjadwal"
 
-#: src/Modules/Settings/Controllers/Controller.php:264
+#: src/Modules/Settings/Controllers/Controller.php:265
 msgid ""
 "Retain all scheduled workflow steps indefinitely, including those marked as "
 "failed, completed, or cancelled. This may impact database performance over "
@@ -1245,11 +1239,11 @@ msgstr ""
 "yang ditandai sebagai gagal, selesai, atau dibatalkan. Ini dapat "
 "memengaruhi kinerja basis data seiring waktu."
 
-#: src/Modules/Settings/Controllers/Controller.php:268
+#: src/Modules/Settings/Controllers/Controller.php:269
 msgid "Retention"
 msgstr "Retensi"
 
-#: src/Modules/Settings/Controllers/Controller.php:269
+#: src/Modules/Settings/Controllers/Controller.php:270
 msgid ""
 "The duration, in days, for which completed, failed, and canceled scheduled "
 "workflow steps will be preserved before automatic removal."
@@ -1257,7 +1251,7 @@ msgstr ""
 "Durasi, dalam hari, untuk langkah alur kerja terjadwal yang selesai, gagal, "
 "dan dibatalkan akan dipertahankan sebelum dihapus secara otomatis."
 
-#: src/Modules/Settings/Controllers/Controller.php:273
+#: src/Modules/Settings/Controllers/Controller.php:274
 msgid "days"
 msgstr "hari"
 
@@ -3629,6 +3623,11 @@ msgstr ""
 #: src/Modules/Workflows/Migrations/V40000WorkflowScheduledStepsSchema.php:58
 msgid "Migrate workflow scheduled steps schema after v4.0.0"
 msgstr "Migrasi skema langkah terjadwal alur kerja setelah v4.0.0"
+
+#: src/Modules/Workflows/Models/StepTypesModel.php:99
+#, fuzzy
+msgid "PublishPress Future"
+msgstr "PublishPress Future"
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:108
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:35
