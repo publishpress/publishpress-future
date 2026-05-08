@@ -90,14 +90,26 @@ class BundledTranslations
      * replace it with the plugin's bundled JSON in the bundled languages directory if present.
      * Other resolved paths are returned unchanged.
      *
-     * @param string $file Path to the script translation file.
+     * WordPress passes false when it cannot locate a translation file. In that case, if the domain
+     * matches and a bundled locale JSON exists, the bundled path is returned; otherwise false is
+     * returned so WordPress skips loading gracefully.
+     *
+     * @param string|false $file Path to the script translation file, or false when not found.
      * @param string $handle Script handle.
      * @param string $domain Text domain.
-     * @return string Path to the bundled JSON when redirected, otherwise the original $file.
+     * @return string|false Path to the bundled JSON when redirected, false when no file is available,
+     *                      otherwise the original $file.
      */
-    public function filterScriptTranslationFile(string $file, string $handle, string $domain): string
+    public function filterScriptTranslationFile($file, string $handle, string $domain)
     {
-        return $this->redirectToBundledTranslationFile($file, $domain, '.json');
+        $filePath = (false === $file) ? '' : $file;
+        $result = $this->redirectToBundledTranslationFile($filePath, $domain, '.json');
+
+        if ($result === '' && false === $file) {
+            return false;
+        }
+
+        return $result;
     }
 
     /**

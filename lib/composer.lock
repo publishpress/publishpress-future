@@ -51,16 +51,16 @@
         },
         {
             "name": "publishpress/bundled-translations",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/publishpress/library-bundled-translations.git",
-                "reference": "9ec1b2467932f86c19992a109e3ee21e8d8b9274"
+                "reference": "3cd70d1fe1e86a39bfe7c127bc0ce758b0b983cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/publishpress/library-bundled-translations/zipball/9ec1b2467932f86c19992a109e3ee21e8d8b9274",
-                "reference": "9ec1b2467932f86c19992a109e3ee21e8d8b9274",
+                "url": "https://api.github.com/repos/publishpress/library-bundled-translations/zipball/3cd70d1fe1e86a39bfe7c127bc0ce758b0b983cc",
+                "reference": "3cd70d1fe1e86a39bfe7c127bc0ce758b0b983cc",
                 "shasum": ""
             },
             "require": {
@@ -74,7 +74,7 @@
             "extra": {
                 "generator": {
                     "src-dir": "core",
-                    "version": "1.0.1",
+                    "version": "1.0.2",
                     "lib-class-test": "class_exists('PublishPress\\BundledTranslations\\BundledTranslations')",
                     "action-register-priority": "-200",
                     "action-initialize-priority": "-190"
@@ -104,9 +104,9 @@
             ],
             "support": {
                 "issues": "https://github.com/publishpress/library-bundled-translations/issues",
-                "source": "https://github.com/publishpress/library-bundled-translations/tree/v1.0.1"
+                "source": "https://github.com/publishpress/library-bundled-translations/tree/v1.0.2"
             },
-            "time": "2026-05-07T19:53:55+00:00"
+            "time": "2026-05-08T20:21:16+00:00"
         },
         {
             "name": "publishpress/instance-protection",
