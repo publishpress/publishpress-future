@@ -274,8 +274,8 @@ LOCK TABLES `wp_options` WRITE;
 /*!40000 ALTER TABLE `wp_options` DISABLE KEYS */;
 INSERT INTO `wp_options` VALUES
 (1,'cron','a:8:{i:1745365700;a:2:{s:32:\"recovery_mode_clean_expired_keys\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:34:\"wp_privacy_delete_old_export_files\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"hourly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:3600;}}}i:1745365705;a:1:{s:30:\"wp_delete_temp_updater_backups\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"weekly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:604800;}}}i:1745365713;a:1:{s:26:\"action_scheduler_run_queue\";a:1:{s:32:\"0d04ed39571b55704c122d726248bbac\";a:3:{s:8:\"schedule\";s:12:\"every_minute\";s:4:\"args\";a:1:{i:0;s:7:\"WP Cron\";}s:8:\"interval\";i:60;}}}i:1745369299;a:1:{s:16:\"wp_version_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1745371099;a:1:{s:17:\"wp_update_plugins\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1745372899;a:1:{s:16:\"wp_update_themes\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1745452100;a:1:{s:30:\"wp_site_health_scheduled_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"weekly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:604800;}}}s:7:\"version\";i:2;}','on'),
-(2,'siteurl','http://localhost:8012','on'),
-(3,'home','http://localhost:8012','on'),
+(2,'siteurl','http://localhost:8011','on'),
+(3,'home','http://localhost:8011','on'),
 (4,'blogname','future-free-wp_test','on'),
 (5,'blogdescription','','on'),
 (6,'users_can_register','0','on'),
@@ -796,7 +796,7 @@ CREATE TABLE `wp_users` (
 LOCK TABLES `wp_users` WRITE;
 /*!40000 ALTER TABLE `wp_users` DISABLE KEYS */;
 INSERT INTO `wp_users` VALUES
-(1,'admin','$wp$2y$12$p3/sGshEtwRQ//ZQtYDAK.rfXD1irtjwRhSbBLZ9nsIjoqUP9Sqfq','admin','test@example.com','http://localhost:8012','2025-04-22 23:48:19','',0,'admin');
+(1,'admin','$wp$2y$12$p3/sGshEtwRQ//ZQtYDAK.rfXD1irtjwRhSbBLZ9nsIjoqUP9Sqfq','admin','test@example.com','http://localhost:8011','2025-04-22 23:48:19','',0,'admin');
 /*!40000 ALTER TABLE `wp_users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
