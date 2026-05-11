@@ -128,6 +128,24 @@ class OnPostPublishRunner implements TriggerRunnerInterface
             20,
             3
         );
+
+        if (function_exists('acf')) {
+            $this->hooks->addAction(
+                HooksAbstract::ACTION_ACF_SAVE_POST,
+                [$this, 'onAcfSavePostCallback'],
+                20,
+                1
+            );
+        } else {
+            foreach ($this->getPostTypes() as $postType) {
+                $this->hooks->addAction(
+                    sprintf(HooksAbstract::ACTION_REST_AFTER_INSERT_POST_TYPE, $postType),
+                    [$this, 'onRestAfterInsertPostCallback'],
+                    20,
+                    3
+                );
+            }
+        }
     }
 
     /**
@@ -155,18 +173,51 @@ class OnPostPublishRunner implements TriggerRunnerInterface
 
     public function onAfterInsertPostCallback($postId, $post, $update)
     {
+        if (defined('REST_REQUEST') && REST_REQUEST) {
+            return;
+        }
+
         if ($post->post_type === 'revision') {
             return;
         }
 
-        // Do we have the post published flag?
+        $this->processPublish((int) $postId);
+    }
+
+    public function onAcfSavePostCallback($postId): void
+    {
+        if (! defined('REST_REQUEST') || ! REST_REQUEST) {
+            return;
+        }
+
+        $post = get_post($postId);
+
+        if (! ($post instanceof \WP_Post)) {
+            return;
+        }
+
+        $this->processPublish((int) $postId);
+    }
+
+    public function onRestAfterInsertPostCallback(\WP_Post $post, \WP_REST_Request $request, bool $creating): void
+    {
+        $this->processPublish($post->ID);
+    }
+
+    private function getPostTypes(): array
+    {
+        return get_post_types();
+    }
+
+    private function processPublish(int $postId): void
+    {
         if (! $this->hasFlag(self::POST_PUBLISHED_TRANSIENT_KEY, $postId)) {
             $this->logger->debugWithArgs(
                 'Trigger skipped because post #%d was not published. The flag is not set.',
                 $postId
             );
 
-            return false;
+            return;
         }
 
         $this->disableFlag(self::POST_PUBLISHED_TRANSIENT_KEY, $postId);
@@ -207,7 +258,7 @@ class OnPostPublishRunner implements TriggerRunnerInterface
                 $postId
             );
 
-            return false;
+            return;
         }
 
         if ($this->shouldAbortExecution($postId)) {
