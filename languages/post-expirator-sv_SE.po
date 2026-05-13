@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-04-29T14:19:02+00:00\n"
-"PO-Revision-Date: 2026-05-12 22:10+0000\n"
+"PO-Revision-Date: 2026-05-13 18:44+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -247,7 +247,9 @@ msgstr "Inga resultat matchar det aktuella filtret."
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:361
 #: src/Modules/Expirator/Controllers/QuickEditController.php:287
 #: src/Modules/Expirator/Controllers/SettingsController.php:280
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5675
 #: assets/jsx/workflow-editor/components/data-fields/taxonomy-terms.jsx:60
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4353
 msgid "Taxonomy"
 msgstr "Taxonomy"
 
@@ -286,7 +288,9 @@ msgstr "Kategorier"
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:64
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:64
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:153
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11465
 #: assets/jsx/workflow-editor/components/node-types/generic.jsx:246
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9210
 msgid "Action"
 msgstr "Åtgärd"
 
@@ -459,7 +463,9 @@ msgstr "Kategori"
 
 #: src/Modules/Expirator/Controllers/PluginsListController.php:50
 #: src/Modules/VersionNotices/Module.php:137
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9630
 #: assets/jsx/workflow-editor/components/layout/header.jsx:160
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7445
 msgid "Upgrade to Pro"
 msgstr "Uppgradera till Pro"
 
@@ -491,7 +497,9 @@ msgstr "Åtgärdsarbetsflöden"
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeactivatePostWorkflow.php:67
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostWorkflowEnable.php:67
 #: src/Views/tabs-settings.php:47
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14436
 #: assets/jsx/workflow-editor/components/settings-sidebar/settings-sidebar.jsx:54
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11976
 #. translators: button label text should, if possible, be under 16 characters.
 msgid "Settings"
 msgstr "Inställningar"
@@ -649,19 +657,25 @@ msgstr "Vänta på valideringen..."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:299
 #: src/Modules/Expirator/Controllers/SettingsController.php:357
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2424
 #: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:168
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1786
 msgid "Date Preview"
 msgstr "Datumförhandsvisning"
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:300
 #: src/Modules/Expirator/Controllers/SettingsController.php:358
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2425
 #: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:169
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1787
 msgid "Current Date"
 msgstr "Aktuellt datum"
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:301
 #: src/Modules/Expirator/Controllers/SettingsController.php:359
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2426
 #: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:170
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1788
 msgid "Computed Date"
 msgstr "Beräknat datum"
 
@@ -669,7 +683,9 @@ msgstr "Beräknat datum"
 #: src/Modules/Expirator/Controllers/SettingsController.php:360
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:130
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:120
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2597
 #: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:11
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1937
 msgid "Error"
 msgstr "Fel"
 
@@ -758,8 +774,12 @@ msgstr "%s har raderats framgångsrikt."
 
 #: src/Modules/Expirator/ExpirationActions/DeletePost.php:76
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:87
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11503
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14823
 #: assets/jsx/workflow-editor/components/node-types/generic.jsx:292
 #: assets/jsx/workflow-editor/components/workflow-delete-button/index.jsx:39
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9256
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12322
 msgid "Delete"
 msgstr "Radera"
 
@@ -1166,7 +1186,9 @@ msgid "Every %s"
 msgstr "Varje %s"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:851
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5363
 #: assets/jsx/workflow-editor/components/data-fields/recurrence.jsx:15
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4084
 msgid "Non-repeating"
 msgstr "Ej upprepande"
 
@@ -1211,7 +1233,6 @@ msgid "Automatically remove scheduled workflow steps"
 msgstr "Ta automatiskt bort schemalagda arbetsflödessteg"
 
 #: src/Modules/Settings/Controllers/Controller.php:257
-#, fuzzy
 msgid ""
 "Automatically remove scheduled workflow steps that have been marked as "
 "failed, completed, or cancelled."
@@ -1352,7 +1373,9 @@ msgid "Action Workflows list"
 msgstr "Lista över åtgärdsarbetsflöden"
 
 #: src/Modules/Workflows/Controllers/PostType.php:67
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15479
 #: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:190
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12797
 msgid "Workflow published."
 msgstr "Arbetsflödet publicerat."
 
@@ -1566,7 +1589,9 @@ msgid "[%1$s/%2$d]"
 msgstr "[%1$s/%2$d]"
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:264
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14659
 #: assets/jsx/workflow-editor/components/welcome-guide/index.jsx:21
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12163
 msgid "Welcome to the workflow editor"
 msgstr "Välkommen till arbetsflödesredigeraren"
 
@@ -1671,7 +1696,9 @@ msgstr ""
 "övre högra hörnet för att få tillgång till supportresurserna."
 
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:236
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14099
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:19
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11707
 #. translators: Blocks tab title in the block inserter.
 msgid "Triggers"
 msgstr "Utlösare"
@@ -1917,7 +1944,9 @@ msgstr "Det meta värde som ska läggas till inlägget."
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePostMeta.php:128
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:141
 #: src/Modules/Workflows/Models/StepTypesModel.php:90
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:402
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:34
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:359
 msgid "Post"
 msgstr "Inlägg"
 
@@ -2058,8 +2087,12 @@ msgstr "De termer som kommer att läggas till inläggen."
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SetPostTerm.php:91
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SetPostTerm.php:118
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnTermsAdded.php:123
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5701
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5713
 #: assets/jsx/workflow-editor/components/data-fields/taxonomy-terms.jsx:80
 #: assets/jsx/workflow-editor/components/data-fields/taxonomy-terms.jsx:94
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4373
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4387
 msgid "Terms"
 msgstr "Termer"
 
@@ -2082,7 +2115,9 @@ msgid "The message to be sent to the debug log."
 msgstr "Meddelandet som ska skickas till debug-loggen."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AppendDebugLog.php:75
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2614
 #: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:28
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1954
 msgid "Level"
 msgstr "Nivå"
 
@@ -2129,7 +2164,9 @@ msgstr ""
 "alternativ."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:64
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1053
 #: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:57
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:800
 msgid "Condition"
 msgstr "Villkor"
 
@@ -2200,6 +2237,9 @@ msgstr ""
 "det valda inlägget."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeactivatePostWorkflow.php:125
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16035
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:110
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13229
 msgid "Workflow"
 msgstr "Arbetsflöde"
 
@@ -2400,7 +2440,6 @@ msgid "Query posts"
 msgstr "Fråga inlägg"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/QueryPosts.php:37
-#, fuzzy
 msgid ""
 "This step defines the posts that will be passed to the next step in the "
 "workflow."
@@ -2494,9 +2533,15 @@ msgstr "Schemalägg > Unik ID-uttryck"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:104
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:113
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2331
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2398
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4214
 #: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:64
 #: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:139
 #: assets/jsx/workflow-editor/components/data-fields/post-data/post-date.jsx:72
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1682
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1757
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3190
 msgid "Custom date source"
 msgstr "Anpassad datakälla"
 
@@ -2649,7 +2694,9 @@ msgstr "Notifieringstyp"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:118
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:108
-#: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:8, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2588
+#: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:8
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1934, fuzzy
 msgid "Info"
 msgstr "Info"
 
@@ -2660,7 +2707,9 @@ msgstr "Framgång"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:126
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:116
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2594
 #: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:10
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1936
 msgid "Warning"
 msgstr "Varning"
 
@@ -2716,7 +2765,9 @@ msgid "Data to output"
 msgstr "Data att visa"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendRay.php:78
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2145
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:80
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1556
 msgid "Label"
 msgstr "Etikett"
 
@@ -2979,7 +3030,9 @@ msgstr ""
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:129
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:201
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10119
 #: assets/jsx/workflow-editor/components/more-menu/menu-dropdown.jsx:11
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7867
 #. translators: button label text should, if possible, be under 16 characters.
 msgid "Options"
 msgstr "Alternativ"
@@ -3119,7 +3172,9 @@ msgstr "Denna trigger aktiveras när en befintlig inläggs författare ändras."
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostUpdate.php:64
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostWorkflowEnable.php:82
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnTermsAdded.php:64
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4649
 #: assets/jsx/workflow-editor/components/data-fields/post-filter/components/post-filter.jsx:83
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3579
 msgid "Post Filter"
 msgstr "Inläggsfilter"
 
@@ -3206,8 +3261,12 @@ msgstr "Inlägget som sparades, med de nya egenskaperna."
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostUpdate.php:121
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostWorkflowEnable.php:133
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnTermsAdded.php:155
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4875
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5126
 #: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:105
 #: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:5
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3735
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3933
 msgid "Post ID"
 msgstr "Inlägg ID"
 
@@ -3613,11 +3672,16 @@ msgid "PublishPress Future"
 msgstr "PublishPress Future"
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:108
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:405
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:35
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:360
 msgid "User"
 msgstr "Användare"
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:117
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16026
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:100
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13219
 msgid "Site"
 msgstr "Webbplats"
 
@@ -3631,7 +3695,9 @@ msgstr "Asynkron"
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:144
 #: src/Views/tabs-settings.php:36
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2585
 #: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:7
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1933
 msgid "Debug"
 msgstr "Felsökning"
 
@@ -4418,11 +4484,13 @@ msgid "Admin"
 msgstr "Admin"
 
 #: src/Views/tabs-settings.php:23
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11467
 #: assets/js/backupPanel.js:664
 #: assets/js/backupPanel.js:1247
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:44
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:124
 #: assets/jsx/workflow-editor/components/node-types/generic.jsx:248
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9212
 #: assets/js/backupPanel.js:520
 #: assets/js/backupPanel.js:932
 msgid "Advanced"
@@ -4431,6 +4499,2066 @@ msgstr "Avancerad"
 #: src/Views/tabs-settings.php:28
 msgid "Diagnostics and Tools"
 msgstr "Diagnostik och verktyg"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:387
+#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:29
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:354
+msgid "Integer"
+msgstr "Heltal"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:390
+#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:30
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:355
+msgid "String"
+msgstr "Sträng"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:393
+#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:31
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:356, fuzzy
+msgid "Boolean"
+msgstr "Boolean"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:396
+#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:32
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:357
+msgid "Object"
+msgstr "Objekt"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:399
+#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:33
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:358, fuzzy
+msgid "Array"
+msgstr "Array"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:434
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2121
+#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:57
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:50
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:382
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1526, fuzzy
+msgid "null"
+msgstr "null"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:452
+#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:80
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:405
+msgid "Argument name"
+msgstr "Argumentnamn"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:457
+#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:86
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:411
+msgid "Data type"
+msgstr "Datatyp"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:463
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2154
+#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:94
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:92
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:419
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1568
+msgid "Value"
+msgstr "Värde"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:469
+#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:102
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:427
+msgid "The argument name should only contain letters, numbers and underscores."
+msgstr "Argumentnamnet ska endast innehålla bokstäver, siffror och understreck."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:585
+#: assets/jsx/workflow-editor/components/data-fields/action-args/index.jsx:71
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:506
+#, fuzzy
+msgid "Argument #%s"
+msgstr "Argument #%s"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:606
+#: assets/jsx/workflow-editor/components/data-fields/action-args/index.jsx:85
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:520
+msgid "No arguments added to the action."
+msgstr "Inga argument tillagda till åtgärden."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:611
+#: assets/jsx/workflow-editor/components/data-fields/action-args/index.jsx:90
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:525
+msgid "Add a new argument"
+msgstr "Lägg till ett nytt argument"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:799
+#: assets/jsx/workflow-editor/components/data-fields/conditional-date-offset.jsx:35
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:646
+msgid "When to expire"
+msgstr "När ska det gå ut"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1036
+#: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:43
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:786
+msgid "Add Group"
+msgstr "Lägg till grupp"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1039
+#: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:44
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:787
+msgid "Add Rule"
+msgstr "Lägg till regel"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1055
+#: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:58
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:801
+msgid ""
+"Create rules that will continue the workflow only if certain conditions are "
+"met."
+msgstr ""
+"Skapa regler som fortsätter arbetsflödet endast om vissa villkor är "
+"uppfyllda."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1057
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4651
+#: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:59
+#: assets/jsx/workflow-editor/components/data-fields/post-filter/components/post-filter.jsx:85
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:802
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3581
+msgid "Edit rules"
+msgstr "Redigera regler"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1059
+#: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:60
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:803
+msgid ""
+"Conditional logic is a Pro feature. Upgrade to create advanced conditions "
+"for your workflows."
+msgstr ""
+"Villkorslogik är en Pro-funktion. Uppgradera för att skapa avancerade "
+"villkor för dina arbetsflöden."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1234
+#: assets/jsx/workflow-editor/components/data-fields/conditional/components/duplicate-rule-button.jsx:10
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:949
+msgid "Duplicate Rule"
+msgstr "Duplicera regel"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1322
+#: assets/jsx/workflow-editor/components/data-fields/conditional/components/not-toggle.jsx:30
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:997
+msgid "Not"
+msgstr "Inte"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1915
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:12
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1344
+msgid "Dismiss"
+msgstr "Avbryt"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1916
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:13
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1345
+msgid "Dismiss the notification"
+msgstr "Avbryt meddelandet"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1967
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:67
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1399
+#, js-format
+msgid "Option %s"
+msgstr "Alternativ %s"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2004
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:95
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1427
+#, js-format
+msgid "Option #%s"
+msgstr "Alternativ #%s"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2028
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:114
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1446
+msgid "No options added to the action."
+msgstr "Inga alternativ tillagda till åtgärden."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2033
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:120
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1452
+msgid "Add a new option"
+msgstr "Lägg till ett nytt alternativ"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2037
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:132
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1464
+#, js-format
+msgid ""
+"You have reached the maximum number of options. You can add up to %s "
+"options."
+msgstr ""
+"Du har nått det maximala antalet alternativ. Du kan lägga till upp till %s "
+"alternativ."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2139
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3245
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:73
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:7
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1549
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2469
+msgid "Name"
+msgstr "Namn"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2149
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:85
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1561
+msgid "Hint"
+msgstr "Tips"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2162
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:107
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1583
+msgid "The option name should only contain letters, numbers and underscores."
+msgstr "Alternativets namn får endast innehålla bokstäver, siffror och understreck."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2322
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:61
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1679
+msgid "Selected in the calendar"
+msgstr "Vald i kalendern"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2325
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4203
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:62
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-date.jsx:59
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1680
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3177
+msgid "When the trigger is activated"
+msgstr "När triggern aktiveras"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2328
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4206
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:63
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-date.jsx:63
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1681
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3181
+msgid "When the step is activated"
+msgstr "När steget aktiveras"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2345
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:80
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1698
+msgid "As soon as possible"
+msgstr "Så snart som möjligt"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2348
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:81
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1699
+msgid "On a specific date"
+msgstr "På ett specifikt datum"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2351
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:82
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1700
+msgid "Relative to a specific date"
+msgstr "Relativt ett specifikt datum"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2355
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:86
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1704
+msgid "Unchanged"
+msgstr "Oförändrad"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2379
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:119
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1737
+msgid "Date source"
+msgstr "Datumkälla"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2409
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:147
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1765
+msgid ""
+"Click the button to choose a custom date source from variables that can "
+"provide a date."
+msgstr ""
+"Klicka på knappen för att välja en anpassad datakälla från variabler som "
+"kan ge ett datum."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2414
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:159
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1777, fuzzy
+msgid "Offset"
+msgstr "Offset"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2433
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:181
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1799
+msgid "Error: "
+msgstr "Fel: "
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2436
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:188
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1806
+msgid "Click for more information"
+msgstr "Klicka för mer information"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2443
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:197
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1815
+#, js-format
+msgid ""
+"For more information on formatting, see the %sPHP strtotime function%s. For "
+"example, you could enter %s+1 month%s or %s+1 week 2 days 4 hours 2 "
+"seconds%s or %snext Thursday%s. Please use only phrases in English."
+msgstr ""
+"För mer information om formatering, se %sPHP strtotime-funktionen%s. Till "
+"exempel kan du ange %s+1 månad%s eller %s+1 vecka 2 dagar 4 timmar 2 "
+"sekunder%s eller %snästa torsdag%s. Vänligen använd endast fraser på "
+"engelska."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2523
+#: assets/jsx/workflow-editor/components/data-fields/debug-data.jsx:39
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1881
+msgid "All received input"
+msgstr "All mottagen indata"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2526
+#: assets/jsx/workflow-editor/components/data-fields/debug-data.jsx:43
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1885
+msgid "Custom data"
+msgstr "Anpassade data"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2544
+#: assets/jsx/workflow-editor/components/data-fields/debug-data.jsx:64
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1906
+msgid "Select the data to output"
+msgstr "Välj de data som ska exporteras"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2591
+#: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:9
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1935
+msgid "Notice"
+msgstr "Meddelande"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2600
+#: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:12
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1938
+msgid "Critical"
+msgstr "Kritisk"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2603
+#: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:13
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1939, fuzzy
+msgid "Alert"
+msgstr "Alert"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2677
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4886
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5144
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/autocompleters/post-statuses.jsx:10
+#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:117
+#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:29
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1993
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3747
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3957
+msgid "Post Status"
+msgstr "Poststatus"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2708
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4820
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5147
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/autocompleters/post-types.jsx:10
+#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:50
+#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:33
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2010
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3680
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3961
+msgid "Post Type"
+msgstr "Post Type"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2752
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3346
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/column-item.jsx:10
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:10
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2027
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2527
+#. translators: %s is the database table name
+#, js-format
+msgid "Type the %s key and click on the button to insert it."
+msgstr "Skriv in %s nyckeln och klicka på knappen för att sätta in den."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2756
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3350
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/column-item.jsx:17
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:19
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2034
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2536
+msgid "Metadata key"
+msgstr "Metadata-nyckel"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2774
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/column-item.jsx:31
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2048
+msgid "Insert"
+msgstr "Infoga"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3132
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3133
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:136
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:138
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2349
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2351
+msgid "Edit"
+msgstr "Redigera"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3175
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:181
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2394
+msgid "Select a variable from the list below."
+msgstr "Välj en variabel från listan nedan."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3175
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:185
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2398
+msgid "Type your expression here or use the variables below."
+msgstr "Skriv ditt uttryck här eller använd variablerna nedan."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3210
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:212
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2425
+msgid "Variables"
+msgstr "Variabler"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3210
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:215
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2428
+msgid "Double-click on a variable to select it."
+msgstr "Dubbelklicka på en variabel för att välja den."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3210
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:219
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2432
+msgid "Double-click on any variable to add it to your expression."
+msgstr "Dubbelklicka på valfri variabel för att lägga till den i ditt uttryck."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3216
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:231
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2444
+msgid "Hover over a variable to see its description."
+msgstr "Håll muspekaren över en variabel för att se dess beskrivning."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3246
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:8
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2470
+msgid "The name of the term."
+msgstr "Namnet på termen."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3250
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:13
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2475, fuzzy
+msgid "Slug"
+msgstr "Slug"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3251
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:14
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2476
+msgid "The slug of the term."
+msgstr "Slug för termen."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3255
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:19
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2481
+msgid "Term ID"
+msgstr "Term-ID"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3256
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:20
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2482
+msgid "The unique identifier of the term."
+msgstr "Den unika identifieraren för termen."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3260
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:25
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2487
+msgid "Count"
+msgstr "Antal"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3261
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:26
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2488
+msgid "Number of posts assigned to this term."
+msgstr "Antal inlägg som är kopplade till denna term."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3364
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:38
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2555
+#. translators: %s is the taxonomy label
+#, js-format
+msgid "%s terms for this post."
+msgstr "%s termer för detta inlägg."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3408
+#: assets/jsx/workflow-editor/components/data-fields/help-link.jsx:5
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2593
+msgid "Learn more"
+msgstr "Läs mer"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3616
+#: assets/jsx/workflow-editor/components/data-fields/interactive-custom-options/index.jsx:30
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2774
+msgid ""
+"This option is used to connect to another step and cannot have its name "
+"changed until the connection is removed."
+msgstr ""
+"Detta alternativ används för att koppla till ett annat steg och kan inte få "
+"sitt namn ändrat förrän kopplingen tas bort."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3798
+#: assets/jsx/workflow-editor/components/data-fields/modal-footer.jsx:11
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2883, fuzzy
+msgid "OK"
+msgstr "OK"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3863
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5141
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:28
+#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:25
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2917
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3953
+msgid "Post Date"
+msgstr "Inläggsdatum"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3876
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:34
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2923
+msgid "Update the post date"
+msgstr "Uppdatera publiceringsdatum"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3879
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5129
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:38
+#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:9
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2927
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3937
+msgid "Post Title"
+msgstr "Inläggstitel"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3892
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:44
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2933
+msgid "Update the post title"
+msgstr "Uppdatera inläggstiteln"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3895
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:48
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2937
+msgid "Post Slug"
+msgstr "Inläggsslag"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3908
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:54
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2943
+msgid "Update the post slug"
+msgstr "Uppdatera inläggsslaget"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3911
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5132
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:58
+#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:13
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2947
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3941
+msgid "Post Content"
+msgstr "Innehåll i inlägg"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3924
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:64
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2953
+msgid "Update the post content"
+msgstr "Uppdatera innehållet i inlägget"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3927
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5135
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:68
+#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:17
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2957
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3945
+msgid "Post Excerpt"
+msgstr "Inläggsutdrag"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3940
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:74
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2963
+msgid "Update the post excerpt"
+msgstr "Uppdatera inläggsutdraget"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3943
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:78
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2967
+msgid "Post Discussion"
+msgstr "Inläggsdiskussion"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3954
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:82
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2971
+msgid "Update the post discussion"
+msgstr "Uppdatera inläggsdiskussionen"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3957
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:86
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2975
+msgid "Post Password"
+msgstr "Inläggslösenord"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3970
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:92
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2981
+msgid "Update the post password"
+msgstr "Uppdatera inläggslösenordet"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3973
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4900
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5138
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:96
+#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:132
+#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:21
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2985
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3762
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3949
+msgid "Post Author"
+msgstr "Inläggsförfattare"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3986
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:102
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2991
+msgid "Update the post author"
+msgstr "Uppdatera inläggsförfattaren"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4079
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-author.jsx:63
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3061
+msgid "Unable to load the list of authors. Please try again."
+msgstr "Kunde inte ladda listan över författare. Försök igen."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4093
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4223
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4299
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4404
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-author.jsx:81
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-date.jsx:84
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:32
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-text.jsx:27
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3079
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3202
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3266
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3374
+msgid "Do not update"
+msgstr "Uppdatera inte"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4114
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-author.jsx:103
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3101
+msgid "Author"
+msgstr "Författare"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4302
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:36
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3270
+msgid "Comments only"
+msgstr "Endast kommentarer"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4303
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4316
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:37
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:56
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3271
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3290
+msgid "Closed"
+msgstr "Stängd"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4304
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:38
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3272
+msgid "Pings only"
+msgstr "Endast pings"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4305
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4312
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:39
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:51
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3273
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3285
+msgid "Open"
+msgstr "Öppen"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4309
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:46
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3280
+msgid "Changed..."
+msgstr "Ändrad..."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4314
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:53
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3287
+msgid "Visitors can add new comments and replies."
+msgstr "Besökare kan lägga till nya kommentarer och svar."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4318
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:58
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3292
+#, fuzzy
+msgid ""
+"Visitors can not add new comments or replies. Existing comments remain "
+"visible."
+msgstr "Besökare kan lägga till nya kommentarer och svar."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4349
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:97
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3331
+msgid "Enable pinbacks & trackbacks"
+msgstr "Aktivera pinbacks & trackbacks"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4354
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:104
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3338
+msgid "Learn more about pinbacks & trackbacks"
+msgstr "Läs mer om pinbacks & trackbacks"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4407
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-text.jsx:31
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3378
+msgid "Clear content"
+msgstr "Rensa innehåll"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4650
+#: assets/jsx/workflow-editor/components/data-fields/post-filter/components/post-filter.jsx:84
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3580
+msgid "Create filters to query specific posts based on rules."
+msgstr "Skapa filter för att fråga specifika inlägg baserat på regler."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4845
+#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:78
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3708
+msgid "Post selection"
+msgstr "Inläggsval"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4848
+#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:81
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3711
+msgid "Post received as input"
+msgstr "Inlägg mottaget som inmatning"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4851
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5970
+#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:82
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:65
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3712
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4579
+msgid "Custom query"
+msgstr "Anpassad fråga"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4914
+#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:145
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3775
+msgid "Post Terms"
+msgstr "Inläggsvillkor"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4929
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:6020
+#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:160
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:116
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3790
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4630
+msgid "Separate multiple values with commas or Enter key."
+msgstr "Separera flera värden med kommatecken eller Enter-tangenten."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4931
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:6022
+#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:166
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:122
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3796
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4636
+msgid "* Required field"
+msgstr "* Obligatoriskt fält"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5079
+#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/post-search-query.jsx:84
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3908
+msgid "Post Search Query"
+msgstr "Inläggssökfråga"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5080
+#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/post-search-query.jsx:85
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3909
+msgid "Create a search query to filter posts based on conditions."
+msgstr "Skapa en sökfråga för att filtrera inlägg baserat på villkor."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5081
+#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/post-search-query.jsx:86
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3910
+msgid "Edit query"
+msgstr "Redigera fråga"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5150
+#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:37
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3965
+msgid "Post Parent"
+msgstr "Inläggsförälder"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5239
+#: assets/jsx/workflow-editor/components/data-fields/post-status.jsx:40
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4013
+msgid "New Status"
+msgstr "Ny status"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5287
+#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:13
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4037
+msgid "No color"
+msgstr "Ingen färg"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5290
+#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:14
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4038
+msgid "Green"
+msgstr "Grön"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5293
+#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:15
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4039, fuzzy
+msgid "Orange"
+msgstr "Orange"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5296
+#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:16
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4040
+msgid "Red"
+msgstr "Röd"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5299
+#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:17
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4041
+msgid "Blue"
+msgstr "Blå"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5302
+#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:18
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4042
+msgid "Purple"
+msgstr "Lila"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5305
+#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:19
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4043
+msgid "Gray"
+msgstr "Grå"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5366
+#: assets/jsx/workflow-editor/components/data-fields/recurrence.jsx:16
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4085
+msgid "Custom interval in seconds"
+msgstr "Anpassat intervall i sekunder"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5521
+#: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:127
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4224
+msgid "Repeating Action"
+msgstr "Upprepande åtgärd"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5526
+#: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:131
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4228
+msgid ""
+"Choose how often this task should repeat. Select 'Non-repeating' for a "
+"one-time action or set an interval for automatic recurrence."
+msgstr ""
+"Välj hur ofta denna uppgift ska upprepas. Välj 'Icke-upprepande' för en "
+"engångsåtgärd eller ställ in ett intervall för automatisk upprepning."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5535
+#: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:148
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4245
+msgid "Unique Task Identifier"
+msgstr "Unik uppgiftsidentifierare"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5544
+#: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:154
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4251
+msgid "Define a unique ID to detect and prevent duplicate tasks."
+msgstr "Definiera ett unikt ID för att upptäcka och förhindra dubblettuppgifter."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5685
+#: assets/jsx/workflow-editor/components/data-fields/taxonomy-terms.jsx:69
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4362
+msgid "Select the terms"
+msgstr "Välj villkoren"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5691
+#: assets/jsx/workflow-editor/components/data-fields/taxonomy-terms.jsx:73
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4366
+msgid "Specific terms"
+msgstr "Specifika villkor"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5955
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:45
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4559
+msgid "User Role"
+msgstr "Användarroll"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5964
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:61
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4575
+msgid "User selection"
+msgstr "Användarval"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5967
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:64
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4578
+msgid "User received as input"
+msgstr "Användare mottagen som inmatning"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:6008
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:105
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4619
+msgid "User ID"
+msgstr "Användar-ID"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7939
+#: assets/jsx/workflow-editor/components/flow-editor/index.jsx:442
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:6374
+msgid "Applying auto layout."
+msgstr "Tillämpa automatisk layout."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7960
+#: assets/jsx/workflow-editor/components/flow-editor/index.jsx:467
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:6399
+msgid "Auto layout applied."
+msgstr "Automatisk layout tillämpad."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8090
+#: assets/jsx/workflow-editor/components/fullscreen-mode-close.jsx:43
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:6525
+msgid "Back"
+msgstr "Tillbaka"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9134
+#: assets/jsx/workflow-editor/components/inspector-card/index.jsx:51
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:6961
+msgid "Add a description to this step..."
+msgstr "Lägg till en beskrivning för detta steg..."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9141
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9144
+#: assets/jsx/workflow-editor/components/inspector-card/index.jsx:68
+#: assets/jsx/workflow-editor/components/inspector-card/index.jsx:78
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:6978
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:6988
+msgid "Edit description"
+msgstr "Redigera beskrivning"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9179
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13579
+#: assets/jsx/workflow-editor/components/inspector-card/index.jsx:116
+#: assets/jsx/workflow-editor/components/secondary-sidebar/node-card.jsx:16
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7026
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11263, fuzzy
+msgid "Pro"
+msgstr "Pro"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9186
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11520
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13583
+#: assets/jsx/workflow-editor/components/inspector-card/index.jsx:132
+#: assets/jsx/workflow-editor/components/node-types/generic.jsx:319
+#: assets/jsx/workflow-editor/components/secondary-sidebar/node-card.jsx:29
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7042
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9283
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11276
+msgid "Currently this step is being skipped. Upgrade to Pro to unlock this feature."
+msgstr ""
+"För närvarande hoppas detta steg över. Uppgradera till Pro för att låsa upp "
+"denna funktion."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9610
+#: assets/jsx/workflow-editor/components/layout/header.jsx:129
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7414
+msgid "Add"
+msgstr "Lägg till"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9610
+#: assets/jsx/workflow-editor/components/layout/header.jsx:129
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7414
+msgid "Close"
+msgstr "Stäng"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9618
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9621
+#: assets/jsx/workflow-editor/components/layout/header.jsx:140
+#: assets/jsx/workflow-editor/components/layout/header.jsx:145
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7425
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7430
+#. translators: button label text should, if possible, be under 16 characters.
+msgid "Auto Layout"
+msgstr "Automatisk layout"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9628
+#: assets/jsx/workflow-editor/components/layout/header.jsx:157
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7442
+#. translators: button label text should, if possible, be under 16 characters.
+msgid "Upgrade to Pro and unlock more features"
+msgstr "Uppgradera till Pro och lås upp fler funktioner"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9872
+#: assets/jsx/workflow-editor/components/left-toolbar/redo.jsx:31
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7674
+#. translators: button label text should, if possible, be under 16 characters.
+msgid "Redo"
+msgstr "Gör om"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10045
+#: assets/jsx/workflow-editor/components/left-toolbar/undo.jsx:31
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7823
+#. translators: button label text should, if possible, be under 16 characters.
+msgid "Undo"
+msgstr "Ångra"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10079
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10388
+#: assets/js/backupPanel.js:144
+#: assets/jsx/backup-panel/components/json-preview.jsx:15
+#: assets/jsx/workflow-editor/components/loading-message/index.jsx:7
+#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:18
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7843
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8099
+#: assets/js/backupPanel.js:110
+msgid "Loading..."
+msgstr "Laddar..."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10081
+#: assets/jsx/workflow-editor/components/loading-message/index.jsx:12
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7848
+msgid "Wait, we are loading the workflow..."
+msgstr "Vänta, vi laddar arbetsflödet..."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10189
+#: assets/jsx/workflow-editor/components/more-menu/menu-feature-toggle.jsx:32
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7929
+msgid "Feature deactivated"
+msgstr "Funktion inaktiverad"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10191
+#: assets/jsx/workflow-editor/components/more-menu/menu-feature-toggle.jsx:34
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7931
+msgid "Feature activated"
+msgstr "Funktion aktiverad"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10243
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:27
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7978
+msgid "Fullscreen mode"
+msgstr "Helskärmsläge"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10244
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:28
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7979
+msgid "Work without distraction"
+msgstr "Arbeta utan distraktion"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10245
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:29
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7980
+msgid "Fullscreen mode activated"
+msgstr "Helskärmsläge aktiverat"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10246
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:30
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7981
+msgid "Fullscreen mode deactivated"
+msgstr "Helskärmsläge inaktiverad"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10251
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:36
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7987
+msgid "Advanced Settings"
+msgstr "Avancerade inställningar"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10252
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:37
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7988
+msgid "Display advanced settings for the workflow, triggers and steps"
+msgstr "Visa avancerade inställningar för arbetsflödet, triggers och steg"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10253
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:38
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7989
+msgid "Advanced settings mode activated"
+msgstr "Avancerat inställningsläge aktiverat"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10254
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:39
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7990
+msgid "Advanced settings mode deactivated"
+msgstr "Avancerat inställningsläge avaktiverat"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10259
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:45
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7996
+msgid "Display a mini map"
+msgstr "Visa en mini karta"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10260
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:46
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7997
+msgid "Display a mini map in the bottom of the editor, triggers and steps"
+msgstr "Visa en mini karta i botten av redigeraren, triggers och steg"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10261
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10268
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:47
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:55
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7998
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8006
+msgid "Mini map activated"
+msgstr "Mini karta aktiverad"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10262
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10269
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:48
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:56
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7999
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8007
+msgid "Mini map deactivated"
+msgstr "Mini karta avaktiverad"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10266
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:53
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8004
+msgid "Display the controls panel"
+msgstr "Visa kontrollpanelen"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10267
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:54
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8005
+msgid ""
+"Display the controls panel with buttons to zoon in, zoom out, fit the view "
+"and lock the viewport"
+msgstr ""
+"Visa kontrollpanelen med knappar för att zooma in, zooma ut, anpassa vyn "
+"och låsa vyområdet"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10271
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:59
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8010
+msgid "Tools"
+msgstr "Verktyg"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10275
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:63
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8014
+msgid "Developer mode"
+msgstr "Utvecklarläge"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10276
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:64
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8015
+msgid "Work in developer mode"
+msgstr "Arbeta i utvecklarläge"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10277
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:65
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8016
+msgid "Developer mode activated"
+msgstr "Utvecklarläge aktiverat"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10278
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:66
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8017
+msgid "Developer mode deactivated"
+msgstr "Utvecklarläge avaktiverat"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10283
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:72
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8023
+msgid "Welcome guide"
+msgstr "Välkomstguide"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10284
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:73
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8024
+msgid "Display the welcome guide"
+msgstr "Visa välkomstguiden"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10285
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:74
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8025
+msgid "Welcome guide activated"
+msgstr "Välkomstguide aktiverad"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10286
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:75
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8026
+msgid "Welcome guide deactivated"
+msgstr "Välkomstguide avaktiverad"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10292
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:83
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8034
+msgid "Help"
+msgstr "Hjälp"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10390
+#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:23
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8104
+msgid "Developer Info"
+msgstr "Utvecklarinformation"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10393
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11110
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11355
+#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:31
+#: assets/jsx/workflow-editor/components/node-inspector/node-inspector-card.jsx:18
+#: assets/jsx/workflow-editor/components/node-types/generic.jsx:109
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8112
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8850
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9073
+msgid "Node"
+msgstr "Nod"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10401
+#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:41
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8122
+msgid "Node Data"
+msgstr "Noddata"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10409
+#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:51
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8132
+msgid "Node Settings"
+msgstr "Nodinställningar"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10417
+#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:65
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8146
+msgid "Node Type"
+msgstr "Nodtyp"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10757
+#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:98
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8427
+msgid "No element selected."
+msgstr "Inget element valt."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10757
+#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:106
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8435
+msgid "Multiple and different elements selected."
+msgstr "Flera och olika element valda."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10758
+#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:116
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8445
+#, js-format
+msgid "%d steps selected"
+msgstr "%d steg valda"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10759
+#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:119
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8448
+msgid "Multiple steps selected."
+msgstr "Flera steg valda."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10764
+#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:130
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8459
+#, js-format
+msgid "%d connections selected"
+msgstr "%d anslutningar valda"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10765
+#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:133
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8462
+msgid "Multiple connections selected."
+msgstr "Flera anslutningar valda."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10785
+#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:165
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8494
+msgid "Connection"
+msgstr "Anslutning"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10786
+#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:166
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8495
+msgid ""
+"The connection between nodes in the workflow. Signifies the path along "
+"which data or control flow one node to another."
+msgstr ""
+"Anslutningen mellan noder i arbetsflödet. Betyder vägen längs vilken data "
+"eller kontroll flödar från en nod till en annan."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11036
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:83
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8744
+msgid "Step Data Flow"
+msgstr "Stegdataflöde"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11040
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:85
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8746
+msgid "Inputs"
+msgstr "Indata"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11040
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:89
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8750
+msgid "This step receives the following input from previous step:"
+msgstr "Detta steg tar emot följande indata från föregående steg:"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11046
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:100
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8761
+msgid "This step does not receive any input from previous step."
+msgstr "Detta steg tar inte emot någon indata från föregående steg."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11048
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:105
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8766
+msgid "Outputs"
+msgstr "Utdata"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11048
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:109
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8770
+msgid "This step outputs the following data:"
+msgstr "Detta steg ger följande data:"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11054
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:120
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8781
+msgid "This step does not output any data."
+msgstr "Detta steg ger ingen data."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11056
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:125
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8786
+msgid "Step Scoped Variables"
+msgstr "Stegskopade variabler"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11056
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:129
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8790
+msgid "This step receives the following step scoped variables:"
+msgstr "Detta steg tar emot följande stegskopade variabler:"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11062
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:140
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8801
+msgid "This step does not have any step scoped variables."
+msgstr "Detta steg har inga steg-specifika variabler."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11064
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:145
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8806
+msgid "Global Variables"
+msgstr "Globala variabler"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11064
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:149
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8810
+msgid "No global variables are declared"
+msgstr "Inga globala variabler är deklarerade"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11111
+#: assets/jsx/workflow-editor/components/node-inspector/node-inspector-card.jsx:19
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8851
+msgid "No description"
+msgstr "Ingen beskrivning"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11310
+#: assets/jsx/workflow-editor/components/node-types/generic.jsx:57
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9021
+#, js-format
+msgid "Unknown node: %s"
+msgstr "Okänd nod: %s"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11311
+#: assets/jsx/workflow-editor/components/node-types/generic.jsx:58
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9022
+msgid "This is a placeholder node for a node that does not exist."
+msgstr "Detta är en platshållarnod för en nod som inte existerar."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11463
+#: assets/jsx/workflow-editor/components/node-types/generic.jsx:244
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9208
+msgid "Step"
+msgstr "Steg"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11469
+#: assets/jsx/workflow-editor/components/node-types/generic.jsx:250
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9214
+msgid "Trigger"
+msgstr "Utlösare"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11499
+#: assets/jsx/workflow-editor/components/node-types/generic.jsx:286
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9250
+msgid "Step actions"
+msgstr "Stegåtgärder"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11526
+#: assets/jsx/workflow-editor/components/node-types/generic.jsx:327
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9291
+msgid "This node has errors"
+msgstr "Denna nod har fel"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11607
+#: assets/jsx/workflow-editor/components/node-types/node-placeholder.jsx:31
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9392
+msgid "Add a step"
+msgstr "Lägg till ett steg"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11609
+#: assets/jsx/workflow-editor/components/node-types/node-placeholder.jsx:33
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9394
+msgid "Search for actions"
+msgstr "Sök efter åtgärder"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11802
+#: assets/jsx/workflow-editor/components/node-types/placeholder.jsx:168
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9569
+msgid "Search for steps"
+msgstr "Sök efter steg"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11828
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11890
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13523
+#: assets/jsx/workflow-editor/components/node-types/placeholder.jsx:194
+#: assets/jsx/workflow-editor/components/node-types/trigger-placeholder.jsx:13
+#: assets/jsx/workflow-editor/components/secondary-sidebar/menu.jsx:161
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9595
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9653
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11210
+msgid "Search for triggers and steps"
+msgstr "Sök efter utlösare och steg"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11888
+#: assets/jsx/workflow-editor/components/node-types/trigger-placeholder.jsx:11
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9651
+msgid "Click to add a trigger"
+msgstr "Klicka för att lägga till en utlösare"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11975
+#: assets/jsx/workflow-editor/components/node-validation-panel/index.jsx:19
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9692
+msgid "Validation"
+msgstr "Validering"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12004
+#: assets/jsx/workflow-editor/components/node-validation-panel/index.jsx:49
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9722
+msgid "All checks have passed for this step."
+msgstr "Alla kontroller har passerat för detta steg."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12191
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:122
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9878
+#, js-format
+msgid "The field \"%s\" contains an invalid variable."
+msgstr "Fältet \"%s\" innehåller en ogiltig variabel."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12192
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:126
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9882
+#, js-format
+msgid ""
+"The variable \"%s\" is not available in the current context. Please, check "
+"if it is spelled correctly."
+msgstr ""
+"Variabeln \"%s\" är inte tillgänglig i det aktuella sammanhanget. Vänligen "
+"kontrollera om den är rättstavad."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12236
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:181
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9937
+#. translators: %s is the workflow step slug.
+#, js-format
+msgid "\"%s\" is not a variable or step slug."
+msgstr "\"%s\" är inte en variabel eller steg slug."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12242
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:190
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9946
+msgid "Empty placeholder is not allowed."
+msgstr "Tomt platshållare är inte tillåtet."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12252
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:203
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9959
+msgid "Unclosed placeholder are not allowed."
+msgstr "Oavslutade platshållare är inte tillåtet."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12256
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:208
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9964
+msgid "Unopened placeholder are not allowed."
+msgstr "Oöppnade platshållare är inte tillåtet."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12263
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:216
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9972
+#. translators: %s is the field label.
+#, js-format
+msgid "Invalid expression on %s"
+msgstr "Ogiltigt uttryck på %s"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12275
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12495
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:232
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:575
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9988
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10331
+#. translators: %s is the field label.
+#, js-format
+msgid "The field %s must be a list of options."
+msgstr "Fältet %s måste vara en lista med alternativ."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12297
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:261
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10017
+#. translators: %s is the option name.
+#, js-format
+msgid "The option \"%s\" does not have a name."
+msgstr "Alternativet \"%s\" har inget namn."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12303
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:270
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10026
+#. translators: %s is the option name.
+#, js-format
+msgid "The option \"%s\" does not have a label."
+msgstr "Alternativet \"%s\" har ingen etikett."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12309
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:279
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10035
+#. translators: %s is the option name.
+#, js-format
+msgid "The option \"%s\" has a duplicate name."
+msgstr "Alternativet \"%s\" har ett duplicerat namn."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12315
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:288
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10044
+#. translators: %s is the option label.
+#, js-format
+msgid "The option \"%s\" has a duplicate label."
+msgstr "Alternativet \"%s\" har en duplicerad etikett."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12325
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:302
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10058
+#. translators: %s is the field label.
+#, js-format
+msgid "The field %s must be a valid list of options."
+msgstr "Fältet %s måste vara en giltig lista med alternativ."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12347
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:333
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10089
+msgid "This step requires a connection from a previous step."
+msgstr "Detta steg kräver en koppling från ett tidigare steg."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12352
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:343
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10099
+msgid "This step requires a connection to a following step."
+msgstr "Detta steg kräver en koppling till ett följande steg."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12406
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12416
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:407
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:428
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10163
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10184
+#, js-format
+msgid "The field %s is required."
+msgstr "Fältet %s är obligatoriskt."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12429
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:450
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10206
+#, js-format
+msgid "The field %s must be a valid email address."
+msgstr "Fältet %s måste vara en giltig e-postadress."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12437
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:466
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10222
+#, js-format
+msgid "The field %s must be a valid email address list separated by commas."
+msgstr ""
+"Fältet %s måste vara en giltig lista med e-postadresser separerade med "
+"kommatecken."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12443
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:480
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10236
+#, js-format
+msgid "The field %s must be an integer."
+msgstr "Fältet %s måste vara ett heltal."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12450
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:495
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10251
+#, js-format
+msgid "The field %s must be an integer list separated by commas."
+msgstr "Fältet %s måste vara en lista med heltal separerade med kommatecken."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12463
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12467
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12470
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:518
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:527
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:536
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10274
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10283
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10292
+#, js-format
+msgid "The field %s must be a list of name-value pairs."
+msgstr "Fältet %s måste vara en lista med namn-värde-par."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12467
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:528
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10284
+#, js-format
+msgid "The name of the pair is required on item %d."
+msgstr "Namnet på paret är obligatoriskt för objekt %d."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12470
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:537
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10293
+#, js-format
+msgid "The value of the pair is required on item %d."
+msgstr "Värdet för paret är obligatoriskt för objekt %d."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12511
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:605
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10361
+msgid "Invalid variable."
+msgstr "Ogiltig variabel."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12511
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:608
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10364
+msgid "Please use the variable picker to select valid expression."
+msgstr "Använd variabelväljaren för att välja ett giltigt uttryck."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12630
+#: assets/jsx/workflow-editor/components/pro-feature-button/index.jsx:26
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10467
+msgid "Upgrade to Pro to unlock this feature."
+msgstr "Uppgradera till Pro för att låsa upp denna funktion."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12917
+#: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-listbox/group.jsx:14
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10691
+msgid "Use left and right arrow keys to move through steps"
+msgstr "Använd vänster och höger piltangenter för att navigera genom stegen"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13096
+#: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-no-results.jsx:14
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10809
+msgid "No results found."
+msgstr "Inga resultat hittades."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13239
+#: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:101
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10929
+#. translators: %d: number of results.
+#, js-format
+msgid "%d result found."
+msgid_plural "%d results found."
+msgstr[0] "%d resultat hittat."
+msgstr[1] "%d resultat hittades."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13244
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13249
+#: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:116
+#: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:123
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10944
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10951
+msgid "Nodes"
+msgstr "Noder"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13477
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13497
+#: assets/jsx/workflow-editor/components/secondary-sidebar/menu.jsx:72
+#: assets/jsx/workflow-editor/components/secondary-sidebar/menu.jsx:111
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11121
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11160
+msgid "A tip for using the workflow editor"
+msgstr "Ett tips för att använda arbetsflödesredigeraren"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13627
+#: assets/jsx/workflow-editor/components/secondary-sidebar/node-draggable-chip.jsx:27
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11310
+#. translators: %d: Number of blocks.
+#, js-format
+msgid "%d block"
+msgid_plural "%d blocks"
+msgstr[0] "%d block"
+msgstr[1] "%d block"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14104
+#: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:24
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11712
+#. translators: Patterns tab title in the block inserter.
+msgid "Actions"
+msgstr "Åtgärder"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14154
+#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:10
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11752
+msgid ""
+"Select multiple steps by pressing <kbd>cmd</kbd> and clicking on each step "
+"in the workflow."
+msgstr ""
+"Välj flera steg genom att trycka på <kbd>cmd</kbd> och klicka på varje steg "
+"i arbetsflödet."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14156
+#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:16
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11758
+msgid ""
+"Drag steps from the inserter and drop them directly into your workflow for "
+"easy customization."
+msgstr ""
+"Dra steg från insättaren och släpp dem direkt i ditt arbetsflöde för enkel "
+"anpassning."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14156
+#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:17
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11759
+msgid ""
+"Simply double-click any step to bring up the settings sidebar for quick "
+"adjustments."
+msgstr ""
+"Dubbelklicka helt enkelt på något steg för att få upp "
+"inställningssidopanelen för snabba justeringar."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14156
+#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:18
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11760
+msgid "Double-click the workflow pane to increase the zoom level for a closer look."
+msgstr ""
+"Dubbelklicka på arbetsflödespanelen för att öka zoomnivån för en närmare "
+"titt."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14156
+#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:20
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11762
+#, fuzzy
+msgid ""
+"Hold down the <kbd>shift</kbd> key and double-click the workflow pane to "
+"decrease the zoom level."
+msgstr ""
+"Dubbelklicka på arbetsflödespanelen för att öka zoomnivån för en närmare "
+"titt."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14158
+#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:26
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11768
+msgid ""
+"Easily add new steps by clicking on a step's handle and dragging it. Drop "
+"it in the workflow pane to see a floating inserter where you can type and "
+"search for the step you need."
+msgstr ""
+"Lägg enkelt till nya steg genom att klicka på ett stegs handtag och dra "
+"det. Släpp det i arbetsflödesfönstret för att se en flytande insättare där "
+"du kan skriva och söka efter det steg du behöver."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14289
+#: assets/jsx/workflow-editor/components/settings-sidebar/plugin-sidebar.jsx:39
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11859
+msgid "(no name)"
+msgstr "(ingen namn)"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14348
+#: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:37
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11906, fuzzy
+msgid "Element"
+msgstr "Element"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14432
+#: assets/jsx/workflow-editor/components/settings-sidebar/settings-sidebar.jsx:50
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11972
+msgid "Close settings"
+msgstr "Stäng inställningar"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14660
+#: assets/jsx/workflow-editor/components/welcome-guide/index.jsx:22
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12164
+msgid "Get started"
+msgstr "Kom igång"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14752
+#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:50
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12242, fuzzy
+msgid "Ray Debug"
+msgstr "Ray Debug"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14755
+#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:55
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12247
+msgid ""
+"Enable or disable the different types of debug information that is shown in "
+"Ray when this workflow is activated."
+msgstr ""
+"Aktivera eller inaktivera de olika typerna av felsökningsinformation som "
+"visas i Ray när detta arbetsflöde aktiveras."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14756
+#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:59
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12251
+msgid "Show Queries"
+msgstr "Visa frågor"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14760
+#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:66
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12258
+msgid "Show Emails"
+msgstr "Visa e-post"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14764
+#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:73
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12265
+msgid "Show WordPress Errors"
+msgstr "Visa WordPress-fel"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14768
+#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:80
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12272
+msgid "Show current running step"
+msgstr "Visa nuvarande körande steg"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14812
+#: assets/jsx/workflow-editor/components/workflow-delete-button/index.jsx:24
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12307
+msgid "Are you sure you want to delete this workflow?"
+msgstr "Är du säker på att du vill radera detta arbetsflöde?"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14823
+#: assets/jsx/workflow-editor/components/workflow-delete-button/index.jsx:39
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12322
+msgid "Move to trash"
+msgstr "Flytta till papperskorgen"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14929
+#: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:79
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12407
+#. translators: button label text should, if possible, be under 16 characters.
+msgid "Publish"
+msgstr "Publicera"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14929
+#: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:79
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12407
+msgid "Update"
+msgstr "Uppdatera"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14936
+#: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:90
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12418
+msgid "Autosaving..."
+msgstr "Autosparar..."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14936
+#: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:90
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12418
+msgid "Updating..."
+msgstr "Uppdaterar..."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14938
+#: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:92
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12420
+msgid "Updated"
+msgstr "Uppdaterad"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15086
+#: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:82
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12550
+#. translators: button label text should, if possible, be under 16 characters.
+msgid "Save draft"
+msgstr "Spara utkast"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15089
+#: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:85
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12553
+#. translators: button label text should, if possible, be under 16 characters.
+msgid "Save"
+msgstr "Spara"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15095
+#: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:94
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12562
+msgid "Autosaving"
+msgstr "Autosparar"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15095
+#: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:94
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12562
+msgid "Saving"
+msgstr "Sparar"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15097
+#: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:96
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12564
+msgid "Saved"
+msgstr "Sparad"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15245
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:31
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12638
+msgid "Unable to create a new workflow. Please try again."
+msgstr "Kunde inte skapa ett nytt arbetsflöde. Vänligen försök igen."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15278
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:51
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12658
+msgid "Unable to load the workflow. Please try again."
+msgstr "Kunde inte ladda arbetsflödet. Vänligen försök igen."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15340
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:94
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12701
+msgid "Workflow saved as draft."
+msgstr "Arbetsflöde sparat som utkast."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15349
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15424
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:102
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:153
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12709
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12760
+msgid "Unable to save workflow. Please, try again."
+msgstr "Kunde inte spara arbetsflödet. Vänligen försök igen."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15415
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:145
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12752
+msgid "Workflow saved."
+msgstr "Arbetsflöde sparat."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15488
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:198
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12805
+msgid "Unable to publish the workflow. Please, try again."
+msgstr "Kunde inte publicera arbetsflödet. Vänligen försök igen."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15543
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:235
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12842
+msgid "Workflow switched to draft."
+msgstr "Arbetsflöde bytt till utkast."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15552
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:243
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12850
+msgid "Unable to switch workflow to draft. Please, try again."
+msgstr "Det går inte att byta arbetsflöde till utkast. Försök igen."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15654
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:334
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12941
+msgid "Workflow deleted. Redirecting..."
+msgstr "Arbetsflödet har raderats. Omdirigerar..."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15666
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:345
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12952
+msgid "Unable to delete the workflow. Please, try again."
+msgstr "Det går inte att radera arbetsflödet. Försök igen."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16029
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:103
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13222
+msgid "The current site."
+msgstr "Den aktuella webbplatsen."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16038
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:113
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13232
+msgid "The current workflow."
+msgstr "Det aktuella arbetsflödet."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16044
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:120
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13239
+msgid "Activating user"
+msgstr "Aktiverande användare"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16047
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:123
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13242
+msgid "The current user."
+msgstr "Den aktuella användaren."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16053
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:130
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13249
+msgid "Activating trigger"
+msgstr "Aktiverande utlösare"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16056
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:133
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13252
+msgid "The node that activated the workflow."
+msgstr "Noden som aktiverade arbetsflödet."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16062
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:140
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13259
+msgid "Engine execution ID"
+msgstr "Motor exekverings-ID"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16065
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:143
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13262
+msgid ""
+"A unique identifier assigned each time the workflow engine runs. Useful for "
+"tracking specific workflow executions and debugging."
+msgstr ""
+"Ett unikt identifierare som tilldelas varje gång arbetsflödesmotorn körs. "
+"Användbar för att spåra specifika arbetsflödeskörningar och för felsökning."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16943
+#: assets/jsx/workflow-editor/components/workflow-summary/index.jsx:42
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14309
+msgid "Summary"
+msgstr "Sammanfattning"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16949
+#: assets/jsx/workflow-editor/components/workflow-summary/index.jsx:48
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14315
+msgid "Title"
+msgstr "Titel"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16956
+#: assets/jsx/workflow-editor/components/workflow-summary/index.jsx:57
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14324
+msgid "Description"
+msgstr "Beskrivning"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:17010
+#: assets/jsx/workflow-editor/components/workflow-switch-to-draft-button/index.jsx:33
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14374
+msgid "Are you sure you want to unpublish this workflow?"
+msgstr "Är du säker på att du vill avpublicera detta arbetsflöde?"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:17024
+#: assets/jsx/workflow-editor/components/workflow-switch-to-draft-button/index.jsx:52
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14393
+msgid "Draft"
+msgstr "Utkast"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:17024
+#: assets/jsx/workflow-editor/components/workflow-switch-to-draft-button/index.jsx:52
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14393
+msgid "Switch to draft"
+msgstr "Byt till utkast"
 
 #: assets/js/backupPanel.js:104
 #: assets/jsx/backup-panel/components/file-dropzone/index.jsx:22
@@ -4467,14 +6595,6 @@ msgstr "Vald fil"
 #: assets/js/backupPanel.js:973
 msgid "File size"
 msgstr "Filstorlek"
-
-#: assets/js/backupPanel.js:144
-#: assets/jsx/backup-panel/components/json-preview.jsx:15
-#: assets/jsx/workflow-editor/components/loading-message/index.jsx:7
-#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:18
-#: assets/js/backupPanel.js:110
-msgid "Loading..."
-msgstr "Laddar..."
 
 #: assets/js/backupPanel.js:202
 #: assets/jsx/backup-panel/components/selectable-list/index.jsx:22
@@ -4645,1355 +6765,33 @@ msgstr "Är du säker på att du vill radera detta arbetsflöde?"
 msgid "Cancel Actions"
 msgstr "Avbryt åtgärder"
 
-#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:29
-msgid "Integer"
-msgstr "Heltal"
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:30
-msgid "String"
-msgstr "Sträng"
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:31, fuzzy
-msgid "Boolean"
-msgstr "Boolean"
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:32
-msgid "Object"
-msgstr "Objekt"
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:33, fuzzy
-msgid "Array"
-msgstr "Array"
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:57
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:50, fuzzy
-msgid "null"
-msgstr "null"
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:80
-msgid "Argument name"
-msgstr "Argumentnamn"
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:86
-msgid "Data type"
-msgstr "Datatyp"
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:94
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:92
-msgid "Value"
-msgstr "Värde"
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:102
-msgid "The argument name should only contain letters, numbers and underscores."
-msgstr "Argumentnamnet ska endast innehålla bokstäver, siffror och understreck."
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/index.jsx:71
-#, fuzzy
-msgid "Argument #%s"
-msgstr "Argument #%s"
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/index.jsx:85
-msgid "No arguments added to the action."
-msgstr "Inga argument tillagda till åtgärden."
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/index.jsx:90
-msgid "Add a new argument"
-msgstr "Lägg till ett nytt argument"
-
-#: assets/jsx/workflow-editor/components/data-fields/conditional-date-offset.jsx:35
-msgid "When to expire"
-msgstr "När ska det gå ut"
-
-#: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:43
-msgid "Add Group"
-msgstr "Lägg till grupp"
-
-#: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:44
-msgid "Add Rule"
-msgstr "Lägg till regel"
-
-#: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:58
-msgid ""
-"Create rules that will continue the workflow only if certain conditions are "
-"met."
-msgstr ""
-"Skapa regler som fortsätter arbetsflödet endast om vissa villkor är "
-"uppfyllda."
-
-#: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:59
-#: assets/jsx/workflow-editor/components/data-fields/post-filter/components/post-filter.jsx:85
-msgid "Edit rules"
-msgstr "Redigera regler"
-
-#: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:60
-msgid ""
-"Conditional logic is a Pro feature. Upgrade to create advanced conditions "
-"for your workflows."
-msgstr ""
-"Villkorslogik är en Pro-funktion. Uppgradera för att skapa avancerade "
-"villkor för dina arbetsflöden."
-
-#: assets/jsx/workflow-editor/components/data-fields/conditional/components/duplicate-rule-button.jsx:10
-msgid "Duplicate Rule"
-msgstr "Duplicera regel"
-
-#: assets/jsx/workflow-editor/components/data-fields/conditional/components/not-toggle.jsx:30
-msgid "Not"
-msgstr "Inte"
-
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:12
-msgid "Dismiss"
-msgstr "Avbryt"
-
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:13
-msgid "Dismiss the notification"
-msgstr "Avbryt meddelandet"
-
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:67
-#, js-format
-msgid "Option %s"
-msgstr "Alternativ %s"
-
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:95
-#, js-format
-msgid "Option #%s"
-msgstr "Alternativ #%s"
-
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:114
-msgid "No options added to the action."
-msgstr "Inga alternativ tillagda till åtgärden."
-
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:120
-msgid "Add a new option"
-msgstr "Lägg till ett nytt alternativ"
-
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:132
-#, js-format
-msgid ""
-"You have reached the maximum number of options. You can add up to %s "
-"options."
-msgstr ""
-"Du har nått det maximala antalet alternativ. Du kan lägga till upp till %s "
-"alternativ."
-
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:73
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:7
-msgid "Name"
-msgstr "Namn"
-
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:85
-msgid "Hint"
-msgstr "Tips"
-
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:107
-msgid "The option name should only contain letters, numbers and underscores."
-msgstr "Alternativets namn får endast innehålla bokstäver, siffror och understreck."
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:61
-msgid "Selected in the calendar"
-msgstr "Vald i kalendern"
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:62
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-date.jsx:59
-msgid "When the trigger is activated"
-msgstr "När triggern aktiveras"
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:63
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-date.jsx:63
-msgid "When the step is activated"
-msgstr "När steget aktiveras"
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:80
-msgid "As soon as possible"
-msgstr "Så snart som möjligt"
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:81
-msgid "On a specific date"
-msgstr "På ett specifikt datum"
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:82
-msgid "Relative to a specific date"
-msgstr "Relativt ett specifikt datum"
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:86
-msgid "Unchanged"
-msgstr "Oförändrad"
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:119
-msgid "Date source"
-msgstr "Datumkälla"
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:147
-msgid ""
-"Click the button to choose a custom date source from variables that can "
-"provide a date."
-msgstr ""
-"Klicka på knappen för att välja en anpassad datakälla från variabler som "
-"kan ge ett datum."
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:159, fuzzy
-msgid "Offset"
-msgstr "Offset"
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:181
-msgid "Error: "
-msgstr "Fel: "
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:188
-msgid "Click for more information"
-msgstr "Klicka för mer information"
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:197
-#, js-format
-msgid ""
-"For more information on formatting, see the %sPHP strtotime function%s. For "
-"example, you could enter %s+1 month%s or %s+1 week 2 days 4 hours 2 "
-"seconds%s or %snext Thursday%s. Please use only phrases in English."
-msgstr ""
-"För mer information om formatering, se %sPHP strtotime-funktionen%s. Till "
-"exempel kan du ange %s+1 månad%s eller %s+1 vecka 2 dagar 4 timmar 2 "
-"sekunder%s eller %snästa torsdag%s. Vänligen använd endast fraser på "
-"engelska."
-
-#: assets/jsx/workflow-editor/components/data-fields/debug-data.jsx:39
-msgid "All received input"
-msgstr "All mottagen indata"
-
-#: assets/jsx/workflow-editor/components/data-fields/debug-data.jsx:43
-msgid "Custom data"
-msgstr "Anpassade data"
-
-#: assets/jsx/workflow-editor/components/data-fields/debug-data.jsx:64
-msgid "Select the data to output"
-msgstr "Välj de data som ska exporteras"
-
-#: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:9
-msgid "Notice"
-msgstr "Meddelande"
-
-#: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:12
-msgid "Critical"
-msgstr "Kritisk"
-
-#: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:13, fuzzy
-msgid "Alert"
-msgstr "Alert"
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/autocompleters/post-statuses.jsx:10
-#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:117
-#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:29
-msgid "Post Status"
-msgstr "Poststatus"
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/autocompleters/post-types.jsx:10
-#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:50
-#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:33
-msgid "Post Type"
-msgstr "Post Type"
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/column-item.jsx:10
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:10
-#. translators: %s is the database table name
-#, js-format
-msgid "Type the %s key and click on the button to insert it."
-msgstr "Skriv in %s nyckeln och klicka på knappen för att sätta in den."
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/column-item.jsx:17
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:19
-msgid "Metadata key"
-msgstr "Metadata-nyckel"
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/column-item.jsx:31
-msgid "Insert"
-msgstr "Infoga"
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:136
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:138
-msgid "Edit"
-msgstr "Redigera"
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:181
-msgid "Select a variable from the list below."
-msgstr "Välj en variabel från listan nedan."
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:185
-msgid "Type your expression here or use the variables below."
-msgstr "Skriv ditt uttryck här eller använd variablerna nedan."
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:212
-msgid "Variables"
-msgstr "Variabler"
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:215
-msgid "Double-click on a variable to select it."
-msgstr "Dubbelklicka på en variabel för att välja den."
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:219
-msgid "Double-click on any variable to add it to your expression."
-msgstr "Dubbelklicka på valfri variabel för att lägga till den i ditt uttryck."
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:231
-msgid "Hover over a variable to see its description."
-msgstr "Håll muspekaren över en variabel för att se dess beskrivning."
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:8
-msgid "The name of the term."
-msgstr "Namnet på termen."
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:13, fuzzy
-msgid "Slug"
-msgstr "Slug"
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:14
-msgid "The slug of the term."
-msgstr "Slug för termen."
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:19
-msgid "Term ID"
-msgstr "Term-ID"
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:20
-msgid "The unique identifier of the term."
-msgstr "Den unika identifieraren för termen."
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:25
-msgid "Count"
-msgstr "Antal"
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:26
-msgid "Number of posts assigned to this term."
-msgstr "Antal inlägg som är kopplade till denna term."
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:38
-#. translators: %s is the taxonomy label
-#, js-format
-msgid "%s terms for this post."
-msgstr "%s termer för detta inlägg."
-
-#: assets/jsx/workflow-editor/components/data-fields/help-link.jsx:5
-msgid "Learn more"
-msgstr "Läs mer"
-
-#: assets/jsx/workflow-editor/components/data-fields/interactive-custom-options/index.jsx:30
-msgid ""
-"This option is used to connect to another step and cannot have its name "
-"changed until the connection is removed."
-msgstr ""
-"Detta alternativ används för att koppla till ett annat steg och kan inte få "
-"sitt namn ändrat förrän kopplingen tas bort."
-
-#: assets/jsx/workflow-editor/components/data-fields/modal-footer.jsx:11, fuzzy
-msgid "OK"
-msgstr "OK"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:28
-#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:25
-msgid "Post Date"
-msgstr "Inläggsdatum"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:34
-msgid "Update the post date"
-msgstr "Uppdatera publiceringsdatum"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:38
-#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:9
-msgid "Post Title"
-msgstr "Inläggstitel"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:44
-msgid "Update the post title"
-msgstr "Uppdatera inläggstiteln"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:48
-msgid "Post Slug"
-msgstr "Inläggsslag"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:54
-msgid "Update the post slug"
-msgstr "Uppdatera inläggsslaget"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:58
-#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:13
-msgid "Post Content"
-msgstr "Innehåll i inlägg"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:64
-msgid "Update the post content"
-msgstr "Uppdatera innehållet i inlägget"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:68
-#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:17
-msgid "Post Excerpt"
-msgstr "Inläggsutdrag"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:74
-msgid "Update the post excerpt"
-msgstr "Uppdatera inläggsutdraget"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:78
-msgid "Post Discussion"
-msgstr "Inläggsdiskussion"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:82
-msgid "Update the post discussion"
-msgstr "Uppdatera inläggsdiskussionen"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:86
-msgid "Post Password"
-msgstr "Inläggslösenord"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:92
-msgid "Update the post password"
-msgstr "Uppdatera inläggslösenordet"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:96
-#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:132
-#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:21
-msgid "Post Author"
-msgstr "Inläggsförfattare"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:102
-msgid "Update the post author"
-msgstr "Uppdatera inläggsförfattaren"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-author.jsx:63
-msgid "Unable to load the list of authors. Please try again."
-msgstr "Kunde inte ladda listan över författare. Försök igen."
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-author.jsx:81
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-date.jsx:84
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:32
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-text.jsx:27
-msgid "Do not update"
-msgstr "Uppdatera inte"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-author.jsx:103
-msgid "Author"
-msgstr "Författare"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:36
-msgid "Comments only"
-msgstr "Endast kommentarer"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:37
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:56
-msgid "Closed"
-msgstr "Stängd"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:38
-msgid "Pings only"
-msgstr "Endast pings"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:39
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:51
-msgid "Open"
-msgstr "Öppen"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:46
-msgid "Changed..."
-msgstr "Ändrad..."
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:53
-msgid "Visitors can add new comments and replies."
-msgstr "Besökare kan lägga till nya kommentarer och svar."
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:58
-#, fuzzy
-msgid ""
-"Visitors can not add new comments or replies. Existing comments remain "
-"visible."
-msgstr "Besökare kan lägga till nya kommentarer och svar."
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:97
-msgid "Enable pinbacks & trackbacks"
-msgstr "Aktivera pinbacks & trackbacks"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:104
-msgid "Learn more about pinbacks & trackbacks"
-msgstr "Läs mer om pinbacks & trackbacks"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-text.jsx:31
-msgid "Clear content"
-msgstr "Rensa innehåll"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-filter/components/post-filter.jsx:84
-msgid "Create filters to query specific posts based on rules."
-msgstr "Skapa filter för att fråga specifika inlägg baserat på regler."
-
-#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:78
-msgid "Post selection"
-msgstr "Inläggsval"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:81
-msgid "Post received as input"
-msgstr "Inlägg mottaget som inmatning"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:82
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:65
-msgid "Custom query"
-msgstr "Anpassad fråga"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:145
-msgid "Post Terms"
-msgstr "Inläggsvillkor"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:160
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:116
-msgid "Separate multiple values with commas or Enter key."
-msgstr "Separera flera värden med kommatecken eller Enter-tangenten."
-
-#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:166
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:122
-msgid "* Required field"
-msgstr "* Obligatoriskt fält"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/post-search-query.jsx:84
-msgid "Post Search Query"
-msgstr "Inläggssökfråga"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/post-search-query.jsx:85
-msgid "Create a search query to filter posts based on conditions."
-msgstr "Skapa en sökfråga för att filtrera inlägg baserat på villkor."
-
-#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/post-search-query.jsx:86
-msgid "Edit query"
-msgstr "Redigera fråga"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:37
-msgid "Post Parent"
-msgstr "Inläggsförälder"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-status.jsx:40
-msgid "New Status"
-msgstr "Ny status"
-
-#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:13
-msgid "No color"
-msgstr "Ingen färg"
-
-#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:14
-msgid "Green"
-msgstr "Grön"
-
-#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:15, fuzzy
-msgid "Orange"
-msgstr "Orange"
-
-#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:16
-msgid "Red"
-msgstr "Röd"
-
-#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:17
-msgid "Blue"
-msgstr "Blå"
-
-#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:18
-msgid "Purple"
-msgstr "Lila"
-
-#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:19
-msgid "Gray"
-msgstr "Grå"
-
-#: assets/jsx/workflow-editor/components/data-fields/recurrence.jsx:16
-msgid "Custom interval in seconds"
-msgstr "Anpassat intervall i sekunder"
-
-#: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:127
-msgid "Repeating Action"
-msgstr "Upprepande åtgärd"
-
-#: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:131
-msgid ""
-"Choose how often this task should repeat. Select 'Non-repeating' for a "
-"one-time action or set an interval for automatic recurrence."
-msgstr ""
-"Välj hur ofta denna uppgift ska upprepas. Välj 'Icke-upprepande' för en "
-"engångsåtgärd eller ställ in ett intervall för automatisk upprepning."
-
-#: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:148
-msgid "Unique Task Identifier"
-msgstr "Unik uppgiftsidentifierare"
-
-#: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:154
-msgid "Define a unique ID to detect and prevent duplicate tasks."
-msgstr "Definiera ett unikt ID för att upptäcka och förhindra dubblettuppgifter."
-
-#: assets/jsx/workflow-editor/components/data-fields/taxonomy-terms.jsx:69
-msgid "Select the terms"
-msgstr "Välj villkoren"
-
-#: assets/jsx/workflow-editor/components/data-fields/taxonomy-terms.jsx:73
-msgid "Specific terms"
-msgstr "Specifika villkor"
-
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:45
-msgid "User Role"
-msgstr "Användarroll"
-
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:61
-msgid "User selection"
-msgstr "Användarval"
-
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:64
-msgid "User received as input"
-msgstr "Användare mottagen som inmatning"
-
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:105
-msgid "User ID"
-msgstr "Användar-ID"
-
-#: assets/jsx/workflow-editor/components/flow-editor/index.jsx:442
-msgid "Applying auto layout."
-msgstr "Tillämpa automatisk layout."
-
-#: assets/jsx/workflow-editor/components/flow-editor/index.jsx:467
-msgid "Auto layout applied."
-msgstr "Automatisk layout tillämpad."
-
-#: assets/jsx/workflow-editor/components/fullscreen-mode-close.jsx:43
-msgid "Back"
-msgstr "Tillbaka"
-
-#: assets/jsx/workflow-editor/components/inspector-card/index.jsx:51
-msgid "Add a description to this step..."
-msgstr "Lägg till en beskrivning för detta steg..."
-
-#: assets/jsx/workflow-editor/components/inspector-card/index.jsx:68
-#: assets/jsx/workflow-editor/components/inspector-card/index.jsx:78
-msgid "Edit description"
-msgstr "Redigera beskrivning"
-
-#: assets/jsx/workflow-editor/components/inspector-card/index.jsx:116
-#: assets/jsx/workflow-editor/components/secondary-sidebar/node-card.jsx:16, fuzzy
-msgid "Pro"
-msgstr "Pro"
-
-#: assets/jsx/workflow-editor/components/inspector-card/index.jsx:132
-#: assets/jsx/workflow-editor/components/node-types/generic.jsx:319
-#: assets/jsx/workflow-editor/components/secondary-sidebar/node-card.jsx:29
-msgid "Currently this step is being skipped. Upgrade to Pro to unlock this feature."
-msgstr ""
-"För närvarande hoppas detta steg över. Uppgradera till Pro för att låsa upp "
-"denna funktion."
-
-#: assets/jsx/workflow-editor/components/layout/header.jsx:129
-msgid "Add"
-msgstr "Lägg till"
-
-#: assets/jsx/workflow-editor/components/layout/header.jsx:129
-msgid "Close"
-msgstr "Stäng"
-
-#: assets/jsx/workflow-editor/components/layout/header.jsx:140
-#: assets/jsx/workflow-editor/components/layout/header.jsx:145
-#. translators: button label text should, if possible, be under 16 characters.
-msgid "Auto Layout"
-msgstr "Automatisk layout"
-
-#: assets/jsx/workflow-editor/components/layout/header.jsx:157
-#. translators: button label text should, if possible, be under 16 characters.
-msgid "Upgrade to Pro and unlock more features"
-msgstr "Uppgradera till Pro och lås upp fler funktioner"
-
-#: assets/jsx/workflow-editor/components/left-toolbar/redo.jsx:31
-#. translators: button label text should, if possible, be under 16 characters.
-msgid "Redo"
-msgstr "Gör om"
-
-#: assets/jsx/workflow-editor/components/left-toolbar/undo.jsx:31
-#. translators: button label text should, if possible, be under 16 characters.
-msgid "Undo"
-msgstr "Ångra"
-
-#: assets/jsx/workflow-editor/components/loading-message/index.jsx:12
-msgid "Wait, we are loading the workflow..."
-msgstr "Vänta, vi laddar arbetsflödet..."
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-feature-toggle.jsx:32
-msgid "Feature deactivated"
-msgstr "Funktion inaktiverad"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-feature-toggle.jsx:34
-msgid "Feature activated"
-msgstr "Funktion aktiverad"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:27
-msgid "Fullscreen mode"
-msgstr "Helskärmsläge"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:28
-msgid "Work without distraction"
-msgstr "Arbeta utan distraktion"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:29
-msgid "Fullscreen mode activated"
-msgstr "Helskärmsläge aktiverat"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:30
-msgid "Fullscreen mode deactivated"
-msgstr "Helskärmsläge inaktiverad"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:36
-msgid "Advanced Settings"
-msgstr "Avancerade inställningar"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:37
-msgid "Display advanced settings for the workflow, triggers and steps"
-msgstr "Visa avancerade inställningar för arbetsflödet, triggers och steg"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:38
-msgid "Advanced settings mode activated"
-msgstr "Avancerat inställningsläge aktiverat"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:39
-msgid "Advanced settings mode deactivated"
-msgstr "Avancerat inställningsläge avaktiverat"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:45
-msgid "Display a mini map"
-msgstr "Visa en mini karta"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:46
-msgid "Display a mini map in the bottom of the editor, triggers and steps"
-msgstr "Visa en mini karta i botten av redigeraren, triggers och steg"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:47
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:55
-msgid "Mini map activated"
-msgstr "Mini karta aktiverad"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:48
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:56
-msgid "Mini map deactivated"
-msgstr "Mini karta avaktiverad"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:53
-msgid "Display the controls panel"
-msgstr "Visa kontrollpanelen"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:54
-msgid ""
-"Display the controls panel with buttons to zoon in, zoom out, fit the view "
-"and lock the viewport"
-msgstr ""
-"Visa kontrollpanelen med knappar för att zooma in, zooma ut, anpassa vyn "
-"och låsa vyområdet"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:59
-msgid "Tools"
-msgstr "Verktyg"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:63
-msgid "Developer mode"
-msgstr "Utvecklarläge"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:64
-msgid "Work in developer mode"
-msgstr "Arbeta i utvecklarläge"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:65
-msgid "Developer mode activated"
-msgstr "Utvecklarläge aktiverat"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:66
-msgid "Developer mode deactivated"
-msgstr "Utvecklarläge avaktiverat"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:72
-msgid "Welcome guide"
-msgstr "Välkomstguide"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:73
-msgid "Display the welcome guide"
-msgstr "Visa välkomstguiden"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:74
-msgid "Welcome guide activated"
-msgstr "Välkomstguide aktiverad"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:75
-msgid "Welcome guide deactivated"
-msgstr "Välkomstguide avaktiverad"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:83
-msgid "Help"
-msgstr "Hjälp"
-
-#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:23
-msgid "Developer Info"
-msgstr "Utvecklarinformation"
-
-#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:31
-#: assets/jsx/workflow-editor/components/node-inspector/node-inspector-card.jsx:18
-#: assets/jsx/workflow-editor/components/node-types/generic.jsx:109
-msgid "Node"
-msgstr "Nod"
-
-#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:41
-msgid "Node Data"
-msgstr "Noddata"
-
-#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:51
-msgid "Node Settings"
-msgstr "Nodinställningar"
-
-#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:65
-msgid "Node Type"
-msgstr "Nodtyp"
-
-#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:98
-msgid "No element selected."
-msgstr "Inget element valt."
-
-#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:106
-msgid "Multiple and different elements selected."
-msgstr "Flera och olika element valda."
-
-#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:116
-#, js-format
-msgid "%d steps selected"
-msgstr "%d steg valda"
-
-#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:119
-msgid "Multiple steps selected."
-msgstr "Flera steg valda."
-
-#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:130
-#, js-format
-msgid "%d connections selected"
-msgstr "%d anslutningar valda"
-
-#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:133
-msgid "Multiple connections selected."
-msgstr "Flera anslutningar valda."
-
-#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:165
-msgid "Connection"
-msgstr "Anslutning"
-
-#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:166
-msgid ""
-"The connection between nodes in the workflow. Signifies the path along "
-"which data or control flow one node to another."
-msgstr ""
-"Anslutningen mellan noder i arbetsflödet. Betyder vägen längs vilken data "
-"eller kontroll flödar från en nod till en annan."
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:83
-msgid "Step Data Flow"
-msgstr "Stegdataflöde"
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:85
-msgid "Inputs"
-msgstr "Indata"
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:89
-msgid "This step receives the following input from previous step:"
-msgstr "Detta steg tar emot följande indata från föregående steg:"
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:100
-msgid "This step does not receive any input from previous step."
-msgstr "Detta steg tar inte emot någon indata från föregående steg."
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:105
-msgid "Outputs"
-msgstr "Utdata"
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:109
-msgid "This step outputs the following data:"
-msgstr "Detta steg ger följande data:"
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:120
-msgid "This step does not output any data."
-msgstr "Detta steg ger ingen data."
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:125
-msgid "Step Scoped Variables"
-msgstr "Stegskopade variabler"
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:129
-msgid "This step receives the following step scoped variables:"
-msgstr "Detta steg tar emot följande stegskopade variabler:"
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:140
-msgid "This step does not have any step scoped variables."
-msgstr "Detta steg har inga steg-specifika variabler."
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:145
-msgid "Global Variables"
-msgstr "Globala variabler"
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:149
-msgid "No global variables are declared"
-msgstr "Inga globala variabler är deklarerade"
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-inspector-card.jsx:19
-msgid "No description"
-msgstr "Ingen beskrivning"
-
-#: assets/jsx/workflow-editor/components/node-types/generic.jsx:57
-#, js-format
-msgid "Unknown node: %s"
-msgstr "Okänd nod: %s"
-
-#: assets/jsx/workflow-editor/components/node-types/generic.jsx:58
-msgid "This is a placeholder node for a node that does not exist."
-msgstr "Detta är en platshållarnod för en nod som inte existerar."
-
-#: assets/jsx/workflow-editor/components/node-types/generic.jsx:244
-msgid "Step"
-msgstr "Steg"
-
-#: assets/jsx/workflow-editor/components/node-types/generic.jsx:250
-msgid "Trigger"
-msgstr "Utlösare"
-
-#: assets/jsx/workflow-editor/components/node-types/generic.jsx:286
-msgid "Step actions"
-msgstr "Stegåtgärder"
-
-#: assets/jsx/workflow-editor/components/node-types/generic.jsx:327
-msgid "This node has errors"
-msgstr "Denna nod har fel"
-
-#: assets/jsx/workflow-editor/components/node-types/node-placeholder.jsx:31
-msgid "Add a step"
-msgstr "Lägg till ett steg"
-
-#: assets/jsx/workflow-editor/components/node-types/node-placeholder.jsx:33
-msgid "Search for actions"
-msgstr "Sök efter åtgärder"
-
-#: assets/jsx/workflow-editor/components/node-types/placeholder.jsx:168
-msgid "Search for steps"
-msgstr "Sök efter steg"
-
-#: assets/jsx/workflow-editor/components/node-types/placeholder.jsx:194
-#: assets/jsx/workflow-editor/components/node-types/trigger-placeholder.jsx:13
-#: assets/jsx/workflow-editor/components/secondary-sidebar/menu.jsx:161
-msgid "Search for triggers and steps"
-msgstr "Sök efter utlösare och steg"
-
-#: assets/jsx/workflow-editor/components/node-types/trigger-placeholder.jsx:11
-msgid "Click to add a trigger"
-msgstr "Klicka för att lägga till en utlösare"
-
-#: assets/jsx/workflow-editor/components/node-validation-panel/index.jsx:19
-msgid "Validation"
-msgstr "Validering"
-
-#: assets/jsx/workflow-editor/components/node-validation-panel/index.jsx:49
-msgid "All checks have passed for this step."
-msgstr "Alla kontroller har passerat för detta steg."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:122
-#, js-format
-msgid "The field \"%s\" contains an invalid variable."
-msgstr "Fältet \"%s\" innehåller en ogiltig variabel."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:126
-#, js-format
-msgid ""
-"The variable \"%s\" is not available in the current context. Please, check "
-"if it is spelled correctly."
-msgstr ""
-"Variabeln \"%s\" är inte tillgänglig i det aktuella sammanhanget. Vänligen "
-"kontrollera om den är rättstavad."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:181
-#. translators: %s is the workflow step slug.
-#, js-format
-msgid "\"%s\" is not a variable or step slug."
-msgstr "\"%s\" är inte en variabel eller steg slug."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:190
-msgid "Empty placeholder is not allowed."
-msgstr "Tomt platshållare är inte tillåtet."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:203
-msgid "Unclosed placeholder are not allowed."
-msgstr "Oavslutade platshållare är inte tillåtet."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:208
-msgid "Unopened placeholder are not allowed."
-msgstr "Oöppnade platshållare är inte tillåtet."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:216
-#. translators: %s is the field label.
-#, js-format
-msgid "Invalid expression on %s"
-msgstr "Ogiltigt uttryck på %s"
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:232
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:575
-#. translators: %s is the field label.
-#, js-format
-msgid "The field %s must be a list of options."
-msgstr "Fältet %s måste vara en lista med alternativ."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:261
-#. translators: %s is the option name.
-#, js-format
-msgid "The option \"%s\" does not have a name."
-msgstr "Alternativet \"%s\" har inget namn."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:270
-#. translators: %s is the option name.
-#, js-format
-msgid "The option \"%s\" does not have a label."
-msgstr "Alternativet \"%s\" har ingen etikett."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:279
-#. translators: %s is the option name.
-#, js-format
-msgid "The option \"%s\" has a duplicate name."
-msgstr "Alternativet \"%s\" har ett duplicerat namn."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:288
-#. translators: %s is the option label.
-#, js-format
-msgid "The option \"%s\" has a duplicate label."
-msgstr "Alternativet \"%s\" har en duplicerad etikett."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:302
-#. translators: %s is the field label.
-#, js-format
-msgid "The field %s must be a valid list of options."
-msgstr "Fältet %s måste vara en giltig lista med alternativ."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:333
-msgid "This step requires a connection from a previous step."
-msgstr "Detta steg kräver en koppling från ett tidigare steg."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:343
-msgid "This step requires a connection to a following step."
-msgstr "Detta steg kräver en koppling till ett följande steg."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:407
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:428
-#, js-format
-msgid "The field %s is required."
-msgstr "Fältet %s är obligatoriskt."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:450
-#, js-format
-msgid "The field %s must be a valid email address."
-msgstr "Fältet %s måste vara en giltig e-postadress."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:466
-#, js-format
-msgid "The field %s must be a valid email address list separated by commas."
-msgstr ""
-"Fältet %s måste vara en giltig lista med e-postadresser separerade med "
-"kommatecken."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:480
-#, js-format
-msgid "The field %s must be an integer."
-msgstr "Fältet %s måste vara ett heltal."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:495
-#, js-format
-msgid "The field %s must be an integer list separated by commas."
-msgstr "Fältet %s måste vara en lista med heltal separerade med kommatecken."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:518
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:527
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:536
-#, js-format
-msgid "The field %s must be a list of name-value pairs."
-msgstr "Fältet %s måste vara en lista med namn-värde-par."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:528
-#, js-format
-msgid "The name of the pair is required on item %d."
-msgstr "Namnet på paret är obligatoriskt för objekt %d."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:537
-#, js-format
-msgid "The value of the pair is required on item %d."
-msgstr "Värdet för paret är obligatoriskt för objekt %d."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:605
-msgid "Invalid variable."
-msgstr "Ogiltig variabel."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:608
-msgid "Please use the variable picker to select valid expression."
-msgstr "Använd variabelväljaren för att välja ett giltigt uttryck."
-
-#: assets/jsx/workflow-editor/components/pro-feature-button/index.jsx:26
-msgid "Upgrade to Pro to unlock this feature."
-msgstr "Uppgradera till Pro för att låsa upp denna funktion."
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-listbox/group.jsx:14
-msgid "Use left and right arrow keys to move through steps"
-msgstr "Använd vänster och höger piltangenter för att navigera genom stegen"
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-no-results.jsx:14
-msgid "No results found."
-msgstr "Inga resultat hittades."
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:101
-#. translators: %d: number of results.
-#, js-format
-msgid "%d result found."
-msgid_plural "%d results found."
-msgstr[0] "%d resultat hittat."
-msgstr[1] "%d resultat hittades."
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:116
-#: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:123
-msgid "Nodes"
-msgstr "Noder"
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/menu.jsx:72
-#: assets/jsx/workflow-editor/components/secondary-sidebar/menu.jsx:111
-msgid "A tip for using the workflow editor"
-msgstr "Ett tips för att använda arbetsflödesredigeraren"
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/node-draggable-chip.jsx:27
-#. translators: %d: Number of blocks.
-#, js-format
-msgid "%d block"
-msgid_plural "%d blocks"
-msgstr[0] "%d block"
-msgstr[1] "%d block"
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:24
-#. translators: Patterns tab title in the block inserter.
-msgid "Actions"
-msgstr "Åtgärder"
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:10
-msgid ""
-"Select multiple steps by pressing <kbd>cmd</kbd> and clicking on each step "
-"in the workflow."
-msgstr ""
-"Välj flera steg genom att trycka på <kbd>cmd</kbd> och klicka på varje steg "
-"i arbetsflödet."
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:16
-msgid ""
-"Drag steps from the inserter and drop them directly into your workflow for "
-"easy customization."
-msgstr ""
-"Dra steg från insättaren och släpp dem direkt i ditt arbetsflöde för enkel "
-"anpassning."
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:17
-msgid ""
-"Simply double-click any step to bring up the settings sidebar for quick "
-"adjustments."
-msgstr ""
-"Dubbelklicka helt enkelt på något steg för att få upp "
-"inställningssidopanelen för snabba justeringar."
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:18
-msgid "Double-click the workflow pane to increase the zoom level for a closer look."
-msgstr ""
-"Dubbelklicka på arbetsflödespanelen för att öka zoomnivån för en närmare "
-"titt."
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:20
-#, fuzzy
-msgid ""
-"Hold down the <kbd>shift</kbd> key and double-click the workflow pane to "
-"decrease the zoom level."
-msgstr ""
-"Dubbelklicka på arbetsflödespanelen för att öka zoomnivån för en närmare "
-"titt."
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:26
-msgid ""
-"Easily add new steps by clicking on a step's handle and dragging it. Drop "
-"it in the workflow pane to see a floating inserter where you can type and "
-"search for the step you need."
-msgstr ""
-"Lägg enkelt till nya steg genom att klicka på ett stegs handtag och dra "
-"det. Släpp det i arbetsflödesfönstret för att se en flytande insättare där "
-"du kan skriva och söka efter det steg du behöver."
-
-#: assets/jsx/workflow-editor/components/settings-sidebar/plugin-sidebar.jsx:39
-msgid "(no name)"
-msgstr "(ingen namn)"
-
-#: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:37, fuzzy
-msgid "Element"
-msgstr "Element"
-
-#: assets/jsx/workflow-editor/components/settings-sidebar/settings-sidebar.jsx:50
-msgid "Close settings"
-msgstr "Stäng inställningar"
-
-#: assets/jsx/workflow-editor/components/welcome-guide/index.jsx:22
-msgid "Get started"
-msgstr "Kom igång"
-
-#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:50, fuzzy
-msgid "Ray Debug"
-msgstr "Ray Debug"
-
-#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:55
-msgid ""
-"Enable or disable the different types of debug information that is shown in "
-"Ray when this workflow is activated."
-msgstr ""
-"Aktivera eller inaktivera de olika typerna av felsökningsinformation som "
-"visas i Ray när detta arbetsflöde aktiveras."
-
-#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:59
-msgid "Show Queries"
-msgstr "Visa frågor"
-
-#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:66
-msgid "Show Emails"
-msgstr "Visa e-post"
-
-#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:73
-msgid "Show WordPress Errors"
-msgstr "Visa WordPress-fel"
-
-#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:80
-msgid "Show current running step"
-msgstr "Visa nuvarande körande steg"
-
-#: assets/jsx/workflow-editor/components/workflow-delete-button/index.jsx:24
-msgid "Are you sure you want to delete this workflow?"
-msgstr "Är du säker på att du vill radera detta arbetsflöde?"
-
-#: assets/jsx/workflow-editor/components/workflow-delete-button/index.jsx:39
-msgid "Move to trash"
-msgstr "Flytta till papperskorgen"
-
-#: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:79
-#. translators: button label text should, if possible, be under 16 characters.
-msgid "Publish"
-msgstr "Publicera"
-
-#: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:79
-msgid "Update"
-msgstr "Uppdatera"
-
-#: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:90
-msgid "Autosaving..."
-msgstr "Autosparar..."
-
-#: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:90
-msgid "Updating..."
-msgstr "Uppdaterar..."
-
-#: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:92
-msgid "Updated"
-msgstr "Uppdaterad"
-
-#: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:82
-#. translators: button label text should, if possible, be under 16 characters.
-msgid "Save draft"
-msgstr "Spara utkast"
-
-#: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:85
-#. translators: button label text should, if possible, be under 16 characters.
-msgid "Save"
-msgstr "Spara"
-
-#: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:94
-msgid "Autosaving"
-msgstr "Autosparar"
-
-#: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:94
-msgid "Saving"
-msgstr "Sparar"
-
-#: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:96
-msgid "Saved"
-msgstr "Sparad"
-
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:31
-msgid "Unable to create a new workflow. Please try again."
-msgstr "Kunde inte skapa ett nytt arbetsflöde. Vänligen försök igen."
-
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:51
-msgid "Unable to load the workflow. Please try again."
-msgstr "Kunde inte ladda arbetsflödet. Vänligen försök igen."
-
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:94
-msgid "Workflow saved as draft."
-msgstr "Arbetsflöde sparat som utkast."
-
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:102
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:153
-msgid "Unable to save workflow. Please, try again."
-msgstr "Kunde inte spara arbetsflödet. Vänligen försök igen."
-
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:145
-msgid "Workflow saved."
-msgstr "Arbetsflöde sparat."
-
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:198
-msgid "Unable to publish the workflow. Please, try again."
-msgstr "Kunde inte publicera arbetsflödet. Vänligen försök igen."
-
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:235
-msgid "Workflow switched to draft."
-msgstr "Arbetsflöde bytt till utkast."
-
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:243
-msgid "Unable to switch workflow to draft. Please, try again."
-msgstr "Det går inte att byta arbetsflöde till utkast. Försök igen."
-
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:334
-msgid "Workflow deleted. Redirecting..."
-msgstr "Arbetsflödet har raderats. Omdirigerar..."
-
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:345
-msgid "Unable to delete the workflow. Please, try again."
-msgstr "Det går inte att radera arbetsflödet. Försök igen."
-
-#: assets/jsx/workflow-editor/components/workflow-summary/index.jsx:42
-msgid "Summary"
-msgstr "Sammanfattning"
-
-#: assets/jsx/workflow-editor/components/workflow-summary/index.jsx:48
-msgid "Title"
-msgstr "Titel"
-
-#: assets/jsx/workflow-editor/components/workflow-summary/index.jsx:57
-msgid "Description"
-msgstr "Beskrivning"
-
-#: assets/jsx/workflow-editor/components/workflow-switch-to-draft-button/index.jsx:33
-msgid "Are you sure you want to unpublish this workflow?"
-msgstr "Är du säker på att du vill avpublicera detta arbetsflöde?"
-
-#: assets/jsx/workflow-editor/components/workflow-switch-to-draft-button/index.jsx:52
-msgid "Draft"
-msgstr "Utkast"
-
-#: assets/jsx/workflow-editor/components/workflow-switch-to-draft-button/index.jsx:52
-msgid "Switch to draft"
-msgstr "Byt till utkast"
-
 #: assets/jsx/workflow-manual-selection/example-extending-with-slot.jsx:48
 #, js-format
 msgid "Enable workflow %s"
 msgstr "Aktivera arbetsflöde %s"
 
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10239
 #: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:23
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7974
 msgctxt "noun"
 msgid "View"
 msgstr "Visa"
 
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14336
 #: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:23
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11892
 #. translators: Default label for the Workflow sidebar tab, not selected.
 #, fuzzy
 msgctxt "noun"
 msgid "Workflow"
 msgstr "Arbetsflöde"
 
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13793
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13798
 #: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:80
 #: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:85
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11459
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11464
 #, fuzzy
 msgctxt "nodes"
 msgid "Most used"

@@ -16059,7 +16059,7 @@ function _setInitialStateForGlobalVariables(state) {
   state = setGlobalVariable(state, {
     payload: {
       name: 'engine_execution_id',
-      label: 'Engine execution ID',
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Engine execution ID', 'post-expirator'),
       type: 'string',
       runtimeOnly: true,
       description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('A unique identifier assigned each time the workflow engine runs. Useful for tracking specific workflow executions and debugging.', 'post-expirator'),

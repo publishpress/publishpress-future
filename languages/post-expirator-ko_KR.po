@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-04-29T14:19:02+00:00\n"
-"PO-Revision-Date: 2026-05-12 22:07+0000\n"
+"PO-Revision-Date: 2026-05-13 18:44+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "Language: ko_KR\n"
@@ -238,7 +238,9 @@ msgstr "현재 필터와 일치하는 결과가 없습니다."
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:361
 #: src/Modules/Expirator/Controllers/QuickEditController.php:287
 #: src/Modules/Expirator/Controllers/SettingsController.php:280
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5675
 #: assets/jsx/workflow-editor/components/data-fields/taxonomy-terms.jsx:60
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4353
 msgid "Taxonomy"
 msgstr "분류"
 
@@ -277,7 +279,9 @@ msgstr "카테고리"
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:64
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:64
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:153
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11465
 #: assets/jsx/workflow-editor/components/node-types/generic.jsx:246
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9210
 msgid "Action"
 msgstr "작업"
 
@@ -448,7 +452,9 @@ msgstr "카테고리"
 
 #: src/Modules/Expirator/Controllers/PluginsListController.php:50
 #: src/Modules/VersionNotices/Module.php:137
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9630
 #: assets/jsx/workflow-editor/components/layout/header.jsx:160
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7445
 msgid "Upgrade to Pro"
 msgstr "프로로 업그레이드"
 
@@ -480,7 +486,9 @@ msgstr "작업 흐름"
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeactivatePostWorkflow.php:67
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostWorkflowEnable.php:67
 #: src/Views/tabs-settings.php:47
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14436
 #: assets/jsx/workflow-editor/components/settings-sidebar/settings-sidebar.jsx:54
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11976
 #. translators: button label text should, if possible, be under 16 characters.
 msgid "Settings"
 msgstr "설정"
@@ -632,19 +640,25 @@ msgstr "유효성 검사를 기다리는 중..."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:299
 #: src/Modules/Expirator/Controllers/SettingsController.php:357
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2424
 #: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:168
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1786
 msgid "Date Preview"
 msgstr "날짜 미리보기"
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:300
 #: src/Modules/Expirator/Controllers/SettingsController.php:358
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2425
 #: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:169
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1787
 msgid "Current Date"
 msgstr "현재 날짜"
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:301
 #: src/Modules/Expirator/Controllers/SettingsController.php:359
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2426
 #: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:170
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1788
 msgid "Computed Date"
 msgstr "계산된 날짜"
 
@@ -652,7 +666,9 @@ msgstr "계산된 날짜"
 #: src/Modules/Expirator/Controllers/SettingsController.php:360
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:130
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:120
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2597
 #: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:11
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1937
 msgid "Error"
 msgstr "오류"
 
@@ -735,8 +751,12 @@ msgstr "%s가 성공적으로 삭제되었습니다."
 
 #: src/Modules/Expirator/ExpirationActions/DeletePost.php:76
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:87
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11503
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14823
 #: assets/jsx/workflow-editor/components/node-types/generic.jsx:292
 #: assets/jsx/workflow-editor/components/workflow-delete-button/index.jsx:39
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9256
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12322
 msgid "Delete"
 msgstr "삭제"
 
@@ -1133,7 +1153,9 @@ msgid "Every %s"
 msgstr "매 %s"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:851
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5363
 #: assets/jsx/workflow-editor/components/data-fields/recurrence.jsx:15
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4084
 msgid "Non-repeating"
 msgstr "비반복"
 
@@ -1314,7 +1336,9 @@ msgid "Action Workflows list"
 msgstr "작업 워크플로 목록"
 
 #: src/Modules/Workflows/Controllers/PostType.php:67
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15479
 #: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:190
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12797
 msgid "Workflow published."
 msgstr "워크플로가 게시되었습니다."
 
@@ -1518,7 +1542,9 @@ msgid "[%1$s/%2$d]"
 msgstr "[%1$s/%2$d]"
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:264
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14659
 #: assets/jsx/workflow-editor/components/welcome-guide/index.jsx:21
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12163
 msgid "Welcome to the workflow editor"
 msgstr "워크플로 편집기에 오신 것을 환영합니다"
 
@@ -1608,7 +1634,9 @@ msgid ""
 msgstr "질문이 있거나 도움이 필요하시면 오른쪽 상단 모서리에 있는 도움말 버튼을 클릭하여 지원 리소스에 접근하세요."
 
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:236
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14099
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:19
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11707
 #. translators: Blocks tab title in the block inserter.
 msgid "Triggers"
 msgstr "트리거"
@@ -1853,7 +1881,9 @@ msgstr "게시물에 추가할 메타 값입니다."
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePostMeta.php:128
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:141
 #: src/Modules/Workflows/Models/StepTypesModel.php:90
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:402
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:34
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:359
 msgid "Post"
 msgstr "게시물"
 
@@ -1992,8 +2022,12 @@ msgstr "게시물에 추가될 용어입니다."
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SetPostTerm.php:91
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SetPostTerm.php:118
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnTermsAdded.php:123
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5701
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5713
 #: assets/jsx/workflow-editor/components/data-fields/taxonomy-terms.jsx:80
 #: assets/jsx/workflow-editor/components/data-fields/taxonomy-terms.jsx:94
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4373
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4387
 msgid "Terms"
 msgstr "용어"
 
@@ -2016,7 +2050,9 @@ msgid "The message to be sent to the debug log."
 msgstr "디버그 로그로 전송될 메시지입니다."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AppendDebugLog.php:75
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2614
 #: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:28
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1954
 msgid "Level"
 msgstr "레벨"
 
@@ -2060,7 +2096,9 @@ msgid ""
 msgstr "이 단계는 특정 조건이 충족될 경우에만 워크플로우를 계속 진행할 수 있습니다. True 및 False 옵션이 모두 필요하지 않습니다."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:64
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1053
 #: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:57
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:800
 msgid "Condition"
 msgstr "조건"
 
@@ -2125,6 +2163,9 @@ msgid ""
 msgstr "선택된 게시물에 대해 비활성화될 수동 활성화 워크플로우를 선택하세요."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeactivatePostWorkflow.php:125
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16035
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:110
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13229
 msgid "Workflow"
 msgstr "워크플로우"
 
@@ -2409,9 +2450,15 @@ msgstr "일정 > 고유 ID 표현식"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:104
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:113
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2331
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2398
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4214
 #: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:64
 #: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:139
 #: assets/jsx/workflow-editor/components/data-fields/post-data/post-date.jsx:72
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1682
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1757
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3190
 msgid "Custom date source"
 msgstr "사용자 정의 날짜 소스"
 
@@ -2561,7 +2608,9 @@ msgstr "알림 유형"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:118
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:108
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2588
 #: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:8
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1934
 msgid "Info"
 msgstr "정보"
 
@@ -2572,7 +2621,9 @@ msgstr "성공"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:126
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:116
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2594
 #: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:10
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1936
 msgid "Warning"
 msgstr "경고"
 
@@ -2628,7 +2679,9 @@ msgid "Data to output"
 msgstr "출력할 데이터"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendRay.php:78
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2145
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:80
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1556
 msgid "Label"
 msgstr "레이블"
 
@@ -2879,7 +2932,9 @@ msgstr "워크플로우를 계속 진행하기 위해 옵션을 선택하세요:
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:129
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:201
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10119
 #: assets/jsx/workflow-editor/components/more-menu/menu-dropdown.jsx:11
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7867
 #. translators: button label text should, if possible, be under 16 characters.
 msgid "Options"
 msgstr "옵션"
@@ -3013,7 +3068,9 @@ msgstr "기존 포스트 작성자가 변경될 때 이 트리거가 활성화�
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostUpdate.php:64
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostWorkflowEnable.php:82
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnTermsAdded.php:64
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4649
 #: assets/jsx/workflow-editor/components/data-fields/post-filter/components/post-filter.jsx:83
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3579
 msgid "Post Filter"
 msgstr "포스트 필터"
 
@@ -3100,8 +3157,12 @@ msgstr "새로운 속성을 가진 저장된 포스트입니다."
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostUpdate.php:121
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostWorkflowEnable.php:133
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnTermsAdded.php:155
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4875
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5126
 #: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:105
 #: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:5
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3735
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3933
 msgid "Post ID"
 msgstr "포스트 ID"
 
@@ -3492,11 +3553,16 @@ msgid "PublishPress Future"
 msgstr "퍼블리시프레스 미래"
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:108
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:405
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:35
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:360
 msgid "User"
 msgstr "사용자"
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:117
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16026
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:100
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13219
 msgid "Site"
 msgstr "사이트"
 
@@ -3510,7 +3576,9 @@ msgstr "비동기"
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:144
 #: src/Views/tabs-settings.php:36
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2585
 #: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:7
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1933
 msgid "Debug"
 msgstr "디버그"
 
@@ -4247,11 +4315,13 @@ msgid "Admin"
 msgstr "관리자"
 
 #: src/Views/tabs-settings.php:23
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11467
 #: assets/js/backupPanel.js:664
 #: assets/js/backupPanel.js:1247
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:44
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:124
 #: assets/jsx/workflow-editor/components/node-types/generic.jsx:248
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9212
 #: assets/js/backupPanel.js:520
 #: assets/js/backupPanel.js:932
 msgid "Advanced"
@@ -4260,6 +4330,2024 @@ msgstr "고급"
 #: src/Views/tabs-settings.php:28
 msgid "Diagnostics and Tools"
 msgstr "진단 및 도구"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:387
+#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:29
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:354
+msgid "Integer"
+msgstr "정수"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:390
+#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:30
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:355
+msgid "String"
+msgstr "문자열"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:393
+#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:31
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:356
+msgid "Boolean"
+msgstr "부울"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:396
+#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:32
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:357
+msgid "Object"
+msgstr "객체"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:399
+#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:33
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:358
+msgid "Array"
+msgstr "배열"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:434
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2121
+#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:57
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:50
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:382
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1526
+#, fuzzy
+msgid "null"
+msgstr "null"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:452
+#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:80
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:405
+msgid "Argument name"
+msgstr "인수 이름"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:457
+#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:86
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:411
+msgid "Data type"
+msgstr "데이터 유형"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:463
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2154
+#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:94
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:92
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:419
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1568
+msgid "Value"
+msgstr "값"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:469
+#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:102
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:427
+msgid "The argument name should only contain letters, numbers and underscores."
+msgstr "인수 이름은 문자, 숫자 및 밑줄만 포함해야 합니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:585
+#: assets/jsx/workflow-editor/components/data-fields/action-args/index.jsx:71
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:506
+#, js-format
+msgid "Argument #%s"
+msgstr "인수 #%s"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:606
+#: assets/jsx/workflow-editor/components/data-fields/action-args/index.jsx:85
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:520
+msgid "No arguments added to the action."
+msgstr "작업에 추가된 인수가 없습니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:611
+#: assets/jsx/workflow-editor/components/data-fields/action-args/index.jsx:90
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:525
+msgid "Add a new argument"
+msgstr "새 인수 추가"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:799
+#: assets/jsx/workflow-editor/components/data-fields/conditional-date-offset.jsx:35
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:646
+msgid "When to expire"
+msgstr "만료 시점"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1036
+#: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:43
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:786
+msgid "Add Group"
+msgstr "그룹 추가"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1039
+#: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:44
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:787
+msgid "Add Rule"
+msgstr "규칙 추가"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1055
+#: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:58
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:801
+msgid ""
+"Create rules that will continue the workflow only if certain conditions are "
+"met."
+msgstr "특정 조건이 충족될 경우에만 워크플로우를 계속할 규칙을 만듭니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1057
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4651
+#: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:59
+#: assets/jsx/workflow-editor/components/data-fields/post-filter/components/post-filter.jsx:85
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:802
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3581
+msgid "Edit rules"
+msgstr "규칙 편집"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1059
+#: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:60
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:803
+msgid ""
+"Conditional logic is a Pro feature. Upgrade to create advanced conditions "
+"for your workflows."
+msgstr "조건부 논리는 Pro 기능입니다. 워크플로우를 위한 고급 조건을 만들기 위해 업그레이드하세요."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1234
+#: assets/jsx/workflow-editor/components/data-fields/conditional/components/duplicate-rule-button.jsx:10
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:949
+msgid "Duplicate Rule"
+msgstr "중복 규칙"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1322
+#: assets/jsx/workflow-editor/components/data-fields/conditional/components/not-toggle.jsx:30
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:997
+msgid "Not"
+msgstr "아니오"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1915
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:12
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1344
+msgid "Dismiss"
+msgstr "해제"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1916
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:13
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1345
+msgid "Dismiss the notification"
+msgstr "알림 해제"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1967
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:67
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1399
+#, js-format
+msgid "Option %s"
+msgstr "옵션 %s"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2004
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:95
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1427
+#, js-format
+msgid "Option #%s"
+msgstr "옵션 #%s"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2028
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:114
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1446
+msgid "No options added to the action."
+msgstr "작업에 추가된 옵션이 없습니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2033
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:120
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1452
+msgid "Add a new option"
+msgstr "새 옵션 추가"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2037
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:132
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1464
+#, js-format
+msgid ""
+"You have reached the maximum number of options. You can add up to %s "
+"options."
+msgstr "최대 옵션 수에 도달했습니다. 최대 %s 개의 옵션을 추가할 수 있습니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2139
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3245
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:73
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:7
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1549
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2469
+msgid "Name"
+msgstr "이름"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2149
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:85
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1561
+msgid "Hint"
+msgstr "힌트"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2162
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:107
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1583
+msgid "The option name should only contain letters, numbers and underscores."
+msgstr "옵션 이름에는 문자, 숫자 및 밑줄만 포함되어야 합니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2322
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:61
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1679
+msgid "Selected in the calendar"
+msgstr "캘린더에서 선택됨"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2325
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4203
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:62
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-date.jsx:59
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1680
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3177
+msgid "When the trigger is activated"
+msgstr "트리거가 활성화될 때"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2328
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4206
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:63
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-date.jsx:63
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1681
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3181
+msgid "When the step is activated"
+msgstr "단계가 활성화될 때"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2345
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:80
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1698
+msgid "As soon as possible"
+msgstr "가능한 한 빨리"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2348
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:81
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1699
+msgid "On a specific date"
+msgstr "특정 날짜에"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2351
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:82
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1700
+msgid "Relative to a specific date"
+msgstr "특정 날짜를 기준으로"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2355
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:86
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1704
+msgid "Unchanged"
+msgstr "변경되지 않음"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2379
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:119
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1737
+msgid "Date source"
+msgstr "날짜 소스"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2409
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:147
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1765
+msgid ""
+"Click the button to choose a custom date source from variables that can "
+"provide a date."
+msgstr "버튼을 클릭하여 날짜를 제공할 수 있는 변수에서 사용자 정의 날짜 소스를 선택하세요."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2414
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:159
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1777
+msgid "Offset"
+msgstr "오프셋"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2433
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:181
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1799
+msgid "Error: "
+msgstr "오류: "
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2436
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:188
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1806
+msgid "Click for more information"
+msgstr "자세한 정보를 보려면 클릭하세요"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2443
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:197
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1815
+#, js-format
+msgid ""
+"For more information on formatting, see the %sPHP strtotime function%s. For "
+"example, you could enter %s+1 month%s or %s+1 week 2 days 4 hours 2 "
+"seconds%s or %snext Thursday%s. Please use only phrases in English."
+msgstr ""
+"형식 지정에 대한 자세한 내용은 %sPHP strtotime 함수%s를 참조하세요. 예를 들어, %s+1 개월%s 또는 %s+1 주 "
+"2일 4시간 2초%s 또는 %s다음 목요일%s을 입력할 수 있습니다. 영어로만 구문을 사용하세요."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2523
+#: assets/jsx/workflow-editor/components/data-fields/debug-data.jsx:39
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1881
+msgid "All received input"
+msgstr "모든 수신 입력"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2526
+#: assets/jsx/workflow-editor/components/data-fields/debug-data.jsx:43
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1885
+msgid "Custom data"
+msgstr "사용자 정의 데이터"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2544
+#: assets/jsx/workflow-editor/components/data-fields/debug-data.jsx:64
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1906
+msgid "Select the data to output"
+msgstr "출력할 데이터를 선택하세요"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2591
+#: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:9
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1935
+msgid "Notice"
+msgstr "알림"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2600
+#: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:12
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1938
+msgid "Critical"
+msgstr "중요"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2603
+#: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:13
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1939
+msgid "Alert"
+msgstr "경고"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2677
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4886
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5144
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/autocompleters/post-statuses.jsx:10
+#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:117
+#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:29
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1993
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3747
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3957
+msgid "Post Status"
+msgstr "게시물 상태"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2708
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4820
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5147
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/autocompleters/post-types.jsx:10
+#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:50
+#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:33
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2010
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3680
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3961
+msgid "Post Type"
+msgstr "게시물 유형"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2752
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3346
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/column-item.jsx:10
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:10
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2027
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2527
+#. translators: %s is the database table name
+#, js-format
+msgid "Type the %s key and click on the button to insert it."
+msgstr "%s 키를 입력하고 버튼을 클릭하여 삽입하세요."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2756
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3350
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/column-item.jsx:17
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:19
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2034
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2536
+msgid "Metadata key"
+msgstr "메타데이터 키"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2774
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/column-item.jsx:31
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2048
+msgid "Insert"
+msgstr "삽입"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3132
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3133
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:136
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:138
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2349
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2351
+msgid "Edit"
+msgstr "편집"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3175
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:181
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2394
+msgid "Select a variable from the list below."
+msgstr "아래 목록에서 변수를 선택하세요."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3175
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:185
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2398
+msgid "Type your expression here or use the variables below."
+msgstr "여기에 표현식을 입력하거나 아래 변수를 사용하세요."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3210
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:212
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2425
+msgid "Variables"
+msgstr "변수"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3210
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:215
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2428
+msgid "Double-click on a variable to select it."
+msgstr "변수를 선택하려면 더블 클릭하세요."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3210
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:219
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2432
+msgid "Double-click on any variable to add it to your expression."
+msgstr "표현식에 추가하려면 어떤 변수든 더블 클릭하세요."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3216
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:231
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2444
+msgid "Hover over a variable to see its description."
+msgstr "변수 위에 마우스를 올려 설명을 확인하세요."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3246
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:8
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2470
+msgid "The name of the term."
+msgstr "용어의 이름."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3250
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:13
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2475
+msgid "Slug"
+msgstr "슬러그"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3251
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:14
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2476
+msgid "The slug of the term."
+msgstr "용어의 슬러그."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3255
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:19
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2481
+msgid "Term ID"
+msgstr "용어 ID"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3256
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:20
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2482
+msgid "The unique identifier of the term."
+msgstr "용어의 고유 식별자."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3260
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:25
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2487
+msgid "Count"
+msgstr "개수"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3261
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:26
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2488
+msgid "Number of posts assigned to this term."
+msgstr "이 용어에 할당된 게시물 수."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3364
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:38
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2555
+#. translators: %s is the taxonomy label
+#, js-format
+msgid "%s terms for this post."
+msgstr "%s 개의 용어가 이 게시물에 있습니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3408
+#: assets/jsx/workflow-editor/components/data-fields/help-link.jsx:5
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2593
+msgid "Learn more"
+msgstr "더 알아보기"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3616
+#: assets/jsx/workflow-editor/components/data-fields/interactive-custom-options/index.jsx:30
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2774
+msgid ""
+"This option is used to connect to another step and cannot have its name "
+"changed until the connection is removed."
+msgstr "이 옵션은 다른 단계에 연결하는 데 사용되며 연결이 제거될 때까지 이름을 변경할 수 없습니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3798
+#: assets/jsx/workflow-editor/components/data-fields/modal-footer.jsx:11
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2883
+msgid "OK"
+msgstr "확인"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3863
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5141
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:28
+#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:25
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2917
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3953
+msgid "Post Date"
+msgstr "게시 날짜"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3876
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:34
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2923
+msgid "Update the post date"
+msgstr "게시 날짜 업데이트"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3879
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5129
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:38
+#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:9
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2927
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3937
+msgid "Post Title"
+msgstr "게시 제목"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3892
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:44
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2933
+msgid "Update the post title"
+msgstr "게시 제목 업데이트"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3895
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:48
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2937
+msgid "Post Slug"
+msgstr "게시 슬러그"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3908
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:54
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2943
+msgid "Update the post slug"
+msgstr "게시 슬러그 업데이트"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3911
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5132
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:58
+#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:13
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2947
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3941
+msgid "Post Content"
+msgstr "게시물 내용"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3924
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:64
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2953
+msgid "Update the post content"
+msgstr "게시물 내용을 업데이트하십시오"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3927
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5135
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:68
+#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:17
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2957
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3945
+msgid "Post Excerpt"
+msgstr "게시물 요약"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3940
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:74
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2963
+msgid "Update the post excerpt"
+msgstr "게시물 요약을 업데이트하십시오"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3943
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:78
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2967
+msgid "Post Discussion"
+msgstr "게시물 토론"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3954
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:82
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2971
+msgid "Update the post discussion"
+msgstr "게시물 토론을 업데이트하십시오"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3957
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:86
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2975
+msgid "Post Password"
+msgstr "게시물 비밀번호"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3970
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:92
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2981
+msgid "Update the post password"
+msgstr "게시물 비밀번호를 업데이트하십시오"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3973
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4900
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5138
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:96
+#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:132
+#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:21
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2985
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3762
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3949
+msgid "Post Author"
+msgstr "게시물 작성자"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3986
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:102
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2991
+msgid "Update the post author"
+msgstr "게시물 작성자를 업데이트하십시오"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4079
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-author.jsx:63
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3061
+msgid "Unable to load the list of authors. Please try again."
+msgstr "작성자 목록을 불러올 수 없습니다. 다시 시도하십시오."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4093
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4223
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4299
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4404
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-author.jsx:81
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-date.jsx:84
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:32
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-text.jsx:27
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3079
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3202
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3266
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3374
+msgid "Do not update"
+msgstr "업데이트하지 않음"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4114
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-author.jsx:103
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3101
+msgid "Author"
+msgstr "작성자"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4302
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:36
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3270
+msgid "Comments only"
+msgstr "댓글만"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4303
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4316
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:37
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:56
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3271
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3290
+msgid "Closed"
+msgstr "닫힘"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4304
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:38
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3272
+msgid "Pings only"
+msgstr "핑만"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4305
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4312
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:39
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:51
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3273
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3285
+msgid "Open"
+msgstr "열림"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4309
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:46
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3280
+msgid "Changed..."
+msgstr "변경됨..."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4314
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:53
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3287
+msgid "Visitors can add new comments and replies."
+msgstr "방문자는 새로운 댓글과 답글을 추가할 수 있습니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4318
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:58
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3292
+msgid ""
+"Visitors can not add new comments or replies. Existing comments remain "
+"visible."
+msgstr "방문자는 새로운 댓글이나 답글을 추가할 수 없습니다. 기존 댓글은 계속 표시됩니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4349
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:97
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3331
+msgid "Enable pinbacks & trackbacks"
+msgstr "핀백 및 트랙백 활성화"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4354
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:104
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3338
+msgid "Learn more about pinbacks & trackbacks"
+msgstr "핀백 및 트랙백에 대해 자세히 알아보기"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4407
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-text.jsx:31
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3378
+msgid "Clear content"
+msgstr "내용 지우기"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4650
+#: assets/jsx/workflow-editor/components/data-fields/post-filter/components/post-filter.jsx:84
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3580
+msgid "Create filters to query specific posts based on rules."
+msgstr "규칙에 따라 특정 게시물을 쿼리하기 위한 필터 생성."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4845
+#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:78
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3708
+msgid "Post selection"
+msgstr "게시물 선택"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4848
+#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:81
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3711
+msgid "Post received as input"
+msgstr "입력으로 받은 게시물"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4851
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5970
+#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:82
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:65
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3712
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4579
+msgid "Custom query"
+msgstr "사용자 정의 쿼리"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4914
+#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:145
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3775
+msgid "Post Terms"
+msgstr "게시물 용어"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4929
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:6020
+#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:160
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:116
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3790
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4630
+msgid "Separate multiple values with commas or Enter key."
+msgstr "여러 값을 쉼표 또는 Enter 키로 구분하십시오."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4931
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:6022
+#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:166
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:122
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3796
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4636
+msgid "* Required field"
+msgstr "* 필수 입력란"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5079
+#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/post-search-query.jsx:84
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3908
+msgid "Post Search Query"
+msgstr "게시물 검색 쿼리"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5080
+#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/post-search-query.jsx:85
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3909
+msgid "Create a search query to filter posts based on conditions."
+msgstr "조건에 따라 게시물을 필터링하기 위한 검색 쿼리 생성."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5081
+#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/post-search-query.jsx:86
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3910
+msgid "Edit query"
+msgstr "쿼리 편집"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5150
+#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:37
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3965
+msgid "Post Parent"
+msgstr "게시물 상위 항목"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5239
+#: assets/jsx/workflow-editor/components/data-fields/post-status.jsx:40
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4013
+msgid "New Status"
+msgstr "새 상태"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5287
+#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:13
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4037
+msgid "No color"
+msgstr "색상 없음"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5290
+#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:14
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4038
+msgid "Green"
+msgstr "녹색"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5293
+#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:15
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4039
+msgid "Orange"
+msgstr "주황색"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5296
+#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:16
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4040
+msgid "Red"
+msgstr "빨간색"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5299
+#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:17
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4041
+msgid "Blue"
+msgstr "파란색"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5302
+#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:18
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4042
+msgid "Purple"
+msgstr "보라색"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5305
+#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:19
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4043
+msgid "Gray"
+msgstr "회색"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5366
+#: assets/jsx/workflow-editor/components/data-fields/recurrence.jsx:16
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4085
+msgid "Custom interval in seconds"
+msgstr "초 단위로 사용자 지정 간격"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5521
+#: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:127
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4224
+msgid "Repeating Action"
+msgstr "반복 작업"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5526
+#: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:131
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4228
+msgid ""
+"Choose how often this task should repeat. Select 'Non-repeating' for a "
+"one-time action or set an interval for automatic recurrence."
+msgstr "이 작업이 얼마나 자주 반복될지를 선택하십시오. 한 번만 실행할 경우 '비반복'을 선택하거나 자동 반복을 위한 간격을 설정하십시오."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5535
+#: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:148
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4245
+msgid "Unique Task Identifier"
+msgstr "고유 작업 식별자"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5544
+#: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:154
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4251
+msgid "Define a unique ID to detect and prevent duplicate tasks."
+msgstr "중복 작업을 감지하고 방지하기 위해 고유 ID를 정의하십시오."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5685
+#: assets/jsx/workflow-editor/components/data-fields/taxonomy-terms.jsx:69
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4362
+msgid "Select the terms"
+msgstr "조건 선택"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5691
+#: assets/jsx/workflow-editor/components/data-fields/taxonomy-terms.jsx:73
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4366
+msgid "Specific terms"
+msgstr "특정 조건"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5955
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:45
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4559
+msgid "User Role"
+msgstr "사용자 역할"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5964
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:61
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4575
+msgid "User selection"
+msgstr "사용자 선택"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5967
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:64
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4578
+msgid "User received as input"
+msgstr "입력으로 받은 사용자"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:6008
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:105
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4619
+msgid "User ID"
+msgstr "사용자 ID"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7939
+#: assets/jsx/workflow-editor/components/flow-editor/index.jsx:442
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:6374
+msgid "Applying auto layout."
+msgstr "자동 레이아웃 적용 중."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7960
+#: assets/jsx/workflow-editor/components/flow-editor/index.jsx:467
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:6399
+msgid "Auto layout applied."
+msgstr "자동 레이아웃이 적용되었습니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8090
+#: assets/jsx/workflow-editor/components/fullscreen-mode-close.jsx:43
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:6525
+msgid "Back"
+msgstr "뒤로"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9134
+#: assets/jsx/workflow-editor/components/inspector-card/index.jsx:51
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:6961
+msgid "Add a description to this step..."
+msgstr "이 단계에 대한 설명 추가..."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9141
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9144
+#: assets/jsx/workflow-editor/components/inspector-card/index.jsx:68
+#: assets/jsx/workflow-editor/components/inspector-card/index.jsx:78
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:6978
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:6988
+msgid "Edit description"
+msgstr "설명 편집"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9179
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13579
+#: assets/jsx/workflow-editor/components/inspector-card/index.jsx:116
+#: assets/jsx/workflow-editor/components/secondary-sidebar/node-card.jsx:16
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7026
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11263
+msgid "Pro"
+msgstr "프로"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9186
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11520
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13583
+#: assets/jsx/workflow-editor/components/inspector-card/index.jsx:132
+#: assets/jsx/workflow-editor/components/node-types/generic.jsx:319
+#: assets/jsx/workflow-editor/components/secondary-sidebar/node-card.jsx:29
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7042
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9283
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11276
+msgid "Currently this step is being skipped. Upgrade to Pro to unlock this feature."
+msgstr "현재 이 단계를 건너뛰고 있습니다. 이 기능을 잠금 해제하려면 프로로 업그레이드하십시오."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9610
+#: assets/jsx/workflow-editor/components/layout/header.jsx:129
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7414
+msgid "Add"
+msgstr "추가"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9610
+#: assets/jsx/workflow-editor/components/layout/header.jsx:129
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7414
+msgid "Close"
+msgstr "닫기"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9618
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9621
+#: assets/jsx/workflow-editor/components/layout/header.jsx:140
+#: assets/jsx/workflow-editor/components/layout/header.jsx:145
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7425
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7430
+#. translators: button label text should, if possible, be under 16 characters.
+msgid "Auto Layout"
+msgstr "자동 레이아웃"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9628
+#: assets/jsx/workflow-editor/components/layout/header.jsx:157
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7442
+#. translators: button label text should, if possible, be under 16 characters.
+msgid "Upgrade to Pro and unlock more features"
+msgstr "프로로 업그레이드하고 더 많은 기능 잠금 해제"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9872
+#: assets/jsx/workflow-editor/components/left-toolbar/redo.jsx:31
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7674
+#. translators: button label text should, if possible, be under 16 characters.
+msgid "Redo"
+msgstr "다시 실행"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10045
+#: assets/jsx/workflow-editor/components/left-toolbar/undo.jsx:31
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7823
+#. translators: button label text should, if possible, be under 16 characters.
+msgid "Undo"
+msgstr "실행 취소"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10079
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10388
+#: assets/js/backupPanel.js:144
+#: assets/jsx/backup-panel/components/json-preview.jsx:15
+#: assets/jsx/workflow-editor/components/loading-message/index.jsx:7
+#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:18
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7843
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8099
+#: assets/js/backupPanel.js:110
+msgid "Loading..."
+msgstr "로딩 중..."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10081
+#: assets/jsx/workflow-editor/components/loading-message/index.jsx:12
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7848
+msgid "Wait, we are loading the workflow..."
+msgstr "잠시 기다려 주세요, 워크플로우를 로드하는 중입니다..."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10189
+#: assets/jsx/workflow-editor/components/more-menu/menu-feature-toggle.jsx:32
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7929
+msgid "Feature deactivated"
+msgstr "기능 비활성화됨"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10191
+#: assets/jsx/workflow-editor/components/more-menu/menu-feature-toggle.jsx:34
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7931
+msgid "Feature activated"
+msgstr "기능 활성화됨"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10243
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:27
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7978
+msgid "Fullscreen mode"
+msgstr "전체 화면 모드"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10244
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:28
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7979
+msgid "Work without distraction"
+msgstr "방해받지 않고 작업하기"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10245
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:29
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7980
+msgid "Fullscreen mode activated"
+msgstr "전체 화면 모드 활성화됨"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10246
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:30
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7981
+msgid "Fullscreen mode deactivated"
+msgstr "전체 화면 모드 비활성화됨"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10251
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:36
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7987
+msgid "Advanced Settings"
+msgstr "고급 설정"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10252
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:37
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7988
+msgid "Display advanced settings for the workflow, triggers and steps"
+msgstr "워크플로우, 트리거 및 단계에 대한 고급 설정 표시"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10253
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:38
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7989
+msgid "Advanced settings mode activated"
+msgstr "고급 설정 모드 활성화됨"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10254
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:39
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7990
+msgid "Advanced settings mode deactivated"
+msgstr "고급 설정 모드 비활성화됨"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10259
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:45
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7996
+msgid "Display a mini map"
+msgstr "미니 맵 표시"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10260
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:46
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7997
+msgid "Display a mini map in the bottom of the editor, triggers and steps"
+msgstr "편집기 하단에 미니 맵, 트리거 및 단계 표시"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10261
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10268
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:47
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:55
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7998
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8006
+msgid "Mini map activated"
+msgstr "미니 맵 활성화됨"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10262
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10269
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:48
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:56
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7999
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8007
+msgid "Mini map deactivated"
+msgstr "미니 맵 비활성화"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10266
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:53
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8004
+msgid "Display the controls panel"
+msgstr "컨트롤 패널 표시"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10267
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:54
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8005
+msgid ""
+"Display the controls panel with buttons to zoon in, zoom out, fit the view "
+"and lock the viewport"
+msgstr "줌 인, 줌 아웃, 뷰 맞춤 및 뷰포트 잠금을 위한 버튼이 포함된 컨트롤 패널 표시"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10271
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:59
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8010
+msgid "Tools"
+msgstr "도구"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10275
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:63
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8014
+msgid "Developer mode"
+msgstr "개발자 모드"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10276
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:64
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8015
+msgid "Work in developer mode"
+msgstr "개발자 모드에서 작업"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10277
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:65
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8016
+msgid "Developer mode activated"
+msgstr "개발자 모드 활성화"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10278
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:66
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8017
+msgid "Developer mode deactivated"
+msgstr "개발자 모드 비활성화"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10283
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:72
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8023
+msgid "Welcome guide"
+msgstr "환영 가이드"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10284
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:73
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8024
+msgid "Display the welcome guide"
+msgstr "환영 가이드 표시"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10285
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:74
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8025
+msgid "Welcome guide activated"
+msgstr "환영 가이드 활성화"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10286
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:75
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8026
+msgid "Welcome guide deactivated"
+msgstr "환영 가이드 비활성화"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10292
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:83
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8034
+msgid "Help"
+msgstr "도움말"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10390
+#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:23
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8104
+msgid "Developer Info"
+msgstr "개발자 정보"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10393
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11110
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11355
+#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:31
+#: assets/jsx/workflow-editor/components/node-inspector/node-inspector-card.jsx:18
+#: assets/jsx/workflow-editor/components/node-types/generic.jsx:109
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8112
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8850
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9073
+msgid "Node"
+msgstr "노드"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10401
+#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:41
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8122
+msgid "Node Data"
+msgstr "노드 데이터"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10409
+#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:51
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8132
+msgid "Node Settings"
+msgstr "노드 설정"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10417
+#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:65
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8146
+msgid "Node Type"
+msgstr "노드 유형"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10757
+#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:98
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8427
+msgid "No element selected."
+msgstr "선택된 요소가 없습니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10757
+#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:106
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8435
+msgid "Multiple and different elements selected."
+msgstr "여러 개의 서로 다른 요소가 선택되었습니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10758
+#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:116
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8445
+#, js-format
+msgid "%d steps selected"
+msgstr "%d 단계 선택됨"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10759
+#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:119
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8448
+msgid "Multiple steps selected."
+msgstr "여러 단계가 선택되었습니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10764
+#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:130
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8459
+#, js-format
+msgid "%d connections selected"
+msgstr "%d 연결 선택됨"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10765
+#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:133
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8462
+msgid "Multiple connections selected."
+msgstr "여러 연결이 선택되었습니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10785
+#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:165
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8494
+msgid "Connection"
+msgstr "연결"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10786
+#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:166
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8495
+msgid ""
+"The connection between nodes in the workflow. Signifies the path along "
+"which data or control flow one node to another."
+msgstr "워크플로우 내의 노드 간의 연결입니다. 데이터 또는 제어가 한 노드에서 다른 노드로 흐르는 경로를 나타냅니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11036
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:83
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8744
+msgid "Step Data Flow"
+msgstr "단계 데이터 흐름"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11040
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:85
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8746
+msgid "Inputs"
+msgstr "입력"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11040
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:89
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8750
+msgid "This step receives the following input from previous step:"
+msgstr "이 단계는 이전 단계에서 다음 입력을 받습니다:"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11046
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:100
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8761
+msgid "This step does not receive any input from previous step."
+msgstr "이 단계는 이전 단계에서 어떤 입력도 받지 않습니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11048
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:105
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8766
+msgid "Outputs"
+msgstr "출력"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11048
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:109
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8770
+msgid "This step outputs the following data:"
+msgstr "이 단계는 다음 데이터를 출력합니다:"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11054
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:120
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8781
+msgid "This step does not output any data."
+msgstr "이 단계는 어떤 데이터도 출력하지 않습니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11056
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:125
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8786
+msgid "Step Scoped Variables"
+msgstr "단계 범위 변수"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11056
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:129
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8790
+msgid "This step receives the following step scoped variables:"
+msgstr "이 단계는 다음 단계 범위 변수를 받습니다:"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11062
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:140
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8801
+msgid "This step does not have any step scoped variables."
+msgstr "이 단계는 어떤 단계 범위 변수도 없습니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11064
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:145
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8806
+msgid "Global Variables"
+msgstr "전역 변수"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11064
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:149
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8810
+msgid "No global variables are declared"
+msgstr "전역 변수가 선언되지 않았습니다"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11111
+#: assets/jsx/workflow-editor/components/node-inspector/node-inspector-card.jsx:19
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8851
+msgid "No description"
+msgstr "설명이 없습니다"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11310
+#: assets/jsx/workflow-editor/components/node-types/generic.jsx:57
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9021
+#, js-format
+msgid "Unknown node: %s"
+msgstr "알 수 없는 노드: %s"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11311
+#: assets/jsx/workflow-editor/components/node-types/generic.jsx:58
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9022
+msgid "This is a placeholder node for a node that does not exist."
+msgstr "존재하지 않는 노드에 대한 플레이스홀더 노드입니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11463
+#: assets/jsx/workflow-editor/components/node-types/generic.jsx:244
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9208
+msgid "Step"
+msgstr "단계"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11469
+#: assets/jsx/workflow-editor/components/node-types/generic.jsx:250
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9214
+msgid "Trigger"
+msgstr "트리거"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11499
+#: assets/jsx/workflow-editor/components/node-types/generic.jsx:286
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9250
+msgid "Step actions"
+msgstr "단계 작업"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11526
+#: assets/jsx/workflow-editor/components/node-types/generic.jsx:327
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9291
+msgid "This node has errors"
+msgstr "이 노드에는 오류가 있습니다"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11607
+#: assets/jsx/workflow-editor/components/node-types/node-placeholder.jsx:31
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9392
+msgid "Add a step"
+msgstr "단계 추가"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11609
+#: assets/jsx/workflow-editor/components/node-types/node-placeholder.jsx:33
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9394
+msgid "Search for actions"
+msgstr "작업 검색"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11802
+#: assets/jsx/workflow-editor/components/node-types/placeholder.jsx:168
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9569
+msgid "Search for steps"
+msgstr "단계 검색"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11828
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11890
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13523
+#: assets/jsx/workflow-editor/components/node-types/placeholder.jsx:194
+#: assets/jsx/workflow-editor/components/node-types/trigger-placeholder.jsx:13
+#: assets/jsx/workflow-editor/components/secondary-sidebar/menu.jsx:161
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9595
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9653
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11210
+msgid "Search for triggers and steps"
+msgstr "트리거 및 단계 검색"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11888
+#: assets/jsx/workflow-editor/components/node-types/trigger-placeholder.jsx:11
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9651
+msgid "Click to add a trigger"
+msgstr "트리거를 추가하려면 클릭하세요"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11975
+#: assets/jsx/workflow-editor/components/node-validation-panel/index.jsx:19
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9692
+msgid "Validation"
+msgstr "검증"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12004
+#: assets/jsx/workflow-editor/components/node-validation-panel/index.jsx:49
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9722
+msgid "All checks have passed for this step."
+msgstr "이 단계에 대한 모든 검사가 통과했습니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12191
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:122
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9878
+#, js-format
+msgid "The field \"%s\" contains an invalid variable."
+msgstr "필드 \"%s\"에 잘못된 변수가 포함되어 있습니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12192
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:126
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9882
+#, js-format
+msgid ""
+"The variable \"%s\" is not available in the current context. Please, check "
+"if it is spelled correctly."
+msgstr "변수 \"%s\"는 현재 컨텍스트에서 사용할 수 없습니다. 철자가 올바른지 확인하십시오."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12236
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:181
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9937
+#. translators: %s is the workflow step slug.
+#, js-format
+msgid "\"%s\" is not a variable or step slug."
+msgstr "\"%s\"는 변수 또는 단계 슬러그가 아닙니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12242
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:190
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9946
+msgid "Empty placeholder is not allowed."
+msgstr "빈 플레이스홀더는 허용되지 않습니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12252
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:203
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9959
+msgid "Unclosed placeholder are not allowed."
+msgstr "닫히지 않은 플레이스홀더는 허용되지 않습니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12256
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:208
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9964
+msgid "Unopened placeholder are not allowed."
+msgstr "열리지 않은 플레이스홀더는 허용되지 않습니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12263
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:216
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9972
+#. translators: %s is the field label.
+#, js-format
+msgid "Invalid expression on %s"
+msgstr "%s에서 잘못된 표현입니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12275
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12495
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:232
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:575
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9988
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10331
+#. translators: %s is the field label.
+#, js-format
+msgid "The field %s must be a list of options."
+msgstr "필드 %s는 옵션 목록이어야 합니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12297
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:261
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10017
+#. translators: %s is the option name.
+#, js-format
+msgid "The option \"%s\" does not have a name."
+msgstr "옵션 \"%s\"에는 이름이 없습니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12303
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:270
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10026
+#. translators: %s is the option name.
+#, js-format
+msgid "The option \"%s\" does not have a label."
+msgstr "옵션 \"%s\"에는 레이블이 없습니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12309
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:279
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10035
+#. translators: %s is the option name.
+#, js-format
+msgid "The option \"%s\" has a duplicate name."
+msgstr "옵션 \"%s\"에는 중복된 이름이 있습니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12315
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:288
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10044
+#. translators: %s is the option label.
+#, js-format
+msgid "The option \"%s\" has a duplicate label."
+msgstr "옵션 \"%s\"에는 중복된 레이블이 있습니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12325
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:302
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10058
+#. translators: %s is the field label.
+#, js-format
+msgid "The field %s must be a valid list of options."
+msgstr "필드 %s는 유효한 옵션 목록이어야 합니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12347
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:333
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10089
+msgid "This step requires a connection from a previous step."
+msgstr "이 단계는 이전 단계와의 연결이 필요합니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12352
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:343
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10099
+msgid "This step requires a connection to a following step."
+msgstr "이 단계는 다음 단계와의 연결이 필요합니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12406
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12416
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:407
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:428
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10163
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10184
+#, js-format
+msgid "The field %s is required."
+msgstr "필드 %s는 필수입니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12429
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:450
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10206
+#, js-format
+msgid "The field %s must be a valid email address."
+msgstr "필드 %s는 유효한 이메일 주소여야 합니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12437
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:466
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10222
+#, js-format
+msgid "The field %s must be a valid email address list separated by commas."
+msgstr "필드 %s는 쉼표로 구분된 유효한 이메일 주소 목록이어야 합니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12443
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:480
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10236
+#, js-format
+msgid "The field %s must be an integer."
+msgstr "필드 %s는 정수여야 합니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12450
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:495
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10251
+#, js-format
+msgid "The field %s must be an integer list separated by commas."
+msgstr "필드 %s는 쉼표로 구분된 정수 목록이어야 합니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12463
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12467
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12470
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:518
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:527
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:536
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10274
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10283
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10292
+#, js-format
+msgid "The field %s must be a list of name-value pairs."
+msgstr "필드 %s는 이름-값 쌍의 목록이어야 합니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12467
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:528
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10284
+#, js-format
+msgid "The name of the pair is required on item %d."
+msgstr "항목 %d에 쌍의 이름이 필요합니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12470
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:537
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10293
+#, js-format
+msgid "The value of the pair is required on item %d."
+msgstr "항목 %d에 쌍의 값이 필요합니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12511
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:605
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10361
+msgid "Invalid variable."
+msgstr "유효하지 않은 변수입니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12511
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:608
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10364
+msgid "Please use the variable picker to select valid expression."
+msgstr "유효한 표현식을 선택하려면 변수 선택기를 사용하세요."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12630
+#: assets/jsx/workflow-editor/components/pro-feature-button/index.jsx:26
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10467
+msgid "Upgrade to Pro to unlock this feature."
+msgstr "이 기능을 잠금 해제하려면 Pro로 업그레이드하세요."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12917
+#: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-listbox/group.jsx:14
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10691
+msgid "Use left and right arrow keys to move through steps"
+msgstr "단계 간 이동하려면 왼쪽 및 오른쪽 화살표 키를 사용하세요"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13096
+#: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-no-results.jsx:14
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10809
+msgid "No results found."
+msgstr "결과를 찾을 수 없습니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13239
+#: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:101
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10929
+#. translators: %d: number of results.
+#, js-format
+msgid "%d result found."
+msgid_plural "%d results found."
+msgstr[0] "%d 결과가 발견되었습니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13244
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13249
+#: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:116
+#: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:123
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10944
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10951
+msgid "Nodes"
+msgstr "노드"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13477
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13497
+#: assets/jsx/workflow-editor/components/secondary-sidebar/menu.jsx:72
+#: assets/jsx/workflow-editor/components/secondary-sidebar/menu.jsx:111
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11121
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11160
+msgid "A tip for using the workflow editor"
+msgstr "워크플로 편집기 사용을 위한 팁"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13627
+#: assets/jsx/workflow-editor/components/secondary-sidebar/node-draggable-chip.jsx:27
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11310
+#. translators: %d: Number of blocks.
+#, js-format
+msgid "%d block"
+msgid_plural "%d blocks"
+msgstr[0] "%d 블록"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14104
+#: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:24
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11712
+#. translators: Patterns tab title in the block inserter.
+msgid "Actions"
+msgstr "작업"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14154
+#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:10
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11752
+msgid ""
+"Select multiple steps by pressing <kbd>cmd</kbd> and clicking on each step "
+"in the workflow."
+msgstr "워크플로우에서 각 단계를 클릭하면서 <kbd>cmd</kbd> 키를 눌러 여러 단계를 선택하세요."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14156
+#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:16
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11758
+msgid ""
+"Drag steps from the inserter and drop them directly into your workflow for "
+"easy customization."
+msgstr "삽입기에서 단계를 드래그하여 워크플로우에 직접 드롭하여 쉽게 사용자 정의할 수 있습니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14156
+#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:17
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11759
+msgid ""
+"Simply double-click any step to bring up the settings sidebar for quick "
+"adjustments."
+msgstr "빠른 조정을 위해 아무 단계에서나 더블 클릭하여 설정 사이드바를 불러오세요."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14156
+#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:18
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11760
+msgid "Double-click the workflow pane to increase the zoom level for a closer look."
+msgstr "워크플로우 창을 더블 클릭하여 확대 수준을 높여 자세히 살펴보세요."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14156
+#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:20
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11762
+msgid ""
+"Hold down the <kbd>shift</kbd> key and double-click the workflow pane to "
+"decrease the zoom level."
+msgstr "<kbd>shift</kbd> 키를 누른 채로 워크플로우 창을 더블 클릭하여 확대 수준을 낮추세요."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14158
+#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:26
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11768
+msgid ""
+"Easily add new steps by clicking on a step's handle and dragging it. Drop "
+"it in the workflow pane to see a floating inserter where you can type and "
+"search for the step you need."
+msgstr ""
+"단계의 핸들을 클릭하고 드래그하여 쉽게 새 단계를 추가하세요. 워크플로우 창에 드롭하면 필요한 단계를 입력하고 검색할 수 있는 플로팅 "
+"삽입기가 나타납니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14289
+#: assets/jsx/workflow-editor/components/settings-sidebar/plugin-sidebar.jsx:39
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11859
+msgid "(no name)"
+msgstr "(이름 없음)"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14348
+#: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:37
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11906
+msgid "Element"
+msgstr "요소"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14432
+#: assets/jsx/workflow-editor/components/settings-sidebar/settings-sidebar.jsx:50
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11972
+msgid "Close settings"
+msgstr "설정 닫기"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14660
+#: assets/jsx/workflow-editor/components/welcome-guide/index.jsx:22
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12164
+msgid "Get started"
+msgstr "시작하기"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14752
+#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:50
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12242
+msgid "Ray Debug"
+msgstr "레이 디버그"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14755
+#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:55
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12247
+msgid ""
+"Enable or disable the different types of debug information that is shown in "
+"Ray when this workflow is activated."
+msgstr "이 워크플로우가 활성화될 때 레이에서 표시되는 다양한 유형의 디버그 정보를 활성화하거나 비활성화합니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14756
+#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:59
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12251
+msgid "Show Queries"
+msgstr "쿼리 표시"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14760
+#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:66
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12258
+msgid "Show Emails"
+msgstr "이메일 표시"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14764
+#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:73
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12265
+msgid "Show WordPress Errors"
+msgstr "워드프레스 오류 표시"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14768
+#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:80
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12272
+msgid "Show current running step"
+msgstr "현재 실행 중인 단계 표시"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14812
+#: assets/jsx/workflow-editor/components/workflow-delete-button/index.jsx:24
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12307
+msgid "Are you sure you want to delete this workflow?"
+msgstr "이 워크플로우를 삭제하시겠습니까?"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14823
+#: assets/jsx/workflow-editor/components/workflow-delete-button/index.jsx:39
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12322
+msgid "Move to trash"
+msgstr "휴지통으로 이동"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14929
+#: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:79
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12407
+#. translators: button label text should, if possible, be under 16 characters.
+msgid "Publish"
+msgstr "발행"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14929
+#: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:79
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12407
+msgid "Update"
+msgstr "업데이트"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14936
+#: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:90
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12418
+msgid "Autosaving..."
+msgstr "자동 저장 중..."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14936
+#: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:90
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12418
+msgid "Updating..."
+msgstr "업데이트 중..."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14938
+#: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:92
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12420
+msgid "Updated"
+msgstr "업데이트 완료"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15086
+#: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:82
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12550
+#. translators: button label text should, if possible, be under 16 characters.
+msgid "Save draft"
+msgstr "초안 저장"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15089
+#: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:85
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12553
+#. translators: button label text should, if possible, be under 16 characters.
+msgid "Save"
+msgstr "저장"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15095
+#: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:94
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12562
+msgid "Autosaving"
+msgstr "자동 저장 중"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15095
+#: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:94
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12562
+msgid "Saving"
+msgstr "저장 중"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15097
+#: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:96
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12564
+msgid "Saved"
+msgstr "저장 완료"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15245
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:31
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12638
+msgid "Unable to create a new workflow. Please try again."
+msgstr "새 워크플로를 생성할 수 없습니다. 다시 시도해 주세요."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15278
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:51
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12658
+msgid "Unable to load the workflow. Please try again."
+msgstr "워크플로를 불러올 수 없습니다. 다시 시도해 주세요."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15340
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:94
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12701
+msgid "Workflow saved as draft."
+msgstr "워크플로가 초안으로 저장되었습니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15349
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15424
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:102
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:153
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12709
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12760
+msgid "Unable to save workflow. Please, try again."
+msgstr "워크플로를 저장할 수 없습니다. 다시 시도해 주세요."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15415
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:145
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12752
+msgid "Workflow saved."
+msgstr "워크플로가 저장되었습니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15488
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:198
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12805
+msgid "Unable to publish the workflow. Please, try again."
+msgstr "워크플로를 게시할 수 없습니다. 다시 시도해 주세요."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15543
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:235
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12842
+msgid "Workflow switched to draft."
+msgstr "워크플로가 초안으로 전환되었습니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15552
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:243
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12850
+msgid "Unable to switch workflow to draft. Please, try again."
+msgstr "워크플로를 초안으로 전환할 수 없습니다. 다시 시도해 주세요."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15654
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:334
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12941
+msgid "Workflow deleted. Redirecting..."
+msgstr "워크플로가 삭제되었습니다. 리디렉션 중..."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15666
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:345
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12952
+msgid "Unable to delete the workflow. Please, try again."
+msgstr "워크플로를 삭제할 수 없습니다. 다시 시도해 주세요."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16029
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:103
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13222
+msgid "The current site."
+msgstr "현재 사이트입니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16038
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:113
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13232
+msgid "The current workflow."
+msgstr "현재 워크플로우입니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16044
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:120
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13239
+msgid "Activating user"
+msgstr "사용자 활성화 중"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16047
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:123
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13242
+msgid "The current user."
+msgstr "현재 사용자입니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16053
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:130
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13249
+msgid "Activating trigger"
+msgstr "트리거 활성화 중"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16056
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:133
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13252
+msgid "The node that activated the workflow."
+msgstr "워크플로우를 활성화한 노드입니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16062
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:140
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13259
+msgid "Engine execution ID"
+msgstr "엔진 실행 ID"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16065
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:143
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13262
+msgid ""
+"A unique identifier assigned each time the workflow engine runs. Useful for "
+"tracking specific workflow executions and debugging."
+msgstr "워크플로우 엔진이 실행될 때마다 할당되는 고유 식별자입니다. 특정 워크플로우 실행을 추적하고 디버깅하는 데 유용합니다."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16943
+#: assets/jsx/workflow-editor/components/workflow-summary/index.jsx:42
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14309
+msgid "Summary"
+msgstr "요약"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16949
+#: assets/jsx/workflow-editor/components/workflow-summary/index.jsx:48
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14315
+msgid "Title"
+msgstr "제목"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16956
+#: assets/jsx/workflow-editor/components/workflow-summary/index.jsx:57
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14324
+msgid "Description"
+msgstr "설명"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:17010
+#: assets/jsx/workflow-editor/components/workflow-switch-to-draft-button/index.jsx:33
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14374
+msgid "Are you sure you want to unpublish this workflow?"
+msgstr "이 워크플로우의 게시를 취소하시겠습니까?"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:17024
+#: assets/jsx/workflow-editor/components/workflow-switch-to-draft-button/index.jsx:52
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14393
+msgid "Draft"
+msgstr "초안"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:17024
+#: assets/jsx/workflow-editor/components/workflow-switch-to-draft-button/index.jsx:52
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14393
+msgid "Switch to draft"
+msgstr "초안으로 전환"
 
 #: assets/js/backupPanel.js:104
 #: assets/jsx/backup-panel/components/file-dropzone/index.jsx:22
@@ -4296,14 +6384,6 @@ msgstr "선택한 파일"
 #: assets/js/backupPanel.js:973
 msgid "File size"
 msgstr "파일 크기"
-
-#: assets/js/backupPanel.js:144
-#: assets/jsx/backup-panel/components/json-preview.jsx:15
-#: assets/jsx/workflow-editor/components/loading-message/index.jsx:7
-#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:18
-#: assets/js/backupPanel.js:110
-msgid "Loading..."
-msgstr "로딩 중..."
 
 #: assets/js/backupPanel.js:202
 #: assets/jsx/backup-panel/components/selectable-list/index.jsx:22
@@ -4473,1314 +6553,32 @@ msgstr "\"%s\" 워크플로우에 대한 모든 예약된 작업을 취소하시
 msgid "Cancel Actions"
 msgstr "작업 취소"
 
-#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:29
-msgid "Integer"
-msgstr "정수"
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:30
-msgid "String"
-msgstr "문자열"
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:31
-msgid "Boolean"
-msgstr "부울"
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:32
-msgid "Object"
-msgstr "객체"
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:33
-msgid "Array"
-msgstr "배열"
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:57
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:50
-#, fuzzy
-msgid "null"
-msgstr "null"
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:80
-msgid "Argument name"
-msgstr "인수 이름"
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:86
-msgid "Data type"
-msgstr "데이터 유형"
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:94
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:92
-msgid "Value"
-msgstr "값"
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:102
-msgid "The argument name should only contain letters, numbers and underscores."
-msgstr "인수 이름은 문자, 숫자 및 밑줄만 포함해야 합니다."
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/index.jsx:71
-#, js-format
-msgid "Argument #%s"
-msgstr "인수 #%s"
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/index.jsx:85
-msgid "No arguments added to the action."
-msgstr "작업에 추가된 인수가 없습니다."
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/index.jsx:90
-msgid "Add a new argument"
-msgstr "새 인수 추가"
-
-#: assets/jsx/workflow-editor/components/data-fields/conditional-date-offset.jsx:35
-msgid "When to expire"
-msgstr "만료 시점"
-
-#: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:43
-msgid "Add Group"
-msgstr "그룹 추가"
-
-#: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:44
-msgid "Add Rule"
-msgstr "규칙 추가"
-
-#: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:58
-msgid ""
-"Create rules that will continue the workflow only if certain conditions are "
-"met."
-msgstr "특정 조건이 충족될 경우에만 워크플로우를 계속할 규칙을 만듭니다."
-
-#: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:59
-#: assets/jsx/workflow-editor/components/data-fields/post-filter/components/post-filter.jsx:85
-msgid "Edit rules"
-msgstr "규칙 편집"
-
-#: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:60
-msgid ""
-"Conditional logic is a Pro feature. Upgrade to create advanced conditions "
-"for your workflows."
-msgstr "조건부 논리는 Pro 기능입니다. 워크플로우를 위한 고급 조건을 만들기 위해 업그레이드하세요."
-
-#: assets/jsx/workflow-editor/components/data-fields/conditional/components/duplicate-rule-button.jsx:10
-msgid "Duplicate Rule"
-msgstr "중복 규칙"
-
-#: assets/jsx/workflow-editor/components/data-fields/conditional/components/not-toggle.jsx:30
-msgid "Not"
-msgstr "아니오"
-
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:12
-msgid "Dismiss"
-msgstr "해제"
-
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:13
-msgid "Dismiss the notification"
-msgstr "알림 해제"
-
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:67
-#, js-format
-msgid "Option %s"
-msgstr "옵션 %s"
-
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:95
-#, js-format
-msgid "Option #%s"
-msgstr "옵션 #%s"
-
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:114
-msgid "No options added to the action."
-msgstr "작업에 추가된 옵션이 없습니다."
-
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:120
-msgid "Add a new option"
-msgstr "새 옵션 추가"
-
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:132
-#, js-format
-msgid ""
-"You have reached the maximum number of options. You can add up to %s "
-"options."
-msgstr "최대 옵션 수에 도달했습니다. 최대 %s 개의 옵션을 추가할 수 있습니다."
-
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:73
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:7
-msgid "Name"
-msgstr "이름"
-
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:85
-msgid "Hint"
-msgstr "힌트"
-
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:107
-msgid "The option name should only contain letters, numbers and underscores."
-msgstr "옵션 이름에는 문자, 숫자 및 밑줄만 포함되어야 합니다."
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:61
-msgid "Selected in the calendar"
-msgstr "캘린더에서 선택됨"
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:62
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-date.jsx:59
-msgid "When the trigger is activated"
-msgstr "트리거가 활성화될 때"
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:63
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-date.jsx:63
-msgid "When the step is activated"
-msgstr "단계가 활성화될 때"
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:80
-msgid "As soon as possible"
-msgstr "가능한 한 빨리"
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:81
-msgid "On a specific date"
-msgstr "특정 날짜에"
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:82
-msgid "Relative to a specific date"
-msgstr "특정 날짜를 기준으로"
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:86
-msgid "Unchanged"
-msgstr "변경되지 않음"
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:119
-msgid "Date source"
-msgstr "날짜 소스"
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:147
-msgid ""
-"Click the button to choose a custom date source from variables that can "
-"provide a date."
-msgstr "버튼을 클릭하여 날짜를 제공할 수 있는 변수에서 사용자 정의 날짜 소스를 선택하세요."
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:159
-msgid "Offset"
-msgstr "오프셋"
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:181
-msgid "Error: "
-msgstr "오류: "
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:188
-msgid "Click for more information"
-msgstr "자세한 정보를 보려면 클릭하세요"
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:197
-#, js-format
-msgid ""
-"For more information on formatting, see the %sPHP strtotime function%s. For "
-"example, you could enter %s+1 month%s or %s+1 week 2 days 4 hours 2 "
-"seconds%s or %snext Thursday%s. Please use only phrases in English."
-msgstr ""
-"형식 지정에 대한 자세한 내용은 %sPHP strtotime 함수%s를 참조하세요. 예를 들어, %s+1 개월%s 또는 %s+1 주 "
-"2일 4시간 2초%s 또는 %s다음 목요일%s을 입력할 수 있습니다. 영어로만 구문을 사용하세요."
-
-#: assets/jsx/workflow-editor/components/data-fields/debug-data.jsx:39
-msgid "All received input"
-msgstr "모든 수신 입력"
-
-#: assets/jsx/workflow-editor/components/data-fields/debug-data.jsx:43
-msgid "Custom data"
-msgstr "사용자 정의 데이터"
-
-#: assets/jsx/workflow-editor/components/data-fields/debug-data.jsx:64
-msgid "Select the data to output"
-msgstr "출력할 데이터를 선택하세요"
-
-#: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:9
-msgid "Notice"
-msgstr "알림"
-
-#: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:12
-msgid "Critical"
-msgstr "중요"
-
-#: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:13
-msgid "Alert"
-msgstr "경고"
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/autocompleters/post-statuses.jsx:10
-#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:117
-#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:29
-msgid "Post Status"
-msgstr "게시물 상태"
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/autocompleters/post-types.jsx:10
-#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:50
-#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:33
-msgid "Post Type"
-msgstr "게시물 유형"
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/column-item.jsx:10
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:10
-#. translators: %s is the database table name
-#, js-format
-msgid "Type the %s key and click on the button to insert it."
-msgstr "%s 키를 입력하고 버튼을 클릭하여 삽입하세요."
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/column-item.jsx:17
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:19
-msgid "Metadata key"
-msgstr "메타데이터 키"
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/column-item.jsx:31
-msgid "Insert"
-msgstr "삽입"
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:136
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:138
-msgid "Edit"
-msgstr "편집"
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:181
-msgid "Select a variable from the list below."
-msgstr "아래 목록에서 변수를 선택하세요."
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:185
-msgid "Type your expression here or use the variables below."
-msgstr "여기에 표현식을 입력하거나 아래 변수를 사용하세요."
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:212
-msgid "Variables"
-msgstr "변수"
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:215
-msgid "Double-click on a variable to select it."
-msgstr "변수를 선택하려면 더블 클릭하세요."
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:219
-msgid "Double-click on any variable to add it to your expression."
-msgstr "표현식에 추가하려면 어떤 변수든 더블 클릭하세요."
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:231
-msgid "Hover over a variable to see its description."
-msgstr "변수 위에 마우스를 올려 설명을 확인하세요."
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:8
-msgid "The name of the term."
-msgstr "용어의 이름."
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:13
-msgid "Slug"
-msgstr "슬러그"
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:14
-msgid "The slug of the term."
-msgstr "용어의 슬러그."
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:19
-msgid "Term ID"
-msgstr "용어 ID"
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:20
-msgid "The unique identifier of the term."
-msgstr "용어의 고유 식별자."
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:25
-msgid "Count"
-msgstr "개수"
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:26
-msgid "Number of posts assigned to this term."
-msgstr "이 용어에 할당된 게시물 수."
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:38
-#. translators: %s is the taxonomy label
-#, js-format
-msgid "%s terms for this post."
-msgstr "%s 개의 용어가 이 게시물에 있습니다."
-
-#: assets/jsx/workflow-editor/components/data-fields/help-link.jsx:5
-msgid "Learn more"
-msgstr "더 알아보기"
-
-#: assets/jsx/workflow-editor/components/data-fields/interactive-custom-options/index.jsx:30
-msgid ""
-"This option is used to connect to another step and cannot have its name "
-"changed until the connection is removed."
-msgstr "이 옵션은 다른 단계에 연결하는 데 사용되며 연결이 제거될 때까지 이름을 변경할 수 없습니다."
-
-#: assets/jsx/workflow-editor/components/data-fields/modal-footer.jsx:11
-msgid "OK"
-msgstr "확인"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:28
-#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:25
-msgid "Post Date"
-msgstr "게시 날짜"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:34
-msgid "Update the post date"
-msgstr "게시 날짜 업데이트"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:38
-#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:9
-msgid "Post Title"
-msgstr "게시 제목"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:44
-msgid "Update the post title"
-msgstr "게시 제목 업데이트"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:48
-msgid "Post Slug"
-msgstr "게시 슬러그"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:54
-msgid "Update the post slug"
-msgstr "게시 슬러그 업데이트"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:58
-#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:13
-msgid "Post Content"
-msgstr "게시물 내용"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:64
-msgid "Update the post content"
-msgstr "게시물 내용을 업데이트하십시오"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:68
-#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:17
-msgid "Post Excerpt"
-msgstr "게시물 요약"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:74
-msgid "Update the post excerpt"
-msgstr "게시물 요약을 업데이트하십시오"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:78
-msgid "Post Discussion"
-msgstr "게시물 토론"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:82
-msgid "Update the post discussion"
-msgstr "게시물 토론을 업데이트하십시오"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:86
-msgid "Post Password"
-msgstr "게시물 비밀번호"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:92
-msgid "Update the post password"
-msgstr "게시물 비밀번호를 업데이트하십시오"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:96
-#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:132
-#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:21
-msgid "Post Author"
-msgstr "게시물 작성자"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:102
-msgid "Update the post author"
-msgstr "게시물 작성자를 업데이트하십시오"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-author.jsx:63
-msgid "Unable to load the list of authors. Please try again."
-msgstr "작성자 목록을 불러올 수 없습니다. 다시 시도하십시오."
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-author.jsx:81
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-date.jsx:84
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:32
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-text.jsx:27
-msgid "Do not update"
-msgstr "업데이트하지 않음"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-author.jsx:103
-msgid "Author"
-msgstr "작성자"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:36
-msgid "Comments only"
-msgstr "댓글만"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:37
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:56
-msgid "Closed"
-msgstr "닫힘"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:38
-msgid "Pings only"
-msgstr "핑만"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:39
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:51
-msgid "Open"
-msgstr "열림"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:46
-msgid "Changed..."
-msgstr "변경됨..."
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:53
-msgid "Visitors can add new comments and replies."
-msgstr "방문자는 새로운 댓글과 답글을 추가할 수 있습니다."
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:58
-msgid ""
-"Visitors can not add new comments or replies. Existing comments remain "
-"visible."
-msgstr "방문자는 새로운 댓글이나 답글을 추가할 수 없습니다. 기존 댓글은 계속 표시됩니다."
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:97
-msgid "Enable pinbacks & trackbacks"
-msgstr "핀백 및 트랙백 활성화"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:104
-msgid "Learn more about pinbacks & trackbacks"
-msgstr "핀백 및 트랙백에 대해 자세히 알아보기"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-text.jsx:31
-msgid "Clear content"
-msgstr "내용 지우기"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-filter/components/post-filter.jsx:84
-msgid "Create filters to query specific posts based on rules."
-msgstr "규칙에 따라 특정 게시물을 쿼리하기 위한 필터 생성."
-
-#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:78
-msgid "Post selection"
-msgstr "게시물 선택"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:81
-msgid "Post received as input"
-msgstr "입력으로 받은 게시물"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:82
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:65
-msgid "Custom query"
-msgstr "사용자 정의 쿼리"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:145
-msgid "Post Terms"
-msgstr "게시물 용어"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:160
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:116
-msgid "Separate multiple values with commas or Enter key."
-msgstr "여러 값을 쉼표 또는 Enter 키로 구분하십시오."
-
-#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:166
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:122
-msgid "* Required field"
-msgstr "* 필수 입력란"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/post-search-query.jsx:84
-msgid "Post Search Query"
-msgstr "게시물 검색 쿼리"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/post-search-query.jsx:85
-msgid "Create a search query to filter posts based on conditions."
-msgstr "조건에 따라 게시물을 필터링하기 위한 검색 쿼리 생성."
-
-#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/post-search-query.jsx:86
-msgid "Edit query"
-msgstr "쿼리 편집"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:37
-msgid "Post Parent"
-msgstr "게시물 상위 항목"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-status.jsx:40
-msgid "New Status"
-msgstr "새 상태"
-
-#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:13
-msgid "No color"
-msgstr "색상 없음"
-
-#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:14
-msgid "Green"
-msgstr "녹색"
-
-#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:15
-msgid "Orange"
-msgstr "주황색"
-
-#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:16
-msgid "Red"
-msgstr "빨간색"
-
-#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:17
-msgid "Blue"
-msgstr "파란색"
-
-#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:18
-msgid "Purple"
-msgstr "보라색"
-
-#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:19
-msgid "Gray"
-msgstr "회색"
-
-#: assets/jsx/workflow-editor/components/data-fields/recurrence.jsx:16
-msgid "Custom interval in seconds"
-msgstr "초 단위로 사용자 지정 간격"
-
-#: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:127
-msgid "Repeating Action"
-msgstr "반복 작업"
-
-#: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:131
-msgid ""
-"Choose how often this task should repeat. Select 'Non-repeating' for a "
-"one-time action or set an interval for automatic recurrence."
-msgstr "이 작업이 얼마나 자주 반복될지를 선택하십시오. 한 번만 실행할 경우 '비반복'을 선택하거나 자동 반복을 위한 간격을 설정하십시오."
-
-#: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:148
-msgid "Unique Task Identifier"
-msgstr "고유 작업 식별자"
-
-#: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:154
-msgid "Define a unique ID to detect and prevent duplicate tasks."
-msgstr "중복 작업을 감지하고 방지하기 위해 고유 ID를 정의하십시오."
-
-#: assets/jsx/workflow-editor/components/data-fields/taxonomy-terms.jsx:69
-msgid "Select the terms"
-msgstr "조건 선택"
-
-#: assets/jsx/workflow-editor/components/data-fields/taxonomy-terms.jsx:73
-msgid "Specific terms"
-msgstr "특정 조건"
-
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:45
-msgid "User Role"
-msgstr "사용자 역할"
-
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:61
-msgid "User selection"
-msgstr "사용자 선택"
-
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:64
-msgid "User received as input"
-msgstr "입력으로 받은 사용자"
-
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:105
-msgid "User ID"
-msgstr "사용자 ID"
-
-#: assets/jsx/workflow-editor/components/flow-editor/index.jsx:442
-msgid "Applying auto layout."
-msgstr "자동 레이아웃 적용 중."
-
-#: assets/jsx/workflow-editor/components/flow-editor/index.jsx:467
-msgid "Auto layout applied."
-msgstr "자동 레이아웃이 적용되었습니다."
-
-#: assets/jsx/workflow-editor/components/fullscreen-mode-close.jsx:43
-msgid "Back"
-msgstr "뒤로"
-
-#: assets/jsx/workflow-editor/components/inspector-card/index.jsx:51
-msgid "Add a description to this step..."
-msgstr "이 단계에 대한 설명 추가..."
-
-#: assets/jsx/workflow-editor/components/inspector-card/index.jsx:68
-#: assets/jsx/workflow-editor/components/inspector-card/index.jsx:78
-msgid "Edit description"
-msgstr "설명 편집"
-
-#: assets/jsx/workflow-editor/components/inspector-card/index.jsx:116
-#: assets/jsx/workflow-editor/components/secondary-sidebar/node-card.jsx:16
-msgid "Pro"
-msgstr "프로"
-
-#: assets/jsx/workflow-editor/components/inspector-card/index.jsx:132
-#: assets/jsx/workflow-editor/components/node-types/generic.jsx:319
-#: assets/jsx/workflow-editor/components/secondary-sidebar/node-card.jsx:29
-msgid "Currently this step is being skipped. Upgrade to Pro to unlock this feature."
-msgstr "현재 이 단계를 건너뛰고 있습니다. 이 기능을 잠금 해제하려면 프로로 업그레이드하십시오."
-
-#: assets/jsx/workflow-editor/components/layout/header.jsx:129
-msgid "Add"
-msgstr "추가"
-
-#: assets/jsx/workflow-editor/components/layout/header.jsx:129
-msgid "Close"
-msgstr "닫기"
-
-#: assets/jsx/workflow-editor/components/layout/header.jsx:140
-#: assets/jsx/workflow-editor/components/layout/header.jsx:145
-#. translators: button label text should, if possible, be under 16 characters.
-msgid "Auto Layout"
-msgstr "자동 레이아웃"
-
-#: assets/jsx/workflow-editor/components/layout/header.jsx:157
-#. translators: button label text should, if possible, be under 16 characters.
-msgid "Upgrade to Pro and unlock more features"
-msgstr "프로로 업그레이드하고 더 많은 기능 잠금 해제"
-
-#: assets/jsx/workflow-editor/components/left-toolbar/redo.jsx:31
-#. translators: button label text should, if possible, be under 16 characters.
-msgid "Redo"
-msgstr "다시 실행"
-
-#: assets/jsx/workflow-editor/components/left-toolbar/undo.jsx:31
-#. translators: button label text should, if possible, be under 16 characters.
-msgid "Undo"
-msgstr "실행 취소"
-
-#: assets/jsx/workflow-editor/components/loading-message/index.jsx:12
-msgid "Wait, we are loading the workflow..."
-msgstr "잠시 기다려 주세요, 워크플로우를 로드하는 중입니다..."
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-feature-toggle.jsx:32
-msgid "Feature deactivated"
-msgstr "기능 비활성화됨"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-feature-toggle.jsx:34
-msgid "Feature activated"
-msgstr "기능 활성화됨"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:27
-msgid "Fullscreen mode"
-msgstr "전체 화면 모드"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:28
-msgid "Work without distraction"
-msgstr "방해받지 않고 작업하기"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:29
-msgid "Fullscreen mode activated"
-msgstr "전체 화면 모드 활성화됨"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:30
-msgid "Fullscreen mode deactivated"
-msgstr "전체 화면 모드 비활성화됨"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:36
-msgid "Advanced Settings"
-msgstr "고급 설정"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:37
-msgid "Display advanced settings for the workflow, triggers and steps"
-msgstr "워크플로우, 트리거 및 단계에 대한 고급 설정 표시"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:38
-msgid "Advanced settings mode activated"
-msgstr "고급 설정 모드 활성화됨"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:39
-msgid "Advanced settings mode deactivated"
-msgstr "고급 설정 모드 비활성화됨"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:45
-msgid "Display a mini map"
-msgstr "미니 맵 표시"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:46
-msgid "Display a mini map in the bottom of the editor, triggers and steps"
-msgstr "편집기 하단에 미니 맵, 트리거 및 단계 표시"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:47
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:55
-msgid "Mini map activated"
-msgstr "미니 맵 활성화됨"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:48
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:56
-msgid "Mini map deactivated"
-msgstr "미니 맵 비활성화"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:53
-msgid "Display the controls panel"
-msgstr "컨트롤 패널 표시"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:54
-msgid ""
-"Display the controls panel with buttons to zoon in, zoom out, fit the view "
-"and lock the viewport"
-msgstr "줌 인, 줌 아웃, 뷰 맞춤 및 뷰포트 잠금을 위한 버튼이 포함된 컨트롤 패널 표시"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:59
-msgid "Tools"
-msgstr "도구"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:63
-msgid "Developer mode"
-msgstr "개발자 모드"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:64
-msgid "Work in developer mode"
-msgstr "개발자 모드에서 작업"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:65
-msgid "Developer mode activated"
-msgstr "개발자 모드 활성화"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:66
-msgid "Developer mode deactivated"
-msgstr "개발자 모드 비활성화"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:72
-msgid "Welcome guide"
-msgstr "환영 가이드"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:73
-msgid "Display the welcome guide"
-msgstr "환영 가이드 표시"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:74
-msgid "Welcome guide activated"
-msgstr "환영 가이드 활성화"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:75
-msgid "Welcome guide deactivated"
-msgstr "환영 가이드 비활성화"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:83
-msgid "Help"
-msgstr "도움말"
-
-#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:23
-msgid "Developer Info"
-msgstr "개발자 정보"
-
-#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:31
-#: assets/jsx/workflow-editor/components/node-inspector/node-inspector-card.jsx:18
-#: assets/jsx/workflow-editor/components/node-types/generic.jsx:109
-msgid "Node"
-msgstr "노드"
-
-#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:41
-msgid "Node Data"
-msgstr "노드 데이터"
-
-#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:51
-msgid "Node Settings"
-msgstr "노드 설정"
-
-#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:65
-msgid "Node Type"
-msgstr "노드 유형"
-
-#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:98
-msgid "No element selected."
-msgstr "선택된 요소가 없습니다."
-
-#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:106
-msgid "Multiple and different elements selected."
-msgstr "여러 개의 서로 다른 요소가 선택되었습니다."
-
-#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:116
-#, js-format
-msgid "%d steps selected"
-msgstr "%d 단계 선택됨"
-
-#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:119
-msgid "Multiple steps selected."
-msgstr "여러 단계가 선택되었습니다."
-
-#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:130
-#, js-format
-msgid "%d connections selected"
-msgstr "%d 연결 선택됨"
-
-#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:133
-msgid "Multiple connections selected."
-msgstr "여러 연결이 선택되었습니다."
-
-#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:165
-msgid "Connection"
-msgstr "연결"
-
-#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:166
-msgid ""
-"The connection between nodes in the workflow. Signifies the path along "
-"which data or control flow one node to another."
-msgstr "워크플로우 내의 노드 간의 연결입니다. 데이터 또는 제어가 한 노드에서 다른 노드로 흐르는 경로를 나타냅니다."
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:83
-msgid "Step Data Flow"
-msgstr "단계 데이터 흐름"
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:85
-msgid "Inputs"
-msgstr "입력"
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:89
-msgid "This step receives the following input from previous step:"
-msgstr "이 단계는 이전 단계에서 다음 입력을 받습니다:"
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:100
-msgid "This step does not receive any input from previous step."
-msgstr "이 단계는 이전 단계에서 어떤 입력도 받지 않습니다."
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:105
-msgid "Outputs"
-msgstr "출력"
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:109
-msgid "This step outputs the following data:"
-msgstr "이 단계는 다음 데이터를 출력합니다:"
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:120
-msgid "This step does not output any data."
-msgstr "이 단계는 어떤 데이터도 출력하지 않습니다."
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:125
-msgid "Step Scoped Variables"
-msgstr "단계 범위 변수"
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:129
-msgid "This step receives the following step scoped variables:"
-msgstr "이 단계는 다음 단계 범위 변수를 받습니다:"
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:140
-msgid "This step does not have any step scoped variables."
-msgstr "이 단계는 어떤 단계 범위 변수도 없습니다."
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:145
-msgid "Global Variables"
-msgstr "전역 변수"
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:149
-msgid "No global variables are declared"
-msgstr "전역 변수가 선언되지 않았습니다"
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-inspector-card.jsx:19
-msgid "No description"
-msgstr "설명이 없습니다"
-
-#: assets/jsx/workflow-editor/components/node-types/generic.jsx:57
-#, js-format
-msgid "Unknown node: %s"
-msgstr "알 수 없는 노드: %s"
-
-#: assets/jsx/workflow-editor/components/node-types/generic.jsx:58
-msgid "This is a placeholder node for a node that does not exist."
-msgstr "존재하지 않는 노드에 대한 플레이스홀더 노드입니다."
-
-#: assets/jsx/workflow-editor/components/node-types/generic.jsx:244
-msgid "Step"
-msgstr "단계"
-
-#: assets/jsx/workflow-editor/components/node-types/generic.jsx:250
-msgid "Trigger"
-msgstr "트리거"
-
-#: assets/jsx/workflow-editor/components/node-types/generic.jsx:286
-msgid "Step actions"
-msgstr "단계 작업"
-
-#: assets/jsx/workflow-editor/components/node-types/generic.jsx:327
-msgid "This node has errors"
-msgstr "이 노드에는 오류가 있습니다"
-
-#: assets/jsx/workflow-editor/components/node-types/node-placeholder.jsx:31
-msgid "Add a step"
-msgstr "단계 추가"
-
-#: assets/jsx/workflow-editor/components/node-types/node-placeholder.jsx:33
-msgid "Search for actions"
-msgstr "작업 검색"
-
-#: assets/jsx/workflow-editor/components/node-types/placeholder.jsx:168
-msgid "Search for steps"
-msgstr "단계 검색"
-
-#: assets/jsx/workflow-editor/components/node-types/placeholder.jsx:194
-#: assets/jsx/workflow-editor/components/node-types/trigger-placeholder.jsx:13
-#: assets/jsx/workflow-editor/components/secondary-sidebar/menu.jsx:161
-msgid "Search for triggers and steps"
-msgstr "트리거 및 단계 검색"
-
-#: assets/jsx/workflow-editor/components/node-types/trigger-placeholder.jsx:11
-msgid "Click to add a trigger"
-msgstr "트리거를 추가하려면 클릭하세요"
-
-#: assets/jsx/workflow-editor/components/node-validation-panel/index.jsx:19
-msgid "Validation"
-msgstr "검증"
-
-#: assets/jsx/workflow-editor/components/node-validation-panel/index.jsx:49
-msgid "All checks have passed for this step."
-msgstr "이 단계에 대한 모든 검사가 통과했습니다."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:122
-#, js-format
-msgid "The field \"%s\" contains an invalid variable."
-msgstr "필드 \"%s\"에 잘못된 변수가 포함되어 있습니다."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:126
-#, js-format
-msgid ""
-"The variable \"%s\" is not available in the current context. Please, check "
-"if it is spelled correctly."
-msgstr "변수 \"%s\"는 현재 컨텍스트에서 사용할 수 없습니다. 철자가 올바른지 확인하십시오."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:181
-#. translators: %s is the workflow step slug.
-#, js-format
-msgid "\"%s\" is not a variable or step slug."
-msgstr "\"%s\"는 변수 또는 단계 슬러그가 아닙니다."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:190
-msgid "Empty placeholder is not allowed."
-msgstr "빈 플레이스홀더는 허용되지 않습니다."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:203
-msgid "Unclosed placeholder are not allowed."
-msgstr "닫히지 않은 플레이스홀더는 허용되지 않습니다."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:208
-msgid "Unopened placeholder are not allowed."
-msgstr "열리지 않은 플레이스홀더는 허용되지 않습니다."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:216
-#. translators: %s is the field label.
-#, js-format
-msgid "Invalid expression on %s"
-msgstr "%s에서 잘못된 표현입니다."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:232
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:575
-#. translators: %s is the field label.
-#, js-format
-msgid "The field %s must be a list of options."
-msgstr "필드 %s는 옵션 목록이어야 합니다."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:261
-#. translators: %s is the option name.
-#, js-format
-msgid "The option \"%s\" does not have a name."
-msgstr "옵션 \"%s\"에는 이름이 없습니다."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:270
-#. translators: %s is the option name.
-#, js-format
-msgid "The option \"%s\" does not have a label."
-msgstr "옵션 \"%s\"에는 레이블이 없습니다."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:279
-#. translators: %s is the option name.
-#, js-format
-msgid "The option \"%s\" has a duplicate name."
-msgstr "옵션 \"%s\"에는 중복된 이름이 있습니다."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:288
-#. translators: %s is the option label.
-#, js-format
-msgid "The option \"%s\" has a duplicate label."
-msgstr "옵션 \"%s\"에는 중복된 레이블이 있습니다."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:302
-#. translators: %s is the field label.
-#, js-format
-msgid "The field %s must be a valid list of options."
-msgstr "필드 %s는 유효한 옵션 목록이어야 합니다."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:333
-msgid "This step requires a connection from a previous step."
-msgstr "이 단계는 이전 단계와의 연결이 필요합니다."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:343
-msgid "This step requires a connection to a following step."
-msgstr "이 단계는 다음 단계와의 연결이 필요합니다."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:407
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:428
-#, js-format
-msgid "The field %s is required."
-msgstr "필드 %s는 필수입니다."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:450
-#, js-format
-msgid "The field %s must be a valid email address."
-msgstr "필드 %s는 유효한 이메일 주소여야 합니다."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:466
-#, js-format
-msgid "The field %s must be a valid email address list separated by commas."
-msgstr "필드 %s는 쉼표로 구분된 유효한 이메일 주소 목록이어야 합니다."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:480
-#, js-format
-msgid "The field %s must be an integer."
-msgstr "필드 %s는 정수여야 합니다."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:495
-#, js-format
-msgid "The field %s must be an integer list separated by commas."
-msgstr "필드 %s는 쉼표로 구분된 정수 목록이어야 합니다."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:518
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:527
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:536
-#, js-format
-msgid "The field %s must be a list of name-value pairs."
-msgstr "필드 %s는 이름-값 쌍의 목록이어야 합니다."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:528
-#, js-format
-msgid "The name of the pair is required on item %d."
-msgstr "항목 %d에 쌍의 이름이 필요합니다."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:537
-#, js-format
-msgid "The value of the pair is required on item %d."
-msgstr "항목 %d에 쌍의 값이 필요합니다."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:605
-msgid "Invalid variable."
-msgstr "유효하지 않은 변수입니다."
-
-#: assets/jsx/workflow-editor/components/node-validator/index.jsx:608
-msgid "Please use the variable picker to select valid expression."
-msgstr "유효한 표현식을 선택하려면 변수 선택기를 사용하세요."
-
-#: assets/jsx/workflow-editor/components/pro-feature-button/index.jsx:26
-msgid "Upgrade to Pro to unlock this feature."
-msgstr "이 기능을 잠금 해제하려면 Pro로 업그레이드하세요."
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-listbox/group.jsx:14
-msgid "Use left and right arrow keys to move through steps"
-msgstr "단계 간 이동하려면 왼쪽 및 오른쪽 화살표 키를 사용하세요"
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-no-results.jsx:14
-msgid "No results found."
-msgstr "결과를 찾을 수 없습니다."
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:101
-#. translators: %d: number of results.
-#, js-format
-msgid "%d result found."
-msgid_plural "%d results found."
-msgstr[0] "%d 결과가 발견되었습니다."
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:116
-#: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:123
-msgid "Nodes"
-msgstr "노드"
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/menu.jsx:72
-#: assets/jsx/workflow-editor/components/secondary-sidebar/menu.jsx:111
-msgid "A tip for using the workflow editor"
-msgstr "워크플로 편집기 사용을 위한 팁"
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/node-draggable-chip.jsx:27
-#. translators: %d: Number of blocks.
-#, js-format
-msgid "%d block"
-msgid_plural "%d blocks"
-msgstr[0] "%d 블록"
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:24
-#. translators: Patterns tab title in the block inserter.
-msgid "Actions"
-msgstr "작업"
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:10
-msgid ""
-"Select multiple steps by pressing <kbd>cmd</kbd> and clicking on each step "
-"in the workflow."
-msgstr "워크플로우에서 각 단계를 클릭하면서 <kbd>cmd</kbd> 키를 눌러 여러 단계를 선택하세요."
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:16
-msgid ""
-"Drag steps from the inserter and drop them directly into your workflow for "
-"easy customization."
-msgstr "삽입기에서 단계를 드래그하여 워크플로우에 직접 드롭하여 쉽게 사용자 정의할 수 있습니다."
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:17
-msgid ""
-"Simply double-click any step to bring up the settings sidebar for quick "
-"adjustments."
-msgstr "빠른 조정을 위해 아무 단계에서나 더블 클릭하여 설정 사이드바를 불러오세요."
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:18
-msgid "Double-click the workflow pane to increase the zoom level for a closer look."
-msgstr "워크플로우 창을 더블 클릭하여 확대 수준을 높여 자세히 살펴보세요."
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:20
-msgid ""
-"Hold down the <kbd>shift</kbd> key and double-click the workflow pane to "
-"decrease the zoom level."
-msgstr "<kbd>shift</kbd> 키를 누른 채로 워크플로우 창을 더블 클릭하여 확대 수준을 낮추세요."
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:26
-msgid ""
-"Easily add new steps by clicking on a step's handle and dragging it. Drop "
-"it in the workflow pane to see a floating inserter where you can type and "
-"search for the step you need."
-msgstr ""
-"단계의 핸들을 클릭하고 드래그하여 쉽게 새 단계를 추가하세요. 워크플로우 창에 드롭하면 필요한 단계를 입력하고 검색할 수 있는 플로팅 "
-"삽입기가 나타납니다."
-
-#: assets/jsx/workflow-editor/components/settings-sidebar/plugin-sidebar.jsx:39
-msgid "(no name)"
-msgstr "(이름 없음)"
-
-#: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:37
-msgid "Element"
-msgstr "요소"
-
-#: assets/jsx/workflow-editor/components/settings-sidebar/settings-sidebar.jsx:50
-msgid "Close settings"
-msgstr "설정 닫기"
-
-#: assets/jsx/workflow-editor/components/welcome-guide/index.jsx:22
-msgid "Get started"
-msgstr "시작하기"
-
-#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:50
-msgid "Ray Debug"
-msgstr "레이 디버그"
-
-#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:55
-msgid ""
-"Enable or disable the different types of debug information that is shown in "
-"Ray when this workflow is activated."
-msgstr "이 워크플로우가 활성화될 때 레이에서 표시되는 다양한 유형의 디버그 정보를 활성화하거나 비활성화합니다."
-
-#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:59
-msgid "Show Queries"
-msgstr "쿼리 표시"
-
-#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:66
-msgid "Show Emails"
-msgstr "이메일 표시"
-
-#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:73
-msgid "Show WordPress Errors"
-msgstr "워드프레스 오류 표시"
-
-#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:80
-msgid "Show current running step"
-msgstr "현재 실행 중인 단계 표시"
-
-#: assets/jsx/workflow-editor/components/workflow-delete-button/index.jsx:24
-msgid "Are you sure you want to delete this workflow?"
-msgstr "이 워크플로우를 삭제하시겠습니까?"
-
-#: assets/jsx/workflow-editor/components/workflow-delete-button/index.jsx:39
-msgid "Move to trash"
-msgstr "휴지통으로 이동"
-
-#: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:79
-#. translators: button label text should, if possible, be under 16 characters.
-msgid "Publish"
-msgstr "발행"
-
-#: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:79
-msgid "Update"
-msgstr "업데이트"
-
-#: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:90
-msgid "Autosaving..."
-msgstr "자동 저장 중..."
-
-#: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:90
-msgid "Updating..."
-msgstr "업데이트 중..."
-
-#: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:92
-msgid "Updated"
-msgstr "업데이트 완료"
-
-#: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:82
-#. translators: button label text should, if possible, be under 16 characters.
-msgid "Save draft"
-msgstr "초안 저장"
-
-#: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:85
-#. translators: button label text should, if possible, be under 16 characters.
-msgid "Save"
-msgstr "저장"
-
-#: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:94
-msgid "Autosaving"
-msgstr "자동 저장 중"
-
-#: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:94
-msgid "Saving"
-msgstr "저장 중"
-
-#: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:96
-msgid "Saved"
-msgstr "저장 완료"
-
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:31
-msgid "Unable to create a new workflow. Please try again."
-msgstr "새 워크플로를 생성할 수 없습니다. 다시 시도해 주세요."
-
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:51
-msgid "Unable to load the workflow. Please try again."
-msgstr "워크플로를 불러올 수 없습니다. 다시 시도해 주세요."
-
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:94
-msgid "Workflow saved as draft."
-msgstr "워크플로가 초안으로 저장되었습니다."
-
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:102
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:153
-msgid "Unable to save workflow. Please, try again."
-msgstr "워크플로를 저장할 수 없습니다. 다시 시도해 주세요."
-
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:145
-msgid "Workflow saved."
-msgstr "워크플로가 저장되었습니다."
-
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:198
-msgid "Unable to publish the workflow. Please, try again."
-msgstr "워크플로를 게시할 수 없습니다. 다시 시도해 주세요."
-
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:235
-msgid "Workflow switched to draft."
-msgstr "워크플로가 초안으로 전환되었습니다."
-
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:243
-msgid "Unable to switch workflow to draft. Please, try again."
-msgstr "워크플로를 초안으로 전환할 수 없습니다. 다시 시도해 주세요."
-
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:334
-msgid "Workflow deleted. Redirecting..."
-msgstr "워크플로가 삭제되었습니다. 리디렉션 중..."
-
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:345
-msgid "Unable to delete the workflow. Please, try again."
-msgstr "워크플로를 삭제할 수 없습니다. 다시 시도해 주세요."
-
-#: assets/jsx/workflow-editor/components/workflow-summary/index.jsx:42
-msgid "Summary"
-msgstr "요약"
-
-#: assets/jsx/workflow-editor/components/workflow-summary/index.jsx:48
-msgid "Title"
-msgstr "제목"
-
-#: assets/jsx/workflow-editor/components/workflow-summary/index.jsx:57
-msgid "Description"
-msgstr "설명"
-
-#: assets/jsx/workflow-editor/components/workflow-switch-to-draft-button/index.jsx:33
-msgid "Are you sure you want to unpublish this workflow?"
-msgstr "이 워크플로우의 게시를 취소하시겠습니까?"
-
-#: assets/jsx/workflow-editor/components/workflow-switch-to-draft-button/index.jsx:52
-msgid "Draft"
-msgstr "초안"
-
-#: assets/jsx/workflow-editor/components/workflow-switch-to-draft-button/index.jsx:52
-msgid "Switch to draft"
-msgstr "초안으로 전환"
-
 #: assets/jsx/workflow-manual-selection/example-extending-with-slot.jsx:48
 #, js-format
 msgid "Enable workflow %s"
 msgstr "워크플로우 %s 활성화"
 
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10239
 #: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:23
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7974
 msgctxt "noun"
 msgid "View"
 msgstr "보기"
 
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14336
 #: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:23
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11892
 #. translators: Default label for the Workflow sidebar tab, not selected.
 msgctxt "noun"
 msgid "Workflow"
 msgstr "워크플로우"
 
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13793
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13798
 #: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:80
 #: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:85
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11459
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11464
 msgctxt "nodes"
 msgid "Most used"
 msgstr "가장 많이 사용됨"
