@@ -4721,12 +4721,6 @@ msgstr "Sind Sie sicher, dass Sie diesen Workflow löschen möchten?"
 msgid "Cancel Actions"
 msgstr "Aktionen abbrechen"
 
-#: assets/jsx/i18n.jsx:174 assets/jsx/i18n.jsx:176
-msgid "%d item"
-msgid_plural "%d items"
-msgstr[0] ""
-msgstr[1] ""
-
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:29
 msgid "Integer"
 msgstr "Ganzzahl"
