@@ -97,7 +97,7 @@ function _setInitialStateForGlobalVariables(state, workflow = {}) {
     state = setGlobalVariable(state, {
         payload: {
             name: 'site',
-            label: 'Site',
+            label: __('Site', 'post-expirator'),
             type: 'site',
             runtimeOnly: true,
             description: __('The current site.', 'post-expirator'),
@@ -107,7 +107,7 @@ function _setInitialStateForGlobalVariables(state, workflow = {}) {
     state = setGlobalVariable(state, {
         payload: {
             name: 'workflow',
-            label: 'Workflow',
+            label: __('Workflow', 'post-expirator'),
             type: 'workflow',
             runtimeOnly: false,
             description: __('The current workflow.', 'post-expirator'),
@@ -117,7 +117,7 @@ function _setInitialStateForGlobalVariables(state, workflow = {}) {
     state = setGlobalVariable(state, {
         payload: {
             name: 'user',
-            label: 'Activating user',
+            label: __('Activating user', 'post-expirator'),
             type: 'user',
             runtimeOnly: true,
             description: __('The current user.', 'post-expirator'),
@@ -127,7 +127,7 @@ function _setInitialStateForGlobalVariables(state, workflow = {}) {
     state = setGlobalVariable(state, {
         payload: {
             name: 'trigger',
-            label: 'Activating trigger',
+            label: __('Activating trigger', 'post-expirator'),
             type: 'node',
             runtimeOnly: true,
             description: __('The node that activated the workflow.', 'post-expirator'),

@@ -16023,7 +16023,7 @@ function _setInitialStateForGlobalVariables(state) {
   state = setGlobalVariable(state, {
     payload: {
       name: 'site',
-      label: 'Site',
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Site', 'post-expirator'),
       type: 'site',
       runtimeOnly: true,
       description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('The current site.', 'post-expirator')
@@ -16032,7 +16032,7 @@ function _setInitialStateForGlobalVariables(state) {
   state = setGlobalVariable(state, {
     payload: {
       name: 'workflow',
-      label: 'Workflow',
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Workflow', 'post-expirator'),
       type: 'workflow',
       runtimeOnly: false,
       description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('The current workflow.', 'post-expirator')
@@ -16041,7 +16041,7 @@ function _setInitialStateForGlobalVariables(state) {
   state = setGlobalVariable(state, {
     payload: {
       name: 'user',
-      label: 'Activating user',
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Activating user', 'post-expirator'),
       type: 'user',
       runtimeOnly: true,
       description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('The current user.', 'post-expirator')
@@ -16050,7 +16050,7 @@ function _setInitialStateForGlobalVariables(state) {
   state = setGlobalVariable(state, {
     payload: {
       name: 'trigger',
-      label: 'Activating trigger',
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Activating trigger', 'post-expirator'),
       type: 'node',
       runtimeOnly: true,
       description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('The node that activated the workflow.', 'post-expirator')

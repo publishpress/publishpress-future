@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-05-13T17:57:47+00:00\n"
+"POT-Creation-Date: 2026-05-13T18:04:52+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
@@ -2076,6 +2076,9 @@ msgid "Choose the manually enabling workflow that will be deactivated for the se
 msgstr ""
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeactivatePostWorkflow.php:125
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16035
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:110
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13229
 msgid "Workflow"
 msgstr ""
 
@@ -3425,6 +3428,9 @@ msgid "User"
 msgstr ""
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:117
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16026
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:100
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13219
 msgid "Site"
 msgstr ""
 
@@ -6048,39 +6054,81 @@ msgstr ""
 msgid "Unable to delete the workflow. Please, try again."
 msgstr ""
 
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16940
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16029
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:103
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13222
+msgid "The current site."
+msgstr ""
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16038
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:113
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13232
+msgid "The current workflow."
+msgstr ""
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16044
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:120
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13239
+msgid "Activating user"
+msgstr ""
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16047
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:123
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13242
+msgid "The current user."
+msgstr ""
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16053
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:130
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13249
+msgid "Activating trigger"
+msgstr ""
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16056
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:133
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13252
+msgid "The node that activated the workflow."
+msgstr ""
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16065
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:143
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13262
+msgid "A unique identifier assigned each time the workflow engine runs. Useful for tracking specific workflow executions and debugging."
+msgstr ""
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16943
 #: assets/jsx/workflow-editor/components/workflow-summary/index.jsx:42
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14308
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14309
 msgid "Summary"
 msgstr ""
 
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16946
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16949
 #: assets/jsx/workflow-editor/components/workflow-summary/index.jsx:48
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14314
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14315
 msgid "Title"
 msgstr ""
 
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16953
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16956
 #: assets/jsx/workflow-editor/components/workflow-summary/index.jsx:57
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14323
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14324
 msgid "Description"
 msgstr ""
 
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:17007
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:17010
 #: assets/jsx/workflow-editor/components/workflow-switch-to-draft-button/index.jsx:33
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14373
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14374
 msgid "Are you sure you want to unpublish this workflow?"
 msgstr ""
 
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:17021
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:17024
 #: assets/jsx/workflow-editor/components/workflow-switch-to-draft-button/index.jsx:52
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14392
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14393
 msgid "Draft"
 msgstr ""
 
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:17021
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:17024
 #: assets/jsx/workflow-editor/components/workflow-switch-to-draft-button/index.jsx:52
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14392
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14393
 msgid "Switch to draft"
 msgstr ""
 
@@ -6280,26 +6328,6 @@ msgstr ""
 #: assets/jsx/workflows-list/cancel-action/index.jsx:69
 #: assets/js/workflowsListCancelAction.js:507
 msgid "Cancel Actions"
-msgstr ""
-
-#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:103
-msgid "The current site."
-msgstr ""
-
-#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:113
-msgid "The current workflow."
-msgstr ""
-
-#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:123
-msgid "The current user."
-msgstr ""
-
-#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:133
-msgid "The node that activated the workflow."
-msgstr ""
-
-#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:143
-msgid "A unique identifier assigned each time the workflow engine runs. Useful for tracking specific workflow executions and debugging."
 msgstr ""
 
 #: assets/jsx/workflow-manual-selection/example-extending-with-slot.jsx:48
