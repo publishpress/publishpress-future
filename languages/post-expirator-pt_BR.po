@@ -18,14 +18,13 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "Language: pt-BR\n"
 
-#: post-expirator.php:4, fuzzy
+#: post-expirator.php:4
 #. Plugin Name of the plugin
 msgid "PublishPress Future Free"
 msgstr "PublishPress Future Free"
 
 #: post-expirator.php:5
 #. Plugin URI of the plugin
-#, fuzzy
 msgid "http://wordpress.org/extend/plugins/post-expirator/"
 msgstr "http://wordpress.org/extend/plugins/post-expirator/"
 
@@ -40,13 +39,11 @@ msgstr ""
 
 #: post-expirator.php:7
 #. Author of the plugin
-#, fuzzy
 msgid "PublishPress"
 msgstr "PublishPress"
 
 #: post-expirator.php:9
 #. Author URI of the plugin
-#, fuzzy
 msgid "http://publishpress.com"
 msgstr "http://publishpress.com"
 
@@ -141,13 +138,11 @@ msgstr "Nenhuma taxonomia encontrada"
 
 #: services.php:151
 #: src/Modules/Settings/SettingsFacade.php:122
-#, fuzzy
 msgid "l F jS, Y"
 msgstr "l, j F Y"
 
 #: services.php:155
 #: src/Modules/Settings/SettingsFacade.php:123
-#, fuzzy
 msgid "g:ia"
 msgstr "H:i"
 
@@ -544,7 +539,6 @@ msgid "List"
 msgstr "Lista"
 
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:237
-#, fuzzy
 msgid "Popup"
 msgstr "Pop-up"
 
@@ -959,7 +953,7 @@ msgstr "Ação futura concluída \"%s\""
 
 #: src/Modules/Expirator/Models/ExpirablePostModel.php:666
 #. translators: 1: is the blog name, 2: the email subject
-#, fuzzy, php-format
+#, php-format
 msgid "[%1$s] %2$s"
 msgstr "[%1$s] %2$s"
 
@@ -977,9 +971,8 @@ msgstr ""
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:53
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:234
-#, fuzzy
 msgid "Status"
-msgstr "Status"
+msgstr "Estado"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:55
 msgid "Arguments"
@@ -1122,7 +1115,7 @@ msgstr "Processar a ação agora"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:524
 #. translators: %1$s: post type label, %2$d: post ID, %3$s: post link tag start, %4$s: post title, %5$s: post link tag end
-#, fuzzy, php-format
+#, php-format
 msgid "%1$s: [%2$d] %3$s%4$s%5$s"
 msgstr "%1$s: [%2$d] %3$s%4$s%5$s"
 
@@ -1147,9 +1140,8 @@ msgid "Action: "
 msgstr "Ação: "
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:687
-#, fuzzy
 msgid "Status: "
-msgstr "Status: "
+msgstr "Estado: "
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:693
 msgid "Arguments: "
@@ -1191,7 +1183,7 @@ msgstr " (%s atrás)"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:771
 #. translators: %s is the date interval in human readable format in the present or future
-#, fuzzy, php-format
+#, php-format
 msgid " (%s)"
 msgstr " (%s)"
 
@@ -1584,7 +1576,7 @@ msgstr "Etapa:"
 msgid "Trigger: "
 msgstr "Gatilho acionador: "
 
-#: src/Modules/Workflows/Controllers/ScheduledActions.php:438, fuzzy
+#: src/Modules/Workflows/Controllers/ScheduledActions.php:438
 msgid "Post:"
 msgstr "Post:"
 
@@ -1610,7 +1602,7 @@ msgstr "%1$s por %2$d vezes"
 
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:528
 #. translators: %1$s is the executed times, %2$d is the total repeat times
-#, fuzzy, php-format
+#, php-format
 msgid "[%1$s/%2$d]"
 msgstr "[%1$s/%2$d]"
 
@@ -1732,7 +1724,6 @@ msgid "Triggers"
 msgstr "Gatilhos acionadores"
 
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:280
-#, fuzzy
 msgid "—"
 msgstr "—"
 
@@ -1917,7 +1908,6 @@ msgstr "Escolha o post que terá seu meta adicionado."
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:85
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeletePostMeta.php:85
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePostMeta.php:85
-#, fuzzy
 msgid "Meta"
 msgstr "Meta"
 
@@ -1977,7 +1967,6 @@ msgstr "O meta valor a ser adicionado ao post."
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:402
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:34
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:359
-#, fuzzy
 msgid "Post"
 msgstr "Post"
 
@@ -2347,7 +2336,6 @@ msgstr "Especifique o gancho que acionará esta ação."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:73
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:73
-#, fuzzy
 msgid "Hook"
 msgstr "Gancho"
 
@@ -2637,7 +2625,6 @@ msgstr "Após todas as repetições"
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:17
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:17
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:89
-#, fuzzy
 msgid "PublishPress Workflow: {{global.workflow.title}}"
 msgstr "Fluxo de trabalho do PublishPress: {{global.workflow.title}}"
 
@@ -3717,7 +3704,6 @@ msgstr ""
 "4.0.0"
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:99
-#, fuzzy
 msgid "PublishPress Future"
 msgstr "PublishPress Future"
 
@@ -3732,7 +3718,6 @@ msgstr "Usuário"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16026
 #: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:100
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13219
-#, fuzzy
 msgid "Site"
 msgstr "Site"
 
@@ -3848,7 +3833,6 @@ msgstr ""
 "novamente."
 
 #: src/Views/menu-admin.php:27
-#, fuzzy
 msgid "Metabox"
 msgstr "Metabox"
 
@@ -3921,7 +3905,6 @@ msgid "24 hours"
 msgstr "24 horas"
 
 #: src/Views/menu-admin.php:162
-#, fuzzy
 msgid "AM/PM"
 msgstr "AM/PM"
 
@@ -4313,7 +4296,6 @@ msgid "Example: "
 msgstr "Exemplo: "
 
 #: src/Views/menu-display.php:243
-#, fuzzy
 msgid "Shortcode"
 msgstr "Shortcode"
 
@@ -4539,7 +4521,6 @@ msgstr "Exibição"
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:120
 #: assets/js/backupPanel.js:516
 #: assets/js/backupPanel.js:928
-#, fuzzy
 msgid "Admin"
 msgstr "Administrador"
 
@@ -4569,7 +4550,6 @@ msgstr "Inteiro"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:390
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:30
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:355
-#, fuzzy
 msgid "String"
 msgstr "String"
 
@@ -4588,7 +4568,6 @@ msgstr "Objeto"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:399
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:33
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:358
-#, fuzzy
 msgid "Array"
 msgstr "Array"
 
@@ -5010,7 +4989,6 @@ msgstr "O nome do termo."
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3250
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:13
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2475
-#, fuzzy
 msgid "Slug"
 msgstr "Slug"
 
@@ -5071,7 +5049,6 @@ msgstr ""
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3798
 #: assets/jsx/workflow-editor/components/data-fields/modal-footer.jsx:11
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2883
-#, fuzzy
 msgid "OK"
 msgstr "OK"
 
@@ -5519,7 +5496,6 @@ msgstr "Editar descrição"
 #: assets/jsx/workflow-editor/components/secondary-sidebar/node-card.jsx:16
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7026
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11263
-#, fuzzy
 msgid "Pro"
 msgstr "Pro"
 
@@ -5556,9 +5532,8 @@ msgstr "Fechar"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7425
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7430
 #. translators: button label text should, if possible, be under 16 characters.
-#, fuzzy
 msgid "Auto Layout"
-msgstr "Auto Layout"
+msgstr "Layout Automático"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9628
 #: assets/jsx/workflow-editor/components/layout/header.jsx:157

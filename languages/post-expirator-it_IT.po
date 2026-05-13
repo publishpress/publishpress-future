@@ -2,11 +2,11 @@
 # This file is distributed under the same license as the Plugins - PublishPress Future: Automatically Unpublish WordPress Posts - Stable (latest release) package.
 msgid ""
 msgstr ""
-"Project-Id-Version: PublishPress Future Free 4.10.2-rc.4"
+"Project-Id-Version: Plugins - PublishPress Future: Automatically Unpublish "
 "WordPress Posts - Stable (latest release)\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/project\n"
-"POT-Creation-Date: 2026-04-29T14:19:02+00:00\n"
-"PO-Revision-Date: 2026-05-07 20:47+0000\n"
+"POT-Creation-Date: 2026-04-10T20:34:37+00:00\n"
+"PO-Revision-Date: 2026-05-13 10:00+0200\n"
 "Last-Translator: Anderson <anderson@publishpress.com>\n"
 "Language-Team: Italian <https://weblate.publishpress.com/projects/"
 "publishpress-future/post-expirator/it/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17.1\n"
+"X-Generator: Poedit 3.7\n"
 
 #. Plugin Name of the plugin
 #: post-expirator.php:4
@@ -32,7 +32,9 @@ msgstr "http://wordpress.org/extend/plugins/post-expirator/"
 msgid ""
 "PublishPress Future allows you to schedule automatic changes to posts, pages "
 "and other content types."
-msgstr "PublishPress Future permette di programmare modifiche automatiche ad articoli, pagine e altri tipi di contenuto."
+msgstr ""
+"PublishPress Future permette di programmare modifiche automatiche ad "
+"articoli, pagine e altri tipi di contenuto."
 
 #. Author of the plugin
 #: post-expirator.php:7
@@ -68,13 +70,17 @@ msgstr "Tabella di debug svuotata"
 msgid ""
 "The legacy future actions migration has been enqueued and will run "
 "asynchronously."
-msgstr "La migrazione delle azioni Future legacy è stata messa in coda e verrà eseguita in modo asincrono."
+msgstr ""
+"La migrazione delle azioni Future legacy è stata messa in coda e verrà "
+"eseguita in modo asincrono."
 
 #: legacy/classes/Display.class.php:308
 msgid ""
 "The legacy actions arguments restoration has been enqueued and will run "
 "asynchronously."
-msgstr "Il ripristino degli argomenti delle azioni legacy è stato messo in coda e verrà eseguito in modo asincrono."
+msgstr ""
+"Il ripristino degli argomenti delle azioni legacy è stato messo in coda e "
+"verrà eseguito in modo asincrono."
 
 #: legacy/classes/Display.class.php:323
 msgid "The database schema was fixed."
@@ -83,7 +89,9 @@ msgstr "Lo schema del database è stato corretto."
 #: legacy/classes/Display.class.php:328
 msgid ""
 "The database schema could not be fixed. Please, contact the support team."
-msgstr "Non è stato possibile correggere lo schema del database. Contattare il team di assistenza."
+msgstr ""
+"Non è stato possibile correggere lo schema del database. Contattare il team "
+"di assistenza."
 
 #: legacy/classes/Display.class.php:399 legacy/classes/Display.class.php:453
 #: legacy/classes/Display.class.php:475
@@ -124,15 +132,15 @@ msgstr "Contatto"
 msgid "No taxonomies found"
 msgstr "Nessuna tassonomia trovata"
 
-#: services.php:151 src/Modules/Settings/SettingsFacade.php:122
+#: services.php:152 src/Modules/Settings/SettingsFacade.php:122
 msgid "l F jS, Y"
 msgstr "l j F Y"
 
-#: services.php:155 src/Modules/Settings/SettingsFacade.php:123
+#: services.php:156 src/Modules/Settings/SettingsFacade.php:123
 msgid "g:ia"
 msgstr "G:i"
 
-#: services.php:156 src/Modules/Settings/SettingsFacade.php:124
+#: services.php:157 src/Modules/Settings/SettingsFacade.php:124
 msgid "Post expires at EXPIRATIONTIME on ACTIONDATE"
 msgstr "L'articolo scade alle EXPIRATIONTIME del ACTIONDATE"
 
@@ -153,7 +161,7 @@ msgstr "Scostamento data e ora vuoto."
 
 #: src/Framework/System/DateTimeHandler.php:44
 msgid "Invalid date time offset"
-msgstr "Scostamento data e ora non valido."
+msgstr "Scostamento data e ora non valido"
 
 #: src/Modules/Backup/Controllers/BackupAdminPage.php:164
 #: assets/js/backupPanel.js:34 assets/js/backupPanel.js:692
@@ -164,7 +172,7 @@ msgstr "Scostamento data e ora non valido."
 #: assets/js/backupPanel.js:10 assets/js/backupPanel.js:553
 #: assets/js/backupPanel.js:581
 msgid "Export"
-msgstr "Exporta"
+msgstr "Esporta"
 
 #: src/Modules/Backup/Controllers/BackupAdminPage.php:169
 #: assets/js/backupPanel.js:37 assets/js/backupPanel.js:543
@@ -179,15 +187,21 @@ msgstr "Importa"
 
 #: src/Modules/Backup/Controllers/BackupRestApi.php:142
 msgid "Failed to get workflows. Check the logs for more details."
-msgstr "Impossibile ottenere i flussi di lavoro. Controlla i registri per maggiori informazioni."
+msgstr ""
+"Impossibile ottenere i flussi di lavoro. Controlla i registri per maggiori "
+"informazioni."
 
 #: src/Modules/Backup/Controllers/BackupRestApi.php:194
 msgid "Failed to export the file. Check the logs for more details."
-msgstr "Impossibile esportare il file. Controlla i registri per maggiori informazioni."
+msgstr ""
+"Impossibile esportare il file. Controlla i registri per maggiori "
+"informazioni."
 
 #: src/Modules/Backup/Controllers/BackupRestApi.php:363
 msgid "Failed to import the file. Check the logs for more details."
-msgstr "Impossibile importare il file. Controlla i registri per maggiori informazioni."
+msgstr ""
+"Impossibile importare il file. Controlla i registri per maggiori "
+"informazioni."
 
 #: src/Modules/Debug/Controllers/Controller.php:106
 msgid "You do not have sufficient permissions to access this page."
@@ -200,11 +214,15 @@ msgstr "Nonce non valido."
 #: src/Modules/Debug/Migrations/V04905DebugLogRequestId.php:80
 msgid ""
 "Add request_id and trigger_activated columns to debug log table after v4.10.0"
-msgstr "Aggiungi le colonne request_id e trigger_activated alla tabella dei log di debug dopo la versione 4.10.0"
+msgstr ""
+"Aggiungi le colonne request_id e trigger_activated alla tabella dei log di "
+"debug dopo la versione 4.10.0"
 
 #: src/Modules/Debug/Migrations/V04906DebugLogTimestampMilliseconds.php:79
 msgid "Add millisecond precision to debug log timestamp column (v4.10.0)"
-msgstr "Aggiungi precisione al millisecondo alla colonna del timestamp del log di debug (v4.10.0)"
+msgstr ""
+"Aggiungi precisione al millisecondo alla colonna del timestamp del log di "
+"debug (v4.10.0)"
 
 #: src/Modules/Debug/Views/raw-debug-log.html.php:39
 #: src/Modules/Settings/Controllers/Controller.php:215
@@ -263,7 +281,7 @@ msgstr "Categorie"
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:153
 #: assets/jsx/workflow-editor/components/node-types/generic.jsx:246
 msgid "Action"
-msgstr "Come applicare la scadenza"
+msgstr "Azione"
 
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:178
 #: src/Modules/Expirator/Controllers/BulkEditController.php:220
@@ -309,7 +327,9 @@ msgstr "Nessun %s trovato."
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:433
 #: src/Modules/Expirator/Controllers/QuickEditController.php:359
 msgid "You must assign a taxonomy to this post type to use this feature."
-msgstr "Devi assegnare una tassonomia a questo tipo di contenuto per usare questa caratteristica."
+msgstr ""
+"Devi assegnare una tassonomia a questo tipo di contenuto per usare questa "
+"caratteristica."
 
 #. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:197
@@ -389,7 +409,8 @@ msgstr "Nuovo stato"
 
 #: src/Modules/Expirator/Controllers/BulkActionController.php:96
 msgid "No posts selected. Unable to sync Future Actions."
-msgstr "Nessun articolo selezionato. Impossibile sincronizzare le azioni di Future."
+msgstr ""
+"Nessun articolo selezionato. Impossibile sincronizzare le azioni di Future."
 
 #: src/Modules/Expirator/Controllers/BulkActionController.php:101
 msgid "Future Actions successfully synced with Post Metadata."
@@ -481,6 +502,11 @@ msgstr "Nessuna azione Future"
 msgid "Invalid date time offset."
 msgstr "Offset della data non valido."
 
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:120
+#: src/Modules/Workflows/Models/StepTypesModel.php:99
+msgid "PublishPress Future"
+msgstr "PublishPress Future"
+
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:140
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:141
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:324
@@ -523,7 +549,12 @@ msgid ""
 "on formatting, see %1$s. For example, you could enter %2$s+1 month%3$s or "
 "%2$s+1 week 2 days 4 hours 2 seconds%3$s or %2$snext Thursday%3$s. Please, "
 "use only terms in English."
-msgstr "Imposta lo scostamento da utilizzare per la data e l'ora delle azioni predefinite. Per informazioni sulla formattazione, vedere %1$s. Ad esempio, si può inserire %2$s+1 month%3$s o %2$s+1 week 2 days 4 hours 2 seconds%3$s o %2$snext Thursday%3$s. Comunque ricordati che puoi inserire solo valori in inglese."
+msgstr ""
+"Imposta lo scostamento da utilizzare per la data e l'ora delle azioni "
+"predefinite. Per informazioni sulla formattazione, vedere %1$s. Ad esempio, "
+"si può inserire %2$s+1 month%3$s o %2$s+1 week 2 days 4 hours 2 seconds%3$s "
+"o %2$snext Thursday%3$s. Comunque ricordati che puoi inserire solo valori in "
+"inglese."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:262
 msgid "Default Values"
@@ -534,7 +565,11 @@ msgid ""
 "Use the values below to set the default actions/values to be used for each "
 "for the corresponding post types.  These values can all be overwritten when "
 "creating/editing the post/page."
-msgstr "Utilizza i seguenti valori per impostare azioni/valori predefiniti da utilizzare per ciascuno dei tipi di contenuto corrispondenti. Questi valori possono essere tutti sovrascritti in fase di creazione/modifica di ciascun articolo/pagina."
+msgstr ""
+"Utilizza i seguenti valori per impostare azioni/valori predefiniti da "
+"utilizzare per ciascuno dei tipi di contenuto corrispondenti. Questi valori "
+"possono essere tutti sovrascritti in fase di creazione/modifica di ciascun "
+"articolo/pagina."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:267
 msgid "Active"
@@ -565,13 +600,17 @@ msgstr "Crea azioni automaticamente"
 msgid ""
 "This will automatically create an action for new posts, using the default "
 "settings on this screen"
-msgstr "Questo crea automaticamente un'azione per i nuovi articoli utilizzando le impostazioni predefinite in questa schermata"
+msgstr ""
+"Questo crea automaticamente un'azione per i nuovi articoli utilizzando le "
+"impostazioni predefinite in questa schermata"
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:281
 msgid ""
 "No taxonomies found for this post type. Taxonomy actions will not be "
 "available."
-msgstr "Non sono state trovate tassonomie per questo tipo di contenuto. Le azioni della tassonomia non saranno disponibili."
+msgstr ""
+"Non sono state trovate tassonomie per questo tipo di contenuto. Le azioni "
+"della tassonomia non saranno disponibili."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:282
 #: src/Views/menu-notifications.php:116 src/Views/menu-notifications.php:169
@@ -582,7 +621,9 @@ msgstr "Chi avvisare"
 msgid ""
 "Enter a comma separated list of emails that you would like to be notified "
 "when the action runs."
-msgstr "Inserisci un elenco di email separate da virgola a cui vuoi inviare una notifica quando l'azione è in esecuzione."
+msgstr ""
+"Inserisci un elenco di email separate da virgola a cui vuoi inviare una "
+"notifica quando l'azione è in esecuzione."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:287
 #: src/Views/menu-general.php:29
@@ -642,7 +683,9 @@ msgstr "Abilita la compatibilità con gli stati personalizzati"
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:305
 msgid "Checking this option will allow you to move posts to a custom status."
-msgstr "Selezionando questa opzione ti permetterà di spostare gli articoli ad uno stato personalizzato."
+msgstr ""
+"Selezionando questa opzione ti permetterà di spostare gli articoli ad uno "
+"stato personalizzato."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:306
 msgid "Metadata scheduling"
@@ -656,11 +699,14 @@ msgstr "Abilita la programmazione dei metadati"
 msgid ""
 "Checking this option will allow you to use post metadata to control the "
 "scheduling of actions."
-msgstr "Selezionando questa opzione ti permetterà di usare i metadati dell'articolo per controllare la programmazione delle azioni."
+msgstr ""
+"Selezionando questa opzione ti permetterà di usare i metadati dell'articolo "
+"per controllare la programmazione delle azioni."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:309
 msgid "This is a Pro feature. Upgrade to unlock this functionality."
-msgstr "Questa è una funzionalità Pro. Aggiorna per sbloccare questa funzionalità."
+msgstr ""
+"Questa è una funzionalità Pro. Aggiorna per sbloccare questa funzionalità."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:459
 #: src/Modules/Settings/Controllers/Controller.php:298
@@ -671,11 +717,14 @@ msgstr "Errore di convalida del modulo: il nonce non è stato verificato."
 msgid ""
 "The shortcode [futureaction] must be used inside the loop or with the "
 "post_id attribute."
-msgstr "Lo shortcode [futureaction] deve essere utilizzato dentro il loop o con l'attributo post_id."
+msgstr ""
+"Lo shortcode [futureaction] deve essere utilizzato dentro il loop o con "
+"l'attributo post_id."
 
 #: src/Modules/Expirator/DBTableSchemas/ActionArgsSchema.php:96
 msgid "The column args length was not updated to 1000."
-msgstr "La lunghezza degli argomenti della colonna non sono stati aggiornati a 1000."
+msgstr ""
+"La lunghezza degli argomenti della colonna non sono stati aggiornati a 1000."
 
 #: src/Modules/Expirator/ExpirationActions/ChangePostStatus.php:54
 #: src/Modules/Expirator/ExpirationActions/PostStatusToDraft.php:52
@@ -728,7 +777,9 @@ msgstr "Nessun termine è stato aggiunto a %s."
 msgid ""
 "The following terms (%1$s) were added to the %2$s: \"%3$s\". The full list "
 "of terms on the post is: %4$s."
-msgstr "I seguenti (%1$s) termini sono stati aggiunti nell'%2$s: \"%3$s\". La lista completa dei termini nell'articolo è: %4$s."
+msgstr ""
+"I seguenti (%1$s) termini sono stati aggiunti nell'%2$s: \"%3$s\". La lista "
+"completa dei termini nell'articolo è: %4$s."
 
 #. translators: %s is the taxonomy name (plural)
 #: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:120
@@ -749,7 +800,9 @@ msgstr "Nessun termine è stato rimosso da %s."
 msgid ""
 "The following terms (%1$s) were removed from the %2$s: %3$s. The new list of "
 "terms on the post is: %4$s."
-msgstr "I seguenti (%1$s) termini sono stati rimossi dall'%2$s: \"%3$s\". La nuova lista dei termini nell'articolo è: %4$s."
+msgstr ""
+"I seguenti (%1$s) termini sono stati rimossi dall'%2$s: \"%3$s\". La nuova "
+"lista dei termini nell'articolo è: %4$s."
 
 #. translators: %s is the taxonomy name (plural)
 #: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:112
@@ -781,7 +834,9 @@ msgstr "Nessun termine è stato modificato nel %s."
 msgid ""
 "The following terms (%1$s) were set to the %2$s: \"%3$s\". The old list of "
 "terms on the post was: %4$s."
-msgstr "I seguenti termini (%1$s) sono stati impostati su %2$s: \"%3$s\". La vecchia lista dei termini nell'articolo era: %4$s."
+msgstr ""
+"I seguenti termini (%1$s) sono stati impostati su %2$s: \"%3$s\". La vecchia "
+"lista dei termini nell'articolo era: %4$s."
 
 #. translators: %s is the taxonomy name (plural)
 #: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:109
@@ -802,7 +857,7 @@ msgstr "Cambia lo stato in %s"
 #: src/Modules/Expirator/ExpirationActions/UnstickPost.php:46
 #, php-format
 msgid "%s didn't change."
-msgstr "%s non è cambiato"
+msgstr "%s non è cambiato."
 
 #. translators: %s: post type singular label
 #: src/Modules/Expirator/ExpirationActions/StickPost.php:53
@@ -844,11 +899,13 @@ msgstr "Ripristina i metadati degli articoli dopo la v3.0.1"
 msgid ""
 "Change args column length to 1000 in the table _ppfuture_actions_args after "
 "v3.1.4"
-msgstr "Cambiare la lunghezza degli argomenti della colonna a 1000 nella tabella _ppfuture_actions_args dopo la versione 3.1.4"
+msgstr ""
+"Cambiare la lunghezza degli argomenti della colonna a 1000 nella tabella "
+"_ppfuture_actions_args dopo la versione 3.1.4"
 
 #: src/Modules/Expirator/Models/ExpirablePostModel.php:489
 msgid "Email is disabled."
-msgstr "L'email è disabilitata"
+msgstr "L'email è disabilitata."
 
 #: src/Modules/Expirator/Models/ExpirablePostModel.php:493
 msgid "Email sent."
@@ -883,7 +940,10 @@ msgid ""
 "Invalid date/time offset \"%s\" for post type \"%s\". Please ensure you use "
 "only English terms for the date/time offset, such as \"3 months\" or \"1 "
 "week\"."
-msgstr "Scostamento data/ora \"%s\" non valido per il tipo di articolo \"%s\". Assicurati di utilizzare solo termini inglesi per lo scostamento di data/ora, come \"3 months\" (3 mesi) o \"1 week\" (1 settimana)."
+msgstr ""
+"Scostamento data/ora \"%s\" non valido per il tipo di articolo \"%s\". "
+"Assicurati di utilizzare solo termini inglesi per lo scostamento di data/"
+"ora, come \"3 months\" (3 mesi) o \"1 week\" (1 settimana)."
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:53
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:234
@@ -1163,7 +1223,9 @@ msgstr "Rimuovi automaticamente i passaggi del flusso di lavoro programmati"
 msgid ""
 "Automatically remove scheduled workflow steps that have been marked as "
 "failed, completed, or cancelled."
-msgstr "Rimuovi automaticamente i passaggi del flusso di lavoro programmati che sono stati contrassegnati come falliti, completati o annullati."
+msgstr ""
+"Rimuovi automaticamente i passaggi del flusso di lavoro programmati che sono "
+"stati contrassegnati come falliti, completati o annullati."
 
 #: src/Modules/Settings/Controllers/Controller.php:261
 msgid "Retain all scheduled workflow steps"
@@ -1174,7 +1236,10 @@ msgid ""
 "Retain all scheduled workflow steps indefinitely, including those marked as "
 "failed, completed, or cancelled. This may impact database performance over "
 "time."
-msgstr "Mantieni tutti i passaggi programmati del flusso di lavoro a tempo indefinito, incluso quelli contrassegnati come falliti, completati o annullati. Questo nel tempo potrebbe influenzare la prestazione del database."
+msgstr ""
+"Mantieni tutti i passaggi programmati del flusso di lavoro a tempo "
+"indefinito, incluso quelli contrassegnati come falliti, completati o "
+"annullati. Questo nel tempo potrebbe influenzare la prestazione del database."
 
 #: src/Modules/Settings/Controllers/Controller.php:269
 msgid "Retention"
@@ -1184,7 +1249,10 @@ msgstr "Mantieni"
 msgid ""
 "The duration, in days, for which completed, failed, and canceled scheduled "
 "workflow steps will be preserved before automatic removal."
-msgstr "La durata, in giorni, per la quale i passaggi del flusso di lavoro programmati completati, non riusciti e annullati saranno conservati prima della rimozione automatica."
+msgstr ""
+"La durata, in giorni, per la quale i passaggi del flusso di lavoro "
+"programmati completati, non riusciti e annullati saranno conservati prima "
+"della rimozione automatica."
 
 #: src/Modules/Settings/Controllers/Controller.php:274
 msgid "days"
@@ -1196,7 +1264,9 @@ msgstr "giorni"
 msgid ""
 "You're using PublishPress Future Free. The Pro version has more features and "
 "support. %1$sUpgrade to Pro%2$s"
-msgstr "Stai utilizzando PublishPress Future Free. La versione Pro ha più caratteristiche e supporto. %1$sAggiorna a Pro%2$s"
+msgstr ""
+"Stai utilizzando PublishPress Future Free. La versione Pro ha più "
+"caratteristiche e supporto. %1$sAggiorna a Pro%2$s"
 
 #: src/Modules/Workflows/Controllers/ManualPostTrigger.php:396
 msgid "Workflow Manual Trigger"
@@ -1213,7 +1283,10 @@ msgid ""
 "You have past-due scheduled actions in PublishPress Future.\n"
 "\n"
 "Please check them at %s"
-msgstr "Ci sono azioni programmate scadute in PublishPress Future.\n\nControllale su %s"
+msgstr ""
+"Ci sono azioni programmate scadute in PublishPress Future.\n"
+"\n"
+"Controllale su %s"
 
 #: src/Modules/Workflows/Controllers/PastDueActions.php:155
 msgid "[PublishPress Future] Past-due Actions Found"
@@ -1250,11 +1323,11 @@ msgstr "Cerca flussi di lavoro"
 
 #: src/Modules/Workflows/Controllers/PostType.php:57
 msgid "No Workflows found"
-msgstr "Nessun flusso di lavoro trovato."
+msgstr "Nessun flusso di lavoro trovato"
 
 #: src/Modules/Workflows/Controllers/PostType.php:58
 msgid "No Workflows found in Trash"
-msgstr "Nessun flusso di lavoro trovato nel cestino."
+msgstr "Nessun flusso di lavoro trovato nel cestino"
 
 #: src/Modules/Workflows/Controllers/PostType.php:59
 msgid "Parent Workflow:"
@@ -1286,7 +1359,7 @@ msgstr "Navigazione elenco flussi di lavoro"
 
 #: src/Modules/Workflows/Controllers/PostType.php:66
 msgid "Action Workflows list"
-msgstr "Elenco dei flussi di lavoro delle azioni"
+msgstr "Elenco dei flusso di lavoro delle azioni"
 
 #: src/Modules/Workflows/Controllers/PostType.php:67
 #: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:190
@@ -1315,7 +1388,8 @@ msgstr "Notifica quando un articolo viene aggiornato"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:35
 msgid "Notify the site admin when a post is updated."
-msgstr "Notifica all'amministratore del sito quando un articolo viene aggiornato."
+msgstr ""
+"Notifica all'amministratore del sito quando un articolo viene aggiornato."
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:39
 msgid "Unpublish to Draft after a week"
@@ -1323,7 +1397,9 @@ msgstr "Converti in bozza dopo una settimana"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:40
 msgid "Change the post status to Draft a week after it was published."
-msgstr "Modifica lo stato dell'articolo in bozza dopo una settimana che è stato pubblicato."
+msgstr ""
+"Modifica lo stato dell'articolo in bozza dopo una settimana che è stato "
+"pubblicato."
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:44
 msgid "Unpublish and change category after 15 days"
@@ -1339,7 +1415,9 @@ msgstr "Aggiungi categorie extra un mese dopo la pubblicazione"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:50
 msgid "Sample workflow to add extra categories one month after publishing"
-msgstr "Flusso di lavoro di esempio per aggiungere categorie extra un mese dopo la pubblicazione"
+msgstr ""
+"Flusso di lavoro di esempio per aggiungere categorie extra un mese dopo la "
+"pubblicazione"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:54
 msgid "Change status to draft one week after publishing"
@@ -1347,7 +1425,9 @@ msgstr "Modifica lo stato in bozza una settimana dopo la sua pubblicazione"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:55
 msgid "Sample workflow to change status to draft one week after publishing"
-msgstr "Flusso di lavoro di esempio per modificare lo stato in bozza una settimana dopo la pubblicazione"
+msgstr ""
+"Flusso di lavoro di esempio per modificare lo stato in bozza una settimana "
+"dopo la pubblicazione"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:59
 msgid "Delete post one week after publishing"
@@ -1355,7 +1435,9 @@ msgstr "Elimina l'articolo una settimana dopo che è stato pubblicato"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:60
 msgid "Sample workflow to delete post one week after publishing"
-msgstr "Flusso di lavoro di esempio per eliminare un articolo dopo una settimana dalla pubblicazione"
+msgstr ""
+"Flusso di lavoro di esempio per eliminare un articolo dopo una settimana "
+"dalla pubblicazione"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:64
 msgid "Remove all categories one week after publishing"
@@ -1363,7 +1445,9 @@ msgstr "Rimuovi tutte le categorie una settimana dopo la pubblicazione"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:65
 msgid "Sample workflow to remove all categories one week after publishing"
-msgstr "Flusso di lavoro di esempio per rimuovere tutte le categorie una settimana dopo la pubblicazione"
+msgstr ""
+"Flusso di lavoro di esempio per rimuovere tutte le categorie una settimana "
+"dopo la pubblicazione"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:69
 msgid "Remove selected categories one week after publishing"
@@ -1371,7 +1455,9 @@ msgstr "Rimuovi le categorie seelzionate una settimana dopo la pubblicazione"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:70
 msgid "Sample workflow to remove selected categories one week after publishing"
-msgstr "Flusso di lavoro di esempio per rimuovere le categorie selezionate una settimana dopo la pubblicazione"
+msgstr ""
+"Flusso di lavoro di esempio per rimuovere le categorie selezionate una "
+"settimana dopo la pubblicazione"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:74
 msgid "Replace all categories one week after publishing"
@@ -1379,7 +1465,9 @@ msgstr "Sostituisci tutte le categorie una settimana dopo la pubblicazione"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:75
 msgid "Sample workflow to replace all categories one week after publishing"
-msgstr "Flusso di lavoro di esempio per sostituire tutte le categorie una settimana dopo la pubblicazione"
+msgstr ""
+"Flusso di lavoro di esempio per sostituire tutte le categorie una settimana "
+"dopo la pubblicazione"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:79
 msgid "Stick post one week after publishing"
@@ -1387,7 +1475,9 @@ msgstr "Metti l'articolo in evidenza una settimana dopo la sua pubblicazione"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:80
 msgid "Sample workflow to stick post one week after publishing"
-msgstr "Flusso di lavoro di esempio per mettere in evidenza un articolo dopo una settimana dalla pubblicazione"
+msgstr ""
+"Flusso di lavoro di esempio per mettere in evidenza un articolo dopo una "
+"settimana dalla pubblicazione"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:84
 msgid "Unstick post one week after publishing"
@@ -1395,7 +1485,9 @@ msgstr "Rimuovi l'articolo da in evidenza una settimana dopo la pubblicazione"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:85
 msgid "Sample workflow to unstick post one week after publishing"
-msgstr "Flusso di lavoro di esempio per rimuovere l'articolo da in evidenza una settimana dopo la pubblicazione"
+msgstr ""
+"Flusso di lavoro di esempio per rimuovere l'articolo da in evidenza una "
+"settimana dopo la pubblicazione"
 
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:201
 msgid "Workflow repeating scheduled step"
@@ -1411,7 +1503,8 @@ msgstr "Annullamento dell'azione ricorrente programmata del flusso di lavoro"
 
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:212
 msgid "Cleanup orphan workflow scheduled step arguments"
-msgstr "Cancella gli argomenti dei passaggi programmati dei flussi di lavoro orfani"
+msgstr ""
+"Cancella gli argomenti dei passaggi programmati dei flussi di lavoro orfani"
 
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:217
 #, php-format
@@ -1430,7 +1523,9 @@ msgstr "Passaggio programmato del flusso di lavoro eseguito"
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:270
 #, php-format
 msgid "Cleaned up completed scheduled steps older than %d days"
-msgstr "I passaggi programmati completati più vecchi di %d giorni sono stati cancellati"
+msgstr ""
+"I passaggi programmati completati più vecchi di %d giorni sono stati "
+"cancellati"
 
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:276
 msgid "Checked for expired actions"
@@ -1438,7 +1533,8 @@ msgstr "Selezionato per le azioni scadute"
 
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:280
 msgid "Cleaned up orphan workflow scheduled step arguments"
-msgstr "Cancellati gli argomenti dei passaggi programmati dei flussi di lavoro orfani"
+msgstr ""
+"Cancellati gli argomenti dei passaggi programmati dei flussi di lavoro orfani"
 
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:284
 msgid "Unscheduled workflow recurring scheduled step"
@@ -1501,7 +1597,9 @@ msgstr "Benvenuto nell'editor del flusso di lavoro"
 msgid ""
 "In the PublishPress Workflow Editor, each workflow step is presented as a "
 "distinct 'node' in the workflow."
-msgstr "Nell'editor del flusso di lavoro di PublishPress, ogni passaggio del flusso di lavoro viene presentato come un “nodo” distinto del flusso di lavoro."
+msgstr ""
+"Nell'editor del flusso di lavoro di PublishPress, ogni passaggio del flusso "
+"di lavoro viene presentato come un \"nodo\" distinto del flusso di lavoro."
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:269
 msgid "Use your imagination"
@@ -1511,7 +1609,9 @@ msgstr "Usa la tua fantasia"
 msgid ""
 "You're free to create very distinct workflows in your site, according to "
 "your needs."
-msgstr "Sei libero di creare flussi di lavoro molto distinti nel tuo sito, in base alle tue esigenze."
+msgstr ""
+"Sei libero di creare flussi di lavoro molto distinti nel tuo sito, in base "
+"alle tue esigenze."
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:274
 msgid "A basic workflow"
@@ -1521,7 +1621,9 @@ msgstr "Un flusso di lavoro di base"
 msgid ""
 "Every workflow requires at least two steps connected to each other: one "
 "trigger and one action."
-msgstr "Ogni flusso di lavoro richiede almeno due passaggi collegati tra loro: un'attivazione e un'azione."
+msgstr ""
+"Ogni flusso di lavoro richiede almeno due passaggi collegati tra loro: "
+"un'attivazione e un'azione."
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:279
 msgid "Add steps to your workflow"
@@ -1531,7 +1633,9 @@ msgstr "Aggiungi passaggi al tuo flusso di lavoro"
 msgid ""
 "Drag and drop steps to add them to your workflow. Connect the steps to "
 "create a workflow."
-msgstr "Trascina e rilascia i passaggi per aggiungerli al tuo flusso di lavoro. Collega i passaggi per creare un flusso di lavoro."
+msgstr ""
+"Trascina e rilascia i passaggi per aggiungerli al tuo flusso di lavoro. "
+"Collega i passaggi per creare un flusso di lavoro."
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:284
 msgid "Output and input"
@@ -1539,7 +1643,9 @@ msgstr "Uscita e ingresso"
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:285
 msgid "Linked steps can pass data forward as input to the next step."
-msgstr "I passaggi collegati possono trasferire i dati come input al passaggio successivo."
+msgstr ""
+"I passaggi collegati possono trasferire i dati come input al passaggio "
+"successivo."
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:289
 msgid "Customize the workflow"
@@ -1549,7 +1655,9 @@ msgstr "Personalizza il flusso di lavoro"
 msgid ""
 "Click on a step to customize it. You can change the step's settings in the "
 "right sidebar."
-msgstr "Fai clic su un passaggio per personalizzarlo. Puoi modificare le impostazioni del passaggio nella barra laterale destra."
+msgstr ""
+"Fai clic su un passaggio per personalizzarlo. Puoi modificare le "
+"impostazioni del passaggio nella barra laterale destra."
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:294
 msgid "Workflow validation"
@@ -1560,7 +1668,11 @@ msgid ""
 "Error messages will appear for any unfilled required settings, missed "
 "connections, or invalid values. Select the step to view the corresponding "
 "error in the sidebar."
-msgstr "I messaggi di errore vengono visualizzati per tutte le impostazioni richieste non compilate, le connessioni mancate o i valori non validi. Seleziona il passaggio per visualizzare l'errore corrispondente nella barra laterale."
+msgstr ""
+"I messaggi di errore vengono visualizzati per tutte le impostazioni "
+"richieste non compilate, le connessioni mancate o i valori non validi. "
+"Seleziona il passaggio per visualizzare l'errore corrispondente nella barra "
+"laterale."
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:299
 msgid "Publish your workflow"
@@ -1568,7 +1680,9 @@ msgstr "Pubblica il tuo flusso di lavoro"
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:300
 msgid "When you're ready, click the publish button to make your workflow live."
-msgstr "Quando sei pronto, fai clic sul pulsante \"Pubblica\" per rendere attivo il tuo flusso di lavoro."
+msgstr ""
+"Quando sei pronto, fai clic sul pulsante \"Pubblica\" per rendere attivo il "
+"tuo flusso di lavoro."
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:304
 msgid "Need help?"
@@ -1578,7 +1692,9 @@ msgstr "Hai bisogno di aiuto?"
 msgid ""
 "If you have any questions or need help, click the help button in the top "
 "right corner to access the support resources."
-msgstr "Se hai domande o hai bisogno di aiuto, fai clic sul pulsante \"Aiuto\" nell'angolo in alto a destra per accedere alle risorse di supporto."
+msgstr ""
+"Se hai domande o hai bisogno di aiuto, fai clic sul pulsante \"Aiuto\" "
+"nell'angolo in alto a destra per accedere alle risorse di supporto."
 
 #. translators: Blocks tab title in the block inserter.
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:236
@@ -1786,7 +1902,9 @@ msgstr "È unico"
 msgid ""
 "If enabled, only one meta value will be allowed. If disabled, multiple meta "
 "values can be added as an array."
-msgstr "Se abilitato, sarà consentito un solo valore meta. Se è disabilitato, è possibile aggiungere più valori meta come array."
+msgstr ""
+"Se abilitato, sarà consentito un solo valore meta. Se è disabilitato, è "
+"possibile aggiungere più valori meta come array."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:98
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeletePostMeta.php:91
@@ -1933,7 +2051,9 @@ msgstr "Aggiungi termini extra all'articolo"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostTerm.php:37
 msgid "This step keeps the current taxonomy terms and adds additional terms."
-msgstr "Questo passaggio mantiene i termini della tassonomia attuale e aggiunge dei termini supplementari."
+msgstr ""
+"Questo passaggio mantiene i termini della tassonomia attuale e aggiunge dei "
+"termini supplementari."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostTerm.php:65
 msgid "Select which post will have terms added."
@@ -1975,7 +2095,8 @@ msgstr "Invia al registro di debug"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AppendDebugLog.php:37
 msgid "This step transmits the workflow's data to the debug log."
-msgstr "Questo passaggio trasmette i dati del flusso di lavoro al registro di debug."
+msgstr ""
+"Questo passaggio trasmette i dati del flusso di lavoro al registro di debug."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AppendDebugLog.php:64
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AppendDebugLog.php:97
@@ -2006,7 +2127,8 @@ msgstr "Questo passaggio sposta un articolo in uno stato differente."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ChangePostStatus.php:65
 msgid "Select which post will be moved to a different status."
-msgstr "Seleziona quale articolo dovrà essere spostato ad uno stato differente."
+msgstr ""
+"Seleziona quale articolo dovrà essere spostato ad uno stato differente."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ChangePostStatus.php:70
 msgid "Post to Change Status"
@@ -2029,7 +2151,10 @@ msgstr "Condizionale"
 msgid ""
 "This step allows you to continue the workflow only if certain conditions are "
 "met. It is not required to have both a True and a False option."
-msgstr "Questo passaggio consente di continuare il flusso di lavoro solo se sono soddisfatte determinate condizioni. Non è necessario avere sia l'opzione \"Vero\" che quella \"Falso\"."
+msgstr ""
+"Questo passaggio consente di continuare il flusso di lavoro solo se sono "
+"soddisfatte determinate condizioni. Non è necessario avere sia l'opzione "
+"\"Vero\" che quella \"Falso\"."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:64
 #: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:57
@@ -2044,7 +2169,8 @@ msgstr "Condizioni"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:74
 msgid "The conditions that must be met for deciding which branch to take."
-msgstr "Le condizioni che devono essere soddisfatte per decidere quale ramo prendere."
+msgstr ""
+"Le condizioni che devono essere soddisfatte per decidere quale ramo prendere."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:124
 msgid "Branch"
@@ -2054,7 +2180,9 @@ msgstr "Ramo"
 msgid ""
 "Shows which path was taken: 'true' if conditions were met, or 'false' if "
 "they weren't."
-msgstr "Mostra il percorso preso: \"vero\" se le condizioni erano soddisfatte o \"falso\" se non lo erano."
+msgstr ""
+"Mostra il percorso preso: \"vero\" se le condizioni erano soddisfatte o "
+"\"falso\" se non lo erano."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:147
 msgid "True"
@@ -2072,11 +2200,14 @@ msgstr "Disattiva il flusso di lavoro per l'articolo"
 msgid ""
 "This step enables you to deactivate the \"Manually enabled via checkbox\" "
 "workflow after use."
-msgstr "Questo passaggio ti consente di disabilitare dopo l'uso il flusso di lavoro \"Abilitato manualmente tramite checkbox\"."
+msgstr ""
+"Questo passaggio ti consente di disabilitare dopo l'uso il flusso di lavoro "
+"\"Abilitato manualmente tramite checkbox\"."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeactivatePostWorkflow.php:68
 msgid "Select which post will have its workflow deactivated."
-msgstr "Seleziona a quale articolo dovrà essere disattivato il flusso di lavoro."
+msgstr ""
+"Seleziona a quale articolo dovrà essere disattivato il flusso di lavoro."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeactivatePostWorkflow.php:73
 msgid "Post to Deactivate Workflow"
@@ -2094,7 +2225,9 @@ msgstr "Flusso di lavoro da disattivare"
 msgid ""
 "Choose the manually enabling workflow that will be deactivated for the "
 "selected post."
-msgstr "Scegli il flusso di lavoro ad abilitazione manuale che verrà disattivato per l'articolo selezionato."
+msgstr ""
+"Scegli il flusso di lavoro ad abilitazione manuale che verrà disattivato per "
+"l'articolo selezionato."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeactivatePostWorkflow.php:125
 msgid "Workflow"
@@ -2152,7 +2285,9 @@ msgstr "La chiave meta da eliminare dall'articolo."
 msgid ""
 "Specify the meta value to delete from the post. If empty, all meta with the "
 "same key will be deleted."
-msgstr "Specificare il valore meta da eliminare dall'articolo. Se vuoto, tutti i meta con la stessa chiave saranno eliminati."
+msgstr ""
+"Specificare il valore meta da eliminare dall'articolo. Se vuoto, tutti i "
+"meta con la stessa chiave saranno eliminati."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:32
 msgid "Do custom action"
@@ -2190,7 +2325,9 @@ msgstr "Argomenti dell'azione"
 msgid ""
 "The arguments to pass to the action. These arguments will be available as "
 "variables in subsequent workflow steps."
-msgstr "Gli argomenti da passare all'azione. Questi argomenti saranno disponibili come variabili nei successivi passaggi del flusso di lavoro."
+msgstr ""
+"Gli argomenti da passare all'azione. Questi argomenti saranno disponibili "
+"come variabili nei successivi passaggi del flusso di lavoro."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:113
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:122
@@ -2244,7 +2381,9 @@ msgstr "Prefisso del titolo"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DuplicatePost.php:98
 msgid "Text to add before the original title. Leave empty for no prefix."
-msgstr "Testo da aggiungere prima del titolo originale. Lasca vuoto per nessun prefisso."
+msgstr ""
+"Testo da aggiungere prima del titolo originale. Lasca vuoto per nessun "
+"prefisso."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DuplicatePost.php:99
 msgid "Copy of "
@@ -2256,7 +2395,8 @@ msgstr "Copia i meta dell'articolo"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DuplicatePost.php:105
 msgid "If enabled, all post meta will be copied to the new post."
-msgstr "Se abilitato, tutti i meta dell'articolo verranno copiati nel nuovo articolo."
+msgstr ""
+"Se abilitato, tutti i meta dell'articolo verranno copiati nel nuovo articolo."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DuplicatePost.php:111
 msgid "Copy Post Taxonomies"
@@ -2264,7 +2404,9 @@ msgstr "Copia le tassonomie dell'articolo"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DuplicatePost.php:112
 msgid "If enabled, all post taxonomies will be copied to the new post."
-msgstr "Se abilitato, tute le tassonomie dell'articolo verranno copiate nel nuovo articolo."
+msgstr ""
+"Se abilitato, tute le tassonomie dell'articolo verranno copiate nel nuovo "
+"articolo."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DuplicatePost.php:118
 msgid "Copy Featured Image"
@@ -2292,7 +2434,9 @@ msgstr "Query articoli"
 msgid ""
 "This step defines the posts that will be passed to the next step in the "
 "workflow."
-msgstr "Questo passaggio definisce gli articoli che passeranno al prossimo passaggio del flusso di lavoro."
+msgstr ""
+"Questo passaggio definisce gli articoli che passeranno al prossimo passaggio "
+"del flusso di lavoro."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/QueryPosts.php:72
 msgid "Post query"
@@ -2300,7 +2444,8 @@ msgstr "Query articolo"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/QueryPosts.php:73
 msgid "The query defines the posts that will be retrieved by this action."
-msgstr "La query definisce gli articoli che saranno recuperati da questa azione."
+msgstr ""
+"La query definisce gli articoli che saranno recuperati da questa azione."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/QueryPosts.php:112
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/QueryPosts.php:125
@@ -2354,7 +2499,11 @@ msgid ""
 "This step allows you to run the next part of a workflow at a specific time, "
 "or relative to another date. You can also use this step to repeat the next "
 "part of the workflow."
-msgstr "Questo passaggio consente di eseguire la parte successiva di un flusso di lavoro a un'ora specifica o rispetto a un'altra data. È anche possibile utilizzare questo passaggio per ripetere la parte successiva del flusso di lavoro."
+msgstr ""
+"Questo passaggio consente di eseguire la parte successiva di un flusso di "
+"lavoro a un'ora specifica o rispetto a un'altra data. È anche possibile "
+"utilizzare questo passaggio per ripetere la parte successiva del flusso di "
+"lavoro."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:67
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:64
@@ -2448,7 +2597,9 @@ msgstr "Flusso di lavoro di PublishPress: {{global.workflow.title}}"
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:22
 msgid ""
 "This is a message sent by PublishPress Workflow: {{global.workflow.title}}."
-msgstr "Questo è un messaggio inviato dal flusso di lavoro di PublishPress: {{global.workflow.title}}."
+msgstr ""
+"Questo è un messaggio inviato dal flusso di lavoro di PublishPress: "
+"{{global.workflow.title}}."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:45
 msgid "Send email"
@@ -2478,7 +2629,8 @@ msgstr "Destinatario"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:84
 msgid "A comma-separated list of email addresses to send the message to."
-msgstr "Un elenco di indirizzi email separati da virgola a cui spedire il messaggio."
+msgstr ""
+"Un elenco di indirizzi email separati da virgola a cui spedire il messaggio."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:92
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:142
@@ -2523,7 +2675,9 @@ msgstr "Destinatari"
 msgid ""
 "A comma-separated list of user names, ids, emails or user roles to send the "
 "message to."
-msgstr "Un elenco di nomi utenti, ID, indirizzi email o ruoli utenti separati a cui spedire il messaggio."
+msgstr ""
+"Un elenco di nomi utenti, ID, indirizzi email o ruoli utenti separati a cui "
+"spedire il messaggio."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:113
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:103
@@ -2587,7 +2741,8 @@ msgstr "Invia a Ray"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendRay.php:37
 msgid "This step transmits the workflow's data to Ray (by Spatie)."
-msgstr "Questo passaggio trasmette i dati del flusso di lavoro a Ray (di Spatie)."
+msgstr ""
+"Questo passaggio trasmette i dati del flusso di lavoro a Ray (di Spatie)."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendRay.php:65
 msgid "The data to be sent to Ray."
@@ -2617,7 +2772,9 @@ msgstr "Sostituisci tutti i termini nell'articolo"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SetPostTerm.php:37
 msgid "This step removes the current taxonomy terms and adds new terms."
-msgstr "Questo passaggio rimuove i termini della tassonomia attuale e aggiunge nuovi termini."
+msgstr ""
+"Questo passaggio rimuove i termini della tassonomia attuale e aggiunge nuovi "
+"termini."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SetPostTerm.php:65
 msgid "Select which post will have terms replaced."
@@ -2638,7 +2795,8 @@ msgstr "Nuovi termini"
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SetPostTerm.php:83
 msgid ""
 "The terms that will be added to the posts after removing all the others."
-msgstr "I termini che saranno aggiunti agli articoli dopo aver rimosso gli altri."
+msgstr ""
+"I termini che saranno aggiunti agli articoli dopo aver rimosso gli altri."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/StickPost.php:32
 msgid "Stick post"
@@ -2660,7 +2818,9 @@ msgstr "Articolo da mettere in evidenza"
 msgid ""
 "Choose the post that will be marked as sticky. You can select a post "
 "variable or enter a post ID."
-msgstr "Scegli l'articolo da contrassegnare come in evidenza. Puoi selezionare una variabile dell'articolo o inserire un ID dell'articolo."
+msgstr ""
+"Scegli l'articolo da contrassegnare come in evidenza. Puoi selezionare una "
+"variabile dell'articolo o inserire un ID dell'articolo."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UnstickPost.php:32
 msgid "Unstick post"
@@ -2672,7 +2832,9 @@ msgstr "Questo passaggio rimuove un articolo da in evidenza."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UnstickPost.php:65
 msgid "Select which post will no longer be marked as sticky."
-msgstr "Seleziona l'articolo che non dovrà più essere contrassegnato come in evidenza."
+msgstr ""
+"Seleziona l'articolo che non dovrà più essere contrassegnato come in "
+"evidenza."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UnstickPost.php:70
 msgid "Post to Unstick"
@@ -2682,7 +2844,9 @@ msgstr "Articolo da rimuovere da in evidenza"
 msgid ""
 "Choose the post that will be unmarked as sticky. You can select a post "
 "variable or enter a post ID."
-msgstr "Scegli l'articolo che verrà rimosso da in evidenza. Puoi selezionare una variabile dell'articolo o inserire un ID dell'articolo."
+msgstr ""
+"Scegli l'articolo che verrà rimosso da in evidenza. Puoi selezionare una "
+"variabile dell'articolo o inserire un ID dell'articolo."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePost.php:32
 msgid "Update post details"
@@ -2692,7 +2856,9 @@ msgstr "Aggiorna i dettagli dell'articolo"
 msgid ""
 "This step updates key information about each post such as the data, title, "
 "content, author, and more."
-msgstr "Questo passaggio aggiorna le informazioni chiave di ogni articolo come i dati, il titolo, il contenuto, l'autore e altro."
+msgstr ""
+"Questo passaggio aggiorna le informazioni chiave di ogni articolo come i "
+"dati, il titolo, il contenuto, l'autore e altro."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePost.php:65
 msgid "Select which post will be updated."
@@ -2822,7 +2988,10 @@ msgstr "Interazione dell'utente"
 msgid ""
 "This step requires user action before the workflow can proceed. The actions "
 "are done via the in-site notification area."
-msgstr "Per questo passaggio è obbligatorio un azione dell'utente prima che il flusso di lavoro possa procedere. Le azioni vengono eseguite tramite l'area delle notifiche interne al sito."
+msgstr ""
+"Per questo passaggio è obbligatorio un azione dell'utente prima che il "
+"flusso di lavoro possa procedere. Le azioni vengono eseguite tramite l'area "
+"delle notifiche interne al sito."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:64
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:168
@@ -2839,7 +3008,9 @@ msgstr "Scegli quali utenti possono vedere le notifiche per questa azione."
 msgid ""
 "A comma-separated list of user names, ids, emails or user roles that can "
 "interact with this step."
-msgstr "Un elenco di nomi utenti, ID, indirizzi email o ruoli utenti separati da virgola che possono interagire con questo passaggio."
+msgstr ""
+"Un elenco di nomi utenti, ID, indirizzi email o ruoli utenti separati da "
+"virgola che possono interagire con questo passaggio."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:82
 msgid "Specify the message to be displayed to the responders."
@@ -2848,7 +3019,9 @@ msgstr "Specifica il messaggio da mostrare ai risponditori."
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:97
 msgid ""
 "Please select an option to continue the workflow: {{global.workflow.title}}"
-msgstr "Seleziona una opzione per continuare il flusso di lavoro: {{global.workflow.title}}"
+msgstr ""
+"Seleziona una opzione per continuare il flusso di lavoro: "
+"{{global.workflow.title}}"
 
 #. translators: button label text should, if possible, be under 16 characters.
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:129
@@ -2887,7 +3060,8 @@ msgstr "Opzioni > Opzioni"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:227
 msgid "The responders to the interactive delay, as a list of user ids."
-msgstr "I rispondenti al ritardo interattivo, sotto forma di elenco di ID utente."
+msgstr ""
+"I rispondenti al ritardo interattivo, sotto forma di elenco di ID utente."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:232
 msgid "Option name"
@@ -2907,7 +3081,8 @@ msgstr "All'inizializzazione dell'amministrazione"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnAdminInit.php:37
 msgid "This trigger activates upon the initialization of the admin site."
-msgstr "Questo trigger si attiva dopo l'inizializzazione del sito dell'ammistratore."
+msgstr ""
+"Questo trigger si attiva dopo l'inizializzazione del sito dell'ammistratore."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:32
 msgid "On custom action"
@@ -2917,7 +3092,9 @@ msgstr "Con l'azione programmata"
 msgid ""
 "This trigger activates upon a custom WordPress action hook. Use it to "
 "integrate with other plugins or custom code."
-msgstr "Questo trigger si attiva con un hook dell'azione personalizzato di WordPress. Usalo per l'integrazione con altri plugin o codice personalizzato."
+msgstr ""
+"Questo trigger si attiva con un hook dell'azione personalizzato di "
+"WordPress. Usalo per l'integrazione con altri plugin o codice personalizzato."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:74
 msgid "The hook that will trigger this action."
@@ -2929,7 +3106,9 @@ msgstr "Priorità"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:84
 msgid "The priority of the action hook. Lower values are executed first."
-msgstr "La priorità dell'hook dell'azione. I valori più bassi vengono eseguiti per prima."
+msgstr ""
+"La priorità dell'hook dell'azione. I valori più bassi vengono eseguiti per "
+"prima."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnInit.php:32
 msgid "On site init"
@@ -2947,7 +3126,9 @@ msgstr "Eseguito manualmente tramite il riquadro \"Azioni Future\""
 msgid ""
 "This trigger allows users to choose the workflow from the dropdown menu in "
 "the Future Actions options."
-msgstr "Questo trigger consente agli utenti di scegliere il flusso di lavoro dal menu a discesa delle opzioni per le \"Azioni Future\"."
+msgstr ""
+"Questo trigger consente agli utenti di scegliere il flusso di lavoro dal "
+"menu a discesa delle opzioni per le \"Azioni Future\"."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnLegacyActionTrigger.php:114
 msgid "Action Post"
@@ -2973,7 +3154,9 @@ msgstr "Autore dell'articolo modificato"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostAuthorChange.php:37
 msgid "This trigger activates when an existing post author is changed."
-msgstr "Questo trigger si attiva quando si modifica l'autore di un articolo esistente."
+msgstr ""
+"Questo trigger si attiva quando si modifica l'autore di un articolo "
+"esistente."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostAuthorChange.php:64
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostCreate.php:64
@@ -3117,7 +3300,8 @@ msgstr "Meta articolo modificato"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:37
 msgid "This trigger activates when a post meta field is changed."
-msgstr "Questo trigger si attiva quando un campo meta articolo viene modificato."
+msgstr ""
+"Questo trigger si attiva quando un campo meta articolo viene modificato."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:88
 msgid "Meta settings"
@@ -3134,7 +3318,9 @@ msgstr "Chiavi meta"
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:95
 msgid ""
 "This field allow you to choose the post meta that will trigger this action."
-msgstr "Questo campo ti permette di scegliere la meta articolo che attiverà questa azione."
+msgstr ""
+"Questo campo ti permette di scegliere la meta articolo che attiverà questa "
+"azione."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:123
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostSave.php:112
@@ -3150,7 +3336,9 @@ msgstr "L'articolo che ha avviato questa azione."
 msgid ""
 "The action taken when the meta key is changed: 'added', 'updated' or "
 "'deleted'."
-msgstr "L'azione intrapresa quando la chiave meta è modificata: \"aggiunta\", \"aggiornata\" o \"eliminata\"."
+msgstr ""
+"L'azione intrapresa quando la chiave meta è modificata: \"aggiunta\", "
+"\"aggiornata\" o \"eliminata\"."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:160
 msgid "The meta ID."
@@ -3200,7 +3388,10 @@ msgstr "Eseguita manualmente tramite la riga azione degli articoli"
 msgid ""
 "This trigger creates a custom post row action and activates when the row "
 "action is clicked in the Posts list screen."
-msgstr "Questo trigger crea un'azione di riga di articolo personalizzato e si attiva quando l'azione di riga viene cliccata nella schermata dell'elenco degli articoli."
+msgstr ""
+"Questo trigger crea un'azione di riga di articolo personalizzato e si attiva "
+"quando l'azione di riga viene cliccata nella schermata dell'elenco degli "
+"articoli."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:91
 msgid "Row Action"
@@ -3209,7 +3400,9 @@ msgstr "Riga azione"
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:92
 msgid ""
 "Configure the post row action that will be created in the Posts list screen."
-msgstr "Configura l'azione della riga dell'articolo che verrà creato nell'elenco della schermata \"Articoli\"."
+msgstr ""
+"Configura l'azione della riga dell'articolo che verrà creato nell'elenco "
+"della schermata \"Articoli\"."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:100
 msgid "Action label"
@@ -3217,7 +3410,8 @@ msgstr "Etichetta dell'azione"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:101
 msgid "The label of the action created in the post row for this trigger."
-msgstr "L'etichetta dell'azione creata nella riga dell'articolo per questo trigger."
+msgstr ""
+"L'etichetta dell'azione creata nella riga dell'articolo per questo trigger."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:106
 msgid "Run workflow"
@@ -3231,7 +3425,9 @@ msgstr "Chiedi conferma"
 msgid ""
 "If enabled, the user will be asked to confirm the action before it is "
 "executed."
-msgstr "Se abilitato, verrà chiesto all'utente di confermare l'azione prima che venga eseguita."
+msgstr ""
+"Se abilitato, verrà chiesto all'utente di confermare l'azione prima che "
+"venga eseguita."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:119
 msgid "Are you sure you want to run this action?"
@@ -3239,7 +3435,7 @@ msgstr "Vuoi davvero eseguire quest'azione?"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:146
 msgid "Triggered post"
-msgstr "Articoli attivati:"
+msgstr "Articoli attivati"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostSave.php:32
 msgid "Post is saved"
@@ -3249,7 +3445,9 @@ msgstr "Articolo salvato"
 msgid ""
 "This trigger activates whenever a post is saved, regardless of whether it's "
 "newly created, imported, or updated."
-msgstr "Questo trigger si attiva quando un articolo viene salvato, indipendentemente dal fatto che sia stato creato, importato o aggiornato."
+msgstr ""
+"Questo trigger si attiva quando un articolo viene salvato, indipendentemente "
+"dal fatto che sia stato creato, importato o aggiornato."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostSave.php:118
 msgid "Is update"
@@ -3259,7 +3457,10 @@ msgstr "È aggiornato"
 msgid ""
 "Whether the action happened to an existing post or a new post. Enter True "
 "for an existing post, or False for a new post."
-msgstr "Se l'azione è stata eseguita su un articolo esistente o su un nuovo articolo. Inserire “Vero” per un articolo esistente o “Falso” per un nuovo articolo."
+msgstr ""
+"Se l'azione è stata eseguita su un articolo esistente o su un nuovo "
+"articolo. Inserire “Vero” per un articolo esistente o “Falso” per un nuovo "
+"articolo."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostSave.php:125
 msgid "Saved post ID"
@@ -3312,7 +3513,8 @@ msgstr "Articolo aggiornato"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostUpdate.php:37
 msgid "This trigger activates when an existing post is updated."
-msgstr "Questo trigger si attiva quando un articolo esistente viene aggiornato."
+msgstr ""
+"Questo trigger si attiva quando un articolo esistente viene aggiornato."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostWorkflowEnable.php:32
 msgid "Manually run via checkbox"
@@ -3322,7 +3524,10 @@ msgstr "Eseguito manualmente tramite checkbox"
 msgid ""
 "This trigger activates when the option is manually enabled. It can be "
 "enabled via the post editing screen or the Quick Edit panel."
-msgstr "Questo trigger si attiva quando l'opzione è abilitata manualmente. Può essere abilitata dalla schermata di modifica dell'articolo o dal pannello \"Modifica rapida\"."
+msgstr ""
+"Questo trigger si attiva quando l'opzione è abilitata manualmente. Può "
+"essere abilitata dalla schermata di modifica dell'articolo o dal pannello "
+"\"Modifica rapida\"."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostWorkflowEnable.php:68
 msgid "Settings for the trigger."
@@ -3344,7 +3549,10 @@ msgstr "Con la programmazione"
 msgid ""
 "This trigger allows you to run a workflow at a specific time, or relative to "
 "another date. You can also use this trigger to repeat workflows."
-msgstr "Questo trigger consente di eseguire un flusso di lavoro a un'ora specifica o rispetto a un'altra data. Puoi utilizzare questo trigger anche per ripetere i flussi di lavoro."
+msgstr ""
+"Questo trigger consente di eseguire un flusso di lavoro a un'ora specifica o "
+"rispetto a un'altra data. Puoi utilizzare questo trigger anche per ripetere "
+"i flussi di lavoro."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:65
 msgid "Choose a schedule to activate the workflow."
@@ -3364,7 +3572,9 @@ msgstr "I termini sono stati aggiunti all'articolo"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnTermsAdded.php:37
 msgid "This trigger activates when taxonomy terms are added to a post."
-msgstr "Questo trigger si attiva quando i termini della tassonomia vengono aggiunti a un articolo."
+msgstr ""
+"Questo trigger si attiva quando i termini della tassonomia vengono aggiunti "
+"a un articolo."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnTermsAdded.php:88
 msgid "Terms Filter"
@@ -3380,7 +3590,8 @@ msgstr "Filtro termini"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnTermsAdded.php:98
 msgid "Select the specific terms that will trigger this workflow."
-msgstr "Seleziona i termini specifici che innescheranno questo flusso di lavoro."
+msgstr ""
+"Seleziona i termini specifici che innescheranno questo flusso di lavoro."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnTermsAdded.php:144
 msgid "The post before terms were added."
@@ -3409,7 +3620,9 @@ msgstr "Query utente"
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:65
 msgid ""
 "Specify the criteria for users whose role changes will trigger this action."
-msgstr "Specifica i criteri per gli utenti le cui modifiche di ruolo attiveranno questa azione."
+msgstr ""
+"Specifica i criteri per gli utenti le cui modifiche di ruolo attiveranno "
+"questa azione."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:73
 msgid "User query"
@@ -3429,7 +3642,7 @@ msgstr "Ruolo utente dopo la modifica"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:122
 msgid "User that data was changed for"
-msgstr "Utente a cui sono stati modificati i dati per"
+msgstr "Utente di cui sono stati modificati i dati per"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:123
 msgid "The user that data was changed for."
@@ -3454,15 +3667,15 @@ msgstr "I ruoli che sono stati rimossi dall'utente."
 #: src/Modules/Workflows/Migrations/V040500OnScheduledStepsSchema.php:58
 msgid ""
 "Migrate post_id and repetition_number on scheduled steps schema after v4.5.0"
-msgstr "Migrare post_id e repetition_number dello schema dei passaggi programmati dopo la v4.5.0"
+msgstr ""
+"Migrare post_id e repetition_number dello schema dei passaggi programmati "
+"dopo la v4.5.0"
 
 #: src/Modules/Workflows/Migrations/V40000WorkflowScheduledStepsSchema.php:58
 msgid "Migrate workflow scheduled steps schema after v4.0.0"
-msgstr "Migrazione dello schema dei passaggi programmati del flusso di lavoro dopo la v4.0.0"
-
-#: src/Modules/Workflows/Models/StepTypesModel.php:99
-msgid "PublishPress Future"
-msgstr "PublishPress Future"
+msgstr ""
+"Migrazione dello schema dei passaggi programmati del flusso di lavoro dopo "
+"la v4.0.0"
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:108
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:35
@@ -3550,7 +3763,9 @@ msgstr "Hai bisogno del supporto di PublishPress Future?"
 
 #: src/Views/ad-banner-right-sidebar.php:18
 msgid "If you need help or have a new feature request, let us know."
-msgstr "Se hai bisogno di aiuto o hai delle richieste di funzionalità, faccelo sapere."
+msgstr ""
+"Se hai bisogno di aiuto o hai delle richieste di funzionalità, faccelo "
+"sapere."
 
 #: src/Views/ad-banner-right-sidebar.php:24
 msgid "Request Support"
@@ -3558,7 +3773,8 @@ msgstr "Rchiesta di supporto"
 
 #: src/Views/ad-banner-right-sidebar.php:34
 msgid "Detailed documentation is also available on the plugin website."
-msgstr "Una documentazione dettagliata è anche disponibile sul sito web del plugin."
+msgstr ""
+"Una documentazione dettagliata è anche disponibile sul sito web del plugin."
 
 #: src/Views/ad-banner-right-sidebar.php:41
 msgid "View Knowledge Base"
@@ -3578,7 +3794,9 @@ msgstr "%1$s%2$s%3$s il %5$s%4$s%6$s"
 msgid ""
 "Action was not scheduled due to a configuration issue. Please attempt to "
 "schedule it again."
-msgstr "L'azione non può essere programmata a causa di un problema di configurazione. Prova a riprogrammarla nuovamente."
+msgstr ""
+"L'azione non può essere programmata a causa di un problema di "
+"configurazione. Prova a riprogrammarla nuovamente."
 
 #: src/Views/menu-admin.php:27
 msgid "Metabox"
@@ -3591,7 +3809,9 @@ msgstr "Titolo metabox"
 #: src/Views/menu-admin.php:48
 msgid ""
 "The title of the metabox that will be displayed in the post edit screen."
-msgstr "Il titolo del metabox che sarà visualizzato nella schermata di modifica dell'articolo."
+msgstr ""
+"Il titolo del metabox che sarà visualizzato nella schermata di modifica "
+"dell'articolo."
 
 #: src/Views/menu-admin.php:57
 msgid "Checkbox Field Label"
@@ -3616,7 +3836,9 @@ msgstr "Dettagliate"
 #: src/Views/menu-admin.php:96
 msgid ""
 "Displays all information in the Future Action column on the \"Posts\" screen."
-msgstr "Visualizza tutte le informazioni nella colonna \"Azioni di Future\" nella schermata \"Articoli\"."
+msgstr ""
+"Visualizza tutte le informazioni nella colonna \"Azioni di Future\" nella "
+"schermata \"Articoli\"."
 
 #: src/Views/menu-admin.php:106
 msgid "Simplified"
@@ -3626,7 +3848,9 @@ msgstr "Semplificate"
 msgid ""
 "Displays only the icon and date/time in the Future Action column on the "
 "\"Posts\" screen."
-msgstr "Visualizza solo le icone e data/ora nella colonna \"Azioni di Future\" nella schermata \"Articoli\"."
+msgstr ""
+"Visualizza solo le icone e data/ora nella colonna \"Azioni di Future\" nella "
+"schermata \"Articoli\"."
 
 #: src/Views/menu-admin.php:118
 msgid "Future Actions Editor"
@@ -3634,7 +3858,9 @@ msgstr "Editor azioni Future"
 
 #: src/Views/menu-admin.php:121
 msgid "This controls the time format used to select dates for Future Actions."
-msgstr "Controlla il formato temporale utilizzato per selezionare le date per le azioni Future."
+msgstr ""
+"Controlla il formato temporale utilizzato per selezionare le date per le "
+"azioni Future."
 
 #: src/Views/menu-admin.php:128
 msgid "Time format in the date picker"
@@ -3674,7 +3900,9 @@ msgstr "Abilita le caratteristiche sperimentali"
 msgid ""
 "Enable experimental features that are still in development and may not be "
 "fully functional."
-msgstr "Abilita le caratteristiche sperimentali che sono ancora in fase di sviluppo e potrebbero non funzionare correttamente."
+msgstr ""
+"Abilita le caratteristiche sperimentali che sono ancora in fase di sviluppo "
+"e potrebbero non funzionare correttamente."
 
 #: src/Views/menu-advanced.php:63
 msgid "Preserve Data After Deactivating the Plugin"
@@ -3691,7 +3919,9 @@ msgstr "Elimina i dati"
 #: src/Views/menu-advanced.php:88
 msgid ""
 "Toggle between preserving or deleting data after the plugin is deactivated."
-msgstr "Attiva/disattiva la conservazione o l'eliminazione dei dati dopo la disattivazione del plugin."
+msgstr ""
+"Attiva/disattiva la conservazione o l'eliminazione dei dati dopo la "
+"disattivazione del plugin."
 
 #: src/Views/menu-debug-log.php:14
 msgid "Debug Log"
@@ -3701,7 +3931,9 @@ msgstr "Registro di debug"
 msgid ""
 "Below is a dump of the debugging table, this should be useful for "
 "troubleshooting."
-msgstr "Di seguito è riportato un dump della tabella di debug, questo dovrebbe essere utile per la risoluzione dei problemi."
+msgstr ""
+"Di seguito è riportato un dump della tabella di debug, questo dovrebbe "
+"essere utile per la risoluzione dei problemi."
 
 #: src/Views/menu-debug-log.php:83
 msgid "Number of logs to display:"
@@ -3729,13 +3961,17 @@ msgstr "Mostra solo le richieste con trigger attivato"
 msgid ""
 "Showing the latest %1$d of %2$d logs (%3$d sessions). Total in database: "
 "%4$d. Log size: %5$s (total: %6$s)."
-msgstr "Mostrando gli ultimi %1$d di %2$d registri. (%3$d sessioni). Totale nel database: %4$d. Dimensione del registro: %5$s (totale: %6$s)."
+msgstr ""
+"Mostrando gli ultimi %1$d di %2$d registri. (%3$d sessioni). Totale nel "
+"database: %4$d. Dimensione del registro: %5$s (totale: %6$s)."
 
 #. translators: %1$d: displayed count, %2$d: total count, %3$d: sessions, %4$s: log size.
 #: src/Views/menu-debug-log.php:165
 #, php-format
 msgid "Showing the latest %1$d of %2$d logs (%3$d sessions). Log size: %4$s."
-msgstr "Mostrando gli ultimi %1$d di %2$d registri. (%3$d sessioni). Dimensione del registro: %4$s."
+msgstr ""
+"Mostrando gli ultimi %1$d di %2$d registri. (%3$d sessioni). Dimensione del "
+"registro: %4$s."
 
 #. translators: %1$d: filtered logs count, %2$d: sessions, %3$d: total unfiltered, %4$s: filtered log size, %5$s: total log size.
 #: src/Views/menu-debug-log.php:176
@@ -3743,17 +3979,21 @@ msgstr "Mostrando gli ultimi %1$d di %2$d registri. (%3$d sessioni). Dimensione 
 msgid ""
 "Showing all %1$d logs (%2$d sessions). Total in database: %3$d. Log size: "
 "%4$s (total: %5$s)."
-msgstr "Mostrando tutti i %1$d dei registri (%2$d sessioni). Totale nel database: %3$d. Dimensione del registro: %4$s (totale: %5$s)."
+msgstr ""
+"Mostrando tutti i %1$d dei registri (%2$d sessioni). Totale nel database: "
+"%3$d. Dimensione del registro: %4$s (totale: %5$s)."
 
 #. translators: %1$d: total logs count, %2$d: sessions count, %3$s: log size.
 #: src/Views/menu-debug-log.php:185
 #, php-format
 msgid "Showing all %1$d logs (%2$d sessions). Log size: %3$s."
-msgstr "Mostrando tutti i %1$d dei registri (%2$d sessioni). Dimensione del registro: %3$s."
+msgstr ""
+"Mostrando tutti i %1$d dei registri (%2$d sessioni). Dimensione del "
+"registro: %3$s."
 
 #: src/Views/menu-debug-log.php:203
 msgid "Copy Debug Log"
-msgstr "Copia il registro di debug"
+msgstr "Copiaa il registro di debug"
 
 #: src/Views/menu-debug-log.php:206 assets/js/backupPanel.js:834
 #: assets/jsx/backup-panel/components/tabs-content/hooks/export.jsx:76
@@ -3763,7 +4003,7 @@ msgstr "Scarica"
 
 #: src/Views/menu-debug-log.php:209
 msgid "View Full Log in New Tab"
-msgstr "Visualizza tutti i registri in una nuova scheda"
+msgstr "Visualizza tutti i log in una nuova scheda"
 
 #: src/Views/menu-debug-log.php:220
 msgid "Debug log copied to clipboard!"
@@ -3793,7 +4033,10 @@ msgstr "Controllo schema database"
 msgid ""
 "After activating the plugin, tables are updated automatically on the next "
 "page load. Use the button below if you still see schema errors."
-msgstr "Dopo l'attivazione del plugin, le tabelle verranno aggiornate automaticamente al prossimo caricamento della pagina. Usa il pulsante sotto se continui a vedere errori di schema."
+msgstr ""
+"Dopo l'attivazione del plugin, le tabelle verranno aggiornate "
+"automaticamente al prossimo caricamento della pagina. Usa il pulsante sotto "
+"se continui a vedere errori di schema."
 
 #: src/Views/menu-diagnostics.php:84
 msgid "Error found on the database schema:"
@@ -3849,7 +4092,9 @@ msgstr "Spatie Ray rilevato"
 msgid ""
 "Spatie Ray Debug is detected. The \"Send to Ray\" workflow step will be "
 "available in the workflow editor."
-msgstr "Debug Spatie Ray rilevato. Il passaggio del flusso di lavoro \"Invia a Ray\" sarà disponibile nell'editor del flusso di lavoro."
+msgstr ""
+"Debug Spatie Ray rilevato. Il passaggio del flusso di lavoro \"Invia a Ray\" "
+"sarà disponibile nell'editor del flusso di lavoro."
 
 #: src/Views/menu-diagnostics.php:170
 msgid "Spatie Ray Not Detected"
@@ -3859,7 +4104,10 @@ msgstr "Spatie Ray non rilevato"
 msgid ""
 "Spatie Ray Debug is not detected. This is not an error, but the \"Send to "
 "Ray\" workflow step will not be available in the workflow editor."
-msgstr "Debug Spatie Ray non rilevato. Questo non è un errore però il passaggio del flusso di lavoro \"Invia a Ray\" non sarà disponibile nell'editor del flusso di lavoro."
+msgstr ""
+"Debug Spatie Ray non rilevato. Questo non è un errore però il passaggio del "
+"flusso di lavoro \"Invia a Ray\" non sarà disponibile nell'editor del flusso "
+"di lavoro."
 
 #: src/Views/menu-diagnostics.php:175
 msgid "Learn more about Spatie Ray"
@@ -3877,7 +4125,10 @@ msgstr "Esegui migrazione"
 msgid ""
 "Migrate legacy future actions from WP Cron to the new Action Scheduler. This "
 "will run in the background and may take a while."
-msgstr "Migrare le azioni Future legacy da WP Cron al nuovo Programmatore di azioni. Questa operazione verrà eseguita in background e potrebbe richiedere un po' di tempo."
+msgstr ""
+"Migrare le azioni Future legacy da WP Cron al nuovo Programmatore di azioni. "
+"Questa operazione verrà eseguita in background e potrebbe richiedere un po' "
+"di tempo."
 
 #: src/Views/menu-diagnostics.php:201
 msgid "Restore Legacy Action Arguments"
@@ -3892,7 +4143,10 @@ msgid ""
 "Restore legacy action arguments as Post Meta. This is useful if you have "
 "issues with 3rd party plugins that read that data. This will run in the "
 "background and may take a while."
-msgstr "Ripristina gli argomenti delle azioni legacy come meta degli articoli. Utile se si hanno problemi con i plugin di terze parti che leggono questi dati. L'esecuzione averrà in background e potrebbe richiedere un po' di tempo."
+msgstr ""
+"Ripristina gli argomenti delle azioni legacy come meta degli articoli. Utile "
+"se si hanno problemi con i plugin di terze parti che leggono questi dati. "
+"L'esecuzione averrà in background e potrebbe richiedere un po' di tempo."
 
 #: src/Views/menu-diagnostics.php:221
 msgid "Legacy Cron Schedule"
@@ -3902,7 +4156,9 @@ msgstr "Programma di Cron Legacy"
 msgid ""
 "The below table will show all currently scheduled cron events for the plugin "
 "with the next run time."
-msgstr "La tabella seguente mostra tutti gli eventi cron attualmente programmati per il plugin con il prossimo orario di esecuzione."
+msgstr ""
+"La tabella seguente mostra tutti gli eventi cron attualmente programmati per "
+"il plugin con il prossimo orario di esecuzione."
 
 #: src/Views/menu-diagnostics.php:244
 msgid "Event"
@@ -3914,7 +4170,8 @@ msgstr "Impostazioni degli articoli e della scadenza"
 
 #: src/Views/menu-diagnostics.php:302
 msgid "This is a legacy feature and will be removed in a future version."
-msgstr "Questa è una funzionalità legacy che sarà rimossa in una prossima versione."
+msgstr ""
+"Questa è una funzionalità legacy che sarà rimossa in una prossima versione."
 
 #: src/Views/menu-display.php:34
 msgid "Default Formats"
@@ -3931,7 +4188,10 @@ msgid ""
 "The default format to use when displaying the action date within a post "
 "using the shortcode or within the footer.  For information on valid "
 "formatting options, see: %s."
-msgstr "Il formato predefinito da utilizzare quando si visualizza la data di scadenza all'interno di un articolo utilizzando lo shortcode o nel footer.  Per informazioni sulle opzioni di formattazione valide, vedere: %s."
+msgstr ""
+"Il formato predefinito da utilizzare quando si visualizza la data di "
+"scadenza all'interno di un articolo utilizzando lo shortcode o nel footer.  "
+"Per informazioni sulle opzioni di formattazione valide, vedere: %s."
 
 #: src/Views/menu-display.php:68 src/Views/menu-display.php:106
 msgid "PHP Date Function"
@@ -3948,7 +4208,10 @@ msgid ""
 "The default format to use when displaying the action time within a post "
 "using the shortcode or within the footer.  For information on valid "
 "formatting options, see: %s."
-msgstr "Il formato predefinito da utilizzare quando si visualizza l'ora di scadenza all'interno di un articolo utilizzando lo shortcode o nel footer.  Per informazioni sulle opzioni di formattazione valide, vedere: %s."
+msgstr ""
+"Il formato predefinito da utilizzare quando si visualizza l'ora di scadenza "
+"all'interno di un articolo utilizzando lo shortcode o nel footer.  Per "
+"informazioni sulle opzioni di formattazione valide, vedere: %s."
 
 #: src/Views/menu-display.php:116
 msgid "Post Footer Display"
@@ -3958,7 +4221,9 @@ msgstr "Visualizzazione nel footer"
 msgid ""
 "Enabling this below will display the action date automatically at the end of "
 "any post which is set to run an action."
-msgstr "Abilitando l'opzione seguente verrà mostrata automaticamente la data di scadenza alla fine di ogni articolo che è impostato per scadere."
+msgstr ""
+"Abilitando l'opzione seguente verrà mostrata automaticamente la data di "
+"scadenza alla fine di ogni articolo che è impostato per scadere."
 
 #: src/Views/menu-display.php:127
 msgid "Show in Post Footer?"
@@ -3968,7 +4233,9 @@ msgstr "Mostrare nel footer dell'articolo?"
 msgid ""
 "This will enable or disable displaying the future action date in the post "
 "footer."
-msgstr "Questo abiliterà o disabiliterà la visualizzazione della data di scadenza dell'articolo nel footer dello stesso."
+msgstr ""
+"Questo abiliterà o disabiliterà la visualizzazione della data di scadenza "
+"dell'articolo nel footer dello stesso."
 
 #: src/Views/menu-display.php:164
 msgid "Footer Contents"
@@ -3979,7 +4246,10 @@ msgid ""
 "Enter the text you would like to appear at the bottom of every post which "
 "has an action scheduled.  The following placeholders will be replaced with "
 "the future action date in the following format:"
-msgstr "Inserisci il testo che vorresti far apparire in fondo a ogni articolo impostato con una scadenza. I seguenti segnaposto verranno sostituiti con la data di scadenza nel modo indicato:"
+msgstr ""
+"Inserisci il testo che vorresti far apparire in fondo a ogni articolo "
+"impostato con una scadenza. I seguenti segnaposto verranno sostituiti con la "
+"data di scadenza nel modo indicato:"
 
 #: src/Views/menu-display.php:216
 msgid "Footer Style"
@@ -3987,7 +4257,9 @@ msgstr "Stile del footer"
 
 #: src/Views/menu-display.php:227
 msgid "The inline css which will be used to style the footer text."
-msgstr "Il css inline che verrà utilizzato per definire lo stile del testo del footer."
+msgstr ""
+"Il css inline che verrà utilizzato per definire lo stile del testo del "
+"footer."
 
 #: src/Views/menu-display.php:231
 msgid "Example: "
@@ -4003,7 +4275,10 @@ msgstr "Shortcode"
 msgid ""
 "Use the %s[futureaction]%s shortcode to show when the future action will "
 "occur. You can add this shortcode anywhere in your post content."
-msgstr "Usa lo shortcode %s[futureaction]%s per mostrare quando avverrà l'azione futura. Puoi aggiungere questo shortcode in qualsiasi punto del contenuto del tuo articolo."
+msgstr ""
+"Usa lo shortcode %s[futureaction]%s per mostrare quando avverrà l'azione "
+"futura. Puoi aggiungere questo shortcode in qualsiasi punto del contenuto "
+"del tuo articolo."
 
 #: src/Views/menu-display.php:259
 msgid "Shortcode Wrapper"
@@ -4013,7 +4288,9 @@ msgstr "Shortcode wrapper"
 msgid ""
 "The shortcode output will be wrapped in the selected HTML tag, allowing you "
 "to control its structure and styling."
-msgstr "L'output dello shortcode sarà avvolto nel tag HTML selezionato, consentendoti di controllarne la struttura e lo stile."
+msgstr ""
+"L'output dello shortcode sarà avvolto nel tag HTML selezionato, "
+"consentendoti di controllarne la struttura e lo stile."
 
 #: src/Views/menu-display.php:289
 msgid "Wrapper Class"
@@ -4021,7 +4298,8 @@ msgstr "Classe wrapper"
 
 #: src/Views/menu-display.php:295
 msgid "Add a CSS class to the wrapper element for custom styling."
-msgstr "Aggiungi una classe CSS all'elemento wrapper per personalizzare lo stile."
+msgstr ""
+"Aggiungi una classe CSS all'elemento wrapper per personalizzare lo stile."
 
 #: src/Views/menu-display.php:302
 msgid "Attributes"
@@ -4062,7 +4340,9 @@ msgstr "%s - Visualizza solo l'ora"
 #: src/Views/menu-display.php:345 src/Views/menu-display.php:353
 #, php-format
 msgid "%s - Format set here will override the value set on the settings page"
-msgstr "%s - il formato impostato qui sovrascrive il valore configurato nella pagina delle impostazioni"
+msgstr ""
+"%s - il formato impostato qui sovrascrive il valore configurato nella pagina "
+"delle impostazioni"
 
 #: src/Views/menu-general.php:25
 msgid "Defaults"
@@ -4078,7 +4358,9 @@ msgstr "Ricorda l'ultimo stato"
 
 #: src/Views/menu-general.php:67
 msgid "Shows or hides the calendar based on the last user interaction."
-msgstr "Mostra o nasconde il calendario in funzione dell'ultima interazione dell'utente."
+msgstr ""
+"Mostra o nasconde il calendario in funzione dell'ultima interazione "
+"dell'utente."
 
 #: src/Views/menu-general.php:72
 msgid "Always hidden"
@@ -4102,7 +4384,9 @@ msgstr "Email di notifica scadenza"
 
 #: src/Views/menu-notifications.php:52
 msgid "Whenever an action runs, an email can be sent to alert users."
-msgstr "Ogni volta che un articolo scade, un'email può essere spedita per avvisare gli utenti della scadenza."
+msgstr ""
+"Ogni volta che un articolo scade, un'email può essere spedita per avvisare "
+"gli utenti della scadenza."
 
 #: src/Views/menu-notifications.php:59
 msgid "Enable Email Notification?"
@@ -4111,7 +4395,9 @@ msgstr "Abilita notifica email?"
 #: src/Views/menu-notifications.php:78
 msgid ""
 "This will enable or disable the send of email notification on future action."
-msgstr "Questo abiliterà o disabiliterà l'invio della notifica via email alla scadenza dell'articolo."
+msgstr ""
+"Questo abiliterà o disabiliterà l'invio della notifica via email alla "
+"scadenza dell'articolo."
 
 #: src/Views/menu-notifications.php:86
 msgid "Include Blog Administrators?"
@@ -4120,14 +4406,20 @@ msgstr "Includere gli amministratori del blog?"
 #: src/Views/menu-notifications.php:107
 msgid ""
 "This will include all users with the role of \"Administrator\" in the email."
-msgstr "Ciò includerà tutti gli utenti con il ruolo di \"Amministratore\" nell'email di scadenza dell'articolo."
+msgstr ""
+"Ciò includerà tutti gli utenti con il ruolo di \"Amministratore\" nell'email "
+"di scadenza dell'articolo."
 
 #: src/Views/menu-notifications.php:123
 msgid ""
 "Enter a comma separate list of emails that you would like to be notified "
 "when the action runs.  This will be applied to ALL post types.  You can set "
 "post type specific emails on the Defaults tab."
-msgstr "Inserisci un elenco di email separate da virgole a cui ti piacerebbe inviare una notifica quando scade l'articolo. Questo sarà applicato a tutti i tipi di contenuto. È possibile impostare email specifiche per un tipo di contenuto nella scheda \"Valori predefiniti\"."
+msgstr ""
+"Inserisci un elenco di email separate da virgole a cui ti piacerebbe inviare "
+"una notifica quando scade l'articolo. Questo sarà applicato a tutti i tipi "
+"di contenuto. È possibile impostare email specifiche per un tipo di "
+"contenuto nella scheda \"Valori predefiniti\"."
 
 #: src/Views/menu-notifications.php:132
 msgid "Past-due Actions Notification"
@@ -4137,7 +4429,9 @@ msgstr "Notifica delle azioni scadute"
 msgid ""
 "This will enable or disable the send of email notification on past-due "
 "actions."
-msgstr "Questo abiliterà o disabiliterà l'invio della notifica via email sulle azioni scadute."
+msgstr ""
+"Questo abiliterà o disabiliterà l'invio della notifica via email sulle "
+"azioni scadute."
 
 #: src/Views/menu-notifications.php:142
 msgid "Enable Past-due Actions Notification?"
@@ -4147,7 +4441,9 @@ msgstr "Abilitare la notifica per le azioni scadute?"
 msgid ""
 "Enter a comma separate list of emails that you would like to be notified "
 "when past-due actions are detected."
-msgstr "Inserisci un elenco di email separate da virgola a cui vuoi inviare una notifica quando vengono riscontrate azioni scadute."
+msgstr ""
+"Inserisci un elenco di email separate da virgola a cui vuoi inviare una "
+"notifica quando vengono riscontrate azioni scadute."
 
 #: src/Views/tabs-future-actions.php:20 assets/js/backupPanel.js:649
 #: assets/js/backupPanel.js:1232
@@ -4400,6 +4696,12 @@ msgstr ""
 #: assets/js/workflowsListCancelAction.js:507
 msgid "Cancel Actions"
 msgstr "Annulla azioni"
+
+#: assets/jsx/i18n.jsx:174 assets/jsx/i18n.jsx:176
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d elemento"
+msgstr[1] "%d elementi"
 
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:29
 msgid "Integer"
@@ -5613,10 +5915,122 @@ msgstr "Passa alla bozza"
 msgid "Enable workflow %s"
 msgstr "Abilita il flusso di lavoro %s"
 
-#~ msgid "%d item"
-#~ msgid_plural "%d items"
-#~ msgstr[0] "%d elemento"
-#~ msgstr[1] "%d elementi"
+#~ msgid "The field \"%s\" contains an invalid variable."
+#~ msgstr "Il campo %s contiene una variabile non valida."
+
+#~ msgid ""
+#~ "The variable \"%s\" is not available in the current context. Please, "
+#~ "check if it is spelled correctly."
+#~ msgstr ""
+#~ "La variabile \"%s\" non è disponibile nel contesto attuale. Controlla che "
+#~ "sia scritta correttamente."
+
+#~ msgid "\"%s\" is not a variable or step slug."
+#~ msgstr "\"%s\" non è una variabile o uno slug del passaggio."
+
+#~ msgid "Empty placeholder is not allowed."
+#~ msgstr "Non è consentito lasciare un segnaposto vuoto."
+
+#~ msgid "Unclosed placeholder are not allowed."
+#~ msgstr "I segnaposti aperti non sono consentiti."
+
+#~ msgid "Unopened placeholder are not allowed."
+#~ msgstr "I segnaposti chiusi non sono consentiti."
+
+#~ msgid "Invalid expression on %s"
+#~ msgstr "Espressione non valida su %s"
+
+#~ msgid "The field %s must be a list of options."
+#~ msgstr "Il campo %s deve essere un elenco di opzioni."
+
+#~ msgid "The option \"%s\" does not have a name."
+#~ msgstr "L'opzione \"%s\" non ha un nome."
+
+#~ msgid "The option \"%s\" does not have a label."
+#~ msgstr "L'opzione \"%s\" non ha un'etichetta."
+
+#~ msgid "The option \"%s\" has a duplicate name."
+#~ msgstr "L'opzione \"%s\" ha un nome duplicato."
+
+#~ msgid "The option \"%s\" has a duplicate label."
+#~ msgstr "L'opzione \"%s\" ha un'etichetta duplicata."
+
+#~ msgid "The field %s must be a valid list of options."
+#~ msgstr "Il campo %s deve essere un elenco di opzioni valide."
+
+#~ msgid "This step requires a connection from a previous step."
+#~ msgstr ""
+#~ "Questo passaggio richiede una connessione con un passaggio precedente."
+
+#~ msgid "This step requires a connection to a following step."
+#~ msgstr ""
+#~ "Questo passaggio richiede una connessione con un passaggio successivo."
+
+#~ msgid "The field %s is required."
+#~ msgstr "Il campo %s è obbligatorio."
+
+#~ msgid "The field %s must be a valid email address."
+#~ msgstr ""
+#~ "Il campo %s deve essere un elenco di indirizzi email validi separati da "
+#~ "virgole."
+
+#~ msgid "The field %s must be a valid email address list separated by commas."
+#~ msgstr ""
+#~ "Il campo %s deve essere un elenco di indirizzi email validi separati da "
+#~ "virgole."
+
+#~ msgid "The field %s must be an integer."
+#~ msgstr "Il campo %s deve essere un numero intero."
+
+#~ msgid "The field %s must be an integer list separated by commas."
+#~ msgstr ""
+#~ "Il campo %s deve essere un elenco di numeri interi separati da virgole."
+
+#~ msgid "The field %s must be a list of name-value pairs."
+#~ msgstr "Il campo %s deve essere un elenco di coppie nome-valore."
+
+#~ msgid "The name of the pair is required on item %d."
+#~ msgstr "Il nome della coppia è obbligatorio per l'elemento %d."
+
+#~ msgid "The value of the pair is required on item %d."
+#~ msgstr "Il valore della coppia è obbligatorio per l'elemento %d."
+
+#~ msgid "Invalid variable."
+#~ msgstr "Variabile non valida."
+
+#~ msgid "Please use the variable picker to select valid expression."
+#~ msgstr ""
+#~ "Utilizza il selettore di variabile per selezionare un'espressione valida."
+
+#, fuzzy
+#~| msgid "Current Date"
+#~ msgid "The current site."
+#~ msgstr "Data attuale"
+
+#, fuzzy
+#~| msgid "Run workflow"
+#~ msgid "The current workflow."
+#~ msgstr "Esegui il flusso di lavoro"
+
+#, fuzzy
+#~| msgid "Activate"
+#~ msgid "Activating user"
+#~ msgstr "Attiva"
+
+#, fuzzy
+#~| msgid "Show current running step"
+#~ msgid "The current user."
+#~ msgstr "Mostra il passaggio attualmente in esecuzione"
+
+#, fuzzy
+#~| msgid "Activate"
+#~ msgid "Activating trigger"
+#~ msgstr "Attiva"
+
+#, fuzzy
+#~| msgid "Choose a schedule to activate the workflow."
+#~ msgid "The node that activated the workflow."
+#~ msgstr "Scegli un programma per attivare il flusso di lavoro."
 
 #~ msgid "Future"
 #~ msgstr "Future"
@@ -5750,40 +6164,6 @@ msgstr "Abilita il flusso di lavoro %s"
 #~ msgstr ""
 #~ "Per il campo \"%s\" è obbligatoria una variante valida. Selezionane una "
 #~ "dalle opzioni disponibili."
-
-#~ msgid "The variable \"%s\" is not available in the current context."
-#~ msgstr "La variabile \"%s\" non è disponibile nel contesto attuale."
-
-#~ msgid "\"%s\" is not a variable or step slug."
-#~ msgstr "\"%s\" non è una variabile o uno slug del passaggio."
-
-#~ msgid "Invalid expression on %s"
-#~ msgstr "Espressione non valida su %s"
-
-#~ msgid "This step requires a connection from a previous step."
-#~ msgstr ""
-#~ "Questo passaggio richiede una connessione con un passaggio precedente."
-
-#~ msgid "This step requires a connection to a following step."
-#~ msgstr ""
-#~ "Questo passaggio richiede una connessione con un passaggio successivo."
-
-#~ msgid "The field %s must be a valid email address."
-#~ msgstr ""
-#~ "Il campo %s deve essere un elenco di indirizzi email validi separati da "
-#~ "virgole."
-
-#~ msgid "The field %s must be a valid email address list separated by commas."
-#~ msgstr ""
-#~ "Il campo %s deve essere un elenco di indirizzi email validi separati da "
-#~ "virgole."
-
-#~ msgid "The field %s must be an integer."
-#~ msgstr "Il campo %s deve essere un numero intero."
-
-#~ msgid "The field %s must be an integer list separated by commas."
-#~ msgstr ""
-#~ "Il campo %s deve essere un elenco di numeri interi separati da virgole."
 
 #~ msgid "Skip task if already exists"
 #~ msgstr "Salta l'attività se esiste già"

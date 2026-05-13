@@ -2698,7 +2698,6 @@ msgid "Recipients"
 msgstr "Odbiorcy"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:84
-#, fuzzy
 msgid ""
 "A comma-separated list of user names, ids, emails or user roles to send the "
 "message to."
@@ -2843,7 +2842,6 @@ msgid "Post to Stick"
 msgstr "Post do przypięcia"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/StickPost.php:71
-#, fuzzy
 msgid ""
 "Choose the post that will be marked as sticky. You can select a post "
 "variable or enter a post ID."
