@@ -12207,7 +12207,7 @@ function NodeValidator(_ref) {
     if (expression === '{{input}}') {
       return successfulResult;
     }
-    var expressions = expression.match(/{{[^}]+}}/g);
+    var expressions = expression.match(/\{\{[^\}]+\}\}/g);
     if (expressions) {
       expressions.forEach(function (expression) {
         var _ruleData$allowedVari;
@@ -12242,10 +12242,10 @@ function NodeValidator(_ref) {
       detailsMessage = (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Empty placeholder is not allowed.', 'post-expirator');
     }
     var countOpenPlaceholders = function countOpenPlaceholders(expression) {
-      return (expression.match(/{{/g) || []).length;
+      return (expression.match(/\{\{/g) || []).length;
     };
     var countClosePlaceholders = function countClosePlaceholders(expression) {
-      return (expression.match(/}}/g) || []).length;
+      return (expression.match(/\}\}/g) || []).length;
     };
     if (countOpenPlaceholders(expression) > countClosePlaceholders(expression)) {
       invalidExpression = true;
@@ -12353,24 +12353,26 @@ function NodeValidator(_ref) {
               }
               break;
             case 'hasIncomerOfName':
-              var allIncomers = (0,_utils__WEBPACK_IMPORTED_MODULE_5__.getNodeIncomersRecursively)(node);
-              var hasError = false;
-              if (allIncomers.length === 0) {
-                hasError = true;
-              } else {
-                var hasIncomerOfName = false;
-                allIncomers.forEach(function (incomer) {
-                  var _incomer$data;
-                  if (((_incomer$data = incomer.data) === null || _incomer$data === void 0 ? void 0 : _incomer$data.name) === ruleData.name) {
-                    hasIncomerOfName = true;
-                  }
-                });
-                hasError = !hasIncomerOfName;
+              {
+                var allIncomers = (0,_utils__WEBPACK_IMPORTED_MODULE_5__.getNodeIncomersRecursively)(node);
+                var hasError = false;
+                if (allIncomers.length === 0) {
+                  hasError = true;
+                } else {
+                  var hasIncomerOfName = false;
+                  allIncomers.forEach(function (incomer) {
+                    var _incomer$data;
+                    if (((_incomer$data = incomer.data) === null || _incomer$data === void 0 ? void 0 : _incomer$data.name) === ruleData.name) {
+                      hasIncomerOfName = true;
+                    }
+                  });
+                  hasError = !hasIncomerOfName;
+                }
+                if (hasError) {
+                  addNodeError(node.id, 'parent-name', ruleData.message);
+                }
+                break;
               }
-              if (hasError) {
-                addNodeError(node.id, 'parent-name', ruleData.message);
-              }
-              break;
           }
         });
       }
@@ -12417,89 +12419,99 @@ function NodeValidator(_ref) {
               }
               break;
             case 'dataType':
-              var type = ruleData.type;
-              if (settingValue === undefined || settingValue === null || settingValue === '') {
-                return;
-              }
-              if (type === 'email') {
-                if (!validator_lib_isEmail__WEBPACK_IMPORTED_MODULE_6___default()(settingValue)) {
-                  addNodeError(node.id, "".concat(fieldName, "-email"), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('The field %s must be a valid email address.', 'post-expirator'), fieldLabel));
-                }
-              } else if (type === 'emailList') {
-                var emails = settingValue.split(',');
-                var email;
-                for (var _i2 = 0; _i2 < emails.length; _i2++) {
-                  email = emails[_i2].trim();
-                  if (!validator_lib_isEmail__WEBPACK_IMPORTED_MODULE_6___default()(email) && !isVariable(email)) {
-                    addNodeError(node.id, "".concat(fieldName, "-emailList"), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('The field %s must be a valid email address list separated by commas.', 'post-expirator'), fieldLabel));
-                    break;
-                  }
-                }
-              } else if (type === 'integer') {
-                if (!validator_lib_isInt__WEBPACK_IMPORTED_MODULE_7___default()(settingValue)) {
-                  addNodeError(node.id, "".concat(fieldName, "-integer"), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('The field %s must be an integer.', 'post-expirator'), fieldLabel));
-                }
-              } else if (type === 'integerList') {
-                var integer;
-                for (var _i3 = 0; _i3 < settingValue.length; _i3++) {
-                  integer = settingValue[_i3].trim();
-                  if (!validator_lib_isInt__WEBPACK_IMPORTED_MODULE_7___default()(integer)) {
-                    addNodeError(node.id, "".concat(fieldName, "-integerList"), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('The field %s must be an integer list separated by commas.', 'post-expirator'), fieldLabel));
-                    break;
-                  }
-                }
-              } else if (type === 'nameValuePairList') {
-                if (!settingValue) {
+              {
+                var type = ruleData.type;
+                if (settingValue === undefined || settingValue === null || settingValue === '') {
                   return;
                 }
-                var property = ruleData.field;
-                if (!settingValue[property]) {
-                  return;
-                }
-                if (!Array.isArray(settingValue[property])) {
-                  addNodeError(node.id, "".concat(fieldName, "-nameValuePairList"), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('The field %s must be a list of name-value pairs.', 'post-expirator'), fieldLabel));
-                }
-                settingValue[property].forEach(function (item, i) {
-                  if ((item === null || item === void 0 ? void 0 : item.name) === '') {
-                    addNodeError(node.id, "".concat(fieldName, "-nameValuePairList"), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('The field %s must be a list of name-value pairs.', 'post-expirator'), fieldLabel), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('The name of the pair is required on item %d.', 'post-expirator'), i + 1));
+                if (type === 'email') {
+                  if (!validator_lib_isEmail__WEBPACK_IMPORTED_MODULE_6___default()(settingValue)) {
+                    addNodeError(node.id, "".concat(fieldName, "-email"), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('The field %s must be a valid email address.', 'post-expirator'), fieldLabel));
                   }
-                  if ((item === null || item === void 0 ? void 0 : item.value) === '') {
-                    addNodeError(node.id, "".concat(fieldName, "-nameValuePairList"), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('The field %s must be a list of name-value pairs.', 'post-expirator'), fieldLabel), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('The value of the pair is required on item %d.', 'post-expirator'), i + 1));
+                } else if (type === 'emailList') {
+                  var emails = settingValue.split(',');
+                  var email;
+                  for (var _i2 = 0; _i2 < emails.length; _i2++) {
+                    email = emails[_i2].trim();
+                    if (!validator_lib_isEmail__WEBPACK_IMPORTED_MODULE_6___default()(email) && !isVariable(email)) {
+                      addNodeError(node.id, "".concat(fieldName, "-emailList"), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('The field %s must be a valid email address list separated by commas.', 'post-expirator'), fieldLabel));
+                      break;
+                    }
                   }
-                });
-              }
-              break;
-            case 'validVariable':
-              var variableValidation = isVariableValid(node, settingValue, ruleData);
-              if (!variableValidation.isValid) {
-                addNodeError(node.id, "".concat(fieldName, "-validVariable"), variableValidation.error, variableValidation.details);
-              }
-              break;
-            case 'validExpression':
-              var expressionValidation = isExpressionValid(settingValue, ruleData);
-              if (!expressionValidation.isValid) {
-                addNodeError(node.id, "".concat(fieldName, "-validExpression"), expressionValidation.error, expressionValidation.details);
-              }
-              break;
-            case 'validOptions':
-              if (!Array.isArray(settingValue)) {
-                addNodeError(node.id, "".concat(fieldName, "-validOptions"), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('The field %s must be a list of options.', 'post-expirator'), fieldLabel));
-              }
-              var optionsValidation = isOptionsValid(settingValue, ruleData);
-              if (!optionsValidation.isValid) {
-                addNodeError(node.id, "".concat(fieldName, "-validOptions"), optionsValidation.error, optionsValidation.details);
-              }
-              break;
-            case 'hasVariableSyntax':
-              if (!settingValue || settingValue === '') {
+                } else if (type === 'integer') {
+                  if (!validator_lib_isInt__WEBPACK_IMPORTED_MODULE_7___default()(settingValue)) {
+                    addNodeError(node.id, "".concat(fieldName, "-integer"), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('The field %s must be an integer.', 'post-expirator'), fieldLabel));
+                  }
+                } else if (type === 'integerList') {
+                  var integer;
+                  for (var _i3 = 0; _i3 < settingValue.length; _i3++) {
+                    integer = settingValue[_i3].trim();
+                    if (!validator_lib_isInt__WEBPACK_IMPORTED_MODULE_7___default()(integer)) {
+                      addNodeError(node.id, "".concat(fieldName, "-integerList"), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('The field %s must be an integer list separated by commas.', 'post-expirator'), fieldLabel));
+                      break;
+                    }
+                  }
+                } else if (type === 'nameValuePairList') {
+                  if (!settingValue) {
+                    return;
+                  }
+                  var property = ruleData.field;
+                  if (!settingValue[property]) {
+                    return;
+                  }
+                  if (!Array.isArray(settingValue[property])) {
+                    addNodeError(node.id, "".concat(fieldName, "-nameValuePairList"), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('The field %s must be a list of name-value pairs.', 'post-expirator'), fieldLabel));
+                  }
+                  settingValue[property].forEach(function (item, i) {
+                    if ((item === null || item === void 0 ? void 0 : item.name) === '') {
+                      addNodeError(node.id, "".concat(fieldName, "-nameValuePairList"), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('The field %s must be a list of name-value pairs.', 'post-expirator'), fieldLabel), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('The name of the pair is required on item %d.', 'post-expirator'), i + 1));
+                    }
+                    if ((item === null || item === void 0 ? void 0 : item.value) === '') {
+                      addNodeError(node.id, "".concat(fieldName, "-nameValuePairList"), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('The field %s must be a list of name-value pairs.', 'post-expirator'), fieldLabel), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('The value of the pair is required on item %d.', 'post-expirator'), i + 1));
+                    }
+                  });
+                }
                 break;
               }
-              var trimmedValue = settingValue.trim();
-              var hasProperSyntax = trimmedValue.startsWith('{{') && trimmedValue.endsWith('}}');
-              if (!hasProperSyntax) {
-                addNodeError(node.id, "".concat(fieldName, "-hasVariableSyntax"), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Invalid variable.', 'post-expirator'), fieldLabel), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Please use the variable picker to select valid expression.', 'post-expirator'));
+            case 'validVariable':
+              {
+                var variableValidation = isVariableValid(node, settingValue, ruleData);
+                if (!variableValidation.isValid) {
+                  addNodeError(node.id, "".concat(fieldName, "-validVariable"), variableValidation.error, variableValidation.details);
+                }
+                break;
               }
-              break;
+            case 'validExpression':
+              {
+                var expressionValidation = isExpressionValid(settingValue, ruleData);
+                if (!expressionValidation.isValid) {
+                  addNodeError(node.id, "".concat(fieldName, "-validExpression"), expressionValidation.error, expressionValidation.details);
+                }
+                break;
+              }
+            case 'validOptions':
+              {
+                if (!Array.isArray(settingValue)) {
+                  addNodeError(node.id, "".concat(fieldName, "-validOptions"), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('The field %s must be a list of options.', 'post-expirator'), fieldLabel));
+                }
+                var optionsValidation = isOptionsValid(settingValue, ruleData);
+                if (!optionsValidation.isValid) {
+                  addNodeError(node.id, "".concat(fieldName, "-validOptions"), optionsValidation.error, optionsValidation.details);
+                }
+                break;
+              }
+            case 'hasVariableSyntax':
+              {
+                if (!settingValue || settingValue === '') {
+                  break;
+                }
+                var trimmedValue = settingValue.trim();
+                var hasProperSyntax = trimmedValue.startsWith('{{') && trimmedValue.endsWith('}}');
+                if (!hasProperSyntax) {
+                  addNodeError(node.id, "".concat(fieldName, "-hasVariableSyntax"), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Invalid variable.', 'post-expirator'), fieldLabel), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Please use the variable picker to select valid expression.', 'post-expirator'));
+                }
+                break;
+              }
           }
         });
       }
