@@ -15920,7 +15920,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var reactflow__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! reactflow */ "./node_modules/@reactflow/core/dist/esm/index.mjs");
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../constants */ "./assets/jsx/workflow-editor/constants.jsx");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils */ "./assets/jsx/workflow-editor/utils.jsx");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils */ "./assets/jsx/workflow-editor/utils.jsx");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -15933,6 +15935,7 @@ function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t =
 function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
 function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+
 
 
 
@@ -16007,8 +16010,8 @@ var normalizeMarkerEnd = function normalizeMarkerEnd(payload) {
 };
 var removeBrokenConnections = function removeBrokenConnections(nodes, edges) {
   return edges.filter(function (edge) {
-    var sourceNode = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.getNodeById)(edge.source, nodes);
-    var targetNode = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.getNodeById)(edge.target, nodes);
+    var sourceNode = (0,_utils__WEBPACK_IMPORTED_MODULE_3__.getNodeById)(edge.source, nodes);
+    var targetNode = (0,_utils__WEBPACK_IMPORTED_MODULE_3__.getNodeById)(edge.target, nodes);
     if (!sourceNode || !targetNode) {
       return false;
     }
@@ -16023,7 +16026,7 @@ function _setInitialStateForGlobalVariables(state) {
       label: 'Site',
       type: 'site',
       runtimeOnly: true,
-      description: 'The current site.'
+      description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('The current site.', 'post-expirator')
     }
   });
   state = setGlobalVariable(state, {
@@ -16032,7 +16035,7 @@ function _setInitialStateForGlobalVariables(state) {
       label: 'Workflow',
       type: 'workflow',
       runtimeOnly: false,
-      description: 'The current workflow.'
+      description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('The current workflow.', 'post-expirator')
     }
   });
   state = setGlobalVariable(state, {
@@ -16041,7 +16044,7 @@ function _setInitialStateForGlobalVariables(state) {
       label: 'Activating user',
       type: 'user',
       runtimeOnly: true,
-      description: 'The current user.'
+      description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('The current user.', 'post-expirator')
     }
   });
   state = setGlobalVariable(state, {
@@ -16050,7 +16053,7 @@ function _setInitialStateForGlobalVariables(state) {
       label: 'Activating trigger',
       type: 'node',
       runtimeOnly: true,
-      description: 'The node that activated the workflow.'
+      description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('The node that activated the workflow.', 'post-expirator')
     }
   });
   state = setGlobalVariable(state, {
@@ -16059,7 +16062,7 @@ function _setInitialStateForGlobalVariables(state) {
       label: 'Engine execution ID',
       type: 'string',
       runtimeOnly: true,
-      description: 'A unique identifier assigned each time the workflow engine runs. Useful for tracking specific workflow executions and debugging.',
+      description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('A unique identifier assigned each time the workflow engine runs. Useful for tracking specific workflow executions and debugging.', 'post-expirator'),
       priority: 35
     }
   });
@@ -16082,7 +16085,7 @@ var loadWorkflowSuccess = function loadWorkflowSuccess(state, action) {
     });
   });
   if (!nodes.length) {
-    nodes = [(0,_utils__WEBPACK_IMPORTED_MODULE_2__.newTriggerPlaceholderNode)()];
+    nodes = [(0,_utils__WEBPACK_IMPORTED_MODULE_3__.newTriggerPlaceholderNode)()];
   }
   edges = normalizeMarkerEnd(edges);
   edges = removeBrokenConnections(nodes, edges);
@@ -16116,7 +16119,7 @@ var createWorkflowStart = function createWorkflowStart(state, action) {
 };
 var createWorkflowSuccess = function createWorkflowSuccess(state, action) {
   var payload = action.payload;
-  var nodes = [(0,_utils__WEBPACK_IMPORTED_MODULE_2__.newTriggerPlaceholderNode)()];
+  var nodes = [(0,_utils__WEBPACK_IMPORTED_MODULE_3__.newTriggerPlaceholderNode)()];
   state = _setInitialStateForGlobalVariables(state, {});
   return _objectSpread(_objectSpread({}, state), {}, {
     isCreatingWorkflow: false,
