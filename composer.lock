@@ -1404,16 +1404,16 @@
         },
         {
             "name": "composer/composer",
-            "version": "2.9.7",
+            "version": "2.9.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "82a2fbd1372a98d7915cfb092acf05207d9b4113"
+                "reference": "39ee8baff8e97a1b657bbfcd6a236ff93a5efbb2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/82a2fbd1372a98d7915cfb092acf05207d9b4113",
-                "reference": "82a2fbd1372a98d7915cfb092acf05207d9b4113",
+                "url": "https://api.github.com/repos/composer/composer/zipball/39ee8baff8e97a1b657bbfcd6a236ff93a5efbb2",
+                "reference": "39ee8baff8e97a1b657bbfcd6a236ff93a5efbb2",
                 "shasum": ""
             },
             "require": {
@@ -1501,7 +1501,7 @@
                 "irc": "ircs://irc.libera.chat:6697/composer",
                 "issues": "https://github.com/composer/composer/issues",
                 "security": "https://github.com/composer/composer/security/policy",
-                "source": "https://github.com/composer/composer/tree/2.9.7"
+                "source": "https://github.com/composer/composer/tree/2.9.8"
             },
             "funding": [
                 {
@@ -1513,7 +1513,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-04-14T11:31:52+00:00"
+            "time": "2026-05-13T07:28:38+00:00"
         },
         {
             "name": "composer/metadata-minifier",
@@ -3897,16 +3897,16 @@
         },
         {
             "name": "php-http/cache-plugin",
-            "version": "2.0.2",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-http/cache-plugin.git",
-                "reference": "c7fd57abaf6d08578aee51a8f1f34ea33ddbfdef"
+                "reference": "1443d3882c4c18556fe9b409f664ebc8c021940c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-http/cache-plugin/zipball/c7fd57abaf6d08578aee51a8f1f34ea33ddbfdef",
-                "reference": "c7fd57abaf6d08578aee51a8f1f34ea33ddbfdef",
+                "url": "https://api.github.com/repos/php-http/cache-plugin/zipball/1443d3882c4c18556fe9b409f664ebc8c021940c",
+                "reference": "1443d3882c4c18556fe9b409f664ebc8c021940c",
                 "shasum": ""
             },
             "require": {
@@ -3946,9 +3946,9 @@
             ],
             "support": {
                 "issues": "https://github.com/php-http/cache-plugin/issues",
-                "source": "https://github.com/php-http/cache-plugin/tree/2.0.2"
+                "source": "https://github.com/php-http/cache-plugin/tree/2.1.0"
             },
-            "time": "2025-12-01T08:38:41+00:00"
+            "time": "2026-05-12T09:44:11+00:00"
         },
         {
             "name": "php-http/client-common",
@@ -6004,16 +6004,16 @@
         },
         {
             "name": "publishpress/translations",
-            "version": "v1.1.0",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/publishpress/library-publishpress-translator.git",
-                "reference": "7a76548afd6135a43dc7b34b1e4269d30d49cd05"
+                "reference": "3537aa99ab310815c96aeb199ef5cad37f3167c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/publishpress/library-publishpress-translator/zipball/7a76548afd6135a43dc7b34b1e4269d30d49cd05",
-                "reference": "7a76548afd6135a43dc7b34b1e4269d30d49cd05",
+                "url": "https://api.github.com/repos/publishpress/library-publishpress-translator/zipball/3537aa99ab310815c96aeb199ef5cad37f3167c1",
+                "reference": "3537aa99ab310815c96aeb199ef5cad37f3167c1",
                 "shasum": ""
             },
             "require": {
@@ -6055,9 +6055,9 @@
             "description": "AI-powered translation automation for PublishPress plugins using Potomatic",
             "support": {
                 "issues": "https://github.com/publishpress/library-publishpress-translator/issues",
-                "source": "https://github.com/publishpress/library-publishpress-translator/tree/v1.1.0"
+                "source": "https://github.com/publishpress/library-publishpress-translator/tree/v1.2.0"
             },
-            "time": "2026-05-01T18:19:23+00:00"
+            "time": "2026-05-13T16:58:55+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
