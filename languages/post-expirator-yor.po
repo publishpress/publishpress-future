@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-04-29T14:19:02+00:00\n"
-"PO-Revision-Date: 2026-05-07 20:54+0000\n"
+"PO-Revision-Date: 2026-05-12 22:08+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "Language: yor\n"
@@ -468,9 +468,9 @@ msgstr "Gbadun si Pro"
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:181
 #: assets/js/backupPanel.js:512
 #: assets/js/backupPanel.js:698
-#: assets/js/workflowManualSelectionBlockEditor.js:2162
+#: assets/js/workflowManualSelectionBlockEditor.js:2152
 #: assets/js/workflowManualSelectionBulkEdit.js:167
-#: assets/js/workflowManualSelectionQuickEdit.js:2220
+#: assets/js/workflowManualSelectionQuickEdit.js:2210
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-import.jsx:68
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:83
 #: assets/jsx/workflow-manual-selection/block-editor/index.jsx:49
@@ -478,9 +478,9 @@ msgstr "Gbadun si Pro"
 #: assets/jsx/workflow-manual-selection/quick-edit/index.jsx:73
 #: assets/js/backupPanel.js:405
 #: assets/js/backupPanel.js:559
-#: assets/js/workflowManualSelectionBlockEditor.js:1627
+#: assets/js/workflowManualSelectionBlockEditor.js:1626
 #: assets/js/workflowManualSelectionBulkEdit.js:114
-#: assets/js/workflowManualSelectionQuickEdit.js:1690
+#: assets/js/workflowManualSelectionQuickEdit.js:1689
 msgid "Action Workflows"
 msgstr "Awọn Iṣẹ Iṣe"
 
@@ -5550,6 +5550,140 @@ msgstr "Ìmúdájú"
 #: assets/jsx/workflow-editor/components/node-validation-panel/index.jsx:49
 msgid "All checks have passed for this step."
 msgstr "Gbogbo ìdánwò ti kọja fún igbese yìí."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:122
+#, js-format
+msgid "The field \"%s\" contains an invalid variable."
+msgstr "Ibi \"%s\" ni iyipada ti ko jẹ́tọ́."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:126
+#, js-format
+msgid ""
+"The variable \"%s\" is not available in the current context. Please, check "
+"if it is spelled correctly."
+msgstr "Iyipada \"%s\" kò sí ní àkópọ̀ lọwọlọwọ. Jọ, ṣàyẹwo bóyá a kọ ọ́ dáadáa."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:181
+#. translators: %s is the workflow step slug.
+#, js-format
+msgid "\"%s\" is not a variable or step slug."
+msgstr "\"%s\" kì í ṣe iyipada tàbí slug igbesẹ."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:190
+msgid "Empty placeholder is not allowed."
+msgstr "Kò sí àfikún àìmọ̀."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:203
+msgid "Unclosed placeholder are not allowed."
+msgstr "Kò sí àfikún tí a ko pari."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:208
+msgid "Unopened placeholder are not allowed."
+msgstr "Kò sí àfikún tí a kò ṣi."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:216
+#. translators: %s is the field label.
+#, js-format
+msgid "Invalid expression on %s"
+msgstr "Aiyé àtọka lori %s"
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:232
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:575
+#. translators: %s is the field label.
+#, js-format
+msgid "The field %s must be a list of options."
+msgstr "Ibi %s gbọ́dọ̀ jẹ́ atokọ́ aṣayan."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:261
+#. translators: %s is the option name.
+#, js-format
+msgid "The option \"%s\" does not have a name."
+msgstr "Aṣayan \"%s\" kò ní orúkọ."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:270
+#. translators: %s is the option name.
+#, js-format
+msgid "The option \"%s\" does not have a label."
+msgstr "Aṣayan \"%s\" kò ní àtọka."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:279
+#. translators: %s is the option name.
+#, js-format
+msgid "The option \"%s\" has a duplicate name."
+msgstr "Aṣayan \"%s\" ní orúkọ àtẹ̀jáde."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:288
+#. translators: %s is the option label.
+#, js-format
+msgid "The option \"%s\" has a duplicate label."
+msgstr "Aṣayan \"%s\" ní àtọka àtẹ̀jáde."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:302
+#. translators: %s is the field label.
+#, js-format
+msgid "The field %s must be a valid list of options."
+msgstr "Ibi %s gbọ́dọ̀ jẹ́ atokọ́ aṣayan to jẹ́tọ́."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:333
+msgid "This step requires a connection from a previous step."
+msgstr "Igbesẹ yìí nílò ìbáṣepọ̀ láti ibèrẹ̀ igbésẹ́ kan."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:343
+msgid "This step requires a connection to a following step."
+msgstr "Igbesẹ yìí nílò ìbáṣepọ̀ sí igbésẹ́ tó tẹ̀le."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:407
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:428
+#, js-format
+msgid "The field %s is required."
+msgstr "Ibi %s jẹ́ dandan."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:450
+#, js-format
+msgid "The field %s must be a valid email address."
+msgstr "Ibi %s gbọ́dọ̀ jẹ́ àdírẹ́sì imeeli to jẹ́tọ́."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:466
+#, js-format
+msgid "The field %s must be a valid email address list separated by commas."
+msgstr ""
+"Ibi %s gbọ́dọ̀ jẹ́ atokọ́ àdírẹ́sì imeeli to jẹ́tọ́ tí a yà sílẹ̀ pẹ̀lú "
+"kóma."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:480
+#, js-format
+msgid "The field %s must be an integer."
+msgstr "Ibi %s gbọ́dọ̀ jẹ́ nọ́mbà àtọka."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:495
+#, js-format
+msgid "The field %s must be an integer list separated by commas."
+msgstr "Ibi %s gbọ́dọ̀ jẹ́ atokọ́ nọ́mbà àtọka tí a yà sílẹ̀ pẹ̀lú kóma."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:518
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:527
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:536
+#, js-format
+msgid "The field %s must be a list of name-value pairs."
+msgstr "Ibi %s gbọdọ jẹ atokọ ti awọn orukọ-iyato."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:528
+#, js-format
+msgid "The name of the pair is required on item %d."
+msgstr "Orukọ ti apapọ jẹ dandan lori ohun %d."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:537
+#, js-format
+msgid "The value of the pair is required on item %d."
+msgstr "Iyatọ ti apapọ jẹ dandan lori ohun %d."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:605
+msgid "Invalid variable."
+msgstr "Iyipada ti ko tọ."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:608
+msgid "Please use the variable picker to select valid expression."
+msgstr "Jọwọ lo olutọka iyipada lati yan ifihan to wulo."
 
 #: assets/jsx/workflow-editor/components/pro-feature-button/index.jsx:26
 msgid "Upgrade to Pro to unlock this feature."

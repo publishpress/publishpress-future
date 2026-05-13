@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-04-29T14:19:02+00:00\n"
-"PO-Revision-Date: 2026-05-07 20:54+0000\n"
+"PO-Revision-Date: 2026-05-12 22:05+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
@@ -482,9 +482,9 @@ msgstr "Auf Pro upgraden"
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:181
 #: assets/js/backupPanel.js:512
 #: assets/js/backupPanel.js:698
-#: assets/js/workflowManualSelectionBlockEditor.js:2162
+#: assets/js/workflowManualSelectionBlockEditor.js:2152
 #: assets/js/workflowManualSelectionBulkEdit.js:167
-#: assets/js/workflowManualSelectionQuickEdit.js:2220
+#: assets/js/workflowManualSelectionQuickEdit.js:2210
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-import.jsx:68
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:83
 #: assets/jsx/workflow-manual-selection/block-editor/index.jsx:49
@@ -492,9 +492,9 @@ msgstr "Auf Pro upgraden"
 #: assets/jsx/workflow-manual-selection/quick-edit/index.jsx:73
 #: assets/js/backupPanel.js:405
 #: assets/js/backupPanel.js:559
-#: assets/js/workflowManualSelectionBlockEditor.js:1627
+#: assets/js/workflowManualSelectionBlockEditor.js:1626
 #: assets/js/workflowManualSelectionBulkEdit.js:114
-#: assets/js/workflowManualSelectionQuickEdit.js:1690, fuzzy
+#: assets/js/workflowManualSelectionQuickEdit.js:1689, fuzzy
 msgid "Action Workflows"
 msgstr "Action Workflows"
 
@@ -2835,7 +2835,6 @@ msgid "Post to Stick"
 msgstr "Beitrag zum Anheften"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/StickPost.php:71
-#, fuzzy
 msgid ""
 "Choose the post that will be marked as sticky. You can select a post "
 "variable or enter a post ID."
@@ -5714,6 +5713,146 @@ msgstr "Validierung"
 #: assets/jsx/workflow-editor/components/node-validation-panel/index.jsx:49
 msgid "All checks have passed for this step."
 msgstr "Alle Überprüfungen für diesen Schritt sind bestanden."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:122
+#, js-format
+msgid "The field \"%s\" contains an invalid variable."
+msgstr "Das Feld \"%s\" enthält eine ungültige Variable."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:126
+#, js-format
+msgid ""
+"The variable \"%s\" is not available in the current context. Please, check "
+"if it is spelled correctly."
+msgstr ""
+"Die Variable \"%s\" ist im aktuellen Kontext nicht verfügbar. Bitte "
+"überprüfen Sie die Schreibweise."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:181
+#. translators: %s is the workflow step slug.
+#, js-format
+msgid "\"%s\" is not a variable or step slug."
+msgstr "\"%s\" ist keine Variable oder Schritt-Slug."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:190
+msgid "Empty placeholder is not allowed."
+msgstr "Leerer Platzhalter ist nicht erlaubt."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:203
+msgid "Unclosed placeholder are not allowed."
+msgstr "Nicht geschlossene Platzhalter sind nicht erlaubt."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:208
+msgid "Unopened placeholder are not allowed."
+msgstr "Nicht geöffnete Platzhalter sind nicht erlaubt."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:216
+#. translators: %s is the field label.
+#, js-format
+msgid "Invalid expression on %s"
+msgstr "Ungültiger Ausdruck bei %s"
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:232
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:575
+#. translators: %s is the field label.
+#, js-format
+msgid "The field %s must be a list of options."
+msgstr "Das Feld %s muss eine Liste von Optionen sein."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:261
+#. translators: %s is the option name.
+#, js-format
+msgid "The option \"%s\" does not have a name."
+msgstr "Die Option \"%s\" hat keinen Namen."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:270
+#. translators: %s is the option name.
+#, js-format
+msgid "The option \"%s\" does not have a label."
+msgstr "Die Option \"%s\" hat kein Label."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:279
+#. translators: %s is the option name.
+#, js-format
+msgid "The option \"%s\" has a duplicate name."
+msgstr "Die Option \"%s\" hat einen doppelten Namen."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:288
+#. translators: %s is the option label.
+#, js-format
+msgid "The option \"%s\" has a duplicate label."
+msgstr "Die Option \"%s\" hat ein doppeltes Label."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:302
+#. translators: %s is the field label.
+#, js-format
+msgid "The field %s must be a valid list of options."
+msgstr "Das Feld %s muss eine gültige Liste von Optionen sein."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:333
+msgid "This step requires a connection from a previous step."
+msgstr "Dieser Schritt erfordert eine Verbindung zu einem vorherigen Schritt."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:343
+msgid "This step requires a connection to a following step."
+msgstr "Dieser Schritt erfordert eine Verbindung zu einem folgenden Schritt."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:407
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:428
+#, js-format
+msgid "The field %s is required."
+msgstr "Das Feld %s ist erforderlich."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:450
+#, js-format
+msgid "The field %s must be a valid email address."
+msgstr "Das Feld %s muss eine gültige E-Mail-Adresse sein."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:466
+#, js-format
+msgid "The field %s must be a valid email address list separated by commas."
+msgstr ""
+"Das Feld %s muss eine gültige Liste von E-Mail-Adressen sein, die durch "
+"Kommas getrennt sind."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:480
+#, js-format
+msgid "The field %s must be an integer."
+msgstr "Das Feld %s muss eine Ganzzahl sein."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:495
+#, js-format
+msgid "The field %s must be an integer list separated by commas."
+msgstr ""
+"Das Feld %s muss eine Liste von Ganzzahlen sein, die durch Kommas getrennt "
+"sind."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:518
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:527
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:536
+#, js-format
+msgid "The field %s must be a list of name-value pairs."
+msgstr "Das Feld %s muss eine Liste von Namens-Wert-Paaren sein."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:528
+#, js-format
+msgid "The name of the pair is required on item %d."
+msgstr "Der Name des Paares ist für Element %d erforderlich."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:537
+#, js-format
+msgid "The value of the pair is required on item %d."
+msgstr "Der Wert des Paares ist für Element %d erforderlich."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:605
+msgid "Invalid variable."
+msgstr "Ungültige Variable."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:608
+msgid "Please use the variable picker to select valid expression."
+msgstr ""
+"Bitte verwenden Sie den Variablenpicker, um einen gültigen Ausdruck "
+"auszuwählen."
 
 #: assets/jsx/workflow-editor/components/pro-feature-button/index.jsx:26
 msgid "Upgrade to Pro to unlock this feature."

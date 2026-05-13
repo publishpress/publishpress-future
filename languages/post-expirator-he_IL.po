@@ -10,10 +10,11 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-04-29T14:19:02+00:00\n"
-"PO-Revision-Date: 2026-05-07 20:59+0000\n"
+"PO-Revision-Date: 2026-05-12 22:09+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "% 10 == 0) ? 2 : 3)));\n"
+"% 10 == 0) ? 2: 3)));\n"
 "Language: he_IL\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 ? 0 : (n == 2 ? 1 : ((n > 10 && n % 10 == 0) ? 2 : 3)));\n"
 
@@ -458,9 +459,9 @@ msgstr "שדרג לגרסה מקצועית"
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:181
 #: assets/js/backupPanel.js:512
 #: assets/js/backupPanel.js:698
-#: assets/js/workflowManualSelectionBlockEditor.js:2162
+#: assets/js/workflowManualSelectionBlockEditor.js:2152
 #: assets/js/workflowManualSelectionBulkEdit.js:167
-#: assets/js/workflowManualSelectionQuickEdit.js:2220
+#: assets/js/workflowManualSelectionQuickEdit.js:2210
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-import.jsx:68
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:83
 #: assets/jsx/workflow-manual-selection/block-editor/index.jsx:49
@@ -468,9 +469,9 @@ msgstr "שדרג לגרסה מקצועית"
 #: assets/jsx/workflow-manual-selection/quick-edit/index.jsx:73
 #: assets/js/backupPanel.js:405
 #: assets/js/backupPanel.js:559
-#: assets/js/workflowManualSelectionBlockEditor.js:1627
+#: assets/js/workflowManualSelectionBlockEditor.js:1626
 #: assets/js/workflowManualSelectionBulkEdit.js:114
-#: assets/js/workflowManualSelectionQuickEdit.js:1690
+#: assets/js/workflowManualSelectionQuickEdit.js:1689
 msgid "Action Workflows"
 msgstr "זרימות פעולה"
 
@@ -680,7 +681,6 @@ msgid "Enable metadata scheduling"
 msgstr "אפשר תכנון מטא-דאטה"
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:308
-#, fuzzy
 msgid ""
 "Checking this option will allow you to use post metadata to control the "
 "scheduling of actions."
@@ -5486,6 +5486,138 @@ msgstr "אימות"
 #: assets/jsx/workflow-editor/components/node-validation-panel/index.jsx:49
 msgid "All checks have passed for this step."
 msgstr "כל הבדיקות עברו בהצלחה עבור שלב זה."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:122
+#, js-format
+msgid "The field \"%s\" contains an invalid variable."
+msgstr "השדה \"%s\" מכיל משתנה לא חוקי."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:126
+#, js-format
+msgid ""
+"The variable \"%s\" is not available in the current context. Please, check "
+"if it is spelled correctly."
+msgstr "המשתנה \"%s\" אינו זמין בהקשר הנוכחי. אנא, בדוק אם הוא כתוב נכון."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:181
+#. translators: %s is the workflow step slug.
+#, js-format
+msgid "\"%s\" is not a variable or step slug."
+msgstr "\"%s\" אינו משתנה או סלוג של שלב."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:190
+msgid "Empty placeholder is not allowed."
+msgstr "לא ניתן להשתמש במקום שמיש ריק."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:203
+msgid "Unclosed placeholder are not allowed."
+msgstr "לא ניתן להשתמש במקום שמיש שלא נסגר."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:208
+msgid "Unopened placeholder are not allowed."
+msgstr "לא ניתן להשתמש במקום שמיש שלא נפתח."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:216
+#. translators: %s is the field label.
+#, js-format
+msgid "Invalid expression on %s"
+msgstr "ביטוי לא חוקי ב-%s"
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:232
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:575
+#. translators: %s is the field label.
+#, js-format
+msgid "The field %s must be a list of options."
+msgstr "השדה %s חייב להיות רשימה של אפשרויות."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:261
+#. translators: %s is the option name.
+#, js-format
+msgid "The option \"%s\" does not have a name."
+msgstr "לאפשרות \"%s\" אין שם."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:270
+#. translators: %s is the option name.
+#, js-format
+msgid "The option \"%s\" does not have a label."
+msgstr "לאפשרות \"%s\" אין תווית."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:279
+#. translators: %s is the option name.
+#, js-format
+msgid "The option \"%s\" has a duplicate name."
+msgstr "לאפשרות \"%s\" יש שם כפול."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:288
+#. translators: %s is the option label.
+#, js-format
+msgid "The option \"%s\" has a duplicate label."
+msgstr "לאפשרות \"%s\" יש תווית כפולה."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:302
+#. translators: %s is the field label.
+#, js-format
+msgid "The field %s must be a valid list of options."
+msgstr "השדה %s חייב להיות רשימה חוקית של אפשרויות."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:333
+msgid "This step requires a connection from a previous step."
+msgstr "שלב זה דורש חיבור משלב קודם."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:343
+msgid "This step requires a connection to a following step."
+msgstr "שלב זה דורש חיבור לשלב הבא."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:407
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:428
+#, js-format
+msgid "The field %s is required."
+msgstr "השדה %s הוא חובה."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:450
+#, js-format
+msgid "The field %s must be a valid email address."
+msgstr "השדה %s חייב להיות כתובת דוא\"ל חוקית."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:466
+#, js-format
+msgid "The field %s must be a valid email address list separated by commas."
+msgstr "השדה %s חייב להיות רשימת כתובות דוא\"ל חוקיות מופרדות בפסיקים."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:480
+#, js-format
+msgid "The field %s must be an integer."
+msgstr "השדה %s חייב להיות מספר שלם."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:495
+#, js-format
+msgid "The field %s must be an integer list separated by commas."
+msgstr "השדה %s חייב להיות רשימת מספרים שלמים מופרדת בפסיקים."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:518
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:527
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:536
+#, js-format
+msgid "The field %s must be a list of name-value pairs."
+msgstr "השדה %s חייב להיות רשימה של זוגות שם-ערך."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:528
+#, js-format
+msgid "The name of the pair is required on item %d."
+msgstr "השם של הזוג נדרש בפריט %d."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:537
+#, js-format
+msgid "The value of the pair is required on item %d."
+msgstr "הערך של הזוג נדרש בפריט %d."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:605
+msgid "Invalid variable."
+msgstr "משתנה לא תקין."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:608
+msgid "Please use the variable picker to select valid expression."
+msgstr "אנא השתמש בבוחר המשתנים כדי לבחור ביטוי תקף."
 
 #: assets/jsx/workflow-editor/components/pro-feature-button/index.jsx:26
 msgid "Upgrade to Pro to unlock this feature."

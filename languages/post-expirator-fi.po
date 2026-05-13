@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-04-29T14:19:02+00:00\n"
-"PO-Revision-Date: 2026-05-07 20:54+0000\n"
+"PO-Revision-Date: 2026-05-12 22:05+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
@@ -469,9 +469,9 @@ msgstr "Päivitä Pro-versioon"
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:181
 #: assets/js/backupPanel.js:512
 #: assets/js/backupPanel.js:698
-#: assets/js/workflowManualSelectionBlockEditor.js:2162
+#: assets/js/workflowManualSelectionBlockEditor.js:2152
 #: assets/js/workflowManualSelectionBulkEdit.js:167
-#: assets/js/workflowManualSelectionQuickEdit.js:2220
+#: assets/js/workflowManualSelectionQuickEdit.js:2210
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-import.jsx:68
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:83
 #: assets/jsx/workflow-manual-selection/block-editor/index.jsx:49
@@ -479,9 +479,9 @@ msgstr "Päivitä Pro-versioon"
 #: assets/jsx/workflow-manual-selection/quick-edit/index.jsx:73
 #: assets/js/backupPanel.js:405
 #: assets/js/backupPanel.js:559
-#: assets/js/workflowManualSelectionBlockEditor.js:1627
+#: assets/js/workflowManualSelectionBlockEditor.js:1626
 #: assets/js/workflowManualSelectionBulkEdit.js:114
-#: assets/js/workflowManualSelectionQuickEdit.js:1690
+#: assets/js/workflowManualSelectionQuickEdit.js:1689
 msgid "Action Workflows"
 msgstr "Toimintojen työnkulut"
 
@@ -5611,6 +5611,142 @@ msgstr "Vahvistus"
 #: assets/jsx/workflow-editor/components/node-validation-panel/index.jsx:49
 msgid "All checks have passed for this step."
 msgstr "Kaikki tarkistukset ovat läpäisseet tämän vaiheen."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:122
+#, js-format
+msgid "The field \"%s\" contains an invalid variable."
+msgstr "Kenttä \"%s\" sisältää virheellisen muuttujan."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:126
+#, js-format
+msgid ""
+"The variable \"%s\" is not available in the current context. Please, check "
+"if it is spelled correctly."
+msgstr ""
+"Muuttuja \"%s\" ei ole käytettävissä nykyisessä kontekstissa. Tarkista, "
+"onko se kirjoitettu oikein."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:181
+#. translators: %s is the workflow step slug.
+#, js-format
+msgid "\"%s\" is not a variable or step slug."
+msgstr "\"%s\" ei ole muuttuja tai vaihe slug."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:190
+msgid "Empty placeholder is not allowed."
+msgstr "Tyhjää paikkaa ei sallita."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:203
+msgid "Unclosed placeholder are not allowed."
+msgstr "Sulkemattomat paikat eivät ole sallittuja."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:208
+msgid "Unopened placeholder are not allowed."
+msgstr "Avaamattomat paikat eivät ole sallittuja."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:216
+#. translators: %s is the field label.
+#, js-format
+msgid "Invalid expression on %s"
+msgstr "Virheellinen lauseke kohdassa %s"
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:232
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:575
+#. translators: %s is the field label.
+#, js-format
+msgid "The field %s must be a list of options."
+msgstr "Kentän %s on oltava vaihtoehtojen luettelo."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:261
+#. translators: %s is the option name.
+#, js-format
+msgid "The option \"%s\" does not have a name."
+msgstr "Vaihtoehdolla \"%s\" ei ole nimeä."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:270
+#. translators: %s is the option name.
+#, js-format
+msgid "The option \"%s\" does not have a label."
+msgstr "Vaihtoehdolla \"%s\" ei ole etikettiä."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:279
+#. translators: %s is the option name.
+#, js-format
+msgid "The option \"%s\" has a duplicate name."
+msgstr "Vaihtoehdolla \"%s\" on kaksoisnimi."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:288
+#. translators: %s is the option label.
+#, js-format
+msgid "The option \"%s\" has a duplicate label."
+msgstr "Vaihtoehdolla \"%s\" on kaksoisetiketti."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:302
+#. translators: %s is the field label.
+#, js-format
+msgid "The field %s must be a valid list of options."
+msgstr "Kentän %s on oltava kelvollinen vaihtoehtoluettelo."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:333
+msgid "This step requires a connection from a previous step."
+msgstr "Tämä vaihe vaatii yhteyden edellisestä vaiheesta."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:343
+msgid "This step requires a connection to a following step."
+msgstr "Tämä vaihe vaatii yhteyden seuraavaan vaiheeseen."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:407
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:428
+#, js-format
+msgid "The field %s is required."
+msgstr "Kenttä %s on pakollinen."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:450
+#, js-format
+msgid "The field %s must be a valid email address."
+msgstr "Kenttä %s on oltava kelvollinen sähköpostiosoite."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:466
+#, js-format
+msgid "The field %s must be a valid email address list separated by commas."
+msgstr ""
+"Kenttä %s on oltava kelvollinen sähköpostiosoitteiden luettelo, joka on "
+"erotettu pilkuilla."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:480
+#, js-format
+msgid "The field %s must be an integer."
+msgstr "Kenttä %s on oltava kokonaisluku."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:495
+#, js-format
+msgid "The field %s must be an integer list separated by commas."
+msgstr "Kenttä %s on oltava kokonaislukujen luettelo, joka on erotettu pilkuilla."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:518
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:527
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:536
+#, js-format
+msgid "The field %s must be a list of name-value pairs."
+msgstr "Kentän %s on oltava nimiarvo-pareja."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:528
+#, js-format
+msgid "The name of the pair is required on item %d."
+msgstr "Parin nimi on pakollinen kohteessa %d."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:537
+#, js-format
+msgid "The value of the pair is required on item %d."
+msgstr "Parin arvo on pakollinen kohteessa %d."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:605
+msgid "Invalid variable."
+msgstr "Virheellinen muuttuja."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:608
+msgid "Please use the variable picker to select valid expression."
+msgstr "Valitse voimassa oleva lauseke muuttujavalitsimella."
 
 #: assets/jsx/workflow-editor/components/pro-feature-button/index.jsx:26
 msgid "Upgrade to Pro to unlock this feature."

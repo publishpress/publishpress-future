@@ -2,15 +2,15 @@
 # This file is distributed under the same license as the PublishPress Future Free plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: PublishPress Future Free 4.10.2-rc.1\n"
+"Project-Id-Version: PublishPress Future Free 4.10.2-rc.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/project\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-04-29T14:19:02+00:00\n"
-"PO-Revision-Date: 2026-05-07 20:56+0000\n"
+"POT-Creation-Date: 2026-05-12T22:03:06+00:00\n"
+"PO-Revision-Date: 2026-05-12 22:09+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "Language: en-US\n"
@@ -461,9 +461,9 @@ msgstr "Upgrade to Pro"
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:181
 #: assets/js/backupPanel.js:512
 #: assets/js/backupPanel.js:698
-#: assets/js/workflowManualSelectionBlockEditor.js:2162
+#: assets/js/workflowManualSelectionBlockEditor.js:2152
 #: assets/js/workflowManualSelectionBulkEdit.js:167
-#: assets/js/workflowManualSelectionQuickEdit.js:2220
+#: assets/js/workflowManualSelectionQuickEdit.js:2210
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-import.jsx:68
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:83
 #: assets/jsx/workflow-manual-selection/block-editor/index.jsx:49
@@ -471,9 +471,9 @@ msgstr "Upgrade to Pro"
 #: assets/jsx/workflow-manual-selection/quick-edit/index.jsx:73
 #: assets/js/backupPanel.js:405
 #: assets/js/backupPanel.js:559
-#: assets/js/workflowManualSelectionBlockEditor.js:1627
+#: assets/js/workflowManualSelectionBlockEditor.js:1626
 #: assets/js/workflowManualSelectionBulkEdit.js:114
-#: assets/js/workflowManualSelectionQuickEdit.js:1690, fuzzy
+#: assets/js/workflowManualSelectionQuickEdit.js:1689, fuzzy
 msgid "Action Workflows"
 msgstr "Action Workflows"
 
@@ -5536,6 +5536,140 @@ msgstr "Validation"
 #: assets/jsx/workflow-editor/components/node-validation-panel/index.jsx:49, fuzzy
 msgid "All checks have passed for this step."
 msgstr "All checks have passed for this step."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:122
+#, fuzzy, js-format
+msgid "The field \"%s\" contains an invalid variable."
+msgstr "The field \"%s\" contains an invalid variable."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:126
+#, js-format
+msgid ""
+"The variable \"%s\" is not available in the current context. Please, check "
+"if it is spelled correctly."
+msgstr ""
+"The variable \"%s\" is not available in the current context. Please, check "
+"if it is spelled correctly."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:181
+#. translators: %s is the workflow step slug.
+#, fuzzy, js-format
+msgid "\"%s\" is not a variable or step slug."
+msgstr "\"%s\" is not a variable or step slug."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:190, fuzzy
+msgid "Empty placeholder is not allowed."
+msgstr "Empty placeholder is not allowed."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:203, fuzzy
+msgid "Unclosed placeholder are not allowed."
+msgstr "Unclosed placeholder are not allowed."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:208, fuzzy
+msgid "Unopened placeholder are not allowed."
+msgstr "Unopened placeholder are not allowed."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:216
+#. translators: %s is the field label.
+#, fuzzy, js-format
+msgid "Invalid expression on %s"
+msgstr "Invalid expression on %s"
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:232
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:575
+#. translators: %s is the field label.
+#, fuzzy, js-format
+msgid "The field %s must be a list of options."
+msgstr "The field %s must be a list of options."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:261
+#. translators: %s is the option name.
+#, fuzzy, js-format
+msgid "The option \"%s\" does not have a name."
+msgstr "The option \"%s\" does not have a name."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:270
+#. translators: %s is the option name.
+#, fuzzy, js-format
+msgid "The option \"%s\" does not have a label."
+msgstr "The option \"%s\" does not have a label."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:279
+#. translators: %s is the option name.
+#, fuzzy, js-format
+msgid "The option \"%s\" has a duplicate name."
+msgstr "The option \"%s\" has a duplicate name."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:288
+#. translators: %s is the option label.
+#, fuzzy, js-format
+msgid "The option \"%s\" has a duplicate label."
+msgstr "The option \"%s\" has a duplicate label."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:302
+#. translators: %s is the field label.
+#, fuzzy, js-format
+msgid "The field %s must be a valid list of options."
+msgstr "The field %s must be a valid list of options."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:333, fuzzy
+msgid "This step requires a connection from a previous step."
+msgstr "This step requires a connection from a previous step."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:343, fuzzy
+msgid "This step requires a connection to a following step."
+msgstr "This step requires a connection to a following step."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:407
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:428
+#, fuzzy, js-format
+msgid "The field %s is required."
+msgstr "The field %s is required."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:450
+#, fuzzy, js-format
+msgid "The field %s must be a valid email address."
+msgstr "The field %s must be a valid email address."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:466
+#, fuzzy, js-format
+msgid "The field %s must be a valid email address list separated by commas."
+msgstr "The field %s must be a valid email address list separated by commas."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:480
+#, fuzzy, js-format
+msgid "The field %s must be an integer."
+msgstr "The field %s must be an integer."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:495
+#, fuzzy, js-format
+msgid "The field %s must be an integer list separated by commas."
+msgstr "The field %s must be an integer list separated by commas."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:518
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:527
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:536
+#, fuzzy, js-format
+msgid "The field %s must be a list of name-value pairs."
+msgstr "The field %s must be a list of name-value pairs."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:528
+#, fuzzy, js-format
+msgid "The name of the pair is required on item %d."
+msgstr "The name of the pair is required on item %d."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:537
+#, fuzzy, js-format
+msgid "The value of the pair is required on item %d."
+msgstr "The value of the pair is required on item %d."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:605, fuzzy
+msgid "Invalid variable."
+msgstr "Invalid variable."
+
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:608, fuzzy
+msgid "Please use the variable picker to select valid expression."
+msgstr "Please use the variable picker to select valid expression."
 
 #: assets/jsx/workflow-editor/components/pro-feature-button/index.jsx:26, fuzzy
 msgid "Upgrade to Pro to unlock this feature."
