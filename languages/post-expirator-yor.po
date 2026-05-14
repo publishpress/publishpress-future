@@ -4,32 +4,32 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PublishPress Future Free 4.10.2-rc.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/project\n"
-"POT-Creation-Date: 2026-04-29T14:19:02+00:00\n"
-"PO-Revision-Date: 2026-05-13 19:08+0000\n"
-"Last-Translator: Anderson <anderson@publishpress.com>\n"
-"Language-Team: Yoruba <https://weblate.publishpress.com/projects/"
-"publishpress-future/post-expirator/yo/>\n"
-"Language: yor\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Yoruba "
+"<https://weblate.publishpress.com/projects/publishpress-future/post-"
+"expirator/yo/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-05-13T18:43:00+00:00\n"
+"PO-Revision-Date: 2026-05-14 18:07+0000\n"
 "X-Generator: Weblate 5.17.1\n"
 "X-Domain: post-expirator\n"
+"Language: yor\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+#: post-expirator.php:4, fuzzy
 #. Plugin Name of the plugin
-#. Plugin Name of the plugin
-#: post-expirator.php:4
 msgid "PublishPress Future Free"
 msgstr "PublishPress Future Free"
 
+#: post-expirator.php:5, fuzzy
 #. Plugin URI of the plugin
-#: post-expirator.php:5
 msgid "http://wordpress.org/extend/plugins/post-expirator/"
 msgstr "http://wordpress.org/extend/plugins/post-expirator/"
 
-#. Description of the plugin
 #: post-expirator.php:6
+#. Description of the plugin
 msgid ""
 "PublishPress Future allows you to schedule automatic changes to posts, "
 "pages and other content types."
@@ -37,13 +37,13 @@ msgstr ""
 "PublishPress Future ngbanilaaye fun ọ lati gbero awọn ayipada aifọwọyi si "
 "awọn ifiweranṣẹ, awọn oju-iwe ati awọn iru akoonu miiran."
 
-#. Author of the plugin
 #: post-expirator.php:7
+#. Author of the plugin
 msgid "PublishPress"
 msgstr "PublishPress"
 
+#: post-expirator.php:9, fuzzy
 #. Author URI of the plugin
-#: post-expirator.php:9
 msgid "http://publishpress.com"
 msgstr "http://publishpress.com"
 
@@ -98,8 +98,8 @@ msgstr "A ko le ṣatunṣe apẹrẹ ibi ipamọ data. Jọwọ kan si ẹgbẹ
 msgid "Saved Options!"
 msgstr "Awọn aṣayan ti a fipamọ!"
 
-#. translators: %1$s is the plugin name, %2$s is the star rating markup
 #: legacy/classes/Display.class.php:567
+#. translators: %1$s is the plugin name, %2$s is the star rating markup
 #, php-format
 msgid "If you like %1$s, please leave us a %2$s rating. Thank you!"
 msgstr "Ti o ba fẹ %1$s, jọwọ fi silẹ fun wa ni ipele %2$s. O ṣeun!"
@@ -133,12 +133,12 @@ msgid "No taxonomies found"
 msgstr "Ko si awọn taxonomies ti a ri"
 
 #: services.php:151
-#: src/Modules/Settings/SettingsFacade.php:122
+#: src/Modules/Settings/SettingsFacade.php:122, fuzzy
 msgid "l F jS, Y"
 msgstr "l F jS, Y"
 
 #: services.php:155
-#: src/Modules/Settings/SettingsFacade.php:123
+#: src/Modules/Settings/SettingsFacade.php:123, fuzzy
 msgid "g:ia"
 msgstr "g:ia"
 
@@ -311,20 +311,20 @@ msgstr "Fihan Kalendar"
 msgid "Hide Calendar"
 msgstr "Tọju Kalendar"
 
-#. translators: the text between {} is the link to the settings page.
-#. translators: the text between {{}} is the link to the settings page.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:182
 #: src/Modules/Expirator/Controllers/BulkEditController.php:222
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:423
 #: src/Modules/Expirator/Controllers/QuickEditController.php:352
+#. translators: the text between {} is the link to the settings page.
+#. translators: the text between {{}} is the link to the settings page.
 msgid "Timezone is controlled by the {WordPress Settings}."
 msgstr "Aago akoko ni a n ṣakoso nipasẹ {WordPress Settings}."
 
-#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:189
 #: src/Modules/Expirator/Controllers/BulkEditController.php:229
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:430
 #: src/Modules/Expirator/Controllers/QuickEditController.php:356
+#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "No %s found."
 msgstr "Ko si %s ti a ri."
@@ -336,38 +336,38 @@ msgstr "Ko si %s ti a ri."
 msgid "You must assign a taxonomy to this post type to use this feature."
 msgstr "O gbọdọ yan taxonomy kan si iru ifiweranṣẹ yii lati lo ẹya-ara yii."
 
-#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:197
 #: src/Modules/Expirator/Controllers/BulkEditController.php:243
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:438
 #: src/Modules/Expirator/Controllers/QuickEditController.php:361
+#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "New %s"
 msgstr "Tuntun %s"
 
-#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:199
 #: src/Modules/Expirator/Controllers/BulkEditController.php:245
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:440
 #: src/Modules/Expirator/Controllers/QuickEditController.php:363
+#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "%s to remove"
 msgstr "%s lati yọkuro"
 
-#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:201
 #: src/Modules/Expirator/Controllers/BulkEditController.php:247
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:442
 #: src/Modules/Expirator/Controllers/QuickEditController.php:365
+#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "%s to add"
 msgstr "%s lati fi kun"
 
-#. translators: %s is the name of the taxonomy in singular form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:204
 #: src/Modules/Expirator/Controllers/BulkEditController.php:250
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:445
 #: src/Modules/Expirator/Controllers/QuickEditController.php:367
+#. translators: %s is the name of the taxonomy in singular form.
 #, php-format
 msgid "Search for %s"
 msgstr "Wa fun %s"
@@ -393,12 +393,12 @@ msgstr "Yan ọjọ kan"
 msgid "Date cannot be in the past"
 msgstr "Ọjọ ko le wa ni igba atijọ"
 
-#. translators: %s is the name of the taxonomy in singular form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:212
 #: src/Modules/Expirator/Controllers/BulkEditController.php:258
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:453
 #: src/Modules/Expirator/Controllers/QuickEditController.php:373
 #: src/Modules/Expirator/Controllers/SettingsController.php:298
+#. translators: %s is the name of the taxonomy in singular form.
 #, php-format
 msgid "Please select one or more %s"
 msgstr "Jọwọ yan ọkan tabi diẹ ẹ sii %s"
@@ -485,7 +485,6 @@ msgstr "Gbadun si Pro"
 msgid "Action Workflows"
 msgstr "Awọn Iṣẹ Iṣe"
 
-#. translators: button label text should, if possible, be under 16 characters.
 #: src/Modules/Expirator/Controllers/PluginsListController.php:70
 #: src/Modules/Expirator/Controllers/SettingsController.php:132
 #: src/Modules/Expirator/Controllers/SettingsController.php:133
@@ -495,6 +494,7 @@ msgstr "Awọn Iṣẹ Iṣe"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14436
 #: assets/jsx/workflow-editor/components/settings-sidebar/settings-sidebar.jsx:54
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11976
+#. translators: button label text should, if possible, be under 16 characters.
 msgid "Settings"
 msgstr "Iṣeto"
 
@@ -545,9 +545,9 @@ msgstr "Iṣe ti a ṣe fun: %s (ID: %d)"
 msgid "Executed scheduled action"
 msgstr "Iṣe ti a ti ṣeto"
 
-#. translators: %1$s is the link to the PHP strtotime function documentation, %2$s and %3$s are the opening and closing code tags. Please, do not translate the date format text, since PHP will not be able to calculate using non-english terms.
 #: src/Modules/Expirator/Controllers/SettingsController.php:252
 #: src/Views/menu-general.php:41
+#. translators: %1$s is the link to the PHP strtotime function documentation, %2$s and %3$s are the opening and closing code tags. Please, do not translate the date format text, since PHP will not be able to calculate using non-english terms.
 #, php-format
 msgid ""
 "Set the offset to use for the default action date and time. For information "
@@ -739,11 +739,11 @@ msgstr "Iwọn awọn arọwọto kolum ko ti ni imudojuiwọn si 1000."
 msgid "Status didn't change."
 msgstr "Ipo ko yipada."
 
-#. translators: 1: old post status, 2: new post status
 #: src/Modules/Expirator/ExpirationActions/ChangePostStatus.php:62
 #: src/Modules/Expirator/ExpirationActions/PostStatusToDraft.php:60
 #: src/Modules/Expirator/ExpirationActions/PostStatusToPrivate.php:60
 #: src/Modules/Expirator/ExpirationActions/PostStatusToTrash.php:60
+#. translators: 1: old post status, 2: new post status
 #, php-format
 msgid "Status has been successfully changed from \"%1$s\" to \"%2$s\"."
 msgstr "Ipo ti yipada ni aṣeyọri lati \"%1$s\" si \"%2$s\"."
@@ -752,14 +752,14 @@ msgstr "Ipo ti yipada ni aṣeyọri lati \"%1$s\" si \"%2$s\"."
 msgid "Change status"
 msgstr "Yipada ipo"
 
-#. translators: %s: post type singular label
 #: src/Modules/Expirator/ExpirationActions/DeletePost.php:47
+#. translators: %s: post type singular label
 #, php-format
 msgid "%s was not deleted."
 msgstr "%s ko ni paarẹ."
 
-#. translators: %s: post type singular label
 #: src/Modules/Expirator/ExpirationActions/DeletePost.php:54
+#. translators: %s: post type singular label
 #, php-format
 msgid "%s has been successfully deleted."
 msgstr "%s ti paarẹ ni aṣeyọri."
@@ -775,14 +775,14 @@ msgstr "%s ti paarẹ ni aṣeyọri."
 msgid "Delete"
 msgstr "Paarẹ"
 
-#. translators: %s is the post type singular label
 #: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:65
+#. translators: %s is the post type singular label
 #, php-format
 msgid "No terms were added to the %s."
 msgstr "Ko si awọn ọrọ ti a fi kun si %s."
 
-#. translators: %1$s is the taxonomy label, %2$s is the post type singular label, %3$s is the list of terms added, %4$s is the list of terms on the post
 #: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:77
+#. translators: %1$s is the taxonomy label, %2$s is the post type singular label, %3$s is the list of terms added, %4$s is the list of terms on the post
 #, php-format
 msgid ""
 "The following terms (%1$s) were added to the %2$s: \"%3$s\". The full list "
@@ -791,21 +791,21 @@ msgstr ""
 "Awọn ọrọ ti o tẹle (%1$s) ni a fi kun si %2$s: \"%3$s\". Atokọ kikun ti "
 "awọn ọrọ lori ifiweranṣẹ ni: %4$s."
 
-#. translators: %s is the taxonomy name (plural)
 #: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:120
+#. translators: %s is the taxonomy name (plural)
 #, php-format
 msgid "Add extra %s"
 msgstr "Fi afikun %s kun"
 
-#. translators: %s is the post type singular label
 #: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:56
 #: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:56
+#. translators: %s is the post type singular label
 #, php-format
 msgid "No terms were removed from the %s."
 msgstr "Ko si awọn ọrọ ti a yọ kuro ninu %s."
 
-#. translators: %1$s is the taxonomy name, %2$s is the post type singular label, %3$s is the removed terms list, %4$s is the updated terms list
 #: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:67
+#. translators: %1$s is the taxonomy name, %2$s is the post type singular label, %3$s is the removed terms list, %4$s is the updated terms list
 #, php-format
 msgid ""
 "The following terms (%1$s) were removed from the %2$s: %3$s. The new list "
@@ -814,32 +814,32 @@ msgstr ""
 "Awọn ọrọ ti o tẹle (%1$s) ni a yọ kuro ninu %2$s: %3$s. Atokọ tuntun ti "
 "awọn ọrọ lori ifiweranṣẹ ni: %4$s."
 
-#. translators: %s is the taxonomy name (plural)
 #: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:112
+#. translators: %s is the taxonomy name (plural)
 #, php-format
 msgid "Remove selected %s"
 msgstr "Yọ %s ti a yan"
 
-#. translators: %1$s is the taxonomy name, %2$s is the post type singular label, %3$s is the list of term names
 #: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:67
+#. translators: %1$s is the taxonomy name, %2$s is the post type singular label, %3$s is the list of term names
 #, php-format
 msgid "The following terms (%1$s) were removed from the %2$s: %3$s."
 msgstr "Awọn ọrọ ti o tẹle (%1$s) ni a yọ kuro ninu %2$s: %3$s."
 
-#. translators: %s is the taxonomy name (plural)
 #: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:106
+#. translators: %s is the taxonomy name (plural)
 #, php-format
 msgid "Remove all %s"
 msgstr "Yọ gbogbo %s"
 
-#. translators: %s is the post type singular label
 #: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:58
+#. translators: %s is the post type singular label
 #, php-format
 msgid "No terms were changed on the %s."
 msgstr "Ko si awọn ọrọ ti a yipada lori %s."
 
-#. translators: 1: taxonomy name, 2: post type singular label, 3: updated terms, 4: original terms
 #: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:69
+#. translators: 1: taxonomy name, 2: post type singular label, 3: updated terms, 4: original terms
 #, php-format
 msgid ""
 "The following terms (%1$s) were set to the %2$s: \"%3$s\". The old list of "
@@ -848,29 +848,29 @@ msgstr ""
 "Awọn ọrọ ti o tẹle (%1$s) ni a ṣeto si %2$s: \"%3$s\". Atokọ atijọ ti awọn "
 "ọrọ lori ifiweranṣẹ ni: %4$s."
 
-#. translators: %s is the taxonomy name (plural)
 #: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:109
+#. translators: %s is the taxonomy name (plural)
 #, php-format
 msgid "Replace all %s"
 msgstr "Rọpo gbogbo %s"
 
-#. translators: %s: new post status
 #: src/Modules/Expirator/ExpirationActions/PostStatusToDraft.php:90
 #: src/Modules/Expirator/ExpirationActions/PostStatusToPrivate.php:90
 #: src/Modules/Expirator/ExpirationActions/PostStatusToTrash.php:90
+#. translators: %s: new post status
 #, php-format
 msgid "Change status to %s"
 msgstr "Yipada ipo si %s"
 
-#. translators: %s: post type singular label
 #: src/Modules/Expirator/ExpirationActions/StickPost.php:46
 #: src/Modules/Expirator/ExpirationActions/UnstickPost.php:46
+#. translators: %s: post type singular label
 #, php-format
 msgid "%s didn't change."
 msgstr "%s ko yipada."
 
-#. translators: %s: post type singular label
 #: src/Modules/Expirator/ExpirationActions/StickPost.php:53
+#. translators: %s: post type singular label
 #, php-format
 msgid "%s has been added to stickies list."
 msgstr "%s ti fi kun si atokọ stickies."
@@ -879,8 +879,8 @@ msgstr "%s ti fi kun si atokọ stickies."
 msgid "Stick"
 msgstr "Dapọ"
 
-#. translators: %s: post type singular label
 #: src/Modules/Expirator/ExpirationActions/UnstickPost.php:53
+#. translators: %s: post type singular label
 #, php-format
 msgid "%s has been removed from stickies list."
 msgstr "%s ti yọ kuro ni atokọ stickies."
@@ -925,26 +925,26 @@ msgstr "Imeeli ti ránṣẹ́."
 msgid "Email not sent."
 msgstr "Imeeli kò ránṣẹ́."
 
-#. translators: %1$s: post title placeholder, %2$s: notification text, %3$s: action date placeholder, %4$s: post link placeholder
 #: src/Modules/Expirator/Models/ExpirablePostModel.php:644
+#. translators: %1$s: post title placeholder, %2$s: notification text, %3$s: action date placeholder, %4$s: post link placeholder
 #, php-format
 msgid "%1$s. %2$s on %3$s. The post link is %4$s"
 msgstr "%1$s. %2$s ni %3$s. Ìjápọ̀ àkọsílẹ̀ ni %4$s"
 
-#. translators: %s is the post title
 #: src/Modules/Expirator/Models/ExpirablePostModel.php:662
+#. translators: %s is the post title
 #, php-format
 msgid "Future Action Complete \"%s\""
 msgstr "Ìṣe Ọjọ́ iwájú Parí \"%s\""
 
-#. translators: 1: is the blog name, 2: the email subject
 #: src/Modules/Expirator/Models/ExpirablePostModel.php:666
-#, php-format
+#. translators: 1: is the blog name, 2: the email subject
+#, fuzzy, php-format
 msgid "[%1$s] %2$s"
 msgstr "[%1$s] %2$s"
 
-#. translators: %s is the date/time offset and %s is the post type.
 #: src/Modules/Expirator/Models/PostTypeDefaultDataModel.php:156
+#. translators: %s is the date/time offset and %s is the post type.
 #, php-format
 msgid ""
 "Invalid date/time offset \"%s\" for post type \"%s\". Please ensure you use "
@@ -998,50 +998,50 @@ msgstr "Fagilé ìṣe. Èyí yóò dènà ìṣe láti ṣiṣẹ́ ní ọjọ
 msgid "Run"
 msgstr "Ṣiṣe"
 
-#. translators: %s: amount of time
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:96
+#. translators: %s: amount of time
 #, php-format
 msgid "%s year"
 msgid_plural "%s years"
 msgstr[0] "%s ọdun"
 
-#. translators: %s: amount of time
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:101
+#. translators: %s: amount of time
 #, php-format
 msgid "%s month"
 msgid_plural "%s months"
 msgstr[0] "%s oṣù"
 
-#. translators: %s: amount of time
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:106
+#. translators: %s: amount of time
 #, php-format
 msgid "%s week"
 msgid_plural "%s weeks"
 msgstr[0] "%s ọsẹ"
 
-#. translators: %s: amount of time
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:111
+#. translators: %s: amount of time
 #, php-format
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] "%s ọjọ"
 
-#. translators: %s: amount of time
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:116
+#. translators: %s: amount of time
 #, php-format
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] "%s wakati"
 
-#. translators: %s: amount of time
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:121
+#. translators: %s: amount of time
 #, php-format
 msgid "%s minute"
 msgid_plural "%s minutes"
 msgstr[0] "%s iṣẹju"
 
-#. translators: %s: amount of time
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:126
+#. translators: %s: amount of time
 #, php-format
 msgid "%s second"
 msgid_plural "%s seconds"
@@ -1092,20 +1092,20 @@ msgstr "Ti pari"
 msgid "Process the action now"
 msgstr "Ṣe ilana iṣe naa nisisiyi"
 
-#. translators: %1$s: post type label, %2$d: post ID, %3$s: post link tag start, %4$s: post title, %5$s: post link tag end
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:524
-#, php-format
+#. translators: %1$s: post type label, %2$d: post ID, %3$s: post link tag start, %4$s: post title, %5$s: post link tag end
+#, fuzzy, php-format
 msgid "%1$s: [%2$d] %3$s%4$s%5$s"
 msgstr "%1$s: [%2$d] %3$s%4$s%5$s"
 
-#. translators: %s is the new status
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:559
+#. translators: %s is the new status
 #, php-format
 msgid "New Status: %s"
 msgstr "Ipo Tuntun: %s"
 
-#. translators: %s is the list of terms
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:567
+#. translators: %s is the list of terms
 #, php-format
 msgid "Terms: %s"
 msgstr "Awọn ọrọ: %s"
@@ -1154,15 +1154,15 @@ msgstr "Ifiranṣẹ"
 msgid "Async"
 msgstr "Asynchronous"
 
-#. translators: %s is the date interval in human readable format in the past
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:765
+#. translators: %s is the date interval in human readable format in the past
 #, php-format
 msgid " (%s ago)"
 msgstr " (%s seyin)"
 
-#. translators: %s is the date interval in human readable format in the present or future
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:771
-#, php-format
+#. translators: %s is the date interval in human readable format in the present or future
+#, fuzzy, php-format
 msgid " (%s)"
 msgstr " (%s)"
 
@@ -1170,8 +1170,8 @@ msgstr " (%s)"
 msgid "Now!"
 msgstr "Bayi!"
 
-#. translators: %s: time interval
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:845
+#. translators: %s: time interval
 #, php-format
 msgid "Every %s"
 msgstr "Gbogbo %s"
@@ -1261,8 +1261,8 @@ msgstr ""
 msgid "days"
 msgstr "ọjọ"
 
-#. translators: %1$s and %2$s are placeholders for the link to by the Pro version
 #: src/Modules/VersionNotices/Module.php:95
+#. translators: %1$s and %2$s are placeholders for the link to by the Pro version
 #, php-format
 msgid ""
 "You're using PublishPress Future Free. The Pro version has more features "
@@ -1279,8 +1279,8 @@ msgstr "Itọnisọna Iṣe Workflow"
 msgid "Check and warn about past-due actions"
 msgstr "Ṣayẹwo ki o si kilọ nipa awọn iṣe ti o ti kọja ọjọ"
 
-#. translators: %s is the admin URL to the scheduled actions page
 #: src/Modules/Workflows/Controllers/PastDueActions.php:148
+#. translators: %s is the admin URL to the scheduled actions page
 #, php-format
 msgid ""
 "You have past-due scheduled actions in PublishPress Future.\n"
@@ -1552,21 +1552,21 @@ msgstr "Igbesẹ:"
 msgid "Workflow recurring scheduled action"
 msgstr "Ise mimu atunṣe ilana ti a ṣe eto"
 
-#. translators: %1$s is the recurrence, %2$s is the date
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:508
+#. translators: %1$s is the recurrence, %2$s is the date
 #, php-format
 msgid "%1$s until %2$s"
 msgstr "%1$s titi di %2$s"
 
-#. translators: %1$s is the recurrence, %2$d is the repeat times
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:518
+#. translators: %1$s is the recurrence, %2$d is the repeat times
 #, php-format
 msgid "%1$s for %2$d times"
 msgstr "%1$s fun %2$d igba"
 
-#. translators: %1$s is the executed times, %2$d is the total repeat times
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:528
-#, php-format
+#. translators: %1$s is the executed times, %2$d is the total repeat times
+#, fuzzy, php-format
 msgid "[%1$s/%2$d]"
 msgstr "[%1$s/%2$d]"
 
@@ -1675,15 +1675,15 @@ msgstr ""
 "Ti o ba ni awọn ibeere eyikeyi tabi nilo iranlọwọ, tẹ bọtini iranlọwọ ni "
 "ẹgbẹ ọtun oke lati wọle si awọn orisun atilẹyin."
 
-#. translators: Blocks tab title in the block inserter.
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:236
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14099
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:19
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11707
+#. translators: Blocks tab title in the block inserter.
 msgid "Triggers"
 msgstr "Awọn ohun ti n fa"
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:280
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:280, fuzzy
 msgid "—"
 msgstr "—"
 
@@ -1764,8 +1764,8 @@ msgstr "Olùdarí Iṣẹ Iṣe"
 msgid "%s updated."
 msgstr "%s ti imudojuiwọn."
 
-#. translators: 1: Post type singular label, 2: Revision title
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:838
+#. translators: 1: Post type singular label, 2: Revision title
 #, php-format
 msgid "%1$s restored to revision from %2$s"
 msgstr "%1$s ti da si ẹda lati %2$s"
@@ -1785,8 +1785,8 @@ msgstr "%s ti fipamọ."
 msgid "%s submitted."
 msgstr "%s ti fi silẹ."
 
-#. translators: 1: Post type singular label, 2: Scheduled date
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:857
+#. translators: 1: Post type singular label, 2: Scheduled date
 #, php-format
 msgid "%1$s scheduled for: <strong>%2$s</strong>."
 msgstr "%1$s ti ṣeto fun: <strong>%2$s</strong>."
@@ -2575,7 +2575,7 @@ msgstr "Lẹhin gbogbo atunwi"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:17
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:17
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:89
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:89, fuzzy
 msgid "PublishPress Workflow: {{global.workflow.title}}"
 msgstr "PublishPress Workflow: {{global.workflow.title}}"
 
@@ -3002,12 +3002,12 @@ msgstr "Ṣalaye ifiranṣẹ ti yoo han si awọn olugbala."
 msgid "Please select an option to continue the workflow: {{global.workflow.title}}"
 msgstr "Jọwọ yan aṣayan kan lati tẹsiwaju iṣẹ-ṣiṣe: {{global.workflow.title}}"
 
-#. translators: button label text should, if possible, be under 16 characters.
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:129
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:201
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10119
 #: assets/jsx/workflow-editor/components/more-menu/menu-dropdown.jsx:11
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7867
+#. translators: button label text should, if possible, be under 16 characters.
 msgid "Options"
 msgstr "Aṣayan"
 
@@ -3636,7 +3636,7 @@ msgstr ""
 msgid "Migrate workflow scheduled steps schema after v4.0.0"
 msgstr "Gbe awọn ilana igbesẹ iṣẹ-ṣiṣe ti a ṣeto lẹhin v4.0.0"
 
-#: src/Modules/Workflows/Models/StepTypesModel.php:99
+#: src/Modules/Workflows/Models/StepTypesModel.php:99, fuzzy
 msgid "PublishPress Future"
 msgstr "PublishPress Future"
 
@@ -3679,7 +3679,7 @@ msgid "Messages"
 msgstr "Awọn Ifiranṣẹ"
 
 #: src/Modules/Workflows/Models/WorkflowModel.php:476
-#, php-format
+#, fuzzy, php-format
 msgid "%s #2"
 msgstr "%s #2"
 
@@ -3751,8 +3751,8 @@ msgstr "Wo Ilana Imọ"
 msgid "Overdue: "
 msgstr "Aago: "
 
-#. translators: %1$s opens a span tag, %2$s is the action name, %3$s ends a span tag, %4$s is the a span tag, %5$s is the a span tag, %6$s is the a span tag
 #: src/Views/expire-column.php:77
+#. translators: %1$s opens a span tag, %2$s is the action name, %3$s ends a span tag, %4$s is the a span tag, %5$s is the a span tag, %6$s is the a span tag
 #, php-format
 msgid "%1$s%2$s%3$s on %5$s%4$s%6$s"
 msgstr "%1$s%2$s%3$s lori %5$s%4$s%6$s"
@@ -3913,8 +3913,8 @@ msgstr "Akoko ilana"
 msgid "Show only requests with trigger activated"
 msgstr "Fihan nikan awọn ìbéèrè pẹ̀lú ìkìlọ̀ ti a mu ṣiṣẹ"
 
-#. translators: %1$d: displayed count, %2$d: filtered total, %3$d: sessions, %4$d: total unfiltered, %5$s: filtered log size, %6$s: total log size.
 #: src/Views/menu-debug-log.php:155
+#. translators: %1$d: displayed count, %2$d: filtered total, %3$d: sessions, %4$d: total unfiltered, %5$s: filtered log size, %6$s: total log size.
 #, php-format
 msgid ""
 "Showing the latest %1$d of %2$d logs (%3$d sessions). Total in database: "
@@ -3923,14 +3923,14 @@ msgstr ""
 "Nṣiṣẹ́ %1$d ti %2$d ìkànsí (%3$d ìpẹ̀yà). Gbogbo rẹ̀ ni ibi ipamọ: %4$d. "
 "Iwọn ìkànsí: %5$s (gbogbo: %6$s)."
 
-#. translators: %1$d: displayed count, %2$d: total count, %3$d: sessions, %4$s: log size.
 #: src/Views/menu-debug-log.php:165
+#. translators: %1$d: displayed count, %2$d: total count, %3$d: sessions, %4$s: log size.
 #, php-format
 msgid "Showing the latest %1$d of %2$d logs (%3$d sessions). Log size: %4$s."
 msgstr "Nṣiṣẹ́ %1$d ti %2$d ìkànsí (%3$d ìpẹ̀yà). Iwọn ìkànsí: %4$s."
 
-#. translators: %1$d: filtered logs count, %2$d: sessions, %3$d: total unfiltered, %4$s: filtered log size, %5$s: total log size.
 #: src/Views/menu-debug-log.php:176
+#. translators: %1$d: filtered logs count, %2$d: sessions, %3$d: total unfiltered, %4$s: filtered log size, %5$s: total log size.
 #, php-format
 msgid ""
 "Showing all %1$d logs (%2$d sessions). Total in database: %3$d. Log size: "
@@ -3939,8 +3939,8 @@ msgstr ""
 "Nṣiṣẹ́ gbogbo %1$d ìkànsí (%2$d ìpẹ̀yà). Gbogbo rẹ̀ ni ibi ipamọ: %3$d. "
 "Iwọn ìkànsí: %4$s (gbogbo: %5$s)."
 
-#. translators: %1$d: total logs count, %2$d: sessions count, %3$s: log size.
 #: src/Views/menu-debug-log.php:185
+#. translators: %1$d: total logs count, %2$d: sessions count, %3$s: log size.
 #, php-format
 msgid "Showing all %1$d logs (%2$d sessions). Log size: %3$s."
 msgstr "Nṣiṣẹ́ gbogbo %1$d ìkànsí (%2$d ìpẹ̀yà). Iwọn ìkànsí: %3$s."
@@ -4137,8 +4137,8 @@ msgstr "Àwọn Àtẹ̀jáde Àiyé"
 msgid "Date Format"
 msgstr "Àtẹ̀jáde Ọjọ́"
 
-#. translators: %s is a link to the PHP date function documentation
 #: src/Views/menu-display.php:64
+#. translators: %s is a link to the PHP date function documentation
 #, php-format
 msgid ""
 "The default format to use when displaying the action date within a post "
@@ -4158,8 +4158,8 @@ msgstr "Ìṣẹ́ PHP Ọjọ́"
 msgid "Time Format"
 msgstr "Àtẹ̀jáde Àkókò"
 
-#. translators: %s is a link to the PHP date function documentation
 #: src/Views/menu-display.php:102
+#. translators: %s is a link to the PHP date function documentation
 #, php-format
 msgid ""
 "The default format to use when displaying the action time within a post "
@@ -4222,8 +4222,8 @@ msgstr "Àpẹẹrẹ: "
 msgid "Shortcode"
 msgstr "Shortcode"
 
-#. translators: %s is a code tag that wraps the shortcode
 #: src/Views/menu-display.php:249
+#. translators: %s is a code tag that wraps the shortcode
 #, php-format
 msgid ""
 "Use the %s[futureaction]%s shortcode to show when the future action will "
@@ -4256,40 +4256,40 @@ msgstr "Fi kilasi CSS kun eroja wrapper fun aṣa aṣa."
 msgid "Attributes"
 msgstr "Àwọn àkíyèsí"
 
-#. translators: %s is the shortcode code wrapped in code tags
 #: src/Views/menu-display.php:308
+#. translators: %s is the shortcode code wrapped in code tags
 #, php-format
 msgid "The following attributes are available for the %s shortcode:"
 msgstr "Àwọn àkíyèsí tó tẹle wa fun %s shortcode:"
 
-#. translators: %s is a code tag that wraps the shortcode attribute name
 #: src/Views/menu-display.php:315
+#. translators: %s is a code tag that wraps the shortcode attribute name
 #, php-format
 msgid "%s - Available options:"
 msgstr "%s - Àwọn àṣàyàn tó wà:"
 
-#. translators: %s is a code tag that wraps the shortcode attribute value
 #: src/Views/menu-display.php:321
+#. translators: %s is a code tag that wraps the shortcode attribute value
 #, php-format
 msgid "%s - Displays complete date/time.  Default value."
 msgstr "%s - N ṣafihan ọjọ/tọ́kọ́.  Iye aiyipada."
 
-#. translators: %s is a code tag that wraps the shortcode attribute value
 #: src/Views/menu-display.php:327
+#. translators: %s is a code tag that wraps the shortcode attribute value
 #, php-format
 msgid "%s - Displays date only"
 msgstr "%s - N ṣafihan ọjọ nikan"
 
-#. translators: %s is a code tag that wraps the shortcode attribute value
 #: src/Views/menu-display.php:333
+#. translators: %s is a code tag that wraps the shortcode attribute value
 #, php-format
 msgid "%s - Displays time only"
 msgstr "%s - N ṣafihan akoko nikan"
 
-#. translators: %s is a code tag that wraps the shortcode attribute dateformat
-#. translators: %s is a code tag that wraps the shortcode attribute timeformat
 #: src/Views/menu-display.php:345
 #: src/Views/menu-display.php:353
+#. translators: %s is a code tag that wraps the shortcode attribute dateformat
+#. translators: %s is a code tag that wraps the shortcode attribute timeformat
 #, php-format
 msgid "%s - Format set here will override the value set on the settings page"
 msgstr "%s - Fọọmát tí a ṣeto nibi yóò kọja iye tí a ṣeto lori oju-iwe eto"
@@ -4819,13 +4819,13 @@ msgstr "Ipo Ifiweranṣẹ"
 msgid "Post Type"
 msgstr "Iru Ifiweranṣẹ"
 
-#. translators: %s is the database table name
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2752
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3346
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/column-item.jsx:10
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:10
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2027
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2527
+#. translators: %s is the database table name
 #, js-format
 msgid "Type the %s key and click on the button to insert it."
 msgstr "Tẹ bọtini %s ki o tẹ bọtini lati fi sii."
@@ -4933,10 +4933,10 @@ msgstr "Iye"
 msgid "Number of posts assigned to this term."
 msgstr "Iye awọn ifiweranṣẹ ti a yàn fun ọrọ yii."
 
-#. translators: %s is the taxonomy label
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3364
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:38
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2555
+#. translators: %s is the taxonomy label
 #, js-format
 msgid "%s terms for this post."
 msgstr "%s awọn ọrọ fun ifiweranṣẹ yii."
@@ -5437,34 +5437,34 @@ msgstr "Fikun"
 msgid "Close"
 msgstr "Pa"
 
-#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9618
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9621
 #: assets/jsx/workflow-editor/components/layout/header.jsx:140
 #: assets/jsx/workflow-editor/components/layout/header.jsx:145
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7425
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7430
+#. translators: button label text should, if possible, be under 16 characters.
 msgid "Auto Layout"
 msgstr "Aifọwọyi Ilana"
 
-#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9628
 #: assets/jsx/workflow-editor/components/layout/header.jsx:157
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7442
+#. translators: button label text should, if possible, be under 16 characters.
 msgid "Upgrade to Pro and unlock more features"
 msgstr "Gbadun si Pro ki o si ṣii awọn ẹya diẹ sii"
 
-#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9872
 #: assets/jsx/workflow-editor/components/left-toolbar/redo.jsx:31
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7674
+#. translators: button label text should, if possible, be under 16 characters.
 msgid "Redo"
 msgstr "Tun ṣe"
 
-#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10045
 #: assets/jsx/workflow-editor/components/left-toolbar/undo.jsx:31
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7823
+#. translators: button label text should, if possible, be under 16 characters.
 msgid "Undo"
 msgstr "Yọ"
 
@@ -5922,10 +5922,10 @@ msgid ""
 "if it is spelled correctly."
 msgstr "Iyipada \"%s\" kò sí ní àkópọ̀ lọwọlọwọ. Jọ, ṣàyẹwo bóyá a kọ ọ́ dáadáa."
 
-#. translators: %s is the workflow step slug.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12236
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:181
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9937
+#. translators: %s is the workflow step slug.
 #, js-format
 msgid "\"%s\" is not a variable or step slug."
 msgstr "\"%s\" kì í ṣe iyipada tàbí slug igbesẹ."
@@ -5948,61 +5948,61 @@ msgstr "Kò sí àfikún tí a ko pari."
 msgid "Unopened placeholder are not allowed."
 msgstr "Kò sí àfikún tí a kò ṣi."
 
-#. translators: %s is the field label.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12263
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:216
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9972
+#. translators: %s is the field label.
 #, js-format
 msgid "Invalid expression on %s"
 msgstr "Aiyé àtọka lori %s"
 
-#. translators: %s is the field label.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12275
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12495
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:232
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:575
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9988
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10331
+#. translators: %s is the field label.
 #, js-format
 msgid "The field %s must be a list of options."
 msgstr "Ibi %s gbọ́dọ̀ jẹ́ atokọ́ aṣayan."
 
-#. translators: %s is the option name.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12297
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:261
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10017
+#. translators: %s is the option name.
 #, js-format
 msgid "The option \"%s\" does not have a name."
 msgstr "Aṣayan \"%s\" kò ní orúkọ."
 
-#. translators: %s is the option name.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12303
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:270
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10026
+#. translators: %s is the option name.
 #, js-format
 msgid "The option \"%s\" does not have a label."
 msgstr "Aṣayan \"%s\" kò ní àtọka."
 
-#. translators: %s is the option name.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12309
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:279
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10035
+#. translators: %s is the option name.
 #, js-format
 msgid "The option \"%s\" has a duplicate name."
 msgstr "Aṣayan \"%s\" ní orúkọ àtẹ̀jáde."
 
-#. translators: %s is the option label.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12315
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:288
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10044
+#. translators: %s is the option label.
 #, js-format
 msgid "The option \"%s\" has a duplicate label."
 msgstr "Aṣayan \"%s\" ní àtọka àtẹ̀jáde."
 
-#. translators: %s is the field label.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12325
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:302
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10058
+#. translators: %s is the field label.
 #, js-format
 msgid "The field %s must be a valid list of options."
 msgstr "Ibi %s gbọ́dọ̀ jẹ́ atokọ́ aṣayan to jẹ́tọ́."
@@ -6116,10 +6116,10 @@ msgstr "Lo bọtini àtúnṣe osi àti ọtun láti lọ kiri ní igbese"
 msgid "No results found."
 msgstr "Kò sí abajade tí a rí."
 
-#. translators: %d: number of results.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13239
 #: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:101
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10929
+#. translators: %d: number of results.
 #, js-format
 msgid "%d result found."
 msgid_plural "%d results found."
@@ -6143,19 +6143,19 @@ msgstr "Àkọsílẹ̀"
 msgid "A tip for using the workflow editor"
 msgstr "Ìtẹ́sí fún lílo olùṣàkóso iṣẹ́"
 
-#. translators: %d: Number of blocks.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13627
 #: assets/jsx/workflow-editor/components/secondary-sidebar/node-draggable-chip.jsx:27
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11310
+#. translators: %d: Number of blocks.
 #, js-format
 msgid "%d block"
 msgid_plural "%d blocks"
 msgstr[0] "%d àpótí"
 
-#. translators: Patterns tab title in the block inserter.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14104
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:24
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11712
+#. translators: Patterns tab title in the block inserter.
 msgid "Actions"
 msgstr "Ìṣe"
 
@@ -6294,10 +6294,10 @@ msgstr "Ṣe o ṣọra pe o fẹ pa iṣẹ ṣiṣe yii run?"
 msgid "Move to trash"
 msgstr "Gbe si egbin"
 
-#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14929
 #: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:79
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12407
+#. translators: button label text should, if possible, be under 16 characters.
 msgid "Publish"
 msgstr "Ṣafihan"
 
@@ -6325,17 +6325,17 @@ msgstr "Nṣiṣẹ imudojuiwọn..."
 msgid "Updated"
 msgstr "Ti imudojuiwọn"
 
-#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15086
 #: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:82
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12550
+#. translators: button label text should, if possible, be under 16 characters.
 msgid "Save draft"
 msgstr "Fipamọ akọsilẹ"
 
-#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15089
 #: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:85
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12553
+#. translators: button label text should, if possible, be under 16 characters.
 msgid "Save"
 msgstr "Fipamọ"
 
@@ -6696,10 +6696,10 @@ msgstr "Ko si awọn iṣẹ ṣiṣe ti o baamu."
 msgid "Change manually enabled workflows"
 msgstr "Yipada awọn iṣẹ́-ṣiṣe ti a fi ọwọ́ ṣe"
 
-#. translators: %s: Workflow title
 #: assets/js/workflowsListCancelAction.js:702
 #: assets/jsx/workflows-list/cancel-action/index.jsx:59
 #: assets/js/workflowsListCancelAction.js:497
+#. translators: %s: Workflow title
 #, js-format
 msgid ""
 "Are you sure you want to cancel all scheduled actions for the \"%s\" "
@@ -6726,10 +6726,10 @@ msgctxt "noun"
 msgid "View"
 msgstr "Wo"
 
-#. translators: Default label for the Workflow sidebar tab, not selected.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14336
 #: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:23
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11892
+#. translators: Default label for the Workflow sidebar tab, not selected.
 msgctxt "noun"
 msgid "Workflow"
 msgstr "Iṣẹ́-ṣiṣe"

@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-04-29T14:19:02+00:00\n"
-"PO-Revision-Date: 2026-05-13 18:44+0000\n"
+"POT-Creation-Date: 2026-05-13T18:43:00+00:00\n"
+"PO-Revision-Date: 2026-05-14 18:07+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "Language: tr_TR\n"
@@ -2837,7 +2837,6 @@ msgid "Post to Unstick"
 msgstr "Yapıştırmayı Kaldırılacak Gönderi"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UnstickPost.php:71
-#, fuzzy
 msgid ""
 "Choose the post that will be unmarked as sticky. You can select a post "
 "variable or enter a post ID."
@@ -3376,7 +3375,6 @@ msgid "Manually run via posts row action"
 msgstr "Gönderi satırı eylemi ile manuel çalıştır"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:37
-#, fuzzy
 msgid ""
 "This trigger creates a custom post row action and activates when the row "
 "action is clicked in the Posts list screen."

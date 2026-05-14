@@ -17,6 +17,7 @@ msgstr ""
 #. Plugin Name of the plugin
 #. Plugin Name of the plugin
 #. Plugin Name of the plugin
+#. Plugin Name of the plugin
 #: post-expirator.php:4
 msgid "PublishPress Future Free"
 msgstr ""

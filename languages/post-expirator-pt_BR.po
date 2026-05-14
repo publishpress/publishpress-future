@@ -11,19 +11,19 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-03-24T19:11:12+00:00\n"
-"PO-Revision-Date: 2026-05-13 18:44+0000\n"
+"POT-Creation-Date: 2026-05-13T18:43:00+00:00\n"
+"PO-Revision-Date: 2026-05-14 18:07+0000\n"
 "X-Generator: Weblate 5.17.1\n"
 "X-Domain: post-expirator\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "Language: pt-BR\n"
 
-#: post-expirator.php:4
+#: post-expirator.php:4, fuzzy
 #. Plugin Name of the plugin
 msgid "PublishPress Future Free"
 msgstr "PublishPress Future Free"
 
-#: post-expirator.php:5
+#: post-expirator.php:5, fuzzy
 #. Plugin URI of the plugin
 msgid "http://wordpress.org/extend/plugins/post-expirator/"
 msgstr "http://wordpress.org/extend/plugins/post-expirator/"
@@ -42,7 +42,7 @@ msgstr ""
 msgid "PublishPress"
 msgstr "PublishPress"
 
-#: post-expirator.php:9
+#: post-expirator.php:9, fuzzy
 #. Author URI of the plugin
 msgid "http://publishpress.com"
 msgstr "http://publishpress.com"
@@ -953,7 +953,7 @@ msgstr "Ação futura concluída \"%s\""
 
 #: src/Modules/Expirator/Models/ExpirablePostModel.php:666
 #. translators: 1: is the blog name, 2: the email subject
-#, php-format
+#, fuzzy, php-format
 msgid "[%1$s] %2$s"
 msgstr "[%1$s] %2$s"
 
@@ -970,9 +970,9 @@ msgstr ""
 "data/hora, como \"3 months\" ou \"1 week\"."
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:53
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:234
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:234, fuzzy
 msgid "Status"
-msgstr "Estado"
+msgstr "Status"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:55
 msgid "Arguments"
@@ -1115,7 +1115,7 @@ msgstr "Processar a ação agora"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:524
 #. translators: %1$s: post type label, %2$d: post ID, %3$s: post link tag start, %4$s: post title, %5$s: post link tag end
-#, php-format
+#, fuzzy, php-format
 msgid "%1$s: [%2$d] %3$s%4$s%5$s"
 msgstr "%1$s: [%2$d] %3$s%4$s%5$s"
 
@@ -1139,9 +1139,9 @@ msgstr "Ver registro"
 msgid "Action: "
 msgstr "Ação: "
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:687
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:687, fuzzy
 msgid "Status: "
-msgstr "Estado: "
+msgstr "Status: "
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:693
 msgid "Arguments: "
@@ -1183,7 +1183,7 @@ msgstr " (%s atrás)"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:771
 #. translators: %s is the date interval in human readable format in the present or future
-#, php-format
+#, fuzzy, php-format
 msgid " (%s)"
 msgstr " (%s)"
 
@@ -1576,7 +1576,7 @@ msgstr "Etapa:"
 msgid "Trigger: "
 msgstr "Gatilho acionador: "
 
-#: src/Modules/Workflows/Controllers/ScheduledActions.php:438
+#: src/Modules/Workflows/Controllers/ScheduledActions.php:438, fuzzy
 msgid "Post:"
 msgstr "Post:"
 
@@ -1602,7 +1602,7 @@ msgstr "%1$s por %2$d vezes"
 
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:528
 #. translators: %1$s is the executed times, %2$d is the total repeat times
-#, php-format
+#, fuzzy, php-format
 msgid "[%1$s/%2$d]"
 msgstr "[%1$s/%2$d]"
 
@@ -1723,7 +1723,7 @@ msgstr ""
 msgid "Triggers"
 msgstr "Gatilhos acionadores"
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:280
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:280, fuzzy
 msgid "—"
 msgstr "—"
 
@@ -1907,7 +1907,7 @@ msgstr "Escolha o post que terá seu meta adicionado."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:85
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeletePostMeta.php:85
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePostMeta.php:85
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePostMeta.php:85, fuzzy
 msgid "Meta"
 msgstr "Meta"
 
@@ -1966,7 +1966,7 @@ msgstr "O meta valor a ser adicionado ao post."
 #: src/Modules/Workflows/Models/StepTypesModel.php:90
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:402
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:34
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:359
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:359, fuzzy
 msgid "Post"
 msgstr "Post"
 
@@ -3703,7 +3703,7 @@ msgstr ""
 "Migrar a estrutura de etapas agendadas do fluxo de trabalho após a versão "
 "4.0.0"
 
-#: src/Modules/Workflows/Models/StepTypesModel.php:99
+#: src/Modules/Workflows/Models/StepTypesModel.php:99, fuzzy
 msgid "PublishPress Future"
 msgstr "PublishPress Future"
 
@@ -3717,7 +3717,7 @@ msgstr "Usuário"
 #: src/Modules/Workflows/Models/StepTypesModel.php:117
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16026
 #: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:100
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13219
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13219, fuzzy
 msgid "Site"
 msgstr "Site"
 
@@ -3832,7 +3832,7 @@ msgstr ""
 "A ação não foi agendada devido a um problema de configuração. Tente agendar "
 "novamente."
 
-#: src/Views/menu-admin.php:27
+#: src/Views/menu-admin.php:27, fuzzy
 msgid "Metabox"
 msgstr "Metabox"
 
@@ -3904,7 +3904,7 @@ msgstr "Herdar das configurações do site"
 msgid "24 hours"
 msgstr "24 horas"
 
-#: src/Views/menu-admin.php:162
+#: src/Views/menu-admin.php:162, fuzzy
 msgid "AM/PM"
 msgstr "AM/PM"
 
@@ -4549,7 +4549,7 @@ msgstr "Inteiro"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:390
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:30
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:355
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:355, fuzzy
 msgid "String"
 msgstr "String"
 
@@ -4567,7 +4567,7 @@ msgstr "Objeto"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:399
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:33
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:358
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:358, fuzzy
 msgid "Array"
 msgstr "Array"
 
@@ -4988,7 +4988,7 @@ msgstr "O nome do termo."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3250
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:13
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2475
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2475, fuzzy
 msgid "Slug"
 msgstr "Slug"
 
@@ -5048,7 +5048,7 @@ msgstr ""
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3798
 #: assets/jsx/workflow-editor/components/data-fields/modal-footer.jsx:11
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2883
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2883, fuzzy
 msgid "OK"
 msgstr "OK"
 
@@ -5495,7 +5495,7 @@ msgstr "Editar descrição"
 #: assets/jsx/workflow-editor/components/inspector-card/index.jsx:116
 #: assets/jsx/workflow-editor/components/secondary-sidebar/node-card.jsx:16
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7026
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11263
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11263, fuzzy
 msgid "Pro"
 msgstr "Pro"
 
