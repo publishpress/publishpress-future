@@ -5887,16 +5887,16 @@
         },
         {
             "name": "publishpress/dev-workspace",
-            "version": "1.3.14",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/publishpress/library-dev-workspace.git",
-                "reference": "14ebc52186b98f25d70d500145c73288ed9e8e40"
+                "reference": "d308a762568789382207b283e6de154259d9effd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/publishpress/library-dev-workspace/zipball/14ebc52186b98f25d70d500145c73288ed9e8e40",
-                "reference": "14ebc52186b98f25d70d500145c73288ed9e8e40",
+                "url": "https://api.github.com/repos/publishpress/library-dev-workspace/zipball/d308a762568789382207b283e6de154259d9effd",
+                "reference": "d308a762568789382207b283e6de154259d9effd",
                 "shasum": ""
             },
             "require": {
@@ -5926,7 +5926,7 @@
                 "phpstan/phpstan": "^1.10",
                 "phpunit/phpunit": "^10",
                 "publishpress/publishpress-phpcs-standards": "^1",
-                "publishpress/translations": "^1.1",
+                "publishpress/translations": "^1.4",
                 "spatie/ray": "^1.41",
                 "squizlabs/php_codesniffer": "^3.8",
                 "symfony/http-client": "^7.1",
@@ -5952,9 +5952,9 @@
             "description": "Shared Composer scripts for PublishPress plugins",
             "support": {
                 "issues": "https://github.com/publishpress/library-dev-workspace/issues",
-                "source": "https://github.com/publishpress/library-dev-workspace/tree/1.3.14"
+                "source": "https://github.com/publishpress/library-dev-workspace/tree/1.4.0"
             },
-            "time": "2026-05-08T16:31:13+00:00"
+            "time": "2026-05-14T17:21:33+00:00"
         },
         {
             "name": "publishpress/publishpress-phpcs-standards",
@@ -6004,16 +6004,16 @@
         },
         {
             "name": "publishpress/translations",
-            "version": "v1.3.0",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/publishpress/library-publishpress-translator.git",
-                "reference": "e25ea683b1c5bf00281f9731e76ea725cd3bf378"
+                "reference": "923b67c3ac432a5b21997b8d2de9a88e45470517"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/publishpress/library-publishpress-translator/zipball/e25ea683b1c5bf00281f9731e76ea725cd3bf378",
-                "reference": "e25ea683b1c5bf00281f9731e76ea725cd3bf378",
+                "url": "https://api.github.com/repos/publishpress/library-publishpress-translator/zipball/923b67c3ac432a5b21997b8d2de9a88e45470517",
+                "reference": "923b67c3ac432a5b21997b8d2de9a88e45470517",
                 "shasum": ""
             },
             "require": {
@@ -6055,9 +6055,9 @@
             "description": "AI-powered translation automation for PublishPress plugins using Potomatic",
             "support": {
                 "issues": "https://github.com/publishpress/library-publishpress-translator/issues",
-                "source": "https://github.com/publishpress/library-publishpress-translator/tree/v1.3.0"
+                "source": "https://github.com/publishpress/library-publishpress-translator/tree/v1.4.0"
             },
-            "time": "2026-05-13T20:03:01+00:00"
+            "time": "2026-05-14T16:12:10+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
