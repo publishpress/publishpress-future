@@ -1,7 +1,7 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-[4.10.2] - 29 April, 2026
+[4.10.2] - 18 May, 2026
 
 - Added: Added new language files for locales: ar, cs_CZ, da_DK, el, en_US, fa_IR, he_IL, or_RO, pl_PL, sv_SE, th, tr_TR, and vi.
 - Fixed: WordPress.org translations now correctly take priority over custom or AI-generated strings, ensuring consistent language display while still merging all available sources.
