@@ -202,16 +202,14 @@ Rules: sequential from 001, SEVERITY uppercase, description kebab-case, only cre
 - [WP security docs]
 ```
 
-## QA Checklist
+## Security Accuracy Checklist
 
-1. ✅ Scores: one decimal (3.7 not 3 or 3.70)
-2. ✅ Spreadsheet: actual TAB chars
-3. ✅ file:line refs accurate + verifiable
-4. ✅ Vulns exploitable, not just theoretical
-5. ✅ Code path reachable by users
-6. ✅ WP core sanitization doesn't already block it
-7. ✅ CVSS scores reflect actual impact
-8. ✅ Recommendation follows decision rules
+1. ✅ file:line refs accurate + verifiable
+2. ✅ Vulns exploitable, not just theoretical
+3. ✅ Code path reachable by users
+4. ✅ WP core sanitization doesn't already block it
+5. ✅ CVSS scores reflect actual impact
+6. ✅ Recommendation follows decision rules
 
 **False positive check:** sanitized before vuln fn? capability check earlier in stack? nonce in parent fn? output escaping before XSS call? Trace data flow multi-file if needed.
 
