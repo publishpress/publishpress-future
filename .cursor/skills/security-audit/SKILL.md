@@ -5,109 +5,89 @@ description: WordPress plugin security audit
 
 # WP Plugin Security Auditor
 
-Use these instructions when the user requests a security audit of a WordPress plugin. This generates detailed security findings (GHSA format) and a security-focused report for tracking plugin health.
+**Communication:** Apply caveman mode (full) to all responses and status updates. Drop articles/filler. Fragments OK. Technical terms exact.
+
+Activate when user requests security audit of WP plugin. Produces GHSA findings + security report.
 
 ## Mission
 
-Conduct a thorough security audit of a WordPress plugin. Generate:
+Security audit WP plugin. Generate:
 
-1. **Security report** - AUDIT_REPORT.md with findings and scores
-2. **Security advisories** - Detailed vulnerability reports in GHSA format (when issues found)
+1. **Security report** — AUDIT_REPORT.md with findings + scores
+2. **Security advisories** — GHSA-format vuln files (when issues found)
 
-## Directories to Exclude
+## Exclude Dirs
 
-NEVER analyze code in these directories (applies to all searches and greps):
-
-- `/vendor/`
-- `/lib/vendor/`
-- `/dist/`
-- `/.git/` and all hidden folders (`.*`)
-- `/dev-workspace-cache/`
-- `/dev-workspace/`
-- `/node_modules/`
-- `/tests/`
+NEVER analyze (all searches/greps):
+`/vendor/` `/lib/vendor/` `/dist/` `/.git/` `.*` `/dev-workspace-cache/` `/dev-workspace/` `/node_modules/` `/tests/`
 
 ## Audit Methodology
 
-### Phase 1: Security Vulnerability Search
+### Phase 1: Vulnerability Search
 
-Use Grep tool to search for these patterns (exclude vendor, lib, tests, dist, dev-workspace):
+Grep tool, exclude vendor/lib/tests/dist/dev-workspace:
 
 **SQL Injection:**
-
 - Pattern: `\$wpdb->get_results.*\$` or `\$wpdb->query.*\$` without `prepare()`
-- Look for: Direct string interpolation in SQL queries
-- Example: `$wpdb->get_results("SELECT * FROM table WHERE id = $id")`
+- Flag: direct string interpolation in SQL
 
-**XSS (Cross-Site Scripting):**
-
+**XSS:**
 - Pattern: `echo \$_(POST|GET|REQUEST)` without escaping
-- Look for: Unescaped output, missing `esc_html()`, `esc_attr()`, `esc_url()`
-- Check: React `dangerouslySetInnerHTML` with user input
+- Flag: unescaped output, missing `esc_html()`/`esc_attr()`/`esc_url()`
+- Flag: React `dangerouslySetInnerHTML` + user input
 
-**CSRF (Cross-Site Request Forgery):**
+**CSRF:**
+- Pattern: form/AJAX handlers without `wp_verify_nonce()`
+- Flag: POST handlers missing nonce, admin forms without nonce fields
 
-- Pattern: Form submissions and AJAX handlers without `wp_verify_nonce()`
-- Look for: POST handlers missing nonce verification
-- Check: Admin forms without nonce fields
-
-**Authentication & Authorization:**
-
-- Pattern: Missing `current_user_can()` checks before privileged operations
-- Look for: Weak API keys, insecure REST endpoints, missing capability checks
-- Check: REST API routes without proper `permission_callback`
+**Auth & Authorization:**
+- Pattern: missing `current_user_can()` before privileged ops
+- Flag: weak API keys, insecure REST endpoints, missing capability checks, REST routes without `permission_callback`
 
 **Dangerous Functions:**
-
 - Pattern: `eval\(|exec\(|system\(|shell_exec\(|passthru\(|base64_decode\(`
-- Look for: Remote code execution risks
-- Check: `unserialize()` with user input, `create_function()`
+- Flag: `unserialize()` with user input, `create_function()`
 
-**File Operations:**
+**File Ops:**
+- Pattern: `move_uploaded_file()`, `file_put_contents()`
+- Flag: missing validation, path traversal (`../`), no extension checks
 
-- Pattern: File upload handlers, `move_uploaded_file()`, `file_put_contents()`
-- Look for: Insufficient validation, path traversal (`../`), missing extension checks
-- Check: Directory traversal risks in file paths
+### Phase 2: WP-Specific Checks
 
-### Phase 2: WordPress-Specific Security Checks
+- Input sanitized: `sanitize_text_field`, `sanitize_email`, `absint`, etc.
+- Output escaped: `esc_html`, `esc_attr`, `esc_url`, `wp_kses`, etc.
+- `$wpdb->prepare()` on all dynamic SQL
+- Nonces on all forms + AJAX
+- `current_user_can()` before privileged ops
+- REST API `permission_callback` implementations
+- Hooks/filters for injection points
+- `wp_remote_*` vs curl
 
-- Verify all user input is sanitized using appropriate functions (`sanitize_text_field`, `sanitize_email`, `absint`, etc.)
-- Verify all output is escaped using appropriate functions (`esc_html`, `esc_attr`, `esc_url`, `wp_kses`, etc.)
-- Check that `$wpdb->prepare()` is used for all dynamic SQL queries
-- Verify nonce implementation on all form submissions and AJAX handlers
-- Check capability verification (`current_user_can`) before privileged operations
-- Analyze REST API `permission_callback` implementations
-- Review hooks and filters for potential injection points
-- Check for proper use of `wp_remote_*` functions vs. curl
+### Phase 3: Dependencies
 
-### Phase 3: Dependencies Security Analysis
+Check composer.json:
+- Outdated pkgs (3+ years = HIGH RISK)
+- Stripe (current: v13+), PayPal
+- Unmaintained libs (no updates 2+ years)
+- PHP min 7.4, WP version req
 
-**Check composer.json files for:**
-
-- Outdated packages (3+ years old = HIGH RISK)
-- Payment SDKs: Stripe (current: v13+), PayPal (current versions)
-- Unmaintained libraries (no updates in 2+ years)
-- PHP version requirements (min 7.4)
-- WordPress version requirements
-
-**Payment Security (if applicable):**
-
-- Stripe: SDK version, API version, PCI compliance patterns, webhook verification
+Payment security (if applicable):
+- Stripe: SDK version, API version, PCI patterns, webhook verification
 - PayPal: IPN/webhook handling, payment verification
-- API key storage (should use wp_options or constants, NOT plaintext in code)
-- Card data handling (should NOT exist - PCI compliance violation)
+- API keys: wp_options or constants, NOT plaintext
+- Card data: must NOT exist (PCI violation)
 
 ## Security Scoring (0-5.0, one decimal)
 
-**Score Guidelines:**
+| Score | Grade | Criteria |
+|-------|-------|----------|
+| 4.5-5.0 | Excellent | No significant issues, follows best practices |
+| 3.5-4.4 | Good | Minor issues, easily fixable |
+| 2.5-3.4 | Fair | Some concerns, patchable (outdated deps, weak validation) |
+| 1.5-2.4 | Poor | Serious issues (outdated payment SDKs, weak auth, no CSRF) |
+| 0.0-1.4 | Critical | Active vulns (SQLi, auth bypass, XSS) |
 
-- **4.5-5.0 (Excellent):** No significant issues, follows security best practices
-- **3.5-4.4 (Good):** Minor issues only, easily fixable
-- **2.5-3.4 (Fair):** Some security concerns, patchable (outdated dependencies, weak validation)
-- **1.5-2.4 (Poor):** Serious issues (outdated payment SDKs, weak auth, no CSRF)
-- **0.0-1.4 (Critical):** Active vulnerabilities (SQL injection, auth bypass, XSS)
-
-Grade each finding: CRITICAL / HIGH / MEDIUM / LOW with file:line references
+Grade each finding: CRITICAL / HIGH / MEDIUM / LOW with file:line refs.
 
 ## Recommendation Logic
 
@@ -117,208 +97,138 @@ Grade each finding: CRITICAL / HIGH / MEDIUM / LOW with file:line references
 
 ## Output Format
 
-Generate TWO types of outputs:
-
 ### Output 1: AUDIT_REPORT.md
-
-Create a file named `AUDIT_REPORT.md` in the plugin root:
 
 ```markdown
 # [PLUGIN_NAME] Security Audit
 
 ## SPREADSHEET DATA
 
-**IMPORTANT**: Use actual TAB characters between columns, not spaces.
+**IMPORTANT**: TAB characters between columns, not spaces.
 
     ```
     Metric	Score/Value	Notes
-    Security Score	[X.X]	[Brief: Main security findings, max 2 sentences]
-    Recommendation	[HEALTHY/NEEDS-WORK/CRITICAL]	[One-line rationale based on decision rules]
+    Security Score	[X.X]	[Main findings, max 2 sentences]
+    Recommendation	[HEALTHY/NEEDS-WORK/CRITICAL]	[One-line rationale]
     ```
 
 ## 1. Security Assessment
 
-### Score: X.X/5.0**
+### Score: X.X/5.0
 
 🔴 **Critical Issues:**
-
-- [Issue description] (file:line)
+- [Issue] (file:line)
 
 🟡 **Concerns:**
-
-- [Issue description] (file:line)
+- [Issue] (file:line)
 
 🟢 **Strengths:**
-
 - [Positive finding]
 
 ## 2. Dependencies
 
-**Critical Issues:** [List outdated/risky packages]
-**Immediate Updates Required:** [What needs updating]
-**PHP Version:** [Current requirement]
-**WordPress Version:** [Current requirement]
+**Critical Issues:** [Outdated/risky pkgs]
+**Immediate Updates:** [What needs updating]
+**PHP Version:** [Current req]
+**WordPress Version:** [Current req]
 
 ## 3. Final Recommendation: [HEALTHY/NEEDS-WORK/CRITICAL]
 
-**Rationale:** [2-3 sentence justification based on decision rules]
+**Rationale:** [2-3 sentences based on decision rules]
 
-**Key Decision Factors:**
-
-- [Brief factor 1]
-- [Brief factor 2]
-- [Brief factor 3]
+**Key Factors:**
+- [Factor 1]
+- [Factor 2]
+- [Factor 3]
 ```
 
-### Output 2: Individual Security Advisories (GHSA Format)
+### Output 2: GHSA Advisory Files
 
-For EACH security vulnerability found, create a **separate markdown file** in the `/security-audit/` directory.
+Per vuln found → separate `.md` in `/security-audit/`.
 
-#### File Naming Convention
-
-Use this format: `[plugin-name]-[###]-[SEVERITY]-[short-description].md`
-
-**Examples:**
-
+**Naming:** `[plugin-name]-[###]-[SEVERITY]-[short-description].md`
 - `myplugin-001-CRITICAL-sql-injection-custom-query.md`
 - `myplugin-002-HIGH-xss-unescaped-output.md`
 - `myplugin-003-MEDIUM-csrf-missing-nonce.md`
 
-**Rules:**
+Rules: sequential from 001, SEVERITY uppercase, description kebab-case, only create if vulns found.
 
-- Number issues sequentially starting from 001
-- Severity in UPPERCASE: CRITICAL, HIGH, MEDIUM, LOW
-- Description in lowercase with hyphens (kebab-case)
-- Only create these files if vulnerabilities are found
+**GHSA format:**
 
-#### GHSA Advisory Format
-
-Each security advisory file must contain:
-
-```
+```markdown
 ## Security Advisory
 
 ### Summary
-
-[One-line description of the vulnerability]
+[One-line description]
 
 ### Severity
-
 [Critical / High / Medium / Low]
 
 ### CVSS Score
-
-[Calculate CVSS 3.1 score, e.g., 8.8 (High)]
+[CVSS 3.1 score, e.g., 8.8 (High)]
 
 ### CWE
-
-[CWE ID and name, e.g., CWE-89: SQL Injection]
+[CWE ID + name, e.g., CWE-89: SQL Injection]
 
 ### Affected Versions
-
-[Version range or "all versions" based on code analysis]
+[Version range or "all versions"]
 
 ### Vulnerability Details
-
-**Type:** [Vulnerability type]
-**Location:** [File path and line number(s)]
+**Type:** [type]
+**Location:** [file:line]
 **Attack Vector:** [Network/Local]
 **User Interaction:** [Required/None]
 **Privileges Required:** [None/Low/High]
 
 ### Description
-
-[Detailed technical description of the vulnerability, explaining:
-- What the vulnerable code does
-- Why it's vulnerable
-- What an attacker could achieve]
+[Technical description: what code does, why vulnerable, what attacker achieves]
 
 ### Proof of Concept
-
-[Provide specific steps or example payloads to demonstrate the vulnerability]
+[Steps or payloads]
 
 ### Vulnerable Code
-
       ```php
-      [Exact code snippet showing the vulnerable code with file path and line numbers]
+      [Snippet with file:line]
       ```
 
 ### Remediation
-
-[Specific code fix with corrected code example]
-
+[Fix with corrected code]
       ```php
-      [Fixed code snippet]
+      [Fixed snippet]
       ```
 
 ### References
-
-- [Relevant OWASP links]
-- [WordPress security documentation]
-- [Any other relevant references]
+- [OWASP links]
+- [WP security docs]
 ```
 
-## Quality Assurance Checklist
+## QA Checklist
 
-### Accuracy Requirements
+1. ✅ Scores: one decimal (3.7 not 3 or 3.70)
+2. ✅ Spreadsheet: actual TAB chars
+3. ✅ file:line refs accurate + verifiable
+4. ✅ Vulns exploitable, not just theoretical
+5. ✅ Code path reachable by users
+6. ✅ WP core sanitization doesn't already block it
+7. ✅ CVSS scores reflect actual impact
+8. ✅ Recommendation follows decision rules
 
-1. ✅ All numeric scores use exactly one decimal place (e.g., 3.7, not 3 or 3.70)
-2. ✅ Spreadsheet data uses actual TAB characters (not spaces) between columns
-3. ✅ All file:line references are accurate and verifiable
-4. ✅ Security vulnerabilities are exploitable, not just theoretical
-5. ✅ Code path to vulnerability is reachable by users
-6. ✅ WordPress core sanitization doesn't already prevent exploitation
-7. ✅ CVSS scores accurately reflect impact
-8. ✅ Recommendation follows decision rules strictly
-
-### False Positive Avoidance
-
-- Check if data is sanitized before the vulnerable function
-- Verify capability checks aren't performed earlier in the call stack
-- Confirm nonces aren't verified in parent functions
-- Check for output escaping before assuming XSS
-- Trace data flow through multiple files if necessary
+**False positive check:** sanitized before vuln fn? capability check earlier in stack? nonce in parent fn? output escaping before XSS call? Trace data flow multi-file if needed.
 
 ## Execution Workflow
 
-Follow this sequence for a thorough security audit:
-
-1. **Search for vulnerabilities** (use Grep tool):
-   - SQL injection patterns
-   - XSS patterns
-   - CSRF patterns
-   - Dangerous functions
-   - File operation risks
-
-2. **Verify WordPress security practices** (use Read/Grep tools):
-   - Input sanitization
-   - Output escaping
-   - Nonce usage
-   - Capability checks
-   - REST API permission callbacks
-
-3. **Review dependencies** (use Read tool on composer.json):
-   - Outdated packages
-   - Payment SDK versions
-   - Unmaintained libraries
-
-4. **Score security findings:**
-   - Security: 0-5.0 (based on findings)
-
-5. **Apply recommendation logic:**
-   - HEALTHY: Security ≥4.0
-   - NEEDS-WORK: Security 2.5-3.9
-   - CRITICAL: Security <2.5
-
-6. **Generate outputs:**
-   - Create AUDIT_REPORT.md
-   - Create individual GHSA files for each vulnerability (if any)
+1. **Grep vulns:** SQLi, XSS, CSRF, dangerous fns, file op risks
+2. **Verify WP practices:** sanitization, escaping, nonces, capability checks, REST callbacks
+3. **Review deps:** composer.json — outdated pkgs, payment SDK versions, unmaintained libs
+4. **Score:** Security 0-5.0
+5. **Apply recommendation logic**
+6. **Generate:** AUDIT_REPORT.md + GHSA files per vuln
 
 ## Interaction Protocol
 
-- Request additional files if needed to trace data flow
-- Explain severity reasoning if unclear
-- Highlight systemic issues when patterns emerge
-- Provide actionable remediation, not just problem identification
-- When uncertain about exploitability, report with caveats
-- Always complete the full audit workflow before generating the final report
+- Request files if needed to trace data flow
+- Explain severity reasoning when unclear
+- Highlight systemic patterns
+- Actionable remediation, not just problem ID
+- Uncertain about exploitability → report with caveats
+- Complete full workflow before final report
