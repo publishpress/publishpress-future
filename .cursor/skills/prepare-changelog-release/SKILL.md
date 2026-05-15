@@ -1,33 +1,28 @@
 ---
 name: prepare-changelog-release
-description: Prepares the CHANGELOG.md file for release by updating the [Unreleased] section with the current plugin version and date. Use when the user asks to prepare changelog for release, update changelog for release, or finalize changelog entries.
+description: Prep CHANGELOG.md for release — version + date on [Unreleased]. Use for release changelog prep/finalize.
 ---
 
 # Prepare Changelog for Release
 
-Updates the unreleased section of CHANGELOG.md with the current plugin version and date, following the project's changelog format.
+**Communication:** Apply `/caveman` mode (full) to all responses and status updates when this skill is active. Drop articles/filler. Fragments OK. Technical terms exact. Code/commits/PR bodies stay normal unless user says otherwise.
+
+Update `CHANGELOG.md` unreleased section with current plugin version + date. Follow project changelog format.
 
 ## Instructions
 
-When preparing the changelog for release:
-
-1. **Read the current plugin version** from `publishpress-hub-statistics.php` (Version field in the file header)
-
-2. **Read CHANGELOG.md** to identify:
-   - The [Unreleased] section (typically starts at line 4)
-   - All entries under [Unreleased] (bullet points between [Unreleased] and the next version)
-
-3. **Update the changelog** by replacing the [Unreleased] header with:
+1. **Read version** from `post-expirator.php` header `Version` field
+2. **Read CHANGELOG.md** — find `[Unreleased]` (~line 4), all bullets until next version
+3. **Replace** `[Unreleased]` header with:
    ```
    [VERSION] - DD MMM, YYYY
    ```
-   Where:
-   - VERSION is the current version from the plugin file
-   - DD is the day (2 digits)
-   - MMM is the month (3-letter abbreviation: Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec)
-   - YYYY is the 4-digit year
+   - VERSION = plugin file version
+   - DD = 2-digit day
+   - MMM = 3-letter month (Jan–Dec)
+   - YYYY = 4-digit year
+4. **Add new `[Unreleased]`** after line 3 (empty):
 
-4. **Add a new [Unreleased] section** at the top (after line 3) with empty content:
    ```
    [Unreleased]
 
@@ -35,11 +30,11 @@ When preparing the changelog for release:
 
 ## Format Requirements
 
-- Use exactly one blank line between sections
-- Maintain the existing bullet point format for entries
-- Follow the format: `[VERSION] - DD MMM, YYYY` (e.g., `[1.0.0] - 02 Feb, 2026`)
-- Add comma after day in the date
-- Use 3-letter month abbreviation
+- One blank line between sections
+- Keep existing bullet format
+- `[VERSION] - DD MMM, YYYY` (e.g. `[1.0.0] - 02 Feb, 2026`)
+- Comma after day
+- 3-letter month
 
 ## Example Transformation
 

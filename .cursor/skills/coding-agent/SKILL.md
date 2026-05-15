@@ -1,16 +1,16 @@
+---
+name: coding-agent
+description: Launch coding agent for PublishPress Future — features, bugs, refactors.
+---
 # Coding Agent Skill
 
+**Communication:** Apply `/caveman` mode (full) to all responses and status updates when this skill is active. Drop articles/filler. Fragments OK. Technical terms exact. Code/commits/PR bodies stay normal unless user says otherwise.
+
 ## Purpose
-Launch a specialized coding agent to implement changes in the PublishPress Future codebase following project conventions and best practices.
+Launch coding agent for PublishPress Future — conventions + best practices.
 
 ## When to Use
-Use this skill when you need to:
-- Implement new features
-- Fix bugs
-- Refactor existing code
-- Add or modify functionality
-- Update code to follow standards
-- Add new modules or extend existing ones
+Features, bugs, refactors, functionality changes, standards updates, new/extended modules.
 
 ## How to Use
 
@@ -34,64 +34,21 @@ Use this skill when you need to:
 
 ## Instructions for the Agent
 
-When this skill is invoked, launch an agent with these guidelines:
+Guidelines when invoked:
 
 ### Project Context
-- **Plugin:** PublishPress Future (formerly Post Expirator)
-- **Text Domain:** `post-expirator`
-- **Namespace:** `PublishPress\Future`
-- **Language:** PHP 7.4+, JavaScript (React/JSX)
-- **Framework:** WordPress plugin architecture
-- **Minimum PHP:** 7.4
-- **Minimum WordPress:** 6.7
-- **Standards:** WordPress Coding Standards, PSR-12
-- **Architecture:** Layered modular architecture with DI container
-- **Frontend:** JSX syntax for React components
-- **Background Processing:** WooCommerce Action Scheduler (not WP-Cron)
+PublishPress Future (Post Expirator) | text domain `post-expirator` | namespace `PublishPress\Future` | PHP 7.4+ / JSX | WP ≥6.7 | WPCS + PSR-12 | layered modules + DI | Action Scheduler (not WP-Cron).
 
 ### Coding Standards
 
 #### PHP
-- Follow PSR-12 coding standards
-- Use namespace declaration: `namespace PublishPress\Future\{Module}\{SubFolder};`
-- Follow WordPress naming conventions
-- Use dependency injection via DI container
-- Type hint all parameters and return types (PHP 7.4 compatible)
-- **Document all code with proper PHPDoc** (see "PHPDoc requirements" below)
-- Never use global WordPress functions directly in business logic; use Facades
-- Escape output: `esc_html()`, `esc_attr()`, `esc_url()`
-- Sanitize input: `sanitize_text_field()`, `absint()`, etc.
-- Verify nonces for actions
-- Check capabilities through `UsersFacade` or `current_user_can()`
-- Define hook names as constants in `HooksAbstract` classes
-- Define capabilities in `CapabilitiesAbstract` classes
-- Define post meta keys in `PostMetaAbstract` classes
+PSR-12; `namespace PublishPress\Future\{Module}\{SubFolder};` | DI + type hints | PHPDoc required | **Never use** global WP functions in business logic — Facades only | escape/sanitize/nonces/caps | constants in `HooksAbstract`, `CapabilitiesAbstract`, `PostMetaAbstract`.
 
 #### PHPDoc requirements (mandatory for all new code)
-
-- **File-level:** Every PHP file must have a docblock at the top with:
-  - Short description (file purpose)
-  - `@package PublishPress\Future`
-  - `@author PublishPress`
-  - `@copyright Copyright (c) 2026, PublishPress`
-  - `@license GPLv2 or later`
-
-- **Classes:** Use a brief class description where it adds clarity.
-
-- **Methods and functions:** Every method and function must have a docblock with:
-  - Short description (what it does)
-  - `@param` for each parameter (with type and description)
-  - `@return` when the return type is not void (with type and description)
-  - `@throws` when the method throws exceptions
-  - `@since {version}` (the version the method was introduced, e.g., 4.9.0)
+File: description, `@package`, `@author`, `@copyright`, `@license`. Methods: description, `@param`, `@return`, `@throws`, `@since`.
 
 #### JavaScript/React
-- Use functional components only
-- Use JSX syntax
-- Translations: `__('text', 'post-expirator')`
-- Text domain is always `post-expirator`
-- Format numbers: `formatNumber()` or `number_format_i18n()`
-- No emojis unless explicitly requested
+Functional components + JSX | `__('text', 'post-expirator')` | `formatNumber()` / `number_format_i18n()` | no emojis unless asked.
 
 #### File Organization
 ```
@@ -148,40 +105,13 @@ src/
 ```
 
 ### Development Workflow
-
-1. **Read existing code** to understand patterns
-2. **Check coding standards** with `composer check:cs`
-3. **Fix coding standards** with `composer fix:cs` or `composer fix:php`
-4. **Run static analysis** with `composer check:stan`
-5. **Verify syntax** with `composer check:lint`
-6. **Test changes** with `composer test` (Unit and Integration tests)
-7. **Build JavaScript assets** with `composer build:js` if JSX changed
-8. **Build language files** with `composer build:lang` if translations added
-9. **Update documentation** if needed
+Read patterns → `composer check:cs` / `fix:cs` / `fix:php` → `check:stan` → `check:lint` → `composer test` → `build:js` if JSX → `build:lang` if i18n → docs if needed.
 
 ### Container Registration
-
-When adding new services:
-1. Add constant to `src/Core/DI/ServicesAbstract.php`
-2. Register in `services.php` (root directory)
-3. Inject dependencies through constructor
-4. Services implementing `InitializableInterface` will be auto-initialized
+`ServicesAbstract` constant → `services.php` → constructor injection → `InitializableInterface` auto-init.
 
 ### Module Creation
-
-When adding a new feature module:
-1. Create directory: `src/Modules/{ModuleName}/`
-2. Create `Module.php` implementing `ModuleInterface`
-3. Create `HooksAbstract.php` for hook name constants
-4. Create subdirectories as needed:
-   - `Controllers/` - UI and API controllers
-   - `Models/` - Data models
-   - `DBTableSchemas/` - Database table definitions
-   - `Migrations/` - Database migration scripts
-   - `Interfaces/` - Module-specific interfaces
-   - `Views/` - Module-specific templates
-5. Register module in `services.php`
-6. Add tests in `tests/Unit/Modules/{ModuleName}/` and `tests/Integration/Modules/{ModuleName}/`
+`src/Modules/{Name}/` + `Module.php` + `HooksAbstract.php` + standard subdirs → `services.php` + Unit/Integration tests.
 
 ### Common Patterns
 
@@ -298,12 +228,7 @@ class FeatureController implements InitializableInterface
 ```
 
 #### Adding a REST Endpoint
-- Create controller in module's `Controllers/` or `Rest/` directory
-- Register routes using WordPress REST API
-- Use namespace pattern: `/publishpress-future/v1/endpoint`
-- Implement permission callbacks
-- Validate and sanitize request parameters
-- Return `WP_REST_Response` or `WP_Error`
+Controller in `Controllers/` or `Rest/` | `/publishpress-future/v1/endpoint` | permissions + sanitize | `WP_REST_Response` / `WP_Error`.
 
 #### Adding an Expiration Action
 ```php
@@ -533,178 +458,29 @@ composer wp:tests -- cache flush
 ```
 
 ### Security Checklist
-- [ ] Nonce verification on form submissions
-- [ ] Capability checks for admin actions
-- [ ] Input sanitization using SanitizationFacade or WordPress functions
-- [ ] Output escaping (`esc_html()`, `esc_attr()`, `esc_url()`)
-- [ ] SQL prepared statements (through DatabaseFacade)
-- [ ] No direct file access (`defined('ABSPATH') or die()` at top of file)
-- [ ] No direct access to `$_GET`, `$_POST`, `$_REQUEST` (use RequestFacade)
-- [ ] Proper permission callbacks on REST endpoints
+- [ ] Nonces | caps | sanitize (SanitizationFacade/WP) | escape output | prepared SQL (DatabaseFacade) | `ABSPATH` guard | no raw `$_GET`/`$_POST`/`$_REQUEST` (RequestFacade) | REST permissions
 
 ### Quality Checklist
-- [ ] Type hints on all functions (PHP 7.4 compatible)
-- [ ] **File-level PHPDoc** on every new PHP file (@package, @author, @copyright, @license)
-- [ ] **Method/function PHPDoc** on every method and function (description, @param, @return, @since)
-- [ ] Error handling for edge cases
-- [ ] Follows DRY principle
-- [ ] Single responsibility per class
-- [ ] Dependency injection used (through DI container)
-- [ ] No hardcoded values (use constants in Abstract classes)
-- [ ] WordPress functions accessed through Facades only
-- [ ] Hook names defined as constants in HooksAbstract
-- [ ] Follows established modular architecture
-- [ ] Tests added for new functionality
-- [ ] No direct instantiation of dependencies
+- [ ] PHP 7.4 type hints | file + method PHPDoc | edge-case errors | DRY | SRP | DI | Abstract constants | Facades only | HooksAbstract hooks | modular layout | tests | no `new` dependencies
 
 ### Architecture Checklist
-- [ ] New classes added to appropriate layer (Core/Framework/Modules)
-- [ ] Module implements ModuleInterface
-- [ ] Controllers implement InitializableInterface
-- [ ] Models follow repository pattern
-- [ ] Database schemas implement DBTableSchemaInterface
-- [ ] Migrations follow version naming (V{version}{description}.php)
-- [ ] Constants grouped in Abstract classes
-- [ ] Services registered in `services.php`
-- [ ] Dependencies injected through constructor
+- [ ] Correct layer (Core/Framework/Modules) | `ModuleInterface` | `InitializableInterface` controllers | repository models | `DBTableSchemaInterface` | `V{version}{description}` migrations | Abstract constants | `services.php` | constructor injection
 
 ## Output Format
-
-The agent should:
-1. Understand the requirements
-2. Read relevant existing code
-3. Implement changes following patterns
-4. Test implementation
-5. Report what was changed and why
-6. Provide testing steps
+Understand → read code → implement → test → report changes + testing steps.
 
 ## Examples
 
 ### Example 1: Add a New Expiration Action
 **User:** `@coding-agent implement a new expiration action to send email notifications`
 
-**Agent should:**
-- Read existing expiration actions in `src/Modules/Expirator/ExpirationActions/`
-- Create new action class implementing `ExpirationActionInterface`
-- Add action constant to `ExpirationActionsAbstract`
-- Register action in `ExpirationActionsModel`
-- Add proper PHPDoc with @since tag
-- Test the action with actual posts
-- Add translations for action label
-- Document the changes
-
-### Example 2: Fix a Bug
-**User:** `@coding-agent fix the issue where scheduled actions don't trigger on multisite`
-
-**Agent should:**
-- Investigate the issue in the Action Scheduler integration
-- Read `CronToWooActionSchedulerAdapter` and related code
-- Identify the multisite-specific problem
-- Fix the bug (checking for proper blog switching)
-- Test on multisite setup
-- Ensure no regressions on single site
-- Add integration tests
-- Document the fix
-
-### Example 3: Add a REST Endpoint
-**User:** `@coding-agent add a REST endpoint to export scheduled actions as CSV`
-
-**Agent should:**
-- Read existing REST controllers in `src/Modules/Expirator/Controllers/`
-- Create or extend REST controller
-- Add endpoint `/publishpress-future/v1/actions/export`
-- Implement CSV generation logic
-- Add capability checks (manage_options or custom capability)
-- Add nonce verification
-- Validate query parameters
-- Test the endpoint
-- Add integration tests
-- Document the changes
-
-### Example 4: Refactor Code
-**User:** `@coding-agent refactor the ExpirablePostModel to use facades instead of global functions`
-
-**Agent should:**
-- Analyze current implementation in `src/Modules/Expirator/Models/ExpirablePostModel.php`
-- Identify direct WordPress function calls
-- Replace with appropriate Facades (DatabaseFacade, HooksFacade, etc.)
-- Update constructor to inject facades
-- Update service registration in `services.php`
-- Maintain same functionality
-- Run existing tests to ensure no regressions
-- Add unit tests with mocked facades
-- Document the refactoring
-
-### Example 5: Add a New Module
-**User:** `@coding-agent create a new module for post analytics tracking`
-
-**Agent should:**
-- Create directory structure: `src/Modules/Analytics/`
-- Create `Module.php` implementing `ModuleInterface`
-- Create `HooksAbstract.php` for hook constants
-- Create necessary subdirectories (Controllers, Models, etc.)
-- Register module in `services.php`
-- Add module initialization code
-- Create basic controller for admin page
-- Add tests in `tests/Unit/Modules/Analytics/`
-- Document the new module
-- Update CHANGELOG.md
+**Agent should:** read `ExpirationActions/` → new `ExpirationActionInterface` class → `ExpirationActionsAbstract` constant → `ExpirationActionsModel` register → PHPDoc `@since` → test on posts → i18n label → document.
 
 ## Notes
-
-- **Always add proper PHPDoc** to every new class, method, and function (file header + method docblocks with @since)
-- Always read existing code first to understand patterns and conventions
-- Follow established modular architecture (Core → Framework → Modules → Views)
-- Use dependency injection - never instantiate dependencies directly
-- Never use global WordPress functions in business logic - always use Facades
-- Define all hook names as constants in `HooksAbstract` classes
-- Define all capabilities in `CapabilitiesAbstract` classes
-- Define all post meta keys in `PostMetaAbstract` classes
-- Use Action Scheduler for background tasks, not WP-Cron
-- Test changes thoroughly with Codeception tests (Unit + Integration + Acceptance)
-- Run code quality checks before finishing (`composer check`)
-- Build JavaScript if JSX files changed (`composer build:js`)
-- Build language files if translations added (`composer build:lang`)
-- Update CHANGELOG.md following the established pattern
-- Text domain is always `post-expirator`
-- Namespace is always `PublishPress\Future`
+PHPDoc always | read code first | Core→Framework→Modules→Views | DI only | **Never use** WP globals in business logic — Facades | Abstract constants for hooks/caps/meta | Action Scheduler not WP-Cron | Codeception tests | `composer check` + build js/lang | CHANGELOG | `post-expirator` / `PublishPress\Future`.
 
 ## Related Files
-
-- **Project rules**: `.cursor/rules/`
-  - `commit-messages.mdc` - Commit message guidelines
-  - `tests.mdc` - Testing guidelines
-  - `use-coder-agent.mdc` - When to use the coder agent
-- **Coding standards**: `.phpcs.xml`, `.phpcs-php-compatibility.xml`
-- **Tests**: `tests/` directory
-  - `tests/Unit/` - Unit tests
-  - `tests/Integration/` - Integration tests
-  - `tests/Acceptance/` - BDD acceptance tests
-  - `tests/EndToEnd/` - End-to-end tests
-- **Main plugin file**: `post-expirator.php`
-- **Service definitions**: `services.php`
-- **Codeception config**: `codeception.yml`
-- **Docker environment**: `dev-workspace/docker/compose.yaml`
-- **Build scripts**: `dev-workspace/scripts/`
-- **Assets**: `assets/` (JSX/JS and CSS files)
-- **Views**: `src/Views/` (global templates)
-- **Language files**: `languages/`
+`.cursor/rules/` | `.phpcs.xml` | `tests/` | `post-expirator.php` | `services.php` | `codeception.yml` | `dev-workspace/docker/compose.yaml` | `assets/` | `src/Views/` | `languages/`
 
 ## Key Facades to Use
-
-Instead of calling WordPress functions directly, use these Facades:
-
-- **HooksFacade**: `add_action()`, `add_filter()`, `do_action()`, `apply_filters()`
-- **DatabaseFacade**: `$wpdb` operations, queries
-- **OptionsFacade**: `get_option()`, `update_option()`, `delete_option()`
-- **CronFacade**: WP-Cron scheduling (note: prefer Action Scheduler)
-- **EmailFacade**: `wp_mail()`, email operations
-- **DateTimeFacade**: Date/time functions
-- **UsersFacade**: User-related functions, capability checks
-- **SiteFacade**: Site-related functions
-- **NoticeFacade**: Admin notices
-- **RequestFacade**: Request parameter handling
-- **SanitizationFacade**: Input sanitization
-- **ErrorFacade**: Error handling
-
-All facades are located in `src/Framework/WordPress/Facade/`
+`src/Framework/WordPress/Facade/`: HooksFacade, DatabaseFacade, OptionsFacade, CronFacade (prefer Action Scheduler), EmailFacade, DateTimeFacade, UsersFacade, SiteFacade, NoticeFacade, RequestFacade, SanitizationFacade, ErrorFacade.

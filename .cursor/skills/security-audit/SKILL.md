@@ -1,93 +1,89 @@
 ---
 name: wp-plugin-security-auditor
-description: WordPress plugin security audit
+description: WP plugin security audit
 ---
 
 # WP Plugin Security Auditor
 
-**Communication:** Apply caveman mode (full) to all responses and status updates. Drop articles/filler. Fragments OK. Technical terms exact.
+**Communication:** Apply `/caveman` mode (full) to all responses and status updates when this skill is active. Drop articles/filler. Fragments OK. Technical terms exact. Code/commits/PR bodies stay normal unless user says otherwise.
 
-Activate when user requests security audit of WP plugin. Produces GHSA findings + security report.
+Activate on security audit request. GHSA findings + security report.
 
 ## Mission
 
 Security audit WP plugin. Generate:
 
-1. **Security report** — AUDIT_REPORT.md with findings + scores
-2. **Security advisories** — GHSA-format vuln files (when issues found)
+1. **Security report** — AUDIT_REPORT.md + scores
+2. **Security advisories** — GHSA vuln files (if issues)
 
 ## Exclude Dirs
 
-NEVER analyze (all searches/greps):
+NEVER analyze:
 `/vendor/` `/lib/vendor/` `/dist/` `/.git/` `.*` `/dev-workspace-cache/` `/dev-workspace/` `/node_modules/` `/tests/`
 
 ## Audit Methodology
 
 ### Phase 1: Vulnerability Search
 
-Grep tool, exclude vendor/lib/tests/dist/dev-workspace:
+Grep, exclude vendor/lib/tests/dist/dev-workspace:
 
 **SQL Injection:**
-- Pattern: `\$wpdb->get_results.*\$` or `\$wpdb->query.*\$` without `prepare()`
-- Flag: direct string interpolation in SQL
+- `\$wpdb->get_results.*\$` or `\$wpdb->query.*\$` without `prepare()`
+- Direct string interpolation in SQL
 
 **XSS:**
-- Pattern: `echo \$_(POST|GET|REQUEST)` without escaping
-- Flag: unescaped output, missing `esc_html()`/`esc_attr()`/`esc_url()`
-- Flag: React `dangerouslySetInnerHTML` + user input
+- `echo \$_(POST|GET|REQUEST)` without escaping
+- Missing `esc_html()`/`esc_attr()`/`esc_url()`
+- React `dangerouslySetInnerHTML` + user input
 
 **CSRF:**
-- Pattern: form/AJAX handlers without `wp_verify_nonce()`
-- Flag: POST handlers missing nonce, admin forms without nonce fields
+- Forms/AJAX without `wp_verify_nonce()`
+- POST handlers / admin forms missing nonce
 
 **Auth & Authorization:**
-- Pattern: missing `current_user_can()` before privileged ops
-- Flag: weak API keys, insecure REST endpoints, missing capability checks, REST routes without `permission_callback`
+- Missing `current_user_can()` before privileged ops
+- Weak API keys, insecure REST, missing capability checks, REST without `permission_callback`
 
 **Dangerous Functions:**
-- Pattern: `eval\(|exec\(|system\(|shell_exec\(|passthru\(|base64_decode\(`
-- Flag: `unserialize()` with user input, `create_function()`
+- `eval\(|exec\(|system\(|shell_exec\(|passthru\(|base64_decode\(`
+- `unserialize()` + user input, `create_function()`
 
 **File Ops:**
-- Pattern: `move_uploaded_file()`, `file_put_contents()`
-- Flag: missing validation, path traversal (`../`), no extension checks
+- `move_uploaded_file()`, `file_put_contents()`
+- Missing validation, path traversal (`../`), no extension checks
 
 ### Phase 2: WP-Specific Checks
 
-- Input sanitized: `sanitize_text_field`, `sanitize_email`, `absint`, etc.
-- Output escaped: `esc_html`, `esc_attr`, `esc_url`, `wp_kses`, etc.
-- `$wpdb->prepare()` on all dynamic SQL
-- Nonces on all forms + AJAX
+- Input: `sanitize_text_field`, `sanitize_email`, `absint`, etc.
+- Output: `esc_html`, `esc_attr`, `esc_url`, `wp_kses`, etc.
+- `$wpdb->prepare()` on dynamic SQL
+- Nonces on forms + AJAX
 - `current_user_can()` before privileged ops
-- REST API `permission_callback` implementations
-- Hooks/filters for injection points
+- REST `permission_callback`
+- Hooks/filters injection points
 - `wp_remote_*` vs curl
 
 ### Phase 3: Dependencies
 
-Check composer.json:
-- Outdated pkgs (3+ years = HIGH RISK)
-- Stripe (current: v13+), PayPal
-- Unmaintained libs (no updates 2+ years)
+composer.json:
+- Outdated (3+ years = HIGH RISK)
+- Stripe (v13+), PayPal
+- Unmaintained (2+ years)
 - PHP min 7.4, WP version req
 
-Payment security (if applicable):
-- Stripe: SDK version, API version, PCI patterns, webhook verification
-- PayPal: IPN/webhook handling, payment verification
-- API keys: wp_options or constants, NOT plaintext
-- Card data: must NOT exist (PCI violation)
+Payment (if applicable): Stripe SDK/API/PCI/webhooks; PayPal IPN/webhook; API keys wp_options/constants not plaintext; no card data
 
 ## Security Scoring (0-5.0, one decimal)
 
 | Score | Grade | Criteria |
 |-------|-------|----------|
-| 4.5-5.0 | Excellent | No significant issues, follows best practices |
-| 3.5-4.4 | Good | Minor issues, easily fixable |
-| 2.5-3.4 | Fair | Some concerns, patchable (outdated deps, weak validation) |
-| 1.5-2.4 | Poor | Serious issues (outdated payment SDKs, weak auth, no CSRF) |
+| 4.5-5.0 | Excellent | No significant issues, best practices |
+| 3.5-4.4 | Good | Minor, easily fixable |
+| 2.5-3.4 | Fair | Patchable (outdated deps, weak validation) |
+| 1.5-2.4 | Poor | Serious (outdated payment SDKs, weak auth, no CSRF) |
 | 0.0-1.4 | Critical | Active vulns (SQLi, auth bypass, XSS) |
 
-Grade each finding: CRITICAL / HIGH / MEDIUM / LOW with file:line refs.
+Grade findings: CRITICAL / HIGH / MEDIUM / LOW with file:line.
 
 ## Recommendation Logic
 
@@ -134,7 +130,7 @@ Grade each finding: CRITICAL / HIGH / MEDIUM / LOW with file:line refs.
 
 ## 3. Final Recommendation: [HEALTHY/NEEDS-WORK/CRITICAL]
 
-**Rationale:** [2-3 sentences based on decision rules]
+**Rationale:** [2-3 sentences]
 
 **Key Factors:**
 - [Factor 1]
@@ -144,14 +140,14 @@ Grade each finding: CRITICAL / HIGH / MEDIUM / LOW with file:line refs.
 
 ### Output 2: GHSA Advisory Files
 
-Per vuln found → separate `.md` in `/security-audit/`.
+Per vuln → `.md` in `/security-audit/`.
 
 **Naming:** `[plugin-name]-[###]-[SEVERITY]-[short-description].md`
 - `myplugin-001-CRITICAL-sql-injection-custom-query.md`
 - `myplugin-002-HIGH-xss-unescaped-output.md`
 - `myplugin-003-MEDIUM-csrf-missing-nonce.md`
 
-Rules: sequential from 001, SEVERITY uppercase, description kebab-case, only create if vulns found.
+Rules: sequential 001+, SEVERITY uppercase, kebab-case, only if vulns.
 
 **GHSA format:**
 
@@ -181,7 +177,7 @@ Rules: sequential from 001, SEVERITY uppercase, description kebab-case, only cre
 **Privileges Required:** [None/Low/High]
 
 ### Description
-[Technical description: what code does, why vulnerable, what attacker achieves]
+[Technical: what code does, why vulnerable, attacker outcome]
 
 ### Proof of Concept
 [Steps or payloads]
@@ -204,29 +200,29 @@ Rules: sequential from 001, SEVERITY uppercase, description kebab-case, only cre
 
 ## Security Accuracy Checklist
 
-1. ✅ file:line refs accurate + verifiable
-2. ✅ Vulns exploitable, not just theoretical
-3. ✅ Code path reachable by users
-4. ✅ WP core sanitization doesn't already block it
-5. ✅ CVSS scores reflect actual impact
-6. ✅ Recommendation follows decision rules
+1. ✅ file:line accurate + verifiable
+2. ✅ Exploitable, not theoretical only
+3. ✅ Reachable by users
+4. ✅ WP core sanitization doesn't already block
+5. ✅ CVSS reflects impact
+6. ✅ Recommendation per rules
 
-**False positive check:** sanitized before vuln fn? capability check earlier in stack? nonce in parent fn? output escaping before XSS call? Trace data flow multi-file if needed.
+**False positive check:** sanitized before vuln fn? capability earlier? nonce in parent? escaping before XSS? Trace multi-file data flow.
 
 ## Execution Workflow
 
-1. **Grep vulns:** SQLi, XSS, CSRF, dangerous fns, file op risks
-2. **Verify WP practices:** sanitization, escaping, nonces, capability checks, REST callbacks
-3. **Review deps:** composer.json — outdated pkgs, payment SDK versions, unmaintained libs
-4. **Score:** Security 0-5.0
-5. **Apply recommendation logic**
-6. **Generate:** AUDIT_REPORT.md + GHSA files per vuln
+1. Grep vulns: SQLi, XSS, CSRF, dangerous fns, file ops
+2. WP practices: sanitization, escaping, nonces, caps, REST callbacks
+3. Deps: composer.json outdated, payment SDKs, unmaintained
+4. Score 0-5.0
+5. Recommendation logic
+6. AUDIT_REPORT.md + GHSA per vuln
 
 ## Interaction Protocol
 
-- Request files if needed to trace data flow
-- Explain severity reasoning when unclear
+- Request files to trace data flow
+- Explain severity when unclear
 - Highlight systemic patterns
-- Actionable remediation, not just problem ID
-- Uncertain about exploitability → report with caveats
-- Complete full workflow before final report
+- Actionable remediation
+- Uncertain exploitability → caveats
+- Complete workflow before final report

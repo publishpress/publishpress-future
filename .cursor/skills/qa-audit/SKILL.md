@@ -1,106 +1,96 @@
 ---
 name: wp-plugin-security-auditor
-description: WordPress plugin security and code quality audit
+description: WP plugin security + code quality audit
 ---
 
 # WP Plugin Security & Code Quality Auditor
 
-**Communication:** Apply caveman mode (full) to all responses and status updates. Drop articles/filler. Fragments OK. Technical terms exact.
+**Communication:** Apply `/caveman` mode (full) to all responses and status updates when this skill is active. Drop articles/filler. Fragments OK. Technical terms exact. Code/commits/PR bodies stay normal unless user says otherwise.
 
-Activate when user requests security audit or code quality review of WP plugin. Produces GHSA findings + spreadsheet-compatible metrics.
+Activate on security audit or code quality review request. Output GHSA findings + spreadsheet metrics.
 
 ## Mission
 
-Comprehensive audit: security, code quality, maintainability. Generate:
+Audit security, code quality, maintainability. Produce:
 1. **Spreadsheet metrics** — tab-separated for Plugin Health Spreadsheet
-2. **Security advisories** — GHSA-format vuln files (when issues found)
+2. **Security advisories** — GHSA vuln files (if issues found)
 
 ## Exclude Dirs
 
-NEVER analyze (all searches/greps/phpmetrics):
+NEVER analyze (grep/search/phpmetrics):
 `/vendor/` `/lib/vendor/` `/dist/` `/.git/` `.*` `/dev-workspace-cache/` `/dev-workspace/` `/node_modules/` `/tests/`
 
 ## Audit Methodology
 
-### Phase 1: Security Assessment (CRITICAL PRIORITY)
+### Phase 1: Security Assessment (CRITICAL)
 
-Delegate to security-audit skill. Read + follow `.cursor/skills/security-audit/SKILL.md`. Produce GHSA advisory files, obtain Security Score. Bring Security Score + critical findings back.
+Delegate to security-audit skill. Read `.cursor/skills/security-audit/SKILL.md`. GHSA files + Security Score. Return score + critical findings.
 
 ### Phase 2: Code Quality
 
 #### 2.1 Architecture & Design (0-5.0)
 
-Analyze:
-- God classes/files: `find . -name "*.php" -not -path "*/vendor/*" -not -path "*/tests/*" -exec wc -l {} \;` (files >700 lines — includes legacy files with functions only, no classes)
-- SOLID principles, separation of concerns, design patterns
-- Coupling: tight deps between classes/modules
-- Cohesion: SRP adherence
+- God classes/files: `find . -name "*.php" -not -path "*/vendor/*" -not -path "*/tests/*" -exec wc -l {} \;` (>700 lines — legacy function-only files too)
+- SOLID, separation of concerns, patterns
+- Coupling / cohesion / SRP
 
 | Score | Grade | Criteria |
 |-------|-------|----------|
 | 4.5-5.0 | Excellent | Clean arch, SOLID, well-organized |
 | 3.5-4.4 | Good | Solid structure, minor improvements |
-| 2.5-3.4 | Fair | Functional but needs refactor, some anti-patterns |
+| 2.5-3.4 | Fair | Functional, needs refactor, some anti-patterns |
 | 1.5-2.4 | Poor | Spaghetti, tight coupling, hard to modify |
 | 0.0-1.4 | Critical | Chaotic, no clear patterns |
 
 #### 2.2 Code Maintainability (0-5.0)
 
-Identify:
-- Global vars: Grep `global $`
+- Globals: Grep `global $`
 - Large fns: >100 lines
-- SQL queries: direct `$wpdb` calls count
+- SQL: direct `$wpdb` count
 - TODOs: `TODO|FIXME|HACK|XXX` (exclude vendor/tests)
-- Error handling: consistency + completeness
-- Code duplication: repeated logic
+- Error handling consistency
+- Duplication
 
 | Score | Grade | Criteria |
 |-------|-------|----------|
-| 4.5-5.0 | Excellent | Clean, self-documenting, easy to understand |
-| 3.5-4.4 | Good | Readable, consistent style, minor issues |
+| 4.5-5.0 | Excellent | Clean, self-documenting |
+| 3.5-4.4 | Good | Readable, consistent, minor issues |
 | 2.5-3.4 | Fair | Understandable with effort, inconsistent |
-| 1.5-2.4 | Poor | Hard to read, cryptic logic, poor naming |
+| 1.5-2.4 | Poor | Hard to read, cryptic logic |
 | 0.0-1.4 | Critical | Unmaintainable |
 
 #### 2.3 Documentation (0-5.0)
 
-Check:
-- PHPDoc on classes + methods
-- Inline comments for complex logic
-- README.md existence + quality
-- Code examples
+- PHPDoc classes/methods
+- Inline comments on complex logic
+- README quality + examples
 
 | Score | Grade | Criteria |
 |-------|-------|----------|
-| 4.5-5.0 | Excellent | Comprehensive, well-commented, examples |
-| 3.5-4.4 | Good | Good coverage, key areas documented |
-| 2.5-3.4 | Fair | Basic, some gaps |
-| 1.5-2.4 | Poor | Minimal, mostly undocumented |
+| 4.5-5.0 | Excellent | Comprehensive, examples |
+| 3.5-4.4 | Good | Good coverage |
+| 2.5-3.4 | Fair | Basic, gaps |
+| 1.5-2.4 | Poor | Minimal |
 | 0.0-1.4 | Critical | None |
 
 **Code Quality Score:** `(Architecture + Maintainability + Documentation) ÷ 3`
 
 ### Phase 3: Dependencies
 
-Check composer.json:
-- Outdated pkgs (3+ years = HIGH RISK)
+composer.json:
+- Outdated (3+ years = HIGH RISK)
 - Stripe (v13+), PayPal
-- Unmaintained libs (no updates 2+ years)
+- Unmaintained (2+ years no updates)
 - PHP min 7.4, WP version req
 
-Payment security (if applicable):
-- Stripe: SDK version, API version, PCI patterns, webhook verification
-- PayPal: IPN/webhook, payment verification
-- API keys: wp_options or constants, NOT plaintext
-- Card data: must NOT exist (PCI violation)
+Payment (if applicable): Stripe SDK/API/PCI/webhooks; PayPal IPN/webhook; API keys in wp_options/constants not plaintext; no card data (PCI)
 
 ### Phase 4: Performance & Architecture
 
-- N+1 query patterns (loops with DB queries)
+- N+1 queries
 - Caching: transients, object cache
-- WP coding standards compliance
-- PSR-12 compliance
-- Test suite: PHPUnit, Codeception, WP_UnitTestCase
+- WP coding standards, PSR-12
+- Tests: PHPUnit, Codeception, WP_UnitTestCase
 
 ### Phase 5: PHPMetrics
 
@@ -166,10 +156,10 @@ Extract: Violations, LOC, Classes, Avg Cyclomatic Complexity, Avg Bugs by Class.
 | Documentation | X.X/5.0 | [One-line] |
 
 **Major Issues:**
-- God classes/files: [Files >700 lines, classes or function-only files]
+- God classes/files: [>700 lines]
 - Global vars: [Count]
 - TODO/FIXME: [Count]
-- Large fns: [Notable >100 lines]
+- Large fns: [>100 lines]
 
 ## 3. Dependencies
 
@@ -180,7 +170,7 @@ Extract: Violations, LOC, Classes, Avg Cyclomatic Complexity, Avg Bugs by Class.
 
 ## 4. Final Recommendation: [HEALTHY/NEEDS-WORK/CRITICAL]
 
-**Rationale:** [2-3 sentences based on decision rules]
+**Rationale:** [2-3 sentences]
 
 **Key Factors:**
 - [Factor 1]
@@ -190,38 +180,38 @@ Extract: Violations, LOC, Classes, Avg Cyclomatic Complexity, Avg Bugs by Class.
 
 ### Output 2: GHSA Advisory Files
 
-Per vuln → separate `.md` in `/security-audit/` (created by security-audit skill).
+Per vuln → `.md` in `/security-audit/` (from security-audit skill).
 
 **Naming:** `[plugin-name]-[###]-[SEVERITY]-[short-description].md`
 
-Rules: sequential from 001, SEVERITY uppercase, description kebab-case, only if vulns found.
+Rules: sequential 001+, SEVERITY uppercase, kebab description, only if vulns found.
 
 ## QA Checklist
 
-1. ✅ Scores: one decimal (3.7 not 3 or 3.70)
+1. ✅ Scores one decimal (3.7 not 3.70)
 2. ✅ Code Quality = (Arch + Maint + Docs) ÷ 3
-3. ✅ Spreadsheet: actual TAB chars
+3. ✅ Spreadsheet: real TAB chars
 4. ✅ Security Score from security-audit skill
-5. ✅ Recommendation follows decision rules
+5. ✅ Recommendation per rules
 
-Reporting: 1-2 sentences in Notes column, code snippets with file:line, brief in main report / detailed in GHSA files.
+Reporting: 1-2 sentences Notes column; snippets with file:line; brief report / detail in GHSA.
 
 ## Execution Workflow
 
-1. **Security assessment** — delegate to `.cursor/skills/security-audit/SKILL.md`, get Security Score + GHSA files
-2. **Code quality signals** (Grep): TODO/FIXME, global var usage
-3. **Architecture analysis** (Read/Glob): large files >700 lines (god classes + function-only legacy files), composer.json, main plugin structure
-4. **PHPMetrics** (Shell): extract violations, LOC, classes, complexity, bugs
-5. **Calculate scores:** Security (from skill), Architecture 0-5.0, Maintainability 0-5.0, Documentation 0-5.0, Code Quality avg
-6. **Apply recommendation logic**
-7. **Generate:** AUDIT_REPORT.md (GHSA files already created by security-audit skill)
+1. Security — `.cursor/skills/security-audit/SKILL.md`, score + GHSA
+2. Code quality signals — Grep TODO/FIXME, globals
+3. Architecture — Read/Glob: files >700 lines, composer.json, plugin structure
+4. PHPMetrics — violations, LOC, classes, complexity, bugs
+5. Scores — Security (skill), Arch/Maint/Docs 0-5.0, Code Quality avg
+6. Recommendation logic
+7. Generate AUDIT_REPORT.md (GHSA from security-audit)
 
 ## Interaction Protocol
 
-- Request files if needed to trace data flow
-- Explain severity reasoning when unclear
+- Request files to trace data flow
+- Explain severity when unclear
 - Highlight systemic patterns
-- Actionable remediation, not just problem ID
-- Uncertain about exploitability → report with caveats
-- PHPMetrics fails → estimate from manual analysis
-- Complete full workflow before final report
+- Actionable remediation
+- Uncertain exploitability → report with caveats
+- PHPMetrics fails → manual estimate
+- Complete workflow before final report
