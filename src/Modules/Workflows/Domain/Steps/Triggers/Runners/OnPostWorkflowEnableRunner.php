@@ -138,6 +138,8 @@ class OnPostWorkflowEnableRunner implements TriggerRunnerInterface
                 $this->stepSlug,
                 $postId
             );
+
+            return false;
         }
 
         $this->stepProcessor->executeSafelyWithErrorHandling(
