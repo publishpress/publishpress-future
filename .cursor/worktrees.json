@@ -1,6 +1,6 @@
 {
   "setup-worktree": [
-    "vendor/publishpress/dev-workspace/scripts/run.sh yarn install",
-    "vendor/publishpress/dev-workspace/scripts/run.sh composer install"
+    "composer dev:shell yarn install",
+    "composer dev:shell composer install"
   ]
 }
