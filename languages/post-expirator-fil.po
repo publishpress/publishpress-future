@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the PublishPress Future Free plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: PublishPress Future Free 4.10.2\n"
+"Project-Id-Version: PublishPress Future Free 4.10.2-rc.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/project\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: none\n"
@@ -10,13 +10,13 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-05-13T18:43:00+00:00\n"
-"PO-Revision-Date: 2026-05-14 18:07+0000\n"
+"PO-Revision-Date: 2026-05-18 19:36+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator|| n % 10 == 6 || n % 10 == 9);|| n % 10 == 6 || n "
 "% 10 == 9);:\n"
 "|| n % 10 == 6 || n % 10 == 9);\n"
-"Language: fil\n"
 "|| n % 10 == 6 || n % 10 == 9);: \n"
+"Language: fil\n"
 "Plural-Forms: nplurals=2; plural=n != 1 && n != 2 && n != 3 && (n % 10 == 4 || n % 10 == 6 || n % 10 == 9);\n"
 
 #: post-expirator.php:4
@@ -2361,9 +2361,13 @@ msgid "This step executes a custom action."
 msgstr "Isinasagawa ng hakbang na ito ang isang pasadyang aksyon."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:65
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:65
-msgid "Specify the hook that will trigger this action."
-msgstr "Tukuyin ang hook na mag-u-trigger sa aksyon na ito."
+msgid ""
+"Enter the action hook to trigger. Only hooks registered through the "
+"'publishpress_future_allowed_action_hooks' filter are allowed."
+msgstr ""
+"Ilagay ang action hook na i-trigger. Tanging mga hook na nakarehistro sa "
+"pamamagitan ng 'publishpress_future_allowed_action_hooks' filter ang "
+"pinahihintulutan."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:73
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:73
@@ -3171,6 +3175,10 @@ msgstr ""
 "hook. Gamitin ito upang makipag-ugnayan sa iba pang plugins o custom na "
 "code."
 
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:65
+msgid "Specify the hook that will trigger this action."
+msgstr "Tukuyin ang hook na mag-u-trigger sa aksyon na ito."
+
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:74
 msgid "The hook that will trigger this action."
 msgstr "Ang hook na mag-trigger sa aksyon na ito."
@@ -3751,6 +3759,11 @@ msgid "Migrate workflow scheduled steps schema after v4.0.0"
 msgstr ""
 "I-migrate ang iskema ng mga nakatakdang hakbang ng workflow pagkatapos ng "
 "v4.0.0"
+
+#: src/Modules/Workflows/Models/PostModel.php:397
+#: src/Modules/Workflows/Models/PostModel.php:401
+msgid "Unknown Step"
+msgstr "Hindi Kilalang Hakbang"
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:99
 #, fuzzy

@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the PublishPress Future Free plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: PublishPress Future Free 4.10.2\n"
+"Project-Id-Version: PublishPress Future Free 4.10.2-rc.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/project\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: none\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-05-13T18:43:00+00:00\n"
-"PO-Revision-Date: 2026-05-14 18:07+0000\n"
+"PO-Revision-Date: 2026-05-18 19:36+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
@@ -2363,9 +2363,13 @@ msgid "This step executes a custom action."
 msgstr "Dieser Schritt führt eine benutzerdefinierte Aktion aus."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:65
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:65
-msgid "Specify the hook that will trigger this action."
-msgstr "Geben Sie den Hook an, der diese Aktion auslösen wird."
+msgid ""
+"Enter the action hook to trigger. Only hooks registered through the "
+"'publishpress_future_allowed_action_hooks' filter are allowed."
+msgstr ""
+"Geben Sie den Aktions-Hook ein, der ausgelöst werden soll. Nur Hooks, die "
+"über den 'publishpress_future_allowed_action_hooks' Filter registriert "
+"sind, sind erlaubt."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:73
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:73
@@ -3167,6 +3171,10 @@ msgstr ""
 "aktiviert. Verwenden Sie ihn, um sich mit anderen Plugins oder "
 "benutzerdefiniertem Code zu integrieren."
 
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:65
+msgid "Specify the hook that will trigger this action."
+msgstr "Geben Sie den Hook an, der diese Aktion auslösen wird."
+
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:74
 msgid "The hook that will trigger this action."
 msgstr "Der Hook, der diese Aktion auslöst."
@@ -3746,6 +3754,11 @@ msgstr ""
 #: src/Modules/Workflows/Migrations/V40000WorkflowScheduledStepsSchema.php:58
 msgid "Migrate workflow scheduled steps schema after v4.0.0"
 msgstr "Migriere das Schema der geplanten Schritte des Workflows nach v4.0.0"
+
+#: src/Modules/Workflows/Models/PostModel.php:397
+#: src/Modules/Workflows/Models/PostModel.php:401
+msgid "Unknown Step"
+msgstr "Unbekannter Schritt"
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:99
 #, fuzzy
@@ -6377,7 +6390,6 @@ msgstr ""
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14156
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:20
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11762
-#, fuzzy
 msgid ""
 "Hold down the <kbd>shift</kbd> key and double-click the workflow pane to "
 "decrease the zoom level."

@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the PublishPress Future Free plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: PublishPress Future Free 4.10.2\n"
+"Project-Id-Version: PublishPress Future Free 4.10.2-rc.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/project\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: none\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-05-13T18:43:00+00:00\n"
-"PO-Revision-Date: 2026-05-14 18:07+0000\n"
+"PO-Revision-Date: 2026-05-18 19:36+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "Language: ko_KR\n"
@@ -2232,9 +2232,12 @@ msgid "This step executes a custom action."
 msgstr "이 단계는 사용자 지정 작업을 실행합니다."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:65
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:65
-msgid "Specify the hook that will trigger this action."
-msgstr "이 작업을 트리거할 후크를 지정하십시오."
+msgid ""
+"Enter the action hook to trigger. Only hooks registered through the "
+"'publishpress_future_allowed_action_hooks' filter are allowed."
+msgstr ""
+"트리거할 액션 훅을 입력하세요. 'publishpress_future_allowed_action_hooks' 필터를 통해 등록된 훅만 "
+"허용됩니다."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:73
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:73
@@ -3001,6 +3004,10 @@ msgid ""
 "integrate with other plugins or custom code."
 msgstr "이 트리거는 사용자 지정 WordPress 작업 훅에 따라 활성화됩니다. 다른 플러그인이나 사용자 지정 코드와 통합하는 데 사용하십시오."
 
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:65
+msgid "Specify the hook that will trigger this action."
+msgstr "이 작업을 트리거할 후크를 지정하십시오."
+
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:74
 msgid "The hook that will trigger this action."
 msgstr "이 작업을 트리거하는 훅입니다."
@@ -3547,6 +3554,11 @@ msgstr "v4.5.0 이후에 예약된 단계 스키마에서 post_id와 repetition_
 #: src/Modules/Workflows/Migrations/V40000WorkflowScheduledStepsSchema.php:58
 msgid "Migrate workflow scheduled steps schema after v4.0.0"
 msgstr "v4.0.0 이후에 워크플로우 예약된 단계 스키마를 마이그레이션합니다."
+
+#: src/Modules/Workflows/Models/PostModel.php:397
+#: src/Modules/Workflows/Models/PostModel.php:401
+msgid "Unknown Step"
+msgstr "알 수 없는 단계"
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:99
 msgid "PublishPress Future"

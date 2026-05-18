@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the PublishPress Future Free plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: PublishPress Future Free 4.10.2\n"
+"Project-Id-Version: PublishPress Future Free 4.10.2-rc.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/project\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-05-13T18:43:00+00:00\n"
-"PO-Revision-Date: 2026-05-14 18:07+0000\n"
+"PO-Revision-Date: 2026-05-18 19:37+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "Language: vi\n"
@@ -2284,9 +2284,12 @@ msgid "This step executes a custom action."
 msgstr "Bước này thực hiện một hành động tùy chỉnh."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:65
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:65
-msgid "Specify the hook that will trigger this action."
-msgstr "Chỉ định hook sẽ kích hoạt hành động này."
+msgid ""
+"Enter the action hook to trigger. Only hooks registered through the "
+"'publishpress_future_allowed_action_hooks' filter are allowed."
+msgstr ""
+"Nhập hook hành động để kích hoạt. Chỉ những hook được đăng ký thông qua bộ "
+"lọc 'publishpress_future_allowed_action_hooks' mới được phép."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:73
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:73, fuzzy
@@ -3073,6 +3076,10 @@ msgstr ""
 "Kích hoạt này xảy ra khi một hook hành động WordPress tùy chỉnh được gọi. "
 "Sử dụng nó để tích hợp với các plugin khác hoặc mã tùy chỉnh."
 
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:65
+msgid "Specify the hook that will trigger this action."
+msgstr "Chỉ định hook sẽ kích hoạt hành động này."
+
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:74
 msgid "The hook that will trigger this action."
 msgstr "Hook sẽ kích hoạt hành động này."
@@ -3394,7 +3401,6 @@ msgid "Ask for confirmation"
 msgstr "Yêu cầu xác nhận"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:113
-#, fuzzy
 msgid ""
 "If enabled, the user will be asked to confirm the action before it is "
 "executed."
@@ -3637,6 +3643,11 @@ msgstr ""
 #: src/Modules/Workflows/Migrations/V40000WorkflowScheduledStepsSchema.php:58
 msgid "Migrate workflow scheduled steps schema after v4.0.0"
 msgstr "Di chuyển sơ đồ các bước theo lịch trình của workflow sau v4.0.0"
+
+#: src/Modules/Workflows/Models/PostModel.php:397
+#: src/Modules/Workflows/Models/PostModel.php:401
+msgid "Unknown Step"
+msgstr "Bước không xác định"
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:99
 msgid "PublishPress Future"

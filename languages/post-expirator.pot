@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-05-13T18:43:00+00:00\n"
+"POT-Creation-Date: 2026-05-18T19:22:57+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
@@ -2143,8 +2143,7 @@ msgid "This step executes a custom action."
 msgstr ""
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:65
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:65
-msgid "Specify the hook that will trigger this action."
+msgid "Enter the action hook to trigger. Only hooks registered through the 'publishpress_future_allowed_action_hooks' filter are allowed."
 msgstr ""
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:73
@@ -2889,6 +2888,10 @@ msgstr ""
 msgid "This trigger activates upon a custom WordPress action hook. Use it to integrate with other plugins or custom code."
 msgstr ""
 
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:65
+msgid "Specify the hook that will trigger this action."
+msgstr ""
+
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:74
 msgid "The hook that will trigger this action."
 msgstr ""
@@ -3414,6 +3417,11 @@ msgstr ""
 
 #: src/Modules/Workflows/Migrations/V40000WorkflowScheduledStepsSchema.php:58
 msgid "Migrate workflow scheduled steps schema after v4.0.0"
+msgstr ""
+
+#: src/Modules/Workflows/Models/PostModel.php:397
+#: src/Modules/Workflows/Models/PostModel.php:401
+msgid "Unknown Step"
 msgstr ""
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:99

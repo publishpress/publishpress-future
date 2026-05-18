@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the PublishPress Future Free plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: PublishPress Future Free 4.10.2\n"
+"Project-Id-Version: PublishPress Future Free 4.10.2-rc.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/project\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -10,12 +10,12 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-05-13T18:43:00+00:00\n"
-"PO-Revision-Date: 2026-05-14 18:07+0000\n"
+"PO-Revision-Date: 2026-05-18 19:37+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "% 10 == 0) ? 2 : 3)));\n"
-"Language: he_IL\n"
 "% 10 == 0) ? 2: 3)));\n"
+"Language: he_IL\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 ? 0 : (n == 2 ? 1 : ((n > 10 && n % 10 == 0) ? 2 : 3)));\n"
 
 #: post-expirator.php:4, fuzzy
@@ -2272,9 +2272,12 @@ msgid "This step executes a custom action."
 msgstr "שלב זה מבצע פעולה מותאמת."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:65
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:65
-msgid "Specify the hook that will trigger this action."
-msgstr "ציין את ה-hook שיגרום לפעולה זו."
+msgid ""
+"Enter the action hook to trigger. Only hooks registered through the "
+"'publishpress_future_allowed_action_hooks' filter are allowed."
+msgstr ""
+"הזן את חיבור הפעולה שברצונך להפעיל. רק חיבורים שנרשמו באמצעות פילטר "
+"'publishpress_future_allowed_action_hooks' מורשים."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:73
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:73, fuzzy
@@ -3050,6 +3053,10 @@ msgstr ""
 "הטריגר הזה מופעל בעת פעולה מותאמת אישית של WordPress. השתמש בו כדי לשלב עם "
 "תוספים אחרים או קוד מותאם אישית."
 
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:65
+msgid "Specify the hook that will trigger this action."
+msgstr "ציין את ה-hook שיגרום לפעולה זו."
+
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:74
 msgid "The hook that will trigger this action."
 msgstr "החיבור שיגרום לפעולה זו."
@@ -3365,7 +3372,6 @@ msgid "Ask for confirmation"
 msgstr "בקש אישור"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:113
-#, fuzzy
 msgid ""
 "If enabled, the user will be asked to confirm the action before it is "
 "executed."
@@ -3603,6 +3609,11 @@ msgstr "לעבור את post_id ואת repetition_number על סכמת צעדי�
 #: src/Modules/Workflows/Migrations/V40000WorkflowScheduledStepsSchema.php:58
 msgid "Migrate workflow scheduled steps schema after v4.0.0"
 msgstr "לעבור את סכמת צעדים מתוזמנים של זרימת עבודה לאחר v4.0.0"
+
+#: src/Modules/Workflows/Models/PostModel.php:397
+#: src/Modules/Workflows/Models/PostModel.php:401
+msgid "Unknown Step"
+msgstr "שלב לא ידוע"
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:99, fuzzy
 msgid "PublishPress Future"

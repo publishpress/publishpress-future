@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the PublishPress Future Free plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: PublishPress Future Free 4.10.2\n"
+"Project-Id-Version: PublishPress Future Free 4.10.2-rc.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/project\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-05-13T18:43:00+00:00\n"
-"PO-Revision-Date: 2026-05-14 18:07+0000\n"
+"PO-Revision-Date: 2026-05-18 19:37+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -2346,9 +2346,13 @@ msgid "This step executes a custom action."
 msgstr "Αυτή η βήμα εκτελεί μια προσαρμοσμένη ενέργεια."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:65
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:65
-msgid "Specify the hook that will trigger this action."
-msgstr "Καθορίστε το hook που θα ενεργοποιήσει αυτή την ενέργεια."
+msgid ""
+"Enter the action hook to trigger. Only hooks registered through the "
+"'publishpress_future_allowed_action_hooks' filter are allowed."
+msgstr ""
+"Εισάγετε το action hook για να ενεργοποιηθεί. Μόνο τα hooks που είναι "
+"καταχωρημένα μέσω του φίλτρου 'publishpress_future_allowed_action_hooks' "
+"επιτρέπονται."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:73
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:73, fuzzy
@@ -3151,6 +3155,10 @@ msgstr ""
 "ενέργειας WordPress. Χρησιμοποιήστε το για να ενσωματώσετε άλλες προσθήκες "
 "ή προσαρμοσμένο κώδικα."
 
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:65
+msgid "Specify the hook that will trigger this action."
+msgstr "Καθορίστε το hook που θα ενεργοποιήσει αυτή την ενέργεια."
+
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:74
 msgid "The hook that will trigger this action."
 msgstr "Το hook που θα ενεργοποιήσει αυτή την ενέργεια."
@@ -3484,7 +3492,6 @@ msgid "Ask for confirmation"
 msgstr "Ζητήστε επιβεβαίωση"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:113
-#, fuzzy
 msgid ""
 "If enabled, the user will be asked to confirm the action before it is "
 "executed."
@@ -3736,6 +3743,11 @@ msgid "Migrate workflow scheduled steps schema after v4.0.0"
 msgstr ""
 "Μεταφορά του σχήματος προγραμματισμένων βημάτων ροής εργασίας μετά την "
 "v4.0.0"
+
+#: src/Modules/Workflows/Models/PostModel.php:397
+#: src/Modules/Workflows/Models/PostModel.php:401
+msgid "Unknown Step"
+msgstr "Άγνωστο Βήμα"
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:99, fuzzy
 msgid "PublishPress Future"

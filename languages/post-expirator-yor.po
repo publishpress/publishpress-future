@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the PublishPress Future Free plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: PublishPress Future Free 4.10.2\n"
+"Project-Id-Version: PublishPress Future Free 4.10.2-rc.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/project\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Yoruba "
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-05-13T18:43:00+00:00\n"
-"PO-Revision-Date: 2026-05-14 18:07+0000\n"
+"PO-Revision-Date: 2026-05-18 19:36+0000\n"
 "X-Generator: Weblate 5.17.1\n"
 "X-Domain: post-expirator\n"
 "Language: yor\n"
@@ -2285,9 +2285,12 @@ msgid "This step executes a custom action."
 msgstr "Igbese yii n ṣe iṣe aṣa."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:65
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:65
-msgid "Specify the hook that will trigger this action."
-msgstr "Ṣe alaye ọpa ti yoo mu iṣe yii ṣiṣẹ."
+msgid ""
+"Enter the action hook to trigger. Only hooks registered through the "
+"'publishpress_future_allowed_action_hooks' filter are allowed."
+msgstr ""
+"Tẹ iṣe aiyipada ti o fẹ lati fa. Awọn aiyipada nikan ti a forukọsilẹ nipasẹ "
+"àlẹmọ 'publishpress_future_allowed_action_hooks' ni a gba laaye."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:73
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:73
@@ -3075,6 +3078,10 @@ msgstr ""
 " Ifa yi maa n ṣiṣẹ́ ni akoko ti a n lo àṣẹ WordPress aṣa. Lo o lati darapọ "
 "mọ awọn amugbooro miiran tabi koodu aṣa. "
 
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:65
+msgid "Specify the hook that will trigger this action."
+msgstr "Ṣe alaye ọpa ti yoo mu iṣe yii ṣiṣẹ."
+
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:74
 msgid "The hook that will trigger this action."
 msgstr " Àkóónú ti yóò fa ìṣe yi. "
@@ -3635,6 +3642,11 @@ msgstr ""
 #: src/Modules/Workflows/Migrations/V40000WorkflowScheduledStepsSchema.php:58
 msgid "Migrate workflow scheduled steps schema after v4.0.0"
 msgstr "Gbe awọn ilana igbesẹ iṣẹ-ṣiṣe ti a ṣeto lẹhin v4.0.0"
+
+#: src/Modules/Workflows/Models/PostModel.php:397
+#: src/Modules/Workflows/Models/PostModel.php:401
+msgid "Unknown Step"
+msgstr "Igbese Aiyipada"
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:99, fuzzy
 msgid "PublishPress Future"
