@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fixed: Post metadata is now available in its updated state for Post Update, Save, and Publish triggers (Issue #1626).
 - Changed: Updated existing translations.
 - Security: Add permission checks to restrict access to workflow settings.
+- Security: Escape workflow, trigger, step, and post data in scheduled action admin output to prevent stored XSS in Action Scheduler listings.
 
 [4.10.1] - 20 April, 2026
 
