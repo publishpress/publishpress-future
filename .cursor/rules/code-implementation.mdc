@@ -1,0 +1,49 @@
+---
+description: Use coder agent for code modifications
+alwaysApply: true
+---
+
+# Code Implementation
+
+**IMPORTANT**: Create/edit/refactor code → MUST use coder agent. Task tool `subagent_type: "coder"`.
+
+## When
+
+Coder agent for:
+- New features
+- Bug fixes
+- Refactor
+- Multi-file changes
+- Functions, classes, components
+- Any write/edit code
+
+## How
+
+```javascript
+// ❌ WRONG: Making code changes directly
+StrReplace(...)
+
+// ✅ CORRECT: Spawn coder agent for implementation
+Task({
+  subagent_type: "coder",
+  prompt: "Clear description of what needs to be implemented",
+  description: "3-5 word summary"
+})
+```
+
+## Exceptions
+
+Direct edit OK only:
+- Read files (understand code)
+- Docs (README, etc.)
+- Config files
+- Minor single-line fix (typo, simple correction)
+
+## Benefits
+
+Coder agent:
+- Project standards auto
+- Best practices consistent
+- Multi-file systematic
+- Better error handling + validation
+- Thorougher impl

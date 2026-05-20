@@ -1,0 +1,18 @@
+---
+description: PHP 7.2 min + clean code
+globs: *.php
+alwaysApply: false
+---
+
+# PHP
+
+**Min PHP 7.2.** No 7.3+ syntax/API without version check + 7.2 fallback.
+
+Avoid without fallback: typed properties, arrow functions, `??=`, union types, `match`, named arguments, attributes, constructor property promotion, `str_contains()` / `str_starts_with()` / `str_ends_with()` (use `strpos` on 7.2).
+
+## Practices (Clean Code, design patterns)
+
+- **Clean Code**: small methods, clear names, early returns, minimal duplication
+- **Design patterns**: when clarify structure (repository, strategy, factory) — no over-abstraction
+- Business logic separate from WP hooks/templates where practical — no strict layers required
+- No god files: split classes/files by responsibility; one file ≠ unrelated features
