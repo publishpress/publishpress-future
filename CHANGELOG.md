@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fixed: Post metadata is now available in its updated state for Post Update, Save, and Publish triggers (Issue #1626).
 - Changed: Updated existing translations.
 - Security: Add permission checks to restrict access to workflow settings.
+- Security: Require nonce verification when saving manual workflow selections via Quick Edit.
 
 [4.10.1] - 20 April, 2026
 

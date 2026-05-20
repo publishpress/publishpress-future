@@ -54,6 +54,7 @@ window.inlineEditPost.edit = function (button, id) {
     const apiUrl = window.futureWorkflowManualSelection.apiUrl;
     const nonce = window.futureWorkflowManualSelection.nonce;
     const workflowNonce = window.futureWorkflowManualSelection.workflowNonce;
+    const actionNonce = window.futureWorkflowManualSelection.actionNonce;
 
     const component = (
         <Fieldset
@@ -62,6 +63,7 @@ window.inlineEditPost.edit = function (button, id) {
             apiUrl={apiUrl}
             nonce={nonce}
             workflowNonce={workflowNonce}
+            actionNonce={actionNonce}
             wrapper={({workflowsWithManualTrigger, children}) => {
                 if (workflowsWithManualTrigger.length === 0) {
                     return children;

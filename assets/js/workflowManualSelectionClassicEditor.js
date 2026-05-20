@@ -83,6 +83,7 @@ function Fieldset(_ref) {
     apiUrl = _ref.apiUrl,
     nonce = _ref.nonce,
     workflowNonce = _ref.workflowNonce,
+    actionNonce = _ref.actionNonce,
     onChange = _ref.onChange,
     wrapper = _ref.wrapper;
   var _useSelect = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_0__.useSelect)(function (select) {
@@ -147,6 +148,10 @@ function Fieldset(_ref) {
     type: "hidden",
     name: "future_workflow_view",
     value: context
+  }), context === 'quick-edit' && actionNonce && /*#__PURE__*/React.createElement("input", {
+    type: "hidden",
+    name: "_future_action_nonce",
+    value: actionNonce
   }), controls));
 }
 
