@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fixed: Enhanced translations for JavaScript interfaces, particularly in the settings and workflow editor.
 - Fixed: Post metadata is now available in its updated state for Post Update, Save, and Publish triggers (Issue #1626).
 - Changed: Updated existing translations.
+- Security: Add permission checks to restrict access to workflow settings.
 
 [4.10.1] - 20 April, 2026
 
