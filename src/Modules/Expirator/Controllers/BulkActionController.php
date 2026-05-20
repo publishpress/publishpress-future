@@ -72,19 +72,23 @@ class BulkActionController implements InitializableInterface
 
     private function addHooks()
     {
-        $this->hooks->addAction(
-            HooksAbstract::ACTION_SYNC_SCHEDULER_WITH_POST_META,
-            [$this, 'syncSchedulerWithPostMeta']
-        );
-
         $container = \PublishPress\Future\Core\DI\Container::getInstance();
         $postTypes = new PostTypesModel($container);
         $activatedPostTypes = $postTypes->getActivatedPostTypes();
 
         foreach ($activatedPostTypes as $postType) {
-            $this->hooks->addAction(
+            $this->hooks->addFilter(
                 'bulk_actions-edit-' . $postType,
-                [$this, 'filterBulkActions']
+                function ($actions) use ($postType) {
+                    return $this->filterBulkActions($actions, $postType);
+                }
+            );
+
+            $this->hooks->addFilter(
+                'handle_bulk_actions-edit-' . $postType,
+                [$this, 'handleBulkActionSync'],
+                10,
+                3
             );
         }
     }
@@ -102,10 +106,21 @@ class BulkActionController implements InitializableInterface
         );
     }
 
-    public function filterBulkActions($actions)
+    /**
+     * Add the sync bulk action to the post list table.
+     *
+     * @param array  $actions  Existing bulk actions.
+     * @param string $postType Post type for the current list table.
+     *
+     * @return array
+     */
+    public function filterBulkActions($actions, $postType)
     {
-        $postType = get_post_type();
-        $displayTheOption = $this->hooks->applyFilters(HooksAbstract::FILTER_DISPLAY_BULK_ACTION_SYNC, false, $postType);
+        $displayTheOption = $this->hooks->applyFilters(
+            HooksAbstract::FILTER_DISPLAY_BULK_ACTION_SYNC,
+            true,
+            $postType
+        );
 
         if ($displayTheOption) {
             $actions[self::BULK_ACTION_SYNC] = __('Update Future Actions from Post Metadata', 'post-expirator');
@@ -114,34 +129,37 @@ class BulkActionController implements InitializableInterface
         return $actions;
     }
 
-    private function getSelectedPostsFromRequest(): array
+    public function handleBulkActionSync($redirectTo, $doAction, $postIds)
     {
-        return array_filter(
-            $_REQUEST['post'] ?? [], // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-            'intval'
-        );
-    }
-
-    public function syncSchedulerWithPostMeta()
-    {
-        // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-        if (! isset($_REQUEST['action']) || $_REQUEST['action'] !== self::BULK_ACTION_SYNC) {
-            return;
+        if ($doAction !== self::BULK_ACTION_SYNC) {
+            return $redirectTo;
         }
 
-        $postIds = $this->getSelectedPostsFromRequest();
+        if (! $this->currentUserModel->userCanExpirePosts()) {
+            return $redirectTo;
+        }
 
         if (empty($postIds)) {
-            $this->notices->redirectShowingNotice(self::NOTICE_NO_POSTS_SELECTED);
+            return add_query_arg('notice', self::NOTICE_NO_POSTS_SELECTED, $redirectTo);
         }
 
         $expirablePostModelFactory = $this->expirablePostModelFactory;
-        foreach ($postIds as $postId) {
-            $postModel = $expirablePostModelFactory($postId);
+        $syncedCount = 0;
 
+        foreach ($postIds as $postId) {
+            if (! $this->currentUserModel->userCanEditPost($postId)) {
+                continue;
+            }
+
+            $postModel = $expirablePostModelFactory($postId);
             $postModel->syncScheduleWithPostMeta();
+            $syncedCount++;
         }
 
-        $this->notices->redirectShowingNotice(self::NOTICE_SUCCESS);
+        if ($syncedCount === 0) {
+            return add_query_arg('notice', self::NOTICE_NO_POSTS_SELECTED, $redirectTo);
+        }
+
+        return add_query_arg('notice', self::NOTICE_SUCCESS, $redirectTo);
     }
 }

@@ -84,8 +84,6 @@ abstract class HooksAbstract
 
     public const ACTION_SCHEDULER_FAILED_EXECUTION = 'action_scheduler_failed_execution';
 
-    public const ACTION_SYNC_SCHEDULER_WITH_POST_META = 'admin_action_sync_scheduler_with_post_meta';
-
     public const FILTER_CUSTOM_EXPIRATION_TYPE = 'publishpressfuture_custom_expiration_type';
 
     public const FILTER_LEGACY_TEMPLATE_PARAMS = 'publishpressfuture_legacy_template_params';
