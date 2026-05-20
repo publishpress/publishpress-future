@@ -382,17 +382,21 @@ class RestApiV1 implements RestApiManagerInterface
 
     public function getPostWorkflowSettings($request)
     {
-        $postIds = explode(',', $request['post']);
-        $postIds = array_map('intval', $postIds);
+        $postId = (int) $request['post'];
+
+        if ($postId <= 0 || ! current_user_can('edit_post', $postId)) {
+            return new WP_Error(
+                'rest_forbidden',
+                __('Sorry, you are not allowed to view workflow settings for this post.', 'post-expirator'),
+                ['status' => 403]
+            );
+        }
 
         $postModel = new PostModel();
+        $postModel->load($postId);
 
-        foreach ($postIds as $postId) {
-            $postModel->load($postId);
-
-            $workflowsWithManualTrigger = $postModel->getValidWorkflowsWithManualTrigger($postId);
-            $manuallyEnabledWorkflows = $postModel->getManuallyEnabledWorkflows();
-        }
+        $workflowsWithManualTrigger = $postModel->getValidWorkflowsWithManualTrigger($postId);
+        $manuallyEnabledWorkflows = $postModel->getManuallyEnabledWorkflows();
 
         return rest_ensure_response([
             'workflowsWithManualTrigger' => $workflowsWithManualTrigger,
