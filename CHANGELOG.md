@@ -7,9 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fixed: WordPress.org translations now correctly take priority over custom or AI-generated strings, ensuring consistent language display while still merging all available sources.
 - Fixed: Enhanced translations for JavaScript interfaces, particularly in the settings and workflow editor.
 - Fixed: Post metadata is now available in its updated state for Post Update, Save, and Publish triggers (Issue #1626).
+- Fixed: Bulk action "Update Future Actions from Post Metadata" now works correctly for Future Actions.
 - Changed: Updated existing translations.
 - Security: Add permission checks to restrict access to workflow settings.
 - Security: Escape workflow, trigger, step, and post data in scheduled action admin output to prevent stored XSS in Action Scheduler listings.
+- Security: Bulk sync for "Update Future Actions from Post Metadata" now uses WordPress bulk action handling, with per-post "expire" and "edit" capability checks.
 
 [4.10.1] - 20 April, 2026
 
