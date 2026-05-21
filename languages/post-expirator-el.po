@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-05-13T18:43:00+00:00\n"
-"PO-Revision-Date: 2026-05-18 19:37+0000\n"
+"PO-Revision-Date: 2026-05-21 14:28+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -424,17 +424,17 @@ msgstr "Παρακαλώ επιλέξτε ένα ή περισσότερα %s"
 msgid "New status"
 msgstr "Νέα κατάσταση"
 
-#: src/Modules/Expirator/Controllers/BulkActionController.php:96
+#: src/Modules/Expirator/Controllers/BulkActionController.php:100
 msgid "No posts selected. Unable to sync Future Actions."
 msgstr "Δεν έχουν επιλεγεί αναρτήσεις. Αδυναμία συγχρονισμού Μελλοντικών Ενεργειών."
 
-#: src/Modules/Expirator/Controllers/BulkActionController.php:101
+#: src/Modules/Expirator/Controllers/BulkActionController.php:105
 msgid "Future Actions successfully synced with Post Metadata."
 msgstr ""
 "Οι Μελλοντικές Ενέργειες συγχρονίστηκαν με επιτυχία με τα Μεταδεδομένα "
 "Ανάρτησης."
 
-#: src/Modules/Expirator/Controllers/BulkActionController.php:111
+#: src/Modules/Expirator/Controllers/BulkActionController.php:126
 msgid "Update Future Actions from Post Metadata"
 msgstr "Ενημέρωση Μελλοντικών Ενεργειών από τα Μεταδεδομένα Ανάρτησης"
 
@@ -478,24 +478,24 @@ msgid "Upgrade to Pro"
 msgstr "Αναβάθμιση σε Pro"
 
 #: src/Modules/Expirator/Controllers/PluginsListController.php:69
-#: src/Modules/Workflows/Controllers/ManualPostTrigger.php:461
+#: src/Modules/Workflows/Controllers/ManualPostTrigger.php:495
 #: src/Modules/Workflows/Controllers/PostType.php:49
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:181
 #: assets/js/backupPanel.js:512
 #: assets/js/backupPanel.js:698
-#: assets/js/workflowManualSelectionBlockEditor.js:2152
+#: assets/js/workflowManualSelectionBlockEditor.js:2157
 #: assets/js/workflowManualSelectionBulkEdit.js:167
-#: assets/js/workflowManualSelectionQuickEdit.js:2210
+#: assets/js/workflowManualSelectionQuickEdit.js:2217
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-import.jsx:68
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:83
 #: assets/jsx/workflow-manual-selection/block-editor/index.jsx:49
 #: assets/jsx/workflow-manual-selection/bulk-edit/fieldset.jsx:88
-#: assets/jsx/workflow-manual-selection/quick-edit/index.jsx:73
+#: assets/jsx/workflow-manual-selection/quick-edit/index.jsx:75
 #: assets/js/backupPanel.js:405
 #: assets/js/backupPanel.js:559
-#: assets/js/workflowManualSelectionBlockEditor.js:1626
+#: assets/js/workflowManualSelectionBlockEditor.js:1629
 #: assets/js/workflowManualSelectionBulkEdit.js:114
-#: assets/js/workflowManualSelectionQuickEdit.js:1689
+#: assets/js/workflowManualSelectionQuickEdit.js:1694
 msgid "Action Workflows"
 msgstr "Ροές Εργασίας Ενεργειών"
 
@@ -1296,7 +1296,7 @@ msgstr ""
 "Χρησιμοποιείτε το PublishPress Future Free. Η Pro έκδοση έχει περισσότερα "
 "χαρακτηριστικά και υποστήριξη. %1$sΑναβάθμιση σε Pro%2$s"
 
-#: src/Modules/Workflows/Controllers/ManualPostTrigger.php:396
+#: src/Modules/Workflows/Controllers/ManualPostTrigger.php:426
 msgid "Workflow Manual Trigger"
 msgstr "Χειροκίνητη ενεργοποίηση ροής εργασίας"
 
@@ -3820,15 +3820,21 @@ msgstr "Το ID της ανάρτησης"
 msgid "Workflow not found"
 msgstr "Η ροή εργασίας δεν βρέθηκε"
 
-#: src/Modules/Workflows/Rest/RestApiV1.php:458
+#: src/Modules/Workflows/Rest/RestApiV1.php:390
+msgid "Sorry, you are not allowed to view workflow settings for this post."
+msgstr ""
+"Λυπάμαι, δεν έχετε άδεια να δείτε τις ρυθμίσεις ροής εργασίας για αυτή την "
+"ανάρτηση."
+
+#: src/Modules/Workflows/Rest/RestApiV1.php:462
 msgid "Flow data must be an array."
 msgstr "Τα δεδομένα ροής πρέπει να είναι πίνακας."
 
-#: src/Modules/Workflows/Rest/RestApiV1.php:471
+#: src/Modules/Workflows/Rest/RestApiV1.php:475
 msgid "Each node must have an id and type."
 msgstr "Κάθε κόμβος πρέπει να έχει ένα id και τύπο."
 
-#: src/Modules/Workflows/Rest/RestApiV1.php:482
+#: src/Modules/Workflows/Rest/RestApiV1.php:486
 msgid "Each edge must have an id, source, and target."
 msgstr "Κάθε ακμή πρέπει να έχει ένα id, πηγή και στόχο."
 
@@ -4317,7 +4323,6 @@ msgid "Show in Post Footer?"
 msgstr "Εμφάνιση στο Υποσέλιδο Ανάρτησης;"
 
 #: src/Views/menu-display.php:154
-#, fuzzy
 msgid ""
 "This will enable or disable displaying the future action date in the post "
 "footer."

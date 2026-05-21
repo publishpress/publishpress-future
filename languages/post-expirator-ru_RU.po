@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-05-13T18:43:00+00:00\n"
-"PO-Revision-Date: 2026-05-18 19:36+0000\n"
+"PO-Revision-Date: 2026-05-21 14:28+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expiratorn%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 ">= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2);\n"
@@ -430,15 +430,15 @@ msgstr "Пожалуйста, выберите одну или нескольк�
 msgid "New status"
 msgstr "Новый статус"
 
-#: src/Modules/Expirator/Controllers/BulkActionController.php:96
+#: src/Modules/Expirator/Controllers/BulkActionController.php:100
 msgid "No posts selected. Unable to sync Future Actions."
 msgstr "Нет выбранных постов. Невозможно синхронизировать будущие действия."
 
-#: src/Modules/Expirator/Controllers/BulkActionController.php:101
+#: src/Modules/Expirator/Controllers/BulkActionController.php:105
 msgid "Future Actions successfully synced with Post Metadata."
 msgstr "Будущие действия успешно синхронизированы с метаданными постов."
 
-#: src/Modules/Expirator/Controllers/BulkActionController.php:111
+#: src/Modules/Expirator/Controllers/BulkActionController.php:126
 msgid "Update Future Actions from Post Metadata"
 msgstr "Обновить будущие действия на основе метаданных постов"
 
@@ -482,24 +482,24 @@ msgid "Upgrade to Pro"
 msgstr "Обновить до PRO"
 
 #: src/Modules/Expirator/Controllers/PluginsListController.php:69
-#: src/Modules/Workflows/Controllers/ManualPostTrigger.php:461
+#: src/Modules/Workflows/Controllers/ManualPostTrigger.php:495
 #: src/Modules/Workflows/Controllers/PostType.php:49
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:181
 #: assets/js/backupPanel.js:512
 #: assets/js/backupPanel.js:698
-#: assets/js/workflowManualSelectionBlockEditor.js:2152
+#: assets/js/workflowManualSelectionBlockEditor.js:2157
 #: assets/js/workflowManualSelectionBulkEdit.js:167
-#: assets/js/workflowManualSelectionQuickEdit.js:2210
+#: assets/js/workflowManualSelectionQuickEdit.js:2217
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-import.jsx:68
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:83
 #: assets/jsx/workflow-manual-selection/block-editor/index.jsx:49
 #: assets/jsx/workflow-manual-selection/bulk-edit/fieldset.jsx:88
-#: assets/jsx/workflow-manual-selection/quick-edit/index.jsx:73
+#: assets/jsx/workflow-manual-selection/quick-edit/index.jsx:75
 #: assets/js/backupPanel.js:405
 #: assets/js/backupPanel.js:559
-#: assets/js/workflowManualSelectionBlockEditor.js:1626
+#: assets/js/workflowManualSelectionBlockEditor.js:1629
 #: assets/js/workflowManualSelectionBulkEdit.js:114
-#: assets/js/workflowManualSelectionQuickEdit.js:1689
+#: assets/js/workflowManualSelectionQuickEdit.js:1694
 msgid "Action Workflows"
 msgstr "Рабочие процессы действий"
 
@@ -1312,7 +1312,7 @@ msgstr ""
 "Вы используете PublishPress Future Free. Профессиональная версия имеет "
 "больше функций и поддержку. %1$sОбновите до Pro%2$s"
 
-#: src/Modules/Workflows/Controllers/ManualPostTrigger.php:396
+#: src/Modules/Workflows/Controllers/ManualPostTrigger.php:426
 msgid "Workflow Manual Trigger"
 msgstr "Ручной триггер рабочего процесса"
 
@@ -3798,15 +3798,21 @@ msgstr "Идентификатор записи"
 msgid "Workflow not found"
 msgstr "Рабочий процесс не найден"
 
-#: src/Modules/Workflows/Rest/RestApiV1.php:458
+#: src/Modules/Workflows/Rest/RestApiV1.php:390
+msgid "Sorry, you are not allowed to view workflow settings for this post."
+msgstr ""
+"Извините, вам не разрешено просматривать настройки рабочего процесса для "
+"этого поста."
+
+#: src/Modules/Workflows/Rest/RestApiV1.php:462
 msgid "Flow data must be an array."
 msgstr "Данные потока должны быть массивом."
 
-#: src/Modules/Workflows/Rest/RestApiV1.php:471
+#: src/Modules/Workflows/Rest/RestApiV1.php:475
 msgid "Each node must have an id and type."
 msgstr "Каждый узел должен иметь id и тип."
 
-#: src/Modules/Workflows/Rest/RestApiV1.php:482
+#: src/Modules/Workflows/Rest/RestApiV1.php:486
 msgid "Each edge must have an id, source, and target."
 msgstr "Каждое ребро должно иметь id, источник и цель."
 

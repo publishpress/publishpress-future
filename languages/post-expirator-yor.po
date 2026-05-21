@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-05-13T18:43:00+00:00\n"
-"PO-Revision-Date: 2026-05-18 19:36+0000\n"
+"PO-Revision-Date: 2026-05-21 14:28+0000\n"
 "X-Generator: Weblate 5.17.1\n"
 "X-Domain: post-expirator\n"
 "Language: yor\n"
@@ -412,15 +412,15 @@ msgstr "Jọwọ yan ọkan tabi diẹ ẹ sii %s"
 msgid "New status"
 msgstr "Ipo tuntun"
 
-#: src/Modules/Expirator/Controllers/BulkActionController.php:96
+#: src/Modules/Expirator/Controllers/BulkActionController.php:100
 msgid "No posts selected. Unable to sync Future Actions."
 msgstr "Ko si awọn ifiweranṣẹ ti a yan. Ko le ṣe iṣọkan Awọn Iṣẹ iwaju."
 
-#: src/Modules/Expirator/Controllers/BulkActionController.php:101
+#: src/Modules/Expirator/Controllers/BulkActionController.php:105
 msgid "Future Actions successfully synced with Post Metadata."
 msgstr "Awọn Iṣẹ iwaju ti ṣe iṣọkan ni aṣeyọri pẹlu Metadata Ifiweranṣẹ."
 
-#: src/Modules/Expirator/Controllers/BulkActionController.php:111
+#: src/Modules/Expirator/Controllers/BulkActionController.php:126
 msgid "Update Future Actions from Post Metadata"
 msgstr "Ṣatunkọ Awọn Iṣẹ iwaju lati Metadata Ifiweranṣẹ"
 
@@ -464,24 +464,24 @@ msgid "Upgrade to Pro"
 msgstr "Gbadun si Pro"
 
 #: src/Modules/Expirator/Controllers/PluginsListController.php:69
-#: src/Modules/Workflows/Controllers/ManualPostTrigger.php:461
+#: src/Modules/Workflows/Controllers/ManualPostTrigger.php:495
 #: src/Modules/Workflows/Controllers/PostType.php:49
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:181
 #: assets/js/backupPanel.js:512
 #: assets/js/backupPanel.js:698
-#: assets/js/workflowManualSelectionBlockEditor.js:2152
+#: assets/js/workflowManualSelectionBlockEditor.js:2157
 #: assets/js/workflowManualSelectionBulkEdit.js:167
-#: assets/js/workflowManualSelectionQuickEdit.js:2210
+#: assets/js/workflowManualSelectionQuickEdit.js:2217
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-import.jsx:68
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:83
 #: assets/jsx/workflow-manual-selection/block-editor/index.jsx:49
 #: assets/jsx/workflow-manual-selection/bulk-edit/fieldset.jsx:88
-#: assets/jsx/workflow-manual-selection/quick-edit/index.jsx:73
+#: assets/jsx/workflow-manual-selection/quick-edit/index.jsx:75
 #: assets/js/backupPanel.js:405
 #: assets/js/backupPanel.js:559
-#: assets/js/workflowManualSelectionBlockEditor.js:1626
+#: assets/js/workflowManualSelectionBlockEditor.js:1629
 #: assets/js/workflowManualSelectionBulkEdit.js:114
-#: assets/js/workflowManualSelectionQuickEdit.js:1689
+#: assets/js/workflowManualSelectionQuickEdit.js:1694
 msgid "Action Workflows"
 msgstr "Awọn Iṣẹ Iṣe"
 
@@ -1271,7 +1271,7 @@ msgstr ""
 "O nlo PublishPress Future Free. Ẹya Pro ni awọn ẹya diẹ sii ati atilẹyin. "
 "%1$sGbe si Pro%2$s"
 
-#: src/Modules/Workflows/Controllers/ManualPostTrigger.php:396
+#: src/Modules/Workflows/Controllers/ManualPostTrigger.php:426
 msgid "Workflow Manual Trigger"
 msgstr "Itọnisọna Iṣe Workflow"
 
@@ -3719,15 +3719,19 @@ msgstr "ID ifiweranṣẹ"
 msgid "Workflow not found"
 msgstr "Iṣẹ-ṣiṣe ko ri"
 
-#: src/Modules/Workflows/Rest/RestApiV1.php:458
+#: src/Modules/Workflows/Rest/RestApiV1.php:390
+msgid "Sorry, you are not allowed to view workflow settings for this post."
+msgstr "E má bínú, o kò gba láti wo ìtòsọna iṣẹ́ fún àfikún yìí."
+
+#: src/Modules/Workflows/Rest/RestApiV1.php:462
 msgid "Flow data must be an array."
 msgstr "Data sisan gbọdọ jẹ akojọ."
 
-#: src/Modules/Workflows/Rest/RestApiV1.php:471
+#: src/Modules/Workflows/Rest/RestApiV1.php:475
 msgid "Each node must have an id and type."
 msgstr "Gbogbo node gbọdọ ni id ati iru."
 
-#: src/Modules/Workflows/Rest/RestApiV1.php:482
+#: src/Modules/Workflows/Rest/RestApiV1.php:486
 msgid "Each edge must have an id, source, and target."
 msgstr "Gbogbo ẹka gbọdọ ni id, orisun, ati ibi-afẹde."
 

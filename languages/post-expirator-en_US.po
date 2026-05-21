@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-05-18T19:22:57+00:00\n"
-"PO-Revision-Date: 2026-05-18 19:37+0000\n"
+"POT-Creation-Date: 2026-05-21T14:26:18+00:00\n"
+"PO-Revision-Date: 2026-05-21 14:28+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "Language: en-US\n"
@@ -410,15 +410,15 @@ msgstr "Please select one or more %s"
 msgid "New status"
 msgstr "New status"
 
-#: src/Modules/Expirator/Controllers/BulkActionController.php:96, fuzzy
+#: src/Modules/Expirator/Controllers/BulkActionController.php:100, fuzzy
 msgid "No posts selected. Unable to sync Future Actions."
 msgstr "No posts selected. Unable to sync Future Actions."
 
-#: src/Modules/Expirator/Controllers/BulkActionController.php:101, fuzzy
+#: src/Modules/Expirator/Controllers/BulkActionController.php:105, fuzzy
 msgid "Future Actions successfully synced with Post Metadata."
 msgstr "Future Actions successfully synced with Post Metadata."
 
-#: src/Modules/Expirator/Controllers/BulkActionController.php:111, fuzzy
+#: src/Modules/Expirator/Controllers/BulkActionController.php:126, fuzzy
 msgid "Update Future Actions from Post Metadata"
 msgstr "Update Future Actions from Post Metadata"
 
@@ -462,24 +462,24 @@ msgid "Upgrade to Pro"
 msgstr "Upgrade to Pro"
 
 #: src/Modules/Expirator/Controllers/PluginsListController.php:69
-#: src/Modules/Workflows/Controllers/ManualPostTrigger.php:461
+#: src/Modules/Workflows/Controllers/ManualPostTrigger.php:495
 #: src/Modules/Workflows/Controllers/PostType.php:49
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:181
 #: assets/js/backupPanel.js:512
 #: assets/js/backupPanel.js:698
-#: assets/js/workflowManualSelectionBlockEditor.js:2152
+#: assets/js/workflowManualSelectionBlockEditor.js:2157
 #: assets/js/workflowManualSelectionBulkEdit.js:167
-#: assets/js/workflowManualSelectionQuickEdit.js:2210
+#: assets/js/workflowManualSelectionQuickEdit.js:2217
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-import.jsx:68
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:83
 #: assets/jsx/workflow-manual-selection/block-editor/index.jsx:49
 #: assets/jsx/workflow-manual-selection/bulk-edit/fieldset.jsx:88
-#: assets/jsx/workflow-manual-selection/quick-edit/index.jsx:73
+#: assets/jsx/workflow-manual-selection/quick-edit/index.jsx:75
 #: assets/js/backupPanel.js:405
 #: assets/js/backupPanel.js:559
-#: assets/js/workflowManualSelectionBlockEditor.js:1626
+#: assets/js/workflowManualSelectionBlockEditor.js:1629
 #: assets/js/workflowManualSelectionBulkEdit.js:114
-#: assets/js/workflowManualSelectionQuickEdit.js:1689, fuzzy
+#: assets/js/workflowManualSelectionQuickEdit.js:1694, fuzzy
 msgid "Action Workflows"
 msgstr "Action Workflows"
 
@@ -1271,7 +1271,7 @@ msgstr ""
 "You're using PublishPress Future Free. The Pro version has more features "
 "and support. %1$sUpgrade to Pro%2$s"
 
-#: src/Modules/Workflows/Controllers/ManualPostTrigger.php:396, fuzzy
+#: src/Modules/Workflows/Controllers/ManualPostTrigger.php:426, fuzzy
 msgid "Workflow Manual Trigger"
 msgstr "Workflow Manual Trigger"
 
@@ -3715,15 +3715,19 @@ msgstr "The post ID"
 msgid "Workflow not found"
 msgstr "Workflow not found"
 
-#: src/Modules/Workflows/Rest/RestApiV1.php:458, fuzzy
+#: src/Modules/Workflows/Rest/RestApiV1.php:390, fuzzy
+msgid "Sorry, you are not allowed to view workflow settings for this post."
+msgstr "Sorry, you are not allowed to view workflow settings for this post."
+
+#: src/Modules/Workflows/Rest/RestApiV1.php:462, fuzzy
 msgid "Flow data must be an array."
 msgstr "Flow data must be an array."
 
-#: src/Modules/Workflows/Rest/RestApiV1.php:471, fuzzy
+#: src/Modules/Workflows/Rest/RestApiV1.php:475, fuzzy
 msgid "Each node must have an id and type."
 msgstr "Each node must have an id and type."
 
-#: src/Modules/Workflows/Rest/RestApiV1.php:482, fuzzy
+#: src/Modules/Workflows/Rest/RestApiV1.php:486, fuzzy
 msgid "Each edge must have an id, source, and target."
 msgstr "Each edge must have an id, source, and target."
 
