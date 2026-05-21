@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Security: Escape workflow, trigger, step, and post data in scheduled action admin output to prevent stored XSS in Action Scheduler listings.
 - Security: Bulk sync for "Update Future Actions from Post Metadata" now uses WordPress bulk action handling, with per-post "expire" and "edit" capability checks.
 - Security: Require nonce verification when saving manual workflow selections via Quick Edit.
+- Security: Add granular permission checks to workflow manual triggering.
 
 [4.10.1] - 20 April, 2026
 
