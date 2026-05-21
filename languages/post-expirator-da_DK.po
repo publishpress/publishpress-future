@@ -4427,7 +4427,6 @@ msgstr "Notifikation om forfaldne handlinger"
 
 #: src/Views/menu-notifications.php:134
 #: src/Views/menu-notifications.php:161
-#, fuzzy
 msgid ""
 "This will enable or disable the send of email notification on past-due "
 "actions."
