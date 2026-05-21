@@ -6,7 +6,11 @@ on:
     branches:
       - 'master'
 
+  workflow_dispatch:
+
 jobs:
   deploy-assets:
     uses: publishpress/github-workflows/.github/workflows/deploy-free-assets.yml@v3
     secrets: inherit
+    with:
+      PLUGIN_SLUG: "post-expirator"
