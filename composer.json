@@ -45,5 +45,11 @@
         "plugin-lang-domain": "post-expirator",
         "plugin-github-repo": "publishpress/publishpress-future",
         "plugin-composer-package": "publishpress/publishpress-future"
+    },
+    "scripts": {
+        "sync:pro": [
+            "@pack:dir",
+            "rsync -a --delete dist/post-expirator/ ../publishpress-future-pro/lib/vendor/publishpress/publishpress-future/"
+        ]
     }
 }
