@@ -149,7 +149,7 @@ class ManualPostTrigger implements InitializableInterface
     public function processQuickEditUpdate($postId)
     {
         try {
-            // phpcs:disable WordPress.Security.NonceVerification.Recommended, WordPress.Security.NonceVerification.Missing
+            // phpcs:disable WordPress.Security.NonceVerification.Missing
             // Don't run if this is an auto save
             if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
                 return;
@@ -167,6 +167,8 @@ class ManualPostTrigger implements InitializableInterface
             if (empty($view) || $view !== 'quick-edit') {
                 return;
             }
+
+            check_ajax_referer('__future_action', '_future_action_nonce');
 
             // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
             $manuallyEnabledWorkflows = $_POST['future_workflow_manual_trigger'] ?? [];
@@ -232,6 +234,7 @@ class ManualPostTrigger implements InitializableInterface
                 [
                     "nonce" => wp_create_nonce("wp_rest"),
                     "workflowNonce" => wp_create_nonce("pp_workflow_action"),
+                    "actionNonce" => wp_create_nonce('__future_action'),
                     "apiUrl" => rest_url("publishpress-future/v1"),
                 ]
             );
