@@ -176,7 +176,7 @@ class ShortcodeController implements InitializableInterface
                 '<%1$s class="%2$s">%3$s</%1$s>',
                 esc_html($wrapper),
                 esc_attr($attrs['class']),
-                $output
+                esc_html($output)
             );
         }
 
