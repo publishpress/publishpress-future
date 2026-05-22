@@ -5122,7 +5122,6 @@ msgstr "ผู้เยี่ยมชมสามารถเพิ่มคว
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4318
 #: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:58
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3292
-#, fuzzy
 msgid ""
 "Visitors can not add new comments or replies. Existing comments remain "
 "visible."
@@ -6161,7 +6160,6 @@ msgstr "ดับเบิลคลิกที่พาเนลเวิร์
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14156
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:20
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11762
-#, fuzzy
 msgid ""
 "Hold down the <kbd>shift</kbd> key and double-click the workflow pane to "
 "decrease the zoom level."

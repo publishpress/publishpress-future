@@ -241,7 +241,7 @@ msgstr "לא נמצאו תוצאות התואמות את הסינון הנוכח
 #: assets/jsx/workflow-editor/components/data-fields/taxonomy-terms.jsx:60
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4353
 msgid "Taxonomy"
-msgstr "Taxonomy"
+msgstr "טקסונומיה"
 
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:150
 #: src/Modules/Expirator/Controllers/BulkEditController.php:188
@@ -2278,9 +2278,9 @@ msgstr ""
 "'publishpress_future_allowed_action_hooks' מורשים."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:73
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:73, fuzzy
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:73
 msgid "Hook"
-msgstr "Hook"
+msgstr "עוגן"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:74
 msgid "The hook that will be executed."
@@ -2561,9 +2561,9 @@ msgstr "אחרי כל החזרות"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:17
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:17
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:89, fuzzy
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:89
 msgid "PublishPress Workflow: {{global.workflow.title}}"
-msgstr "PublishPress Workflow: {{global.workflow.title}}"
+msgstr "זרימת PublishPress: {{global.workflow.title}}"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:22
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:22
@@ -4189,7 +4189,7 @@ msgstr "דוגמה: "
 
 #: src/Views/menu-display.php:243
 msgid "Shortcode"
-msgstr "shortcode"
+msgstr "קוד קצר"
 
 #: src/Views/menu-display.php:249
 #. translators: %s is a code tag that wraps the shortcode
@@ -4211,17 +4211,17 @@ msgid ""
 "to control its structure and styling."
 msgstr "פלט ה-shortcode יעטף בתג ה-HTML הנבחר, מה שיאפשר לך לשלוט במבנה ובעיצוב שלו."
 
-#: src/Views/menu-display.php:289, fuzzy
+#: src/Views/menu-display.php:289
 msgid "Wrapper Class"
-msgstr "Wrapper Class"
+msgstr "מחלקת עטיפה"
 
 #: src/Views/menu-display.php:295
 msgid "Add a CSS class to the wrapper element for custom styling."
 msgstr "הוסף מחלקת CSS ליסוד המעטפת עבור סגנון מותאם."
 
-#: src/Views/menu-display.php:302, fuzzy
+#: src/Views/menu-display.php:302
 msgid "Attributes"
-msgstr "Attributes"
+msgstr "מאפיינים"
 
 #: src/Views/menu-display.php:308
 #. translators: %s is the shortcode code wrapped in code tags
@@ -4261,13 +4261,13 @@ msgstr "%s - מציג רק שעה"
 msgid "%s - Format set here will override the value set on the settings page"
 msgstr "%s - הפורמט שנקבע כאן יגבר על הערך שנקבע בדף ההגדרות"
 
-#: src/Views/menu-general.php:25, fuzzy
+#: src/Views/menu-general.php:25
 msgid "Defaults"
-msgstr "Defaults"
+msgstr "ברירות מחדל"
 
-#: src/Views/menu-general.php:59, fuzzy
+#: src/Views/menu-general.php:59
 msgid "Calendar Visibility"
-msgstr "Calendar Visibility"
+msgstr "נראות לוח שנה"
 
 #: src/Views/menu-general.php:65
 msgid "Remember last state"
@@ -4285,9 +4285,9 @@ msgstr "תמיד מוסתר"
 msgid "The calendar is always hidden by default."
 msgstr "היומן תמיד מוסתר כברירת מחדל."
 
-#: src/Views/menu-general.php:80, fuzzy
+#: src/Views/menu-general.php:80
 msgid "Permissions"
-msgstr "Permissions"
+msgstr "הרשאות"
 
 #: src/Views/menu-general.php:85
 msgid "Choose Which User Roles Can Create Future Actions"
@@ -4398,7 +4398,7 @@ msgstr "תצוגה"
 #: assets/js/backupPanel.js:516
 #: assets/js/backupPanel.js:928
 msgid "Admin"
-msgstr "admin"
+msgstr "מנהל"
 
 #: src/Views/tabs-settings.php:23
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11467
@@ -4419,33 +4419,33 @@ msgstr "אבחנות וכלים"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:387
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:29
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:354, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:354
 msgid "Integer"
-msgstr "Integer"
+msgstr "מספר שלם"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:390
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:30
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:355, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:355
 msgid "String"
-msgstr "String"
+msgstr "מחרוזת"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:393
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:31
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:356, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:356
 msgid "Boolean"
-msgstr "Boolean"
+msgstr "בוליאני"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:396
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:32
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:357, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:357
 msgid "Object"
-msgstr "Object"
+msgstr "אובייקט"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:399
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:33
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:358, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:358
 msgid "Array"
-msgstr "Array"
+msgstr "מערך"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:434
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2121
@@ -5109,7 +5109,6 @@ msgstr "מבקרים יכולים להוסיף תגובות ותשובות חד�
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4318
 #: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:58
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3292
-#, fuzzy
 msgid ""
 "Visitors can not add new comments or replies. Existing comments remain "
 "visible."
@@ -6085,9 +6084,9 @@ msgstr[3] "%d תוצאות נמצאו."
 #: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:116
 #: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:123
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10944
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10951, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10951
 msgid "Nodes"
-msgstr "Nodes"
+msgstr "צמתים"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13477
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13497
@@ -6152,7 +6151,6 @@ msgstr "לחץ פעמיים על לוח העבודה כדי להגדיל את ר
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14156
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:20
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11762
-#, fuzzy
 msgid ""
 "Hold down the <kbd>shift</kbd> key and double-click the workflow pane to "
 "decrease the zoom level."
@@ -6195,9 +6193,9 @@ msgstr "התחל"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14752
 #: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:50
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12242, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12242
 msgid "Ray Debug"
-msgstr "Ray Debug"
+msgstr "ניפוי שגיאות Ray"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14755
 #: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:55
@@ -6631,9 +6629,9 @@ msgstr "בחר סוג פוסט לעריכה:"
 
 #: assets/js/legacyAction.js:230
 #: assets/jsx/legacy-action/index.jsx:78
-#: assets/js/legacyAction.js:153, fuzzy
+#: assets/js/legacyAction.js:153
 msgid "Workflow to trigger"
-msgstr "Workflow to trigger"
+msgstr "זרימת עבודה להפעלה"
 
 #: assets/js/legacyAction.js:241
 #: assets/jsx/legacy-action/index.jsx:90
@@ -6651,7 +6649,6 @@ msgstr "שנה זרימות עבודה המופעלות ידנית"
 #: assets/jsx/workflows-list/cancel-action/index.jsx:59
 #: assets/js/workflowsListCancelAction.js:497
 #. translators: %s: Workflow title
-#, fuzzy
 msgid ""
 "Are you sure you want to cancel all scheduled actions for the \"%s\" "
 "workflow?"

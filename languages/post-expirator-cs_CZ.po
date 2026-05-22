@@ -1140,9 +1140,9 @@ msgstr "Zobrazit protokol"
 msgid "Action: "
 msgstr "Akce: "
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:687, fuzzy
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:687
 msgid "Status: "
-msgstr "Status: "
+msgstr "Stav: "
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:693
 msgid "Arguments: "
@@ -2613,7 +2613,7 @@ msgstr "Po všech opakováních"
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:17
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:89, fuzzy
 msgid "PublishPress Workflow: {{global.workflow.title}}"
-msgstr "PublishPress Workflow: {{global.workflow.title}}"
+msgstr "Pracovní postup PublishPress: {{global.workflow.title}}"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:22
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:22
@@ -2710,7 +2710,7 @@ msgstr "Typ oznámení"
 #: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:8
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1934, fuzzy
 msgid "Info"
-msgstr "Info"
+msgstr "Informace"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:122
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:112
@@ -3824,7 +3824,7 @@ msgstr ""
 
 #: src/Views/menu-admin.php:27, fuzzy
 msgid "Metabox"
-msgstr "Metabox"
+msgstr "Metaboxy"
 
 #: src/Views/menu-admin.php:34
 msgid "Metabox Title"
@@ -4306,7 +4306,7 @@ msgstr ""
 
 #: src/Views/menu-display.php:289, fuzzy
 msgid "Wrapper Class"
-msgstr "Wrapper Class"
+msgstr "Třída wrapperu"
 
 #: src/Views/menu-display.php:295
 msgid "Add a CSS class to the wrapper element for custom styling."
@@ -4314,7 +4314,7 @@ msgstr "Přidejte CSS třídu k obalovému prvku pro vlastní stylování."
 
 #: src/Views/menu-display.php:302, fuzzy
 msgid "Attributes"
-msgstr "Attributes"
+msgstr "Atributy"
 
 #: src/Views/menu-display.php:308
 #. translators: %s is the shortcode code wrapped in code tags
@@ -4358,37 +4358,37 @@ msgstr "%s - Formát nastavený zde přepíše hodnotu nastavenou na stránce s 
 msgid "Defaults"
 msgstr "Výchozí"
 
-#: src/Views/menu-general.php:59, fuzzy
+#: src/Views/menu-general.php:59
 msgid "Calendar Visibility"
-msgstr "Calendar Visibility"
+msgstr "Viditelnost kalendáře"
 
-#: src/Views/menu-general.php:65, fuzzy
+#: src/Views/menu-general.php:65
 msgid "Remember last state"
-msgstr "Remember last state"
+msgstr "Pamatovat poslední stav"
 
 #: src/Views/menu-general.php:67
 msgid "Shows or hides the calendar based on the last user interaction."
 msgstr "Zobrazuje nebo skrývá kalendář na základě poslední uživatelské interakce."
 
-#: src/Views/menu-general.php:72, fuzzy
+#: src/Views/menu-general.php:72
 msgid "Always hidden"
-msgstr "Always hidden"
+msgstr "Vždy skrytý"
 
 #: src/Views/menu-general.php:74
 msgid "The calendar is always hidden by default."
 msgstr "Kalendář je vždy skrytý ve výchozím nastavení."
 
-#: src/Views/menu-general.php:80, fuzzy
+#: src/Views/menu-general.php:80
 msgid "Permissions"
-msgstr "Permissions"
+msgstr "Oprávnění"
 
 #: src/Views/menu-general.php:85
 msgid "Choose Which User Roles Can Create Future Actions"
 msgstr "Vyberte, které uživatelské role mohou vytvářet budoucí akce"
 
-#: src/Views/menu-notifications.php:50, fuzzy
+#: src/Views/menu-notifications.php:50
 msgid "Email Notification"
-msgstr "Email Notification"
+msgstr "Emailové upozornění"
 
 #: src/Views/menu-notifications.php:52
 msgid "Whenever an action runs, an email can be sent to alert users."
@@ -4457,7 +4457,7 @@ msgstr ""
 #: assets/js/backupPanel.js:500
 #: assets/js/backupPanel.js:912, fuzzy
 msgid "Post Types"
-msgstr "Post Types"
+msgstr "Typy příspěvků"
 
 #: src/Views/tabs-future-actions.php:25
 #: assets/js/backupPanel.js:652
@@ -4532,7 +4532,7 @@ msgstr "Řetězec"
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:31
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:356, fuzzy
 msgid "Boolean"
-msgstr "Boolean"
+msgstr "Logická hodnota"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:396
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:32

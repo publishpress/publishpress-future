@@ -247,7 +247,7 @@ msgstr "Không có kết quả nào phù hợp với bộ lọc hiện tại."
 #: assets/jsx/workflow-editor/components/data-fields/taxonomy-terms.jsx:60
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4353
 msgid "Taxonomy"
-msgstr "Taxonomy"
+msgstr "Phân loại"
 
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:150
 #: src/Modules/Expirator/Controllers/BulkEditController.php:188
@@ -530,9 +530,9 @@ msgstr "Định dạng nhật ký"
 msgid "List"
 msgstr "Danh sách"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:237, fuzzy
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:237
 msgid "Popup"
-msgstr "Popup"
+msgstr "Cửa sổ popup"
 
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:305
 msgid "Unknown post"
@@ -1866,7 +1866,7 @@ msgstr "Chọn bài viết mà meta của nó sẽ được thêm vào."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:85
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeletePostMeta.php:85
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePostMeta.php:85, fuzzy
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePostMeta.php:85
 msgid "Meta"
 msgstr "Meta"
 
@@ -1889,9 +1889,9 @@ msgstr ""
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:98
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeletePostMeta.php:91
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePostMeta.php:91
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:165, fuzzy
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:165
 msgid "Meta key"
-msgstr "Meta key"
+msgstr "Khóa meta"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:99
 msgid "The meta key to add to the post."
@@ -1899,9 +1899,9 @@ msgstr "Khóa meta để thêm vào bài đăng."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:104
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeletePostMeta.php:97
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePostMeta.php:97, fuzzy
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePostMeta.php:97
 msgid "Meta value"
-msgstr "Meta value"
+msgstr "Giá trị meta"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:105
 msgid "The meta value to add to the post."
@@ -1980,9 +1980,9 @@ msgstr "Dữ liệu đầu vào cho bước này."
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:160
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeletePostMeta.php:153
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePostMeta.php:153
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:159, fuzzy
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:159
 msgid "Meta ID"
-msgstr "Meta ID"
+msgstr "ID meta"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:161
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeletePostMeta.php:154
@@ -2292,9 +2292,9 @@ msgstr ""
 "lọc 'publishpress_future_allowed_action_hooks' mới được phép."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:73
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:73, fuzzy
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:73
 msgid "Hook"
-msgstr "Hook"
+msgstr "Móc nối"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:74
 msgid "The hook that will be executed."
@@ -3656,40 +3656,40 @@ msgstr "PublishPress Tương lai"
 #: src/Modules/Workflows/Models/StepTypesModel.php:108
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:405
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:35
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:360, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:360
 msgid "User"
-msgstr "User"
+msgstr "Người dùng"
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:117
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16026
 #: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:100
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13219, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13219
 msgid "Site"
-msgstr "Site"
+msgstr "Trang web"
 
-#: src/Modules/Workflows/Models/StepTypesModel.php:126, fuzzy
+#: src/Modules/Workflows/Models/StepTypesModel.php:126
 msgid "Flow Control"
-msgstr "Flow Control"
+msgstr "Điều khiển luồng"
 
-#: src/Modules/Workflows/Models/StepTypesModel.php:135, fuzzy
+#: src/Modules/Workflows/Models/StepTypesModel.php:135
 msgid "Asynchronous"
-msgstr "Asynchronous"
+msgstr "Bất đồng bộ"
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:144
 #: src/Views/tabs-settings.php:36
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2585
 #: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:7
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1933, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1933
 msgid "Debug"
-msgstr "Debug"
+msgstr "Gỡ lỗi"
 
-#: src/Modules/Workflows/Models/StepTypesModel.php:153, fuzzy
+#: src/Modules/Workflows/Models/StepTypesModel.php:153
 msgid "Data Query"
-msgstr "Data Query"
+msgstr "Truy vấn dữ liệu"
 
-#: src/Modules/Workflows/Models/StepTypesModel.php:162, fuzzy
+#: src/Modules/Workflows/Models/StepTypesModel.php:162
 msgid "Messages"
-msgstr "Messages"
+msgstr "Tin nhắn"
 
 #: src/Modules/Workflows/Models/WorkflowModel.php:476
 #, fuzzy, php-format
@@ -3784,9 +3784,9 @@ msgstr ""
 "Hành động không được lên lịch do vấn đề cấu hình. Vui lòng cố gắng lên lịch "
 "lại."
 
-#: src/Views/menu-admin.php:27, fuzzy
+#: src/Views/menu-admin.php:27
 msgid "Metabox"
-msgstr "Metabox"
+msgstr "Hộp meta"
 
 #: src/Views/menu-admin.php:34
 msgid "Metabox Title"
@@ -4246,7 +4246,7 @@ msgstr "Ví dụ: "
 
 #: src/Views/menu-display.php:243
 msgid "Shortcode"
-msgstr "Shortcode"
+msgstr "Mã ngắn"
 
 #: src/Views/menu-display.php:249
 #. translators: %s is a code tag that wraps the shortcode
@@ -4271,17 +4271,17 @@ msgstr ""
 "Đầu ra của shortcode sẽ được bọc trong thẻ HTML đã chọn, cho phép bạn kiểm "
 "soát cấu trúc và kiểu dáng của nó."
 
-#: src/Views/menu-display.php:289, fuzzy
+#: src/Views/menu-display.php:289
 msgid "Wrapper Class"
-msgstr "Wrapper Class"
+msgstr "Lớp bọc"
 
 #: src/Views/menu-display.php:295
 msgid "Add a CSS class to the wrapper element for custom styling."
 msgstr "Thêm một lớp CSS vào phần tử wrapper để tùy chỉnh kiểu dáng."
 
-#: src/Views/menu-display.php:302, fuzzy
+#: src/Views/menu-display.php:302
 msgid "Attributes"
-msgstr "Attributes"
+msgstr "Thuộc tính"
 
 #: src/Views/menu-display.php:308
 #. translators: %s is the shortcode code wrapped in code tags
@@ -4321,13 +4321,13 @@ msgstr "%s - Chỉ hiển thị giờ"
 msgid "%s - Format set here will override the value set on the settings page"
 msgstr "%s - Định dạng được đặt ở đây sẽ ghi đè giá trị được đặt trên trang cài đặt"
 
-#: src/Views/menu-general.php:25, fuzzy
+#: src/Views/menu-general.php:25
 msgid "Defaults"
-msgstr "Defaults"
+msgstr "Mặc định"
 
-#: src/Views/menu-general.php:59, fuzzy
+#: src/Views/menu-general.php:59
 msgid "Calendar Visibility"
-msgstr "Calendar Visibility"
+msgstr "Hiển thị lịch"
 
 #: src/Views/menu-general.php:65
 msgid "Remember last state"
@@ -4345,17 +4345,17 @@ msgstr "Luôn ẩn"
 msgid "The calendar is always hidden by default."
 msgstr "Lịch luôn bị ẩn theo mặc định."
 
-#: src/Views/menu-general.php:80, fuzzy
+#: src/Views/menu-general.php:80
 msgid "Permissions"
-msgstr "Permissions"
+msgstr "Quyền"
 
 #: src/Views/menu-general.php:85
 msgid "Choose Which User Roles Can Create Future Actions"
 msgstr "Chọn các vai trò người dùng nào có thể tạo các hành động trong tương lai"
 
-#: src/Views/menu-notifications.php:50, fuzzy
+#: src/Views/menu-notifications.php:50
 msgid "Email Notification"
-msgstr "Email Notification"
+msgstr "Thông báo email"
 
 #: src/Views/menu-notifications.php:52
 msgid "Whenever an action runs, an email can be sent to alert users."
@@ -4424,9 +4424,9 @@ msgstr ""
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:24
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:104
 #: assets/js/backupPanel.js:500
-#: assets/js/backupPanel.js:912, fuzzy
+#: assets/js/backupPanel.js:912
 msgid "Post Types"
-msgstr "Post Types"
+msgstr "Loại bài viết"
 
 #: src/Views/tabs-future-actions.php:25
 #: assets/js/backupPanel.js:652
@@ -4466,7 +4466,7 @@ msgstr "Hiển thị"
 #: assets/js/backupPanel.js:516
 #: assets/js/backupPanel.js:928
 msgid "Admin"
-msgstr "Admin"
+msgstr "Quản trị"
 
 #: src/Views/tabs-settings.php:23
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11467
@@ -4499,9 +4499,9 @@ msgstr "Chuỗi"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:393
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:31
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:356, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:356
 msgid "Boolean"
-msgstr "Boolean"
+msgstr "Kiểu boolean"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:396
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:32
@@ -4929,9 +4929,9 @@ msgstr "Tên của thuật ngữ."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3250
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:13
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2475, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2475
 msgid "Slug"
-msgstr "Slug"
+msgstr "Đường dẫn tĩnh"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3251
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:14
@@ -5179,7 +5179,6 @@ msgstr "Khách truy cập có thể thêm bình luận và phản hồi mới."
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4318
 #: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:58
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3292
-#, fuzzy
 msgid ""
 "Visitors can not add new comments or replies. Existing comments remain "
 "visible."
@@ -6158,9 +6157,9 @@ msgstr[0] "%d kết quả tìm thấy."
 #: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:116
 #: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:123
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10944
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10951, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10951
 msgid "Nodes"
-msgstr "Nodes"
+msgstr "Nút"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13477
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13497
@@ -6182,10 +6181,10 @@ msgstr[0] "%d khối"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14104
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:24
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11712, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11712
 #. translators: Patterns tab title in the block inserter.
 msgid "Actions"
-msgstr "Actions"
+msgstr "Hành động"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14154
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:10
@@ -6226,7 +6225,6 @@ msgstr "Nhấp đúp vào bảng quy trình làm việc để tăng mức phóng
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14156
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:20
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11762
-#, fuzzy
 msgid ""
 "Hold down the <kbd>shift</kbd> key and double-click the workflow pane to "
 "decrease the zoom level."
@@ -6252,9 +6250,9 @@ msgstr "(không có tên)"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14348
 #: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:37
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11906, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11906
 msgid "Element"
-msgstr "Element"
+msgstr "Phần tử"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14432
 #: assets/jsx/workflow-editor/components/settings-sidebar/settings-sidebar.jsx:50
@@ -6270,9 +6268,9 @@ msgstr "Bắt đầu"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14752
 #: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:50
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12242, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12242
 msgid "Ray Debug"
-msgstr "Ray Debug"
+msgstr "Gỡ lỗi Ray"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14755
 #: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:55
