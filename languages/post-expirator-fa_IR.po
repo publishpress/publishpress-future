@@ -4002,7 +4002,7 @@ msgstr ""
 msgid "Error found on the database schema:"
 msgid_plural "Errors found on the database schema:"
 msgstr[0] "خطا در طرح پایگاه داده پیدا شد:"
-msgstr[1] ""
+msgstr[1] "خطاها در طرح پایگاه داده پیدا شد:"
 
 #: src/Views/menu-diagnostics.php:115
 msgid "Try to Fix Database"
@@ -6137,7 +6137,7 @@ msgstr "هیچ نتیجه‌ای یافت نشد."
 msgid "%d result found."
 msgid_plural "%d results found."
 msgstr[0] "%d نتیجه پیدا شد."
-msgstr[1] ""
+msgstr[1] "%d نتایج پیدا شد."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13244
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13249
@@ -6165,7 +6165,7 @@ msgstr "نکته‌ای برای استفاده از ویرایشگر جریان
 msgid "%d block"
 msgid_plural "%d blocks"
 msgstr[0] "%d بلوک"
-msgstr[1] ""
+msgstr[1] "%d بلوک"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14104
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:24
