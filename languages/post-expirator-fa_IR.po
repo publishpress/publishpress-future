@@ -996,7 +996,7 @@ msgstr "اجرا"
 msgid "%s year"
 msgid_plural "%s years"
 msgstr[0] "%s سال"
-msgstr[1] ""
+msgstr[1] "%s سال"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:101
 #. translators: %s: amount of time
@@ -1004,7 +1004,7 @@ msgstr[1] ""
 msgid "%s month"
 msgid_plural "%s months"
 msgstr[0] "%s ماه"
-msgstr[1] ""
+msgstr[1] "%s ماه"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:106
 #. translators: %s: amount of time
@@ -1012,7 +1012,7 @@ msgstr[1] ""
 msgid "%s week"
 msgid_plural "%s weeks"
 msgstr[0] "%s هفته"
-msgstr[1] ""
+msgstr[1] "%s هفته"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:111
 #. translators: %s: amount of time
@@ -1020,7 +1020,7 @@ msgstr[1] ""
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] "%s روز"
-msgstr[1] ""
+msgstr[1] "%s روز"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:116
 #. translators: %s: amount of time
@@ -1028,7 +1028,7 @@ msgstr[1] ""
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] "%s ساعت"
-msgstr[1] ""
+msgstr[1] "%s ساعت"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:121
 #. translators: %s: amount of time
@@ -1036,7 +1036,7 @@ msgstr[1] ""
 msgid "%s minute"
 msgid_plural "%s minutes"
 msgstr[0] "%s دقیقه"
-msgstr[1] ""
+msgstr[1] "%s دقیقه"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:126
 #. translators: %s: amount of time
@@ -1044,7 +1044,7 @@ msgstr[1] ""
 msgid "%s second"
 msgid_plural "%s seconds"
 msgstr[0] "%s ثانیه"
-msgstr[1] ""
+msgstr[1] "%s ثانیه"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:156
 msgid "Action Logs"

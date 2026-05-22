@@ -4061,7 +4061,7 @@ msgid "Error found on the database schema:"
 msgid_plural "Errors found on the database schema:"
 msgstr[0] "Na schématu databáze byla nalezena chyba:"
 msgstr[1] "Na schématu databáze byly nalezeny chyby:"
-msgstr[2] ""
+msgstr[2] "Na schématu databáze bylo nalezeno chyb:"
 
 #: src/Views/menu-diagnostics.php:115
 msgid "Try to Fix Database"
@@ -6183,7 +6183,7 @@ msgid "%d result found."
 msgid_plural "%d results found."
 msgstr[0] "%d nalezený výsledek."
 msgstr[1] "%d nalezené výsledky."
-msgstr[2] ""
+msgstr[2] "%d nalezených výsledků."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13244
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13249
@@ -6212,7 +6212,7 @@ msgid "%d block"
 msgid_plural "%d blocks"
 msgstr[0] "%d blok"
 msgstr[1] "%d bloky"
-msgstr[2] ""
+msgstr[2] "%d bloků"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14104
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:24

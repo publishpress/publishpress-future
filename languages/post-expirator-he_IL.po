@@ -983,8 +983,8 @@ msgid "%s year"
 msgid_plural "%s years"
 msgstr[0] "%s שנה"
 msgstr[1] "%s שנים"
-msgstr[2] ""
-msgstr[3] ""
+msgstr[2] "%s שנים"
+msgstr[3] "%s שנים"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:101
 #. translators: %s: amount of time
@@ -993,8 +993,8 @@ msgid "%s month"
 msgid_plural "%s months"
 msgstr[0] "%s חודש"
 msgstr[1] "%s חודשים"
-msgstr[2] ""
-msgstr[3] ""
+msgstr[2] "%s חודשים"
+msgstr[3] "%s חודשים"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:106
 #. translators: %s: amount of time
@@ -1003,8 +1003,8 @@ msgid "%s week"
 msgid_plural "%s weeks"
 msgstr[0] "%s שבוע"
 msgstr[1] "%s שבועות"
-msgstr[2] ""
-msgstr[3] ""
+msgstr[2] "%s שבועות"
+msgstr[3] "%s שבועות"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:111
 #. translators: %s: amount of time
@@ -1013,8 +1013,8 @@ msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] "%s יום"
 msgstr[1] "%s ימים"
-msgstr[2] ""
-msgstr[3] ""
+msgstr[2] "%s ימים"
+msgstr[3] "%s ימים"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:116
 #. translators: %s: amount of time
@@ -1023,8 +1023,8 @@ msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] "%s שעה"
 msgstr[1] "%s שעות"
-msgstr[2] ""
-msgstr[3] ""
+msgstr[2] "%s שעות"
+msgstr[3] "%s שעות"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:121
 #. translators: %s: amount of time
@@ -1033,8 +1033,8 @@ msgid "%s minute"
 msgid_plural "%s minutes"
 msgstr[0] "%s דקה"
 msgstr[1] "%s דקות"
-msgstr[2] ""
-msgstr[3] ""
+msgstr[2] "%s דקות"
+msgstr[3] "%s דקות"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:126
 #. translators: %s: amount of time
@@ -1043,8 +1043,8 @@ msgid "%s second"
 msgid_plural "%s seconds"
 msgstr[0] "%s שנייה"
 msgstr[1] "%s שניות"
-msgstr[2] ""
-msgstr[3] ""
+msgstr[2] "%s שניות"
+msgstr[3] "%s שניות"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:156
 msgid "Action Logs"
@@ -3969,8 +3969,8 @@ msgid "Error found on the database schema:"
 msgid_plural "Errors found on the database schema:"
 msgstr[0] "נמצאה שגיאה בסכמת מסד הנתונים:"
 msgstr[1] "נמצאו שגיאות בסכמת מסד הנתונים:"
-msgstr[2] ""
-msgstr[3] ""
+msgstr[2] "נמצאו שגיאות בסכמת מסד הנתונים:"
+msgstr[3] "נמצאו שגיאות בסכמת מסד הנתונים:"
 
 #: src/Views/menu-diagnostics.php:115
 msgid "Try to Fix Database"
@@ -6077,8 +6077,8 @@ msgid "%d result found."
 msgid_plural "%d results found."
 msgstr[0] "%d תוצאה נמצאה."
 msgstr[1] "%d תוצאות נמצאו."
-msgstr[2] ""
-msgstr[3] ""
+msgstr[2] "%d תוצאות נמצאו."
+msgstr[3] "%d תוצאות נמצאו."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13244
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13249
@@ -6107,8 +6107,8 @@ msgid "%d block"
 msgid_plural "%d blocks"
 msgstr[0] "%d בלוק"
 msgstr[1] "%d בלוקים"
-msgstr[2] ""
-msgstr[3] ""
+msgstr[2] "%d בלוקים"
+msgstr[3] "%d בלוקים"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14104
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:24

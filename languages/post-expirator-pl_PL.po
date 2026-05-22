@@ -6189,7 +6189,7 @@ msgid "%d result found."
 msgid_plural "%d results found."
 msgstr[0] "%d wynik znaleziony."
 msgstr[1] "%d wyniki znalezione."
-msgstr[2] ""
+msgstr[2] "%d wyników znalezionych."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13244
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13249
@@ -6218,7 +6218,7 @@ msgid "%d block"
 msgid_plural "%d blocks"
 msgstr[0] "%d blok"
 msgstr[1] "%d bloki"
-msgstr[2] ""
+msgstr[2] "%d bloków"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14104
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:24
