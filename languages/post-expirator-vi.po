@@ -4286,6 +4286,11 @@ msgstr ""
 msgid "Shortcode Wrapper"
 msgstr "Shortcode Wrapper"
 
+#. translators: This is used to indicate that no wrapper should be used on the shortcode output
+#: src/Views/menu-display.php:266
+msgid "— None —"
+msgstr "— Không có —"
+
 #: src/Views/menu-display.php:279
 msgid ""
 "The shortcode output will be wrapped in the selected HTML tag, allowing you "
