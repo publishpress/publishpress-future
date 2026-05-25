@@ -25,7 +25,7 @@ msgstr "PublishPress Future Free"
 #. Plugin URI of the plugin
 #, fuzzy
 msgid "http://wordpress.org/extend/plugins/post-expirator/"
-msgstr "http://ja.wordpress.org/extend/plugins/post-expirator/"
+msgstr "http://wordpress.org/extend/plugins/post-expirator/"
 
 #: post-expirator.php:6
 #. Description of the plugin
@@ -131,7 +131,7 @@ msgstr "タクソノミーが見つかりません"
 #: src/Modules/Settings/SettingsFacade.php:122
 #, fuzzy
 msgid "l F jS, Y"
-msgstr "Y年n月j日 (D)"
+msgstr "l F jS, Y"
 
 #: services.php:155
 #: src/Modules/Settings/SettingsFacade.php:123
@@ -1237,9 +1237,7 @@ msgstr "日"
 msgid ""
 "You're using PublishPress Future Free. The Pro version has more features "
 "and support. %1$sUpgrade to Pro%2$s"
-msgstr ""
-"あなたは PublishPress Future Free を使用しています。Proバージョンはより多くの機能とサポートがあります。 %1$s Pro "
-"%2$s にアップグレードする"
+msgstr "あなたは PublishPress Future Free を使用しています。Proバージョンはより多くの機能とサポートがあります。 %1$s Pro %2$s にアップグレードする"
 
 #: src/Modules/Workflows/Controllers/ManualPostTrigger.php:426
 msgid "Workflow Manual Trigger"
@@ -1256,10 +1254,7 @@ msgid ""
 "You have past-due scheduled actions in PublishPress Future.\n"
 "\n"
 "Please check them at %s"
-msgstr ""
-"PublishPress Futureに期限切れのスケジュールされたアクションがあります。\n"
-"\n"
-"%sで確認してください。"
+msgstr "PublishPress Futureに期限切れのスケジュールされたアクションがあります。\n\n%sで確認してください。"
 
 #: src/Modules/Workflows/Controllers/PastDueActions.php:155
 msgid "[PublishPress Future] Past-due Actions Found"

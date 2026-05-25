@@ -31,9 +31,7 @@ msgstr "http://wordpress.org/extend/plugins/post-expirator/"
 msgid ""
 "PublishPress Future allows you to schedule automatic changes to posts, "
 "pages and other content types."
-msgstr ""
-"PublishPress Future, gönderilere, sayfalara ve diğer içerik türlerine "
-"otomatik değişiklikler planlamanıza olanak tanır."
+msgstr "PublishPress Future, gönderilere, sayfalara ve diğer içerik türlerine otomatik değişiklikler planlamanıza olanak tanır."
 
 #: post-expirator.php:7
 #. Author of the plugin
@@ -1270,9 +1268,7 @@ msgstr "gün"
 msgid ""
 "You're using PublishPress Future Free. The Pro version has more features "
 "and support. %1$sUpgrade to Pro%2$s"
-msgstr ""
-"PublishPress Future Ücretsiz sürümünü kullanıyorsunuz. Pro sürüm daha fazla "
-"özellik ve destek sunmaktadır. %1$sPro'ya Geçin%2$s"
+msgstr "PublishPress Future Ücretsiz sürümünü kullanıyorsunuz. Pro sürüm daha fazla özellik ve destek sunmaktadır. %1$sPro'ya Geçin%2$s"
 
 #: src/Modules/Workflows/Controllers/ManualPostTrigger.php:426
 msgid "Workflow Manual Trigger"
@@ -1289,10 +1285,7 @@ msgid ""
 "You have past-due scheduled actions in PublishPress Future.\n"
 "\n"
 "Please check them at %s"
-msgstr ""
-"PublishPress Future'da geçmiş tarihli planlı eylemleriniz var.\n"
-"\n"
-"Lütfen bunları %s adresinden kontrol edin"
+msgstr "PublishPress Future'da geçmiş tarihli planlı eylemleriniz var.\n\nLütfen bunları %s adresinden kontrol edin"
 
 #: src/Modules/Workflows/Controllers/PastDueActions.php:155
 msgid "[PublishPress Future] Past-due Actions Found"
@@ -3668,7 +3661,7 @@ msgstr "Bilinmeyen Adım"
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:99
 msgid "PublishPress Future"
-msgstr "PublishPress Gelecek"
+msgstr "PublishPress Future"
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:108
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:405
@@ -6753,7 +6746,6 @@ msgstr "Elle etkinleştirilen iş akışlarını değiştir"
 #: assets/jsx/workflows-list/cancel-action/index.jsx:59
 #: assets/js/workflowsListCancelAction.js:497
 #. translators: %s: Workflow title
-#, fuzzy
 msgid ""
 "Are you sure you want to cancel all scheduled actions for the \"%s\" "
 "workflow?"

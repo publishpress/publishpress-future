@@ -33,9 +33,7 @@ msgstr "http://wordpress.org/extend/plugins/post-expirator/"
 msgid ""
 "PublishPress Future allows you to schedule automatic changes to posts, "
 "pages and other content types."
-msgstr ""
-"Met PublishPress Future kun je automatische wijzigingen plannen voor "
-"berichten, pagina's en andere inhoudstypen."
+msgstr "Met PublishPress Future kun je automatische wijzigingen plannen voor berichten, pagina's en andere inhoudstypen."
 
 #: post-expirator.php:7
 #. Author of the plugin
@@ -141,7 +139,7 @@ msgstr "Geen taxonomieën gevonden"
 #: src/Modules/Settings/SettingsFacade.php:122
 #, fuzzy
 msgid "l F jS, Y"
-msgstr "l j F Y"
+msgstr "l F jS, Y"
 
 #: services.php:155
 #: src/Modules/Settings/SettingsFacade.php:123
@@ -1300,9 +1298,7 @@ msgstr "dagen"
 msgid ""
 "You're using PublishPress Future Free. The Pro version has more features "
 "and support. %1$sUpgrade to Pro%2$s"
-msgstr ""
-"Je gebruikt PublishPress Future Free. De Pro versie heeft meer functies en "
-"ondersteuning. %1$sUpgrade naar Pro%2$s"
+msgstr "Je gebruikt PublishPress Future Free. De Pro versie heeft meer functies en ondersteuning. %1$sUpgrade naar Pro%2$s"
 
 #: src/Modules/Workflows/Controllers/ManualPostTrigger.php:426
 msgid "Workflow Manual Trigger"
@@ -1319,10 +1315,7 @@ msgid ""
 "You have past-due scheduled actions in PublishPress Future.\n"
 "\n"
 "Please check them at %s"
-msgstr ""
-"Je hebt achterstallige geplande acties in PublishPress future. \n"
-"\n"
-" controleer ze op %s"
+msgstr "Je hebt achterstallige geplande acties in PublishPress future. \n\n controleer ze op %s"
 
 #: src/Modules/Workflows/Controllers/PastDueActions.php:155
 msgid "[PublishPress Future] Past-due Actions Found"

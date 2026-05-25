@@ -33,9 +33,7 @@ msgstr "http://wordpress.org/extend/plugins/post-expirator/"
 msgid ""
 "PublishPress Future allows you to schedule automatic changes to posts, "
 "pages and other content types."
-msgstr ""
-"PublishPress Future memungkinkan Anda menjadwalkan perubahan otomatis pada "
-"pos, halaman, dan jenis konten lainnya."
+msgstr "PublishPress Future memungkinkan Anda menjadwalkan perubahan otomatis pada pos, halaman, dan jenis konten lainnya."
 
 #: post-expirator.php:7
 #. Author of the plugin
@@ -47,7 +45,7 @@ msgstr "PublishPress"
 #. Author URI of the plugin
 #, fuzzy
 msgid "http://publishpress.com"
-msgstr "https://publishpress.com"
+msgstr "http://publishpress.com"
 
 #: legacy/classes/Display.class.php:113
 #: legacy/classes/Display.class.php:141
@@ -1283,9 +1281,7 @@ msgstr "hari"
 msgid ""
 "You're using PublishPress Future Free. The Pro version has more features "
 "and support. %1$sUpgrade to Pro%2$s"
-msgstr ""
-"Anda sedang menggunakan PublishPress Future Gratis. Versi Pro memiliki "
-"lebih banyak fitur dan dukungan. %1$sUpgrade ke Pro%2$s"
+msgstr "Anda sedang menggunakan PublishPress Future Gratis. Versi Pro memiliki lebih banyak fitur dan dukungan. %1$sUpgrade ke Pro%2$s"
 
 #: src/Modules/Workflows/Controllers/ManualPostTrigger.php:426
 msgid "Workflow Manual Trigger"
@@ -1302,11 +1298,7 @@ msgid ""
 "You have past-due scheduled actions in PublishPress Future.\n"
 "\n"
 "Please check them at %s"
-msgstr ""
-"Anda memiliki tindakan terjadwal yang telah lewat batas waktu di "
-"PublishPress Future.\n"
-"\n"
-"Silakan periksa di %s"
+msgstr "Anda memiliki tindakan terjadwal yang telah lewat batas waktu di PublishPress Future.\n\nSilakan periksa di %s"
 
 #: src/Modules/Workflows/Controllers/PastDueActions.php:155
 msgid "[PublishPress Future] Past-due Actions Found"

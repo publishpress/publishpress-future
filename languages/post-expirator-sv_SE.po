@@ -6761,7 +6761,6 @@ msgstr "Ändra manuellt aktiverade arbetsflöden"
 #: assets/jsx/workflows-list/cancel-action/index.jsx:59
 #: assets/js/workflowsListCancelAction.js:497
 #. translators: %s: Workflow title
-#, fuzzy
 msgid ""
 "Are you sure you want to cancel all scheduled actions for the \"%s\" "
 "workflow?"

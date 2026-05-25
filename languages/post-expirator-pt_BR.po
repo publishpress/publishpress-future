@@ -33,9 +33,7 @@ msgstr "http://wordpress.org/extend/plugins/post-expirator/"
 msgid ""
 "PublishPress Future allows you to schedule automatic changes to posts, "
 "pages and other content types."
-msgstr ""
-"O PublishPress Future permite que você agende alterações automáticas em "
-"posts, páginas e outros tipos de conteúdo."
+msgstr "O PublishPress Future permite que você agende alterações automáticas em posts, páginas e outros tipos de conteúdo."
 
 #: post-expirator.php:7
 #. Author of the plugin
@@ -139,7 +137,7 @@ msgstr "Nenhuma taxonomia encontrada"
 #: services.php:151
 #: src/Modules/Settings/SettingsFacade.php:122
 msgid "l F jS, Y"
-msgstr "l, j F Y"
+msgstr "l F jS, Y"
 
 #: services.php:155
 #: src/Modules/Settings/SettingsFacade.php:123
@@ -1289,9 +1287,7 @@ msgstr "dias"
 msgid ""
 "You're using PublishPress Future Free. The Pro version has more features "
 "and support. %1$sUpgrade to Pro%2$s"
-msgstr ""
-"Você está usando o PublishPress Future gratuito. A versão Pro tem mais "
-"recursos e melhor suporte. %1$sAtualize para a versão Pro%2$s"
+msgstr "Você está usando o PublishPress Future gratuito. A versão Pro tem mais recursos e melhor suporte. %1$sAtualize para a versão Pro%2$s"
 
 #: src/Modules/Workflows/Controllers/ManualPostTrigger.php:426
 msgid "Workflow Manual Trigger"
@@ -1308,10 +1304,7 @@ msgid ""
 "You have past-due scheduled actions in PublishPress Future.\n"
 "\n"
 "Please check them at %s"
-msgstr ""
-"Você tem ações agendadas atrasadas no PublishPress Future.\n"
-"\n"
-"Verifique-as em %s"
+msgstr "Você tem ações agendadas atrasadas no PublishPress Future.\n\nVerifique-as em %s"
 
 #: src/Modules/Workflows/Controllers/PastDueActions.php:155
 msgid "[PublishPress Future] Past-due Actions Found"
@@ -3429,9 +3422,7 @@ msgstr "Executar manualmente através da ação da linha de posts"
 msgid ""
 "This trigger creates a custom post row action and activates when the row "
 "action is clicked in the Posts list screen."
-msgstr ""
-"Este acionador cria uma ação na linha do post personalizado e é ativado "
-"quando a ação na linha for clicada na tela da lista de posts."
+msgstr "Este acionador cria uma ação na linha do post personalizado e é ativado quando a ação na linha for clicada na tela da lista de posts."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:91
 msgid "Row Action"
@@ -3439,9 +3430,7 @@ msgstr "Ação da linha"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:92
 msgid "Configure the post row action that will be created in the Posts list screen."
-msgstr ""
-"Configure a ação da linha do post, que será criada na tela da lista de "
-"posts."
+msgstr "Configure a ação da linha do post, que será criada na tela da lista de posts."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:100
 msgid "Action label"
@@ -3896,9 +3885,7 @@ msgstr "Simplificado"
 msgid ""
 "Displays only the icon and date/time in the Future Action column on the "
 "\"Posts\" screen."
-msgstr ""
-"Exibe apenas o ícone e a data e hora na coluna “Ação futura” na tela "
-"“Posts”."
+msgstr "Exibe apenas o ícone e a data e hora na coluna “Ação futura” na tela “Posts”."
 
 #: src/Views/menu-admin.php:118
 msgid "Future Actions Editor"
@@ -4193,10 +4180,7 @@ msgid ""
 "Restore legacy action arguments as Post Meta. This is useful if you have "
 "issues with 3rd party plugins that read that data. This will run in the "
 "background and may take a while."
-msgstr ""
-"Restaure argumentos de ação legados como meta do post. Isso é útil se você "
-"tiver problemas com plugins de terceiros que leem esses dados. Isso será "
-"executado em segundo plano e pode demorar um pouco."
+msgstr "Restaure argumentos de ação legados como meta do post. Isso é útil se você tiver problemas com plugins de terceiros que leem esses dados. Isso será executado em segundo plano e pode demorar um pouco."
 
 #: src/Views/menu-diagnostics.php:221
 msgid "Legacy Cron Schedule"
@@ -4687,9 +4671,7 @@ msgstr "Editar regras"
 msgid ""
 "Conditional logic is a Pro feature. Upgrade to create advanced conditions "
 "for your workflows."
-msgstr ""
-"Lógica condicional é um recurso Pro. Atualize para criar condições "
-"avançadas para seus fluxos de trabalho."
+msgstr "Lógica condicional é um recurso Pro. Atualize para criar condições avançadas para seus fluxos de trabalho."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1234
 #: assets/jsx/workflow-editor/components/data-fields/conditional/components/duplicate-rule-button.jsx:10
@@ -5527,9 +5509,7 @@ msgstr "Pro"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9283
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11276
 msgid "Currently this step is being skipped. Upgrade to Pro to unlock this feature."
-msgstr ""
-"Atualmente, esta etapa está sendo pulada. Faça upgrade para Pro para "
-"desbloquear este recurso."
+msgstr "Atualmente, esta etapa está sendo pulada. Faça upgrade para Pro para desbloquear este recurso."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9610
 #: assets/jsx/workflow-editor/components/layout/header.jsx:129

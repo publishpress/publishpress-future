@@ -1238,9 +1238,7 @@ msgstr "일"
 msgid ""
 "You're using PublishPress Future Free. The Pro version has more features "
 "and support. %1$sUpgrade to Pro%2$s"
-msgstr ""
-"당신은 PublishPress Future Free를 사용하고 있습니다. Pro 버전은 더 많은 기능과 지원을 제공합니다. "
-"%1$sPro로 업그레이드%2$s"
+msgstr "당신은 PublishPress Future Free를 사용하고 있습니다. Pro 버전은 더 많은 기능과 지원을 제공합니다. %1$sPro로 업그레이드%2$s"
 
 #: src/Modules/Workflows/Controllers/ManualPostTrigger.php:426
 msgid "Workflow Manual Trigger"
@@ -1257,10 +1255,7 @@ msgid ""
 "You have past-due scheduled actions in PublishPress Future.\n"
 "\n"
 "Please check them at %s"
-msgstr ""
-"PublishPress Future에 기한이 지난 예약된 작업이 있습니다.\n"
-"\n"
-"%s에서 확인해 주세요."
+msgstr "PublishPress Future에 기한이 지난 예약된 작업이 있습니다.\n\n%s에서 확인해 주세요."
 
 #: src/Modules/Workflows/Controllers/PastDueActions.php:155
 msgid "[PublishPress Future] Past-due Actions Found"
@@ -3562,7 +3557,7 @@ msgstr "알 수 없는 단계"
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:99
 msgid "PublishPress Future"
-msgstr "퍼블리시프레스 미래"
+msgstr "PublishPress Future"
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:108
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:405
