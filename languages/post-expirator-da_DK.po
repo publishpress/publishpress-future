@@ -136,9 +136,9 @@ msgid "l F jS, Y"
 msgstr "l F jS, Y"
 
 #: services.php:155
-#: src/Modules/Settings/SettingsFacade.php:123, fuzzy
+#: src/Modules/Settings/SettingsFacade.php:123
 msgid "g:ia"
-msgstr "g:ia"
+msgstr "G:i"
 
 #: services.php:156
 #: src/Modules/Settings/SettingsFacade.php:124
@@ -528,9 +528,9 @@ msgstr "Logformat"
 msgid "List"
 msgstr "Liste"
 
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:237, fuzzy
+#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:237
 msgid "Popup"
-msgstr "Popup"
+msgstr "Pop op-vindue"
 
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:305
 msgid "Unknown post"
@@ -953,17 +953,17 @@ msgstr ""
 "engelske termer til dato/tid offset, såsom \"3 måneder\" eller \"1 uge\"."
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:53
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:234, fuzzy
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:234
 msgid "Status"
-msgstr "Status"
+msgstr "Tilstand"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:55, fuzzy
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:55
 msgid "Arguments"
-msgstr "Arguments"
+msgstr "Argumenter"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:56, fuzzy
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:56
 msgid "Logs"
-msgstr "Logs"
+msgstr "Logfiler"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:57
 msgid "Scheduled Date"
@@ -1122,9 +1122,9 @@ msgstr "Vis log"
 msgid "Action: "
 msgstr "Handling: "
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:687, fuzzy
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:687
 msgid "Status: "
-msgstr "Status: "
+msgstr "Tilstand: "
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:693
 msgid "Arguments: "
@@ -1997,9 +1997,9 @@ msgstr "De inputdata for dette trin."
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:160
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeletePostMeta.php:153
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePostMeta.php:153
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:159, fuzzy
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:159
 msgid "Meta ID"
-msgstr "Meta ID"
+msgstr "Meta-ID"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:161
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeletePostMeta.php:154
@@ -2102,9 +2102,9 @@ msgstr "Dette trin transmitterer workflow'ens data til debug loggen."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AppendDebugLog.php:64
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AppendDebugLog.php:97
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendRay.php:64, fuzzy
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendRay.php:64
 msgid "Debug output"
-msgstr "Debug output"
+msgstr "Debug-output"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AppendDebugLog.php:65
 msgid "The message to be sent to the debug log."
@@ -2190,9 +2190,9 @@ msgstr ""
 "Viser hvilken sti der blev taget: 'true' hvis betingelserne var opfyldt, "
 "eller 'false' hvis de ikke var."
 
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:147, fuzzy
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:147
 msgid "True"
-msgstr "True"
+msgstr "Sand"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:151
 msgid "False"
@@ -2237,9 +2237,9 @@ msgstr ""
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeactivatePostWorkflow.php:125
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16035
 #: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:110
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13229, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13229
 msgid "Workflow"
-msgstr "Workflow"
+msgstr "Arbejdsgang"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeletePost.php:32
 msgid "Delete post"
@@ -2314,9 +2314,9 @@ msgstr ""
 "gennem 'publishpress_future_allowed_action_hooks' filteret, er tilladt."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:73
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:73, fuzzy
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:73
 msgid "Hook"
-msgstr "Hook"
+msgstr "Hook (Aktion)"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:74
 msgid "The hook that will be executed."
@@ -2601,9 +2601,9 @@ msgstr "Efter alle gentagelser"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:17
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:17
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:89, fuzzy
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:89
 msgid "PublishPress Workflow: {{global.workflow.title}}"
-msgstr "PublishPress Workflow: {{global.workflow.title}}"
+msgstr "PublishPress-arbejdsgang: {{global.workflow.title}}"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:22
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:22
@@ -2696,9 +2696,9 @@ msgstr "Notifikationstype"
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:108
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2588
 #: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:8
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1934, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1934
 msgid "Info"
-msgstr "Info"
+msgstr "Oplysninger"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:122
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:112
@@ -3708,9 +3708,9 @@ msgstr "Asynkron"
 #: src/Views/tabs-settings.php:36
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2585
 #: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:7
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1933, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1933
 msgid "Debug"
-msgstr "Debug"
+msgstr "Fejlfinding"
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:153
 msgid "Data Query"
@@ -3721,9 +3721,9 @@ msgid "Messages"
 msgstr "Beskeder"
 
 #: src/Modules/Workflows/Models/WorkflowModel.php:476
-#, fuzzy, php-format
+#, php-format
 msgid "%s #2"
-msgstr "%s #2"
+msgstr "%s nr. 2"
 
 #: src/Modules/Workflows/Rest/RestApiV1.php:66
 #: src/Modules/Workflows/Rest/RestApiV1.php:129
@@ -3815,9 +3815,9 @@ msgstr ""
 "Handlingen blev ikke planlagt på grund af et konfigurationsproblem. "
 "Venligst forsøg at planlægge den igen."
 
-#: src/Views/menu-admin.php:27, fuzzy
+#: src/Views/menu-admin.php:27
 msgid "Metabox"
-msgstr "Metabox"
+msgstr "Metaboks"
 
 #: src/Views/menu-admin.php:34
 msgid "Metabox Title"
@@ -3887,9 +3887,9 @@ msgstr "Arv fra siteindstillinger"
 msgid "24 hours"
 msgstr "24 timer"
 
-#: src/Views/menu-admin.php:162, fuzzy
+#: src/Views/menu-admin.php:162
 msgid "AM/PM"
-msgstr "AM/PM"
+msgstr "FM/EM"
 
 #: src/Views/menu-admin.php:174
 #: src/Views/menu-advanced.php:99
@@ -4002,9 +4002,9 @@ msgstr "Kopier fejllog"
 #: src/Views/menu-debug-log.php:206
 #: assets/js/backupPanel.js:834
 #: assets/jsx/backup-panel/components/tabs-content/hooks/export.jsx:76
-#: assets/js/backupPanel.js:667, fuzzy
+#: assets/js/backupPanel.js:667
 msgid "Download"
-msgstr "Download"
+msgstr "Hent"
 
 #: src/Views/menu-debug-log.php:209
 msgid "View Full Log in New Tab"
@@ -4286,9 +4286,9 @@ msgstr ""
 "handling vil finde sted. Du kan tilføje denne shortcode hvor som helst i "
 "dit indhold."
 
-#: src/Views/menu-display.php:259, fuzzy
+#: src/Views/menu-display.php:259
 msgid "Shortcode Wrapper"
-msgstr "Shortcode Wrapper"
+msgstr "Shortcode-wrapper"
 
 #: src/Views/menu-display.php:279
 msgid ""
@@ -4527,9 +4527,9 @@ msgstr "Streng"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:393
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:31
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:356, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:356
 msgid "Boolean"
-msgstr "Boolean"
+msgstr "Boolsk"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:396
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:32
@@ -4539,18 +4539,18 @@ msgstr "Objekt"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:399
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:33
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:358, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:358
 msgid "Array"
-msgstr "Array"
+msgstr "Liste"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:434
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2121
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:57
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:50
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:382
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1526, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1526
 msgid "null"
-msgstr "null"
+msgstr "nul"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:452
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:80
@@ -4582,9 +4582,8 @@ msgstr "Argumentnavnet må kun indeholde bogstaver, tal og understregninger."
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:585
 #: assets/jsx/workflow-editor/components/data-fields/action-args/index.jsx:71
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:506
-#, fuzzy
 msgid "Argument #%s"
-msgstr "Argument #%s"
+msgstr "Argument nr. %s"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:606
 #: assets/jsx/workflow-editor/components/data-fields/action-args/index.jsx:85
@@ -4963,9 +4962,9 @@ msgstr "Navnet på termen."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3250
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:13
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2475, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2475
 msgid "Slug"
-msgstr "Slug"
+msgstr "Permalink"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3251
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:14
@@ -4975,9 +4974,9 @@ msgstr "Slug'en på termen."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3255
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:19
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2481, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2481
 msgid "Term ID"
-msgstr "Term ID"
+msgstr "Term-ID"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3256
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:20
@@ -5023,9 +5022,9 @@ msgstr ""
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3798
 #: assets/jsx/workflow-editor/components/data-fields/modal-footer.jsx:11
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2883, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2883
 msgid "OK"
-msgstr "OK"
+msgstr "Okay"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3863
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5141
@@ -5331,9 +5330,9 @@ msgstr "Grøn"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5293
 #: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:15
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4039, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4039
 msgid "Orange"
-msgstr "Orange"
+msgstr "Orange farve"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5296
 #: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:16
@@ -5467,9 +5466,9 @@ msgstr "Rediger beskrivelse"
 #: assets/jsx/workflow-editor/components/inspector-card/index.jsx:116
 #: assets/jsx/workflow-editor/components/secondary-sidebar/node-card.jsx:16
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7026
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11263, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11263
 msgid "Pro"
-msgstr "Pro"
+msgstr "Pro-version"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9186
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11520
@@ -5502,10 +5501,10 @@ msgstr "Luk"
 #: assets/jsx/workflow-editor/components/layout/header.jsx:140
 #: assets/jsx/workflow-editor/components/layout/header.jsx:145
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7425
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7430, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7430
 #. translators: button label text should, if possible, be under 16 characters.
 msgid "Auto Layout"
-msgstr "Auto Layout"
+msgstr "Automatisk layout"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9628
 #: assets/jsx/workflow-editor/components/layout/header.jsx:157
@@ -5726,15 +5725,15 @@ msgstr "Udviklerinfo"
 #: assets/jsx/workflow-editor/components/node-types/generic.jsx:109
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8112
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8850
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9073, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9073
 msgid "Node"
-msgstr "Node"
+msgstr "Knudepunkt"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10401
 #: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:41
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8122, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8122
 msgid "Node Data"
-msgstr "Node Data"
+msgstr "Nodedata"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10409
 #: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:51
@@ -5744,9 +5743,9 @@ msgstr "Node Indstillinger"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10417
 #: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:65
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8146, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8146
 msgid "Node Type"
-msgstr "Node Type"
+msgstr "Nodetype"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10757
 #: assets/jsx/workflow-editor/components/node-inspector/index.jsx:98
@@ -6288,9 +6287,9 @@ msgstr "(ingen navn)"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14348
 #: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:37
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11906, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11906
 msgid "Element"
-msgstr "Element"
+msgstr "Komponent"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14432
 #: assets/jsx/workflow-editor/components/settings-sidebar/settings-sidebar.jsx:50
@@ -6306,9 +6305,9 @@ msgstr "Kom i gang"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14752
 #: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:50
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12242, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12242
 msgid "Ray Debug"
-msgstr "Ray Debug"
+msgstr "Ray-fejlfinding"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14755
 #: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:55
@@ -6790,10 +6789,9 @@ msgstr "Vis"
 #: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:23
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11892
 #. translators: Default label for the Workflow sidebar tab, not selected.
-#, fuzzy
 msgctxt "noun"
 msgid "Workflow"
-msgstr "Workflow"
+msgstr "Arbejdsgang"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13793
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13798
@@ -6805,3 +6803,4 @@ msgstr "Workflow"
 msgctxt "nodes"
 msgid "Most used"
 msgstr "Mest brugt"
+

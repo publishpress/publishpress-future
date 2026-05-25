@@ -132,9 +132,9 @@ msgid "l F jS, Y"
 msgstr "l F jS, Y"
 
 #: services.php:155
-#: src/Modules/Settings/SettingsFacade.php:123, fuzzy
+#: src/Modules/Settings/SettingsFacade.php:123
 msgid "g:ia"
-msgstr "g:ia"
+msgstr "H:i"
 
 #: services.php:156
 #: src/Modules/Settings/SettingsFacade.php:124
@@ -493,9 +493,9 @@ msgid "Settings"
 msgstr "การตั้งค่า"
 
 #: src/Modules/Expirator/Controllers/PostListController.php:89
-#: src/Modules/Workflows/Controllers/PostsList.php:72, fuzzy
+#: src/Modules/Workflows/Controllers/PostsList.php:72
 msgid "Future Action"
-msgstr "Future Action"
+msgstr "การดำเนินการในอนาคต"
 
 #: src/Modules/Expirator/Controllers/PostListController.php:235
 #: src/Modules/Workflows/Controllers/PostsList.php:88
@@ -510,9 +510,9 @@ msgstr "วันที่และเวลาที่ระบุไม่ถ
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:141
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:324
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:47
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:788, fuzzy
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:788
 msgid "Scheduled Actions"
-msgstr "Scheduled Actions"
+msgstr "การดำเนินการที่กำหนดเวลา"
 
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:219
 msgid "Log format"
@@ -1872,9 +1872,9 @@ msgstr ""
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:98
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeletePostMeta.php:91
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePostMeta.php:91
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:165, fuzzy
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:165
 msgid "Meta key"
-msgstr "Meta key"
+msgstr "คีย์เมตา"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:99
 msgid "The meta key to add to the post."
@@ -1882,9 +1882,9 @@ msgstr "คีย์เมตาที่จะเพิ่มไปยังโ
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:104
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeletePostMeta.php:97
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePostMeta.php:97, fuzzy
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePostMeta.php:97
 msgid "Meta value"
-msgstr "Meta value"
+msgstr "ค่าเมตา"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:105
 msgid "The meta value to add to the post."
@@ -1963,9 +1963,9 @@ msgstr "ข้อมูลนำเข้าสำหรับขั้นตอ
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:160
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeletePostMeta.php:153
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePostMeta.php:153
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:159, fuzzy
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:159
 msgid "Meta ID"
-msgstr "Meta ID"
+msgstr "รหัสเมตา"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:161
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeletePostMeta.php:154
@@ -2558,9 +2558,9 @@ msgstr "หลังจากการซ้ำทั้งหมด"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:17
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:17
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:89, fuzzy
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:89
 msgid "PublishPress Workflow: {{global.workflow.title}}"
-msgstr "PublishPress Workflow: {{global.workflow.title}}"
+msgstr "เวิร์กโฟลว์ PublishPress: {{global.workflow.title}}"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:22
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:22
@@ -3639,17 +3639,17 @@ msgstr "เว็บไซต์"
 msgid "Flow Control"
 msgstr "การควบคุมการไหล"
 
-#: src/Modules/Workflows/Models/StepTypesModel.php:135, fuzzy
+#: src/Modules/Workflows/Models/StepTypesModel.php:135
 msgid "Asynchronous"
-msgstr "Asynchronous"
+msgstr "แบบอะซิงโครนัส"
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:144
 #: src/Views/tabs-settings.php:36
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2585
 #: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:7
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1933, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1933
 msgid "Debug"
-msgstr "Debug"
+msgstr "ดีบัก"
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:153
 msgid "Data Query"
@@ -3660,9 +3660,9 @@ msgid "Messages"
 msgstr "ข้อความ"
 
 #: src/Modules/Workflows/Models/WorkflowModel.php:476
-#, fuzzy, php-format
+#, php-format
 msgid "%s #2"
-msgstr "%s #2"
+msgstr "%s ลำดับ 2"
 
 #: src/Modules/Workflows/Rest/RestApiV1.php:66
 #: src/Modules/Workflows/Rest/RestApiV1.php:129
@@ -3818,9 +3818,9 @@ msgstr "สืบทอดจากการตั้งค่าไซต์"
 msgid "24 hours"
 msgstr "24 ชั่วโมง"
 
-#: src/Views/menu-admin.php:162, fuzzy
+#: src/Views/menu-admin.php:162
 msgid "AM/PM"
-msgstr "AM/PM"
+msgstr "ก่อน/หลังเที่ยง"
 
 #: src/Views/menu-admin.php:174
 #: src/Views/menu-advanced.php:99
@@ -4222,17 +4222,17 @@ msgstr ""
 "ผลลัพธ์ของ shortcode จะถูกห่อหุ้มในแท็ก HTML ที่เลือก "
 "ช่วยให้คุณควบคุมโครงสร้างและสไตล์ของมันได้."
 
-#: src/Views/menu-display.php:289, fuzzy
+#: src/Views/menu-display.php:289
 msgid "Wrapper Class"
-msgstr "Wrapper Class"
+msgstr "คลาส wrapper"
 
 #: src/Views/menu-display.php:295
 msgid "Add a CSS class to the wrapper element for custom styling."
 msgstr "เพิ่มคลาส CSS ให้กับองค์ประกอบ wrapper สำหรับการจัดรูปแบบที่กำหนดเอง。"
 
-#: src/Views/menu-display.php:302, fuzzy
+#: src/Views/menu-display.php:302
 msgid "Attributes"
-msgstr "Attributes"
+msgstr "แอตทริบิวต์"
 
 #: src/Views/menu-display.php:308
 #. translators: %s is the shortcode code wrapped in code tags
@@ -4272,41 +4272,41 @@ msgstr "%s - แสดงเฉพาะเวลา"
 msgid "%s - Format set here will override the value set on the settings page"
 msgstr "%s - รูปแบบที่ตั้งไว้ที่นี่จะเขียนทับค่าที่ตั้งไว้ในหน้าการตั้งค่า"
 
-#: src/Views/menu-general.php:25, fuzzy
+#: src/Views/menu-general.php:25
 msgid "Defaults"
-msgstr "Defaults"
+msgstr "ค่าเริ่มต้น"
 
-#: src/Views/menu-general.php:59, fuzzy
+#: src/Views/menu-general.php:59
 msgid "Calendar Visibility"
-msgstr "Calendar Visibility"
+msgstr "การแสดงปฏิทิน"
 
-#: src/Views/menu-general.php:65, fuzzy
+#: src/Views/menu-general.php:65
 msgid "Remember last state"
-msgstr "Remember last state"
+msgstr "จดจำสถานะล่าสุด"
 
 #: src/Views/menu-general.php:67
 msgid "Shows or hides the calendar based on the last user interaction."
 msgstr "แสดงหรือซ่อนปฏิทินตามการโต้ตอบล่าสุดของผู้ใช้。"
 
-#: src/Views/menu-general.php:72, fuzzy
+#: src/Views/menu-general.php:72
 msgid "Always hidden"
-msgstr "Always hidden"
+msgstr "ซ่อนเสมอ"
 
 #: src/Views/menu-general.php:74
 msgid "The calendar is always hidden by default."
 msgstr "ปฏิทินจะถูกซ่อนไว้เสมอโดยค่าเริ่มต้น。"
 
-#: src/Views/menu-general.php:80, fuzzy
+#: src/Views/menu-general.php:80
 msgid "Permissions"
-msgstr "Permissions"
+msgstr "สิทธิ์"
 
 #: src/Views/menu-general.php:85
 msgid "Choose Which User Roles Can Create Future Actions"
 msgstr "เลือกบทบาทของผู้ใช้ที่สามารถสร้างการดำเนินการในอนาคต"
 
-#: src/Views/menu-notifications.php:50, fuzzy
+#: src/Views/menu-notifications.php:50
 msgid "Email Notification"
-msgstr "Email Notification"
+msgstr "การแจ้งเตือนทางอีเมล"
 
 #: src/Views/menu-notifications.php:52
 msgid "Whenever an action runs, an email can be sent to alert users."
@@ -4367,9 +4367,9 @@ msgstr ""
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:24
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:104
 #: assets/js/backupPanel.js:500
-#: assets/js/backupPanel.js:912, fuzzy
+#: assets/js/backupPanel.js:912
 msgid "Post Types"
-msgstr "Post Types"
+msgstr "ประเภทโพสต์"
 
 #: src/Views/tabs-future-actions.php:25
 #: assets/js/backupPanel.js:652
@@ -4430,42 +4430,42 @@ msgstr "การวินิจฉัยและเครื่องมือ
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:387
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:29
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:354, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:354
 msgid "Integer"
-msgstr "Integer"
+msgstr "จำนวนเต็ม"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:390
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:30
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:355, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:355
 msgid "String"
-msgstr "String"
+msgstr "สตริง"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:393
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:31
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:356, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:356
 msgid "Boolean"
-msgstr "Boolean"
+msgstr "บูลีน"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:396
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:32
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:357, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:357
 msgid "Object"
-msgstr "Object"
+msgstr "อ็อบเจ็กต์"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:399
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:33
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:358, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:358
 msgid "Array"
-msgstr "Array"
+msgstr "อาร์เรย์"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:434
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2121
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:57
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:50
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:382
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1526, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1526
 msgid "null"
-msgstr "null"
+msgstr "ค่าว่าง"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:452
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:80
@@ -4872,9 +4872,9 @@ msgstr "ชื่อของคำศัพท์."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3250
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:13
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2475, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2475
 msgid "Slug"
-msgstr "Slug"
+msgstr "สแลก"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3251
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:14
@@ -6094,9 +6094,9 @@ msgstr[0] "%d ผลลัพธ์ที่พบ"
 #: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:116
 #: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:123
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10944
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10951, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10951
 msgid "Nodes"
-msgstr "Nodes"
+msgstr "โหนด"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13477
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13497
@@ -6118,10 +6118,10 @@ msgstr[0] "%d บล็อก"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14104
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:24
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11712, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11712
 #. translators: Patterns tab title in the block inserter.
 msgid "Actions"
-msgstr "Actions"
+msgstr "การดำเนินการ"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14154
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:10
@@ -6185,9 +6185,9 @@ msgstr "(ไม่มีชื่อ)"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14348
 #: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:37
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11906, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11906
 msgid "Element"
-msgstr "Element"
+msgstr "องค์ประกอบ"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14432
 #: assets/jsx/workflow-editor/components/settings-sidebar/settings-sidebar.jsx:50
@@ -6203,9 +6203,9 @@ msgstr "เริ่มต้น"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14752
 #: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:50
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12242, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12242
 msgid "Ray Debug"
-msgstr "Ray Debug"
+msgstr "ดีบัก Ray"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14755
 #: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:55

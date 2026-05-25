@@ -132,9 +132,9 @@ msgid "l F jS, Y"
 msgstr "l F jS, Y"
 
 #: services.php:155
-#: src/Modules/Settings/SettingsFacade.php:123, fuzzy
+#: src/Modules/Settings/SettingsFacade.php:123
 msgid "g:ia"
-msgstr "g:ia"
+msgstr "g:i a"
 
 #: services.php:156
 #: src/Modules/Settings/SettingsFacade.php:124
@@ -239,7 +239,7 @@ msgstr "لا توجد نتائج تتطابق مع الفلتر الحالي."
 #: assets/jsx/workflow-editor/components/data-fields/taxonomy-terms.jsx:60
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4353
 msgid "Taxonomy"
-msgstr "taxonomy"
+msgstr "التصنيف"
 
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:150
 #: src/Modules/Expirator/Controllers/BulkEditController.php:188
@@ -3666,45 +3666,45 @@ msgstr "PublishPress Future"
 #: src/Modules/Workflows/Models/StepTypesModel.php:108
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:405
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:35
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:360, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:360
 msgid "User"
-msgstr "User"
+msgstr "المستخدم"
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:117
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16026
 #: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:100
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13219, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13219
 msgid "Site"
-msgstr "Site"
+msgstr "الموقع"
 
-#: src/Modules/Workflows/Models/StepTypesModel.php:126, fuzzy
+#: src/Modules/Workflows/Models/StepTypesModel.php:126
 msgid "Flow Control"
-msgstr "Flow Control"
+msgstr "التحكم في التدفق"
 
-#: src/Modules/Workflows/Models/StepTypesModel.php:135, fuzzy
+#: src/Modules/Workflows/Models/StepTypesModel.php:135
 msgid "Asynchronous"
-msgstr "Asynchronous"
+msgstr "غير متزامن"
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:144
 #: src/Views/tabs-settings.php:36
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2585
 #: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:7
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1933, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1933
 msgid "Debug"
-msgstr "Debug"
+msgstr "تصحيح"
 
-#: src/Modules/Workflows/Models/StepTypesModel.php:153, fuzzy
+#: src/Modules/Workflows/Models/StepTypesModel.php:153
 msgid "Data Query"
-msgstr "Data Query"
+msgstr "استعلام البيانات"
 
-#: src/Modules/Workflows/Models/StepTypesModel.php:162, fuzzy
+#: src/Modules/Workflows/Models/StepTypesModel.php:162
 msgid "Messages"
-msgstr "Messages"
+msgstr "الرسائل"
 
 #: src/Modules/Workflows/Models/WorkflowModel.php:476
-#, fuzzy, php-format
+#, php-format
 msgid "%s #2"
-msgstr "%s #2"
+msgstr "%s رقم 2"
 
 #: src/Modules/Workflows/Rest/RestApiV1.php:66
 #: src/Modules/Workflows/Rest/RestApiV1.php:129
@@ -3714,11 +3714,11 @@ msgstr "معرف عملية العمل"
 
 #: src/Modules/Workflows/Rest/RestApiV1.php:90
 msgid "The post type"
-msgstr "post type"
+msgstr "نوع المنشور"
 
 #: src/Modules/Workflows/Rest/RestApiV1.php:175
 msgid "The taxonomy name"
-msgstr "taxonomy"
+msgstr "اسم التصنيف"
 
 #: src/Modules/Workflows/Rest/RestApiV1.php:198
 msgid "The post ID"
@@ -4270,17 +4270,17 @@ msgstr ""
 "سيتم لف مخرجات الكود القصير داخل علامة HTML المحددة، مما يسمح لك بالتحكم في "
 "هيكله وتنسيقه."
 
-#: src/Views/menu-display.php:289, fuzzy
+#: src/Views/menu-display.php:289
 msgid "Wrapper Class"
-msgstr "Wrapper Class"
+msgstr "فئة الغلاف"
 
 #: src/Views/menu-display.php:295
 msgid "Add a CSS class to the wrapper element for custom styling."
 msgstr "أضف فئة CSS لعنصر اللف لتنسيق مخصص."
 
-#: src/Views/menu-display.php:302, fuzzy
+#: src/Views/menu-display.php:302
 msgid "Attributes"
-msgstr "Attributes"
+msgstr "السمات"
 
 #: src/Views/menu-display.php:308
 #. translators: %s is the shortcode code wrapped in code tags
@@ -4320,9 +4320,9 @@ msgstr "%s - يعرض الوقت فقط"
 msgid "%s - Format set here will override the value set on the settings page"
 msgstr "%s - التنسيق المحدد هنا سيتجاوز القيمة المحددة في صفحة الإعدادات"
 
-#: src/Views/menu-general.php:25, fuzzy
+#: src/Views/menu-general.php:25
 msgid "Defaults"
-msgstr "Defaults"
+msgstr "القيم الافتراضية"
 
 #: src/Views/menu-general.php:59
 msgid "Calendar Visibility"

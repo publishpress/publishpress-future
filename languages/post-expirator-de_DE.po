@@ -18,13 +18,11 @@ msgstr ""
 
 #: post-expirator.php:4
 #. Plugin Name of the plugin
-#, fuzzy
 msgid "PublishPress Future Free"
 msgstr "PublishPress Future Free"
 
 #: post-expirator.php:5
 #. Plugin URI of the plugin
-#, fuzzy
 msgid "http://wordpress.org/extend/plugins/post-expirator/"
 msgstr "http://wordpress.org/extend/plugins/post-expirator/"
 
@@ -39,13 +37,11 @@ msgstr ""
 
 #: post-expirator.php:7
 #. Author of the plugin
-#, fuzzy
 msgid "PublishPress"
 msgstr "PublishPress"
 
 #: post-expirator.php:9
 #. Author URI of the plugin
-#, fuzzy
 msgid "http://publishpress.com"
 msgstr "http://publishpress.com"
 
@@ -145,7 +141,6 @@ msgstr "l F jS, Y"
 
 #: services.php:155
 #: src/Modules/Settings/SettingsFacade.php:123
-#, fuzzy
 msgid "g:ia"
 msgstr "H:i"
 
@@ -184,7 +179,7 @@ msgstr "Ungültiger Datums-Zeit-Versatz"
 #: assets/js/backupPanel.js:553
 #: assets/js/backupPanel.js:581, fuzzy
 msgid "Export"
-msgstr "Export"
+msgstr "Exportieren"
 
 #: src/Modules/Backup/Controllers/BackupAdminPage.php:169
 #: assets/js/backupPanel.js:37
@@ -197,7 +192,7 @@ msgstr "Export"
 #: assets/js/backupPanel.js:443
 #: assets/js/backupPanel.js:939, fuzzy
 msgid "Import"
-msgstr "Import"
+msgstr "Importieren"
 
 #: src/Modules/Backup/Controllers/BackupRestApi.php:142
 msgid "Failed to get workflows. Check the logs for more details."
@@ -502,7 +497,7 @@ msgstr "Auf Pro upgraden"
 #: assets/js/workflowManualSelectionBulkEdit.js:114
 #: assets/js/workflowManualSelectionQuickEdit.js:1694, fuzzy
 msgid "Action Workflows"
-msgstr "Action Workflows"
+msgstr "Aktions-Workflows"
 
 #: src/Modules/Expirator/Controllers/PluginsListController.php:70
 #: src/Modules/Expirator/Controllers/SettingsController.php:132
@@ -548,7 +543,6 @@ msgid "List"
 msgstr "Liste"
 
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:237
-#, fuzzy
 msgid "Popup"
 msgstr "Pop-up"
 
@@ -966,7 +960,7 @@ msgstr "Zukünftige Aktion vollständig „%s“"
 
 #: src/Modules/Expirator/Models/ExpirablePostModel.php:666
 #. translators: 1: is the blog name, 2: the email subject
-#, fuzzy, php-format
+#, php-format
 msgid "[%1$s] %2$s"
 msgstr "[%1$s] %2$s"
 
@@ -984,9 +978,8 @@ msgstr ""
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:53
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:234
-#, fuzzy
 msgid "Status"
-msgstr "Status"
+msgstr "Zustand"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:55
 msgid "Arguments"
@@ -1131,7 +1124,7 @@ msgstr "Aktion jetzt ausführen"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:524
 #. translators: %1$s: post type label, %2$d: post ID, %3$s: post link tag start, %4$s: post title, %5$s: post link tag end
-#, fuzzy, php-format
+#, php-format
 msgid "%1$s: [%2$d] %3$s%4$s%5$s"
 msgstr "%1$s: [%2$d] %3$s%4$s%5$s"
 
@@ -1156,9 +1149,8 @@ msgid "Action: "
 msgstr "Aktion: "
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:687
-#, fuzzy
 msgid "Status: "
-msgstr "Status: "
+msgstr "Zustand: "
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:693
 msgid "Arguments: "
@@ -1190,7 +1182,7 @@ msgstr "Nachricht"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:748, fuzzy
 msgid "Async"
-msgstr "Async"
+msgstr "Asynchron"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:765
 #. translators: %s is the date interval in human readable format in the past
@@ -1200,7 +1192,7 @@ msgstr " (%s zurück)"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:771
 #. translators: %s is the date interval in human readable format in the present or future
-#, fuzzy, php-format
+#, php-format
 msgid " (%s)"
 msgstr " (%s)"
 
@@ -1590,9 +1582,8 @@ msgstr "Ein Schritt ist für diesen Workflow erforderlich."
 
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:356
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:406
-#, fuzzy
 msgid "Workflow:"
-msgstr "Workflow:"
+msgstr "Arbeitsablauf:"
 
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:359
 msgid "Step:"
@@ -1600,12 +1591,10 @@ msgstr "Schritt:"
 
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:410
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:445
-#, fuzzy
 msgid "Trigger: "
 msgstr "Auslöser: "
 
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:438
-#, fuzzy
 msgid "Post:"
 msgstr "Beitrag:"
 
@@ -1631,7 +1620,7 @@ msgstr "%1$s für %2$d Mal"
 
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:528
 #. translators: %1$s is the executed times, %2$d is the total repeat times
-#, fuzzy, php-format
+#, php-format
 msgid "[%1$s/%2$d]"
 msgstr "[%1$s/%2$d]"
 
@@ -1754,7 +1743,6 @@ msgid "Triggers"
 msgstr "Auslöser"
 
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:280
-#, fuzzy
 msgid "—"
 msgstr "—"
 
@@ -1939,9 +1927,8 @@ msgstr "Wählen Sie den Beitrag aus, dem Meta-Daten hinzugefügt werden sollen."
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:85
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeletePostMeta.php:85
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePostMeta.php:85
-#, fuzzy
 msgid "Meta"
-msgstr "Meta"
+msgstr "Metadaten"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:86
 msgid "The meta to add to the post."
@@ -2171,7 +2158,7 @@ msgstr "Die Nachricht, die an das Debug-Protokoll gesendet werden soll."
 #: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:28
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1954, fuzzy
 msgid "Level"
-msgstr "Level"
+msgstr "Stufe"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AppendDebugLog.php:98
 msgid "Debug output > Message"
@@ -2294,9 +2281,8 @@ msgstr ""
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16035
 #: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:110
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13229
-#, fuzzy
 msgid "Workflow"
-msgstr "Workflow"
+msgstr "Arbeitsablauf"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeletePost.php:32
 msgid "Delete post"
@@ -2373,9 +2359,8 @@ msgstr ""
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:73
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:73
-#, fuzzy
 msgid "Hook"
-msgstr "Hook"
+msgstr "Aktions-Hook"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:74
 msgid "The hook that will be executed."
@@ -2660,9 +2645,8 @@ msgstr "Nach allen Wiederholungen"
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:17
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:17
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:89
-#, fuzzy
 msgid "PublishPress Workflow: {{global.workflow.title}}"
-msgstr "PublishPress Workflow: {{global.workflow.title}}"
+msgstr "PublishPress-Workflow: {{global.workflow.title}}"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:22
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:22
@@ -2760,7 +2744,6 @@ msgstr "Benachrichtigungstyp"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2588
 #: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:8
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1934
-#, fuzzy
 msgid "Info"
 msgstr "Information"
 
@@ -3761,7 +3744,6 @@ msgid "Unknown Step"
 msgstr "Unbekannter Schritt"
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:99
-#, fuzzy
 msgid "PublishPress Future"
 msgstr "PublishPress Future"
 
@@ -3804,9 +3786,9 @@ msgid "Messages"
 msgstr "Nachrichten"
 
 #: src/Modules/Workflows/Models/WorkflowModel.php:476
-#, fuzzy, php-format
+#, php-format
 msgid "%s #2"
-msgstr "%s #2"
+msgstr "%s Nr. 2"
 
 #: src/Modules/Workflows/Rest/RestApiV1.php:66
 #: src/Modules/Workflows/Rest/RestApiV1.php:129
@@ -3899,9 +3881,8 @@ msgstr ""
 "werden. Bitte versuche es erneut."
 
 #: src/Views/menu-admin.php:27
-#, fuzzy
 msgid "Metabox"
-msgstr "Metabox"
+msgstr "Meta-Box"
 
 #: src/Views/menu-admin.php:34
 msgid "Metabox Title"
@@ -3976,7 +3957,6 @@ msgid "24 hours"
 msgstr "24 Stunden"
 
 #: src/Views/menu-admin.php:162
-#, fuzzy
 msgid "AM/PM"
 msgstr "Vorm./Nachm."
 
@@ -4115,7 +4095,7 @@ msgstr "Erweiterte Diagnose und Tools"
 
 #: src/Views/menu-diagnostics.php:57, fuzzy
 msgid "WP-Cron Status Check"
-msgstr "WP-Cron Status Check"
+msgstr "WP-Cron-Statusprüfung"
 
 #: src/Views/menu-diagnostics.php:61
 #: src/Views/menu-diagnostics.php:80
@@ -4151,7 +4131,7 @@ msgstr "Versuche, die Datenbank zu reparieren"
 
 #: src/Views/menu-diagnostics.php:124, fuzzy
 msgid "Debug Logging"
-msgstr "Debug Logging"
+msgstr "Debug-Protokollierung"
 
 #: src/Views/menu-diagnostics.php:128
 #: src/Views/menu-display.php:139
@@ -4186,9 +4166,8 @@ msgid "Enable Debugging"
 msgstr "Fehlerbehebung aktivieren"
 
 #: src/Views/menu-diagnostics.php:160
-#, fuzzy
 msgid "Spatie Ray Debug"
-msgstr "Spatie Ray Debug"
+msgstr "Spatie-Ray-Debug"
 
 #: src/Views/menu-diagnostics.php:164
 msgid "Spatie Ray Detected"
@@ -4371,7 +4350,6 @@ msgid "Example: "
 msgstr "Beispiel: "
 
 #: src/Views/menu-display.php:243
-#, fuzzy
 msgid "Shortcode"
 msgstr "Shortcode"
 
@@ -4599,7 +4577,6 @@ msgstr "Anzeigen"
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:120
 #: assets/js/backupPanel.js:516
 #: assets/js/backupPanel.js:928
-#, fuzzy
 msgid "Admin"
 msgstr "Admin"
 
@@ -4635,9 +4612,8 @@ msgstr "Zeichenfolge"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:393
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:31
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:356
-#, fuzzy
 msgid "Boolean"
-msgstr "Boolean"
+msgstr "Boolesch"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:396
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:32
@@ -4648,9 +4624,8 @@ msgstr "Objekt"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:399
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:33
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:358
-#, fuzzy
 msgid "Array"
-msgstr "Array"
+msgstr "Feld"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:434
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2121
@@ -4658,9 +4633,8 @@ msgstr "Array"
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:50
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:382
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1526
-#, fuzzy
 msgid "null"
-msgstr "null"
+msgstr "Nullwert"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:452
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:80
@@ -4692,9 +4666,8 @@ msgstr "Der Argumentname darf nur Buchstaben, Zahlen und Unterstriche enthalten.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:585
 #: assets/jsx/workflow-editor/components/data-fields/action-args/index.jsx:71
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:506
-#, fuzzy
 msgid "Argument #%s"
-msgstr "Argument #%s"
+msgstr "Argument Nr. %s"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:606
 #: assets/jsx/workflow-editor/components/data-fields/action-args/index.jsx:85
@@ -4782,16 +4755,14 @@ msgstr "Benachrichtigung ablehnen"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1967
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:67
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1399
-#, fuzzy
 msgid "Option %s"
-msgstr "Option %s"
+msgstr "Option „%s“"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2004
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:95
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1427
-#, fuzzy
 msgid "Option #%s"
-msgstr "Option #%s"
+msgstr "Option Nr. %s"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2028
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:114
@@ -4822,9 +4793,8 @@ msgstr ""
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:7
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1549
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2469
-#, fuzzy
 msgid "Name"
-msgstr "Name"
+msgstr "Bezeichnung"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2149
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:85
@@ -5078,9 +5048,8 @@ msgstr "Der Name des Begriffs."
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3250
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:13
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2475
-#, fuzzy
 msgid "Slug"
-msgstr "Slug"
+msgstr "Titelform"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3251
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:14
@@ -5140,9 +5109,8 @@ msgstr ""
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3798
 #: assets/jsx/workflow-editor/components/data-fields/modal-footer.jsx:11
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2883
-#, fuzzy
 msgid "OK"
-msgstr "OK"
+msgstr "In Ordnung"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3863
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5141
@@ -5453,9 +5421,8 @@ msgstr "Grün"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5293
 #: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:15
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4039
-#, fuzzy
 msgid "Orange"
-msgstr "Orange"
+msgstr "Orange-Farbe"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5296
 #: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:16
@@ -5593,9 +5560,8 @@ msgstr "Beschreibung bearbeiten"
 #: assets/jsx/workflow-editor/components/secondary-sidebar/node-card.jsx:16
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7026
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11263
-#, fuzzy
 msgid "Pro"
-msgstr "Pro"
+msgstr "Pro-Version"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9186
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11520
@@ -5630,9 +5596,8 @@ msgstr "Schließen"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7425
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7430
 #. translators: button label text should, if possible, be under 16 characters.
-#, fuzzy
 msgid "Auto Layout"
-msgstr "Auto Layout"
+msgstr "Automatisches Layout"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9628
 #: assets/jsx/workflow-editor/components/layout/header.jsx:157
@@ -6425,9 +6390,8 @@ msgstr "(kein Name)"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14348
 #: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:37
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11906
-#, fuzzy
 msgid "Element"
-msgstr "Element"
+msgstr "Bauelement"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14432
 #: assets/jsx/workflow-editor/components/settings-sidebar/settings-sidebar.jsx:50
@@ -6444,9 +6408,8 @@ msgstr "Loslegen"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14752
 #: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:50
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12242
-#, fuzzy
 msgid "Ray Debug"
-msgstr "Ray Debug"
+msgstr "Ray-Debug"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14755
 #: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:55
@@ -6934,10 +6897,9 @@ msgstr "Anzeigen"
 #: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:23
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11892
 #. translators: Default label for the Workflow sidebar tab, not selected.
-#, fuzzy
 msgctxt "noun"
 msgid "Workflow"
-msgstr "Workflow"
+msgstr "Arbeitsablauf"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13793
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13798
@@ -6945,7 +6907,6 @@ msgstr "Workflow"
 #: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:85
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11459
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11464
-#, fuzzy
 msgctxt "nodes"
 msgid "Most used"
 msgstr "Am häufigsten verwendet"

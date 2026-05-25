@@ -140,9 +140,9 @@ msgid "l F jS, Y"
 msgstr "l F jS, Y"
 
 #: services.php:155
-#: src/Modules/Settings/SettingsFacade.php:123, fuzzy
+#: src/Modules/Settings/SettingsFacade.php:123
 msgid "g:ia"
-msgstr "g:ia"
+msgstr "g:i a"
 
 #: services.php:156
 #: src/Modules/Settings/SettingsFacade.php:124
@@ -3792,9 +3792,9 @@ msgid "Messages"
 msgstr "Μηνύματα"
 
 #: src/Modules/Workflows/Models/WorkflowModel.php:476
-#, fuzzy, php-format
+#, php-format
 msgid "%s #2"
-msgstr "%s #2"
+msgstr "%s αρ. 2"
 
 #: src/Modules/Workflows/Rest/RestApiV1.php:66
 #: src/Modules/Workflows/Rest/RestApiV1.php:129
@@ -4637,9 +4637,9 @@ msgstr "Πίνακας"
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:57
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:50
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:382
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1526, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1526
 msgid "null"
-msgstr "null"
+msgstr "κενό"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:452
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:80
@@ -5057,9 +5057,9 @@ msgstr "Το όνομα του όρου."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3250
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:13
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2475, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2475
 msgid "Slug"
-msgstr "Slug"
+msgstr "Αναγνωριστικό URL"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3251
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:14
@@ -5564,9 +5564,9 @@ msgstr "Επεξεργασία περιγραφής"
 #: assets/jsx/workflow-editor/components/inspector-card/index.jsx:116
 #: assets/jsx/workflow-editor/components/secondary-sidebar/node-card.jsx:16
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7026
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11263, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11263
 msgid "Pro"
-msgstr "Pro"
+msgstr "Έκδοση Pro"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9186
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11520
@@ -6916,3 +6916,4 @@ msgstr "Ροή Εργασίας"
 msgctxt "nodes"
 msgid "Most used"
 msgstr "Πιο χρησιμοποιημένα"
+

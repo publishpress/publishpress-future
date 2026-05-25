@@ -970,9 +970,9 @@ msgstr ""
 "data/hora, como \"3 months\" ou \"1 week\"."
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:53
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:234, fuzzy
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:234
 msgid "Status"
-msgstr "Status"
+msgstr "Estado"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:55
 msgid "Arguments"
@@ -1141,7 +1141,7 @@ msgstr "Ação: "
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:687, fuzzy
 msgid "Status: "
-msgstr "Status: "
+msgstr "Estado: "
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:693
 msgid "Arguments: "
@@ -3729,7 +3729,7 @@ msgstr "Usuário"
 #: src/Modules/Workflows/Models/StepTypesModel.php:117
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16026
 #: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:100
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13219, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13219
 msgid "Site"
 msgstr "Site"
 
@@ -3922,7 +3922,7 @@ msgstr "Herdar das configurações do site"
 msgid "24 hours"
 msgstr "24 horas"
 
-#: src/Views/menu-admin.php:162, fuzzy
+#: src/Views/menu-admin.php:162
 msgid "AM/PM"
 msgstr "AM/PM"
 
@@ -4569,7 +4569,7 @@ msgstr "Inteiro"
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:30
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:355, fuzzy
 msgid "String"
-msgstr "String"
+msgstr "Texto"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:393
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:31
@@ -4587,7 +4587,7 @@ msgstr "Objeto"
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:33
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:358, fuzzy
 msgid "Array"
-msgstr "Array"
+msgstr "Matriz"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:434
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2121
@@ -5008,7 +5008,7 @@ msgstr "O nome do termo."
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:13
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2475, fuzzy
 msgid "Slug"
-msgstr "Slug"
+msgstr "Identificador"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3251
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:14

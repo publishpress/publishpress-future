@@ -171,9 +171,9 @@ msgstr "Neplatný časový posun"
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:105
 #: assets/js/backupPanel.js:10
 #: assets/js/backupPanel.js:553
-#: assets/js/backupPanel.js:581, fuzzy
+#: assets/js/backupPanel.js:581
 msgid "Export"
-msgstr "Export"
+msgstr "Exportovat"
 
 #: src/Modules/Backup/Controllers/BackupAdminPage.php:169
 #: assets/js/backupPanel.js:37
@@ -184,9 +184,9 @@ msgstr "Export"
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:131
 #: assets/js/backupPanel.js:14
 #: assets/js/backupPanel.js:443
-#: assets/js/backupPanel.js:939, fuzzy
+#: assets/js/backupPanel.js:939
 msgid "Import"
-msgstr "Import"
+msgstr "Importovat"
 
 #: src/Modules/Backup/Controllers/BackupRestApi.php:142
 msgid "Failed to get workflows. Check the logs for more details."
@@ -964,9 +964,9 @@ msgstr ""
 "\"1 týden\"."
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:53
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:234, fuzzy
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:234
 msgid "Status"
-msgstr "Status"
+msgstr "Stav"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:55
 msgid "Arguments"
@@ -1893,9 +1893,9 @@ msgstr "Vyberte příspěvek, kterému bude přidáno jeho meta."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:85
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeletePostMeta.php:85
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePostMeta.php:85, fuzzy
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePostMeta.php:85
 msgid "Meta"
-msgstr "Meta"
+msgstr "Metadata"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:86
 msgid "The meta to add to the post."
@@ -2007,9 +2007,9 @@ msgstr "Vstupní data pro tento krok."
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:160
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeletePostMeta.php:153
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePostMeta.php:153
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:159, fuzzy
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:159
 msgid "Meta ID"
-msgstr "Meta ID"
+msgstr "ID metadat"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:161
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeletePostMeta.php:154
@@ -2242,9 +2242,9 @@ msgstr ""
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeactivatePostWorkflow.php:125
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16035
 #: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:110
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13229, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13229
 msgid "Workflow"
-msgstr "Workflow"
+msgstr "Pracovní postup"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeletePost.php:32
 msgid "Delete post"
@@ -3730,9 +3730,9 @@ msgid "Messages"
 msgstr "Zprávy"
 
 #: src/Modules/Workflows/Models/WorkflowModel.php:476
-#, fuzzy, php-format
+#, php-format
 msgid "%s #2"
-msgstr "%s #2"
+msgstr "%s č. 2"
 
 #: src/Modules/Workflows/Rest/RestApiV1.php:66
 #: src/Modules/Workflows/Rest/RestApiV1.php:129
@@ -3894,9 +3894,9 @@ msgstr "Dědit z nastavení webu"
 msgid "24 hours"
 msgstr "24 hodin"
 
-#: src/Views/menu-admin.php:162, fuzzy
+#: src/Views/menu-admin.php:162
 msgid "AM/PM"
-msgstr "AM/PM"
+msgstr "dop./odp."
 
 #: src/Views/menu-admin.php:174
 #: src/Views/menu-advanced.php:99
@@ -4551,9 +4551,9 @@ msgstr "Pole"
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:57
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:50
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:382
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1526, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1526
 msgid "null"
-msgstr "null"
+msgstr "prázdné"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:452
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:80
@@ -4585,9 +4585,8 @@ msgstr "Název argumentu by měl obsahovat pouze písmena, čísla a podtržítk
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:585
 #: assets/jsx/workflow-editor/components/data-fields/action-args/index.jsx:71
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:506
-#, fuzzy
 msgid "Argument #%s"
-msgstr "Argument #%s"
+msgstr "Argument č. %s"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:606
 #: assets/jsx/workflow-editor/components/data-fields/action-args/index.jsx:85
@@ -4867,9 +4866,9 @@ msgstr "Upozornění"
 #: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:29
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1993
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3747
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3957, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3957
 msgid "Post Status"
-msgstr "Post Status"
+msgstr "Stav příspěvku"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2708
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4820
@@ -4962,9 +4961,9 @@ msgstr "Název termínu."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3250
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:13
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2475, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2475
 msgid "Slug"
-msgstr "Slug"
+msgstr "Titulek"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3251
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:14
@@ -5022,9 +5021,9 @@ msgstr ""
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3798
 #: assets/jsx/workflow-editor/components/data-fields/modal-footer.jsx:11
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2883, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2883
 msgid "OK"
-msgstr "OK"
+msgstr "V pořádku"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3863
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5141
@@ -5468,9 +5467,9 @@ msgstr "Upravit popis"
 #: assets/jsx/workflow-editor/components/inspector-card/index.jsx:116
 #: assets/jsx/workflow-editor/components/secondary-sidebar/node-card.jsx:16
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7026
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11263, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11263
 msgid "Pro"
-msgstr "Pro"
+msgstr "Pro verze"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9186
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11520
@@ -6307,9 +6306,9 @@ msgstr "Začít"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14752
 #: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:50
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12242, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12242
 msgid "Ray Debug"
-msgstr "Ray Debug"
+msgstr "Ladění Ray"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14755
 #: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:55
@@ -6805,3 +6804,4 @@ msgstr "Pracovní postup"
 msgctxt "nodes"
 msgid "Most used"
 msgstr "Nejvíce používané"
+
