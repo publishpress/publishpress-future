@@ -4201,7 +4201,7 @@ msgstr ""
 
 #: src/Views/menu-display.php:259
 msgid "Shortcode Wrapper"
-msgstr "Wrapper shortcode"
+msgstr "Obal shortcode"
 
 #: src/Views/menu-display.php:279
 msgid ""
