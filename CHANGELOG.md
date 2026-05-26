@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fixed: Enhanced translations for JavaScript interfaces, particularly in the settings and workflow editor.
 - Fixed: Post metadata is now available in its updated state for Post Update, Save, and Publish triggers (Issue #1626).
 - Fixed: Bulk action "Update Future Actions from Post Metadata" now works correctly for Future Actions.
+- Fixed: Debug log auto-refresh now updates the footer summary (displayed/total counts, sessions, and log size) along with the log content.
 - Security: Escape `[futureaction]` shortcode output when rendered inside an HTML wrapper to prevent stored XSS from unescaped expiration date text.
 - Security: Add permission checks to restrict access to workflow settings.
 - Security: Escape workflow, trigger, step, and post data in scheduled action admin output to prevent stored XSS in Action Scheduler listings.
