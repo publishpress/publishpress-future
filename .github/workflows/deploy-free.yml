@@ -6,7 +6,7 @@ on:
 jobs:
   code-check:
     name: Check the code
-    uses: ./.github/workflows/code-check.yml
+    uses: ./.github/workflows/code-standards.yml
     secrets: inherit
 
   run-unit-tests:
