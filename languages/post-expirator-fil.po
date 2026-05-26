@@ -4,53 +4,53 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PublishPress Future Free 4.10.2-rc.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/project\n"
+"POT-Creation-Date: 2026-05-25T21:24:52+00:00\n"
+"PO-Revision-Date: 2026-05-21 14:28+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: none\n"
+"Language: fil\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-05-13T18:43:00+00:00\n"
-"PO-Revision-Date: 2026-05-21 14:28+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
-"Language: fil\n"
-"Plural-Forms: nplurals=2; plural=n != 1 && n != 2 && n != 3 && (n % 10 == 4 || n % 10 == 6 || n % 10 == 9);\n"
+"Plural-Forms: nplurals=2; plural=n != 1 && n != 2 && n != 3 && (n % 10 == 4 "
+"|| n % 10 == 6 || n % 10 == 9);\n"
 
-#: post-expirator.php:4
 #. Plugin Name of the plugin
+#: post-expirator.php:4
 #, fuzzy
 msgid "PublishPress Future Free"
 msgstr "PublishPress Future Free"
 
-#: post-expirator.php:5
 #. Plugin URI of the plugin
+#: post-expirator.php:5
 #, fuzzy
 msgid "http://wordpress.org/extend/plugins/post-expirator/"
 msgstr "http://wordpress.org/extend/plugins/post-expirator/"
 
-#: post-expirator.php:6
 #. Description of the plugin
+#: post-expirator.php:6
 msgid ""
-"PublishPress Future allows you to schedule automatic changes to posts, "
-"pages and other content types."
+"PublishPress Future allows you to schedule automatic changes to posts, pages "
+"and other content types."
 msgstr ""
 "Ang PublishPress Future ay nagbibigay-daan sa iyo upang mag-iskedyul ng mga "
 "awtomatikong pagbabago sa mga post, pahina at iba pang mga uri ng nilalaman."
 
-#: post-expirator.php:7
 #. Author of the plugin
+#: post-expirator.php:7
 #, fuzzy
 msgid "PublishPress"
 msgstr "PublishPress"
 
-#: post-expirator.php:9
 #. Author URI of the plugin
+#: post-expirator.php:9
 #, fuzzy
 msgid "http://publishpress.com"
 msgstr "http://publishpress.com"
 
-#: legacy/classes/Display.class.php:113
-#: legacy/classes/Display.class.php:141
+#: legacy/classes/Display.class.php:113 legacy/classes/Display.class.php:141
 msgid "You do not have permission to configure PublishPress Future."
 msgstr "Wala kang pahintulot na i-configure ang PublishPress Future."
 
@@ -91,22 +91,22 @@ msgid "The database schema was fixed."
 msgstr "Naayos ang database schema."
 
 #: legacy/classes/Display.class.php:328
-msgid "The database schema could not be fixed. Please, contact the support team."
+msgid ""
+"The database schema could not be fixed. Please, contact the support team."
 msgstr ""
-"Hindi naayos ang database schema. Mangyaring makipag-ugnayan sa support "
-"team."
+"Hindi naayos ang database schema. Mangyaring makipag-ugnayan sa support team."
 
-#: legacy/classes/Display.class.php:399
-#: legacy/classes/Display.class.php:453
+#: legacy/classes/Display.class.php:399 legacy/classes/Display.class.php:453
 #: legacy/classes/Display.class.php:475
 msgid "Saved Options!"
 msgstr "Naka-save na mga Opsyon!"
 
-#: legacy/classes/Display.class.php:567
 #. translators: %1$s is the plugin name, %2$s is the star rating markup
+#: legacy/classes/Display.class.php:567
 #, php-format
 msgid "If you like %1$s, please leave us a %2$s rating. Thank you!"
-msgstr "Kung gusto mo ang %1$s, mangyaring iwanan kami ng %2$s rating. Salamat!"
+msgstr ""
+"Kung gusto mo ang %1$s, mangyaring iwanan kami ng %2$s rating. Salamat!"
 
 #: legacy/classes/Display.class.php:582
 msgid "About PublishPress Future"
@@ -136,20 +136,17 @@ msgstr "Makipag-ugnayan"
 msgid "No taxonomies found"
 msgstr "Walang natagpuang taxonomies"
 
-#: services.php:151
-#: src/Modules/Settings/SettingsFacade.php:122
+#: services.php:151 src/Modules/Settings/SettingsFacade.php:122
 #, fuzzy
 msgid "l F jS, Y"
 msgstr "l F jS, Y"
 
-#: services.php:155
-#: src/Modules/Settings/SettingsFacade.php:123
+#: services.php:155 src/Modules/Settings/SettingsFacade.php:123
 #, fuzzy
 msgid "g:ia"
 msgstr "g:ia"
 
-#: services.php:156
-#: src/Modules/Settings/SettingsFacade.php:124
+#: services.php:156 src/Modules/Settings/SettingsFacade.php:124
 msgid "Post expires at EXPIRATIONTIME on ACTIONDATE"
 msgstr "Mawawalan ng bisa ang post sa EXPIRATIONTIME sa ACTIONDATE"
 
@@ -173,27 +170,23 @@ msgid "Invalid date time offset"
 msgstr "Hindi wasto ang petsa ng oras ng offset"
 
 #: src/Modules/Backup/Controllers/BackupAdminPage.php:164
-#: assets/js/backupPanel.js:34
-#: assets/js/backupPanel.js:692
+#: assets/js/backupPanel.js:34 assets/js/backupPanel.js:692
 #: assets/js/backupPanel.js:722
 #: assets/jsx/backup-panel/components/backup-panel.jsx:10
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:77
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:105
-#: assets/js/backupPanel.js:10
-#: assets/js/backupPanel.js:553
+#: assets/js/backupPanel.js:10 assets/js/backupPanel.js:553
 #: assets/js/backupPanel.js:581
 msgid "Export"
 msgstr "I-export"
 
 #: src/Modules/Backup/Controllers/BackupAdminPage.php:169
-#: assets/js/backupPanel.js:37
-#: assets/js/backupPanel.js:543
+#: assets/js/backupPanel.js:37 assets/js/backupPanel.js:543
 #: assets/js/backupPanel.js:1251
 #: assets/jsx/backup-panel/components/backup-panel.jsx:14
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-import.jsx:106
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:131
-#: assets/js/backupPanel.js:14
-#: assets/js/backupPanel.js:443
+#: assets/js/backupPanel.js:14 assets/js/backupPanel.js:443
 #: assets/js/backupPanel.js:939
 msgid "Import"
 msgstr "I-import"
@@ -226,27 +219,25 @@ msgstr "Hindi wasto ang nonce."
 
 #: src/Modules/Debug/Migrations/V04905DebugLogRequestId.php:80
 msgid ""
-"Add request_id and trigger_activated columns to debug log table after "
-"v4.10.0"
+"Add request_id and trigger_activated columns to debug log table after v4.10.0"
 msgstr ""
 "Idagdag ang mga column na request_id at trigger_activated sa talahanayan ng "
 "debug log pagkatapos ng v4.10.0"
 
 #: src/Modules/Debug/Migrations/V04906DebugLogTimestampMilliseconds.php:79
 msgid "Add millisecond precision to debug log timestamp column (v4.10.0)"
-msgstr "Idagdag ang milisecond precision sa timestamp column ng debug log (v4.10.0)"
+msgstr ""
+"Idagdag ang milisecond precision sa timestamp column ng debug log (v4.10.0)"
 
 #: src/Modules/Debug/Views/raw-debug-log.html.php:39
 #: src/Modules/Settings/Controllers/Controller.php:215
-#: src/Views/menu-debug-log.php:113
-#: src/Views/menu-debug-log.php:148
+#: src/Views/menu-debug-log.php:113 src/Views/menu-debug-log.php:148
 msgid "Debugging table is currently empty."
 msgstr "Ang talahanayan ng debugging ay kasalukuyang walang laman."
 
 #: src/Modules/Debug/Views/raw-debug-log.html.php:40
 #: src/Modules/Settings/Controllers/Controller.php:216
-#: src/Views/menu-debug-log.php:115
-#: src/Views/menu-debug-log.php:150
+#: src/Views/menu-debug-log.php:115 src/Views/menu-debug-log.php:150
 msgid "No results match the current filter."
 msgstr "Walang mga resulta na tumutugma sa kasalukuyang filter."
 
@@ -270,8 +261,7 @@ msgstr "Taxonomy"
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:131
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:132
 #: src/Modules/Expirator/Controllers/SettingsController.php:544
-#: src/Views/menu-admin.php:44
-#: src/Views/tabs-future-actions.php:51
+#: src/Views/menu-admin.php:44 src/Views/tabs-future-actions.php:51
 msgid "Future Actions"
 msgstr "Mga Hinaharap na Aksyon"
 
@@ -324,20 +314,20 @@ msgstr "Ipakita ang Kalendaryo"
 msgid "Hide Calendar"
 msgstr "Itago ang Kalendaryo"
 
+#. translators: the text between {} is the link to the settings page.
+#. translators: the text between {{}} is the link to the settings page.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:182
 #: src/Modules/Expirator/Controllers/BulkEditController.php:222
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:423
 #: src/Modules/Expirator/Controllers/QuickEditController.php:352
-#. translators: the text between {} is the link to the settings page.
-#. translators: the text between {{}} is the link to the settings page.
 msgid "Timezone is controlled by the {WordPress Settings}."
 msgstr "Ang timezone ay kontrolado ng {WordPress Settings}."
 
+#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:189
 #: src/Modules/Expirator/Controllers/BulkEditController.php:229
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:430
 #: src/Modules/Expirator/Controllers/QuickEditController.php:356
-#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "No %s found."
 msgstr "Walang %s na natagpuan."
@@ -351,38 +341,38 @@ msgstr ""
 "Dapat kang magtalaga ng taxonomy sa uri ng post na ito upang magamit ang "
 "tampok na ito."
 
+#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:197
 #: src/Modules/Expirator/Controllers/BulkEditController.php:243
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:438
 #: src/Modules/Expirator/Controllers/QuickEditController.php:361
-#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "New %s"
 msgstr "Bago %s"
 
+#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:199
 #: src/Modules/Expirator/Controllers/BulkEditController.php:245
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:440
 #: src/Modules/Expirator/Controllers/QuickEditController.php:363
-#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "%s to remove"
 msgstr "%s upang alisin"
 
+#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:201
 #: src/Modules/Expirator/Controllers/BulkEditController.php:247
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:442
 #: src/Modules/Expirator/Controllers/QuickEditController.php:365
-#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "%s to add"
 msgstr "%s upang idagdag"
 
+#. translators: %s is the name of the taxonomy in singular form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:204
 #: src/Modules/Expirator/Controllers/BulkEditController.php:250
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:445
 #: src/Modules/Expirator/Controllers/QuickEditController.php:367
-#. translators: %s is the name of the taxonomy in singular form.
 #, php-format
 msgid "Search for %s"
 msgstr "Maghanap ng %s"
@@ -408,12 +398,12 @@ msgstr "Pumili ng petsa"
 msgid "Date cannot be in the past"
 msgstr "Ang petsa ay hindi maaaring nasa nakaraan"
 
+#. translators: %s is the name of the taxonomy in singular form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:212
 #: src/Modules/Expirator/Controllers/BulkEditController.php:258
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:453
 #: src/Modules/Expirator/Controllers/QuickEditController.php:373
 #: src/Modules/Expirator/Controllers/SettingsController.php:298
-#. translators: %s is the name of the taxonomy in singular form.
 #, php-format
 msgid "Please select one or more %s"
 msgstr "Mangyaring pumili ng isa o higit pang %s"
@@ -433,7 +423,8 @@ msgstr "Walang napiling mga post. Hindi ma-sync ang Mga Kinabukasan na Aksyon."
 
 #: src/Modules/Expirator/Controllers/BulkActionController.php:105
 msgid "Future Actions successfully synced with Post Metadata."
-msgstr "Matagumpay na na-sync ang Mga Kinabukasan na Aksyon sa Metadata ng Post."
+msgstr ""
+"Matagumpay na na-sync ang Mga Kinabukasan na Aksyon sa Metadata ng Post."
 
 #: src/Modules/Expirator/Controllers/BulkActionController.php:126
 msgid "Update Future Actions from Post Metadata"
@@ -482,8 +473,7 @@ msgstr "Mag-upgrade sa Pro"
 #: src/Modules/Workflows/Controllers/ManualPostTrigger.php:495
 #: src/Modules/Workflows/Controllers/PostType.php:49
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:181
-#: assets/js/backupPanel.js:512
-#: assets/js/backupPanel.js:698
+#: assets/js/backupPanel.js:512 assets/js/backupPanel.js:698
 #: assets/js/workflowManualSelectionBlockEditor.js:2157
 #: assets/js/workflowManualSelectionBulkEdit.js:167
 #: assets/js/workflowManualSelectionQuickEdit.js:2217
@@ -492,14 +482,14 @@ msgstr "Mag-upgrade sa Pro"
 #: assets/jsx/workflow-manual-selection/block-editor/index.jsx:49
 #: assets/jsx/workflow-manual-selection/bulk-edit/fieldset.jsx:88
 #: assets/jsx/workflow-manual-selection/quick-edit/index.jsx:75
-#: assets/js/backupPanel.js:405
-#: assets/js/backupPanel.js:559
+#: assets/js/backupPanel.js:405 assets/js/backupPanel.js:559
 #: assets/js/workflowManualSelectionBlockEditor.js:1629
 #: assets/js/workflowManualSelectionBulkEdit.js:114
 #: assets/js/workflowManualSelectionQuickEdit.js:1694
 msgid "Action Workflows"
 msgstr "Mga Workflow ng Aksyon"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: src/Modules/Expirator/Controllers/PluginsListController.php:70
 #: src/Modules/Expirator/Controllers/SettingsController.php:132
 #: src/Modules/Expirator/Controllers/SettingsController.php:133
@@ -509,7 +499,6 @@ msgstr "Mga Workflow ng Aksyon"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14436
 #: assets/jsx/workflow-editor/components/settings-sidebar/settings-sidebar.jsx:54
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11976
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Settings"
 msgstr "Mga Setting"
 
@@ -561,9 +550,9 @@ msgstr "Isinagawang aksyon para sa: %s (ID: %d)"
 msgid "Executed scheduled action"
 msgstr "Isinagawang naka-iskedyul na aksyon"
 
+#. translators: %1$s is the link to the PHP strtotime function documentation, %2$s and %3$s are the opening and closing code tags. Please, do not translate the date format text, since PHP will not be able to calculate using non-english terms.
 #: src/Modules/Expirator/Controllers/SettingsController.php:252
 #: src/Views/menu-general.php:41
-#. translators: %1$s is the link to the PHP strtotime function documentation, %2$s and %3$s are the opening and closing code tags. Please, do not translate the date format text, since PHP will not be able to calculate using non-english terms.
 #, php-format
 msgid ""
 "Set the offset to use for the default action date and time. For information "
@@ -587,9 +576,9 @@ msgid ""
 "for the corresponding post types.  These values can all be overwritten when "
 "creating/editing the post/page."
 msgstr ""
-"Gamitin ang mga halaga sa ibaba upang itakda ang mga default na "
-"aksyon/halaga na gagamitin para sa bawat uri ng post. Ang mga halagang ito "
-"ay maaaring palitan kapag lumilikha/nag-edit ng post/pahina."
+"Gamitin ang mga halaga sa ibaba upang itakda ang mga default na aksyon/"
+"halaga na gagamitin para sa bawat uri ng post. Ang mga halagang ito ay "
+"maaaring palitan kapag lumilikha/nag-edit ng post/pahina."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:267
 msgid "Active"
@@ -597,7 +586,8 @@ msgstr "Aktibo"
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:268
 msgid "Activate the PublishPress Future actions for this post type"
-msgstr "I-activate ang PublishPress Future na mga aksyon para sa uri ng post na ito"
+msgstr ""
+"I-activate ang PublishPress Future na mga aksyon para sa uri ng post na ito"
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:269
 msgid "Default Action"
@@ -633,8 +623,7 @@ msgstr ""
 "taxonomy ay hindi magiging available."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:282
-#: src/Views/menu-notifications.php:116
-#: src/Views/menu-notifications.php:169
+#: src/Views/menu-notifications.php:116 src/Views/menu-notifications.php:169
 msgid "Who to Notify"
 msgstr "Sino ang Ipapaalam"
 
@@ -643,8 +632,8 @@ msgid ""
 "Enter a comma separated list of emails that you would like to be notified "
 "when the action runs."
 msgstr ""
-"Ilagay ang isang listahan ng mga email na pinaghiwalay ng kuwit na nais "
-"mong ipaalam kapag tumakbo ang aksyon."
+"Ilagay ang isang listahan ng mga email na pinaghiwalay ng kuwit na nais mong "
+"ipaalam kapag tumakbo ang aksyon."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:287
 #: src/Views/menu-general.php:29
@@ -743,7 +732,8 @@ msgstr ""
 #: src/Modules/Expirator/Controllers/SettingsController.php:459
 #: src/Modules/Settings/Controllers/Controller.php:298
 msgid "Form Validation Failure: Sorry, your nonce did not verify."
-msgstr "Nabigong Pag-verify ng Form: Paumanhin, ang iyong nonce ay hindi na-verify."
+msgstr ""
+"Nabigong Pag-verify ng Form: Paumanhin, ang iyong nonce ay hindi na-verify."
 
 #: src/Modules/Expirator/Controllers/ShortcodeController.php:95
 msgid ""
@@ -764,27 +754,28 @@ msgstr "Ang haba ng column args ay hindi na-update sa 1000."
 msgid "Status didn't change."
 msgstr "Hindi nagbago ang katayuan."
 
+#. translators: 1: old post status, 2: new post status
 #: src/Modules/Expirator/ExpirationActions/ChangePostStatus.php:62
 #: src/Modules/Expirator/ExpirationActions/PostStatusToDraft.php:60
 #: src/Modules/Expirator/ExpirationActions/PostStatusToPrivate.php:60
 #: src/Modules/Expirator/ExpirationActions/PostStatusToTrash.php:60
-#. translators: 1: old post status, 2: new post status
 #, php-format
 msgid "Status has been successfully changed from \"%1$s\" to \"%2$s\"."
-msgstr "Ang katayuan ay matagumpay na nabago mula sa \"%1$s\" patungong \"%2$s\"."
+msgstr ""
+"Ang katayuan ay matagumpay na nabago mula sa \"%1$s\" patungong \"%2$s\"."
 
 #: src/Modules/Expirator/ExpirationActions/ChangePostStatus.php:93
 msgid "Change status"
 msgstr "Baguhin ang katayuan"
 
-#: src/Modules/Expirator/ExpirationActions/DeletePost.php:47
 #. translators: %s: post type singular label
+#: src/Modules/Expirator/ExpirationActions/DeletePost.php:47
 #, php-format
 msgid "%s was not deleted."
 msgstr "%s ay hindi natanggal."
 
-#: src/Modules/Expirator/ExpirationActions/DeletePost.php:54
 #. translators: %s: post type singular label
+#: src/Modules/Expirator/ExpirationActions/DeletePost.php:54
 #, php-format
 msgid "%s has been successfully deleted."
 msgstr "%s ay matagumpay na natanggal."
@@ -800,14 +791,14 @@ msgstr "%s ay matagumpay na natanggal."
 msgid "Delete"
 msgstr "Tanggalin"
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:65
 #. translators: %s is the post type singular label
+#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:65
 #, php-format
 msgid "No terms were added to the %s."
 msgstr "Walang mga termino ang naidagdag sa %s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:77
 #. translators: %1$s is the taxonomy label, %2$s is the post type singular label, %3$s is the list of terms added, %4$s is the list of terms on the post
+#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:77
 #, php-format
 msgid ""
 "The following terms (%1$s) were added to the %2$s: \"%3$s\". The full list "
@@ -816,55 +807,55 @@ msgstr ""
 "Ang mga sumusunod na termino (%1$s) ay naidagdag sa %2$s: \"%3$s\". Ang "
 "buong listahan ng mga termino sa post ay: %4$s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:120
 #. translators: %s is the taxonomy name (plural)
+#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:120
 #, php-format
 msgid "Add extra %s"
 msgstr "Magdagdag ng karagdagang %s"
 
+#. translators: %s is the post type singular label
 #: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:56
 #: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:56
-#. translators: %s is the post type singular label
 #, php-format
 msgid "No terms were removed from the %s."
 msgstr "Walang mga termino ang tinanggal mula sa %s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:67
 #. translators: %1$s is the taxonomy name, %2$s is the post type singular label, %3$s is the removed terms list, %4$s is the updated terms list
+#: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:67
 #, php-format
 msgid ""
-"The following terms (%1$s) were removed from the %2$s: %3$s. The new list "
-"of terms on the post is: %4$s."
+"The following terms (%1$s) were removed from the %2$s: %3$s. The new list of "
+"terms on the post is: %4$s."
 msgstr ""
 "Ang mga sumusunod na termino (%1$s) ay tinanggal mula sa %2$s: %3$s. Ang "
 "bagong listahan ng mga termino sa post ay: %4$s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:112
 #. translators: %s is the taxonomy name (plural)
+#: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:112
 #, php-format
 msgid "Remove selected %s"
 msgstr "Tanggalin ang napiling %s"
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:67
 #. translators: %1$s is the taxonomy name, %2$s is the post type singular label, %3$s is the list of term names
+#: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:67
 #, php-format
 msgid "The following terms (%1$s) were removed from the %2$s: %3$s."
 msgstr "Ang mga sumusunod na termino (%1$s) ay tinanggal mula sa %2$s: %3$s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:106
 #. translators: %s is the taxonomy name (plural)
+#: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:106
 #, php-format
 msgid "Remove all %s"
 msgstr "Tanggalin ang lahat ng %s"
 
-#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:58
 #. translators: %s is the post type singular label
+#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:58
 #, php-format
 msgid "No terms were changed on the %s."
 msgstr "Walang mga termino ang binago sa %s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:69
 #. translators: 1: taxonomy name, 2: post type singular label, 3: updated terms, 4: original terms
+#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:69
 #, php-format
 msgid ""
 "The following terms (%1$s) were set to the %2$s: \"%3$s\". The old list of "
@@ -873,29 +864,29 @@ msgstr ""
 "Ang mga sumusunod na termino (%1$s) ay itinalaga sa %2$s: \"%3$s\". Ang "
 "lumang listahan ng mga termino sa post ay: %4$s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:109
 #. translators: %s is the taxonomy name (plural)
+#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:109
 #, php-format
 msgid "Replace all %s"
 msgstr "Palitan ang lahat ng %s"
 
+#. translators: %s: new post status
 #: src/Modules/Expirator/ExpirationActions/PostStatusToDraft.php:90
 #: src/Modules/Expirator/ExpirationActions/PostStatusToPrivate.php:90
 #: src/Modules/Expirator/ExpirationActions/PostStatusToTrash.php:90
-#. translators: %s: new post status
 #, php-format
 msgid "Change status to %s"
 msgstr "Baguhin ang katayuan sa %s"
 
+#. translators: %s: post type singular label
 #: src/Modules/Expirator/ExpirationActions/StickPost.php:46
 #: src/Modules/Expirator/ExpirationActions/UnstickPost.php:46
-#. translators: %s: post type singular label
 #, php-format
 msgid "%s didn't change."
 msgstr "%s ay hindi nagbago."
 
-#: src/Modules/Expirator/ExpirationActions/StickPost.php:53
 #. translators: %s: post type singular label
+#: src/Modules/Expirator/ExpirationActions/StickPost.php:53
 #, php-format
 msgid "%s has been added to stickies list."
 msgstr "%s ay naidagdag sa listahan ng mga nakadikit."
@@ -904,8 +895,8 @@ msgstr "%s ay naidagdag sa listahan ng mga nakadikit."
 msgid "Stick"
 msgstr "Idikit"
 
-#: src/Modules/Expirator/ExpirationActions/UnstickPost.php:53
 #. translators: %s: post type singular label
+#: src/Modules/Expirator/ExpirationActions/UnstickPost.php:53
 #, php-format
 msgid "%s has been removed from stickies list."
 msgstr "%s ay tinanggal mula sa listahan ng mga nakadikit."
@@ -916,7 +907,8 @@ msgstr "Huwag idikit"
 
 #: src/Modules/Expirator/Migrations/V30000ActionArgsSchema.php:61
 msgid "Migrate legacy actions arguments schema after v3.0.0"
-msgstr "I-migrate ang schema ng mga argumento ng legacy actions pagkatapos ng v3.0.0"
+msgstr ""
+"I-migrate ang schema ng mga argumento ng legacy actions pagkatapos ng v3.0.0"
 
 #: src/Modules/Expirator/Migrations/V30000ReplaceFooterPlaceholders.php:71
 msgid "Migrate legacy footer placeholders after v3.0.0"
@@ -950,35 +942,35 @@ msgstr "Napasok ang email."
 msgid "Email not sent."
 msgstr "Hindi naipadala ang email."
 
-#: src/Modules/Expirator/Models/ExpirablePostModel.php:644
 #. translators: %1$s: post title placeholder, %2$s: notification text, %3$s: action date placeholder, %4$s: post link placeholder
+#: src/Modules/Expirator/Models/ExpirablePostModel.php:644
 #, php-format
 msgid "%1$s. %2$s on %3$s. The post link is %4$s"
 msgstr "%1$s. %2$s sa %3$s. Ang link ng post ay %4$s"
 
-#: src/Modules/Expirator/Models/ExpirablePostModel.php:662
 #. translators: %s is the post title
+#: src/Modules/Expirator/Models/ExpirablePostModel.php:662
 #, php-format
 msgid "Future Action Complete \"%s\""
 msgstr "Kumpletong Aksyon sa \"%s\""
 
-#: src/Modules/Expirator/Models/ExpirablePostModel.php:666
 #. translators: 1: is the blog name, 2: the email subject
+#: src/Modules/Expirator/Models/ExpirablePostModel.php:666
 #, fuzzy, php-format
 msgid "[%1$s] %2$s"
 msgstr "[%1$s] %2$s"
 
-#: src/Modules/Expirator/Models/PostTypeDefaultDataModel.php:156
 #. translators: %s is the date/time offset and %s is the post type.
+#: src/Modules/Expirator/Models/PostTypeDefaultDataModel.php:156
 #, php-format
 msgid ""
 "Invalid date/time offset \"%s\" for post type \"%s\". Please ensure you use "
 "only English terms for the date/time offset, such as \"3 months\" or \"1 "
 "week\"."
 msgstr ""
-"Hindi wastong date/time offset \"%s\" para sa post type \"%s\". "
-"Pakisigurong gumagamit ka lamang ng mga terminong Ingles para sa date/time "
-"offset, gaya ng \"3 buwan\" o \"1 linggo\"."
+"Hindi wastong date/time offset \"%s\" para sa post type \"%s\". Pakisigurong "
+"gumagamit ka lamang ng mga terminong Ingles para sa date/time offset, gaya "
+"ng \"3 buwan\" o \"1 linggo\"."
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:53
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:234
@@ -1015,64 +1007,66 @@ msgid "Cancel"
 msgstr "Kanselahin"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:77
-msgid "Cancel the action. This will prevent the action from running in the future"
-msgstr "Kanselahin ang aksyon. Ito ay magpipigil sa aksyon na tumakbo sa hinaharap"
+msgid ""
+"Cancel the action. This will prevent the action from running in the future"
+msgstr ""
+"Kanselahin ang aksyon. Ito ay magpipigil sa aksyon na tumakbo sa hinaharap"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:88
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:478
 msgid "Run"
 msgstr "Patakbuhin"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:96
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:96
 #, php-format
 msgid "%s year"
 msgid_plural "%s years"
 msgstr[0] "%s taon"
 msgstr[1] "%s taon"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:101
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:101
 #, php-format
 msgid "%s month"
 msgid_plural "%s months"
 msgstr[0] "%s buwan"
 msgstr[1] "%s buwan"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:106
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:106
 #, php-format
 msgid "%s week"
 msgid_plural "%s weeks"
 msgstr[0] "%s linggo"
 msgstr[1] "%s linggo"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:111
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:111
 #, php-format
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] "%s araw"
 msgstr[1] "%s araw"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:116
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:116
 #, php-format
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] "%s oras"
 msgstr[1] "%s oras"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:121
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:121
 #, php-format
 msgid "%s minute"
 msgid_plural "%s minutes"
 msgstr[0] "%s minuto"
 msgstr[1] "%s minuto"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:126
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:126
 #, php-format
 msgid "%s second"
 msgid_plural "%s seconds"
@@ -1124,20 +1118,20 @@ msgstr "Nakumpleto"
 msgid "Process the action now"
 msgstr "Iproseso ang aksyon ngayon"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:524
 #. translators: %1$s: post type label, %2$d: post ID, %3$s: post link tag start, %4$s: post title, %5$s: post link tag end
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:524
 #, fuzzy, php-format
 msgid "%1$s: [%2$d] %3$s%4$s%5$s"
 msgstr "%1$s: [%2$d] %3$s%4$s%5$s"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:559
 #. translators: %s is the new status
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:559
 #, php-format
 msgid "New Status: %s"
 msgstr "Bagong Katayuan: %s"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:567
 #. translators: %s is the list of terms
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:567
 #, php-format
 msgid "Terms: %s"
 msgstr "Mga Tuntunin: %s"
@@ -1186,14 +1180,14 @@ msgstr "Mensahe"
 msgid "Async"
 msgstr "Asynchronous"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:765
 #. translators: %s is the date interval in human readable format in the past
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:765
 #, php-format
 msgid " (%s ago)"
 msgstr " (%s na ang nakalipas)"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:771
 #. translators: %s is the date interval in human readable format in the present or future
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:771
 #, fuzzy, php-format
 msgid " (%s)"
 msgstr " (%s)"
@@ -1202,8 +1196,8 @@ msgstr " (%s)"
 msgid "Now!"
 msgstr "Ngayon!"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:845
 #. translators: %s: time interval
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:845
 #, php-format
 msgid "Every %s"
 msgstr "Bawat %s"
@@ -1296,12 +1290,12 @@ msgstr ""
 msgid "days"
 msgstr "mga araw"
 
-#: src/Modules/VersionNotices/Module.php:95
 #. translators: %1$s and %2$s are placeholders for the link to by the Pro version
+#: src/Modules/VersionNotices/Module.php:95
 #, php-format
 msgid ""
-"You're using PublishPress Future Free. The Pro version has more features "
-"and support. %1$sUpgrade to Pro%2$s"
+"You're using PublishPress Future Free. The Pro version has more features and "
+"support. %1$sUpgrade to Pro%2$s"
 msgstr ""
 "Gumagamit ka ng PublishPress Future Free. Ang Pro na bersyon ay may higit "
 "pang mga tampok at suporta. %1$sI-upgrade sa Pro%2$s"
@@ -1314,8 +1308,8 @@ msgstr "Manwal na Trigger ng Workflow"
 msgid "Check and warn about past-due actions"
 msgstr "Suriin at magbigay ng babala tungkol sa mga aksyon na overdue"
 
-#: src/Modules/Workflows/Controllers/PastDueActions.php:148
 #. translators: %s is the admin URL to the scheduled actions page
+#: src/Modules/Workflows/Controllers/PastDueActions.php:148
 #, php-format
 msgid ""
 "You have past-due scheduled actions in PublishPress Future.\n"
@@ -1436,7 +1430,8 @@ msgstr "Huwag ilathala sa Draft pagkatapos ng isang linggo"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:40
 msgid "Change the post status to Draft a week after it was published."
-msgstr "Palitan ang katayuan ng post sa Draft isang linggo matapos itong mailathala."
+msgstr ""
+"Palitan ang katayuan ng post sa Draft isang linggo matapos itong mailathala."
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:44
 msgid "Unpublish and change category after 15 days"
@@ -1444,13 +1439,13 @@ msgstr "Huwag ilathala at palitan ang kategorya pagkatapos ng 15 araw"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:45
 msgid "Move the post to draft and add a category after 15 days."
-msgstr "Ilipat ang post sa draft at magdagdag ng kategorya pagkatapos ng 15 araw."
+msgstr ""
+"Ilipat ang post sa draft at magdagdag ng kategorya pagkatapos ng 15 araw."
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:49
 msgid "Add extra categories one month after publishing"
 msgstr ""
-"Magdagdag ng karagdagang mga kategorya isang buwan pagkatapos ng "
-"paglalathala"
+"Magdagdag ng karagdagang mga kategorya isang buwan pagkatapos ng paglalathala"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:50
 msgid "Sample workflow to add extra categories one month after publishing"
@@ -1490,7 +1485,8 @@ msgstr ""
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:69
 msgid "Remove selected categories one week after publishing"
-msgstr "Alisin ang mga napiling kategorya isang linggo matapos ang paglalathala"
+msgstr ""
+"Alisin ang mga napiling kategorya isang linggo matapos ang paglalathala"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:70
 msgid "Sample workflow to remove selected categories one week after publishing"
@@ -1542,12 +1538,14 @@ msgstr "I-unschedule ang paulit-ulit na naka-iskedyul na hakbang ng workflow"
 
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:212
 msgid "Cleanup orphan workflow scheduled step arguments"
-msgstr "Linisin ang mga argumento ng naka-iskedyul na hakbang ng orphan workflow"
+msgstr ""
+"Linisin ang mga argumento ng naka-iskedyul na hakbang ng orphan workflow"
 
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:217
 #, php-format
 msgid "Clean up completed scheduled steps older than %d days"
-msgstr "Linisin ang mga natapos na naka-iskedyul na hakbang na higit sa %d araw"
+msgstr ""
+"Linisin ang mga natapos na naka-iskedyul na hakbang na higit sa %d araw"
 
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:256
 #, php-format
@@ -1561,7 +1559,8 @@ msgstr "Naisagawang naka-iskedyul na hakbang ng workflow"
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:270
 #, php-format
 msgid "Cleaned up completed scheduled steps older than %d days"
-msgstr "Nalinis ang mga natapos na naka-iskedyul na hakbang na higit sa %d araw"
+msgstr ""
+"Nalinis ang mga natapos na naka-iskedyul na hakbang na higit sa %d araw"
 
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:276
 msgid "Checked for expired actions"
@@ -1569,7 +1568,8 @@ msgstr "Sinuri para sa mga nag-expire na aksyon"
 
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:280
 msgid "Cleaned up orphan workflow scheduled step arguments"
-msgstr "Nalinis ang mga argumento ng naka-iskedyul na hakbang ng orphan workflow"
+msgstr ""
+"Nalinis ang mga argumento ng naka-iskedyul na hakbang ng orphan workflow"
 
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:284
 msgid "Unscheduled workflow recurring scheduled step"
@@ -1608,20 +1608,20 @@ msgstr "Mga Hakbang:"
 msgid "Workflow recurring scheduled action"
 msgstr "Paulit-ulit na naka-iskedyul na aksyon ng workflow"
 
-#: src/Modules/Workflows/Controllers/ScheduledActions.php:508
 #. translators: %1$s is the recurrence, %2$s is the date
+#: src/Modules/Workflows/Controllers/ScheduledActions.php:508
 #, php-format
 msgid "%1$s until %2$s"
 msgstr "%1$s hanggang %2$s"
 
-#: src/Modules/Workflows/Controllers/ScheduledActions.php:518
 #. translators: %1$s is the recurrence, %2$d is the repeat times
+#: src/Modules/Workflows/Controllers/ScheduledActions.php:518
 #, php-format
 msgid "%1$s for %2$d times"
 msgstr "%1$s para sa %2$d beses"
 
-#: src/Modules/Workflows/Controllers/ScheduledActions.php:528
 #. translators: %1$s is the executed times, %2$d is the total repeat times
+#: src/Modules/Workflows/Controllers/ScheduledActions.php:528
 #, fuzzy, php-format
 msgid "[%1$s/%2$d]"
 msgstr "[%1$s/%2$d]"
@@ -1674,9 +1674,8 @@ msgid ""
 "Drag and drop steps to add them to your workflow. Connect the steps to "
 "create a workflow."
 msgstr ""
-"I-drag at i-drop ang mga hakbang upang idagdag ang mga ito sa iyong daloy "
-"ng trabaho. Ikonekta ang mga hakbang upang lumikha ng isang daloy ng "
-"trabaho."
+"I-drag at i-drop ang mga hakbang upang idagdag ang mga ito sa iyong daloy ng "
+"trabaho. Ikonekta ang mga hakbang upang lumikha ng isang daloy ng trabaho."
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:284
 msgid "Output and input"
@@ -1685,8 +1684,8 @@ msgstr "Output at input"
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:285
 msgid "Linked steps can pass data forward as input to the next step."
 msgstr ""
-"Maaaring ipasa ng mga naka-link na hakbang ang data pasulong bilang input "
-"sa susunod na hakbang."
+"Maaaring ipasa ng mga naka-link na hakbang ang data pasulong bilang input sa "
+"susunod na hakbang."
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:289
 msgid "Customize the workflow"
@@ -1697,8 +1696,8 @@ msgid ""
 "Click on a step to customize it. You can change the step's settings in the "
 "right sidebar."
 msgstr ""
-"I-click ang isang hakbang upang i-customize ito. Maaari mong baguhin ang "
-"mga setting ng hakbang sa kanang sidebar."
+"I-click ang isang hakbang upang i-customize ito. Maaari mong baguhin ang mga "
+"setting ng hakbang sa kanang sidebar."
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:294
 msgid "Workflow validation"
@@ -1737,11 +1736,11 @@ msgstr ""
 "pindutan ng tulong sa kanang itaas na sulok upang ma-access ang mga "
 "mapagkukunan ng suporta."
 
+#. translators: Blocks tab title in the block inserter.
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:236
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14099
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:19
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11707
-#. translators: Blocks tab title in the block inserter.
 msgid "Triggers"
 msgstr "Mga Trigger"
 
@@ -1827,8 +1826,8 @@ msgstr "Editor ng Aksyon Workflow"
 msgid "%s updated."
 msgstr "%s na-update."
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:838
 #. translators: 1: Post type singular label, 2: Revision title
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:838
 #, php-format
 msgid "%1$s restored to revision from %2$s"
 msgstr "%1$s naibalik sa bersyon mula sa %2$s"
@@ -1848,8 +1847,8 @@ msgstr "%s na-save."
 msgid "%s submitted."
 msgstr "%s naipasa."
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:857
 #. translators: 1: Post type singular label, 2: Scheduled date
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:857
 #, php-format
 msgid "%1$s scheduled for: <strong>%2$s</strong>."
 msgstr "%1$s na-iskedyul para sa: <strong>%2$s</strong>."
@@ -2203,8 +2202,8 @@ msgstr "Kondisyonal"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:37
 msgid ""
-"This step allows you to continue the workflow only if certain conditions "
-"are met. It is not required to have both a True and a False option."
+"This step allows you to continue the workflow only if certain conditions are "
+"met. It is not required to have both a True and a False option."
 msgstr ""
 "Ang hakbang na ito ay nagpapahintulot sa iyo na ipagpatuloy ang workflow "
 "kung ang ilang mga kondisyon ay natutugunan. Hindi kinakailangan na "
@@ -2258,8 +2257,8 @@ msgid ""
 "This step enables you to deactivate the \"Manually enabled via checkbox\" "
 "workflow after use."
 msgstr ""
-"Ang hakbang na ito ay nagbibigay-daan sa iyo upang i-deactivate ang "
-"workflow na \"Manually enabled via checkbox\" pagkatapos ng paggamit."
+"Ang hakbang na ito ay nagbibigay-daan sa iyo upang i-deactivate ang workflow "
+"na \"Manually enabled via checkbox\" pagkatapos ng paggamit."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeactivatePostWorkflow.php:68
 msgid "Select which post will have its workflow deactivated."
@@ -2282,8 +2281,7 @@ msgid ""
 "Choose the manually enabling workflow that will be deactivated for the "
 "selected post."
 msgstr ""
-"Pumili ng manually enabling workflow na ide-deactivate para sa napiling "
-"post."
+"Pumili ng manually enabling workflow na ide-deactivate para sa napiling post."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeactivatePostWorkflow.php:125
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16035
@@ -2447,8 +2445,8 @@ msgstr "Prefix ng pamagat"
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DuplicatePost.php:98
 msgid "Text to add before the original title. Leave empty for no prefix."
 msgstr ""
-"Teksto na idagdag bago ang orihinal na pamagat. Iwanang walang laman para "
-"sa walang prefix."
+"Teksto na idagdag bago ang orihinal na pamagat. Iwanang walang laman para sa "
+"walang prefix."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DuplicatePost.php:99
 msgid "Copy of "
@@ -2644,7 +2642,8 @@ msgstr "Limitasyon ng ulit"
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:146
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:123
 msgid "The maximum number of times the scheduled action will be repeated."
-msgstr "Ang pinakamataas na bilang ng beses na uulitin ang naka-schedule na aksyon."
+msgstr ""
+"Ang pinakamataas na bilang ng beses na uulitin ang naka-schedule na aksyon."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:183
 msgid "After delay"
@@ -2664,7 +2663,8 @@ msgstr "PublishPress Workflow: {{global.workflow.title}}"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:22
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:22
-msgid "This is a message sent by PublishPress Workflow: {{global.workflow.title}}."
+msgid ""
+"This is a message sent by PublishPress Workflow: {{global.workflow.title}}."
 msgstr ""
 "Ito ay isang mensahe na ipinadala ng PublishPress Workflow: "
 "{{global.workflow.title}}."
@@ -2814,7 +2814,8 @@ msgstr "Ipadala kay Ray"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendRay.php:37
 msgid "This step transmits the workflow's data to Ray (by Spatie)."
-msgstr "Ang hakbang na ito ay nagpapadala ng data ng workflow sa Ray (ni Spatie)."
+msgstr ""
+"Ang hakbang na ito ay nagpapadala ng data ng workflow sa Ray (ni Spatie)."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendRay.php:65
 msgid "The data to be sent to Ray."
@@ -2868,8 +2869,10 @@ msgid "New terms"
 msgstr "Mga bagong termino"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SetPostTerm.php:83
-msgid "The terms that will be added to the posts after removing all the others."
-msgstr "Ang mga termino na idaragdag sa mga post matapos alisin ang lahat ng iba."
+msgid ""
+"The terms that will be added to the posts after removing all the others."
+msgstr ""
+"Ang mga termino na idaragdag sa mga post matapos alisin ang lahat ng iba."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/StickPost.php:32
 msgid "Stick post"
@@ -3061,8 +3064,8 @@ msgid ""
 "are done via the in-site notification area."
 msgstr ""
 "Ang hakbang na ito ay nangangailangan ng aksyon mula sa gumagamit bago "
-"makapagpatuloy ang workflow. Ang mga aksyon ay isinasagawa sa pamamagitan "
-"ng notification area ng site."
+"makapagpatuloy ang workflow. Ang mga aksyon ay isinasagawa sa pamamagitan ng "
+"notification area ng site."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:64
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:168
@@ -3083,25 +3086,26 @@ msgid ""
 "interact with this step."
 msgstr ""
 "Isang listahan na pinaghihiwalay ng kuwit ng mga pangalan ng gumagamit, id, "
-"email o mga tungkulin ng gumagamit na maaaring makipag-ugnayan sa hakbang "
-"na ito."
+"email o mga tungkulin ng gumagamit na maaaring makipag-ugnayan sa hakbang na "
+"ito."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:82
 msgid "Specify the message to be displayed to the responders."
 msgstr "Tukuyin ang mensahe na ipapakita sa mga tumugon."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:97
-msgid "Please select an option to continue the workflow: {{global.workflow.title}}"
+msgid ""
+"Please select an option to continue the workflow: {{global.workflow.title}}"
 msgstr ""
 "Mangyaring pumili ng isang opsyon upang ipagpatuloy ang workflow: "
 "{{global.workflow.title}}"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:129
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:201
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10119
 #: assets/jsx/workflow-editor/components/more-menu/menu-dropdown.jsx:11
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7867
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Options"
 msgstr "Mga Opsyon"
 
@@ -3169,8 +3173,7 @@ msgid ""
 "integrate with other plugins or custom code."
 msgstr ""
 "Ang trigger na ito ay nag-aactivate sa isang custom na WordPress action "
-"hook. Gamitin ito upang makipag-ugnayan sa iba pang plugins o custom na "
-"code."
+"hook. Gamitin ito upang makipag-ugnayan sa iba pang plugins o custom na code."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:65
 msgid "Specify the hook that will trigger this action."
@@ -3186,7 +3189,8 @@ msgstr "Prayoridad"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:84
 msgid "The priority of the action hook. Lower values are executed first."
-msgstr "Ang prayoridad ng action hook. Ang mas mababang halaga ay isinasagawa muna."
+msgstr ""
+"Ang prayoridad ng action hook. Ang mas mababang halaga ay isinasagawa muna."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnInit.php:32
 msgid "On site init"
@@ -3198,15 +3202,16 @@ msgstr "Ang trigger na ito ay nag-aactivate sa pagsisimula ng site."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnLegacyActionTrigger.php:54
 msgid "Manually run via Future Actions box"
-msgstr "Manwal na patakbuhin sa pamamagitan ng kahon ng Mga Hinaharap na Aksyon"
+msgstr ""
+"Manwal na patakbuhin sa pamamagitan ng kahon ng Mga Hinaharap na Aksyon"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnLegacyActionTrigger.php:59
 msgid ""
 "This trigger allows users to choose the workflow from the dropdown menu in "
 "the Future Actions options."
 msgstr ""
-"Ang trigger na ito ay nagpapahintulot sa mga gumagamit na pumili ng daloy "
-"ng trabaho mula sa dropdown menu sa mga opsyon ng Mga Hinaharap na Aksyon."
+"Ang trigger na ito ay nagpapahintulot sa mga gumagamit na pumili ng daloy ng "
+"trabaho mula sa dropdown menu sa mga opsyon ng Mga Hinaharap na Aksyon."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnLegacyActionTrigger.php:114
 msgid "Action Post"
@@ -3233,8 +3238,7 @@ msgstr "Nagbago ang may-akda ng post"
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostAuthorChange.php:37
 msgid "This trigger activates when an existing post author is changed."
 msgstr ""
-"Ang trigger na ito ay aktibo kapag ang umiiral na may-akda ng post ay "
-"binago."
+"Ang trigger na ito ay aktibo kapag ang umiiral na may-akda ng post ay binago."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostAuthorChange.php:64
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostCreate.php:64
@@ -3265,7 +3269,8 @@ msgstr "Filter ng Post"
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostWorkflowEnable.php:83
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnTermsAdded.php:65
 msgid "Specify the criteria for posts that will trigger this action."
-msgstr "Tukuyin ang mga pamantayan para sa mga post na mag-trigger ng aksyon na ito."
+msgstr ""
+"Tukuyin ang mga pamantayan para sa mga post na mag-trigger ng aksyon na ito."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostAuthorChange.php:73
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostCreate.php:73
@@ -3384,7 +3389,8 @@ msgstr "Nagbago ang post meta"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:37
 msgid "This trigger activates when a post meta field is changed."
-msgstr "Ang trigger na ito ay umaaktibo kapag ang isang post meta field ay nagbago."
+msgstr ""
+"Ang trigger na ito ay umaaktibo kapag ang isang post meta field ay nagbago."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:88
 msgid "Meta settings"
@@ -3401,7 +3407,8 @@ msgid "Meta keys"
 msgstr "Mga susi ng meta"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:95
-msgid "This field allow you to choose the post meta that will trigger this action."
+msgid ""
+"This field allow you to choose the post meta that will trigger this action."
 msgstr ""
 "Pinapayagan ka ng field na ito na pumili ng post meta na magti-trigger sa "
 "aksyong ito."
@@ -3421,8 +3428,8 @@ msgid ""
 "The action taken when the meta key is changed: 'added', 'updated' or "
 "'deleted'."
 msgstr ""
-"Ang aksyong ginawa kapag ang meta key ay nagbago: 'idinagdag', 'na-update' "
-"o 'tinanggal'."
+"Ang aksyong ginawa kapag ang meta key ay nagbago: 'idinagdag', 'na-update' o "
+"'tinanggal'."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:160
 msgid "The meta ID."
@@ -3474,15 +3481,16 @@ msgid ""
 "action is clicked in the Posts list screen."
 msgstr ""
 "Ang trigger na ito ay lumilikha ng isang pasadyang aksyon sa hilera ng post "
-"at naaaktibo kapag ang aksyon sa hilera ay na-click sa screen ng listahan "
-"ng mga Post."
+"at naaaktibo kapag ang aksyon sa hilera ay na-click sa screen ng listahan ng "
+"mga Post."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:91
 msgid "Row Action"
 msgstr "Aksyon sa Hilera"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:92
-msgid "Configure the post row action that will be created in the Posts list screen."
+msgid ""
+"Configure the post row action that will be created in the Posts list screen."
 msgstr ""
 "I-configure ang aksyon sa hilera ng post na malilikha sa screen ng listahan "
 "ng mga Post."
@@ -3493,7 +3501,8 @@ msgstr "Label ng aksyon"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:101
 msgid "The label of the action created in the post row for this trigger."
-msgstr "Ang label ng aksyon na nilikha sa hilera ng post para sa trigger na ito."
+msgstr ""
+"Ang label ng aksyon na nilikha sa hilera ng post para sa trigger na ito."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:106
 msgid "Run workflow"
@@ -3596,8 +3605,8 @@ msgstr "Na-update ang post"
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostUpdate.php:37
 msgid "This trigger activates when an existing post is updated."
 msgstr ""
-"Ang trigger na ito ay nag-aactivate kapag ang isang umiiral na post ay "
-"na-update."
+"Ang trigger na ito ay nag-aactivate kapag ang isang umiiral na post ay na-"
+"update."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostWorkflowEnable.php:32
 msgid "Manually run via checkbox"
@@ -3609,8 +3618,8 @@ msgid ""
 "enabled via the post editing screen or the Quick Edit panel."
 msgstr ""
 "Ang trigger na ito ay nag-aactivate kapag ang opsyon ay manu-manong "
-"pinagana. Maari itong paganahin sa pamamagitan ng screen ng pag-edit ng "
-"post o sa Quick Edit panel."
+"pinagana. Maari itong paganahin sa pamamagitan ng screen ng pag-edit ng post "
+"o sa Quick Edit panel."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostWorkflowEnable.php:68
 msgid "Settings for the trigger."
@@ -3630,8 +3639,8 @@ msgstr "Sa iskedyul"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:37
 msgid ""
-"This trigger allows you to run a workflow at a specific time, or relative "
-"to another date. You can also use this trigger to repeat workflows."
+"This trigger allows you to run a workflow at a specific time, or relative to "
+"another date. You can also use this trigger to repeat workflows."
 msgstr ""
 "Pinapayagan ka ng trigger na ito na patakbuhin ang isang workflow sa isang "
 "tiyak na oras, o kaugnay sa ibang petsa. Maaari mo ring gamitin ang trigger "
@@ -3656,8 +3665,8 @@ msgstr "Mga term na idinagdag sa post"
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnTermsAdded.php:37
 msgid "This trigger activates when taxonomy terms are added to a post."
 msgstr ""
-"Ang trigger na ito ay nag-aactivate kapag ang mga taxonomy term ay "
-"idinagdag sa isang post."
+"Ang trigger na ito ay nag-aactivate kapag ang mga taxonomy term ay idinagdag "
+"sa isang post."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnTermsAdded.php:88
 msgid "Terms Filter"
@@ -3693,14 +3702,16 @@ msgstr "Nabago ang papel ng gumagamit"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:37
 msgid "This trigger activates when a user's role is changed."
-msgstr "Ang trigger na ito ay nag-activate kapag ang papel ng gumagamit ay nabago."
+msgstr ""
+"Ang trigger na ito ay nag-activate kapag ang papel ng gumagamit ay nabago."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:64
 msgid "User Query"
 msgstr "Query ng Gumagamit"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:65
-msgid "Specify the criteria for users whose role changes will trigger this action."
+msgid ""
+"Specify the criteria for users whose role changes will trigger this action."
 msgstr ""
 "Tukuyin ang mga pamantayan para sa mga gumagamit na ang pagbabago ng papel "
 "ay mag-trigger ng aksyong ito."
@@ -3711,7 +3722,8 @@ msgstr "Query ng gumagamit"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:74
 msgid "The query defines the users that will trigger this action."
-msgstr "Ang query ay nagtatakda ng mga gumagamit na mag-trigger ng aksyong ito."
+msgstr ""
+"Ang query ay nagtatakda ng mga gumagamit na mag-trigger ng aksyong ito."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:80
 msgid "User Role before change"
@@ -3746,7 +3758,8 @@ msgid "The roles that were removed from the user."
 msgstr "Ang mga papel na tinanggal mula sa gumagamit."
 
 #: src/Modules/Workflows/Migrations/V040500OnScheduledStepsSchema.php:58
-msgid "Migrate post_id and repetition_number on scheduled steps schema after v4.5.0"
+msgid ""
+"Migrate post_id and repetition_number on scheduled steps schema after v4.5.0"
 msgstr ""
 "I-migrate ang post_id at repetition_number sa iskema ng mga nakatakdang "
 "hakbang pagkatapos ng v4.5.0"
@@ -3862,7 +3875,8 @@ msgstr "Naglo-load ng editor ng workflow..."
 
 #: src/Modules/Workflows/Views/editor.html.php:18
 msgid "You need to enable JavaScript to run this app."
-msgstr "Kailangan mong paganahin ang JavaScript upang patakbuhin ang app na ito."
+msgstr ""
+"Kailangan mong paganahin ang JavaScript upang patakbuhin ang app na ito."
 
 #: src/Views/ad-banner-right-sidebar.php:12
 msgid "Need PublishPress Future Support?"
@@ -3890,8 +3904,8 @@ msgstr "Tingnan ang Knowledge Base"
 msgid "Overdue: "
 msgstr "Huli na: "
 
-#: src/Views/expire-column.php:77
 #. translators: %1$s opens a span tag, %2$s is the action name, %3$s ends a span tag, %4$s is the a span tag, %5$s is the a span tag, %6$s is the a span tag
+#: src/Views/expire-column.php:77
 #, php-format
 msgid "%1$s%2$s%3$s on %5$s%4$s%6$s"
 msgstr "%1$s%2$s%3$s sa %5$s%4$s%6$s"
@@ -3914,7 +3928,8 @@ msgid "Metabox Title"
 msgstr "Pamagat ng Metabox"
 
 #: src/Views/menu-admin.php:48
-msgid "The title of the metabox that will be displayed in the post edit screen."
+msgid ""
+"The title of the metabox that will be displayed in the post edit screen."
 msgstr "Ang pamagat ng metabox na ipapakita sa screen ng pag-edit ng post."
 
 #: src/Views/menu-admin.php:57
@@ -3939,8 +3954,7 @@ msgstr "Detalyado"
 
 #: src/Views/menu-admin.php:96
 msgid ""
-"Displays all information in the Future Action column on the \"Posts\" "
-"screen."
+"Displays all information in the Future Action column on the \"Posts\" screen."
 msgstr ""
 "Ipinapakita ang lahat ng impormasyon sa kolum ng Hinaharap na Aksyon sa "
 "\"Mga Post\" na screen."
@@ -3954,8 +3968,8 @@ msgid ""
 "Displays only the icon and date/time in the Future Action column on the "
 "\"Posts\" screen."
 msgstr ""
-"Ipinapakita lamang ang icon at petsa/oras sa kolum ng Hinaharap na Aksyon "
-"sa \"Mga Post\" na screen."
+"Ipinapakita lamang ang icon at petsa/oras sa kolum ng Hinaharap na Aksyon sa "
+"\"Mga Post\" na screen."
 
 #: src/Views/menu-admin.php:118
 msgid "Future Actions Editor"
@@ -3984,10 +3998,8 @@ msgstr "24 na oras"
 msgid "AM/PM"
 msgstr "AM/PM"
 
-#: src/Views/menu-admin.php:174
-#: src/Views/menu-advanced.php:99
-#: src/Views/menu-display.php:367
-#: src/Views/menu-general.php:118
+#: src/Views/menu-admin.php:174 src/Views/menu-advanced.php:99
+#: src/Views/menu-display.php:368 src/Views/menu-general.php:118
 #: src/Views/menu-notifications.php:186
 msgid "Save Changes"
 msgstr "I-save ang mga Pagbabago"
@@ -4025,10 +4037,11 @@ msgid "Delete data"
 msgstr "Burahin ang data"
 
 #: src/Views/menu-advanced.php:88
-msgid "Toggle between preserving or deleting data after the plugin is deactivated."
+msgid ""
+"Toggle between preserving or deleting data after the plugin is deactivated."
 msgstr ""
-"I-toggle sa pagitan ng pagpapanatili o pagbura ng data pagkatapos "
-"i-deactivate ang plugin."
+"I-toggle sa pagitan ng pagpapanatili o pagbura ng data pagkatapos i-"
+"deactivate ang plugin."
 
 #: src/Views/menu-debug-log.php:14
 #, fuzzy
@@ -4063,8 +4076,8 @@ msgstr "Sunod-sunod ng oras"
 msgid "Show only requests with trigger activated"
 msgstr "Ipakita lamang ang mga kahilingan na may nakabukas na trigger"
 
-#: src/Views/menu-debug-log.php:155
 #. translators: %1$d: displayed count, %2$d: filtered total, %3$d: sessions, %4$d: total unfiltered, %5$s: filtered log size, %6$s: total log size.
+#: src/Views/menu-debug-log.php:155
 #, php-format
 msgid ""
 "Showing the latest %1$d of %2$d logs (%3$d sessions). Total in database: "
@@ -4073,16 +4086,16 @@ msgstr ""
 "Ipinapakita ang pinakabago na %1$d sa %2$d na mga log (%3$d na sesyon). "
 "Kabuuan sa database: %4$d. Sukat ng log: %5$s (kabuuan: %6$s)."
 
-#: src/Views/menu-debug-log.php:165
 #. translators: %1$d: displayed count, %2$d: total count, %3$d: sessions, %4$s: log size.
+#: src/Views/menu-debug-log.php:165
 #, php-format
 msgid "Showing the latest %1$d of %2$d logs (%3$d sessions). Log size: %4$s."
 msgstr ""
 "Ipinapakita ang pinakabago na %1$d sa %2$d na mga log (%3$d na sesyon). "
 "Sukat ng log: %4$s."
 
-#: src/Views/menu-debug-log.php:176
 #. translators: %1$d: filtered logs count, %2$d: sessions, %3$d: total unfiltered, %4$s: filtered log size, %5$s: total log size.
+#: src/Views/menu-debug-log.php:176
 #, php-format
 msgid ""
 "Showing all %1$d logs (%2$d sessions). Total in database: %3$d. Log size: "
@@ -4091,8 +4104,8 @@ msgstr ""
 "Ipinapakita ang lahat ng %1$d na mga log (%2$d na sesyon). Kabuuan sa "
 "database: %3$d. Sukat ng log: %4$s (kabuuan: %5$s)."
 
-#: src/Views/menu-debug-log.php:185
 #. translators: %1$d: total logs count, %2$d: sessions count, %3$s: log size.
+#: src/Views/menu-debug-log.php:185
 #, php-format
 msgid "Showing all %1$d logs (%2$d sessions). Log size: %3$s."
 msgstr ""
@@ -4103,8 +4116,7 @@ msgstr ""
 msgid "Copy Debug Log"
 msgstr "Kopyahin ang Debug Log"
 
-#: src/Views/menu-debug-log.php:206
-#: assets/js/backupPanel.js:834
+#: src/Views/menu-debug-log.php:206 assets/js/backupPanel.js:834
 #: assets/jsx/backup-panel/components/tabs-content/hooks/export.jsx:76
 #: assets/js/backupPanel.js:667
 msgid "Download"
@@ -4127,8 +4139,7 @@ msgstr "Pinaunlad na Diagnostics at Mga Tool"
 msgid "WP-Cron Status Check"
 msgstr "WP-Cron Status Check"
 
-#: src/Views/menu-diagnostics.php:61
-#: src/Views/menu-diagnostics.php:80
+#: src/Views/menu-diagnostics.php:61 src/Views/menu-diagnostics.php:80
 msgid "Passed"
 msgstr "Nakapasa"
 
@@ -4164,10 +4175,8 @@ msgstr "Subukang Ayusin ang Database"
 msgid "Debug Logging"
 msgstr "Debug Logging"
 
-#: src/Views/menu-diagnostics.php:128
-#: src/Views/menu-display.php:139
-#: src/Views/menu-notifications.php:67
-#: src/Views/menu-notifications.php:95
+#: src/Views/menu-diagnostics.php:128 src/Views/menu-display.php:139
+#: src/Views/menu-notifications.php:67 src/Views/menu-notifications.php:95
 #: src/Views/menu-notifications.php:150
 msgid "Enabled"
 msgstr "Naka-enable"
@@ -4184,10 +4193,8 @@ msgstr "Linisin ang Debug Log"
 msgid "View Debug Logs"
 msgstr "Tingnan ang Mga Debug Log"
 
-#: src/Views/menu-diagnostics.php:148
-#: src/Views/menu-display.php:150
-#: src/Views/menu-notifications.php:75
-#: src/Views/menu-notifications.php:104
+#: src/Views/menu-diagnostics.php:148 src/Views/menu-display.php:150
+#: src/Views/menu-notifications.php:75 src/Views/menu-notifications.php:104
 #: src/Views/menu-notifications.php:158
 msgid "Disabled"
 msgstr "Naka-disable"
@@ -4223,8 +4230,8 @@ msgid ""
 "Ray\" workflow step will not be available in the workflow editor."
 msgstr ""
 "Hindi natagpuan ang Spatie Ray Debug. Ito ay hindi isang error, ngunit ang "
-"hakbang sa workflow na \"Send to Ray\" ay hindi magiging available sa "
-"editor ng workflow."
+"hakbang sa workflow na \"Send to Ray\" ay hindi magiging available sa editor "
+"ng workflow."
 
 #: src/Views/menu-diagnostics.php:175
 msgid "Learn more about Spatie Ray"
@@ -4240,8 +4247,8 @@ msgstr "Patakbuhin ang Migration"
 
 #: src/Views/menu-diagnostics.php:191
 msgid ""
-"Migrate legacy future actions from WP Cron to the new Action Scheduler. "
-"This will run in the background and may take a while."
+"Migrate legacy future actions from WP Cron to the new Action Scheduler. This "
+"will run in the background and may take a while."
 msgstr ""
 "I-migrate ang mga legacy future actions mula sa WP Cron patungo sa bagong "
 "Action Scheduler. Ito ay tatakbo sa background at maaaring tumagal ng ilang "
@@ -4261,10 +4268,10 @@ msgid ""
 "issues with 3rd party plugins that read that data. This will run in the "
 "background and may take a while."
 msgstr ""
-"I-restore ang mga legacy action arguments bilang Post Meta. Ito ay "
-"kapaki-pakinabang kung mayroon kang mga isyu sa 3rd party plugins na "
-"bumabasa ng data na iyon. Ito ay tatakbo sa background at maaaring tumagal "
-"ng ilang sandali."
+"I-restore ang mga legacy action arguments bilang Post Meta. Ito ay kapaki-"
+"pakinabang kung mayroon kang mga isyu sa 3rd party plugins na bumabasa ng "
+"data na iyon. Ito ay tatakbo sa background at maaaring tumagal ng ilang "
+"sandali."
 
 #: src/Views/menu-diagnostics.php:221
 #, fuzzy
@@ -4273,12 +4280,11 @@ msgstr "Legacy Cron Schedule"
 
 #: src/Views/menu-diagnostics.php:229
 msgid ""
-"The below table will show all currently scheduled cron events for the "
-"plugin with the next run time."
+"The below table will show all currently scheduled cron events for the plugin "
+"with the next run time."
 msgstr ""
-"Ipinapakita ng talahanayan sa ibaba ang lahat ng kasalukuyang "
-"naka-scheduled na cron events para sa plugin kasama ang susunod na oras ng "
-"pagpapatakbo."
+"Ipinapakita ng talahanayan sa ibaba ang lahat ng kasalukuyang naka-scheduled "
+"na cron events para sa plugin kasama ang susunod na oras ng pagpapatakbo."
 
 #: src/Views/menu-diagnostics.php:244
 msgid "Event"
@@ -4300,8 +4306,8 @@ msgstr "Mga Default na Format"
 msgid "Date Format"
 msgstr "Format ng Petsa"
 
-#: src/Views/menu-display.php:64
 #. translators: %s is a link to the PHP date function documentation
+#: src/Views/menu-display.php:64
 #, php-format
 msgid ""
 "The default format to use when displaying the action date within a post "
@@ -4312,8 +4318,7 @@ msgstr ""
 "loob ng isang post gamit ang shortcode o sa footer. Para sa impormasyon sa "
 "mga wastong opsyon sa pag-format, tingnan: %s."
 
-#: src/Views/menu-display.php:68
-#: src/Views/menu-display.php:106
+#: src/Views/menu-display.php:68 src/Views/menu-display.php:106
 msgid "PHP Date Function"
 msgstr "PHP Petsa na Function"
 
@@ -4321,8 +4326,8 @@ msgstr "PHP Petsa na Function"
 msgid "Time Format"
 msgstr "Format ng Oras"
 
-#: src/Views/menu-display.php:102
 #. translators: %s is a link to the PHP date function documentation
+#: src/Views/menu-display.php:102
 #, php-format
 msgid ""
 "The default format to use when displaying the action time within a post "
@@ -4339,8 +4344,8 @@ msgstr "Ipinapakita ang Footer ng Post"
 
 #: src/Views/menu-display.php:118
 msgid ""
-"Enabling this below will display the action date automatically at the end "
-"of any post which is set to run an action."
+"Enabling this below will display the action date automatically at the end of "
+"any post which is set to run an action."
 msgstr ""
 "Ang pagpapagana nito sa ibaba ay awtomatikong ipapakita ang petsa ng aksyon "
 "sa dulo ng anumang post na naka-set upang tumakbo ng isang aksyon."
@@ -4388,16 +4393,16 @@ msgstr "Halimbawa: "
 msgid "Shortcode"
 msgstr "Shortcode"
 
-#: src/Views/menu-display.php:249
 #. translators: %s is a code tag that wraps the shortcode
+#: src/Views/menu-display.php:249
 #, php-format
 msgid ""
 "Use the %s[futureaction]%s shortcode to show when the future action will "
 "occur. You can add this shortcode anywhere in your post content."
 msgstr ""
 "Gamitin ang %s[futureaction]%s shortcode upang ipakita kung kailan "
-"mangyayari ang hinaharap na aksyon. Maaari mong idagdag ang shortcode na "
-"ito kahit saan sa nilalaman ng iyong post."
+"mangyayari ang hinaharap na aksyon. Maaari mong idagdag ang shortcode na ito "
+"kahit saan sa nilalaman ng iyong post."
 
 #: src/Views/menu-display.php:259
 #, fuzzy
@@ -4406,63 +4411,64 @@ msgstr "Shortcode Wrapper"
 
 #. translators: This is used to indicate that no wrapper should be used on the shortcode output
 #: src/Views/menu-display.php:266
+#, fuzzy
+#| msgid "— No Change —"
 msgid "— None —"
-msgstr "— Wala —"
+msgstr "— Walang Pagbabago —"
 
-#: src/Views/menu-display.php:279
+#: src/Views/menu-display.php:280
 msgid ""
 "The shortcode output will be wrapped in the selected HTML tag, allowing you "
 "to control its structure and styling."
 msgstr ""
-"Ang output ng shortcode ay ibabalot sa napiling HTML tag, na "
-"nagbibigay-daan sa iyo upang kontrolin ang istruktura at istilo nito."
+"Ang output ng shortcode ay ibabalot sa napiling HTML tag, na nagbibigay-daan "
+"sa iyo upang kontrolin ang istruktura at istilo nito."
 
-#: src/Views/menu-display.php:289
+#: src/Views/menu-display.php:290
 msgid "Wrapper Class"
 msgstr "Klase ng Wrapper"
 
-#: src/Views/menu-display.php:295
+#: src/Views/menu-display.php:296
 msgid "Add a CSS class to the wrapper element for custom styling."
 msgstr "Magdagdag ng CSS class sa wrapper element para sa custom na istilo."
 
-#: src/Views/menu-display.php:302
+#: src/Views/menu-display.php:303
 msgid "Attributes"
 msgstr "Mga Katangian"
 
-#: src/Views/menu-display.php:308
 #. translators: %s is the shortcode code wrapped in code tags
+#: src/Views/menu-display.php:309
 #, php-format
 msgid "The following attributes are available for the %s shortcode:"
 msgstr "Ang mga sumusunod na katangian ay magagamit para sa %s shortcode:"
 
-#: src/Views/menu-display.php:315
 #. translators: %s is a code tag that wraps the shortcode attribute name
+#: src/Views/menu-display.php:316
 #, php-format
 msgid "%s - Available options:"
 msgstr "%s - Mga magagamit na opsyon:"
 
-#: src/Views/menu-display.php:321
 #. translators: %s is a code tag that wraps the shortcode attribute value
+#: src/Views/menu-display.php:322
 #, php-format
 msgid "%s - Displays complete date/time.  Default value."
 msgstr "%s - Ipinapakita ang kumpletong petsa/oras.  Default na halaga."
 
-#: src/Views/menu-display.php:327
 #. translators: %s is a code tag that wraps the shortcode attribute value
+#: src/Views/menu-display.php:328
 #, php-format
 msgid "%s - Displays date only"
 msgstr "%s - Ipinapakita ang petsa lamang"
 
-#: src/Views/menu-display.php:333
 #. translators: %s is a code tag that wraps the shortcode attribute value
+#: src/Views/menu-display.php:334
 #, php-format
 msgid "%s - Displays time only"
 msgstr "%s - Ipinapakita ang oras lamang"
 
-#: src/Views/menu-display.php:345
-#: src/Views/menu-display.php:353
 #. translators: %s is a code tag that wraps the shortcode attribute dateformat
 #. translators: %s is a code tag that wraps the shortcode attribute timeformat
+#: src/Views/menu-display.php:346 src/Views/menu-display.php:354
 #, php-format
 msgid "%s - Format set here will override the value set on the settings page"
 msgstr ""
@@ -4520,7 +4526,8 @@ msgid "Enable Email Notification?"
 msgstr "I-enable ang Abiso sa Email?"
 
 #: src/Views/menu-notifications.php:78
-msgid "This will enable or disable the send of email notification on future action."
+msgid ""
+"This will enable or disable the send of email notification on future action."
 msgstr ""
 "Ito ay mag-enable o mag-disable ng pagpapadala ng abiso sa email sa mga "
 "futurong aksyon."
@@ -4530,7 +4537,8 @@ msgid "Include Blog Administrators?"
 msgstr "Isama ang mga Administrator ng Blog?"
 
 #: src/Views/menu-notifications.php:107
-msgid "This will include all users with the role of \"Administrator\" in the email."
+msgid ""
+"This will include all users with the role of \"Administrator\" in the email."
 msgstr ""
 "Isasama nito ang lahat ng mga gumagamit na may tungkulin na "
 "\"Administrator\" sa email."
@@ -4550,8 +4558,7 @@ msgstr ""
 msgid "Past-due Actions Notification"
 msgstr "Abiso sa mga Nakaraang Aksyon"
 
-#: src/Views/menu-notifications.php:134
-#: src/Views/menu-notifications.php:161
+#: src/Views/menu-notifications.php:134 src/Views/menu-notifications.php:161
 msgid ""
 "This will enable or disable the send of email notification on past-due "
 "actions."
@@ -4571,67 +4578,55 @@ msgstr ""
 "Ipasok ang listahan ng mga email na pinaghiwalay ng kuwit na nais mong "
 "makatanggap ng notification kapag natukoy ang mga nakaraang aksyon."
 
-#: src/Views/tabs-future-actions.php:20
-#: assets/js/backupPanel.js:649
+#: src/Views/tabs-future-actions.php:20 assets/js/backupPanel.js:649
 #: assets/js/backupPanel.js:1232
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:24
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:104
-#: assets/js/backupPanel.js:500
-#: assets/js/backupPanel.js:912
+#: assets/js/backupPanel.js:500 assets/js/backupPanel.js:912
 msgid "Post Types"
 msgstr "Mga Uri ng Post"
 
-#: src/Views/tabs-future-actions.php:25
-#: assets/js/backupPanel.js:652
+#: src/Views/tabs-future-actions.php:25 assets/js/backupPanel.js:652
 #: assets/js/backupPanel.js:1235
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:28
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:108
-#: assets/js/backupPanel.js:504
-#: assets/js/backupPanel.js:916
+#: assets/js/backupPanel.js:504 assets/js/backupPanel.js:916
 msgid "General"
 msgstr "Pangkalahatan"
 
-#: src/Views/tabs-future-actions.php:30
-#: assets/js/backupPanel.js:655
+#: src/Views/tabs-future-actions.php:30 assets/js/backupPanel.js:655
 #: assets/js/backupPanel.js:1238
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:32
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:112
-#: assets/js/backupPanel.js:508
-#: assets/js/backupPanel.js:920
+#: assets/js/backupPanel.js:508 assets/js/backupPanel.js:920
 msgid "Notifications"
 msgstr "Mga Abiso"
 
-#: src/Views/tabs-future-actions.php:35
-#: assets/js/backupPanel.js:658
+#: src/Views/tabs-future-actions.php:35 assets/js/backupPanel.js:658
 #: assets/js/backupPanel.js:1241
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:36
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:116
-#: assets/js/backupPanel.js:512
-#: assets/js/backupPanel.js:924
+#: assets/js/backupPanel.js:512 assets/js/backupPanel.js:924
 msgid "Display"
 msgstr "Ipakita"
 
-#: src/Views/tabs-future-actions.php:40
-#: assets/js/backupPanel.js:661
+#: src/Views/tabs-future-actions.php:40 assets/js/backupPanel.js:661
 #: assets/js/backupPanel.js:1244
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:40
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:120
-#: assets/js/backupPanel.js:516
-#: assets/js/backupPanel.js:928
+#: assets/js/backupPanel.js:516 assets/js/backupPanel.js:928
 #, fuzzy
 msgid "Admin"
 msgstr "Admin"
 
 #: src/Views/tabs-settings.php:23
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11467
-#: assets/js/backupPanel.js:664
-#: assets/js/backupPanel.js:1247
+#: assets/js/backupPanel.js:664 assets/js/backupPanel.js:1247
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:44
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:124
 #: assets/jsx/workflow-editor/components/node-types/generic.jsx:248
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9212
-#: assets/js/backupPanel.js:520
-#: assets/js/backupPanel.js:932
+#: assets/js/backupPanel.js:520 assets/js/backupPanel.js:932
 msgid "Advanced"
 msgstr "Sopistikado"
 
@@ -4804,14 +4799,12 @@ msgstr "I-dismiss ang notification"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1967
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:67
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1399
-#, js-format
 msgid "Option %s"
 msgstr "Opsyon %s"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2004
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:95
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1427
-#, js-format
 msgid "Option #%s"
 msgstr "Opsyon #%s"
 
@@ -4830,13 +4823,11 @@ msgstr "Magdagdag ng bagong opsyon"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2037
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:132
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1464
-#, js-format
 msgid ""
-"You have reached the maximum number of options. You can add up to %s "
-"options."
+"You have reached the maximum number of options. You can add up to %s options."
 msgstr ""
-"Naabot mo na ang pinakamataas na bilang ng mga opsyon. Maaari kang "
-"magdagdag ng hanggang %s na mga opsyon."
+"Naabot mo na ang pinakamataas na bilang ng mga opsyon. Maaari kang magdagdag "
+"ng hanggang %s na mga opsyon."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2139
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3245
@@ -4947,7 +4938,6 @@ msgstr "I-click para sa karagdagang impormasyon"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2443
 #: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:197
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1815
-#, js-format
 msgid ""
 "For more information on formatting, see the %sPHP strtotime function%s. For "
 "example, you could enter %s+1 month%s or %s+1 week 2 days 4 hours 2 "
@@ -5018,14 +5008,13 @@ msgstr "Katayuan ng Post"
 msgid "Post Type"
 msgstr "Uri ng Post"
 
+#. translators: %s is the database table name
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2752
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3346
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/column-item.jsx:10
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:10
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2027
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2527
-#. translators: %s is the database table name
-#, js-format
 msgid "Type the %s key and click on the button to insert it."
 msgstr "I-type ang %s key at i-click ang button upang ipasok ito."
 
@@ -5081,13 +5070,15 @@ msgstr "I-double click ang isang variable upang piliin ito."
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:219
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2432
 msgid "Double-click on any variable to add it to your expression."
-msgstr "I-double click ang anumang variable upang idagdag ito sa iyong expression."
+msgstr ""
+"I-double click ang anumang variable upang idagdag ito sa iyong expression."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3216
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:231
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2444
 msgid "Hover over a variable to see its description."
-msgstr "I-hover ang cursor sa isang variable upang makita ang paglalarawan nito."
+msgstr ""
+"I-hover ang cursor sa isang variable upang makita ang paglalarawan nito."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3246
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:8
@@ -5132,11 +5123,10 @@ msgstr "Bilang"
 msgid "Number of posts assigned to this term."
 msgstr "Bilang ng mga post na nakatalaga sa terminong ito."
 
+#. translators: %s is the taxonomy label
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3364
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:38
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2555
-#. translators: %s is the taxonomy label
-#, js-format
 msgid "%s terms for this post."
 msgstr "%s mga termino para sa post na ito."
 
@@ -5380,8 +5370,8 @@ msgstr "I-clear ang nilalaman"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3580
 msgid "Create filters to query specific posts based on rules."
 msgstr ""
-"Lumikha ng mga filter upang mag-query ng mga partikular na post batay sa "
-"mga tuntunin."
+"Lumikha ng mga filter upang mag-query ng mga partikular na post batay sa mga "
+"tuntunin."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4845
 #: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:78
@@ -5518,12 +5508,12 @@ msgstr "Ulit-ulit na Aksyon"
 #: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:131
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4228
 msgid ""
-"Choose how often this task should repeat. Select 'Non-repeating' for a "
-"one-time action or set an interval for automatic recurrence."
+"Choose how often this task should repeat. Select 'Non-repeating' for a one-"
+"time action or set an interval for automatic recurrence."
 msgstr ""
-"Pumili kung gaano kadalas dapat ulitin ang gawaing ito. Pumili ng "
-"'Hindi-ulit' para sa isang beses na aksyon o magtakda ng agwat para sa "
-"awtomatikong pag-uulit."
+"Pumili kung gaano kadalas dapat ulitin ang gawaing ito. Pumili ng 'Hindi-"
+"ulit' para sa isang beses na aksyon o magtakda ng agwat para sa awtomatikong "
+"pag-uulit."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5535
 #: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:148
@@ -5627,10 +5617,11 @@ msgstr "Pro"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7042
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9283
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11276
-msgid "Currently this step is being skipped. Upgrade to Pro to unlock this feature."
+msgid ""
+"Currently this step is being skipped. Upgrade to Pro to unlock this feature."
 msgstr ""
-"Sa kasalukuyan, ang hakbang na ito ay nilalaktawan. Mag-upgrade sa Pro "
-"upang i-unlock ang tampok na ito."
+"Sa kasalukuyan, ang hakbang na ito ay nilalaktawan. Mag-upgrade sa Pro upang "
+"i-unlock ang tampok na ito."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9610
 #: assets/jsx/workflow-editor/components/layout/header.jsx:129
@@ -5644,35 +5635,35 @@ msgstr "Idagdag"
 msgid "Close"
 msgstr "Isara"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9618
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9621
 #: assets/jsx/workflow-editor/components/layout/header.jsx:140
 #: assets/jsx/workflow-editor/components/layout/header.jsx:145
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7425
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7430
-#. translators: button label text should, if possible, be under 16 characters.
 #, fuzzy
 msgid "Auto Layout"
 msgstr "Auto Layout"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9628
 #: assets/jsx/workflow-editor/components/layout/header.jsx:157
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7442
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Upgrade to Pro and unlock more features"
 msgstr "Mag-upgrade sa Pro at i-unlock ang higit pang mga tampok"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9872
 #: assets/jsx/workflow-editor/components/left-toolbar/redo.jsx:31
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7674
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Redo"
 msgstr "Ulitin"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10045
 #: assets/jsx/workflow-editor/components/left-toolbar/undo.jsx:31
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7823
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Undo"
 msgstr "Bawiin"
 
@@ -5705,6 +5696,13 @@ msgstr "Tampok na hindi aktibo"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7931
 msgid "Feature activated"
 msgstr "Tampok na aktibo"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10239
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:23
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7974
+msgctxt "noun"
+msgid "View"
+msgstr "Tingnan"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10243
 #: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:27
@@ -5740,7 +5738,8 @@ msgstr "Mga Advanced na Setting"
 #: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:37
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7988
 msgid "Display advanced settings for the workflow, triggers and steps"
-msgstr "I-display ang mga advanced na setting para sa workflow, triggers at steps"
+msgstr ""
+"I-display ang mga advanced na setting para sa workflow, triggers at steps"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10253
 #: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:38
@@ -5797,8 +5796,8 @@ msgid ""
 "Display the controls panel with buttons to zoon in, zoom out, fit the view "
 "and lock the viewport"
 msgstr ""
-"Ipakita ang panel ng mga kontrol na may mga button para sa mag-zoom in, "
-"mag-zoom out, umangkop sa view at i-lock ang viewport"
+"Ipakita ang panel ng mga kontrol na may mga button para sa mag-zoom in, mag-"
+"zoom out, umangkop sa view at i-lock ang viewport"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10271
 #: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:59
@@ -5912,7 +5911,6 @@ msgstr "Maramihan at iba't ibang mga elementong napili."
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10758
 #: assets/jsx/workflow-editor/components/node-inspector/index.jsx:116
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8445
-#, js-format
 msgid "%d steps selected"
 msgstr "%d mga hakbang ang napili"
 
@@ -5925,7 +5923,6 @@ msgstr "Maramihang hakbang ang napili."
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10764
 #: assets/jsx/workflow-editor/components/node-inspector/index.jsx:130
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8459
-#, js-format
 msgid "%d connections selected"
 msgstr "%d mga koneksyon ang napili"
 
@@ -5945,8 +5942,8 @@ msgstr "Koneksyon"
 #: assets/jsx/workflow-editor/components/node-inspector/index.jsx:166
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8495
 msgid ""
-"The connection between nodes in the workflow. Signifies the path along "
-"which data or control flow one node to another."
+"The connection between nodes in the workflow. Signifies the path along which "
+"data or control flow one node to another."
 msgstr ""
 "Ang koneksyon sa pagitan ng mga node sa workflow. Nangangahulugan ito ng "
 "landas kung saan ang data o kontrol ay dumadaloy mula sa isang node patungo "
@@ -5969,14 +5966,14 @@ msgstr "Mga Input"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8750
 msgid "This step receives the following input from previous step:"
 msgstr ""
-"Tumanggap ang hakbang na ito ng sumusunod na input mula sa nakaraang "
-"hakbang:"
+"Tumanggap ang hakbang na ito ng sumusunod na input mula sa nakaraang hakbang:"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11046
 #: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:100
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8761
 msgid "This step does not receive any input from previous step."
-msgstr "Ang hakbang na ito ay walang natanggap na input mula sa nakaraang hakbang."
+msgstr ""
+"Ang hakbang na ito ay walang natanggap na input mula sa nakaraang hakbang."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11048
 #: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:105
@@ -6014,7 +6011,8 @@ msgstr ""
 #: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:140
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8801
 msgid "This step does not have any step scoped variables."
-msgstr "Ang hakbang na ito ay walang anumang mga variable na saklaw ng hakbang."
+msgstr ""
+"Ang hakbang na ito ay walang anumang mga variable na saklaw ng hakbang."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11064
 #: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:145
@@ -6037,7 +6035,6 @@ msgstr "Walang paglalarawan"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11310
 #: assets/jsx/workflow-editor/components/node-types/generic.jsx:57
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9021
-#, js-format
 msgid "Unknown node: %s"
 msgstr "Hindi kilalang node: %s"
 
@@ -6123,14 +6120,12 @@ msgstr "Lahat ng tseke ay pumasa para sa hakbang na ito."
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12191
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:122
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9878
-#, js-format
 msgid "The field \"%s\" contains an invalid variable."
 msgstr "Ang larangan na \"%s\" ay naglalaman ng hindi wastong variable."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12192
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:126
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9882
-#, js-format
 msgid ""
 "The variable \"%s\" is not available in the current context. Please, check "
 "if it is spelled correctly."
@@ -6138,11 +6133,10 @@ msgstr ""
 "Ang variable na \"%s\" ay hindi magagamit sa kasalukuyang konteksto. "
 "Mangyaring suriin kung ito ay tamang nakasulat."
 
+#. translators: %s is the workflow step slug.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12236
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:181
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9937
-#. translators: %s is the workflow step slug.
-#, js-format
 msgid "\"%s\" is not a variable or step slug."
 msgstr "\"%s\" ay hindi isang variable o step slug."
 
@@ -6164,62 +6158,55 @@ msgstr "Hindi pinapayagan ang mga hindi nakasara na placeholder."
 msgid "Unopened placeholder are not allowed."
 msgstr "Hindi pinapayagan ang mga hindi nabuksang placeholder."
 
+#. translators: %s is the field label.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12263
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:216
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9972
-#. translators: %s is the field label.
-#, js-format
 msgid "Invalid expression on %s"
 msgstr "Hindi wastong ekspresyon sa %s"
 
+#. translators: %s is the field label.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12275
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12495
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:232
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:575
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9988
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10331
-#. translators: %s is the field label.
-#, js-format
 msgid "The field %s must be a list of options."
 msgstr "Ang larangan %s ay dapat isang listahan ng mga opsyon."
 
+#. translators: %s is the option name.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12297
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:261
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10017
-#. translators: %s is the option name.
-#, js-format
 msgid "The option \"%s\" does not have a name."
 msgstr "Ang opsyon na \"%s\" ay walang pangalan."
 
+#. translators: %s is the option name.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12303
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:270
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10026
-#. translators: %s is the option name.
-#, js-format
 msgid "The option \"%s\" does not have a label."
 msgstr "Ang opsyon na \"%s\" ay walang label."
 
+#. translators: %s is the option name.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12309
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:279
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10035
-#. translators: %s is the option name.
-#, js-format
 msgid "The option \"%s\" has a duplicate name."
 msgstr "Ang opsyon na \"%s\" ay may dobleng pangalan."
 
+#. translators: %s is the option label.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12315
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:288
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10044
-#. translators: %s is the option label.
-#, js-format
 msgid "The option \"%s\" has a duplicate label."
 msgstr "Ang opsyon na \"%s\" ay may dobleng label."
 
+#. translators: %s is the field label.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12325
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:302
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10058
-#. translators: %s is the field label.
-#, js-format
 msgid "The field %s must be a valid list of options."
 msgstr "Ang larangan %s ay dapat isang wastong listahan ng mga opsyon."
 
@@ -6228,14 +6215,14 @@ msgstr "Ang larangan %s ay dapat isang wastong listahan ng mga opsyon."
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10089
 msgid "This step requires a connection from a previous step."
 msgstr ""
-"Ang hakbang na ito ay nangangailangan ng koneksyon mula sa nakaraang "
-"hakbang."
+"Ang hakbang na ito ay nangangailangan ng koneksyon mula sa nakaraang hakbang."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12352
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:343
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10099
 msgid "This step requires a connection to a following step."
-msgstr "Ang hakbang na ito ay nangangailangan ng koneksyon sa sumusunod na hakbang."
+msgstr ""
+"Ang hakbang na ito ay nangangailangan ng koneksyon sa sumusunod na hakbang."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12406
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12416
@@ -6243,21 +6230,18 @@ msgstr "Ang hakbang na ito ay nangangailangan ng koneksyon sa sumusunod na hakba
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:428
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10163
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10184
-#, js-format
 msgid "The field %s is required."
 msgstr "Ang larangan %s ay kinakailangan."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12429
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:450
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10206
-#, js-format
 msgid "The field %s must be a valid email address."
 msgstr "Ang larangan %s ay dapat isang wastong email address."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12437
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:466
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10222
-#, js-format
 msgid "The field %s must be a valid email address list separated by commas."
 msgstr ""
 "Ang larangan %s ay dapat isang wastong listahan ng mga email address na "
@@ -6266,14 +6250,12 @@ msgstr ""
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12443
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:480
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10236
-#, js-format
 msgid "The field %s must be an integer."
 msgstr "Ang larangan %s ay dapat isang integer."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12450
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:495
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10251
-#, js-format
 msgid "The field %s must be an integer list separated by commas."
 msgstr ""
 "Ang larangan %s ay dapat isang listahan ng mga integer na pinaghiwalay ng "
@@ -6288,21 +6270,19 @@ msgstr ""
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10274
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10283
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10292
-#, js-format
 msgid "The field %s must be a list of name-value pairs."
-msgstr "Ang patlang %s ay dapat isang listahan ng mga pares ng pangalan-halaga."
+msgstr ""
+"Ang patlang %s ay dapat isang listahan ng mga pares ng pangalan-halaga."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12467
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:528
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10284
-#, js-format
 msgid "The name of the pair is required on item %d."
 msgstr "Kinakailangan ang pangalan ng pares sa item %d."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12470
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:537
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10293
-#, js-format
 msgid "The value of the pair is required on item %d."
 msgstr "Kinakailangan ang halaga ng pares sa item %d."
 
@@ -6316,7 +6296,8 @@ msgstr "Hindi wastong variable."
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:608
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10364
 msgid "Please use the variable picker to select valid expression."
-msgstr "Mangyaring gumamit ng picker ng variable upang pumili ng wastong ekspresyon."
+msgstr ""
+"Mangyaring gumamit ng picker ng variable upang pumili ng wastong ekspresyon."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12630
 #: assets/jsx/workflow-editor/components/pro-feature-button/index.jsx:26
@@ -6328,7 +6309,8 @@ msgstr "Mag-upgrade sa Pro upang i-unlock ang tampok na ito."
 #: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-listbox/group.jsx:14
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10691
 msgid "Use left and right arrow keys to move through steps"
-msgstr "Gamitin ang mga kaliwa at kanang arrow keys upang lumipat sa mga hakbang"
+msgstr ""
+"Gamitin ang mga kaliwa at kanang arrow keys upang lumipat sa mga hakbang"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13096
 #: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-no-results.jsx:14
@@ -6336,11 +6318,10 @@ msgstr "Gamitin ang mga kaliwa at kanang arrow keys upang lumipat sa mga hakbang
 msgid "No results found."
 msgstr "Walang nahanap na resulta."
 
+#. translators: %d: number of results.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13239
 #: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:101
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10929
-#. translators: %d: number of results.
-#, js-format
 msgid "%d result found."
 msgid_plural "%d results found."
 msgstr[0] "%d resulta ang nahanap."
@@ -6364,20 +6345,29 @@ msgstr "Mga node"
 msgid "A tip for using the workflow editor"
 msgstr "Isang tip para sa paggamit ng workflow editor"
 
+#. translators: %d: Number of blocks.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13627
 #: assets/jsx/workflow-editor/components/secondary-sidebar/node-draggable-chip.jsx:27
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11310
-#. translators: %d: Number of blocks.
-#, js-format
 msgid "%d block"
 msgid_plural "%d blocks"
 msgstr[0] "%d block"
 msgstr[1] "%d mga block"
 
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13793
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13798
+#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:80
+#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:85
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11459
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11464
+msgctxt "nodes"
+msgid "Most used"
+msgstr "Pinakaginagamit"
+
+#. translators: Patterns tab title in the block inserter.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14104
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:24
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11712
-#. translators: Patterns tab title in the block inserter.
 msgid "Actions"
 msgstr "Mga Aksyon"
 
@@ -6414,10 +6404,11 @@ msgstr ""
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14156
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:18
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11760
-msgid "Double-click the workflow pane to increase the zoom level for a closer look."
+msgid ""
+"Double-click the workflow pane to increase the zoom level for a closer look."
 msgstr ""
-"I-double-click ang pane ng daloy ng trabaho upang dagdagan ang antas ng "
-"zoom para sa mas malapit na pagtingin."
+"I-double-click ang pane ng daloy ng trabaho upang dagdagan ang antas ng zoom "
+"para sa mas malapit na pagtingin."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14156
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:20
@@ -6433,8 +6424,8 @@ msgstr ""
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:26
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11768
 msgid ""
-"Easily add new steps by clicking on a step's handle and dragging it. Drop "
-"it in the workflow pane to see a floating inserter where you can type and "
+"Easily add new steps by clicking on a step's handle and dragging it. Drop it "
+"in the workflow pane to see a floating inserter where you can type and "
 "search for the step you need."
 msgstr ""
 "Madaling magdagdag ng mga bagong hakbang sa pamamagitan ng pag-click sa "
@@ -6447,6 +6438,15 @@ msgstr ""
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11859
 msgid "(no name)"
 msgstr "(walang pangalan)"
+
+#. translators: Default label for the Workflow sidebar tab, not selected.
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14336
+#: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:23
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11892
+#, fuzzy
+msgctxt "noun"
+msgid "Workflow"
+msgstr "Workflow"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14348
 #: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:37
@@ -6519,10 +6519,10 @@ msgstr "Sigurado ka bang nais mong tanggalin ang daloy ng trabahong ito?"
 msgid "Move to trash"
 msgstr "Ilipat sa basurahan"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14929
 #: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:79
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12407
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Publish"
 msgstr "I-publish"
 
@@ -6551,17 +6551,17 @@ msgstr "Nag-a-update..."
 msgid "Updated"
 msgstr "Na-update"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15086
 #: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:82
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12550
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Save draft"
 msgstr "I-save ang draft"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15089
 #: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:85
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12553
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Save"
 msgstr "I-save"
 
@@ -6754,21 +6754,17 @@ msgstr "o"
 msgid "Select a .json file"
 msgstr "Pumili ng .json na file"
 
-#: assets/js/backupPanel.js:110
-#: assets/js/backupPanel.js:1283
+#: assets/js/backupPanel.js:110 assets/js/backupPanel.js:1283
 #: assets/jsx/backup-panel/components/file-dropzone/index.jsx:35
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:164
-#: assets/js/backupPanel.js:88
-#: assets/js/backupPanel.js:972
+#: assets/js/backupPanel.js:88 assets/js/backupPanel.js:972
 msgid "Selected file"
 msgstr "Napiling file"
 
-#: assets/js/backupPanel.js:110
-#: assets/js/backupPanel.js:1285
+#: assets/js/backupPanel.js:110 assets/js/backupPanel.js:1285
 #: assets/jsx/backup-panel/components/file-dropzone/index.jsx:36
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:165
-#: assets/js/backupPanel.js:89
-#: assets/js/backupPanel.js:973
+#: assets/js/backupPanel.js:89 assets/js/backupPanel.js:973
 msgid "File size"
 msgstr "Sukat ng file"
 
@@ -6802,12 +6798,10 @@ msgstr "Nagloload ng mga item, pakihintay..."
 msgid "Select the content you want to import."
 msgstr "Pumili ng nilalaman na nais mong i-import."
 
-#: assets/js/backupPanel.js:525
-#: assets/js/backupPanel.js:709
+#: assets/js/backupPanel.js:525 assets/js/backupPanel.js:709
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-import.jsx:83
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:94
-#: assets/js/backupPanel.js:420
-#: assets/js/backupPanel.js:570
+#: assets/js/backupPanel.js:420 assets/js/backupPanel.js:570
 msgid "Action Settings"
 msgstr "Mga Setting ng Aksyon"
 
@@ -6817,12 +6811,10 @@ msgstr "Mga Setting ng Aksyon"
 msgid "No workflows or settings found in the file."
 msgstr "Walang workflows o settings na natagpuan sa file."
 
-#: assets/js/backupPanel.js:546
-#: assets/js/backupPanel.js:581
+#: assets/js/backupPanel.js:546 assets/js/backupPanel.js:581
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-import.jsx:110
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-preview.jsx:14
-#: assets/js/backupPanel.js:447
-#: assets/js/backupPanel.js:469
+#: assets/js/backupPanel.js:447 assets/js/backupPanel.js:469
 msgid "Cancel and select a different file"
 msgstr "Kanselahin at pumili ng ibang file"
 
@@ -6877,7 +6869,8 @@ msgstr "Nabigo ang pag-import ng mga setting."
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:132
 #: assets/js/backupPanel.js:940
 msgid "Import the plugin settings or workflows from a .json file."
-msgstr "I-import ang mga setting ng plugin o workflows mula sa isang .json file."
+msgstr ""
+"I-import ang mga setting ng plugin o workflows mula sa isang .json file."
 
 #: assets/js/backupPanel.js:1289
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:173
@@ -6891,30 +6884,22 @@ msgstr "Pumili ng Nilalaman na I-import"
 msgid "Raw Data Preview"
 msgstr "Preview ng Raw Data"
 
-#: assets/js/blockEditor.js:1752
-#: assets/js/bulkEdit.js:1752
-#: assets/js/classicEditor.js:1752
-#: assets/js/quickEdit.js:1752
-#: assets/js/settingsGeneral.js:1752
-#: assets/js/settingsPostTypes.js:1752
+#: assets/js/blockEditor.js:1752 assets/js/bulkEdit.js:1752
+#: assets/js/classicEditor.js:1752 assets/js/quickEdit.js:1752
+#: assets/js/settingsGeneral.js:1752 assets/js/settingsPostTypes.js:1752
 #: assets/jsx/components/PostTypesSettingsPanels.jsx:81
-#: assets/js/blockEditor.js:1587
-#: assets/js/bulkEdit.js:1587
-#: assets/js/classicEditor.js:1587
-#: assets/js/quickEdit.js:1587
-#: assets/js/settingsGeneral.js:1587
-#: assets/js/settingsPostTypes.js:1587
+#: assets/js/blockEditor.js:1587 assets/js/bulkEdit.js:1587
+#: assets/js/classicEditor.js:1587 assets/js/quickEdit.js:1587
+#: assets/js/settingsGeneral.js:1587 assets/js/settingsPostTypes.js:1587
 msgid "Select a post type to edit:"
 msgstr "Pumili ng uri ng post na i-edit:"
 
-#: assets/js/legacyAction.js:230
-#: assets/jsx/legacy-action/index.jsx:78
+#: assets/js/legacyAction.js:230 assets/jsx/legacy-action/index.jsx:78
 #: assets/js/legacyAction.js:153
 msgid "Workflow to trigger"
 msgstr "Workflow na i-trigger"
 
-#: assets/js/legacyAction.js:241
-#: assets/jsx/legacy-action/index.jsx:90
+#: assets/js/legacyAction.js:241 assets/jsx/legacy-action/index.jsx:90
 #: assets/js/legacyAction.js:165
 msgid "No compatible workflows available."
 msgstr "Walang magkatugmang mga workflow na available."
@@ -6925,11 +6910,10 @@ msgstr "Walang magkatugmang mga workflow na available."
 msgid "Change manually enabled workflows"
 msgstr "Manu-manong baguhin ang mga naka-enable na workflow"
 
+#. translators: %s: Workflow title
 #: assets/js/workflowsListCancelAction.js:702
 #: assets/jsx/workflows-list/cancel-action/index.jsx:59
 #: assets/js/workflowsListCancelAction.js:497
-#. translators: %s: Workflow title
-#, js-format
 msgid ""
 "Are you sure you want to cancel all scheduled actions for the \"%s\" "
 "workflow?"
@@ -6944,32 +6928,5 @@ msgid "Cancel Actions"
 msgstr "Kanselahin ang Mga Aksyon"
 
 #: assets/jsx/workflow-manual-selection/example-extending-with-slot.jsx:48
-#, js-format
 msgid "Enable workflow %s"
 msgstr "I-enable ang workflow %s"
-
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10239
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:23
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7974
-msgctxt "noun"
-msgid "View"
-msgstr "Tingnan"
-
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14336
-#: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:23
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11892
-#. translators: Default label for the Workflow sidebar tab, not selected.
-#, fuzzy
-msgctxt "noun"
-msgid "Workflow"
-msgstr "Workflow"
-
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13793
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13798
-#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:80
-#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:85
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11459
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11464
-msgctxt "nodes"
-msgid "Most used"
-msgstr "Pinakaginagamit"

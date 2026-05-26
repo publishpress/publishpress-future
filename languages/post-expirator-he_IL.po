@@ -4,49 +4,49 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PublishPress Future Free 4.10.2-rc.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/project\n"
+"POT-Creation-Date: 2026-05-25T21:24:52+00:00\n"
+"PO-Revision-Date: 2026-05-21 14:28+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: he_IL\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-05-13T18:43:00+00:00\n"
-"PO-Revision-Date: 2026-05-21 14:28+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
-"Language: he_IL\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 ? 0 : (n == 2 ? 1 : ((n > 10 && n % 10 == 0) ? 2 : 3)));\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 ? 0 : (n == 2 ? 1 : ((n > 10 && n % "
+"10 == 0) ? 2 : 3)));\n"
 
-#: post-expirator.php:4, fuzzy
 #. Plugin Name of the plugin
+#: post-expirator.php:4
 msgid "PublishPress Future Free"
 msgstr "PublishPress Future Free"
 
-#: post-expirator.php:5, fuzzy
 #. Plugin URI of the plugin
+#: post-expirator.php:5
 msgid "http://wordpress.org/extend/plugins/post-expirator/"
 msgstr "http://wordpress.org/extend/plugins/post-expirator/"
 
-#: post-expirator.php:6
 #. Description of the plugin
+#: post-expirator.php:6
 msgid ""
-"PublishPress Future allows you to schedule automatic changes to posts, "
-"pages and other content types."
+"PublishPress Future allows you to schedule automatic changes to posts, pages "
+"and other content types."
 msgstr ""
 "PublishPress Future מאפשרת לך לתזמן שינויים אוטומטיים לפוסטים, עמודים וסוגי "
 "תוכן אחרים."
 
-#: post-expirator.php:7
 #. Author of the plugin
+#: post-expirator.php:7
 msgid "PublishPress"
 msgstr "PublishPress"
 
-#: post-expirator.php:9, fuzzy
 #. Author URI of the plugin
+#: post-expirator.php:9
 msgid "http://publishpress.com"
 msgstr "http://publishpress.com"
 
-#: legacy/classes/Display.class.php:113
-#: legacy/classes/Display.class.php:141
+#: legacy/classes/Display.class.php:113 legacy/classes/Display.class.php:141
 msgid "You do not have permission to configure PublishPress Future."
 msgstr "אין לך הרשאה להגדיר את PublishPress Future."
 
@@ -83,17 +83,17 @@ msgid "The database schema was fixed."
 msgstr "סכמת מסד הנתונים תוקנה."
 
 #: legacy/classes/Display.class.php:328
-msgid "The database schema could not be fixed. Please, contact the support team."
+msgid ""
+"The database schema could not be fixed. Please, contact the support team."
 msgstr "לא ניתן לתקן את סכמת מסד הנתונים. אנא פנה לצוות התמיכה."
 
-#: legacy/classes/Display.class.php:399
-#: legacy/classes/Display.class.php:453
+#: legacy/classes/Display.class.php:399 legacy/classes/Display.class.php:453
 #: legacy/classes/Display.class.php:475
 msgid "Saved Options!"
 msgstr "אפשרויות נשמרו!"
 
-#: legacy/classes/Display.class.php:567
 #. translators: %1$s is the plugin name, %2$s is the star rating markup
+#: legacy/classes/Display.class.php:567
 #, php-format
 msgid "If you like %1$s, please leave us a %2$s rating. Thank you!"
 msgstr "אם אתה אוהב את %1$s, אנא השאר לנו דירוג של %2$s. תודה!"
@@ -126,18 +126,15 @@ msgstr "צור קשר"
 msgid "No taxonomies found"
 msgstr "לא נמצאו taxonomies"
 
-#: services.php:151
-#: src/Modules/Settings/SettingsFacade.php:122, fuzzy
+#: services.php:151 src/Modules/Settings/SettingsFacade.php:122
 msgid "l F jS, Y"
 msgstr "l F jS, Y"
 
-#: services.php:155
-#: src/Modules/Settings/SettingsFacade.php:123
+#: services.php:155 src/Modules/Settings/SettingsFacade.php:123
 msgid "g:ia"
 msgstr "g:i a"
 
-#: services.php:156
-#: src/Modules/Settings/SettingsFacade.php:124
+#: services.php:156 src/Modules/Settings/SettingsFacade.php:124
 msgid "Post expires at EXPIRATIONTIME on ACTIONDATE"
 msgstr "הפוסט פג בתאריך EXPIRATIONTIME על ACTIONDATE"
 
@@ -161,27 +158,23 @@ msgid "Invalid date time offset"
 msgstr "הזמן בתאריך אינו תקין"
 
 #: src/Modules/Backup/Controllers/BackupAdminPage.php:164
-#: assets/js/backupPanel.js:34
-#: assets/js/backupPanel.js:692
+#: assets/js/backupPanel.js:34 assets/js/backupPanel.js:692
 #: assets/js/backupPanel.js:722
 #: assets/jsx/backup-panel/components/backup-panel.jsx:10
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:77
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:105
-#: assets/js/backupPanel.js:10
-#: assets/js/backupPanel.js:553
+#: assets/js/backupPanel.js:10 assets/js/backupPanel.js:553
 #: assets/js/backupPanel.js:581
 msgid "Export"
 msgstr "ייצוא"
 
 #: src/Modules/Backup/Controllers/BackupAdminPage.php:169
-#: assets/js/backupPanel.js:37
-#: assets/js/backupPanel.js:543
+#: assets/js/backupPanel.js:37 assets/js/backupPanel.js:543
 #: assets/js/backupPanel.js:1251
 #: assets/jsx/backup-panel/components/backup-panel.jsx:14
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-import.jsx:106
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:131
-#: assets/js/backupPanel.js:14
-#: assets/js/backupPanel.js:443
+#: assets/js/backupPanel.js:14 assets/js/backupPanel.js:443
 #: assets/js/backupPanel.js:939
 msgid "Import"
 msgstr "ייבוא"
@@ -208,8 +201,7 @@ msgstr "nonce אינו תקין."
 
 #: src/Modules/Debug/Migrations/V04905DebugLogRequestId.php:80
 msgid ""
-"Add request_id and trigger_activated columns to debug log table after "
-"v4.10.0"
+"Add request_id and trigger_activated columns to debug log table after v4.10.0"
 msgstr ""
 "הוסף עמודות request_id ו-trigger_activated לטבלת יומן הדיבוג לאחר גרסה "
 "v4.10.0"
@@ -220,15 +212,13 @@ msgstr "הוסף דיוק במילישניות לעמודת חותמת הזמן 
 
 #: src/Modules/Debug/Views/raw-debug-log.html.php:39
 #: src/Modules/Settings/Controllers/Controller.php:215
-#: src/Views/menu-debug-log.php:113
-#: src/Views/menu-debug-log.php:148
+#: src/Views/menu-debug-log.php:113 src/Views/menu-debug-log.php:148
 msgid "Debugging table is currently empty."
 msgstr "טבלת הבאגים ריקה כרגע."
 
 #: src/Modules/Debug/Views/raw-debug-log.html.php:40
 #: src/Modules/Settings/Controllers/Controller.php:216
-#: src/Views/menu-debug-log.php:115
-#: src/Views/menu-debug-log.php:150
+#: src/Views/menu-debug-log.php:115 src/Views/menu-debug-log.php:150
 msgid "No results match the current filter."
 msgstr "לא נמצאו תוצאות התואמות את הסינון הנוכחי."
 
@@ -251,8 +241,7 @@ msgstr "טקסונומיה"
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:131
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:132
 #: src/Modules/Expirator/Controllers/SettingsController.php:544
-#: src/Views/menu-admin.php:44
-#: src/Views/tabs-future-actions.php:51
+#: src/Views/menu-admin.php:44 src/Views/tabs-future-actions.php:51
 msgid "Future Actions"
 msgstr "פעולות עתידיות"
 
@@ -305,20 +294,20 @@ msgstr "הצג לוח שנה"
 msgid "Hide Calendar"
 msgstr "הסתיר לוח שנה"
 
+#. translators: the text between {} is the link to the settings page.
+#. translators: the text between {{}} is the link to the settings page.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:182
 #: src/Modules/Expirator/Controllers/BulkEditController.php:222
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:423
 #: src/Modules/Expirator/Controllers/QuickEditController.php:352
-#. translators: the text between {} is the link to the settings page.
-#. translators: the text between {{}} is the link to the settings page.
 msgid "Timezone is controlled by the {WordPress Settings}."
 msgstr "אזורים זמן נשלטים על ידי {WordPress Settings}."
 
+#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:189
 #: src/Modules/Expirator/Controllers/BulkEditController.php:229
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:430
 #: src/Modules/Expirator/Controllers/QuickEditController.php:356
-#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "No %s found."
 msgstr "לא נמצאו %s."
@@ -330,38 +319,38 @@ msgstr "לא נמצאו %s."
 msgid "You must assign a taxonomy to this post type to use this feature."
 msgstr "עליך להקצות taxonomy לסוג פוסט זה כדי להשתמש בתכונה זו."
 
+#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:197
 #: src/Modules/Expirator/Controllers/BulkEditController.php:243
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:438
 #: src/Modules/Expirator/Controllers/QuickEditController.php:361
-#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "New %s"
 msgstr "חדש %s"
 
+#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:199
 #: src/Modules/Expirator/Controllers/BulkEditController.php:245
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:440
 #: src/Modules/Expirator/Controllers/QuickEditController.php:363
-#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "%s to remove"
 msgstr "%s להסרה"
 
+#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:201
 #: src/Modules/Expirator/Controllers/BulkEditController.php:247
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:442
 #: src/Modules/Expirator/Controllers/QuickEditController.php:365
-#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "%s to add"
 msgstr "%s להוספה"
 
+#. translators: %s is the name of the taxonomy in singular form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:204
 #: src/Modules/Expirator/Controllers/BulkEditController.php:250
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:445
 #: src/Modules/Expirator/Controllers/QuickEditController.php:367
-#. translators: %s is the name of the taxonomy in singular form.
 #, php-format
 msgid "Search for %s"
 msgstr "חפש %s"
@@ -387,12 +376,12 @@ msgstr "בחר תאריך"
 msgid "Date cannot be in the past"
 msgstr "התאריך לא יכול להיות בעבר"
 
+#. translators: %s is the name of the taxonomy in singular form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:212
 #: src/Modules/Expirator/Controllers/BulkEditController.php:258
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:453
 #: src/Modules/Expirator/Controllers/QuickEditController.php:373
 #: src/Modules/Expirator/Controllers/SettingsController.php:298
-#. translators: %s is the name of the taxonomy in singular form.
 #, php-format
 msgid "Please select one or more %s"
 msgstr "אנא בחר אחד או יותר %s"
@@ -461,8 +450,7 @@ msgstr "שדרג לגרסה מקצועית"
 #: src/Modules/Workflows/Controllers/ManualPostTrigger.php:495
 #: src/Modules/Workflows/Controllers/PostType.php:49
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:181
-#: assets/js/backupPanel.js:512
-#: assets/js/backupPanel.js:698
+#: assets/js/backupPanel.js:512 assets/js/backupPanel.js:698
 #: assets/js/workflowManualSelectionBlockEditor.js:2157
 #: assets/js/workflowManualSelectionBulkEdit.js:167
 #: assets/js/workflowManualSelectionQuickEdit.js:2217
@@ -471,14 +459,14 @@ msgstr "שדרג לגרסה מקצועית"
 #: assets/jsx/workflow-manual-selection/block-editor/index.jsx:49
 #: assets/jsx/workflow-manual-selection/bulk-edit/fieldset.jsx:88
 #: assets/jsx/workflow-manual-selection/quick-edit/index.jsx:75
-#: assets/js/backupPanel.js:405
-#: assets/js/backupPanel.js:559
+#: assets/js/backupPanel.js:405 assets/js/backupPanel.js:559
 #: assets/js/workflowManualSelectionBlockEditor.js:1629
 #: assets/js/workflowManualSelectionBulkEdit.js:114
 #: assets/js/workflowManualSelectionQuickEdit.js:1694
 msgid "Action Workflows"
 msgstr "זרימות פעולה"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: src/Modules/Expirator/Controllers/PluginsListController.php:70
 #: src/Modules/Expirator/Controllers/SettingsController.php:132
 #: src/Modules/Expirator/Controllers/SettingsController.php:133
@@ -488,7 +476,6 @@ msgstr "זרימות פעולה"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14436
 #: assets/jsx/workflow-editor/components/settings-sidebar/settings-sidebar.jsx:54
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11976
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Settings"
 msgstr "הגדרות"
 
@@ -539,9 +526,9 @@ msgstr "הפעולה בוצעה עבור: %s (מזהה: %d)"
 msgid "Executed scheduled action"
 msgstr "הפעולה המתוזמנת בוצעה"
 
+#. translators: %1$s is the link to the PHP strtotime function documentation, %2$s and %3$s are the opening and closing code tags. Please, do not translate the date format text, since PHP will not be able to calculate using non-english terms.
 #: src/Modules/Expirator/Controllers/SettingsController.php:252
 #: src/Views/menu-general.php:41
-#. translators: %1$s is the link to the PHP strtotime function documentation, %2$s and %3$s are the opening and closing code tags. Please, do not translate the date format text, since PHP will not be able to calculate using non-english terms.
 #, php-format
 msgid ""
 "Set the offset to use for the default action date and time. For information "
@@ -563,9 +550,8 @@ msgid ""
 "for the corresponding post types.  These values can all be overwritten when "
 "creating/editing the post/page."
 msgstr ""
-"השתמש בערכים למטה כדי לקבוע את פעולות/ערכים ברירת המחדל שיבוצעו עבור כל "
-"סוגי הפוסטים המתאימים. ערכים אלו יכולים להיכתב מחדש בעת יצירה/עריכה של "
-"הפוסט/עמוד."
+"השתמש בערכים למטה כדי לקבוע את פעולות/ערכים ברירת המחדל שיבוצעו עבור כל סוגי "
+"הפוסטים המתאימים. ערכים אלו יכולים להיכתב מחדש בעת יצירה/עריכה של הפוסט/עמוד."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:267
 msgid "Active"
@@ -604,11 +590,11 @@ msgstr ""
 msgid ""
 "No taxonomies found for this post type. Taxonomy actions will not be "
 "available."
-msgstr "לא נמצאו טקסונומיות עבור סוג פוסט זה. פעולות טקסונומיות לא יהיו זמינות."
+msgstr ""
+"לא נמצאו טקסונומיות עבור סוג פוסט זה. פעולות טקסונומיות לא יהיו זמינות."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:282
-#: src/Views/menu-notifications.php:116
-#: src/Views/menu-notifications.php:169
+#: src/Views/menu-notifications.php:116 src/Views/menu-notifications.php:169
 msgid "Who to Notify"
 msgstr "מי להודיע"
 
@@ -726,11 +712,11 @@ msgstr "אורך ארגי העמודה לא עודכן ל-1000."
 msgid "Status didn't change."
 msgstr "הסטטוס לא השתנה."
 
+#. translators: 1: old post status, 2: new post status
 #: src/Modules/Expirator/ExpirationActions/ChangePostStatus.php:62
 #: src/Modules/Expirator/ExpirationActions/PostStatusToDraft.php:60
 #: src/Modules/Expirator/ExpirationActions/PostStatusToPrivate.php:60
 #: src/Modules/Expirator/ExpirationActions/PostStatusToTrash.php:60
-#. translators: 1: old post status, 2: new post status
 #, php-format
 msgid "Status has been successfully changed from \"%1$s\" to \"%2$s\"."
 msgstr "הסטטוס שונה בהצלחה מ-\"%1$s\" ל-\"%2$s\"."
@@ -739,14 +725,14 @@ msgstr "הסטטוס שונה בהצלחה מ-\"%1$s\" ל-\"%2$s\"."
 msgid "Change status"
 msgstr "שנה מצב"
 
-#: src/Modules/Expirator/ExpirationActions/DeletePost.php:47
 #. translators: %s: post type singular label
+#: src/Modules/Expirator/ExpirationActions/DeletePost.php:47
 #, php-format
 msgid "%s was not deleted."
 msgstr "%s לא נמחק."
 
-#: src/Modules/Expirator/ExpirationActions/DeletePost.php:54
 #. translators: %s: post type singular label
+#: src/Modules/Expirator/ExpirationActions/DeletePost.php:54
 #, php-format
 msgid "%s has been successfully deleted."
 msgstr "%s נמחק בהצלחה."
@@ -762,96 +748,96 @@ msgstr "%s נמחק בהצלחה."
 msgid "Delete"
 msgstr "מחק"
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:65
 #. translators: %s is the post type singular label
+#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:65
 #, php-format
 msgid "No terms were added to the %s."
 msgstr "לא הוספו תנאים ל-%s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:77
 #. translators: %1$s is the taxonomy label, %2$s is the post type singular label, %3$s is the list of terms added, %4$s is the list of terms on the post
+#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:77
 #, php-format
 msgid ""
 "The following terms (%1$s) were added to the %2$s: \"%3$s\". The full list "
 "of terms on the post is: %4$s."
 msgstr "התנאים הבאים (%1$s) הוסרו מ-%2$s: %3$s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:120
 #. translators: %s is the taxonomy name (plural)
+#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:120
 #, php-format
 msgid "Add extra %s"
 msgstr "הוסף %s נוספים"
 
+#. translators: %s is the post type singular label
 #: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:56
 #: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:56
-#. translators: %s is the post type singular label
 #, php-format
 msgid "No terms were removed from the %s."
 msgstr "לא הוסרו תנאים מ-%s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:67
 #. translators: %1$s is the taxonomy name, %2$s is the post type singular label, %3$s is the removed terms list, %4$s is the updated terms list
+#: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:67
 #, php-format
 msgid ""
-"The following terms (%1$s) were removed from the %2$s: %3$s. The new list "
-"of terms on the post is: %4$s."
+"The following terms (%1$s) were removed from the %2$s: %3$s. The new list of "
+"terms on the post is: %4$s."
 msgstr "התנאים הבאים (%1$s) הוסרו מ-%2$s: %3$s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:112
 #. translators: %s is the taxonomy name (plural)
+#: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:112
 #, php-format
 msgid "Remove selected %s"
 msgstr "הסר את %s שנבחרו"
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:67
 #. translators: %1$s is the taxonomy name, %2$s is the post type singular label, %3$s is the list of term names
+#: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:67
 #, php-format
 msgid "The following terms (%1$s) were removed from the %2$s: %3$s."
 msgstr "התנאים הבאים (%1$s) הוסרו מ-%2$s: %3$s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:106
 #. translators: %s is the taxonomy name (plural)
+#: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:106
 #, php-format
 msgid "Remove all %s"
 msgstr "הסר את כל ה-%s"
 
-#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:58
 #. translators: %s is the post type singular label
+#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:58
 #, php-format
 msgid "No terms were changed on the %s."
 msgstr "לא שונו תנאים ב-%s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:69
 #. translators: 1: taxonomy name, 2: post type singular label, 3: updated terms, 4: original terms
+#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:69
 #, php-format
 msgid ""
 "The following terms (%1$s) were set to the %2$s: \"%3$s\". The old list of "
 "terms on the post was: %4$s."
 msgstr "התנאים הבאים (%1$s) הוסרו מ-%2$s: %3$s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:109
 #. translators: %s is the taxonomy name (plural)
+#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:109
 #, php-format
 msgid "Replace all %s"
 msgstr "החלף את כל ה-%s"
 
+#. translators: %s: new post status
 #: src/Modules/Expirator/ExpirationActions/PostStatusToDraft.php:90
 #: src/Modules/Expirator/ExpirationActions/PostStatusToPrivate.php:90
 #: src/Modules/Expirator/ExpirationActions/PostStatusToTrash.php:90
-#. translators: %s: new post status
 #, php-format
 msgid "Change status to %s"
 msgstr "שנה מצב ל-%s"
 
+#. translators: %s: post type singular label
 #: src/Modules/Expirator/ExpirationActions/StickPost.php:46
 #: src/Modules/Expirator/ExpirationActions/UnstickPost.php:46
-#. translators: %s: post type singular label
 #, php-format
 msgid "%s didn't change."
 msgstr "%s לא השתנה."
 
-#: src/Modules/Expirator/ExpirationActions/StickPost.php:53
 #. translators: %s: post type singular label
+#: src/Modules/Expirator/ExpirationActions/StickPost.php:53
 #, php-format
 msgid "%s has been added to stickies list."
 msgstr "%s נוסף לרשימת ההדבקות."
@@ -860,8 +846,8 @@ msgstr "%s נוסף לרשימת ההדבקות."
 msgid "Stick"
 msgstr "הדבק"
 
-#: src/Modules/Expirator/ExpirationActions/UnstickPost.php:53
 #. translators: %s: post type singular label
+#: src/Modules/Expirator/ExpirationActions/UnstickPost.php:53
 #, php-format
 msgid "%s has been removed from stickies list."
 msgstr "%s הוסר מרשימת ההדבקות."
@@ -890,7 +876,8 @@ msgstr "להשיב את נתוני המטה של הפוסט לאחר v3.0.1"
 msgid ""
 "Change args column length to 1000 in the table _ppfuture_actions_args after "
 "v3.1.4"
-msgstr "שנה את אורך עמודת args ל-1000 בטבלה _ppfuture_actions_args לאחר גרסה v3.1.4"
+msgstr ""
+"שנה את אורך עמודת args ל-1000 בטבלה _ppfuture_actions_args לאחר גרסה v3.1.4"
 
 #: src/Modules/Expirator/Models/ExpirablePostModel.php:489
 msgid "Email is disabled."
@@ -904,26 +891,26 @@ msgstr "דוא\"ל נשלח."
 msgid "Email not sent."
 msgstr "דוא\"ל לא נשלח."
 
-#: src/Modules/Expirator/Models/ExpirablePostModel.php:644
 #. translators: %1$s: post title placeholder, %2$s: notification text, %3$s: action date placeholder, %4$s: post link placeholder
+#: src/Modules/Expirator/Models/ExpirablePostModel.php:644
 #, php-format
 msgid "%1$s. %2$s on %3$s. The post link is %4$s"
 msgstr "%1$s. %2$s ב-%3$s. הקישור לפוסט הוא %4$s"
 
-#: src/Modules/Expirator/Models/ExpirablePostModel.php:662
 #. translators: %s is the post title
+#: src/Modules/Expirator/Models/ExpirablePostModel.php:662
 #, php-format
 msgid "Future Action Complete \"%s\""
 msgstr "הפעולה העתידית הושלמה \"%s\""
 
-#: src/Modules/Expirator/Models/ExpirablePostModel.php:666
 #. translators: 1: is the blog name, 2: the email subject
+#: src/Modules/Expirator/Models/ExpirablePostModel.php:666
 #, fuzzy, php-format
 msgid "[%1$s] %2$s"
 msgstr "[%1$s] %2$s"
 
-#: src/Modules/Expirator/Models/PostTypeDefaultDataModel.php:156
 #. translators: %s is the date/time offset and %s is the post type.
+#: src/Modules/Expirator/Models/PostTypeDefaultDataModel.php:156
 #, php-format
 msgid ""
 "Invalid date/time offset \"%s\" for post type \"%s\". Please ensure you use "
@@ -968,7 +955,8 @@ msgid "Cancel"
 msgstr "ביטול"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:77
-msgid "Cancel the action. This will prevent the action from running in the future"
+msgid ""
+"Cancel the action. This will prevent the action from running in the future"
 msgstr "בטל את הפעולה. זה ימנע מהפעולה לפעול בעתיד"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:88
@@ -976,8 +964,8 @@ msgstr "בטל את הפעולה. זה ימנע מהפעולה לפעול בעת
 msgid "Run"
 msgstr "הרץ"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:96
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:96
 #, php-format
 msgid "%s year"
 msgid_plural "%s years"
@@ -986,8 +974,8 @@ msgstr[1] "%s שנים"
 msgstr[2] "%s שנים"
 msgstr[3] "%s שנים"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:101
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:101
 #, php-format
 msgid "%s month"
 msgid_plural "%s months"
@@ -996,8 +984,8 @@ msgstr[1] "%s חודשים"
 msgstr[2] "%s חודשים"
 msgstr[3] "%s חודשים"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:106
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:106
 #, php-format
 msgid "%s week"
 msgid_plural "%s weeks"
@@ -1006,8 +994,8 @@ msgstr[1] "%s שבועות"
 msgstr[2] "%s שבועות"
 msgstr[3] "%s שבועות"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:111
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:111
 #, php-format
 msgid "%s day"
 msgid_plural "%s days"
@@ -1016,8 +1004,8 @@ msgstr[1] "%s ימים"
 msgstr[2] "%s ימים"
 msgstr[3] "%s ימים"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:116
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:116
 #, php-format
 msgid "%s hour"
 msgid_plural "%s hours"
@@ -1026,8 +1014,8 @@ msgstr[1] "%s שעות"
 msgstr[2] "%s שעות"
 msgstr[3] "%s שעות"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:121
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:121
 #, php-format
 msgid "%s minute"
 msgid_plural "%s minutes"
@@ -1036,8 +1024,8 @@ msgstr[1] "%s דקות"
 msgstr[2] "%s דקות"
 msgstr[3] "%s דקות"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:126
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:126
 #, php-format
 msgid "%s second"
 msgid_plural "%s seconds"
@@ -1091,20 +1079,20 @@ msgstr "הושלם"
 msgid "Process the action now"
 msgstr "עבד את הפעולה עכשיו"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:524
 #. translators: %1$s: post type label, %2$d: post ID, %3$s: post link tag start, %4$s: post title, %5$s: post link tag end
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:524
 #, fuzzy, php-format
 msgid "%1$s: [%2$d] %3$s%4$s%5$s"
 msgstr "%1$s: [%2$d] %3$s%4$s%5$s"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:559
 #. translators: %s is the new status
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:559
 #, php-format
 msgid "New Status: %s"
 msgstr "סטטוס חדש: %s"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:567
 #. translators: %s is the list of terms
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:567
 #, php-format
 msgid "Terms: %s"
 msgstr "מונחים: %s"
@@ -1153,14 +1141,14 @@ msgstr "הודעה"
 msgid "Async"
 msgstr "אסינכרוני"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:765
 #. translators: %s is the date interval in human readable format in the past
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:765
 #, php-format
 msgid " (%s ago)"
 msgstr " (%s לפני)"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:771
 #. translators: %s is the date interval in human readable format in the present or future
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:771
 #, fuzzy, php-format
 msgid " (%s)"
 msgstr " (%s)"
@@ -1169,8 +1157,8 @@ msgstr " (%s)"
 msgid "Now!"
 msgstr "עכשיו!"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:845
 #. translators: %s: time interval
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:845
 #, php-format
 msgid "Every %s"
 msgstr "כל %s"
@@ -1257,12 +1245,12 @@ msgstr ""
 msgid "days"
 msgstr "ימים"
 
-#: src/Modules/VersionNotices/Module.php:95
 #. translators: %1$s and %2$s are placeholders for the link to by the Pro version
+#: src/Modules/VersionNotices/Module.php:95
 #, php-format
 msgid ""
-"You're using PublishPress Future Free. The Pro version has more features "
-"and support. %1$sUpgrade to Pro%2$s"
+"You're using PublishPress Future Free. The Pro version has more features and "
+"support. %1$sUpgrade to Pro%2$s"
 msgstr ""
 "אתה משתמש ב-PublishPress Future Free. לגרסה Pro יש יותר תכונות ותמיכה. "
 "%1$sשדרג לגרסה Pro%2$s"
@@ -1275,8 +1263,8 @@ msgstr "הפעלה ידנית של תהליך עבודה"
 msgid "Check and warn about past-due actions"
 msgstr "בדוק והזהר על פעולות שעברו את המועד"
 
-#: src/Modules/Workflows/Controllers/PastDueActions.php:148
 #. translators: %s is the admin URL to the scheduled actions page
+#: src/Modules/Workflows/Controllers/PastDueActions.php:148
 #, php-format
 msgid ""
 "You have past-due scheduled actions in PublishPress Future.\n"
@@ -1548,20 +1536,20 @@ msgstr "שלבים:"
 msgid "Workflow recurring scheduled action"
 msgstr "פעולה מתוכננת חוזרת של זרימת עבודה"
 
-#: src/Modules/Workflows/Controllers/ScheduledActions.php:508
 #. translators: %1$s is the recurrence, %2$s is the date
+#: src/Modules/Workflows/Controllers/ScheduledActions.php:508
 #, php-format
 msgid "%1$s until %2$s"
 msgstr "%1$s עד %2$s"
 
-#: src/Modules/Workflows/Controllers/ScheduledActions.php:518
 #. translators: %1$s is the recurrence, %2$d is the repeat times
+#: src/Modules/Workflows/Controllers/ScheduledActions.php:518
 #, php-format
 msgid "%1$s for %2$d times"
 msgstr "%1$s עבור %2$d פעמים"
 
-#: src/Modules/Workflows/Controllers/ScheduledActions.php:528
 #. translators: %1$s is the executed times, %2$d is the total repeat times
+#: src/Modules/Workflows/Controllers/ScheduledActions.php:528
 #, fuzzy, php-format
 msgid "[%1$s/%2$d]"
 msgstr "[%1$s/%2$d]"
@@ -1599,7 +1587,8 @@ msgstr "זרימה בסיסית"
 msgid ""
 "Every workflow requires at least two steps connected to each other: one "
 "trigger and one action."
-msgstr "כל זרימת עבודה דורשת לפחות שני שלבים מחוברים זה לזה: טריגר אחד ופעולה אחת."
+msgstr ""
+"כל זרימת עבודה דורשת לפחות שני שלבים מחוברים זה לזה: טריגר אחד ופעולה אחת."
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:279
 msgid "Add steps to your workflow"
@@ -1664,15 +1653,15 @@ msgstr ""
 "אם יש לך שאלות או זקוק לעזרה, לחץ על כפתור העזרה בפינה הימנית העליונה כדי "
 "לגשת למשאבי התמיכה."
 
+#. translators: Blocks tab title in the block inserter.
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:236
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14099
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:19
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11707
-#. translators: Blocks tab title in the block inserter.
 msgid "Triggers"
 msgstr "טריגרים"
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:280, fuzzy
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:280
 msgid "—"
 msgstr "—"
 
@@ -1753,8 +1742,8 @@ msgstr "עורך זרימת עבודה של פעולה"
 msgid "%s updated."
 msgstr "%s עודכן."
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:838
 #. translators: 1: Post type singular label, 2: Revision title
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:838
 #, php-format
 msgid "%1$s restored to revision from %2$s"
 msgstr "%1$s שוחזר לגרסה מ-%2$s"
@@ -1774,8 +1763,8 @@ msgstr "%s נשמר."
 msgid "%s submitted."
 msgstr "%s הוגש."
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:857
 #. translators: 1: Post type singular label, 2: Scheduled date
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:857
 #, php-format
 msgid "%1$s scheduled for: <strong>%2$s</strong>."
 msgstr "%1$s מתוכנן ל: <strong>%2$s</strong>."
@@ -2123,8 +2112,8 @@ msgstr "תנאי"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:37
 msgid ""
-"This step allows you to continue the workflow only if certain conditions "
-"are met. It is not required to have both a True and a False option."
+"This step allows you to continue the workflow only if certain conditions are "
+"met. It is not required to have both a True and a False option."
 msgstr ""
 "שלב זה מאפשר לך להמשיך את זרימת העבודה רק אם מתקיימות תנאים מסוימים. אין "
 "צורך שיהיה גם אפשרות True וגם אפשרות False."
@@ -2468,8 +2457,7 @@ msgid ""
 "part of the workflow."
 msgstr ""
 "שלב זה מאפשר לך להריץ את החלק הבא של זרימת העבודה בזמן ספציפי, או ביחס "
-"לתאריך אחר. אתה יכול גם להשתמש בשלב זה כדי לחזור על החלק הבא של זרימת "
-"העבודה."
+"לתאריך אחר. אתה יכול גם להשתמש בשלב זה כדי לחזור על החלק הבא של זרימת העבודה."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:67
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:64
@@ -2567,7 +2555,8 @@ msgstr "זרימת PublishPress: {{global.workflow.title}}"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:22
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:22
-msgid "This is a message sent by PublishPress Workflow: {{global.workflow.title}}."
+msgid ""
+"This is a message sent by PublishPress Workflow: {{global.workflow.title}}."
 msgstr "זהו מסר שנשלח על ידי PublishPress Workflow: {{global.workflow.title}}."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:45
@@ -2762,7 +2751,8 @@ msgid "New terms"
 msgstr "מונחים חדשים"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SetPostTerm.php:83
-msgid "The terms that will be added to the posts after removing all the others."
+msgid ""
+"The terms that will be added to the posts after removing all the others."
 msgstr "המונחים שיוספו לפוסטים לאחר הסרת כל השאר."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/StickPost.php:32
@@ -2817,7 +2807,8 @@ msgstr "עדכן פרטי פוסט"
 msgid ""
 "This step updates key information about each post such as the data, title, "
 "content, author, and more."
-msgstr "שלב זה מעדכן מידע מרכזי על כל פוסט כגון נתונים, כותרת, תוכן, מחבר ועוד."
+msgstr ""
+"שלב זה מעדכן מידע מרכזי על כל פוסט כגון נתונים, כותרת, תוכן, מחבר ועוד."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePost.php:65
 msgid "Select which post will be updated."
@@ -2948,8 +2939,8 @@ msgid ""
 "This step requires user action before the workflow can proceed. The actions "
 "are done via the in-site notification area."
 msgstr ""
-"שלב זה דורש פעולה של המשתמש לפני שזרימת העבודה יכולה להמשיך. הפעולות "
-"מתבצעות דרך אזור ההודעות באתר."
+"שלב זה דורש פעולה של המשתמש לפני שזרימת העבודה יכולה להמשיך. הפעולות מתבצעות "
+"דרך אזור ההודעות באתר."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:64
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:168
@@ -2975,15 +2966,16 @@ msgid "Specify the message to be displayed to the responders."
 msgstr "הגדר את ההודעה שתוצג למגיבים."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:97
-msgid "Please select an option to continue the workflow: {{global.workflow.title}}"
+msgid ""
+"Please select an option to continue the workflow: {{global.workflow.title}}"
 msgstr "אנא בחר אפשרות להמשך העבודה: {{global.workflow.title}}"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:129
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:201
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10119
 #: assets/jsx/workflow-editor/components/more-menu/menu-dropdown.jsx:11
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7867
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Options"
 msgstr "אפשרויות"
 
@@ -3084,8 +3076,8 @@ msgid ""
 "This trigger allows users to choose the workflow from the dropdown menu in "
 "the Future Actions options."
 msgstr ""
-"הטריגר הזה מאפשר למשתמשים לבחור את זרימת העבודה מתפריט הנפתח באופציות "
-"פעולות עתידיות."
+"הטריגר הזה מאפשר למשתמשים לבחור את זרימת העבודה מתפריט הנפתח באופציות פעולות "
+"עתידיות."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnLegacyActionTrigger.php:114
 msgid "Action Post"
@@ -3276,7 +3268,8 @@ msgid "Meta keys"
 msgstr "מפתחות מטא"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:95
-msgid "This field allow you to choose the post meta that will trigger this action."
+msgid ""
+"This field allow you to choose the post meta that will trigger this action."
 msgstr "שדה זה מאפשר לך לבחור את מטא הפוסט שיכלול את הפעולה הזו."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:123
@@ -3350,7 +3343,8 @@ msgid "Row Action"
 msgstr "פעולה בשורה"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:92
-msgid "Configure the post row action that will be created in the Posts list screen."
+msgid ""
+"Configure the post row action that will be created in the Posts list screen."
 msgstr "הגדר את פעולה בשורת הפוסטים שתיווצר במסך רשימת הפוסטים."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:100
@@ -3490,8 +3484,8 @@ msgstr "על פי תזמון"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:37
 msgid ""
-"This trigger allows you to run a workflow at a specific time, or relative "
-"to another date. You can also use this trigger to repeat workflows."
+"This trigger allows you to run a workflow at a specific time, or relative to "
+"another date. You can also use this trigger to repeat workflows."
 msgstr ""
 "הטריגר הזה מאפשר לך להריץ זרימת עבודה בזמן ספציפי, או ביחס לתאריך אחר. אתה "
 "יכול גם להשתמש בטריגר הזה כדי לחזור על זרימות עבודה."
@@ -3557,7 +3551,8 @@ msgid "User Query"
 msgstr "שאילתת משתמש"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:65
-msgid "Specify the criteria for users whose role changes will trigger this action."
+msgid ""
+"Specify the criteria for users whose role changes will trigger this action."
 msgstr "ציין את הקריטריונים עבור משתמשים ששינוי תפקידם יפעיל את הפעולה הזו."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:73
@@ -3601,8 +3596,10 @@ msgid "The roles that were removed from the user."
 msgstr "התפקידים שהוסרו מהמשתמש."
 
 #: src/Modules/Workflows/Migrations/V040500OnScheduledStepsSchema.php:58
-msgid "Migrate post_id and repetition_number on scheduled steps schema after v4.5.0"
-msgstr "לעבור את post_id ואת repetition_number על סכמת צעדים מתוזמנים לאחר v4.5.0"
+msgid ""
+"Migrate post_id and repetition_number on scheduled steps schema after v4.5.0"
+msgstr ""
+"לעבור את post_id ואת repetition_number על סכמת צעדים מתוזמנים לאחר v4.5.0"
 
 #: src/Modules/Workflows/Migrations/V40000WorkflowScheduledStepsSchema.php:58
 msgid "Migrate workflow scheduled steps schema after v4.0.0"
@@ -3613,7 +3610,7 @@ msgstr "לעבור את סכמת צעדים מתוזמנים של זרימת ע�
 msgid "Unknown Step"
 msgstr "שלב לא ידוע"
 
-#: src/Modules/Workflows/Models/StepTypesModel.php:99, fuzzy
+#: src/Modules/Workflows/Models/StepTypesModel.php:99
 msgid "PublishPress Future"
 msgstr "PublishPress Future"
 
@@ -3732,8 +3729,8 @@ msgstr "צפה בבסיס הידע"
 msgid "Overdue: "
 msgstr "מאחר: "
 
-#: src/Views/expire-column.php:77
 #. translators: %1$s opens a span tag, %2$s is the action name, %3$s ends a span tag, %4$s is the a span tag, %5$s is the a span tag, %6$s is the a span tag
+#: src/Views/expire-column.php:77
 #, php-format
 msgid "%1$s%2$s%3$s on %5$s%4$s%6$s"
 msgstr "%1$s%2$s%3$s על %5$s%4$s%6$s"
@@ -3753,7 +3750,8 @@ msgid "Metabox Title"
 msgstr "כותרת המטא בוקס"
 
 #: src/Views/menu-admin.php:48
-msgid "The title of the metabox that will be displayed in the post edit screen."
+msgid ""
+"The title of the metabox that will be displayed in the post edit screen."
 msgstr "כותרת המטא בוקס שתוצג במסך עריכת הפוסט."
 
 #: src/Views/menu-admin.php:57
@@ -3778,8 +3776,7 @@ msgstr "מפורט"
 
 #: src/Views/menu-admin.php:96
 msgid ""
-"Displays all information in the Future Action column on the \"Posts\" "
-"screen."
+"Displays all information in the Future Action column on the \"Posts\" screen."
 msgstr "מציג את כל המידע בעמודת הפעולה העתידית במסך \"פוסטים\"."
 
 #: src/Views/menu-admin.php:106
@@ -3790,7 +3787,8 @@ msgstr "מפושט"
 msgid ""
 "Displays only the icon and date/time in the Future Action column on the "
 "\"Posts\" screen."
-msgstr "מציג רק את האייקון ואת התאריך/שעה בעמודת הפעולה העתידית במסך \"פוסטים\"."
+msgstr ""
+"מציג רק את האייקון ואת התאריך/שעה בעמודת הפעולה העתידית במסך \"פוסטים\"."
 
 #: src/Views/menu-admin.php:118
 msgid "Future Actions Editor"
@@ -3816,10 +3814,8 @@ msgstr "24 שעות"
 msgid "AM/PM"
 msgstr "לפנות/אחה\"צ"
 
-#: src/Views/menu-admin.php:174
-#: src/Views/menu-advanced.php:99
-#: src/Views/menu-display.php:367
-#: src/Views/menu-general.php:118
+#: src/Views/menu-admin.php:174 src/Views/menu-advanced.php:99
+#: src/Views/menu-display.php:368 src/Views/menu-general.php:118
 #: src/Views/menu-notifications.php:186
 msgid "Save Changes"
 msgstr "שמור שינויים"
@@ -3855,7 +3851,8 @@ msgid "Delete data"
 msgstr "מחק נתונים"
 
 #: src/Views/menu-advanced.php:88
-msgid "Toggle between preserving or deleting data after the plugin is deactivated."
+msgid ""
+"Toggle between preserving or deleting data after the plugin is deactivated."
 msgstr "העבר בין שמירה או מחיקת נתונים לאחר שהתוסף מכובה."
 
 #: src/Views/menu-debug-log.php:14
@@ -3888,30 +3885,30 @@ msgstr "רצף זמן"
 msgid "Show only requests with trigger activated"
 msgstr "הצג רק בקשות עם הפעלת טריגר"
 
-#: src/Views/menu-debug-log.php:155
 #. translators: %1$d: displayed count, %2$d: filtered total, %3$d: sessions, %4$d: total unfiltered, %5$s: filtered log size, %6$s: total log size.
+#: src/Views/menu-debug-log.php:155
 #, php-format
 msgid ""
 "Showing the latest %1$d of %2$d logs (%3$d sessions). Total in database: "
 "%4$d. Log size: %5$s (total: %6$s)."
 msgstr "מציג את %1$d מתוך %2$d יומנים (%3$d סשנים). גודל יומן: %4$s."
 
-#: src/Views/menu-debug-log.php:165
 #. translators: %1$d: displayed count, %2$d: total count, %3$d: sessions, %4$s: log size.
+#: src/Views/menu-debug-log.php:165
 #, php-format
 msgid "Showing the latest %1$d of %2$d logs (%3$d sessions). Log size: %4$s."
 msgstr "מציג את %1$d מתוך %2$d יומנים (%3$d סשנים). גודל יומן: %4$s."
 
-#: src/Views/menu-debug-log.php:176
 #. translators: %1$d: filtered logs count, %2$d: sessions, %3$d: total unfiltered, %4$s: filtered log size, %5$s: total log size.
+#: src/Views/menu-debug-log.php:176
 #, php-format
 msgid ""
 "Showing all %1$d logs (%2$d sessions). Total in database: %3$d. Log size: "
 "%4$s (total: %5$s)."
 msgstr "מציג את כל %1$d יומנים (%2$d סשנים). גודל יומן: %3$s."
 
-#: src/Views/menu-debug-log.php:185
 #. translators: %1$d: total logs count, %2$d: sessions count, %3$s: log size.
+#: src/Views/menu-debug-log.php:185
 #, php-format
 msgid "Showing all %1$d logs (%2$d sessions). Log size: %3$s."
 msgstr "מציג את כל %1$d יומנים (%2$d סשנים). גודל יומן: %3$s."
@@ -3920,8 +3917,7 @@ msgstr "מציג את כל %1$d יומנים (%2$d סשנים). גודל יומ�
 msgid "Copy Debug Log"
 msgstr "העתק יומן ניפוי"
 
-#: src/Views/menu-debug-log.php:206
-#: assets/js/backupPanel.js:834
+#: src/Views/menu-debug-log.php:206 assets/js/backupPanel.js:834
 #: assets/jsx/backup-panel/components/tabs-content/hooks/export.jsx:76
 #: assets/js/backupPanel.js:667
 msgid "Download"
@@ -3943,8 +3939,7 @@ msgstr "אבחנות וכלים מתקדמים"
 msgid "WP-Cron Status Check"
 msgstr "בדיקת מצב WP-Cron"
 
-#: src/Views/menu-diagnostics.php:61
-#: src/Views/menu-diagnostics.php:80
+#: src/Views/menu-diagnostics.php:61 src/Views/menu-diagnostics.php:80
 msgid "Passed"
 msgstr "עבר"
 
@@ -3980,10 +3975,8 @@ msgstr "נסה לתקן את מסד הנתונים"
 msgid "Debug Logging"
 msgstr "ניפוי יומנים"
 
-#: src/Views/menu-diagnostics.php:128
-#: src/Views/menu-display.php:139
-#: src/Views/menu-notifications.php:67
-#: src/Views/menu-notifications.php:95
+#: src/Views/menu-diagnostics.php:128 src/Views/menu-display.php:139
+#: src/Views/menu-notifications.php:67 src/Views/menu-notifications.php:95
 #: src/Views/menu-notifications.php:150
 msgid "Enabled"
 msgstr "מופעל"
@@ -4000,10 +3993,8 @@ msgstr "נקה יומן ניפוי שגיאות"
 msgid "View Debug Logs"
 msgstr "צפה ביומני ניפוי שגיאות"
 
-#: src/Views/menu-diagnostics.php:148
-#: src/Views/menu-display.php:150
-#: src/Views/menu-notifications.php:75
-#: src/Views/menu-notifications.php:104
+#: src/Views/menu-diagnostics.php:148 src/Views/menu-display.php:150
+#: src/Views/menu-notifications.php:75 src/Views/menu-notifications.php:104
 #: src/Views/menu-notifications.php:158
 msgid "Disabled"
 msgstr "כבוי"
@@ -4024,7 +4015,8 @@ msgstr "Spatie Ray זוהה"
 msgid ""
 "Spatie Ray Debug is detected. The \"Send to Ray\" workflow step will be "
 "available in the workflow editor."
-msgstr "נמצא Spatie Ray Debug. שלב הזרימה \"שלח ל-Ray\" יהיה זמין בעורך הזרימה."
+msgstr ""
+"נמצא Spatie Ray Debug. שלב הזרימה \"שלח ל-Ray\" יהיה זמין בעורך הזרימה."
 
 #: src/Views/menu-diagnostics.php:170
 msgid "Spatie Ray Not Detected"
@@ -4052,8 +4044,8 @@ msgstr "הרץ מיגרציה"
 
 #: src/Views/menu-diagnostics.php:191
 msgid ""
-"Migrate legacy future actions from WP Cron to the new Action Scheduler. "
-"This will run in the background and may take a while."
+"Migrate legacy future actions from WP Cron to the new Action Scheduler. This "
+"will run in the background and may take a while."
 msgstr ""
 "מיגר פעולות עתידיות ישנות מ-WP Cron לתוכנת תכנון פעולות החדשה. זה ירוץ ברקע "
 "ועשוי לקחת זמן."
@@ -4072,8 +4064,8 @@ msgid ""
 "issues with 3rd party plugins that read that data. This will run in the "
 "background and may take a while."
 msgstr ""
-"שחזר את ארגומנטי הפעולה הישנים כמטא פוסט. זה שימושי אם יש לך בעיות עם "
-"תוספים של צד שלישי שקוראים את הנתונים הללו. זה ירוץ ברקע ועשוי לקחת זמן."
+"שחזר את ארגומנטי הפעולה הישנים כמטא פוסט. זה שימושי אם יש לך בעיות עם תוספים "
+"של צד שלישי שקוראים את הנתונים הללו. זה ירוץ ברקע ועשוי לקחת זמן."
 
 #: src/Views/menu-diagnostics.php:221
 msgid "Legacy Cron Schedule"
@@ -4081,8 +4073,8 @@ msgstr "לוח זמנים ישן של Cron"
 
 #: src/Views/menu-diagnostics.php:229
 msgid ""
-"The below table will show all currently scheduled cron events for the "
-"plugin with the next run time."
+"The below table will show all currently scheduled cron events for the plugin "
+"with the next run time."
 msgstr ""
 "הטבלה למטה תציג את כל אירועי הקורן המתוכננים הנוכחיים עבור התוסף עם זמן "
 "הריצה הבא."
@@ -4107,8 +4099,8 @@ msgstr "פורמטים ברירת מחדל"
 msgid "Date Format"
 msgstr "פורמט תאריך"
 
-#: src/Views/menu-display.php:64
 #. translators: %s is a link to the PHP date function documentation
+#: src/Views/menu-display.php:64
 #, php-format
 msgid ""
 "The default format to use when displaying the action date within a post "
@@ -4116,11 +4108,9 @@ msgid ""
 "formatting options, see: %s."
 msgstr ""
 "הפורמט ברירת המחדל שיש להשתמש בו כאשר מציגים את תאריך הפעולה בתוך פוסט "
-"באמצעות ה-shortcode או בתוך התחתית.  למידע על אפשרויות פורמט חוקיות, ראה: "
-"%s."
+"באמצעות ה-shortcode או בתוך התחתית.  למידע על אפשרויות פורמט חוקיות, ראה: %s."
 
-#: src/Views/menu-display.php:68
-#: src/Views/menu-display.php:106
+#: src/Views/menu-display.php:68 src/Views/menu-display.php:106
 msgid "PHP Date Function"
 msgstr "פונקציית תאריך PHP"
 
@@ -4128,17 +4118,16 @@ msgstr "פונקציית תאריך PHP"
 msgid "Time Format"
 msgstr "פורמט זמן"
 
-#: src/Views/menu-display.php:102
 #. translators: %s is a link to the PHP date function documentation
+#: src/Views/menu-display.php:102
 #, php-format
 msgid ""
 "The default format to use when displaying the action time within a post "
 "using the shortcode or within the footer.  For information on valid "
 "formatting options, see: %s."
 msgstr ""
-"הפורמט ברירת המחדל שיש להשתמש בו כאשר מציגים את זמן הפעולה בתוך פוסט "
-"באמצעות ה-shortcode או בתוך התחתית.  למידע על אפשרויות פורמט חוקיות, ראה: "
-"%s."
+"הפורמט ברירת המחדל שיש להשתמש בו כאשר מציגים את זמן הפעולה בתוך פוסט באמצעות "
+"ה-shortcode או בתוך התחתית.  למידע על אפשרויות פורמט חוקיות, ראה: %s."
 
 #: src/Views/menu-display.php:116
 msgid "Post Footer Display"
@@ -4146,11 +4135,10 @@ msgstr "תצוגת תחתית פוסט"
 
 #: src/Views/menu-display.php:118
 msgid ""
-"Enabling this below will display the action date automatically at the end "
-"of any post which is set to run an action."
+"Enabling this below will display the action date automatically at the end of "
+"any post which is set to run an action."
 msgstr ""
-"הפעלת זה למטה תציג את תאריך הפעולה אוטומטית בסוף כל פוסט שמתוכנן להריץ "
-"פעולה."
+"הפעלת זה למטה תציג את תאריך הפעולה אוטומטית בסוף כל פוסט שמתוכנן להריץ פעולה."
 
 #: src/Views/menu-display.php:127
 msgid "Show in Post Footer?"
@@ -4191,8 +4179,8 @@ msgstr "דוגמה: "
 msgid "Shortcode"
 msgstr "קוד קצר"
 
-#: src/Views/menu-display.php:249
 #. translators: %s is a code tag that wraps the shortcode
+#: src/Views/menu-display.php:249
 #, php-format
 msgid ""
 "Use the %s[futureaction]%s shortcode to show when the future action will "
@@ -4207,61 +4195,63 @@ msgstr "עטיפת shortcode"
 
 #. translators: This is used to indicate that no wrapper should be used on the shortcode output
 #: src/Views/menu-display.php:266
+#, fuzzy
+#| msgid "— No Change —"
 msgid "— None —"
-msgstr "— אין —"
+msgstr "— ללא שינוי —"
 
-#: src/Views/menu-display.php:279
+#: src/Views/menu-display.php:280
 msgid ""
 "The shortcode output will be wrapped in the selected HTML tag, allowing you "
 "to control its structure and styling."
-msgstr "פלט ה-shortcode יעטף בתג ה-HTML הנבחר, מה שיאפשר לך לשלוט במבנה ובעיצוב שלו."
+msgstr ""
+"פלט ה-shortcode יעטף בתג ה-HTML הנבחר, מה שיאפשר לך לשלוט במבנה ובעיצוב שלו."
 
-#: src/Views/menu-display.php:289
+#: src/Views/menu-display.php:290
 msgid "Wrapper Class"
 msgstr "מחלקת עטיפה"
 
-#: src/Views/menu-display.php:295
+#: src/Views/menu-display.php:296
 msgid "Add a CSS class to the wrapper element for custom styling."
 msgstr "הוסף מחלקת CSS ליסוד המעטפת עבור סגנון מותאם."
 
-#: src/Views/menu-display.php:302
+#: src/Views/menu-display.php:303
 msgid "Attributes"
 msgstr "מאפיינים"
 
-#: src/Views/menu-display.php:308
 #. translators: %s is the shortcode code wrapped in code tags
+#: src/Views/menu-display.php:309
 #, php-format
 msgid "The following attributes are available for the %s shortcode:"
 msgstr "המאפיינים הבאים זמינים עבור ה-shortcode %s:"
 
-#: src/Views/menu-display.php:315
 #. translators: %s is a code tag that wraps the shortcode attribute name
+#: src/Views/menu-display.php:316
 #, php-format
 msgid "%s - Available options:"
 msgstr "%s - אפשרויות זמינות:"
 
-#: src/Views/menu-display.php:321
 #. translators: %s is a code tag that wraps the shortcode attribute value
+#: src/Views/menu-display.php:322
 #, php-format
 msgid "%s - Displays complete date/time.  Default value."
 msgstr "%s - מציג תאריך/שעה מלאה. ערך ברירת מחדל."
 
-#: src/Views/menu-display.php:327
 #. translators: %s is a code tag that wraps the shortcode attribute value
+#: src/Views/menu-display.php:328
 #, php-format
 msgid "%s - Displays date only"
 msgstr "%s - מציג רק תאריך"
 
-#: src/Views/menu-display.php:333
 #. translators: %s is a code tag that wraps the shortcode attribute value
+#: src/Views/menu-display.php:334
 #, php-format
 msgid "%s - Displays time only"
 msgstr "%s - מציג רק שעה"
 
-#: src/Views/menu-display.php:345
-#: src/Views/menu-display.php:353
 #. translators: %s is a code tag that wraps the shortcode attribute dateformat
 #. translators: %s is a code tag that wraps the shortcode attribute timeformat
+#: src/Views/menu-display.php:346 src/Views/menu-display.php:354
 #, php-format
 msgid "%s - Format set here will override the value set on the settings page"
 msgstr "%s - הפורמט שנקבע כאן יגבר על הערך שנקבע בדף ההגדרות"
@@ -4311,7 +4301,8 @@ msgid "Enable Email Notification?"
 msgstr "האם להפעיל התראה בדוא\"ל?"
 
 #: src/Views/menu-notifications.php:78
-msgid "This will enable or disable the send of email notification on future action."
+msgid ""
+"This will enable or disable the send of email notification on future action."
 msgstr "זה יאפשר או יבוטל את שליחת התראה בדוא\"ל על פעולה עתידית."
 
 #: src/Views/menu-notifications.php:86
@@ -4319,7 +4310,8 @@ msgid "Include Blog Administrators?"
 msgstr "לכלול מנהלי בלוג?"
 
 #: src/Views/menu-notifications.php:107
-msgid "This will include all users with the role of \"Administrator\" in the email."
+msgid ""
+"This will include all users with the role of \"Administrator\" in the email."
 msgstr "זה יכלול את כל המשתמשים עם התפקיד של \"Administrator\" בדוא\"ל."
 
 #: src/Views/menu-notifications.php:123
@@ -4328,16 +4320,15 @@ msgid ""
 "when the action runs.  This will be applied to ALL post types.  You can set "
 "post type specific emails on the Defaults tab."
 msgstr ""
-"הזן רשימה מופרדת בפסיקים של כתובות אימייל שתרצה להתעדכן כאשר הפעולה מתבצעת. "
-" זה ייושם על כל סוגי הפוסטים.  אתה יכול לקבוע אימיילים ספציפיים לסוגי "
-"פוסטים בלשונית ברירות מחדל."
+"הזן רשימה מופרדת בפסיקים של כתובות אימייל שתרצה להתעדכן כאשר הפעולה מתבצעת.  "
+"זה ייושם על כל סוגי הפוסטים.  אתה יכול לקבוע אימיילים ספציפיים לסוגי פוסטים "
+"בלשונית ברירות מחדל."
 
 #: src/Views/menu-notifications.php:132
 msgid "Past-due Actions Notification"
 msgstr "התראת פעולות שאותן ראוי לבצע"
 
-#: src/Views/menu-notifications.php:134
-#: src/Views/menu-notifications.php:161
+#: src/Views/menu-notifications.php:134 src/Views/menu-notifications.php:161
 msgid ""
 "This will enable or disable the send of email notification on past-due "
 "actions."
@@ -4355,66 +4346,54 @@ msgstr ""
 "הזן רשימה מופרדת בפסיקים של כתובות אימייל שתרצה להתעדכן כאשר פעולות שהגיעו "
 "למועד סיום מזוהות."
 
-#: src/Views/tabs-future-actions.php:20
-#: assets/js/backupPanel.js:649
+#: src/Views/tabs-future-actions.php:20 assets/js/backupPanel.js:649
 #: assets/js/backupPanel.js:1232
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:24
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:104
-#: assets/js/backupPanel.js:500
-#: assets/js/backupPanel.js:912
+#: assets/js/backupPanel.js:500 assets/js/backupPanel.js:912
 msgid "Post Types"
 msgstr "post types"
 
-#: src/Views/tabs-future-actions.php:25
-#: assets/js/backupPanel.js:652
+#: src/Views/tabs-future-actions.php:25 assets/js/backupPanel.js:652
 #: assets/js/backupPanel.js:1235
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:28
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:108
-#: assets/js/backupPanel.js:504
-#: assets/js/backupPanel.js:916
+#: assets/js/backupPanel.js:504 assets/js/backupPanel.js:916
 msgid "General"
 msgstr "כללי"
 
-#: src/Views/tabs-future-actions.php:30
-#: assets/js/backupPanel.js:655
+#: src/Views/tabs-future-actions.php:30 assets/js/backupPanel.js:655
 #: assets/js/backupPanel.js:1238
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:32
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:112
-#: assets/js/backupPanel.js:508
-#: assets/js/backupPanel.js:920
+#: assets/js/backupPanel.js:508 assets/js/backupPanel.js:920
 msgid "Notifications"
 msgstr "התראות"
 
-#: src/Views/tabs-future-actions.php:35
-#: assets/js/backupPanel.js:658
+#: src/Views/tabs-future-actions.php:35 assets/js/backupPanel.js:658
 #: assets/js/backupPanel.js:1241
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:36
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:116
-#: assets/js/backupPanel.js:512
-#: assets/js/backupPanel.js:924
+#: assets/js/backupPanel.js:512 assets/js/backupPanel.js:924
 msgid "Display"
 msgstr "תצוגה"
 
-#: src/Views/tabs-future-actions.php:40
-#: assets/js/backupPanel.js:661
+#: src/Views/tabs-future-actions.php:40 assets/js/backupPanel.js:661
 #: assets/js/backupPanel.js:1244
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:40
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:120
-#: assets/js/backupPanel.js:516
-#: assets/js/backupPanel.js:928
+#: assets/js/backupPanel.js:516 assets/js/backupPanel.js:928
 msgid "Admin"
 msgstr "מנהל"
 
 #: src/Views/tabs-settings.php:23
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11467
-#: assets/js/backupPanel.js:664
-#: assets/js/backupPanel.js:1247
+#: assets/js/backupPanel.js:664 assets/js/backupPanel.js:1247
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:44
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:124
 #: assets/jsx/workflow-editor/components/node-types/generic.jsx:248
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9212
-#: assets/js/backupPanel.js:520
-#: assets/js/backupPanel.js:932
+#: assets/js/backupPanel.js:520 assets/js/backupPanel.js:932
 msgid "Advanced"
 msgstr "מתקדם"
 
@@ -4491,7 +4470,6 @@ msgstr "שם הארגומנט צריך להכיל רק אותיות, מספרי�
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:585
 #: assets/jsx/workflow-editor/components/data-fields/action-args/index.jsx:71
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:506
-#, js-format
 msgid "Argument #%s"
 msgstr "ארגומנט #%s"
 
@@ -4579,14 +4557,12 @@ msgstr "בטל את ההודעה"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1967
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:67
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1399
-#, js-format
 msgid "Option %s"
 msgstr "אפשרות %s"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2004
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:95
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1427
-#, js-format
 msgid "Option #%s"
 msgstr "אפשרות #%s"
 
@@ -4605,10 +4581,8 @@ msgstr "הוסף אפשרות חדשה"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2037
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:132
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1464
-#, js-format
 msgid ""
-"You have reached the maximum number of options. You can add up to %s "
-"options."
+"You have reached the maximum number of options. You can add up to %s options."
 msgstr "הגעת למספר המקסימלי של אפשרויות. אתה יכול להוסיף עד %s אפשרויות."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2139
@@ -4717,15 +4691,14 @@ msgstr "לחץ למידע נוסף"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2443
 #: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:197
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1815
-#, js-format
 msgid ""
 "For more information on formatting, see the %sPHP strtotime function%s. For "
 "example, you could enter %s+1 month%s or %s+1 week 2 days 4 hours 2 "
 "seconds%s or %snext Thursday%s. Please use only phrases in English."
 msgstr ""
 "לפרטים נוספים על עיצוב, ראה את %sפונקציית strtotime של PHP%s. לדוגמה, תוכל "
-"להזין %s+1 חודש%s או %s+1 שבוע 2 ימים 4 שעות 2 שניות%s או %sיום חמישי "
-"הבא%s. אנא השתמש רק בביטויים באנגלית."
+"להזין %s+1 חודש%s או %s+1 שבוע 2 ימים 4 שעות 2 שניות%s או %sיום חמישי הבא%s. "
+"אנא השתמש רק בביטויים באנגלית."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2523
 #: assets/jsx/workflow-editor/components/data-fields/debug-data.jsx:39
@@ -4787,14 +4760,13 @@ msgstr "סטטוס פוסט"
 msgid "Post Type"
 msgstr "post type"
 
+#. translators: %s is the database table name
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2752
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3346
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/column-item.jsx:10
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:10
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2027
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2527
-#. translators: %s is the database table name
-#, js-format
 msgid "Type the %s key and click on the button to insert it."
 msgstr "הקלד את המפתח %s ולחץ על הכפתור כדי להכניס אותו."
 
@@ -4900,11 +4872,10 @@ msgstr "ספירה"
 msgid "Number of posts assigned to this term."
 msgstr "מספר הפוסטים המוקצים למונח זה."
 
+#. translators: %s is the taxonomy label
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3364
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:38
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2555
-#. translators: %s is the taxonomy label
-#, js-format
 msgid "%s terms for this post."
 msgstr "%s מונחים לפוסט זה."
 
@@ -5276,11 +5247,11 @@ msgstr "פעולה חוזרת"
 #: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:131
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4228
 msgid ""
-"Choose how often this task should repeat. Select 'Non-repeating' for a "
-"one-time action or set an interval for automatic recurrence."
+"Choose how often this task should repeat. Select 'Non-repeating' for a one-"
+"time action or set an interval for automatic recurrence."
 msgstr ""
-"בחר כמה פעמים משימה זו צריכה לחזור. בחר 'לא חוזר' עבור פעולה חד-פעמית או "
-"קבע פרק זמן לחזרה אוטומטית."
+"בחר כמה פעמים משימה זו צריכה לחזור. בחר 'לא חוזר' עבור פעולה חד-פעמית או קבע "
+"פרק זמן לחזרה אוטומטית."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5535
 #: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:148
@@ -5381,7 +5352,8 @@ msgstr "פרו"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7042
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9283
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11276
-msgid "Currently this step is being skipped. Upgrade to Pro to unlock this feature."
+msgid ""
+"Currently this step is being skipped. Upgrade to Pro to unlock this feature."
 msgstr "כרגע השלב הזה מתפספס. שדרגו ל-Pro כדי לפתוח תכונה זו."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9610
@@ -5396,34 +5368,34 @@ msgstr "הוסף"
 msgid "Close"
 msgstr "סגור"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9618
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9621
 #: assets/jsx/workflow-editor/components/layout/header.jsx:140
 #: assets/jsx/workflow-editor/components/layout/header.jsx:145
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7425
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7430
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Auto Layout"
 msgstr "פריסת אוטומטית"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9628
 #: assets/jsx/workflow-editor/components/layout/header.jsx:157
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7442
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Upgrade to Pro and unlock more features"
 msgstr "שדרגו ל-Pro ופתחו תכונות נוספות"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9872
 #: assets/jsx/workflow-editor/components/left-toolbar/redo.jsx:31
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7674
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Redo"
 msgstr "בצע שוב"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10045
 #: assets/jsx/workflow-editor/components/left-toolbar/undo.jsx:31
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7823
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Undo"
 msgstr "בצע ביטול"
 
@@ -5456,6 +5428,13 @@ msgstr "תכונה מושבתת"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7931
 msgid "Feature activated"
 msgstr "תכונה מופעלת"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10239
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:23
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7974
+msgctxt "noun"
+msgid "View"
+msgstr "הצג"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10243
 #: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:27
@@ -5662,7 +5641,6 @@ msgstr "נבחרו מספר אלמנטים שונים."
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10758
 #: assets/jsx/workflow-editor/components/node-inspector/index.jsx:116
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8445
-#, js-format
 msgid "%d steps selected"
 msgstr "%d צעדים נבחרו"
 
@@ -5675,7 +5653,6 @@ msgstr "נבחרו מספר צעדים."
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10764
 #: assets/jsx/workflow-editor/components/node-inspector/index.jsx:130
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8459
-#, js-format
 msgid "%d connections selected"
 msgstr "%d חיבורים נבחרו"
 
@@ -5695,8 +5672,8 @@ msgstr "חיבור"
 #: assets/jsx/workflow-editor/components/node-inspector/index.jsx:166
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8495
 msgid ""
-"The connection between nodes in the workflow. Signifies the path along "
-"which data or control flow one node to another."
+"The connection between nodes in the workflow. Signifies the path along which "
+"data or control flow one node to another."
 msgstr ""
 "החיבור בין צמתים בזרימת העבודה. מסמל את המסלול שבו הנתונים או זרימת הבקרה "
 "עוברים מצומת אחת לאחרת."
@@ -5782,7 +5759,6 @@ msgstr "אין תיאור"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11310
 #: assets/jsx/workflow-editor/components/node-types/generic.jsx:57
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9021
-#, js-format
 msgid "Unknown node: %s"
 msgstr "צומת לא ידוע: %s"
 
@@ -5867,24 +5843,21 @@ msgstr "כל הבדיקות עברו בהצלחה עבור שלב זה."
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12191
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:122
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9878
-#, js-format
 msgid "The field \"%s\" contains an invalid variable."
 msgstr "השדה \"%s\" מכיל משתנה לא חוקי."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12192
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:126
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9882
-#, js-format
 msgid ""
 "The variable \"%s\" is not available in the current context. Please, check "
 "if it is spelled correctly."
 msgstr "המשתנה \"%s\" אינו זמין בהקשר הנוכחי. אנא, בדוק אם הוא כתוב נכון."
 
+#. translators: %s is the workflow step slug.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12236
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:181
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9937
-#. translators: %s is the workflow step slug.
-#, js-format
 msgid "\"%s\" is not a variable or step slug."
 msgstr "\"%s\" אינו משתנה או סלוג של שלב."
 
@@ -5906,62 +5879,55 @@ msgstr "לא ניתן להשתמש במקום שמיש שלא נסגר."
 msgid "Unopened placeholder are not allowed."
 msgstr "לא ניתן להשתמש במקום שמיש שלא נפתח."
 
+#. translators: %s is the field label.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12263
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:216
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9972
-#. translators: %s is the field label.
-#, js-format
 msgid "Invalid expression on %s"
 msgstr "ביטוי לא חוקי ב-%s"
 
+#. translators: %s is the field label.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12275
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12495
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:232
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:575
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9988
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10331
-#. translators: %s is the field label.
-#, js-format
 msgid "The field %s must be a list of options."
 msgstr "השדה %s חייב להיות רשימה של אפשרויות."
 
+#. translators: %s is the option name.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12297
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:261
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10017
-#. translators: %s is the option name.
-#, js-format
 msgid "The option \"%s\" does not have a name."
 msgstr "לאפשרות \"%s\" אין שם."
 
+#. translators: %s is the option name.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12303
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:270
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10026
-#. translators: %s is the option name.
-#, js-format
 msgid "The option \"%s\" does not have a label."
 msgstr "לאפשרות \"%s\" אין תווית."
 
+#. translators: %s is the option name.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12309
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:279
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10035
-#. translators: %s is the option name.
-#, js-format
 msgid "The option \"%s\" has a duplicate name."
 msgstr "לאפשרות \"%s\" יש שם כפול."
 
+#. translators: %s is the option label.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12315
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:288
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10044
-#. translators: %s is the option label.
-#, js-format
 msgid "The option \"%s\" has a duplicate label."
 msgstr "לאפשרות \"%s\" יש תווית כפולה."
 
+#. translators: %s is the field label.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12325
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:302
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10058
-#. translators: %s is the field label.
-#, js-format
 msgid "The field %s must be a valid list of options."
 msgstr "השדה %s חייב להיות רשימה חוקית של אפשרויות."
 
@@ -5983,35 +5949,30 @@ msgstr "שלב זה דורש חיבור לשלב הבא."
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:428
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10163
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10184
-#, js-format
 msgid "The field %s is required."
 msgstr "השדה %s הוא חובה."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12429
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:450
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10206
-#, js-format
 msgid "The field %s must be a valid email address."
 msgstr "השדה %s חייב להיות כתובת דוא\"ל חוקית."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12437
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:466
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10222
-#, js-format
 msgid "The field %s must be a valid email address list separated by commas."
 msgstr "השדה %s חייב להיות רשימת כתובות דוא\"ל חוקיות מופרדות בפסיקים."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12443
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:480
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10236
-#, js-format
 msgid "The field %s must be an integer."
 msgstr "השדה %s חייב להיות מספר שלם."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12450
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:495
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10251
-#, js-format
 msgid "The field %s must be an integer list separated by commas."
 msgstr "השדה %s חייב להיות רשימת מספרים שלמים מופרדת בפסיקים."
 
@@ -6024,21 +5985,18 @@ msgstr "השדה %s חייב להיות רשימת מספרים שלמים מו�
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10274
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10283
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10292
-#, js-format
 msgid "The field %s must be a list of name-value pairs."
 msgstr "השדה %s חייב להיות רשימה של זוגות שם-ערך."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12467
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:528
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10284
-#, js-format
 msgid "The name of the pair is required on item %d."
 msgstr "השם של הזוג נדרש בפריט %d."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12470
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:537
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10293
-#, js-format
 msgid "The value of the pair is required on item %d."
 msgstr "הערך של הזוג נדרש בפריט %d."
 
@@ -6072,11 +6030,10 @@ msgstr "השתמש במקשי החצים השמאליים והימניים כד�
 msgid "No results found."
 msgstr "לא נמצאו תוצאות."
 
+#. translators: %d: number of results.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13239
 #: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:101
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10929
-#. translators: %d: number of results.
-#, js-format
 msgid "%d result found."
 msgid_plural "%d results found."
 msgstr[0] "%d תוצאה נמצאה."
@@ -6102,11 +6059,10 @@ msgstr "צמתים"
 msgid "A tip for using the workflow editor"
 msgstr "טיפ לשימוש בעורך העבודה"
 
+#. translators: %d: Number of blocks.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13627
 #: assets/jsx/workflow-editor/components/secondary-sidebar/node-draggable-chip.jsx:27
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11310
-#. translators: %d: Number of blocks.
-#, js-format
 msgid "%d block"
 msgid_plural "%d blocks"
 msgstr[0] "%d בלוק"
@@ -6114,10 +6070,21 @@ msgstr[1] "%d בלוקים"
 msgstr[2] "%d בלוקים"
 msgstr[3] "%d בלוקים"
 
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13793
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13798
+#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:80
+#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:85
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11459
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11464
+#, fuzzy
+msgctxt "nodes"
+msgid "Most used"
+msgstr "הנפוץ ביותר"
+
+#. translators: Patterns tab title in the block inserter.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14104
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:24
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11712
-#. translators: Patterns tab title in the block inserter.
 msgid "Actions"
 msgstr "פעולות"
 
@@ -6128,8 +6095,7 @@ msgid ""
 "Select multiple steps by pressing <kbd>cmd</kbd> and clicking on each step "
 "in the workflow."
 msgstr ""
-"בחר מספר צעדים על ידי לחיצה על <kbd>cmd</kbd> ולחיצה על כל צעד בזרימת "
-"העבודה."
+"בחר מספר צעדים על ידי לחיצה על <kbd>cmd</kbd> ולחיצה על כל צעד בזרימת העבודה."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14156
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:16
@@ -6150,7 +6116,8 @@ msgstr "פשוט לחץ פעמיים על כל צעד כדי להעלות את �
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14156
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:18
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11760
-msgid "Double-click the workflow pane to increase the zoom level for a closer look."
+msgid ""
+"Double-click the workflow pane to increase the zoom level for a closer look."
 msgstr "לחץ פעמיים על לוח העבודה כדי להגדיל את רמת הזום למבט קרוב יותר."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14156
@@ -6165,8 +6132,8 @@ msgstr "לחץ פעמיים על לוח העבודה כדי להגדיל את ר
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:26
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11768
 msgid ""
-"Easily add new steps by clicking on a step's handle and dragging it. Drop "
-"it in the workflow pane to see a floating inserter where you can type and "
+"Easily add new steps by clicking on a step's handle and dragging it. Drop it "
+"in the workflow pane to see a floating inserter where you can type and "
 "search for the step you need."
 msgstr ""
 "הוסף בקלות צעדים חדשים על ידי לחיצה על הידית של צעד וגרירה שלו. הנח אותו "
@@ -6177,6 +6144,15 @@ msgstr ""
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11859
 msgid "(no name)"
 msgstr "(אין שם)"
+
+#. translators: Default label for the Workflow sidebar tab, not selected.
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14336
+#: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:23
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11892
+#, fuzzy
+msgctxt "noun"
+msgid "Workflow"
+msgstr "זרימת עבודה"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14348
 #: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:37
@@ -6248,10 +6224,10 @@ msgstr "האם אתה בטוח שברצונך למחוק את זרימת העב�
 msgid "Move to trash"
 msgstr "מעבר לפח"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14929
 #: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:79
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12407
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Publish"
 msgstr "פרסם"
 
@@ -6279,17 +6255,17 @@ msgstr "מתעדכן..."
 msgid "Updated"
 msgstr "עודכן"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15086
 #: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:82
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12550
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Save draft"
 msgstr "שמור טיוטה"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15089
 #: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:85
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12553
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Save"
 msgstr "שמור"
 
@@ -6480,21 +6456,17 @@ msgstr "או"
 msgid "Select a .json file"
 msgstr "בחר קובץ .json"
 
-#: assets/js/backupPanel.js:110
-#: assets/js/backupPanel.js:1283
+#: assets/js/backupPanel.js:110 assets/js/backupPanel.js:1283
 #: assets/jsx/backup-panel/components/file-dropzone/index.jsx:35
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:164
-#: assets/js/backupPanel.js:88
-#: assets/js/backupPanel.js:972
+#: assets/js/backupPanel.js:88 assets/js/backupPanel.js:972
 msgid "Selected file"
 msgstr "קובץ שנבחר"
 
-#: assets/js/backupPanel.js:110
-#: assets/js/backupPanel.js:1285
+#: assets/js/backupPanel.js:110 assets/js/backupPanel.js:1285
 #: assets/jsx/backup-panel/components/file-dropzone/index.jsx:36
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:165
-#: assets/js/backupPanel.js:89
-#: assets/js/backupPanel.js:973
+#: assets/js/backupPanel.js:89 assets/js/backupPanel.js:973
 msgid "File size"
 msgstr "גודל קובץ"
 
@@ -6528,12 +6500,10 @@ msgstr "טוען פריטים, אנא המתן..."
 msgid "Select the content you want to import."
 msgstr "בחר את התוכן שברצונך לייבא."
 
-#: assets/js/backupPanel.js:525
-#: assets/js/backupPanel.js:709
+#: assets/js/backupPanel.js:525 assets/js/backupPanel.js:709
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-import.jsx:83
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:94
-#: assets/js/backupPanel.js:420
-#: assets/js/backupPanel.js:570
+#: assets/js/backupPanel.js:420 assets/js/backupPanel.js:570
 msgid "Action Settings"
 msgstr "הגדרות פעולה"
 
@@ -6543,12 +6513,10 @@ msgstr "הגדרות פעולה"
 msgid "No workflows or settings found in the file."
 msgstr "לא נמצאו זרימות עבודה או הגדרות בקובץ."
 
-#: assets/js/backupPanel.js:546
-#: assets/js/backupPanel.js:581
+#: assets/js/backupPanel.js:546 assets/js/backupPanel.js:581
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-import.jsx:110
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-preview.jsx:14
-#: assets/js/backupPanel.js:447
-#: assets/js/backupPanel.js:469
+#: assets/js/backupPanel.js:447 assets/js/backupPanel.js:469
 msgid "Cancel and select a different file"
 msgstr "בטל ובחר קובץ אחר"
 
@@ -6616,30 +6584,22 @@ msgstr "בחר תוכן לייבוא"
 msgid "Raw Data Preview"
 msgstr "תצוגה מקדימה של נתונים גולמיים"
 
-#: assets/js/blockEditor.js:1752
-#: assets/js/bulkEdit.js:1752
-#: assets/js/classicEditor.js:1752
-#: assets/js/quickEdit.js:1752
-#: assets/js/settingsGeneral.js:1752
-#: assets/js/settingsPostTypes.js:1752
+#: assets/js/blockEditor.js:1752 assets/js/bulkEdit.js:1752
+#: assets/js/classicEditor.js:1752 assets/js/quickEdit.js:1752
+#: assets/js/settingsGeneral.js:1752 assets/js/settingsPostTypes.js:1752
 #: assets/jsx/components/PostTypesSettingsPanels.jsx:81
-#: assets/js/blockEditor.js:1587
-#: assets/js/bulkEdit.js:1587
-#: assets/js/classicEditor.js:1587
-#: assets/js/quickEdit.js:1587
-#: assets/js/settingsGeneral.js:1587
-#: assets/js/settingsPostTypes.js:1587
+#: assets/js/blockEditor.js:1587 assets/js/bulkEdit.js:1587
+#: assets/js/classicEditor.js:1587 assets/js/quickEdit.js:1587
+#: assets/js/settingsGeneral.js:1587 assets/js/settingsPostTypes.js:1587
 msgid "Select a post type to edit:"
 msgstr "בחר סוג פוסט לעריכה:"
 
-#: assets/js/legacyAction.js:230
-#: assets/jsx/legacy-action/index.jsx:78
+#: assets/js/legacyAction.js:230 assets/jsx/legacy-action/index.jsx:78
 #: assets/js/legacyAction.js:153
 msgid "Workflow to trigger"
 msgstr "זרימת עבודה להפעלה"
 
-#: assets/js/legacyAction.js:241
-#: assets/jsx/legacy-action/index.jsx:90
+#: assets/js/legacyAction.js:241 assets/jsx/legacy-action/index.jsx:90
 #: assets/js/legacyAction.js:165
 msgid "No compatible workflows available."
 msgstr "אין זרימות עבודה תואמות זמינות."
@@ -6650,10 +6610,10 @@ msgstr "אין זרימות עבודה תואמות זמינות."
 msgid "Change manually enabled workflows"
 msgstr "שנה זרימות עבודה המופעלות ידנית"
 
+#. translators: %s: Workflow title
 #: assets/js/workflowsListCancelAction.js:702
 #: assets/jsx/workflows-list/cancel-action/index.jsx:59
 #: assets/js/workflowsListCancelAction.js:497
-#. translators: %s: Workflow title
 msgid ""
 "Are you sure you want to cancel all scheduled actions for the \"%s\" "
 "workflow?"
@@ -6666,33 +6626,5 @@ msgid "Cancel Actions"
 msgstr "בטל פעולות"
 
 #: assets/jsx/workflow-manual-selection/example-extending-with-slot.jsx:48
-#, js-format
 msgid "Enable workflow %s"
 msgstr "אפשר זרימת עבודה %s"
-
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10239
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:23
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7974
-msgctxt "noun"
-msgid "View"
-msgstr "הצג"
-
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14336
-#: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:23
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11892
-#. translators: Default label for the Workflow sidebar tab, not selected.
-#, fuzzy
-msgctxt "noun"
-msgid "Workflow"
-msgstr "זרימת עבודה"
-
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13793
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13798
-#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:80
-#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:85
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11459
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11464
-#, fuzzy
-msgctxt "nodes"
-msgid "Most used"
-msgstr "הנפוץ ביותר"

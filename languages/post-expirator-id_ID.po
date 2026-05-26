@@ -4,51 +4,50 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PublishPress Future Free 4.10.2-rc.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/project\n"
+"POT-Creation-Date: 2026-05-25T21:24:52+00:00\n"
+"PO-Revision-Date: 2026-05-21 14:28+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: none\n"
+"Language: id-ID\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-05-13T18:43:00+00:00\n"
-"PO-Revision-Date: 2026-05-21 14:28+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"Language: id-ID\n"
 
-#: post-expirator.php:4
 #. Plugin Name of the plugin
+#: post-expirator.php:4
 #, fuzzy
 msgid "PublishPress Future Free"
 msgstr "PublishPress Future Free"
 
-#: post-expirator.php:5
 #. Plugin URI of the plugin
+#: post-expirator.php:5
 #, fuzzy
 msgid "http://wordpress.org/extend/plugins/post-expirator/"
 msgstr "http://wordpress.org/extend/plugins/post-expirator/"
 
-#: post-expirator.php:6
 #. Description of the plugin
+#: post-expirator.php:6
 msgid ""
-"PublishPress Future allows you to schedule automatic changes to posts, "
-"pages and other content types."
+"PublishPress Future allows you to schedule automatic changes to posts, pages "
+"and other content types."
 msgstr "PublishPress Future memungkinkan Anda menjadwalkan perubahan otomatis pada pos, halaman, dan jenis konten lainnya."
 
-#: post-expirator.php:7
 #. Author of the plugin
+#: post-expirator.php:7
 #, fuzzy
 msgid "PublishPress"
 msgstr "PublishPress"
 
-#: post-expirator.php:9
 #. Author URI of the plugin
+#: post-expirator.php:9
 #, fuzzy
 msgid "http://publishpress.com"
 msgstr "http://publishpress.com"
 
-#: legacy/classes/Display.class.php:113
-#: legacy/classes/Display.class.php:141
+#: legacy/classes/Display.class.php:113 legacy/classes/Display.class.php:141
 msgid "You do not have permission to configure PublishPress Future."
 msgstr "Anda tidak memiliki izin untuk mengonfigurasi PublishPress Future."
 
@@ -89,17 +88,17 @@ msgid "The database schema was fixed."
 msgstr "Skema basis data telah diperbaiki."
 
 #: legacy/classes/Display.class.php:328
-msgid "The database schema could not be fixed. Please, contact the support team."
+msgid ""
+"The database schema could not be fixed. Please, contact the support team."
 msgstr "Skema basis data tidak dapat diperbaiki. Harap, hubungi tim kami."
 
-#: legacy/classes/Display.class.php:399
-#: legacy/classes/Display.class.php:453
+#: legacy/classes/Display.class.php:399 legacy/classes/Display.class.php:453
 #: legacy/classes/Display.class.php:475
 msgid "Saved Options!"
 msgstr "Pilihan Disimpan!"
 
-#: legacy/classes/Display.class.php:567
 #. translators: %1$s is the plugin name, %2$s is the star rating markup
+#: legacy/classes/Display.class.php:567
 #, php-format
 msgid "If you like %1$s, please leave us a %2$s rating. Thank you!"
 msgstr ""
@@ -134,20 +133,17 @@ msgstr "Kontak"
 msgid "No taxonomies found"
 msgstr "Tidak ada taksonomi yang ditemukan"
 
-#: services.php:151
-#: src/Modules/Settings/SettingsFacade.php:122
+#: services.php:151 src/Modules/Settings/SettingsFacade.php:122
 #, fuzzy
 msgid "l F jS, Y"
 msgstr "l F jS, Y"
 
-#: services.php:155
-#: src/Modules/Settings/SettingsFacade.php:123
+#: services.php:155 src/Modules/Settings/SettingsFacade.php:123
 #, fuzzy
 msgid "g:ia"
 msgstr "g:ia"
 
-#: services.php:156
-#: src/Modules/Settings/SettingsFacade.php:124
+#: services.php:156 src/Modules/Settings/SettingsFacade.php:124
 msgid "Post expires at EXPIRATIONTIME on ACTIONDATE"
 msgstr "Post akan kadaluarsa pada EXPIRATIONTIME pada ACTIONDATE"
 
@@ -171,27 +167,23 @@ msgid "Invalid date time offset"
 msgstr "Offset waktu tanggal tidak valid"
 
 #: src/Modules/Backup/Controllers/BackupAdminPage.php:164
-#: assets/js/backupPanel.js:34
-#: assets/js/backupPanel.js:692
+#: assets/js/backupPanel.js:34 assets/js/backupPanel.js:692
 #: assets/js/backupPanel.js:722
 #: assets/jsx/backup-panel/components/backup-panel.jsx:10
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:77
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:105
-#: assets/js/backupPanel.js:10
-#: assets/js/backupPanel.js:553
+#: assets/js/backupPanel.js:10 assets/js/backupPanel.js:553
 #: assets/js/backupPanel.js:581
 msgid "Export"
 msgstr "Ekspor"
 
 #: src/Modules/Backup/Controllers/BackupAdminPage.php:169
-#: assets/js/backupPanel.js:37
-#: assets/js/backupPanel.js:543
+#: assets/js/backupPanel.js:37 assets/js/backupPanel.js:543
 #: assets/js/backupPanel.js:1251
 #: assets/jsx/backup-panel/components/backup-panel.jsx:14
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-import.jsx:106
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:131
-#: assets/js/backupPanel.js:14
-#: assets/js/backupPanel.js:443
+#: assets/js/backupPanel.js:14 assets/js/backupPanel.js:443
 #: assets/js/backupPanel.js:939
 msgid "Import"
 msgstr "Impor"
@@ -218,8 +210,7 @@ msgstr "Nonce tidak valid."
 
 #: src/Modules/Debug/Migrations/V04905DebugLogRequestId.php:80
 msgid ""
-"Add request_id and trigger_activated columns to debug log table after "
-"v4.10.0"
+"Add request_id and trigger_activated columns to debug log table after v4.10.0"
 msgstr ""
 "Tambahkan kolom request_id dan trigger_activated ke tabel log debug setelah "
 "v4.10.0"
@@ -230,15 +221,13 @@ msgstr "Tambahkan presisi milidetik ke kolom timestamp log debug (v4.10.0)"
 
 #: src/Modules/Debug/Views/raw-debug-log.html.php:39
 #: src/Modules/Settings/Controllers/Controller.php:215
-#: src/Views/menu-debug-log.php:113
-#: src/Views/menu-debug-log.php:148
+#: src/Views/menu-debug-log.php:113 src/Views/menu-debug-log.php:148
 msgid "Debugging table is currently empty."
 msgstr "Tabel debug saat ini masih kosong."
 
 #: src/Modules/Debug/Views/raw-debug-log.html.php:40
 #: src/Modules/Settings/Controllers/Controller.php:216
-#: src/Views/menu-debug-log.php:115
-#: src/Views/menu-debug-log.php:150
+#: src/Views/menu-debug-log.php:115 src/Views/menu-debug-log.php:150
 msgid "No results match the current filter."
 msgstr "Tidak ada hasil yang cocok dengan filter saat ini."
 
@@ -261,8 +250,7 @@ msgstr "Taksonomi"
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:131
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:132
 #: src/Modules/Expirator/Controllers/SettingsController.php:544
-#: src/Views/menu-admin.php:44
-#: src/Views/tabs-future-actions.php:51
+#: src/Views/menu-admin.php:44 src/Views/tabs-future-actions.php:51
 msgid "Future Actions"
 msgstr "Tindakan Future"
 
@@ -315,20 +303,20 @@ msgstr "Tampilkan Kalender"
 msgid "Hide Calendar"
 msgstr "Sembunyikan Kalender"
 
+#. translators: the text between {} is the link to the settings page.
+#. translators: the text between {{}} is the link to the settings page.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:182
 #: src/Modules/Expirator/Controllers/BulkEditController.php:222
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:423
 #: src/Modules/Expirator/Controllers/QuickEditController.php:352
-#. translators: the text between {} is the link to the settings page.
-#. translators: the text between {{}} is the link to the settings page.
 msgid "Timezone is controlled by the {WordPress Settings}."
 msgstr "Zona waktu dikontrol oleh {Pengaturan WordPress}."
 
+#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:189
 #: src/Modules/Expirator/Controllers/BulkEditController.php:229
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:430
 #: src/Modules/Expirator/Controllers/QuickEditController.php:356
-#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "No %s found."
 msgstr "Tidak ada %s ditemukan."
@@ -339,41 +327,40 @@ msgstr "Tidak ada %s ditemukan."
 #: src/Modules/Expirator/Controllers/QuickEditController.php:359
 msgid "You must assign a taxonomy to this post type to use this feature."
 msgstr ""
-"Anda harus menetapkan taksonomi ke jenis pos ini untuk menggunakan fitur "
-"ini."
+"Anda harus menetapkan taksonomi ke jenis pos ini untuk menggunakan fitur ini."
 
+#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:197
 #: src/Modules/Expirator/Controllers/BulkEditController.php:243
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:438
 #: src/Modules/Expirator/Controllers/QuickEditController.php:361
-#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "New %s"
 msgstr "Baru %s"
 
+#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:199
 #: src/Modules/Expirator/Controllers/BulkEditController.php:245
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:440
 #: src/Modules/Expirator/Controllers/QuickEditController.php:363
-#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "%s to remove"
 msgstr "%s untuk dihapus"
 
+#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:201
 #: src/Modules/Expirator/Controllers/BulkEditController.php:247
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:442
 #: src/Modules/Expirator/Controllers/QuickEditController.php:365
-#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "%s to add"
 msgstr "%s untuk ditambahkan"
 
+#. translators: %s is the name of the taxonomy in singular form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:204
 #: src/Modules/Expirator/Controllers/BulkEditController.php:250
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:445
 #: src/Modules/Expirator/Controllers/QuickEditController.php:367
-#. translators: %s is the name of the taxonomy in singular form.
 #, php-format
 msgid "Search for %s"
 msgstr "Cari %s"
@@ -399,12 +386,12 @@ msgstr "Pilih tanggal"
 msgid "Date cannot be in the past"
 msgstr "Tanggal tidak boleh di masa lalu"
 
+#. translators: %s is the name of the taxonomy in singular form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:212
 #: src/Modules/Expirator/Controllers/BulkEditController.php:258
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:453
 #: src/Modules/Expirator/Controllers/QuickEditController.php:373
 #: src/Modules/Expirator/Controllers/SettingsController.php:298
-#. translators: %s is the name of the taxonomy in singular form.
 #, php-format
 msgid "Please select one or more %s"
 msgstr "Silakan pilih satu atau lebih %s"
@@ -473,8 +460,7 @@ msgstr "Upgrade ke Pro"
 #: src/Modules/Workflows/Controllers/ManualPostTrigger.php:495
 #: src/Modules/Workflows/Controllers/PostType.php:49
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:181
-#: assets/js/backupPanel.js:512
-#: assets/js/backupPanel.js:698
+#: assets/js/backupPanel.js:512 assets/js/backupPanel.js:698
 #: assets/js/workflowManualSelectionBlockEditor.js:2157
 #: assets/js/workflowManualSelectionBulkEdit.js:167
 #: assets/js/workflowManualSelectionQuickEdit.js:2217
@@ -483,14 +469,14 @@ msgstr "Upgrade ke Pro"
 #: assets/jsx/workflow-manual-selection/block-editor/index.jsx:49
 #: assets/jsx/workflow-manual-selection/bulk-edit/fieldset.jsx:88
 #: assets/jsx/workflow-manual-selection/quick-edit/index.jsx:75
-#: assets/js/backupPanel.js:405
-#: assets/js/backupPanel.js:559
+#: assets/js/backupPanel.js:405 assets/js/backupPanel.js:559
 #: assets/js/workflowManualSelectionBlockEditor.js:1629
 #: assets/js/workflowManualSelectionBulkEdit.js:114
 #: assets/js/workflowManualSelectionQuickEdit.js:1694
 msgid "Action Workflows"
 msgstr "Alur Kerja Tindakan"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: src/Modules/Expirator/Controllers/PluginsListController.php:70
 #: src/Modules/Expirator/Controllers/SettingsController.php:132
 #: src/Modules/Expirator/Controllers/SettingsController.php:133
@@ -500,7 +486,6 @@ msgstr "Alur Kerja Tindakan"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14436
 #: assets/jsx/workflow-editor/components/settings-sidebar/settings-sidebar.jsx:54
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11976
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Settings"
 msgstr "Pengaturan"
 
@@ -552,9 +537,9 @@ msgstr "Tindakan yang dieksekusi untuk: %s (ID: %d)"
 msgid "Executed scheduled action"
 msgstr "Tindakan terjadwal yang dieksekusi"
 
+#. translators: %1$s is the link to the PHP strtotime function documentation, %2$s and %3$s are the opening and closing code tags. Please, do not translate the date format text, since PHP will not be able to calculate using non-english terms.
 #: src/Modules/Expirator/Controllers/SettingsController.php:252
 #: src/Views/menu-general.php:41
-#. translators: %1$s is the link to the PHP strtotime function documentation, %2$s and %3$s are the opening and closing code tags. Please, do not translate the date format text, since PHP will not be able to calculate using non-english terms.
 #, php-format
 msgid ""
 "Set the offset to use for the default action date and time. For information "
@@ -564,8 +549,8 @@ msgid ""
 msgstr ""
 "Atur offset yang akan digunakan untuk tanggal dan waktu tindakan default. "
 "Untuk informasi tentang pemformatan, lihat %1$s. Misalnya, Anda dapat "
-"memasukkan %2$s+1 bulan%3$s atau %2$s+1 minggu 2 hari 4 jam 2 detik%3$s "
-"atau %2$sKamis depan%3$s. Harap, gunakan hanya istilah dalam bahasa Inggris."
+"memasukkan %2$s+1 bulan%3$s atau %2$s+1 minggu 2 hari 4 jam 2 detik%3$s atau "
+"%2$sKamis depan%3$s. Harap, gunakan hanya istilah dalam bahasa Inggris."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:262
 msgid "Default Values"
@@ -623,8 +608,7 @@ msgstr ""
 "tidak akan tersedia."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:282
-#: src/Views/menu-notifications.php:116
-#: src/Views/menu-notifications.php:169
+#: src/Views/menu-notifications.php:116 src/Views/menu-notifications.php:169
 msgid "Who to Notify"
 msgstr "Siapa yang Diberitahu"
 
@@ -724,7 +708,8 @@ msgstr ""
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:309
 msgid "This is a Pro feature. Upgrade to unlock this functionality."
-msgstr "Ini adalah fitur Pro. Tingkatkan untuk membuka kunci fungsionalitas ini."
+msgstr ""
+"Ini adalah fitur Pro. Tingkatkan untuk membuka kunci fungsionalitas ini."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:459
 #: src/Modules/Settings/Controllers/Controller.php:298
@@ -736,8 +721,8 @@ msgid ""
 "The shortcode [futureaction] must be used inside the loop or with the "
 "post_id attribute."
 msgstr ""
-"Kode pendek [futureaction] harus digunakan di dalam loop atau dengan "
-"atribut post_id."
+"Kode pendek [futureaction] harus digunakan di dalam loop atau dengan atribut "
+"post_id."
 
 #: src/Modules/Expirator/DBTableSchemas/ActionArgsSchema.php:96
 msgid "The column args length was not updated to 1000."
@@ -750,11 +735,11 @@ msgstr "Panjang argumen kolom tidak diperbarui menjadi 1000"
 msgid "Status didn't change."
 msgstr "Status tidak berubah."
 
+#. translators: 1: old post status, 2: new post status
 #: src/Modules/Expirator/ExpirationActions/ChangePostStatus.php:62
 #: src/Modules/Expirator/ExpirationActions/PostStatusToDraft.php:60
 #: src/Modules/Expirator/ExpirationActions/PostStatusToPrivate.php:60
 #: src/Modules/Expirator/ExpirationActions/PostStatusToTrash.php:60
-#. translators: 1: old post status, 2: new post status
 #, php-format
 msgid "Status has been successfully changed from \"%1$s\" to \"%2$s\"."
 msgstr "Status telah berhasil diubah dari \"%1$s\" menjadi \"%2$s\"."
@@ -763,14 +748,14 @@ msgstr "Status telah berhasil diubah dari \"%1$s\" menjadi \"%2$s\"."
 msgid "Change status"
 msgstr "Ubah status"
 
-#: src/Modules/Expirator/ExpirationActions/DeletePost.php:47
 #. translators: %s: post type singular label
+#: src/Modules/Expirator/ExpirationActions/DeletePost.php:47
 #, php-format
 msgid "%s was not deleted."
 msgstr "%s tidak dihapus."
 
-#: src/Modules/Expirator/ExpirationActions/DeletePost.php:54
 #. translators: %s: post type singular label
+#: src/Modules/Expirator/ExpirationActions/DeletePost.php:54
 #, php-format
 msgid "%s has been successfully deleted."
 msgstr "%s berhasil dihapus dengan sukses."
@@ -786,14 +771,14 @@ msgstr "%s berhasil dihapus dengan sukses."
 msgid "Delete"
 msgstr "Hapus"
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:65
 #. translators: %s is the post type singular label
+#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:65
 #, php-format
 msgid "No terms were added to the %s."
 msgstr "Tidak ada term yang ditambahkan ke %s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:77
 #. translators: %1$s is the taxonomy label, %2$s is the post type singular label, %3$s is the list of terms added, %4$s is the list of terms on the post
+#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:77
 #, php-format
 msgid ""
 "The following terms (%1$s) were added to the %2$s: \"%3$s\". The full list "
@@ -802,55 +787,55 @@ msgstr ""
 "Istilah berikut (%1$s) telah ditambahkan ke %2$s: \"%3$s\". Daftar lengkap "
 "istilah di pos adalah: %4$s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:120
 #. translators: %s is the taxonomy name (plural)
+#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:120
 #, php-format
 msgid "Add extra %s"
 msgstr "Tambahkan %s tambahan"
 
+#. translators: %s is the post type singular label
 #: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:56
 #: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:56
-#. translators: %s is the post type singular label
 #, php-format
 msgid "No terms were removed from the %s."
 msgstr "Tidak ada term yang dihapus dari %s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:67
 #. translators: %1$s is the taxonomy name, %2$s is the post type singular label, %3$s is the removed terms list, %4$s is the updated terms list
+#: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:67
 #, php-format
 msgid ""
-"The following terms (%1$s) were removed from the %2$s: %3$s. The new list "
-"of terms on the post is: %4$s."
+"The following terms (%1$s) were removed from the %2$s: %3$s. The new list of "
+"terms on the post is: %4$s."
 msgstr ""
-"Istilah berikut (%1$s) telah dihapus dari %2$s: %3$s. Daftar baru istilah "
-"di pos adalah: %4$s."
+"Istilah berikut (%1$s) telah dihapus dari %2$s: %3$s. Daftar baru istilah di "
+"pos adalah: %4$s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:112
 #. translators: %s is the taxonomy name (plural)
+#: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:112
 #, php-format
 msgid "Remove selected %s"
 msgstr "Hapus %s yang dipilih"
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:67
 #. translators: %1$s is the taxonomy name, %2$s is the post type singular label, %3$s is the list of term names
+#: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:67
 #, php-format
 msgid "The following terms (%1$s) were removed from the %2$s: %3$s."
 msgstr "Istilah berikut (%1$s) telah dihapus dari %2$s: %3$s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:106
 #. translators: %s is the taxonomy name (plural)
+#: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:106
 #, php-format
 msgid "Remove all %s"
 msgstr "Hapus semua %s"
 
-#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:58
 #. translators: %s is the post type singular label
+#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:58
 #, php-format
 msgid "No terms were changed on the %s."
 msgstr "Tidak ada term yang diubah pada %s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:69
 #. translators: 1: taxonomy name, 2: post type singular label, 3: updated terms, 4: original terms
+#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:69
 #, php-format
 msgid ""
 "The following terms (%1$s) were set to the %2$s: \"%3$s\". The old list of "
@@ -859,29 +844,29 @@ msgstr ""
 "Istilah berikut (%1$s) telah ditetapkan ke %2$s: \"%3$s\". Daftar lama "
 "istilah di pos adalah: %4$s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:109
 #. translators: %s is the taxonomy name (plural)
+#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:109
 #, php-format
 msgid "Replace all %s"
 msgstr "Ganti semua %s"
 
+#. translators: %s: new post status
 #: src/Modules/Expirator/ExpirationActions/PostStatusToDraft.php:90
 #: src/Modules/Expirator/ExpirationActions/PostStatusToPrivate.php:90
 #: src/Modules/Expirator/ExpirationActions/PostStatusToTrash.php:90
-#. translators: %s: new post status
 #, php-format
 msgid "Change status to %s"
 msgstr "Ubah status menjadi %s"
 
+#. translators: %s: post type singular label
 #: src/Modules/Expirator/ExpirationActions/StickPost.php:46
 #: src/Modules/Expirator/ExpirationActions/UnstickPost.php:46
-#. translators: %s: post type singular label
 #, php-format
 msgid "%s didn't change."
 msgstr "%s tidak berubah."
 
-#: src/Modules/Expirator/ExpirationActions/StickPost.php:53
 #. translators: %s: post type singular label
+#: src/Modules/Expirator/ExpirationActions/StickPost.php:53
 #, php-format
 msgid "%s has been added to stickies list."
 msgstr "%s telah ditambahkan ke daftar yang ditempel."
@@ -890,8 +875,8 @@ msgstr "%s telah ditambahkan ke daftar yang ditempel."
 msgid "Stick"
 msgstr "Lekatkan"
 
-#: src/Modules/Expirator/ExpirationActions/UnstickPost.php:53
 #. translators: %s: post type singular label
+#: src/Modules/Expirator/ExpirationActions/UnstickPost.php:53
 #, php-format
 msgid "%s has been removed from stickies list."
 msgstr "%s telah dihapus dari daftar yang ditempel."
@@ -936,26 +921,26 @@ msgstr "Email terkirim."
 msgid "Email not sent."
 msgstr "Email tidak terkirim."
 
-#: src/Modules/Expirator/Models/ExpirablePostModel.php:644
 #. translators: %1$s: post title placeholder, %2$s: notification text, %3$s: action date placeholder, %4$s: post link placeholder
+#: src/Modules/Expirator/Models/ExpirablePostModel.php:644
 #, php-format
 msgid "%1$s. %2$s on %3$s. The post link is %4$s"
 msgstr "%1$s. %2$s pada %3$s. Tautan pos adalah %4$s"
 
-#: src/Modules/Expirator/Models/ExpirablePostModel.php:662
 #. translators: %s is the post title
+#: src/Modules/Expirator/Models/ExpirablePostModel.php:662
 #, php-format
 msgid "Future Action Complete \"%s\""
 msgstr "Tindakan Masa Depan Selesai \"%s\""
 
-#: src/Modules/Expirator/Models/ExpirablePostModel.php:666
 #. translators: 1: is the blog name, 2: the email subject
+#: src/Modules/Expirator/Models/ExpirablePostModel.php:666
 #, fuzzy, php-format
 msgid "[%1$s] %2$s"
 msgstr "[%1$s] %2$s"
 
-#: src/Modules/Expirator/Models/PostTypeDefaultDataModel.php:156
 #. translators: %s is the date/time offset and %s is the post type.
+#: src/Modules/Expirator/Models/PostTypeDefaultDataModel.php:156
 #, php-format
 msgid ""
 "Invalid date/time offset \"%s\" for post type \"%s\". Please ensure you use "
@@ -1002,58 +987,60 @@ msgid "Cancel"
 msgstr "Batalkan"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:77
-msgid "Cancel the action. This will prevent the action from running in the future"
-msgstr "Batal tindakan ini. Ini akan mencegah tindakan tersebut berjalan di Future"
+msgid ""
+"Cancel the action. This will prevent the action from running in the future"
+msgstr ""
+"Batal tindakan ini. Ini akan mencegah tindakan tersebut berjalan di Future"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:88
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:478
 msgid "Run"
 msgstr "Jalankan"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:96
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:96
 #, php-format
 msgid "%s year"
 msgid_plural "%s years"
 msgstr[0] "%s tahun"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:101
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:101
 #, php-format
 msgid "%s month"
 msgid_plural "%s months"
 msgstr[0] "%s bulan"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:106
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:106
 #, php-format
 msgid "%s week"
 msgid_plural "%s weeks"
 msgstr[0] "%s minggu"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:111
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:111
 #, php-format
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] "%s hari"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:116
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:116
 #, php-format
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] "%s jam"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:121
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:121
 #, php-format
 msgid "%s minute"
 msgid_plural "%s minutes"
 msgstr[0] "%s menit"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:126
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:126
 #, php-format
 msgid "%s second"
 msgid_plural "%s seconds"
@@ -1104,20 +1091,20 @@ msgstr "Selesai"
 msgid "Process the action now"
 msgstr "Proses tindakan sekarang"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:524
 #. translators: %1$s: post type label, %2$d: post ID, %3$s: post link tag start, %4$s: post title, %5$s: post link tag end
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:524
 #, fuzzy, php-format
 msgid "%1$s: [%2$d] %3$s%4$s%5$s"
 msgstr "%1$s: [%2$d] %3$s%4$s%5$s"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:559
 #. translators: %s is the new status
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:559
 #, php-format
 msgid "New Status: %s"
 msgstr "Status Baru: %s"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:567
 #. translators: %s is the list of terms
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:567
 #, php-format
 msgid "Terms: %s"
 msgstr "Istilah: %s"
@@ -1168,14 +1155,14 @@ msgstr "Pesan"
 msgid "Async"
 msgstr "Asinkron"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:765
 #. translators: %s is the date interval in human readable format in the past
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:765
 #, php-format
 msgid " (%s ago)"
 msgstr " (%s yang lalu)"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:771
 #. translators: %s is the date interval in human readable format in the present or future
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:771
 #, fuzzy, php-format
 msgid " (%s)"
 msgstr " (%s)"
@@ -1184,8 +1171,8 @@ msgstr " (%s)"
 msgid "Now!"
 msgstr "Sekarang"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:845
 #. translators: %s: time interval
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:845
 #, php-format
 msgid "Every %s"
 msgstr "Setiap %s"
@@ -1256,8 +1243,8 @@ msgid ""
 "time."
 msgstr ""
 "Pertahankan semua langkah alur kerja terjadwal tanpa batas waktu, termasuk "
-"yang ditandai sebagai gagal, selesai, atau dibatalkan. Ini dapat "
-"memengaruhi kinerja basis data seiring waktu."
+"yang ditandai sebagai gagal, selesai, atau dibatalkan. Ini dapat memengaruhi "
+"kinerja basis data seiring waktu."
 
 #: src/Modules/Settings/Controllers/Controller.php:269
 msgid "Retention"
@@ -1275,12 +1262,12 @@ msgstr ""
 msgid "days"
 msgstr "hari"
 
-#: src/Modules/VersionNotices/Module.php:95
 #. translators: %1$s and %2$s are placeholders for the link to by the Pro version
+#: src/Modules/VersionNotices/Module.php:95
 #, php-format
 msgid ""
-"You're using PublishPress Future Free. The Pro version has more features "
-"and support. %1$sUpgrade to Pro%2$s"
+"You're using PublishPress Future Free. The Pro version has more features and "
+"support. %1$sUpgrade to Pro%2$s"
 msgstr "Anda sedang menggunakan PublishPress Future Gratis. Versi Pro memiliki lebih banyak fitur dan dukungan. %1$sUpgrade ke Pro%2$s"
 
 #: src/Modules/Workflows/Controllers/ManualPostTrigger.php:426
@@ -1291,8 +1278,8 @@ msgstr "Pemicu Manual Alur Kerja"
 msgid "Check and warn about past-due actions"
 msgstr "Periksa dan peringatkan tentang tindakan yang telah lewat batas waktu"
 
-#: src/Modules/Workflows/Controllers/PastDueActions.php:148
 #. translators: %s is the admin URL to the scheduled actions page
+#: src/Modules/Workflows/Controllers/PastDueActions.php:148
 #, php-format
 msgid ""
 "You have past-due scheduled actions in PublishPress Future.\n"
@@ -1484,7 +1471,8 @@ msgstr "Tempelkan pos seminggu setelah dipublikasikan"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:80
 msgid "Sample workflow to stick post one week after publishing"
-msgstr "Contoh alur kerja untuk menempelkan pos seminggu setelah dipublikasikan"
+msgstr ""
+"Contoh alur kerja untuk menempelkan pos seminggu setelah dipublikasikan"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:84
 msgid "Unstick post one week after publishing"
@@ -1535,7 +1523,8 @@ msgstr "Memeriksa aksi yang telah kedaluwarsa"
 
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:280
 msgid "Cleaned up orphan workflow scheduled step arguments"
-msgstr "Telah dibersihkan argumen langkah terjadwal alur kerja yang tidak berfungsi"
+msgstr ""
+"Telah dibersihkan argumen langkah terjadwal alur kerja yang tidak berfungsi"
 
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:284
 msgid "Unscheduled workflow recurring scheduled step"
@@ -1571,20 +1560,20 @@ msgstr "Langkah:"
 msgid "Workflow recurring scheduled action"
 msgstr "Aksi terjadwal yang berulang dalam alur kerja"
 
-#: src/Modules/Workflows/Controllers/ScheduledActions.php:508
 #. translators: %1$s is the recurrence, %2$s is the date
+#: src/Modules/Workflows/Controllers/ScheduledActions.php:508
 #, php-format
 msgid "%1$s until %2$s"
 msgstr "%1$s hingga %2$s"
 
-#: src/Modules/Workflows/Controllers/ScheduledActions.php:518
 #. translators: %1$s is the recurrence, %2$d is the repeat times
+#: src/Modules/Workflows/Controllers/ScheduledActions.php:518
 #, php-format
 msgid "%1$s for %2$d times"
 msgstr "%1$s selama %2$d kali"
 
-#: src/Modules/Workflows/Controllers/ScheduledActions.php:528
 #. translators: %1$s is the executed times, %2$d is the total repeat times
+#: src/Modules/Workflows/Controllers/ScheduledActions.php:528
 #, fuzzy, php-format
 msgid "[%1$s/%2$d]"
 msgstr "[%1$s/%2$d]"
@@ -1682,7 +1671,8 @@ msgstr "Terbitkan alur kerja Anda"
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:300
 msgid "When you're ready, click the publish button to make your workflow live."
-msgstr "Ketika Anda siap, klik tombol terbitkan untuk membuat alur kerja Anda aktif."
+msgstr ""
+"Ketika Anda siap, klik tombol terbitkan untuk membuat alur kerja Anda aktif."
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:304
 msgid "Need help?"
@@ -1696,11 +1686,11 @@ msgstr ""
 "Jika Anda memiliki pertanyaan atau membutuhkan bantuan, klik tombol bantuan "
 "di sudut kanan atas untuk mengakses sumber daya dukungan."
 
+#. translators: Blocks tab title in the block inserter.
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:236
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14099
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:19
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11707
-#. translators: Blocks tab title in the block inserter.
 msgid "Triggers"
 msgstr "Pemicu"
 
@@ -1786,8 +1776,8 @@ msgstr "Editor Alur Kerja Tindakan"
 msgid "%s updated."
 msgstr "%s diperbarui."
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:838
 #. translators: 1: Post type singular label, 2: Revision title
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:838
 #, php-format
 msgid "%1$s restored to revision from %2$s"
 msgstr "%1$s dipulihkan ke revisi dari %2$s"
@@ -1807,8 +1797,8 @@ msgstr "%s disimpan."
 msgid "%s submitted."
 msgstr "%s diserahkan."
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:857
 #. translators: 1: Post type singular label, 2: Scheduled date
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:857
 #, php-format
 msgid "%1$s scheduled for: <strong>%2$s</strong>."
 msgstr "%1$s dijadwalkan untuk: <strong>%2$s</strong>."
@@ -2159,8 +2149,8 @@ msgstr "Kondisional"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:37
 msgid ""
-"This step allows you to continue the workflow only if certain conditions "
-"are met. It is not required to have both a True and a False option."
+"This step allows you to continue the workflow only if certain conditions are "
+"met. It is not required to have both a True and a False option."
 msgstr ""
 "Langkah ini memungkinkan Anda untuk melanjutkan alur kerja hanya jika "
 "kondisi tertentu terpenuhi. Tidak diperlukan untuk memiliki opsi True dan "
@@ -2181,7 +2171,8 @@ msgstr "Kondisi"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:74
 msgid "The conditions that must be met for deciding which branch to take."
-msgstr "Kondisi yang harus dipenuhi untuk memutuskan cabang mana yang akan diambil."
+msgstr ""
+"Kondisi yang harus dipenuhi untuk memutuskan cabang mana yang akan diambil."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:124
 msgid "Branch"
@@ -2236,8 +2227,8 @@ msgid ""
 "Choose the manually enabling workflow that will be deactivated for the "
 "selected post."
 msgstr ""
-"Pilih alur kerja yang diaktifkan secara manual yang akan dinonaktifkan "
-"untuk pos yang dipilih."
+"Pilih alur kerja yang diaktifkan secara manual yang akan dinonaktifkan untuk "
+"pos yang dipilih."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeactivatePostWorkflow.php:125
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16035
@@ -2399,8 +2390,7 @@ msgstr "Awalan judul"
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DuplicatePost.php:98
 msgid "Text to add before the original title. Leave empty for no prefix."
 msgstr ""
-"Teks untuk ditambahkan sebelum judul asli. Biarkan kosong untuk tanpa "
-"awalan."
+"Teks untuk ditambahkan sebelum judul asli. Biarkan kosong untuk tanpa awalan."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DuplicatePost.php:99
 msgid "Copy of "
@@ -2614,7 +2604,8 @@ msgstr "PublishPress Workflow: {{global.workflow.title}}"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:22
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:22
-msgid "This is a message sent by PublishPress Workflow: {{global.workflow.title}}."
+msgid ""
+"This is a message sent by PublishPress Workflow: {{global.workflow.title}}."
 msgstr ""
 "Ini adalah pesan yang dikirim oleh PublishPress Workflow: "
 "{{global.workflow.title}}."
@@ -2817,8 +2808,10 @@ msgid "New terms"
 msgstr "Istilah baru"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SetPostTerm.php:83
-msgid "The terms that will be added to the posts after removing all the others."
-msgstr "Istilah yang akan ditambahkan ke pos setelah menghapus semua yang lain."
+msgid ""
+"The terms that will be added to the posts after removing all the others."
+msgstr ""
+"Istilah yang akan ditambahkan ke pos setelah menghapus semua yang lain."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/StickPost.php:32
 msgid "Stick post"
@@ -2841,8 +2834,8 @@ msgid ""
 "Choose the post that will be marked as sticky. You can select a post "
 "variable or enter a post ID."
 msgstr ""
-"Pilih pos yang akan ditandai sebagai tempel. Anda dapat memilih variabel "
-"pos atau memasukkan ID pos."
+"Pilih pos yang akan ditandai sebagai tempel. Anda dapat memilih variabel pos "
+"atau memasukkan ID pos."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UnstickPost.php:32
 msgid "Unstick post"
@@ -2865,8 +2858,8 @@ msgid ""
 "Choose the post that will be unmarked as sticky. You can select a post "
 "variable or enter a post ID."
 msgstr ""
-"Pilih pos yang akan dihapus tanda tempelnya. Anda dapat memilih variabel "
-"pos atau memasukkan ID pos."
+"Pilih pos yang akan dihapus tanda tempelnya. Anda dapat memilih variabel pos "
+"atau memasukkan ID pos."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePost.php:32
 msgid "Update post details"
@@ -3036,15 +3029,17 @@ msgid "Specify the message to be displayed to the responders."
 msgstr "Tentukan pesan yang akan ditampilkan kepada responden."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:97
-msgid "Please select an option to continue the workflow: {{global.workflow.title}}"
-msgstr "Silakan pilih opsi untuk melanjutkan alur kerja: {{global.workflow.title}}"
+msgid ""
+"Please select an option to continue the workflow: {{global.workflow.title}}"
+msgstr ""
+"Silakan pilih opsi untuk melanjutkan alur kerja: {{global.workflow.title}}"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:129
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:201
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10119
 #: assets/jsx/workflow-editor/components/more-menu/menu-dropdown.jsx:11
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7867
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Options"
 msgstr "Opsi"
 
@@ -3127,8 +3122,7 @@ msgstr "Prioritas"
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:84
 msgid "The priority of the action hook. Lower values are executed first."
 msgstr ""
-"Prioritas dari hook aksi. Nilai yang lebih rendah dieksekusi terlebih "
-"dahulu."
+"Prioritas dari hook aksi. Nilai yang lebih rendah dieksekusi terlebih dahulu."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnInit.php:32
 msgid "On site init"
@@ -3147,8 +3141,8 @@ msgid ""
 "This trigger allows users to choose the workflow from the dropdown menu in "
 "the Future Actions options."
 msgstr ""
-"Pemicu ini memungkinkan pengguna untuk memilih alur kerja dari menu "
-"dropdown di opsi Tindakan Masa Depan."
+"Pemicu ini memungkinkan pengguna untuk memilih alur kerja dari menu dropdown "
+"di opsi Tindakan Masa Depan."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnLegacyActionTrigger.php:114
 msgid "Action Post"
@@ -3339,10 +3333,11 @@ msgid "Meta keys"
 msgstr "Kunci meta"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:95
-msgid "This field allow you to choose the post meta that will trigger this action."
+msgid ""
+"This field allow you to choose the post meta that will trigger this action."
 msgstr ""
-"Field ini memungkinkan Anda untuk memilih meta pos yang akan memicu "
-"tindakan ini."
+"Field ini memungkinkan Anda untuk memilih meta pos yang akan memicu tindakan "
+"ini."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:123
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostSave.php:112
@@ -3419,8 +3414,10 @@ msgid "Row Action"
 msgstr "Tindakan Baris"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:92
-msgid "Configure the post row action that will be created in the Posts list screen."
-msgstr "Konfigurasikan tindakan baris pos yang akan dibuat di layar daftar Pos."
+msgid ""
+"Configure the post row action that will be created in the Posts list screen."
+msgstr ""
+"Konfigurasikan tindakan baris pos yang akan dibuat di layar daftar Pos."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:100
 msgid "Action label"
@@ -3561,8 +3558,8 @@ msgstr "Dalam jadwal"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:37
 msgid ""
-"This trigger allows you to run a workflow at a specific time, or relative "
-"to another date. You can also use this trigger to repeat workflows."
+"This trigger allows you to run a workflow at a specific time, or relative to "
+"another date. You can also use this trigger to repeat workflows."
 msgstr ""
 "Pemicu ini memungkinkan Anda menjalankan alur kerja pada waktu tertentu, "
 "atau relatif terhadap tanggal lain. Anda juga dapat menggunakan pemicu ini "
@@ -3629,7 +3626,8 @@ msgid "User Query"
 msgstr "Kueri Pengguna"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:65
-msgid "Specify the criteria for users whose role changes will trigger this action."
+msgid ""
+"Specify the criteria for users whose role changes will trigger this action."
 msgstr ""
 "Tentukan kriteria untuk pengguna yang perubahan perannya akan memicu "
 "tindakan ini."
@@ -3675,7 +3673,8 @@ msgid "The roles that were removed from the user."
 msgstr "Peran yang dihapus dari pengguna."
 
 #: src/Modules/Workflows/Migrations/V040500OnScheduledStepsSchema.php:58
-msgid "Migrate post_id and repetition_number on scheduled steps schema after v4.5.0"
+msgid ""
+"Migrate post_id and repetition_number on scheduled steps schema after v4.5.0"
 msgstr ""
 "Migrasi post_id dan repetition_number pada skema langkah terjadwal setelah "
 "v4.5.0"
@@ -3765,8 +3764,7 @@ msgstr "Alur kerja tidak ditemukan"
 #: src/Modules/Workflows/Rest/RestApiV1.php:390
 msgid "Sorry, you are not allowed to view workflow settings for this post."
 msgstr ""
-"Maaf, Anda tidak diizinkan untuk melihat pengaturan alur kerja untuk pos "
-"ini."
+"Maaf, Anda tidak diizinkan untuk melihat pengaturan alur kerja untuk pos ini."
 
 #: src/Modules/Workflows/Rest/RestApiV1.php:462
 msgid "Flow data must be an array."
@@ -3812,8 +3810,8 @@ msgstr "Lihat Pengetahuan Dasar"
 msgid "Overdue: "
 msgstr "Terlambat: "
 
-#: src/Views/expire-column.php:77
 #. translators: %1$s opens a span tag, %2$s is the action name, %3$s ends a span tag, %4$s is the a span tag, %5$s is the a span tag, %6$s is the a span tag
+#: src/Views/expire-column.php:77
 #, php-format
 msgid "%1$s%2$s%3$s on %5$s%4$s%6$s"
 msgstr "%1$s%2$s%3$s pada %5$s%4$s%6$s"
@@ -3836,7 +3834,8 @@ msgid "Metabox Title"
 msgstr "Judul Metabox"
 
 #: src/Views/menu-admin.php:48
-msgid "The title of the metabox that will be displayed in the post edit screen."
+msgid ""
+"The title of the metabox that will be displayed in the post edit screen."
 msgstr "Judul metabox yang akan ditampilkan di layar pengeditan pos."
 
 #: src/Views/menu-admin.php:57
@@ -3861,8 +3860,7 @@ msgstr "Detail"
 
 #: src/Views/menu-admin.php:96
 msgid ""
-"Displays all information in the Future Action column on the \"Posts\" "
-"screen."
+"Displays all information in the Future Action column on the \"Posts\" screen."
 msgstr "Menampilkan semua informasi di kolom Aksi Masa Depan di layar \"Pos\"."
 
 #: src/Views/menu-admin.php:106
@@ -3904,10 +3902,8 @@ msgstr "24 Jam"
 msgid "AM/PM"
 msgstr "AM/PM"
 
-#: src/Views/menu-admin.php:174
-#: src/Views/menu-advanced.php:99
-#: src/Views/menu-display.php:367
-#: src/Views/menu-general.php:118
+#: src/Views/menu-admin.php:174 src/Views/menu-advanced.php:99
+#: src/Views/menu-display.php:368 src/Views/menu-general.php:118
 #: src/Views/menu-notifications.php:186
 msgid "Save Changes"
 msgstr "Simpan Perubahan"
@@ -3929,8 +3925,8 @@ msgid ""
 "Enable experimental features that are still in development and may not be "
 "fully functional."
 msgstr ""
-"Aktifkan fitur eksperimental yang masih dalam pengembangan dan mungkin "
-"tidak sepenuhnya berfungsi."
+"Aktifkan fitur eksperimental yang masih dalam pengembangan dan mungkin tidak "
+"sepenuhnya berfungsi."
 
 #: src/Views/menu-advanced.php:63
 msgid "Preserve Data After Deactivating the Plugin"
@@ -3945,7 +3941,8 @@ msgid "Delete data"
 msgstr "Hapus data"
 
 #: src/Views/menu-advanced.php:88
-msgid "Toggle between preserving or deleting data after the plugin is deactivated."
+msgid ""
+"Toggle between preserving or deleting data after the plugin is deactivated."
 msgstr ""
 "Beralih antara mempertahankan atau menghapus data setelah plugin "
 "dinonaktifkan."
@@ -3982,34 +3979,34 @@ msgstr "Urutan waktu"
 msgid "Show only requests with trigger activated"
 msgstr "Tampilkan hanya permintaan dengan pemicu diaktifkan"
 
-#: src/Views/menu-debug-log.php:155
 #. translators: %1$d: displayed count, %2$d: filtered total, %3$d: sessions, %4$d: total unfiltered, %5$s: filtered log size, %6$s: total log size.
+#: src/Views/menu-debug-log.php:155
 #, php-format
 msgid ""
 "Showing the latest %1$d of %2$d logs (%3$d sessions). Total in database: "
 "%4$d. Log size: %5$s (total: %6$s)."
 msgstr ""
-"Menampilkan %1$d terbaru dari %2$d log (%3$d sesi). Total di database: "
-"%4$d. Ukuran log: %5$s (total: %6$s)."
+"Menampilkan %1$d terbaru dari %2$d log (%3$d sesi). Total di database: %4$d. "
+"Ukuran log: %5$s (total: %6$s)."
 
-#: src/Views/menu-debug-log.php:165
 #. translators: %1$d: displayed count, %2$d: total count, %3$d: sessions, %4$s: log size.
+#: src/Views/menu-debug-log.php:165
 #, php-format
 msgid "Showing the latest %1$d of %2$d logs (%3$d sessions). Log size: %4$s."
 msgstr "Menampilkan %1$d terbaru dari %2$d log (%3$d sesi). Ukuran log: %4$s."
 
-#: src/Views/menu-debug-log.php:176
 #. translators: %1$d: filtered logs count, %2$d: sessions, %3$d: total unfiltered, %4$s: filtered log size, %5$s: total log size.
+#: src/Views/menu-debug-log.php:176
 #, php-format
 msgid ""
 "Showing all %1$d logs (%2$d sessions). Total in database: %3$d. Log size: "
 "%4$s (total: %5$s)."
 msgstr ""
-"Menampilkan semua %1$d log (%2$d sesi). Total di database: %3$d. Ukuran "
-"log: %4$s (total: %5$s)."
+"Menampilkan semua %1$d log (%2$d sesi). Total di database: %3$d. Ukuran log: "
+"%4$s (total: %5$s)."
 
-#: src/Views/menu-debug-log.php:185
 #. translators: %1$d: total logs count, %2$d: sessions count, %3$s: log size.
+#: src/Views/menu-debug-log.php:185
 #, php-format
 msgid "Showing all %1$d logs (%2$d sessions). Log size: %3$s."
 msgstr "Menampilkan semua %1$d log (%2$d sesi). Ukuran log: %3$s."
@@ -4018,8 +4015,7 @@ msgstr "Menampilkan semua %1$d log (%2$d sesi). Ukuran log: %3$s."
 msgid "Copy Debug Log"
 msgstr "Salin Log Debug"
 
-#: src/Views/menu-debug-log.php:206
-#: assets/js/backupPanel.js:834
+#: src/Views/menu-debug-log.php:206 assets/js/backupPanel.js:834
 #: assets/jsx/backup-panel/components/tabs-content/hooks/export.jsx:76
 #: assets/js/backupPanel.js:667
 msgid "Download"
@@ -4041,8 +4037,7 @@ msgstr "Diagnostik dan Alat Lanjutan"
 msgid "WP-Cron Status Check"
 msgstr "Pemeriksaan Status WP-Cron"
 
-#: src/Views/menu-diagnostics.php:61
-#: src/Views/menu-diagnostics.php:80
+#: src/Views/menu-diagnostics.php:61 src/Views/menu-diagnostics.php:80
 msgid "Passed"
 msgstr "Lulus"
 
@@ -4060,8 +4055,8 @@ msgid ""
 "page load. Use the button below if you still see schema errors."
 msgstr ""
 "Setelah mengaktifkan plugin, tabel akan diperbarui secara otomatis pada "
-"pemuatan halaman berikutnya. Gunakan tombol di bawah jika Anda masih "
-"melihat kesalahan skema."
+"pemuatan halaman berikutnya. Gunakan tombol di bawah jika Anda masih melihat "
+"kesalahan skema."
 
 #: src/Views/menu-diagnostics.php:84
 msgid "Error found on the database schema:"
@@ -4076,10 +4071,8 @@ msgstr "Coba Perbaiki Database"
 msgid "Debug Logging"
 msgstr "Pencatatan Debug"
 
-#: src/Views/menu-diagnostics.php:128
-#: src/Views/menu-display.php:139
-#: src/Views/menu-notifications.php:67
-#: src/Views/menu-notifications.php:95
+#: src/Views/menu-diagnostics.php:128 src/Views/menu-display.php:139
+#: src/Views/menu-notifications.php:67 src/Views/menu-notifications.php:95
 #: src/Views/menu-notifications.php:150
 msgid "Enabled"
 msgstr "Aktif"
@@ -4096,10 +4089,8 @@ msgstr "Bersihkan Log Debug"
 msgid "View Debug Logs"
 msgstr "Tampilkan log debug"
 
-#: src/Views/menu-diagnostics.php:148
-#: src/Views/menu-display.php:150
-#: src/Views/menu-notifications.php:75
-#: src/Views/menu-notifications.php:104
+#: src/Views/menu-diagnostics.php:148 src/Views/menu-display.php:150
+#: src/Views/menu-notifications.php:75 src/Views/menu-notifications.php:104
 #: src/Views/menu-notifications.php:158
 msgid "Disabled"
 msgstr "Nonaktif"
@@ -4150,8 +4141,8 @@ msgstr "Jalankan Migrasi"
 
 #: src/Views/menu-diagnostics.php:191
 msgid ""
-"Migrate legacy future actions from WP Cron to the new Action Scheduler. "
-"This will run in the background and may take a while."
+"Migrate legacy future actions from WP Cron to the new Action Scheduler. This "
+"will run in the background and may take a while."
 msgstr ""
 "Migrasi tindakan masa depan warisan dari WP Cron ke Action Scheduler baru. "
 "Ini akan berjalan di latar belakang dan mungkin memakan waktu."
@@ -4170,9 +4161,9 @@ msgid ""
 "issues with 3rd party plugins that read that data. This will run in the "
 "background and may take a while."
 msgstr ""
-"Kembalikan argumen tindakan warisan sebagai Post Meta. Ini berguna jika "
-"Anda mengalami masalah dengan plugin pihak ketiga yang membaca data "
-"tersebut. Ini akan berjalan di latar belakang dan mungkin memakan waktu."
+"Kembalikan argumen tindakan warisan sebagai Post Meta. Ini berguna jika Anda "
+"mengalami masalah dengan plugin pihak ketiga yang membaca data tersebut. Ini "
+"akan berjalan di latar belakang dan mungkin memakan waktu."
 
 #: src/Views/menu-diagnostics.php:221
 msgid "Legacy Cron Schedule"
@@ -4180,8 +4171,8 @@ msgstr "Jadwal Cron Warisan"
 
 #: src/Views/menu-diagnostics.php:229
 msgid ""
-"The below table will show all currently scheduled cron events for the "
-"plugin with the next run time."
+"The below table will show all currently scheduled cron events for the plugin "
+"with the next run time."
 msgstr ""
 "Tabel di bawah ini akan menampilkan semua peristiwa cron yang dijadwalkan "
 "saat ini untuk plugin dengan waktu eksekusi selanjutnya."
@@ -4206,8 +4197,8 @@ msgstr "Format Default"
 msgid "Date Format"
 msgstr "Format Tanggal"
 
-#: src/Views/menu-display.php:64
 #. translators: %s is a link to the PHP date function documentation
+#: src/Views/menu-display.php:64
 #, php-format
 msgid ""
 "The default format to use when displaying the action date within a post "
@@ -4218,8 +4209,7 @@ msgstr ""
 "suatu pos menggunakan shortcode atau dalam footer. Untuk informasi tentang "
 "opsi pemformatan yang valid, lihat: %s."
 
-#: src/Views/menu-display.php:68
-#: src/Views/menu-display.php:106
+#: src/Views/menu-display.php:68 src/Views/menu-display.php:106
 msgid "PHP Date Function"
 msgstr "Fungsi Tanggal PHP"
 
@@ -4227,8 +4217,8 @@ msgstr "Fungsi Tanggal PHP"
 msgid "Time Format"
 msgstr "Format Waktu"
 
-#: src/Views/menu-display.php:102
 #. translators: %s is a link to the PHP date function documentation
+#: src/Views/menu-display.php:102
 #, php-format
 msgid ""
 "The default format to use when displaying the action time within a post "
@@ -4245,8 +4235,8 @@ msgstr "Penampilan Footer Pos"
 
 #: src/Views/menu-display.php:118
 msgid ""
-"Enabling this below will display the action date automatically at the end "
-"of any post which is set to run an action."
+"Enabling this below will display the action date automatically at the end of "
+"any post which is set to run an action."
 msgstr ""
 "Mengaktifkan ini akan menampilkan otomatis tanggal tindakan di akhir setiap "
 "pos yang diatur untuk menjalankan suatu tindakan."
@@ -4294,16 +4284,16 @@ msgstr "Contoh: "
 msgid "Shortcode"
 msgstr "Shortcode"
 
-#: src/Views/menu-display.php:249
 #. translators: %s is a code tag that wraps the shortcode
+#: src/Views/menu-display.php:249
 #, php-format
 msgid ""
 "Use the %s[futureaction]%s shortcode to show when the future action will "
 "occur. You can add this shortcode anywhere in your post content."
 msgstr ""
 "Gunakan shortcode %s[futureaction]%s untuk menunjukkan kapan aksi mendatang "
-"akan terjadi. Anda dapat menambahkan shortcode ini di mana saja dalam "
-"konten pos Anda."
+"akan terjadi. Anda dapat menambahkan shortcode ini di mana saja dalam konten "
+"pos Anda."
 
 #: src/Views/menu-display.php:259
 msgid "Shortcode Wrapper"
@@ -4311,10 +4301,12 @@ msgstr "Pembungkus Shortcode"
 
 #. translators: This is used to indicate that no wrapper should be used on the shortcode output
 #: src/Views/menu-display.php:266
+#, fuzzy
+#| msgid "— No Change —"
 msgid "— None —"
-msgstr "— Tidak ada —"
+msgstr "— Tanpa Perubahan —"
 
-#: src/Views/menu-display.php:279
+#: src/Views/menu-display.php:280
 msgid ""
 "The shortcode output will be wrapped in the selected HTML tag, allowing you "
 "to control its structure and styling."
@@ -4322,52 +4314,51 @@ msgstr ""
 "Output shortcode akan dibungkus dalam tag HTML yang dipilih, memungkinkan "
 "Anda mengontrol strukturnya dan penataannya."
 
-#: src/Views/menu-display.php:289
+#: src/Views/menu-display.php:290
 msgid "Wrapper Class"
 msgstr "Kelas Pembungkus"
 
-#: src/Views/menu-display.php:295
+#: src/Views/menu-display.php:296
 msgid "Add a CSS class to the wrapper element for custom styling."
 msgstr "Tambahkan kelas CSS ke elemen pembungkus untuk penyesuaian gaya."
 
-#: src/Views/menu-display.php:302
+#: src/Views/menu-display.php:303
 msgid "Attributes"
 msgstr "Atribut"
 
-#: src/Views/menu-display.php:308
 #. translators: %s is the shortcode code wrapped in code tags
+#: src/Views/menu-display.php:309
 #, php-format
 msgid "The following attributes are available for the %s shortcode:"
 msgstr "Atribut berikut tersedia untuk shortcode %s:"
 
-#: src/Views/menu-display.php:315
 #. translators: %s is a code tag that wraps the shortcode attribute name
+#: src/Views/menu-display.php:316
 #, php-format
 msgid "%s - Available options:"
 msgstr "%s - Opsi yang tersedia:"
 
-#: src/Views/menu-display.php:321
 #. translators: %s is a code tag that wraps the shortcode attribute value
+#: src/Views/menu-display.php:322
 #, php-format
 msgid "%s - Displays complete date/time.  Default value."
 msgstr "%s - Menampilkan tanggal/waktu lengkap. Nilai default."
 
-#: src/Views/menu-display.php:327
 #. translators: %s is a code tag that wraps the shortcode attribute value
+#: src/Views/menu-display.php:328
 #, php-format
 msgid "%s - Displays date only"
 msgstr "%s - Menampilkan hanya tanggal"
 
-#: src/Views/menu-display.php:333
 #. translators: %s is a code tag that wraps the shortcode attribute value
+#: src/Views/menu-display.php:334
 #, php-format
 msgid "%s - Displays time only"
 msgstr "%s - Menampilkan hanya waktu"
 
-#: src/Views/menu-display.php:345
-#: src/Views/menu-display.php:353
 #. translators: %s is a code tag that wraps the shortcode attribute dateformat
 #. translators: %s is a code tag that wraps the shortcode attribute timeformat
+#: src/Views/menu-display.php:346 src/Views/menu-display.php:354
 #, php-format
 msgid "%s - Format set here will override the value set on the settings page"
 msgstr ""
@@ -4423,18 +4414,21 @@ msgid "Enable Email Notification?"
 msgstr "Aktifkan Pemberitahuan Email?"
 
 #: src/Views/menu-notifications.php:78
-msgid "This will enable or disable the send of email notification on future action."
+msgid ""
+"This will enable or disable the send of email notification on future action."
 msgstr ""
-"Ini akan mengaktifkan atau menonaktifkan pengiriman pemberitahuan email "
-"pada tindakan masa depan."
+"Ini akan mengaktifkan atau menonaktifkan pengiriman pemberitahuan email pada "
+"tindakan masa depan."
 
 #: src/Views/menu-notifications.php:86
 msgid "Include Blog Administrators?"
 msgstr "Sertakan Administrator Blog?"
 
 #: src/Views/menu-notifications.php:107
-msgid "This will include all users with the role of \"Administrator\" in the email."
-msgstr "Ini akan mencakup semua pengguna dengan peran \"Administrator\" dalam email."
+msgid ""
+"This will include all users with the role of \"Administrator\" in the email."
+msgstr ""
+"Ini akan mencakup semua pengguna dengan peran \"Administrator\" dalam email."
 
 #: src/Views/menu-notifications.php:123
 msgid ""
@@ -4443,22 +4437,20 @@ msgid ""
 "post type specific emails on the Defaults tab."
 msgstr ""
 "Masukkan daftar email yang dipisahkan oleh koma yang ingin Anda dapatkan "
-"pemberitahuan saat tindakan dijalankan. Ini akan diterapkan pada SEMUA "
-"jenis pos. Anda dapat mengatur email spesifik untuk jenis pos pada tab "
-"Default."
+"pemberitahuan saat tindakan dijalankan. Ini akan diterapkan pada SEMUA jenis "
+"pos. Anda dapat mengatur email spesifik untuk jenis pos pada tab Default."
 
 #: src/Views/menu-notifications.php:132
 msgid "Past-due Actions Notification"
 msgstr "Pemberitahuan Aksi Terlambat"
 
-#: src/Views/menu-notifications.php:134
-#: src/Views/menu-notifications.php:161
+#: src/Views/menu-notifications.php:134 src/Views/menu-notifications.php:161
 msgid ""
 "This will enable or disable the send of email notification on past-due "
 "actions."
 msgstr ""
-"Ini akan mengaktifkan atau menonaktifkan pengiriman pemberitahuan email "
-"pada aksi yang terlambat."
+"Ini akan mengaktifkan atau menonaktifkan pengiriman pemberitahuan email pada "
+"aksi yang terlambat."
 
 #: src/Views/menu-notifications.php:142
 msgid "Enable Past-due Actions Notification?"
@@ -4469,70 +4461,58 @@ msgid ""
 "Enter a comma separate list of emails that you would like to be notified "
 "when past-due actions are detected."
 msgstr ""
-"Masukkan daftar email yang dipisahkan dengan koma yang ingin Anda "
-"diberitahu ketika aksi terlambat terdeteksi."
+"Masukkan daftar email yang dipisahkan dengan koma yang ingin Anda diberitahu "
+"ketika aksi terlambat terdeteksi."
 
-#: src/Views/tabs-future-actions.php:20
-#: assets/js/backupPanel.js:649
+#: src/Views/tabs-future-actions.php:20 assets/js/backupPanel.js:649
 #: assets/js/backupPanel.js:1232
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:24
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:104
-#: assets/js/backupPanel.js:500
-#: assets/js/backupPanel.js:912
+#: assets/js/backupPanel.js:500 assets/js/backupPanel.js:912
 msgid "Post Types"
 msgstr "Jenis Pos"
 
-#: src/Views/tabs-future-actions.php:25
-#: assets/js/backupPanel.js:652
+#: src/Views/tabs-future-actions.php:25 assets/js/backupPanel.js:652
 #: assets/js/backupPanel.js:1235
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:28
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:108
-#: assets/js/backupPanel.js:504
-#: assets/js/backupPanel.js:916
+#: assets/js/backupPanel.js:504 assets/js/backupPanel.js:916
 msgid "General"
 msgstr "Umum"
 
-#: src/Views/tabs-future-actions.php:30
-#: assets/js/backupPanel.js:655
+#: src/Views/tabs-future-actions.php:30 assets/js/backupPanel.js:655
 #: assets/js/backupPanel.js:1238
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:32
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:112
-#: assets/js/backupPanel.js:508
-#: assets/js/backupPanel.js:920
+#: assets/js/backupPanel.js:508 assets/js/backupPanel.js:920
 msgid "Notifications"
 msgstr "Pemberitahuan"
 
-#: src/Views/tabs-future-actions.php:35
-#: assets/js/backupPanel.js:658
+#: src/Views/tabs-future-actions.php:35 assets/js/backupPanel.js:658
 #: assets/js/backupPanel.js:1241
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:36
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:116
-#: assets/js/backupPanel.js:512
-#: assets/js/backupPanel.js:924
+#: assets/js/backupPanel.js:512 assets/js/backupPanel.js:924
 msgid "Display"
 msgstr "Tampilan"
 
-#: src/Views/tabs-future-actions.php:40
-#: assets/js/backupPanel.js:661
+#: src/Views/tabs-future-actions.php:40 assets/js/backupPanel.js:661
 #: assets/js/backupPanel.js:1244
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:40
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:120
-#: assets/js/backupPanel.js:516
-#: assets/js/backupPanel.js:928
+#: assets/js/backupPanel.js:516 assets/js/backupPanel.js:928
 #, fuzzy
 msgid "Admin"
 msgstr "Admin"
 
 #: src/Views/tabs-settings.php:23
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11467
-#: assets/js/backupPanel.js:664
-#: assets/js/backupPanel.js:1247
+#: assets/js/backupPanel.js:664 assets/js/backupPanel.js:1247
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:44
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:124
 #: assets/jsx/workflow-editor/components/node-types/generic.jsx:248
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9212
-#: assets/js/backupPanel.js:520
-#: assets/js/backupPanel.js:932
+#: assets/js/backupPanel.js:520 assets/js/backupPanel.js:932
 msgid "Advanced"
 msgstr "Lanjutan"
 
@@ -4613,7 +4593,6 @@ msgstr "Nama argumen hanya boleh mengandung huruf, angka, dan garis bawah."
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:585
 #: assets/jsx/workflow-editor/components/data-fields/action-args/index.jsx:71
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:506
-#, js-format
 msgid "Argument #%s"
 msgstr "Argumen #%s"
 
@@ -4703,14 +4682,12 @@ msgstr "Abaikan notifikasi"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1967
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:67
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1399
-#, js-format
 msgid "Option %s"
 msgstr "Opsi %s"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2004
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:95
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1427
-#, js-format
 msgid "Option #%s"
 msgstr "Opsi #%s"
 
@@ -4729,10 +4706,8 @@ msgstr "Tambahkan opsi baru"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2037
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:132
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1464
-#, js-format
 msgid ""
-"You have reached the maximum number of options. You can add up to %s "
-"options."
+"You have reached the maximum number of options. You can add up to %s options."
 msgstr ""
 "Anda telah mencapai jumlah maksimum opsi. Anda dapat menambahkan hingga %s "
 "opsi."
@@ -4844,7 +4819,6 @@ msgstr "Klik untuk informasi lebih lanjut"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2443
 #: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:197
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1815
-#, js-format
 msgid ""
 "For more information on formatting, see the %sPHP strtotime function%s. For "
 "example, you could enter %s+1 month%s or %s+1 week 2 days 4 hours 2 "
@@ -4915,14 +4889,13 @@ msgstr "Status Post"
 msgid "Post Type"
 msgstr "Tipe Post"
 
+#. translators: %s is the database table name
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2752
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3346
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/column-item.jsx:10
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:10
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2027
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2527
-#. translators: %s is the database table name
-#, js-format
 msgid "Type the %s key and click on the button to insert it."
 msgstr "Ketik kunci %s dan klik tombol untuk memasukkannya."
 
@@ -4979,7 +4952,8 @@ msgstr "Klik dua kali pada variabel untuk memilihnya."
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:219
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2432
 msgid "Double-click on any variable to add it to your expression."
-msgstr "Klik dua kali pada variabel mana saja untuk menambahkannya ke ekspresi Anda."
+msgstr ""
+"Klik dua kali pada variabel mana saja untuk menambahkannya ke ekspresi Anda."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3216
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:231
@@ -5030,11 +5004,10 @@ msgstr "Jumlah"
 msgid "Number of posts assigned to this term."
 msgstr "Jumlah pos yang ditugaskan ke istilah ini."
 
+#. translators: %s is the taxonomy label
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3364
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:38
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2555
-#. translators: %s is the taxonomy label
-#, js-format
 msgid "%s terms for this post."
 msgstr "%s istilah untuk pos ini."
 
@@ -5251,8 +5224,8 @@ msgid ""
 "Visitors can not add new comments or replies. Existing comments remain "
 "visible."
 msgstr ""
-"Pengunjung tidak dapat menambahkan komentar atau balasan baru. Komentar "
-"yang ada tetap terlihat."
+"Pengunjung tidak dapat menambahkan komentar atau balasan baru. Komentar yang "
+"ada tetap terlihat."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4349
 #: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:97
@@ -5412,8 +5385,8 @@ msgstr "Aksi Berulang"
 #: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:131
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4228
 msgid ""
-"Choose how often this task should repeat. Select 'Non-repeating' for a "
-"one-time action or set an interval for automatic recurrence."
+"Choose how often this task should repeat. Select 'Non-repeating' for a one-"
+"time action or set an interval for automatic recurrence."
 msgstr ""
 "Pilih seberapa sering tugas ini harus diulang. Pilih 'Tidak berulang' untuk "
 "aksi satu kali atau atur interval untuk pengulangan otomatis."
@@ -5518,10 +5491,10 @@ msgstr "Pro"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7042
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9283
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11276
-msgid "Currently this step is being skipped. Upgrade to Pro to unlock this feature."
+msgid ""
+"Currently this step is being skipped. Upgrade to Pro to unlock this feature."
 msgstr ""
-"Saat ini langkah ini sedang dilewati. Upgrade ke Pro untuk membuka fitur "
-"ini."
+"Saat ini langkah ini sedang dilewati. Upgrade ke Pro untuk membuka fitur ini."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9610
 #: assets/jsx/workflow-editor/components/layout/header.jsx:129
@@ -5535,34 +5508,34 @@ msgstr "Tambah"
 msgid "Close"
 msgstr "Tutup"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9618
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9621
 #: assets/jsx/workflow-editor/components/layout/header.jsx:140
 #: assets/jsx/workflow-editor/components/layout/header.jsx:145
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7425
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7430
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Auto Layout"
 msgstr "Layout Otomatis"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9628
 #: assets/jsx/workflow-editor/components/layout/header.jsx:157
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7442
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Upgrade to Pro and unlock more features"
 msgstr "Upgrade ke Pro dan buka lebih banyak fitur"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9872
 #: assets/jsx/workflow-editor/components/left-toolbar/redo.jsx:31
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7674
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Redo"
 msgstr "Ulangi"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10045
 #: assets/jsx/workflow-editor/components/left-toolbar/undo.jsx:31
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7823
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Undo"
 msgstr "Batalkan"
 
@@ -5595,6 +5568,13 @@ msgstr "Fitur dinonaktifkan"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7931
 msgid "Feature activated"
 msgstr "Fitur diaktifkan"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10239
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:23
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7974
+msgctxt "noun"
+msgid "View"
+msgstr "Lihat"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10243
 #: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:27
@@ -5630,7 +5610,8 @@ msgstr "Pengaturan Lanjutan"
 #: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:37
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7988
 msgid "Display advanced settings for the workflow, triggers and steps"
-msgstr "Tampilkan pengaturan lanjutan untuk alur kerja, pemicu, dan langkah-langkah"
+msgstr ""
+"Tampilkan pengaturan lanjutan untuk alur kerja, pemicu, dan langkah-langkah"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10253
 #: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:38
@@ -5654,7 +5635,8 @@ msgstr "Tampilkan peta mini"
 #: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:46
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7997
 msgid "Display a mini map in the bottom of the editor, triggers and steps"
-msgstr "Tampilkan peta mini di bagian bawah editor, pemicu, dan langkah-langkah"
+msgstr ""
+"Tampilkan peta mini di bagian bawah editor, pemicu, dan langkah-langkah"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10261
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10268
@@ -5802,7 +5784,6 @@ msgstr "Beberapa elemen yang berbeda dipilih."
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10758
 #: assets/jsx/workflow-editor/components/node-inspector/index.jsx:116
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8445
-#, js-format
 msgid "%d steps selected"
 msgstr "%d langkah dipilih"
 
@@ -5815,7 +5796,6 @@ msgstr "Beberapa langkah dipilih."
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10764
 #: assets/jsx/workflow-editor/components/node-inspector/index.jsx:130
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8459
-#, js-format
 msgid "%d connections selected"
 msgstr "%d koneksi dipilih"
 
@@ -5835,8 +5815,8 @@ msgstr "Koneksi"
 #: assets/jsx/workflow-editor/components/node-inspector/index.jsx:166
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8495
 msgid ""
-"The connection between nodes in the workflow. Signifies the path along "
-"which data or control flow one node to another."
+"The connection between nodes in the workflow. Signifies the path along which "
+"data or control flow one node to another."
 msgstr ""
 "Koneksi antara node dalam alur kerja. Menandakan jalur di mana data atau "
 "kontrol mengalir dari satu node ke node lainnya."
@@ -5922,7 +5902,6 @@ msgstr "Tidak ada deskripsi"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11310
 #: assets/jsx/workflow-editor/components/node-types/generic.jsx:57
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9021
-#, js-format
 msgid "Unknown node: %s"
 msgstr "Node tidak dikenal: %s"
 
@@ -6007,14 +5986,12 @@ msgstr "Semua pemeriksaan telah lulus untuk langkah ini."
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12191
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:122
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9878
-#, js-format
 msgid "The field \"%s\" contains an invalid variable."
 msgstr "Field \"%s\" berisi variabel yang tidak valid."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12192
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:126
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9882
-#, js-format
 msgid ""
 "The variable \"%s\" is not available in the current context. Please, check "
 "if it is spelled correctly."
@@ -6022,11 +5999,10 @@ msgstr ""
 "Variabel \"%s\" tidak tersedia dalam konteks saat ini. Silakan periksa "
 "apakah penulisannya benar."
 
+#. translators: %s is the workflow step slug.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12236
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:181
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9937
-#. translators: %s is the workflow step slug.
-#, js-format
 msgid "\"%s\" is not a variable or step slug."
 msgstr "\"%s\" bukanlah variabel atau slug langkah."
 
@@ -6048,62 +6024,55 @@ msgstr "Placeholder yang tidak ditutup tidak diperbolehkan."
 msgid "Unopened placeholder are not allowed."
 msgstr "Placeholder yang tidak dibuka tidak diperbolehkan."
 
+#. translators: %s is the field label.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12263
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:216
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9972
-#. translators: %s is the field label.
-#, js-format
 msgid "Invalid expression on %s"
 msgstr "Ekspresi tidak valid pada %s"
 
+#. translators: %s is the field label.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12275
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12495
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:232
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:575
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9988
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10331
-#. translators: %s is the field label.
-#, js-format
 msgid "The field %s must be a list of options."
 msgstr "Field %s harus merupakan daftar opsi."
 
+#. translators: %s is the option name.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12297
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:261
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10017
-#. translators: %s is the option name.
-#, js-format
 msgid "The option \"%s\" does not have a name."
 msgstr "Opsi \"%s\" tidak memiliki nama."
 
+#. translators: %s is the option name.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12303
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:270
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10026
-#. translators: %s is the option name.
-#, js-format
 msgid "The option \"%s\" does not have a label."
 msgstr "Opsi \"%s\" tidak memiliki label."
 
+#. translators: %s is the option name.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12309
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:279
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10035
-#. translators: %s is the option name.
-#, js-format
 msgid "The option \"%s\" has a duplicate name."
 msgstr "Opsi \"%s\" memiliki nama duplikat."
 
+#. translators: %s is the option label.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12315
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:288
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10044
-#. translators: %s is the option label.
-#, js-format
 msgid "The option \"%s\" has a duplicate label."
 msgstr "Opsi \"%s\" memiliki label duplikat."
 
+#. translators: %s is the field label.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12325
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:302
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10058
-#. translators: %s is the field label.
-#, js-format
 msgid "The field %s must be a valid list of options."
 msgstr "Field %s harus merupakan daftar opsi yang valid."
 
@@ -6125,21 +6094,18 @@ msgstr "Langkah ini memerlukan koneksi ke langkah berikutnya."
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:428
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10163
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10184
-#, js-format
 msgid "The field %s is required."
 msgstr "Field %s diperlukan."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12429
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:450
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10206
-#, js-format
 msgid "The field %s must be a valid email address."
 msgstr "Field %s harus merupakan alamat email yang valid."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12437
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:466
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10222
-#, js-format
 msgid "The field %s must be a valid email address list separated by commas."
 msgstr ""
 "Field %s harus merupakan daftar alamat email yang valid yang dipisahkan "
@@ -6148,16 +6114,15 @@ msgstr ""
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12443
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:480
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10236
-#, js-format
 msgid "The field %s must be an integer."
 msgstr "Field %s harus merupakan bilangan bulat."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12450
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:495
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10251
-#, js-format
 msgid "The field %s must be an integer list separated by commas."
-msgstr "Field %s harus merupakan daftar bilangan bulat yang dipisahkan dengan koma."
+msgstr ""
+"Field %s harus merupakan daftar bilangan bulat yang dipisahkan dengan koma."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12463
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12467
@@ -6168,21 +6133,18 @@ msgstr "Field %s harus merupakan daftar bilangan bulat yang dipisahkan dengan ko
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10274
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10283
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10292
-#, js-format
 msgid "The field %s must be a list of name-value pairs."
 msgstr "Field %s harus berupa daftar pasangan nama-nilai."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12467
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:528
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10284
-#, js-format
 msgid "The name of the pair is required on item %d."
 msgstr "Nama pasangan diperlukan pada item %d."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12470
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:537
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10293
-#, js-format
 msgid "The value of the pair is required on item %d."
 msgstr "Nilai pasangan diperlukan pada item %d."
 
@@ -6216,11 +6178,10 @@ msgstr "Gunakan tombol panah kiri dan kanan untuk bergerak melalui langkah"
 msgid "No results found."
 msgstr "Tidak ada hasil ditemukan."
 
+#. translators: %d: number of results.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13239
 #: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:101
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10929
-#. translators: %d: number of results.
-#, js-format
 msgid "%d result found."
 msgid_plural "%d results found."
 msgstr[0] "%d hasil ditemukan."
@@ -6243,19 +6204,28 @@ msgstr "Node"
 msgid "A tip for using the workflow editor"
 msgstr "Sebuah tips untuk menggunakan editor alur kerja"
 
+#. translators: %d: Number of blocks.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13627
 #: assets/jsx/workflow-editor/components/secondary-sidebar/node-draggable-chip.jsx:27
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11310
-#. translators: %d: Number of blocks.
-#, js-format
 msgid "%d block"
 msgid_plural "%d blocks"
 msgstr[0] "%d blok"
 
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13793
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13798
+#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:80
+#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:85
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11459
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11464
+msgctxt "nodes"
+msgid "Most used"
+msgstr "Paling banyak digunakan"
+
+#. translators: Patterns tab title in the block inserter.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14104
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:24
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11712
-#. translators: Patterns tab title in the block inserter.
 msgid "Actions"
 msgstr "Tindakan"
 
@@ -6292,7 +6262,8 @@ msgstr ""
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14156
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:18
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11760
-msgid "Double-click the workflow pane to increase the zoom level for a closer look."
+msgid ""
+"Double-click the workflow pane to increase the zoom level for a closer look."
 msgstr ""
 "Klik dua kali pada panel alur kerja untuk meningkatkan tingkat zoom agar "
 "lebih dekat."
@@ -6311,8 +6282,8 @@ msgstr ""
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:26
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11768
 msgid ""
-"Easily add new steps by clicking on a step's handle and dragging it. Drop "
-"it in the workflow pane to see a floating inserter where you can type and "
+"Easily add new steps by clicking on a step's handle and dragging it. Drop it "
+"in the workflow pane to see a floating inserter where you can type and "
 "search for the step you need."
 msgstr ""
 "Dengan mudah tambahkan langkah baru dengan mengklik pegangan langkah dan "
@@ -6325,6 +6296,14 @@ msgstr ""
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11859
 msgid "(no name)"
 msgstr "(tidak ada nama)"
+
+#. translators: Default label for the Workflow sidebar tab, not selected.
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14336
+#: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:23
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11892
+msgctxt "noun"
+msgid "Workflow"
+msgstr "Alur Kerja"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14348
 #: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:37
@@ -6358,8 +6337,8 @@ msgid ""
 "Enable or disable the different types of debug information that is shown in "
 "Ray when this workflow is activated."
 msgstr ""
-"Aktifkan atau nonaktifkan berbagai jenis informasi debug yang ditampilkan "
-"di Ray ketika alur kerja ini diaktifkan."
+"Aktifkan atau nonaktifkan berbagai jenis informasi debug yang ditampilkan di "
+"Ray ketika alur kerja ini diaktifkan."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14756
 #: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:59
@@ -6397,10 +6376,10 @@ msgstr "Apakah Anda yakin ingin menghapus alur kerja ini?"
 msgid "Move to trash"
 msgstr "Pindahkan ke tempat sampah"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14929
 #: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:79
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12407
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Publish"
 msgstr "Terbitkan"
 
@@ -6428,17 +6407,17 @@ msgstr "Memperbarui..."
 msgid "Updated"
 msgstr "Diperbarui"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15086
 #: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:82
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12550
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Save draft"
 msgstr "Simpan draf"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15089
 #: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:85
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12553
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Save"
 msgstr "Simpan"
 
@@ -6629,21 +6608,17 @@ msgstr "atau"
 msgid "Select a .json file"
 msgstr "Pilih file .json"
 
-#: assets/js/backupPanel.js:110
-#: assets/js/backupPanel.js:1283
+#: assets/js/backupPanel.js:110 assets/js/backupPanel.js:1283
 #: assets/jsx/backup-panel/components/file-dropzone/index.jsx:35
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:164
-#: assets/js/backupPanel.js:88
-#: assets/js/backupPanel.js:972
+#: assets/js/backupPanel.js:88 assets/js/backupPanel.js:972
 msgid "Selected file"
 msgstr "File yang dipilih"
 
-#: assets/js/backupPanel.js:110
-#: assets/js/backupPanel.js:1285
+#: assets/js/backupPanel.js:110 assets/js/backupPanel.js:1285
 #: assets/jsx/backup-panel/components/file-dropzone/index.jsx:36
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:165
-#: assets/js/backupPanel.js:89
-#: assets/js/backupPanel.js:973
+#: assets/js/backupPanel.js:89 assets/js/backupPanel.js:973
 msgid "File size"
 msgstr "Ukuran file"
 
@@ -6677,12 +6652,10 @@ msgstr "Memuat item, harap tunggu..."
 msgid "Select the content you want to import."
 msgstr "Pilih konten yang ingin Anda impor."
 
-#: assets/js/backupPanel.js:525
-#: assets/js/backupPanel.js:709
+#: assets/js/backupPanel.js:525 assets/js/backupPanel.js:709
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-import.jsx:83
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:94
-#: assets/js/backupPanel.js:420
-#: assets/js/backupPanel.js:570
+#: assets/js/backupPanel.js:420 assets/js/backupPanel.js:570
 msgid "Action Settings"
 msgstr "Pengaturan Tindakan"
 
@@ -6692,12 +6665,10 @@ msgstr "Pengaturan Tindakan"
 msgid "No workflows or settings found in the file."
 msgstr "Tidak ada alur kerja atau pengaturan yang ditemukan di dalam file."
 
-#: assets/js/backupPanel.js:546
-#: assets/js/backupPanel.js:581
+#: assets/js/backupPanel.js:546 assets/js/backupPanel.js:581
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-import.jsx:110
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-preview.jsx:14
-#: assets/js/backupPanel.js:447
-#: assets/js/backupPanel.js:469
+#: assets/js/backupPanel.js:447 assets/js/backupPanel.js:469
 msgid "Cancel and select a different file"
 msgstr "Batalkan dan pilih file yang berbeda"
 
@@ -6765,30 +6736,22 @@ msgstr "Pilih Konten untuk Diimpor"
 msgid "Raw Data Preview"
 msgstr "Prabaca Data Mentah"
 
-#: assets/js/blockEditor.js:1752
-#: assets/js/bulkEdit.js:1752
-#: assets/js/classicEditor.js:1752
-#: assets/js/quickEdit.js:1752
-#: assets/js/settingsGeneral.js:1752
-#: assets/js/settingsPostTypes.js:1752
+#: assets/js/blockEditor.js:1752 assets/js/bulkEdit.js:1752
+#: assets/js/classicEditor.js:1752 assets/js/quickEdit.js:1752
+#: assets/js/settingsGeneral.js:1752 assets/js/settingsPostTypes.js:1752
 #: assets/jsx/components/PostTypesSettingsPanels.jsx:81
-#: assets/js/blockEditor.js:1587
-#: assets/js/bulkEdit.js:1587
-#: assets/js/classicEditor.js:1587
-#: assets/js/quickEdit.js:1587
-#: assets/js/settingsGeneral.js:1587
-#: assets/js/settingsPostTypes.js:1587
+#: assets/js/blockEditor.js:1587 assets/js/bulkEdit.js:1587
+#: assets/js/classicEditor.js:1587 assets/js/quickEdit.js:1587
+#: assets/js/settingsGeneral.js:1587 assets/js/settingsPostTypes.js:1587
 msgid "Select a post type to edit:"
 msgstr "Pilih tipe pos untuk diedit:"
 
-#: assets/js/legacyAction.js:230
-#: assets/jsx/legacy-action/index.jsx:78
+#: assets/js/legacyAction.js:230 assets/jsx/legacy-action/index.jsx:78
 #: assets/js/legacyAction.js:153
 msgid "Workflow to trigger"
 msgstr "Alur kerja yang akan dipicu"
 
-#: assets/js/legacyAction.js:241
-#: assets/jsx/legacy-action/index.jsx:90
+#: assets/js/legacyAction.js:241 assets/jsx/legacy-action/index.jsx:90
 #: assets/js/legacyAction.js:165
 msgid "No compatible workflows available."
 msgstr "Tidak ada alur kerja yang kompatibel tersedia."
@@ -6799,11 +6762,10 @@ msgstr "Tidak ada alur kerja yang kompatibel tersedia."
 msgid "Change manually enabled workflows"
 msgstr "Ubah alur kerja yang diaktifkan secara manual"
 
+#. translators: %s: Workflow title
 #: assets/js/workflowsListCancelAction.js:702
 #: assets/jsx/workflows-list/cancel-action/index.jsx:59
 #: assets/js/workflowsListCancelAction.js:497
-#. translators: %s: Workflow title
-#, js-format
 msgid ""
 "Are you sure you want to cancel all scheduled actions for the \"%s\" "
 "workflow?"
@@ -6818,31 +6780,5 @@ msgid "Cancel Actions"
 msgstr "Batalkan Tindakan"
 
 #: assets/jsx/workflow-manual-selection/example-extending-with-slot.jsx:48
-#, js-format
 msgid "Enable workflow %s"
 msgstr "Aktifkan alur kerja %s"
-
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10239
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:23
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7974
-msgctxt "noun"
-msgid "View"
-msgstr "Lihat"
-
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14336
-#: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:23
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11892
-#. translators: Default label for the Workflow sidebar tab, not selected.
-msgctxt "noun"
-msgid "Workflow"
-msgstr "Alur Kerja"
-
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13793
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13798
-#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:80
-#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:85
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11459
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11464
-msgctxt "nodes"
-msgid "Most used"
-msgstr "Paling banyak digunakan"

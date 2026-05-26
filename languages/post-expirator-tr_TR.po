@@ -4,47 +4,46 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PublishPress Future Free 4.10.2-rc.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/project\n"
+"POT-Creation-Date: 2026-05-25T21:24:52+00:00\n"
+"PO-Revision-Date: 2026-05-21 14:28+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: tr_TR\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-05-13T18:43:00+00:00\n"
-"PO-Revision-Date: 2026-05-21 14:28+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
-"Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: post-expirator.php:4, fuzzy
 #. Plugin Name of the plugin
+#: post-expirator.php:4
 msgid "PublishPress Future Free"
 msgstr "PublishPress Future Free"
 
-#: post-expirator.php:5, fuzzy
 #. Plugin URI of the plugin
+#: post-expirator.php:5
 msgid "http://wordpress.org/extend/plugins/post-expirator/"
 msgstr "http://wordpress.org/extend/plugins/post-expirator/"
 
-#: post-expirator.php:6
 #. Description of the plugin
+#: post-expirator.php:6
 msgid ""
-"PublishPress Future allows you to schedule automatic changes to posts, "
-"pages and other content types."
+"PublishPress Future allows you to schedule automatic changes to posts, pages "
+"and other content types."
 msgstr "PublishPress Future, gönderilere, sayfalara ve diğer içerik türlerine otomatik değişiklikler planlamanıza olanak tanır."
 
-#: post-expirator.php:7
 #. Author of the plugin
+#: post-expirator.php:7
 msgid "PublishPress"
 msgstr "PublishPress"
 
-#: post-expirator.php:9, fuzzy
 #. Author URI of the plugin
+#: post-expirator.php:9
 msgid "http://publishpress.com"
 msgstr "http://publishpress.com"
 
-#: legacy/classes/Display.class.php:113
-#: legacy/classes/Display.class.php:141
+#: legacy/classes/Display.class.php:113 legacy/classes/Display.class.php:141
 msgid "You do not have permission to configure PublishPress Future."
 msgstr "PublishPress Future'ı yapılandırmak için izniniz yok."
 
@@ -68,7 +67,8 @@ msgstr "Hata Ayıklama Tablosu Boşaltıldı"
 msgid ""
 "The legacy future actions migration has been enqueued and will run "
 "asynchronously."
-msgstr "Eski gelecekteki eylem göçü sıraya alındı ve asenkron olarak çalışacak."
+msgstr ""
+"Eski gelecekteki eylem göçü sıraya alındı ve asenkron olarak çalışacak."
 
 #: legacy/classes/Display.class.php:308
 msgid ""
@@ -83,20 +83,22 @@ msgid "The database schema was fixed."
 msgstr "Veritabanı şeması düzeltildi."
 
 #: legacy/classes/Display.class.php:328
-msgid "The database schema could not be fixed. Please, contact the support team."
-msgstr "Veritabanı şeması düzeltilemedi. Lütfen destek ekibiyle iletişime geçin."
+msgid ""
+"The database schema could not be fixed. Please, contact the support team."
+msgstr ""
+"Veritabanı şeması düzeltilemedi. Lütfen destek ekibiyle iletişime geçin."
 
-#: legacy/classes/Display.class.php:399
-#: legacy/classes/Display.class.php:453
+#: legacy/classes/Display.class.php:399 legacy/classes/Display.class.php:453
 #: legacy/classes/Display.class.php:475
 msgid "Saved Options!"
 msgstr "Kaydedilen Seçenekler!"
 
-#: legacy/classes/Display.class.php:567
 #. translators: %1$s is the plugin name, %2$s is the star rating markup
+#: legacy/classes/Display.class.php:567
 #, php-format
 msgid "If you like %1$s, please leave us a %2$s rating. Thank you!"
-msgstr "Eğer %1$s'yi beğendiyseniz, lütfen bize %2$s puanı bırakın. Teşekkürler!"
+msgstr ""
+"Eğer %1$s'yi beğendiyseniz, lütfen bize %2$s puanı bırakın. Teşekkürler!"
 
 #: legacy/classes/Display.class.php:582
 msgid "About PublishPress Future"
@@ -126,18 +128,15 @@ msgstr "İletişim"
 msgid "No taxonomies found"
 msgstr "Hiçbir taksonomi bulunamadı"
 
-#: services.php:151
-#: src/Modules/Settings/SettingsFacade.php:122, fuzzy
+#: services.php:151 src/Modules/Settings/SettingsFacade.php:122
 msgid "l F jS, Y"
 msgstr "l F jS, Y"
 
-#: services.php:155
-#: src/Modules/Settings/SettingsFacade.php:123, fuzzy
+#: services.php:155 src/Modules/Settings/SettingsFacade.php:123
 msgid "g:ia"
 msgstr "g:ia"
 
-#: services.php:156
-#: src/Modules/Settings/SettingsFacade.php:124
+#: services.php:156 src/Modules/Settings/SettingsFacade.php:124
 msgid "Post expires at EXPIRATIONTIME on ACTIONDATE"
 msgstr "Gönderi, EXPIRATIONTIME tarihinde ACTIONDATE'ye kadar geçerlidir"
 
@@ -161,27 +160,23 @@ msgid "Invalid date time offset"
 msgstr "Geçersiz tarih saat ofseti"
 
 #: src/Modules/Backup/Controllers/BackupAdminPage.php:164
-#: assets/js/backupPanel.js:34
-#: assets/js/backupPanel.js:692
+#: assets/js/backupPanel.js:34 assets/js/backupPanel.js:692
 #: assets/js/backupPanel.js:722
 #: assets/jsx/backup-panel/components/backup-panel.jsx:10
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:77
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:105
-#: assets/js/backupPanel.js:10
-#: assets/js/backupPanel.js:553
+#: assets/js/backupPanel.js:10 assets/js/backupPanel.js:553
 #: assets/js/backupPanel.js:581
 msgid "Export"
 msgstr "Dışa aktar"
 
 #: src/Modules/Backup/Controllers/BackupAdminPage.php:169
-#: assets/js/backupPanel.js:37
-#: assets/js/backupPanel.js:543
+#: assets/js/backupPanel.js:37 assets/js/backupPanel.js:543
 #: assets/js/backupPanel.js:1251
 #: assets/jsx/backup-panel/components/backup-panel.jsx:14
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-import.jsx:106
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:131
-#: assets/js/backupPanel.js:14
-#: assets/js/backupPanel.js:443
+#: assets/js/backupPanel.js:14 assets/js/backupPanel.js:443
 #: assets/js/backupPanel.js:939
 msgid "Import"
 msgstr "İçe aktar"
@@ -214,8 +209,7 @@ msgstr "Geçersiz nonce."
 
 #: src/Modules/Debug/Migrations/V04905DebugLogRequestId.php:80
 msgid ""
-"Add request_id and trigger_activated columns to debug log table after "
-"v4.10.0"
+"Add request_id and trigger_activated columns to debug log table after v4.10.0"
 msgstr ""
 "v4.10.0'dan sonra hata kaydı tablosuna request_id ve trigger_activated "
 "sütunlarını ekleyin"
@@ -223,20 +217,17 @@ msgstr ""
 #: src/Modules/Debug/Migrations/V04906DebugLogTimestampMilliseconds.php:79
 msgid "Add millisecond precision to debug log timestamp column (v4.10.0)"
 msgstr ""
-"v4.10.0'da hata günlüğü zaman damgası sütununa milisaniye hassasiyeti "
-"ekleyin"
+"v4.10.0'da hata günlüğü zaman damgası sütununa milisaniye hassasiyeti ekleyin"
 
 #: src/Modules/Debug/Views/raw-debug-log.html.php:39
 #: src/Modules/Settings/Controllers/Controller.php:215
-#: src/Views/menu-debug-log.php:113
-#: src/Views/menu-debug-log.php:148
+#: src/Views/menu-debug-log.php:113 src/Views/menu-debug-log.php:148
 msgid "Debugging table is currently empty."
 msgstr "Hata ayıklama tablosu şu anda boş."
 
 #: src/Modules/Debug/Views/raw-debug-log.html.php:40
 #: src/Modules/Settings/Controllers/Controller.php:216
-#: src/Views/menu-debug-log.php:115
-#: src/Views/menu-debug-log.php:150
+#: src/Views/menu-debug-log.php:115 src/Views/menu-debug-log.php:150
 msgid "No results match the current filter."
 msgstr "Mevcut filtreye uyan sonuç yok."
 
@@ -259,8 +250,7 @@ msgstr "Taxonomy"
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:131
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:132
 #: src/Modules/Expirator/Controllers/SettingsController.php:544
-#: src/Views/menu-admin.php:44
-#: src/Views/tabs-future-actions.php:51
+#: src/Views/menu-admin.php:44 src/Views/tabs-future-actions.php:51
 msgid "Future Actions"
 msgstr "Gelecek Eylemler"
 
@@ -313,20 +303,20 @@ msgstr "Takvimi Göster"
 msgid "Hide Calendar"
 msgstr "Takvimi Gizle"
 
+#. translators: the text between {} is the link to the settings page.
+#. translators: the text between {{}} is the link to the settings page.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:182
 #: src/Modules/Expirator/Controllers/BulkEditController.php:222
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:423
 #: src/Modules/Expirator/Controllers/QuickEditController.php:352
-#. translators: the text between {} is the link to the settings page.
-#. translators: the text between {{}} is the link to the settings page.
 msgid "Timezone is controlled by the {WordPress Settings}."
 msgstr "Saat dilimi {WordPress Ayarları} tarafından kontrol ediliyor."
 
+#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:189
 #: src/Modules/Expirator/Controllers/BulkEditController.php:229
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:430
 #: src/Modules/Expirator/Controllers/QuickEditController.php:356
-#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "No %s found."
 msgstr "%s bulunamadı."
@@ -340,38 +330,38 @@ msgstr ""
 "Bu özellikten yararlanmak için bu post type'a bir taxonomy atamanız "
 "gerekmektedir."
 
+#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:197
 #: src/Modules/Expirator/Controllers/BulkEditController.php:243
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:438
 #: src/Modules/Expirator/Controllers/QuickEditController.php:361
-#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "New %s"
 msgstr "Yeni %s"
 
+#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:199
 #: src/Modules/Expirator/Controllers/BulkEditController.php:245
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:440
 #: src/Modules/Expirator/Controllers/QuickEditController.php:363
-#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "%s to remove"
 msgstr "%s kaldırmak için"
 
+#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:201
 #: src/Modules/Expirator/Controllers/BulkEditController.php:247
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:442
 #: src/Modules/Expirator/Controllers/QuickEditController.php:365
-#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "%s to add"
 msgstr "%s eklemek için"
 
+#. translators: %s is the name of the taxonomy in singular form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:204
 #: src/Modules/Expirator/Controllers/BulkEditController.php:250
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:445
 #: src/Modules/Expirator/Controllers/QuickEditController.php:367
-#. translators: %s is the name of the taxonomy in singular form.
 #, php-format
 msgid "Search for %s"
 msgstr "%s için ara"
@@ -397,12 +387,12 @@ msgstr "Bir tarih seçin"
 msgid "Date cannot be in the past"
 msgstr "Tarih geçmişte olamaz"
 
+#. translators: %s is the name of the taxonomy in singular form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:212
 #: src/Modules/Expirator/Controllers/BulkEditController.php:258
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:453
 #: src/Modules/Expirator/Controllers/QuickEditController.php:373
 #: src/Modules/Expirator/Controllers/SettingsController.php:298
-#. translators: %s is the name of the taxonomy in singular form.
 #, php-format
 msgid "Please select one or more %s"
 msgstr "Lütfen bir veya daha fazla %s seçin"
@@ -471,8 +461,7 @@ msgstr "Pro'ya Yükselt"
 #: src/Modules/Workflows/Controllers/ManualPostTrigger.php:495
 #: src/Modules/Workflows/Controllers/PostType.php:49
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:181
-#: assets/js/backupPanel.js:512
-#: assets/js/backupPanel.js:698
+#: assets/js/backupPanel.js:512 assets/js/backupPanel.js:698
 #: assets/js/workflowManualSelectionBlockEditor.js:2157
 #: assets/js/workflowManualSelectionBulkEdit.js:167
 #: assets/js/workflowManualSelectionQuickEdit.js:2217
@@ -481,14 +470,14 @@ msgstr "Pro'ya Yükselt"
 #: assets/jsx/workflow-manual-selection/block-editor/index.jsx:49
 #: assets/jsx/workflow-manual-selection/bulk-edit/fieldset.jsx:88
 #: assets/jsx/workflow-manual-selection/quick-edit/index.jsx:75
-#: assets/js/backupPanel.js:405
-#: assets/js/backupPanel.js:559
+#: assets/js/backupPanel.js:405 assets/js/backupPanel.js:559
 #: assets/js/workflowManualSelectionBlockEditor.js:1629
 #: assets/js/workflowManualSelectionBulkEdit.js:114
 #: assets/js/workflowManualSelectionQuickEdit.js:1694
 msgid "Action Workflows"
 msgstr "Eylem İş Akışları"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: src/Modules/Expirator/Controllers/PluginsListController.php:70
 #: src/Modules/Expirator/Controllers/SettingsController.php:132
 #: src/Modules/Expirator/Controllers/SettingsController.php:133
@@ -498,7 +487,6 @@ msgstr "Eylem İş Akışları"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14436
 #: assets/jsx/workflow-editor/components/settings-sidebar/settings-sidebar.jsx:54
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11976
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Settings"
 msgstr "Ayarlar"
 
@@ -549,9 +537,9 @@ msgstr "Uygulanan eylem: %s (ID: %d)"
 msgid "Executed scheduled action"
 msgstr "Planlı eylem uygulandı"
 
+#. translators: %1$s is the link to the PHP strtotime function documentation, %2$s and %3$s are the opening and closing code tags. Please, do not translate the date format text, since PHP will not be able to calculate using non-english terms.
 #: src/Modules/Expirator/Controllers/SettingsController.php:252
 #: src/Views/menu-general.php:41
-#. translators: %1$s is the link to the PHP strtotime function documentation, %2$s and %3$s are the opening and closing code tags. Please, do not translate the date format text, since PHP will not be able to calculate using non-english terms.
 #, php-format
 msgid ""
 "Set the offset to use for the default action date and time. For information "
@@ -560,8 +548,8 @@ msgid ""
 "use only terms in English."
 msgstr ""
 "Varsayılan eylem tarihi ve saatini kullanmak için ofseti ayarlayın. "
-"Biçimlendirme hakkında bilgi için %1$s'ye bakın. Örneğin, %2$s+1 ay%3$s "
-"veya %2$s+1 hafta 2 gün 4 saat 2 saniye%3$s veya %2$sgelecek Perşembe%3$s "
+"Biçimlendirme hakkında bilgi için %1$s'ye bakın. Örneğin, %2$s+1 ay%3$s veya "
+"%2$s+1 hafta 2 gün 4 saat 2 saniye%3$s veya %2$sgelecek Perşembe%3$s "
 "girebilirsiniz. Lütfen sadece İngilizce terimler kullanın."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:262
@@ -620,8 +608,7 @@ msgstr ""
 "olmayacaktır."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:282
-#: src/Views/menu-notifications.php:116
-#: src/Views/menu-notifications.php:169
+#: src/Views/menu-notifications.php:116 src/Views/menu-notifications.php:169
 msgid "Who to Notify"
 msgstr "Bildirim Gönderecek Kişi"
 
@@ -741,11 +728,11 @@ msgstr "Sütun argümanlarının uzunluğu 1000'e güncellenmedi."
 msgid "Status didn't change."
 msgstr "Durum değişmedi."
 
+#. translators: 1: old post status, 2: new post status
 #: src/Modules/Expirator/ExpirationActions/ChangePostStatus.php:62
 #: src/Modules/Expirator/ExpirationActions/PostStatusToDraft.php:60
 #: src/Modules/Expirator/ExpirationActions/PostStatusToPrivate.php:60
 #: src/Modules/Expirator/ExpirationActions/PostStatusToTrash.php:60
-#. translators: 1: old post status, 2: new post status
 #, php-format
 msgid "Status has been successfully changed from \"%1$s\" to \"%2$s\"."
 msgstr "Durum başarıyla \"%1$s\"dan \"%2$s\"ya değiştirildi."
@@ -754,14 +741,14 @@ msgstr "Durum başarıyla \"%1$s\"dan \"%2$s\"ya değiştirildi."
 msgid "Change status"
 msgstr "Durumu değiştir"
 
-#: src/Modules/Expirator/ExpirationActions/DeletePost.php:47
 #. translators: %s: post type singular label
+#: src/Modules/Expirator/ExpirationActions/DeletePost.php:47
 #, php-format
 msgid "%s was not deleted."
 msgstr "%s silinmedi."
 
-#: src/Modules/Expirator/ExpirationActions/DeletePost.php:54
 #. translators: %s: post type singular label
+#: src/Modules/Expirator/ExpirationActions/DeletePost.php:54
 #, php-format
 msgid "%s has been successfully deleted."
 msgstr "%s başarıyla silindi."
@@ -777,96 +764,96 @@ msgstr "%s başarıyla silindi."
 msgid "Delete"
 msgstr "Sil"
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:65
 #. translators: %s is the post type singular label
+#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:65
 #, php-format
 msgid "No terms were added to the %s."
 msgstr "%s için hiçbir terim eklenmedi."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:77
 #. translators: %1$s is the taxonomy label, %2$s is the post type singular label, %3$s is the list of terms added, %4$s is the list of terms on the post
+#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:77
 #, php-format
 msgid ""
 "The following terms (%1$s) were added to the %2$s: \"%3$s\". The full list "
 "of terms on the post is: %4$s."
 msgstr "Aşağıdaki terimler (%1$s) %2$s'ten kaldırıldı: %3$s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:120
 #. translators: %s is the taxonomy name (plural)
+#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:120
 #, php-format
 msgid "Add extra %s"
 msgstr "Ekstra %s ekle"
 
+#. translators: %s is the post type singular label
 #: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:56
 #: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:56
-#. translators: %s is the post type singular label
 #, php-format
 msgid "No terms were removed from the %s."
 msgstr "%s için hiçbir terim kaldırılmadı."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:67
 #. translators: %1$s is the taxonomy name, %2$s is the post type singular label, %3$s is the removed terms list, %4$s is the updated terms list
+#: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:67
 #, php-format
 msgid ""
-"The following terms (%1$s) were removed from the %2$s: %3$s. The new list "
-"of terms on the post is: %4$s."
+"The following terms (%1$s) were removed from the %2$s: %3$s. The new list of "
+"terms on the post is: %4$s."
 msgstr "Aşağıdaki terimler (%1$s) %2$s'ten kaldırıldı: %3$s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:112
 #. translators: %s is the taxonomy name (plural)
+#: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:112
 #, php-format
 msgid "Remove selected %s"
 msgstr "Seçili %s'yi kaldır"
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:67
 #. translators: %1$s is the taxonomy name, %2$s is the post type singular label, %3$s is the list of term names
+#: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:67
 #, php-format
 msgid "The following terms (%1$s) were removed from the %2$s: %3$s."
 msgstr "Aşağıdaki terimler (%1$s) %2$s'ten kaldırıldı: %3$s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:106
 #. translators: %s is the taxonomy name (plural)
+#: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:106
 #, php-format
 msgid "Remove all %s"
 msgstr "Tüm %s'yi kaldır"
 
-#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:58
 #. translators: %s is the post type singular label
+#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:58
 #, php-format
 msgid "No terms were changed on the %s."
 msgstr "%s üzerinde hiçbir terim değiştirildi."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:69
 #. translators: 1: taxonomy name, 2: post type singular label, 3: updated terms, 4: original terms
+#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:69
 #, php-format
 msgid ""
 "The following terms (%1$s) were set to the %2$s: \"%3$s\". The old list of "
 "terms on the post was: %4$s."
 msgstr "Aşağıdaki terimler (%1$s) %2$s'ten kaldırıldı: %3$s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:109
 #. translators: %s is the taxonomy name (plural)
+#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:109
 #, php-format
 msgid "Replace all %s"
 msgstr "Tüm %s'yi değiştir"
 
+#. translators: %s: new post status
 #: src/Modules/Expirator/ExpirationActions/PostStatusToDraft.php:90
 #: src/Modules/Expirator/ExpirationActions/PostStatusToPrivate.php:90
 #: src/Modules/Expirator/ExpirationActions/PostStatusToTrash.php:90
-#. translators: %s: new post status
 #, php-format
 msgid "Change status to %s"
 msgstr "%s'ye durumu değiştir"
 
+#. translators: %s: post type singular label
 #: src/Modules/Expirator/ExpirationActions/StickPost.php:46
 #: src/Modules/Expirator/ExpirationActions/UnstickPost.php:46
-#. translators: %s: post type singular label
 #, php-format
 msgid "%s didn't change."
 msgstr "%s değişmedi."
 
-#: src/Modules/Expirator/ExpirationActions/StickPost.php:53
 #. translators: %s: post type singular label
+#: src/Modules/Expirator/ExpirationActions/StickPost.php:53
 #, php-format
 msgid "%s has been added to stickies list."
 msgstr "%s notlar listesine eklendi."
@@ -875,8 +862,8 @@ msgstr "%s notlar listesine eklendi."
 msgid "Stick"
 msgstr "Yapıştır"
 
-#: src/Modules/Expirator/ExpirationActions/UnstickPost.php:53
 #. translators: %s: post type singular label
+#: src/Modules/Expirator/ExpirationActions/UnstickPost.php:53
 #, php-format
 msgid "%s has been removed from stickies list."
 msgstr "%s notlar listesinden kaldırıldı."
@@ -921,26 +908,26 @@ msgstr "E-posta gönderildi."
 msgid "Email not sent."
 msgstr "E-posta gönderilmedi."
 
-#: src/Modules/Expirator/Models/ExpirablePostModel.php:644
 #. translators: %1$s: post title placeholder, %2$s: notification text, %3$s: action date placeholder, %4$s: post link placeholder
+#: src/Modules/Expirator/Models/ExpirablePostModel.php:644
 #, php-format
 msgid "%1$s. %2$s on %3$s. The post link is %4$s"
 msgstr "%1$s. %2$s tarihinde %3$s. Gönderi bağlantısı %4$s"
 
-#: src/Modules/Expirator/Models/ExpirablePostModel.php:662
 #. translators: %s is the post title
+#: src/Modules/Expirator/Models/ExpirablePostModel.php:662
 #, php-format
 msgid "Future Action Complete \"%s\""
 msgstr "Gelecek Eylem Tamamlandı \"%s\""
 
-#: src/Modules/Expirator/Models/ExpirablePostModel.php:666
 #. translators: 1: is the blog name, 2: the email subject
+#: src/Modules/Expirator/Models/ExpirablePostModel.php:666
 #, fuzzy, php-format
 msgid "[%1$s] %2$s"
 msgstr "[%1$s] %2$s"
 
-#: src/Modules/Expirator/Models/PostTypeDefaultDataModel.php:156
 #. translators: %s is the date/time offset and %s is the post type.
+#: src/Modules/Expirator/Models/PostTypeDefaultDataModel.php:156
 #, php-format
 msgid ""
 "Invalid date/time offset \"%s\" for post type \"%s\". Please ensure you use "
@@ -986,7 +973,8 @@ msgid "Cancel"
 msgstr "İptal"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:77
-msgid "Cancel the action. This will prevent the action from running in the future"
+msgid ""
+"Cancel the action. This will prevent the action from running in the future"
 msgstr "Eylemi iptal et. Bu, eylemin gelecekte çalışmasını engelleyecektir"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:88
@@ -994,56 +982,56 @@ msgstr "Eylemi iptal et. Bu, eylemin gelecekte çalışmasını engelleyecektir"
 msgid "Run"
 msgstr "Çalıştır"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:96
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:96
 #, php-format
 msgid "%s year"
 msgid_plural "%s years"
 msgstr[0] "%s yıl"
 msgstr[1] "%s yıl"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:101
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:101
 #, php-format
 msgid "%s month"
 msgid_plural "%s months"
 msgstr[0] "%s ay"
 msgstr[1] "%s ay"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:106
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:106
 #, php-format
 msgid "%s week"
 msgid_plural "%s weeks"
 msgstr[0] "%s hafta"
 msgstr[1] "%s hafta"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:111
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:111
 #, php-format
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] "%s gün"
 msgstr[1] "%s gün"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:116
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:116
 #, php-format
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] "%s saat"
 msgstr[1] "%s saat"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:121
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:121
 #, php-format
 msgid "%s minute"
 msgid_plural "%s minutes"
 msgstr[0] "%s dakika"
 msgstr[1] "%s dakika"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:126
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:126
 #, php-format
 msgid "%s second"
 msgid_plural "%s seconds"
@@ -1095,20 +1083,20 @@ msgstr "Tamamlandı"
 msgid "Process the action now"
 msgstr "Eylemi şimdi işle"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:524
 #. translators: %1$s: post type label, %2$d: post ID, %3$s: post link tag start, %4$s: post title, %5$s: post link tag end
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:524
 #, fuzzy, php-format
 msgid "%1$s: [%2$d] %3$s%4$s%5$s"
 msgstr "%1$s: [%2$d] %3$s%4$s%5$s"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:559
 #. translators: %s is the new status
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:559
 #, php-format
 msgid "New Status: %s"
 msgstr "Yeni Durum: %s"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:567
 #. translators: %s is the list of terms
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:567
 #, php-format
 msgid "Terms: %s"
 msgstr "Terimler: %s"
@@ -1157,14 +1145,14 @@ msgstr "Mesaj"
 msgid "Async"
 msgstr "Asenkron"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:765
 #. translators: %s is the date interval in human readable format in the past
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:765
 #, php-format
 msgid " (%s ago)"
 msgstr " (%s önce)"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:771
 #. translators: %s is the date interval in human readable format in the present or future
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:771
 #, fuzzy, php-format
 msgid " (%s)"
 msgstr " (%s)"
@@ -1173,8 +1161,8 @@ msgstr " (%s)"
 msgid "Now!"
 msgstr "Şimdi!"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:845
 #. translators: %s: time interval
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:845
 #, php-format
 msgid "Every %s"
 msgstr "Her %s"
@@ -1262,12 +1250,12 @@ msgstr ""
 msgid "days"
 msgstr "gün"
 
-#: src/Modules/VersionNotices/Module.php:95
 #. translators: %1$s and %2$s are placeholders for the link to by the Pro version
+#: src/Modules/VersionNotices/Module.php:95
 #, php-format
 msgid ""
-"You're using PublishPress Future Free. The Pro version has more features "
-"and support. %1$sUpgrade to Pro%2$s"
+"You're using PublishPress Future Free. The Pro version has more features and "
+"support. %1$sUpgrade to Pro%2$s"
 msgstr "PublishPress Future Ücretsiz sürümünü kullanıyorsunuz. Pro sürüm daha fazla özellik ve destek sunmaktadır. %1$sPro'ya Geçin%2$s"
 
 #: src/Modules/Workflows/Controllers/ManualPostTrigger.php:426
@@ -1278,8 +1266,8 @@ msgstr "İş Akışı Manuel Tetikleme"
 msgid "Check and warn about past-due actions"
 msgstr "Geçmişteki gecikmiş eylemleri kontrol et ve uyar"
 
-#: src/Modules/Workflows/Controllers/PastDueActions.php:148
 #. translators: %s is the admin URL to the scheduled actions page
+#: src/Modules/Workflows/Controllers/PastDueActions.php:148
 #, php-format
 msgid ""
 "You have past-due scheduled actions in PublishPress Future.\n"
@@ -1397,7 +1385,8 @@ msgstr "Bir hafta sonra Taslak'a yayımlamayı kaldır"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:40
 msgid "Change the post status to Draft a week after it was published."
-msgstr "Gönderi yayımlandıktan bir hafta sonra durumunu Taslak olarak değiştir."
+msgstr ""
+"Gönderi yayımlandıktan bir hafta sonra durumunu Taslak olarak değiştir."
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:44
 msgid "Unpublish and change category after 15 days"
@@ -1422,8 +1411,7 @@ msgstr "Yayımlandıktan bir hafta sonra durumu taslağa değiştir"
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:55
 msgid "Sample workflow to change status to draft one week after publishing"
 msgstr ""
-"Yayımlandıktan bir hafta sonra durumu taslağa değiştirmek için örnek iş "
-"akışı"
+"Yayımlandıktan bir hafta sonra durumu taslağa değiştirmek için örnek iş akışı"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:59
 msgid "Delete post one week after publishing"
@@ -1440,8 +1428,7 @@ msgstr "Yayımlandıktan bir hafta sonra tüm kategorileri kaldır"
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:65
 msgid "Sample workflow to remove all categories one week after publishing"
 msgstr ""
-"Yayımlandıktan bir hafta sonra tüm kategorileri kaldırmak için örnek iş "
-"akışı"
+"Yayımlandıktan bir hafta sonra tüm kategorileri kaldırmak için örnek iş akışı"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:69
 msgid "Remove selected categories one week after publishing"
@@ -1469,7 +1456,8 @@ msgstr "Yayımlandıktan bir hafta sonra gönderiyi sabitle"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:80
 msgid "Sample workflow to stick post one week after publishing"
-msgstr "Yayımlandıktan bir hafta sonra gönderiyi sabitlemek için örnek iş akışı"
+msgstr ""
+"Yayımlandıktan bir hafta sonra gönderiyi sabitlemek için örnek iş akışı"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:84
 msgid "Unstick post one week after publishing"
@@ -1556,20 +1544,20 @@ msgstr "Adımlar:"
 msgid "Workflow recurring scheduled action"
 msgstr "İş akışı tekrar eden zamanlanmış eylem"
 
-#: src/Modules/Workflows/Controllers/ScheduledActions.php:508
 #. translators: %1$s is the recurrence, %2$s is the date
+#: src/Modules/Workflows/Controllers/ScheduledActions.php:508
 #, php-format
 msgid "%1$s until %2$s"
 msgstr "%1$s tarihine kadar %2$s"
 
-#: src/Modules/Workflows/Controllers/ScheduledActions.php:518
 #. translators: %1$s is the recurrence, %2$d is the repeat times
+#: src/Modules/Workflows/Controllers/ScheduledActions.php:518
 #, php-format
 msgid "%1$s for %2$d times"
 msgstr "%1$s için %2$d kez"
 
-#: src/Modules/Workflows/Controllers/ScheduledActions.php:528
 #. translators: %1$s is the executed times, %2$d is the total repeat times
+#: src/Modules/Workflows/Controllers/ScheduledActions.php:528
 #, fuzzy, php-format
 msgid "[%1$s/%2$d]"
 msgstr "[%1$s/%2$d]"
@@ -1610,8 +1598,8 @@ msgid ""
 "Every workflow requires at least two steps connected to each other: one "
 "trigger and one action."
 msgstr ""
-"Her iş akışı, birbirine bağlı en az iki adıma ihtiyaç duyar: bir "
-"tetikleyici ve bir eylem."
+"Her iş akışı, birbirine bağlı en az iki adıma ihtiyaç duyar: bir tetikleyici "
+"ve bir eylem."
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:279
 msgid "Add steps to your workflow"
@@ -1681,15 +1669,15 @@ msgstr ""
 "Herhangi bir sorunuz varsa veya yardıma ihtiyacınız varsa, destek "
 "kaynaklarına erişmek için sağ üst köşedeki yardım butonuna tıklayın."
 
+#. translators: Blocks tab title in the block inserter.
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:236
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14099
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:19
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11707
-#. translators: Blocks tab title in the block inserter.
 msgid "Triggers"
 msgstr "Tetikleyiciler"
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:280, fuzzy
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:280
 msgid "—"
 msgstr "—"
 
@@ -1770,8 +1758,8 @@ msgstr "Eylem İş Akışı Düzenleyicisi"
 msgid "%s updated."
 msgstr "%s güncellendi."
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:838
 #. translators: 1: Post type singular label, 2: Revision title
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:838
 #, php-format
 msgid "%1$s restored to revision from %2$s"
 msgstr "%1$s, %2$s tarihinden revizyona geri yüklendi"
@@ -1791,8 +1779,8 @@ msgstr "%s kaydedildi."
 msgid "%s submitted."
 msgstr "%s gönderildi."
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:857
 #. translators: 1: Post type singular label, 2: Scheduled date
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:857
 #, php-format
 msgid "%1$s scheduled for: <strong>%2$s</strong>."
 msgstr "%1$s için planlandı: <strong>%2$s</strong>."
@@ -1873,7 +1861,7 @@ msgstr "Meta eklenecek gönderiyi seçin."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:85
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeletePostMeta.php:85
-#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePostMeta.php:85, fuzzy
+#: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePostMeta.php:85
 msgid "Meta"
 msgstr "Meta"
 
@@ -1987,7 +1975,7 @@ msgstr "Bu adım için giriş verisi."
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:160
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeletePostMeta.php:153
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePostMeta.php:153
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:159, fuzzy
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:159
 msgid "Meta ID"
 msgstr "Meta ID"
 
@@ -2140,8 +2128,8 @@ msgstr "Koşullu"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:37
 msgid ""
-"This step allows you to continue the workflow only if certain conditions "
-"are met. It is not required to have both a True and a False option."
+"This step allows you to continue the workflow only if certain conditions are "
+"met. It is not required to have both a True and a False option."
 msgstr ""
 "Bu adım, yalnızca belirli koşullar sağlandığında iş akışına devam etmenizi "
 "sağlar. Hem True hem de False seçeneğine sahip olmak zorunlu değildir."
@@ -2161,7 +2149,8 @@ msgstr "Koşullar"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:74
 msgid "The conditions that must be met for deciding which branch to take."
-msgstr "Hangi dalın seçileceğini belirlemek için karşılanması gereken koşullar."
+msgstr ""
+"Hangi dalın seçileceğini belirlemek için karşılanması gereken koşullar."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:124
 msgid "Branch"
@@ -2192,8 +2181,8 @@ msgid ""
 "This step enables you to deactivate the \"Manually enabled via checkbox\" "
 "workflow after use."
 msgstr ""
-"Bu adım, kullanımdan sonra \"Onay kutusu ile manuel olarak "
-"etkinleştirildi\" iş akışını devre dışı bırakmanıza olanak tanır."
+"Bu adım, kullanımdan sonra \"Onay kutusu ile manuel olarak etkinleştirildi\" "
+"iş akışını devre dışı bırakmanıza olanak tanır."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeactivatePostWorkflow.php:68
 msgid "Select which post will have its workflow deactivated."
@@ -2495,8 +2484,8 @@ msgid ""
 "or relative to another date. You can also use this step to repeat the next "
 "part of the workflow."
 msgstr ""
-"Bu adım, bir iş akışının bir sonraki bölümünü belirli bir zamanda veya "
-"başka bir tarihe göre çalıştırmanıza olanak tanır. Bu adımı iş akışının bir "
+"Bu adım, bir iş akışının bir sonraki bölümünü belirli bir zamanda veya başka "
+"bir tarihe göre çalıştırmanıza olanak tanır. Bu adımı iş akışının bir "
 "sonraki bölümünü tekrarlamak için de kullanabilirsiniz."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:67
@@ -2595,7 +2584,8 @@ msgstr "PublishPress İş Akışı: {{global.workflow.title}}"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:22
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:22
-msgid "This is a message sent by PublishPress Workflow: {{global.workflow.title}}."
+msgid ""
+"This is a message sent by PublishPress Workflow: {{global.workflow.title}}."
 msgstr ""
 "Bu, PublishPress İş Akışı tarafından gönderilen bir mesajdır: "
 "{{global.workflow.title}}."
@@ -2792,8 +2782,10 @@ msgid "New terms"
 msgstr "Yeni terimler"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SetPostTerm.php:83
-msgid "The terms that will be added to the posts after removing all the others."
-msgstr "Diğer tüm terimler kaldırıldıktan sonra gönderilere eklenecek terimler."
+msgid ""
+"The terms that will be added to the posts after removing all the others."
+msgstr ""
+"Diğer tüm terimler kaldırıldıktan sonra gönderilere eklenecek terimler."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/StickPost.php:32
 msgid "Stick post"
@@ -2999,25 +2991,26 @@ msgid ""
 "A comma-separated list of user names, ids, emails or user roles that can "
 "interact with this step."
 msgstr ""
-"Bu adım ile etkileşimde bulunabilecek kullanıcı adlarının, kimliklerinin, "
-"e-postalarının veya kullanıcı rollerinin virgülle ayrılmış bir listesidir."
+"Bu adım ile etkileşimde bulunabilecek kullanıcı adlarının, kimliklerinin, e-"
+"postalarının veya kullanıcı rollerinin virgülle ayrılmış bir listesidir."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:82
 msgid "Specify the message to be displayed to the responders."
 msgstr "Yanıtlayıcılara gösterilecek mesajı belirtin."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:97
-msgid "Please select an option to continue the workflow: {{global.workflow.title}}"
+msgid ""
+"Please select an option to continue the workflow: {{global.workflow.title}}"
 msgstr ""
 "İş akışına devam etmek için lütfen bir seçenek seçin: "
 "{{global.workflow.title}}"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:129
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:201
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10119
 #: assets/jsx/workflow-editor/components/more-menu/menu-dropdown.jsx:11
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7867
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Options"
 msgstr "Seçenekler"
 
@@ -3310,8 +3303,10 @@ msgid "Meta keys"
 msgstr "Meta anahtarları"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:95
-msgid "This field allow you to choose the post meta that will trigger this action."
-msgstr "Bu alan, bu eylemi tetikleyecek gönderi metasını seçmenize olanak tanır."
+msgid ""
+"This field allow you to choose the post meta that will trigger this action."
+msgstr ""
+"Bu alan, bu eylemi tetikleyecek gönderi metasını seçmenize olanak tanır."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:123
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostSave.php:112
@@ -3388,7 +3383,8 @@ msgid "Row Action"
 msgstr "Satır Eylemi"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:92
-msgid "Configure the post row action that will be created in the Posts list screen."
+msgid ""
+"Configure the post row action that will be created in the Posts list screen."
 msgstr ""
 "Gönderiler listesi ekranında oluşturulacak gönderi satırı eylemini "
 "yapılandırın."
@@ -3531,12 +3527,12 @@ msgstr "Planlı"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:37
 msgid ""
-"This trigger allows you to run a workflow at a specific time, or relative "
-"to another date. You can also use this trigger to repeat workflows."
+"This trigger allows you to run a workflow at a specific time, or relative to "
+"another date. You can also use this trigger to repeat workflows."
 msgstr ""
 "Bu tetikleyici, belirli bir zamanda veya başka bir tarihe göre bir iş akışı "
-"çalıştırmanıza olanak tanır. İş akışlarını tekrarlamak için bu "
-"tetikleyiciyi de kullanabilirsiniz."
+"çalıştırmanıza olanak tanır. İş akışlarını tekrarlamak için bu tetikleyiciyi "
+"de kullanabilirsiniz."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:65
 msgid "Choose a schedule to activate the workflow."
@@ -3556,7 +3552,8 @@ msgstr "Gönderiye terimler eklendi"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnTermsAdded.php:37
 msgid "This trigger activates when taxonomy terms are added to a post."
-msgstr "Bu tetikleyici, bir gönderiye taksonomi terimleri eklendiğinde etkinleşir."
+msgstr ""
+"Bu tetikleyici, bir gönderiye taksonomi terimleri eklendiğinde etkinleşir."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnTermsAdded.php:88
 msgid "Terms Filter"
@@ -3599,7 +3596,8 @@ msgid "User Query"
 msgstr "Kullanıcı Sorgusu"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:65
-msgid "Specify the criteria for users whose role changes will trigger this action."
+msgid ""
+"Specify the criteria for users whose role changes will trigger this action."
 msgstr ""
 "Rol değişikliklerinin bu işlemi tetikleyeceği kullanıcılar için kriterleri "
 "belirtin."
@@ -3645,7 +3643,8 @@ msgid "The roles that were removed from the user."
 msgstr "Kullanıcıdan kaldırılan roller."
 
 #: src/Modules/Workflows/Migrations/V040500OnScheduledStepsSchema.php:58
-msgid "Migrate post_id and repetition_number on scheduled steps schema after v4.5.0"
+msgid ""
+"Migrate post_id and repetition_number on scheduled steps schema after v4.5.0"
 msgstr ""
 "v4.5.0'dan sonra planlanan adımlar şemasında post_id ve repetition_number'ı "
 "taşımak"
@@ -3673,7 +3672,7 @@ msgstr "Kullanıcı"
 #: src/Modules/Workflows/Models/StepTypesModel.php:117
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16026
 #: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:100
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13219, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13219
 msgid "Site"
 msgstr "Site"
 
@@ -3732,7 +3731,8 @@ msgstr "İş akışı bulunamadı"
 
 #: src/Modules/Workflows/Rest/RestApiV1.php:390
 msgid "Sorry, you are not allowed to view workflow settings for this post."
-msgstr "Üzgünüm, bu gönderinin iş akışı ayarlarını görüntülemenize izin verilmiyor."
+msgstr ""
+"Üzgünüm, bu gönderinin iş akışı ayarlarını görüntülemenize izin verilmiyor."
 
 #: src/Modules/Workflows/Rest/RestApiV1.php:462
 msgid "Flow data must be an array."
@@ -3752,7 +3752,8 @@ msgstr "İş akışı düzenleyicisi yükleniyor..."
 
 #: src/Modules/Workflows/Views/editor.html.php:18
 msgid "You need to enable JavaScript to run this app."
-msgstr "Bu uygulamayı çalıştırmak için JavaScript'i etkinleştirmeniz gerekiyor."
+msgstr ""
+"Bu uygulamayı çalıştırmak için JavaScript'i etkinleştirmeniz gerekiyor."
 
 #: src/Views/ad-banner-right-sidebar.php:12
 msgid "Need PublishPress Future Support?"
@@ -3778,8 +3779,8 @@ msgstr "Bilgi Tabanını Görüntüle"
 msgid "Overdue: "
 msgstr "Vadesi Geçmiş: "
 
-#: src/Views/expire-column.php:77
 #. translators: %1$s opens a span tag, %2$s is the action name, %3$s ends a span tag, %4$s is the a span tag, %5$s is the a span tag, %6$s is the a span tag
+#: src/Views/expire-column.php:77
 #, php-format
 msgid "%1$s%2$s%3$s on %5$s%4$s%6$s"
 msgstr "%1$s%2$s%3$s %5$s%4$s%6$s üzerinde"
@@ -3792,7 +3793,7 @@ msgstr ""
 "Eylem, bir yapılandırma sorunu nedeniyle planlanmadı. Lütfen yeniden "
 "planlamayı deneyin."
 
-#: src/Views/menu-admin.php:27, fuzzy
+#: src/Views/menu-admin.php:27
 msgid "Metabox"
 msgstr "Metabox"
 
@@ -3801,7 +3802,8 @@ msgid "Metabox Title"
 msgstr "Metabox Başlığı"
 
 #: src/Views/menu-admin.php:48
-msgid "The title of the metabox that will be displayed in the post edit screen."
+msgid ""
+"The title of the metabox that will be displayed in the post edit screen."
 msgstr "Gönderi düzenleme ekranında görüntülenecek olan metabox'un başlığı."
 
 #: src/Views/menu-admin.php:57
@@ -3826,9 +3828,9 @@ msgstr "Ayrıntılı"
 
 #: src/Views/menu-admin.php:96
 msgid ""
-"Displays all information in the Future Action column on the \"Posts\" "
-"screen."
-msgstr "\"Gönderiler\" ekranındaki Gelecek Eylem sütununda tüm bilgileri görüntüler."
+"Displays all information in the Future Action column on the \"Posts\" screen."
+msgstr ""
+"\"Gönderiler\" ekranındaki Gelecek Eylem sütununda tüm bilgileri görüntüler."
 
 #: src/Views/menu-admin.php:106
 msgid "Simplified"
@@ -3839,8 +3841,8 @@ msgid ""
 "Displays only the icon and date/time in the Future Action column on the "
 "\"Posts\" screen."
 msgstr ""
-"\"Gönderiler\" ekranındaki Gelecek Eylem sütununda yalnızca simgeyi ve "
-"tarih/saat bilgisini görüntüler."
+"\"Gönderiler\" ekranındaki Gelecek Eylem sütununda yalnızca simgeyi ve tarih/"
+"saat bilgisini görüntüler."
 
 #: src/Views/menu-admin.php:118
 msgid "Future Actions Editor"
@@ -3864,14 +3866,12 @@ msgstr "Site Ayarlarından Devral"
 msgid "24 hours"
 msgstr "24 saat"
 
-#: src/Views/menu-admin.php:162, fuzzy
+#: src/Views/menu-admin.php:162
 msgid "AM/PM"
 msgstr "AM/PM"
 
-#: src/Views/menu-admin.php:174
-#: src/Views/menu-advanced.php:99
-#: src/Views/menu-display.php:367
-#: src/Views/menu-general.php:118
+#: src/Views/menu-admin.php:174 src/Views/menu-advanced.php:99
+#: src/Views/menu-display.php:368 src/Views/menu-general.php:118
 #: src/Views/menu-notifications.php:186
 msgid "Save Changes"
 msgstr "Değişiklikleri Kaydet"
@@ -3909,7 +3909,8 @@ msgid "Delete data"
 msgstr "Verileri sil"
 
 #: src/Views/menu-advanced.php:88
-msgid "Toggle between preserving or deleting data after the plugin is deactivated."
+msgid ""
+"Toggle between preserving or deleting data after the plugin is deactivated."
 msgstr ""
 "Eklenti devre dışı bırakıldıktan sonra verileri koruma veya silme arasında "
 "geçiş yapın."
@@ -3923,8 +3924,8 @@ msgid ""
 "Below is a dump of the debugging table, this should be useful for "
 "troubleshooting."
 msgstr ""
-"Aşağıda hata ayıklama tablosunun dökümü bulunmaktadır, bu sorun giderme "
-"için faydalı olmalıdır."
+"Aşağıda hata ayıklama tablosunun dökümü bulunmaktadır, bu sorun giderme için "
+"faydalı olmalıdır."
 
 #: src/Views/menu-debug-log.php:83
 msgid "Number of logs to display:"
@@ -3946,30 +3947,30 @@ msgstr "Zaman sırası"
 msgid "Show only requests with trigger activated"
 msgstr "Sadece tetikleyici etkinleştirilen istekleri göster"
 
-#: src/Views/menu-debug-log.php:155
 #. translators: %1$d: displayed count, %2$d: filtered total, %3$d: sessions, %4$d: total unfiltered, %5$s: filtered log size, %6$s: total log size.
+#: src/Views/menu-debug-log.php:155
 #, php-format
 msgid ""
 "Showing the latest %1$d of %2$d logs (%3$d sessions). Total in database: "
 "%4$d. Log size: %5$s (total: %6$s)."
 msgstr "Son %1$d/%2$d günlük gösteriliyor (%3$d oturum). Günlük boyutu: %4$s."
 
-#: src/Views/menu-debug-log.php:165
 #. translators: %1$d: displayed count, %2$d: total count, %3$d: sessions, %4$s: log size.
+#: src/Views/menu-debug-log.php:165
 #, php-format
 msgid "Showing the latest %1$d of %2$d logs (%3$d sessions). Log size: %4$s."
 msgstr "Son %1$d/%2$d günlük gösteriliyor (%3$d oturum). Günlük boyutu: %4$s."
 
-#: src/Views/menu-debug-log.php:176
 #. translators: %1$d: filtered logs count, %2$d: sessions, %3$d: total unfiltered, %4$s: filtered log size, %5$s: total log size.
+#: src/Views/menu-debug-log.php:176
 #, php-format
 msgid ""
 "Showing all %1$d logs (%2$d sessions). Total in database: %3$d. Log size: "
 "%4$s (total: %5$s)."
 msgstr "Tüm %1$d günlük gösteriliyor (%2$d oturum). Günlük boyutu: %3$s."
 
-#: src/Views/menu-debug-log.php:185
 #. translators: %1$d: total logs count, %2$d: sessions count, %3$s: log size.
+#: src/Views/menu-debug-log.php:185
 #, php-format
 msgid "Showing all %1$d logs (%2$d sessions). Log size: %3$s."
 msgstr "Tüm %1$d günlük gösteriliyor (%2$d oturum). Günlük boyutu: %3$s."
@@ -3978,8 +3979,7 @@ msgstr "Tüm %1$d günlük gösteriliyor (%2$d oturum). Günlük boyutu: %3$s."
 msgid "Copy Debug Log"
 msgstr "Hata Ayıklama Günlüğünü Kopyala"
 
-#: src/Views/menu-debug-log.php:206
-#: assets/js/backupPanel.js:834
+#: src/Views/menu-debug-log.php:206 assets/js/backupPanel.js:834
 #: assets/jsx/backup-panel/components/tabs-content/hooks/export.jsx:76
 #: assets/js/backupPanel.js:667
 msgid "Download"
@@ -4001,8 +4001,7 @@ msgstr "Gelişmiş Tanılama ve Araçlar"
 msgid "WP-Cron Status Check"
 msgstr "WP-Cron Durum Kontrolü"
 
-#: src/Views/menu-diagnostics.php:61
-#: src/Views/menu-diagnostics.php:80
+#: src/Views/menu-diagnostics.php:61 src/Views/menu-diagnostics.php:80
 msgid "Passed"
 msgstr "Geçti"
 
@@ -4037,10 +4036,8 @@ msgstr "Veritabanını Düzeltmeyi Deneyin"
 msgid "Debug Logging"
 msgstr "Hata Ayıklama Günlüğü"
 
-#: src/Views/menu-diagnostics.php:128
-#: src/Views/menu-display.php:139
-#: src/Views/menu-notifications.php:67
-#: src/Views/menu-notifications.php:95
+#: src/Views/menu-diagnostics.php:128 src/Views/menu-display.php:139
+#: src/Views/menu-notifications.php:67 src/Views/menu-notifications.php:95
 #: src/Views/menu-notifications.php:150
 msgid "Enabled"
 msgstr "Etkin"
@@ -4057,10 +4054,8 @@ msgstr "Hata Günlüğünü Temizle"
 msgid "View Debug Logs"
 msgstr "Hata Günlüklerini Görüntüle"
 
-#: src/Views/menu-diagnostics.php:148
-#: src/Views/menu-display.php:150
-#: src/Views/menu-notifications.php:75
-#: src/Views/menu-notifications.php:104
+#: src/Views/menu-diagnostics.php:148 src/Views/menu-display.php:150
+#: src/Views/menu-notifications.php:75 src/Views/menu-notifications.php:104
 #: src/Views/menu-notifications.php:158
 msgid "Disabled"
 msgstr "Devre Dışı"
@@ -4111,8 +4106,8 @@ msgstr "Taşımayı Çalıştır"
 
 #: src/Views/menu-diagnostics.php:191
 msgid ""
-"Migrate legacy future actions from WP Cron to the new Action Scheduler. "
-"This will run in the background and may take a while."
+"Migrate legacy future actions from WP Cron to the new Action Scheduler. This "
+"will run in the background and may take a while."
 msgstr ""
 "Eski gelecek eylemleri WP Cron'dan yeni Eylem Zamanlayıcısına taşıyın. Bu "
 "arka planda çalışacak ve biraz zaman alabilir."
@@ -4132,8 +4127,8 @@ msgid ""
 "background and may take a while."
 msgstr ""
 "Eski eylem argümanlarını Post Meta olarak geri yükleyin. Bu, o verileri "
-"okuyan üçüncü taraf eklentileri ile ilgili sorunlarınız varsa faydalıdır. "
-"Bu arka planda çalışacak ve biraz zaman alabilir."
+"okuyan üçüncü taraf eklentileri ile ilgili sorunlarınız varsa faydalıdır. Bu "
+"arka planda çalışacak ve biraz zaman alabilir."
 
 #: src/Views/menu-diagnostics.php:221
 msgid "Legacy Cron Schedule"
@@ -4141,11 +4136,11 @@ msgstr "Eski Cron Takvimi"
 
 #: src/Views/menu-diagnostics.php:229
 msgid ""
-"The below table will show all currently scheduled cron events for the "
-"plugin with the next run time."
+"The below table will show all currently scheduled cron events for the plugin "
+"with the next run time."
 msgstr ""
-"Aşağıdaki tablo, eklenti için şu anda planlanmış olan tüm cron olaylarını "
-"ve bir sonraki çalışma zamanını gösterecektir."
+"Aşağıdaki tablo, eklenti için şu anda planlanmış olan tüm cron olaylarını ve "
+"bir sonraki çalışma zamanını gösterecektir."
 
 #: src/Views/menu-diagnostics.php:244
 msgid "Event"
@@ -4167,8 +4162,8 @@ msgstr "Varsayılan Biçimler"
 msgid "Date Format"
 msgstr "Tarih Biçimi"
 
-#: src/Views/menu-display.php:64
 #. translators: %s is a link to the PHP date function documentation
+#: src/Views/menu-display.php:64
 #, php-format
 msgid ""
 "The default format to use when displaying the action date within a post "
@@ -4179,8 +4174,7 @@ msgstr ""
 "kullanılması gereken varsayılan format. Geçerli formatlama seçenekleri "
 "hakkında bilgi için: %s."
 
-#: src/Views/menu-display.php:68
-#: src/Views/menu-display.php:106
+#: src/Views/menu-display.php:68 src/Views/menu-display.php:106
 msgid "PHP Date Function"
 msgstr "PHP Tarih Fonksiyonu"
 
@@ -4188,8 +4182,8 @@ msgstr "PHP Tarih Fonksiyonu"
 msgid "Time Format"
 msgstr "Saat Biçimi"
 
-#: src/Views/menu-display.php:102
 #. translators: %s is a link to the PHP date function documentation
+#: src/Views/menu-display.php:102
 #, php-format
 msgid ""
 "The default format to use when displaying the action time within a post "
@@ -4206,8 +4200,8 @@ msgstr "Gönderi Alt Kısmı Gösterimi"
 
 #: src/Views/menu-display.php:118
 msgid ""
-"Enabling this below will display the action date automatically at the end "
-"of any post which is set to run an action."
+"Enabling this below will display the action date automatically at the end of "
+"any post which is set to run an action."
 msgstr ""
 "Aşağıdaki seçeneği etkinleştirirseniz, bir eylem çalıştırılacak olan "
 "herhangi bir gönderinin sonunda eylem tarihi otomatik olarak "
@@ -4222,8 +4216,8 @@ msgid ""
 "This will enable or disable displaying the future action date in the post "
 "footer."
 msgstr ""
-"Bu, gelecekteki işlemlerde e-posta bildirimlerinin gönderimini "
-"etkinleştirir veya devre dışı bırakır."
+"Bu, gelecekteki işlemlerde e-posta bildirimlerinin gönderimini etkinleştirir "
+"veya devre dışı bırakır."
 
 #: src/Views/menu-display.php:164
 msgid "Footer Contents"
@@ -4255,8 +4249,8 @@ msgstr "Örnek: "
 msgid "Shortcode"
 msgstr "Shortcode"
 
-#: src/Views/menu-display.php:249
 #. translators: %s is a code tag that wraps the shortcode
+#: src/Views/menu-display.php:249
 #, php-format
 msgid ""
 "Use the %s[futureaction]%s shortcode to show when the future action will "
@@ -4272,70 +4266,71 @@ msgstr "Shortcode Sarıcı"
 
 #. translators: This is used to indicate that no wrapper should be used on the shortcode output
 #: src/Views/menu-display.php:266
+#, fuzzy
+#| msgid "— No Change —"
 msgid "— None —"
-msgstr "— Yok —"
+msgstr "— Değişiklik Yok —"
 
-#: src/Views/menu-display.php:279
+#: src/Views/menu-display.php:280
 msgid ""
 "The shortcode output will be wrapped in the selected HTML tag, allowing you "
 "to control its structure and styling."
 msgstr ""
-"Kısa kod çıktısı, seçilen HTML etiketi içinde sarılacak, böylece yapısını "
-"ve stilini kontrol edebileceksiniz."
+"Kısa kod çıktısı, seçilen HTML etiketi içinde sarılacak, böylece yapısını ve "
+"stilini kontrol edebileceksiniz."
 
-#: src/Views/menu-display.php:289, fuzzy
+#: src/Views/menu-display.php:290
 msgid "Wrapper Class"
 msgstr "Wrapper Class"
 
-#: src/Views/menu-display.php:295
+#: src/Views/menu-display.php:296
 msgid "Add a CSS class to the wrapper element for custom styling."
 msgstr "Özelleştirilmiş stil için sarıcı elemana bir CSS sınıfı ekleyin."
 
-#: src/Views/menu-display.php:302, fuzzy
+#: src/Views/menu-display.php:303
 msgid "Attributes"
 msgstr "Attributes"
 
-#: src/Views/menu-display.php:308
 #. translators: %s is the shortcode code wrapped in code tags
+#: src/Views/menu-display.php:309
 #, php-format
 msgid "The following attributes are available for the %s shortcode:"
 msgstr "%s shortcode'u için aşağıdaki nitelikler mevcuttur:"
 
-#: src/Views/menu-display.php:315
 #. translators: %s is a code tag that wraps the shortcode attribute name
+#: src/Views/menu-display.php:316
 #, php-format
 msgid "%s - Available options:"
 msgstr "%s - Mevcut seçenekler:"
 
-#: src/Views/menu-display.php:321
 #. translators: %s is a code tag that wraps the shortcode attribute value
+#: src/Views/menu-display.php:322
 #, php-format
 msgid "%s - Displays complete date/time.  Default value."
 msgstr "%s - Tam tarih/saat görüntüler. Varsayılan değer."
 
-#: src/Views/menu-display.php:327
 #. translators: %s is a code tag that wraps the shortcode attribute value
+#: src/Views/menu-display.php:328
 #, php-format
 msgid "%s - Displays date only"
 msgstr "%s - Sadece tarihi görüntüler"
 
-#: src/Views/menu-display.php:333
 #. translators: %s is a code tag that wraps the shortcode attribute value
+#: src/Views/menu-display.php:334
 #, php-format
 msgid "%s - Displays time only"
 msgstr "%s - Sadece saati görüntüler"
 
-#: src/Views/menu-display.php:345
-#: src/Views/menu-display.php:353
 #. translators: %s is a code tag that wraps the shortcode attribute dateformat
 #. translators: %s is a code tag that wraps the shortcode attribute timeformat
+#: src/Views/menu-display.php:346 src/Views/menu-display.php:354
 #, php-format
 msgid "%s - Format set here will override the value set on the settings page"
 msgstr ""
 "%s - Burada ayarlanan format, ayarlar sayfasında belirlenen değeri geçersiz "
 "kılacaktır"
 
-#: src/Views/menu-general.php:25, fuzzy
+#: src/Views/menu-general.php:25
 msgid "Defaults"
 msgstr "Defaults"
 
@@ -4365,7 +4360,8 @@ msgstr "İzinler"
 
 #: src/Views/menu-general.php:85
 msgid "Choose Which User Roles Can Create Future Actions"
-msgstr "Gelecekteki eylemleri hangi kullanıcı rollerinin oluşturabileceğini seçin"
+msgstr ""
+"Gelecekteki eylemleri hangi kullanıcı rollerinin oluşturabileceğini seçin"
 
 #: src/Views/menu-notifications.php:50
 msgid "Email Notification"
@@ -4382,17 +4378,19 @@ msgid "Enable Email Notification?"
 msgstr "E-posta Bildirimini Etkinleştir?"
 
 #: src/Views/menu-notifications.php:78
-msgid "This will enable or disable the send of email notification on future action."
+msgid ""
+"This will enable or disable the send of email notification on future action."
 msgstr ""
-"Bu, gelecekteki işlemlerde e-posta bildirimlerinin gönderimini "
-"etkinleştirir veya devre dışı bırakır."
+"Bu, gelecekteki işlemlerde e-posta bildirimlerinin gönderimini etkinleştirir "
+"veya devre dışı bırakır."
 
 #: src/Views/menu-notifications.php:86
 msgid "Include Blog Administrators?"
 msgstr "Blog Yöneticilerini Dahil Et?"
 
 #: src/Views/menu-notifications.php:107
-msgid "This will include all users with the role of \"Administrator\" in the email."
+msgid ""
+"This will include all users with the role of \"Administrator\" in the email."
 msgstr ""
 "Bu, e-postada \"Administrator\" rolüne sahip tüm kullanıcıları dahil "
 "edecektir."
@@ -4411,14 +4409,13 @@ msgstr ""
 msgid "Past-due Actions Notification"
 msgstr "Geçmişteki İşlemler Bildirimi"
 
-#: src/Views/menu-notifications.php:134
-#: src/Views/menu-notifications.php:161
+#: src/Views/menu-notifications.php:134 src/Views/menu-notifications.php:161
 msgid ""
 "This will enable or disable the send of email notification on past-due "
 "actions."
 msgstr ""
-"Bu, gelecekteki işlemlerde e-posta bildirimlerinin gönderimini "
-"etkinleştirir veya devre dışı bırakır."
+"Bu, gelecekteki işlemlerde e-posta bildirimlerinin gönderimini etkinleştirir "
+"veya devre dışı bırakır."
 
 #: src/Views/menu-notifications.php:142
 msgid "Enable Past-due Actions Notification?"
@@ -4429,69 +4426,57 @@ msgid ""
 "Enter a comma separate list of emails that you would like to be notified "
 "when past-due actions are detected."
 msgstr ""
-"Geçmişteki eylemler tespit edildiğinde size bildirileceğini istediğiniz "
-"e-postaların virgülle ayrılmış listesini girin."
+"Geçmişteki eylemler tespit edildiğinde size bildirileceğini istediğiniz e-"
+"postaların virgülle ayrılmış listesini girin."
 
-#: src/Views/tabs-future-actions.php:20
-#: assets/js/backupPanel.js:649
+#: src/Views/tabs-future-actions.php:20 assets/js/backupPanel.js:649
 #: assets/js/backupPanel.js:1232
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:24
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:104
-#: assets/js/backupPanel.js:500
-#: assets/js/backupPanel.js:912, fuzzy
+#: assets/js/backupPanel.js:500 assets/js/backupPanel.js:912
 msgid "Post Types"
 msgstr "Post Types"
 
-#: src/Views/tabs-future-actions.php:25
-#: assets/js/backupPanel.js:652
+#: src/Views/tabs-future-actions.php:25 assets/js/backupPanel.js:652
 #: assets/js/backupPanel.js:1235
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:28
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:108
-#: assets/js/backupPanel.js:504
-#: assets/js/backupPanel.js:916
+#: assets/js/backupPanel.js:504 assets/js/backupPanel.js:916
 msgid "General"
 msgstr "Genel"
 
-#: src/Views/tabs-future-actions.php:30
-#: assets/js/backupPanel.js:655
+#: src/Views/tabs-future-actions.php:30 assets/js/backupPanel.js:655
 #: assets/js/backupPanel.js:1238
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:32
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:112
-#: assets/js/backupPanel.js:508
-#: assets/js/backupPanel.js:920
+#: assets/js/backupPanel.js:508 assets/js/backupPanel.js:920
 msgid "Notifications"
 msgstr "Bildirimler"
 
-#: src/Views/tabs-future-actions.php:35
-#: assets/js/backupPanel.js:658
+#: src/Views/tabs-future-actions.php:35 assets/js/backupPanel.js:658
 #: assets/js/backupPanel.js:1241
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:36
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:116
-#: assets/js/backupPanel.js:512
-#: assets/js/backupPanel.js:924
+#: assets/js/backupPanel.js:512 assets/js/backupPanel.js:924
 msgid "Display"
 msgstr "Görüntüle"
 
-#: src/Views/tabs-future-actions.php:40
-#: assets/js/backupPanel.js:661
+#: src/Views/tabs-future-actions.php:40 assets/js/backupPanel.js:661
 #: assets/js/backupPanel.js:1244
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:40
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:120
-#: assets/js/backupPanel.js:516
-#: assets/js/backupPanel.js:928
+#: assets/js/backupPanel.js:516 assets/js/backupPanel.js:928
 msgid "Admin"
 msgstr "Admin"
 
 #: src/Views/tabs-settings.php:23
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11467
-#: assets/js/backupPanel.js:664
-#: assets/js/backupPanel.js:1247
+#: assets/js/backupPanel.js:664 assets/js/backupPanel.js:1247
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:44
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:124
 #: assets/jsx/workflow-editor/components/node-types/generic.jsx:248
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9212
-#: assets/js/backupPanel.js:520
-#: assets/js/backupPanel.js:932
+#: assets/js/backupPanel.js:520 assets/js/backupPanel.js:932
 msgid "Advanced"
 msgstr "Gelişmiş"
 
@@ -4513,7 +4498,7 @@ msgstr "Dize"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:393
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:31
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:356, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:356
 msgid "Boolean"
 msgstr "Boolean"
 
@@ -4534,7 +4519,7 @@ msgstr "Dizi"
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:57
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:50
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:382
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1526, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1526
 msgid "null"
 msgstr "null"
 
@@ -4568,7 +4553,6 @@ msgstr "Argüman adı yalnızca harfler, rakamlar ve alt çizgiler içermelidir.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:585
 #: assets/jsx/workflow-editor/components/data-fields/action-args/index.jsx:71
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:506
-#, js-format
 msgid "Argument #%s"
 msgstr "Argüman #%s"
 
@@ -4658,14 +4642,12 @@ msgstr "Bildirimi reddet"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1967
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:67
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1399
-#, js-format
 msgid "Option %s"
 msgstr "Seçenek %s"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2004
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:95
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1427
-#, js-format
 msgid "Option #%s"
 msgstr "Seçenek #%s"
 
@@ -4684,11 +4666,10 @@ msgstr "Yeni bir seçenek ekleyin"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2037
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:132
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1464
-#, js-format
 msgid ""
-"You have reached the maximum number of options. You can add up to %s "
-"options."
-msgstr "Maksimum seçenek sayısına ulaştınız. En fazla %s seçenek ekleyebilirsiniz."
+"You have reached the maximum number of options. You can add up to %s options."
+msgstr ""
+"Maksimum seçenek sayısına ulaştınız. En fazla %s seçenek ekleyebilirsiniz."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2139
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3245
@@ -4796,16 +4777,15 @@ msgstr "Daha fazla bilgi için tıklayın"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2443
 #: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:197
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1815
-#, js-format
 msgid ""
 "For more information on formatting, see the %sPHP strtotime function%s. For "
 "example, you could enter %s+1 month%s or %s+1 week 2 days 4 hours 2 "
 "seconds%s or %snext Thursday%s. Please use only phrases in English."
 msgstr ""
-"Biçimlendirme hakkında daha fazla bilgi için %sPHP strtotime "
-"fonksiyonu%s'na bakın. Örneğin, %s+1 ay%s veya %s+1 hafta 2 gün 4 saat 2 "
-"saniye%s ya da %sgelecek Perşembe%s yazabilirsiniz. Lütfen yalnızca "
-"İngilizce ifadeler kullanın."
+"Biçimlendirme hakkında daha fazla bilgi için %sPHP strtotime fonksiyonu%s'na "
+"bakın. Örneğin, %s+1 ay%s veya %s+1 hafta 2 gün 4 saat 2 saniye%s ya da "
+"%sgelecek Perşembe%s yazabilirsiniz. Lütfen yalnızca İngilizce ifadeler "
+"kullanın."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2523
 #: assets/jsx/workflow-editor/components/data-fields/debug-data.jsx:39
@@ -4867,14 +4847,13 @@ msgstr "Gönderi Durumu"
 msgid "Post Type"
 msgstr "Post Type"
 
+#. translators: %s is the database table name
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2752
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3346
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/column-item.jsx:10
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:10
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2027
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2527
-#. translators: %s is the database table name
-#, js-format
 msgid "Type the %s key and click on the button to insert it."
 msgstr "%s anahtarını yazın ve eklemek için butona tıklayın."
 
@@ -4946,7 +4925,7 @@ msgstr "Terimin adı."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3250
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:13
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2475, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2475
 msgid "Slug"
 msgstr "Slug"
 
@@ -4980,11 +4959,10 @@ msgstr "Sayı"
 msgid "Number of posts assigned to this term."
 msgstr "Bu terime atanan gönderi sayısı."
 
+#. translators: %s is the taxonomy label
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3364
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:38
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2555
-#. translators: %s is the taxonomy label
-#, js-format
 msgid "%s terms for this post."
 msgstr "%s terim bu gönderi için."
 
@@ -5362,8 +5340,8 @@ msgstr "Tekrarlayan Eylem"
 #: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:131
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4228
 msgid ""
-"Choose how often this task should repeat. Select 'Non-repeating' for a "
-"one-time action or set an interval for automatic recurrence."
+"Choose how often this task should repeat. Select 'Non-repeating' for a one-"
+"time action or set an interval for automatic recurrence."
 msgstr ""
 "Bu görevin ne sıklıkla tekrarlanması gerektiğini seçin. Tek seferlik bir "
 "eylem için 'Tekrar etmeyen' seçeneğini belirleyin veya otomatik yenileme "
@@ -5380,8 +5358,7 @@ msgstr "Benzersiz Görev Tanımlayıcı"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4251
 msgid "Define a unique ID to detect and prevent duplicate tasks."
 msgstr ""
-"Yinelenen görevleri tespit etmek ve önlemek için benzersiz bir ID "
-"tanımlayın."
+"Yinelenen görevleri tespit etmek ve önlemek için benzersiz bir ID tanımlayın."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5685
 #: assets/jsx/workflow-editor/components/data-fields/taxonomy-terms.jsx:69
@@ -5457,7 +5434,7 @@ msgstr "Açıklamayı düzenle"
 #: assets/jsx/workflow-editor/components/inspector-card/index.jsx:116
 #: assets/jsx/workflow-editor/components/secondary-sidebar/node-card.jsx:16
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7026
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11263, fuzzy
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11263
 msgid "Pro"
 msgstr "Pro"
 
@@ -5470,7 +5447,8 @@ msgstr "Pro"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7042
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9283
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11276
-msgid "Currently this step is being skipped. Upgrade to Pro to unlock this feature."
+msgid ""
+"Currently this step is being skipped. Upgrade to Pro to unlock this feature."
 msgstr "Şu anda bu adım atlanıyor. Bu özelliği açmak için Pro'ya yükseltin."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9610
@@ -5485,34 +5463,34 @@ msgstr "Ekle"
 msgid "Close"
 msgstr "Kapat"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9618
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9621
 #: assets/jsx/workflow-editor/components/layout/header.jsx:140
 #: assets/jsx/workflow-editor/components/layout/header.jsx:145
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7425
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7430
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Auto Layout"
 msgstr "Otomatik Düzen"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9628
 #: assets/jsx/workflow-editor/components/layout/header.jsx:157
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7442
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Upgrade to Pro and unlock more features"
 msgstr "Pro'ya yükselt ve daha fazla özellik aç"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9872
 #: assets/jsx/workflow-editor/components/left-toolbar/redo.jsx:31
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7674
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Redo"
 msgstr "Yeniden Yap"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10045
 #: assets/jsx/workflow-editor/components/left-toolbar/undo.jsx:31
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7823
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Undo"
 msgstr "Geri Al"
 
@@ -5545,6 +5523,13 @@ msgstr "Özellik devre dışı"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7931
 msgid "Feature activated"
 msgstr "Özellik etkinleştirildi"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10239
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:23
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7974
+msgctxt "noun"
+msgid "View"
+msgstr "Görüntüle"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10243
 #: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:27
@@ -5751,7 +5736,6 @@ msgstr "Birden fazla ve farklı öğe seçildi."
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10758
 #: assets/jsx/workflow-editor/components/node-inspector/index.jsx:116
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8445
-#, js-format
 msgid "%d steps selected"
 msgstr "%d adım seçildi"
 
@@ -5764,7 +5748,6 @@ msgstr "Birden fazla adım seçildi."
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10764
 #: assets/jsx/workflow-editor/components/node-inspector/index.jsx:130
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8459
-#, js-format
 msgid "%d connections selected"
 msgstr "%d bağlantı seçildi"
 
@@ -5784,8 +5767,8 @@ msgstr "Bağlantı"
 #: assets/jsx/workflow-editor/components/node-inspector/index.jsx:166
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8495
 msgid ""
-"The connection between nodes in the workflow. Signifies the path along "
-"which data or control flow one node to another."
+"The connection between nodes in the workflow. Signifies the path along which "
+"data or control flow one node to another."
 msgstr ""
 "İş akışındaki düğümler arasındaki bağlantıdır. Verilerin veya kontrolün bir "
 "düğümden diğerine aktığı yolu belirtir."
@@ -5871,7 +5854,6 @@ msgstr "Açıklama yok"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11310
 #: assets/jsx/workflow-editor/components/node-types/generic.jsx:57
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9021
-#, js-format
 msgid "Unknown node: %s"
 msgstr "Bilinmeyen düğüm: %s"
 
@@ -5956,14 +5938,12 @@ msgstr "Bu adım için tüm kontroller geçti."
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12191
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:122
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9878
-#, js-format
 msgid "The field \"%s\" contains an invalid variable."
 msgstr "Alan \"%s\" geçersiz bir değişken içeriyor."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12192
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:126
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9882
-#, js-format
 msgid ""
 "The variable \"%s\" is not available in the current context. Please, check "
 "if it is spelled correctly."
@@ -5971,11 +5951,10 @@ msgstr ""
 "Değişken \"%s\" mevcut bağlamda bulunmamaktadır. Lütfen doğru yazıldığını "
 "kontrol edin."
 
+#. translators: %s is the workflow step slug.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12236
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:181
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9937
-#. translators: %s is the workflow step slug.
-#, js-format
 msgid "\"%s\" is not a variable or step slug."
 msgstr "\"%s\" bir değişken veya adım kısaltması değildir."
 
@@ -5997,62 +5976,55 @@ msgstr "Açılmamış yer tutuculara izin verilmez."
 msgid "Unopened placeholder are not allowed."
 msgstr "Kapalı yer tutuculara izin verilmez."
 
+#. translators: %s is the field label.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12263
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:216
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9972
-#. translators: %s is the field label.
-#, js-format
 msgid "Invalid expression on %s"
 msgstr "%s üzerinde geçersiz ifade"
 
+#. translators: %s is the field label.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12275
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12495
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:232
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:575
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9988
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10331
-#. translators: %s is the field label.
-#, js-format
 msgid "The field %s must be a list of options."
 msgstr "Alan %s bir seçenekler listesi olmalıdır."
 
+#. translators: %s is the option name.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12297
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:261
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10017
-#. translators: %s is the option name.
-#, js-format
 msgid "The option \"%s\" does not have a name."
 msgstr "Seçenek \"%s\" isme sahip değildir."
 
+#. translators: %s is the option name.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12303
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:270
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10026
-#. translators: %s is the option name.
-#, js-format
 msgid "The option \"%s\" does not have a label."
 msgstr "Seçenek \"%s\" etikete sahip değildir."
 
+#. translators: %s is the option name.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12309
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:279
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10035
-#. translators: %s is the option name.
-#, js-format
 msgid "The option \"%s\" has a duplicate name."
 msgstr "Seçenek \"%s\" tekrar eden bir isme sahiptir."
 
+#. translators: %s is the option label.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12315
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:288
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10044
-#. translators: %s is the option label.
-#, js-format
 msgid "The option \"%s\" has a duplicate label."
 msgstr "Seçenek \"%s\" tekrar eden bir etikete sahiptir."
 
+#. translators: %s is the field label.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12325
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:302
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10058
-#. translators: %s is the field label.
-#, js-format
 msgid "The field %s must be a valid list of options."
 msgstr "Alan %s geçerli bir seçenekler listesi olmalıdır."
 
@@ -6074,35 +6046,31 @@ msgstr "Bu adım, bir sonraki adıma bağlantı gerektirir."
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:428
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10163
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10184
-#, js-format
 msgid "The field %s is required."
 msgstr "Alan %s zorunludur."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12429
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:450
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10206
-#, js-format
 msgid "The field %s must be a valid email address."
 msgstr "Alan %s geçerli bir e-posta adresi olmalıdır."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12437
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:466
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10222
-#, js-format
 msgid "The field %s must be a valid email address list separated by commas."
-msgstr "Alan %s virgülle ayrılmış geçerli bir e-posta adresi listesi olmalıdır."
+msgstr ""
+"Alan %s virgülle ayrılmış geçerli bir e-posta adresi listesi olmalıdır."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12443
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:480
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10236
-#, js-format
 msgid "The field %s must be an integer."
 msgstr "Alan %s bir tamsayı olmalıdır."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12450
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:495
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10251
-#, js-format
 msgid "The field %s must be an integer list separated by commas."
 msgstr "Alan %s virgülle ayrılmış tamsayı listesi olmalıdır."
 
@@ -6115,21 +6083,18 @@ msgstr "Alan %s virgülle ayrılmış tamsayı listesi olmalıdır."
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10274
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10283
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10292
-#, js-format
 msgid "The field %s must be a list of name-value pairs."
 msgstr "Alan %s bir isim-değer çiftleri listesi olmalıdır."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12467
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:528
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10284
-#, js-format
 msgid "The name of the pair is required on item %d."
 msgstr "Çiftin adı %d. öğede gereklidir."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12470
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:537
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10293
-#, js-format
 msgid "The value of the pair is required on item %d."
 msgstr "Çiftin değeri %d. öğede gereklidir."
 
@@ -6143,7 +6108,8 @@ msgstr "Geçersiz değişken."
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:608
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10364
 msgid "Please use the variable picker to select valid expression."
-msgstr "Lütfen geçerli bir ifadeyi seçmek için değişken seçim aracını kullanın."
+msgstr ""
+"Lütfen geçerli bir ifadeyi seçmek için değişken seçim aracını kullanın."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12630
 #: assets/jsx/workflow-editor/components/pro-feature-button/index.jsx:26
@@ -6163,11 +6129,10 @@ msgstr "Adımlar arasında geçiş yapmak için sol ve sağ ok tuşlarını kull
 msgid "No results found."
 msgstr "Sonuç bulunamadı."
 
+#. translators: %d: number of results.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13239
 #: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:101
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10929
-#. translators: %d: number of results.
-#, js-format
 msgid "%d result found."
 msgid_plural "%d results found."
 msgstr[0] "%d sonuç bulundu."
@@ -6191,20 +6156,30 @@ msgstr "Düğümler"
 msgid "A tip for using the workflow editor"
 msgstr "İş akışı editörünü kullanmak için bir ipucu"
 
+#. translators: %d: Number of blocks.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13627
 #: assets/jsx/workflow-editor/components/secondary-sidebar/node-draggable-chip.jsx:27
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11310
-#. translators: %d: Number of blocks.
-#, js-format
 msgid "%d block"
 msgid_plural "%d blocks"
 msgstr[0] "%d blok"
 msgstr[1] "%d blok"
 
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13793
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13798
+#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:80
+#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:85
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11459
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11464
+#, fuzzy
+msgctxt "nodes"
+msgid "Most used"
+msgstr "En çok kullanılan"
+
+#. translators: Patterns tab title in the block inserter.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14104
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:24
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11712
-#. translators: Patterns tab title in the block inserter.
 msgid "Actions"
 msgstr "Eylemler"
 
@@ -6241,7 +6216,8 @@ msgstr ""
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14156
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:18
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11760
-msgid "Double-click the workflow pane to increase the zoom level for a closer look."
+msgid ""
+"Double-click the workflow pane to increase the zoom level for a closer look."
 msgstr ""
 "Daha yakın bir görünüm için iş akışı paneline çift tıklayarak yakınlaştırma "
 "seviyesini artırın."
@@ -6260,8 +6236,8 @@ msgstr ""
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:26
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11768
 msgid ""
-"Easily add new steps by clicking on a step's handle and dragging it. Drop "
-"it in the workflow pane to see a floating inserter where you can type and "
+"Easily add new steps by clicking on a step's handle and dragging it. Drop it "
+"in the workflow pane to see a floating inserter where you can type and "
 "search for the step you need."
 msgstr ""
 "Yeni adımları kolayca eklemek için bir adımın tutamağına tıklayın ve "
@@ -6273,6 +6249,15 @@ msgstr ""
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11859
 msgid "(no name)"
 msgstr "(isim yok)"
+
+#. translators: Default label for the Workflow sidebar tab, not selected.
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14336
+#: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:23
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11892
+#, fuzzy
+msgctxt "noun"
+msgid "Workflow"
+msgstr "İş Akışı"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14348
 #: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:37
@@ -6344,10 +6329,10 @@ msgstr "Bu iş akışını silmek istediğinize emin misiniz?"
 msgid "Move to trash"
 msgstr "Çöpe taşı"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14929
 #: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:79
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12407
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Publish"
 msgstr "Yayınla"
 
@@ -6375,17 +6360,17 @@ msgstr "Güncelleniyor..."
 msgid "Updated"
 msgstr "Güncellendi"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15086
 #: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:82
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12550
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Save draft"
 msgstr "Taslağı kaydet"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15089
 #: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:85
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12553
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Save"
 msgstr "Kaydet"
 
@@ -6576,21 +6561,17 @@ msgstr "veya"
 msgid "Select a .json file"
 msgstr "Bir .json dosyası seçin"
 
-#: assets/js/backupPanel.js:110
-#: assets/js/backupPanel.js:1283
+#: assets/js/backupPanel.js:110 assets/js/backupPanel.js:1283
 #: assets/jsx/backup-panel/components/file-dropzone/index.jsx:35
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:164
-#: assets/js/backupPanel.js:88
-#: assets/js/backupPanel.js:972
+#: assets/js/backupPanel.js:88 assets/js/backupPanel.js:972
 msgid "Selected file"
 msgstr "Seçilen dosya"
 
-#: assets/js/backupPanel.js:110
-#: assets/js/backupPanel.js:1285
+#: assets/js/backupPanel.js:110 assets/js/backupPanel.js:1285
 #: assets/jsx/backup-panel/components/file-dropzone/index.jsx:36
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:165
-#: assets/js/backupPanel.js:89
-#: assets/js/backupPanel.js:973
+#: assets/js/backupPanel.js:89 assets/js/backupPanel.js:973
 msgid "File size"
 msgstr "Dosya boyutu"
 
@@ -6624,12 +6605,10 @@ msgstr "Öğeler yükleniyor, lütfen bekleyin..."
 msgid "Select the content you want to import."
 msgstr "İçe aktarmak istediğiniz içeriği seçin."
 
-#: assets/js/backupPanel.js:525
-#: assets/js/backupPanel.js:709
+#: assets/js/backupPanel.js:525 assets/js/backupPanel.js:709
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-import.jsx:83
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:94
-#: assets/js/backupPanel.js:420
-#: assets/js/backupPanel.js:570
+#: assets/js/backupPanel.js:420 assets/js/backupPanel.js:570
 msgid "Action Settings"
 msgstr "Eylem Ayarları"
 
@@ -6639,12 +6618,10 @@ msgstr "Eylem Ayarları"
 msgid "No workflows or settings found in the file."
 msgstr "Dosyada hiçbir iş akışı veya ayar bulunamadı."
 
-#: assets/js/backupPanel.js:546
-#: assets/js/backupPanel.js:581
+#: assets/js/backupPanel.js:546 assets/js/backupPanel.js:581
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-import.jsx:110
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-preview.jsx:14
-#: assets/js/backupPanel.js:447
-#: assets/js/backupPanel.js:469
+#: assets/js/backupPanel.js:447 assets/js/backupPanel.js:469
 msgid "Cancel and select a different file"
 msgstr "İptal et ve farklı bir dosya seç"
 
@@ -6699,7 +6676,8 @@ msgstr "Ayarları içe aktarmada hata oluştu."
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:132
 #: assets/js/backupPanel.js:940
 msgid "Import the plugin settings or workflows from a .json file."
-msgstr "Eklenti ayarlarını veya iş akışlarını bir .json dosyasından içe aktarın."
+msgstr ""
+"Eklenti ayarlarını veya iş akışlarını bir .json dosyasından içe aktarın."
 
 #: assets/js/backupPanel.js:1289
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:173
@@ -6713,30 +6691,22 @@ msgstr "İçe Aktarmak için İçeriği Seçin"
 msgid "Raw Data Preview"
 msgstr "Ham Veri Önizlemesi"
 
-#: assets/js/blockEditor.js:1752
-#: assets/js/bulkEdit.js:1752
-#: assets/js/classicEditor.js:1752
-#: assets/js/quickEdit.js:1752
-#: assets/js/settingsGeneral.js:1752
-#: assets/js/settingsPostTypes.js:1752
+#: assets/js/blockEditor.js:1752 assets/js/bulkEdit.js:1752
+#: assets/js/classicEditor.js:1752 assets/js/quickEdit.js:1752
+#: assets/js/settingsGeneral.js:1752 assets/js/settingsPostTypes.js:1752
 #: assets/jsx/components/PostTypesSettingsPanels.jsx:81
-#: assets/js/blockEditor.js:1587
-#: assets/js/bulkEdit.js:1587
-#: assets/js/classicEditor.js:1587
-#: assets/js/quickEdit.js:1587
-#: assets/js/settingsGeneral.js:1587
-#: assets/js/settingsPostTypes.js:1587
+#: assets/js/blockEditor.js:1587 assets/js/bulkEdit.js:1587
+#: assets/js/classicEditor.js:1587 assets/js/quickEdit.js:1587
+#: assets/js/settingsGeneral.js:1587 assets/js/settingsPostTypes.js:1587
 msgid "Select a post type to edit:"
 msgstr "Düzenlemek için bir post type seçin:"
 
-#: assets/js/legacyAction.js:230
-#: assets/jsx/legacy-action/index.jsx:78
+#: assets/js/legacyAction.js:230 assets/jsx/legacy-action/index.jsx:78
 #: assets/js/legacyAction.js:153
 msgid "Workflow to trigger"
 msgstr "Tetiklenecek iş akışı"
 
-#: assets/js/legacyAction.js:241
-#: assets/jsx/legacy-action/index.jsx:90
+#: assets/js/legacyAction.js:241 assets/jsx/legacy-action/index.jsx:90
 #: assets/js/legacyAction.js:165
 msgid "No compatible workflows available."
 msgstr "Uyumlu iş akışları mevcut değil."
@@ -6747,10 +6717,10 @@ msgstr "Uyumlu iş akışları mevcut değil."
 msgid "Change manually enabled workflows"
 msgstr "Elle etkinleştirilen iş akışlarını değiştir"
 
+#. translators: %s: Workflow title
 #: assets/js/workflowsListCancelAction.js:702
 #: assets/jsx/workflows-list/cancel-action/index.jsx:59
 #: assets/js/workflowsListCancelAction.js:497
-#. translators: %s: Workflow title
 msgid ""
 "Are you sure you want to cancel all scheduled actions for the \"%s\" "
 "workflow?"
@@ -6763,33 +6733,5 @@ msgid "Cancel Actions"
 msgstr "İşlemleri İptal Et"
 
 #: assets/jsx/workflow-manual-selection/example-extending-with-slot.jsx:48
-#, js-format
 msgid "Enable workflow %s"
 msgstr "%s çalışma akışını etkinleştir"
-
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10239
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:23
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7974
-msgctxt "noun"
-msgid "View"
-msgstr "Görüntüle"
-
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14336
-#: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:23
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11892
-#. translators: Default label for the Workflow sidebar tab, not selected.
-#, fuzzy
-msgctxt "noun"
-msgid "Workflow"
-msgstr "İş Akışı"
-
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13793
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13798
-#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:80
-#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:85
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11459
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11464
-#, fuzzy
-msgctxt "nodes"
-msgid "Most used"
-msgstr "En çok kullanılan"

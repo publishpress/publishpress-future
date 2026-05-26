@@ -4,49 +4,48 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PublishPress Future Free 4.10.2-rc.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/project\n"
+"POT-Creation-Date: 2026-05-25T21:24:52+00:00\n"
+"PO-Revision-Date: 2026-05-21 14:28+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: sv-SE\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-05-13T18:43:00+00:00\n"
-"PO-Revision-Date: 2026-05-21 14:28+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: sv-SE\n"
 
-#: post-expirator.php:4, fuzzy
 #. Plugin Name of the plugin
+#: post-expirator.php:4
 msgid "PublishPress Future Free"
 msgstr "PublishPress Future Free"
 
-#: post-expirator.php:5, fuzzy
 #. Plugin URI of the plugin
+#: post-expirator.php:5
 msgid "http://wordpress.org/extend/plugins/post-expirator/"
 msgstr "http://wordpress.org/extend/plugins/post-expirator/"
 
-#: post-expirator.php:6
 #. Description of the plugin
+#: post-expirator.php:6
 msgid ""
-"PublishPress Future allows you to schedule automatic changes to posts, "
-"pages and other content types."
+"PublishPress Future allows you to schedule automatic changes to posts, pages "
+"and other content types."
 msgstr ""
 "PublishPress Future gör att du kan schemalägga automatiska ändringar av "
 "inlägg, sidor och andra innehållstyper."
 
-#: post-expirator.php:7
 #. Author of the plugin
+#: post-expirator.php:7
 msgid "PublishPress"
 msgstr "PublishPress"
 
-#: post-expirator.php:9, fuzzy
 #. Author URI of the plugin
+#: post-expirator.php:9
 msgid "http://publishpress.com"
 msgstr "http://publishpress.com"
 
-#: legacy/classes/Display.class.php:113
-#: legacy/classes/Display.class.php:141
+#: legacy/classes/Display.class.php:113 legacy/classes/Display.class.php:141
 msgid "You do not have permission to configure PublishPress Future."
 msgstr "Du har inte behörighet att konfigurera PublishPress Future."
 
@@ -87,17 +86,17 @@ msgid "The database schema was fixed."
 msgstr "Databasschemat har fixats."
 
 #: legacy/classes/Display.class.php:328
-msgid "The database schema could not be fixed. Please, contact the support team."
+msgid ""
+"The database schema could not be fixed. Please, contact the support team."
 msgstr "Databasschemat kunde inte fixas. Vänligen kontakta supportteamet."
 
-#: legacy/classes/Display.class.php:399
-#: legacy/classes/Display.class.php:453
+#: legacy/classes/Display.class.php:399 legacy/classes/Display.class.php:453
 #: legacy/classes/Display.class.php:475
 msgid "Saved Options!"
 msgstr "Sparade alternativ!"
 
-#: legacy/classes/Display.class.php:567
 #. translators: %1$s is the plugin name, %2$s is the star rating markup
+#: legacy/classes/Display.class.php:567
 #, php-format
 msgid "If you like %1$s, please leave us a %2$s rating. Thank you!"
 msgstr "Om du gillar %1$s, vänligen lämna oss en %2$s bedömning. Tack!"
@@ -130,18 +129,15 @@ msgstr "Kontakta"
 msgid "No taxonomies found"
 msgstr "Inga taxonomies hittades"
 
-#: services.php:151
-#: src/Modules/Settings/SettingsFacade.php:122, fuzzy
+#: services.php:151 src/Modules/Settings/SettingsFacade.php:122
 msgid "l F jS, Y"
 msgstr "l F jS, Y"
 
-#: services.php:155
-#: src/Modules/Settings/SettingsFacade.php:123
+#: services.php:155 src/Modules/Settings/SettingsFacade.php:123
 msgid "g:ia"
 msgstr "G:i"
 
-#: services.php:156
-#: src/Modules/Settings/SettingsFacade.php:124
+#: services.php:156 src/Modules/Settings/SettingsFacade.php:124
 msgid "Post expires at EXPIRATIONTIME on ACTIONDATE"
 msgstr "Inlägget går ut den EXPIRATIONTIME på ACTIONDATE"
 
@@ -165,27 +161,23 @@ msgid "Invalid date time offset"
 msgstr "Ogiltig datum och tidsavvikelse"
 
 #: src/Modules/Backup/Controllers/BackupAdminPage.php:164
-#: assets/js/backupPanel.js:34
-#: assets/js/backupPanel.js:692
+#: assets/js/backupPanel.js:34 assets/js/backupPanel.js:692
 #: assets/js/backupPanel.js:722
 #: assets/jsx/backup-panel/components/backup-panel.jsx:10
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:77
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:105
-#: assets/js/backupPanel.js:10
-#: assets/js/backupPanel.js:553
+#: assets/js/backupPanel.js:10 assets/js/backupPanel.js:553
 #: assets/js/backupPanel.js:581
 msgid "Export"
 msgstr "Exportera"
 
 #: src/Modules/Backup/Controllers/BackupAdminPage.php:169
-#: assets/js/backupPanel.js:37
-#: assets/js/backupPanel.js:543
+#: assets/js/backupPanel.js:37 assets/js/backupPanel.js:543
 #: assets/js/backupPanel.js:1251
 #: assets/jsx/backup-panel/components/backup-panel.jsx:14
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-import.jsx:106
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:131
-#: assets/js/backupPanel.js:14
-#: assets/js/backupPanel.js:443
+#: assets/js/backupPanel.js:14 assets/js/backupPanel.js:443
 #: assets/js/backupPanel.js:939
 msgid "Import"
 msgstr "Importera"
@@ -210,7 +202,8 @@ msgstr ""
 
 #: src/Modules/Debug/Controllers/Controller.php:106
 msgid "You do not have sufficient permissions to access this page."
-msgstr "Du har inte tillräckliga behörigheter för att få åtkomst till denna sida."
+msgstr ""
+"Du har inte tillräckliga behörigheter för att få åtkomst till denna sida."
 
 #: src/Modules/Debug/Controllers/Controller.php:111
 msgid "Invalid nonce."
@@ -218,27 +211,25 @@ msgstr "Ogiltig nonce."
 
 #: src/Modules/Debug/Migrations/V04905DebugLogRequestId.php:80
 msgid ""
-"Add request_id and trigger_activated columns to debug log table after "
-"v4.10.0"
+"Add request_id and trigger_activated columns to debug log table after v4.10.0"
 msgstr ""
 "Lägg till request_id och trigger_activated kolumner i debug-loggtabellen "
 "efter v4.10.0"
 
 #: src/Modules/Debug/Migrations/V04906DebugLogTimestampMilliseconds.php:79
 msgid "Add millisecond precision to debug log timestamp column (v4.10.0)"
-msgstr "Lägg till millisekundprecision till debug logg-tidsstämpelkolumn (v4.10.0)"
+msgstr ""
+"Lägg till millisekundprecision till debug logg-tidsstämpelkolumn (v4.10.0)"
 
 #: src/Modules/Debug/Views/raw-debug-log.html.php:39
 #: src/Modules/Settings/Controllers/Controller.php:215
-#: src/Views/menu-debug-log.php:113
-#: src/Views/menu-debug-log.php:148
+#: src/Views/menu-debug-log.php:113 src/Views/menu-debug-log.php:148
 msgid "Debugging table is currently empty."
 msgstr "Debugging-tabellen är för närvarande tom."
 
 #: src/Modules/Debug/Views/raw-debug-log.html.php:40
 #: src/Modules/Settings/Controllers/Controller.php:216
-#: src/Views/menu-debug-log.php:115
-#: src/Views/menu-debug-log.php:150
+#: src/Views/menu-debug-log.php:115 src/Views/menu-debug-log.php:150
 msgid "No results match the current filter."
 msgstr "Inga resultat matchar det aktuella filtret."
 
@@ -261,8 +252,7 @@ msgstr "Taxonomy"
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:131
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:132
 #: src/Modules/Expirator/Controllers/SettingsController.php:544
-#: src/Views/menu-admin.php:44
-#: src/Views/tabs-future-actions.php:51
+#: src/Views/menu-admin.php:44 src/Views/tabs-future-actions.php:51
 msgid "Future Actions"
 msgstr "Framtida åtgärder"
 
@@ -315,20 +305,20 @@ msgstr "Visa kalender"
 msgid "Hide Calendar"
 msgstr "Dölj kalender"
 
+#. translators: the text between {} is the link to the settings page.
+#. translators: the text between {{}} is the link to the settings page.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:182
 #: src/Modules/Expirator/Controllers/BulkEditController.php:222
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:423
 #: src/Modules/Expirator/Controllers/QuickEditController.php:352
-#. translators: the text between {} is the link to the settings page.
-#. translators: the text between {{}} is the link to the settings page.
 msgid "Timezone is controlled by the {WordPress Settings}."
 msgstr "Tidszon kontrolleras av {WordPress-inställningar}."
 
+#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:189
 #: src/Modules/Expirator/Controllers/BulkEditController.php:229
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:430
 #: src/Modules/Expirator/Controllers/QuickEditController.php:356
-#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "No %s found."
 msgstr "Inga %s hittades."
@@ -342,38 +332,38 @@ msgstr ""
 "Du måste tilldela en taxonomy till denna posttyp för att använda denna "
 "funktion."
 
+#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:197
 #: src/Modules/Expirator/Controllers/BulkEditController.php:243
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:438
 #: src/Modules/Expirator/Controllers/QuickEditController.php:361
-#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "New %s"
 msgstr "Ny %s"
 
+#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:199
 #: src/Modules/Expirator/Controllers/BulkEditController.php:245
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:440
 #: src/Modules/Expirator/Controllers/QuickEditController.php:363
-#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "%s to remove"
 msgstr "%s att ta bort"
 
+#. translators: %s is the name of the taxonomy in plural form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:201
 #: src/Modules/Expirator/Controllers/BulkEditController.php:247
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:442
 #: src/Modules/Expirator/Controllers/QuickEditController.php:365
-#. translators: %s is the name of the taxonomy in plural form.
 #, php-format
 msgid "%s to add"
 msgstr "%s att lägga till"
 
+#. translators: %s is the name of the taxonomy in singular form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:204
 #: src/Modules/Expirator/Controllers/BulkEditController.php:250
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:445
 #: src/Modules/Expirator/Controllers/QuickEditController.php:367
-#. translators: %s is the name of the taxonomy in singular form.
 #, php-format
 msgid "Search for %s"
 msgstr "Sök efter %s"
@@ -399,12 +389,12 @@ msgstr "Välj ett datum"
 msgid "Date cannot be in the past"
 msgstr "Datumet kan inte vara i det förflutna"
 
+#. translators: %s is the name of the taxonomy in singular form.
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:212
 #: src/Modules/Expirator/Controllers/BulkEditController.php:258
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:453
 #: src/Modules/Expirator/Controllers/QuickEditController.php:373
 #: src/Modules/Expirator/Controllers/SettingsController.php:298
-#. translators: %s is the name of the taxonomy in singular form.
 #, php-format
 msgid "Please select one or more %s"
 msgstr "Vänligen välj en eller flera %s"
@@ -424,7 +414,8 @@ msgstr "Inga inlägg valda. Kan inte synkronisera framtida åtgärder."
 
 #: src/Modules/Expirator/Controllers/BulkActionController.php:105
 msgid "Future Actions successfully synced with Post Metadata."
-msgstr "Framtida åtgärder har framgångsrikt synkroniserats med inläggsmetadata."
+msgstr ""
+"Framtida åtgärder har framgångsrikt synkroniserats med inläggsmetadata."
 
 #: src/Modules/Expirator/Controllers/BulkActionController.php:126
 msgid "Update Future Actions from Post Metadata"
@@ -473,8 +464,7 @@ msgstr "Uppgradera till Pro"
 #: src/Modules/Workflows/Controllers/ManualPostTrigger.php:495
 #: src/Modules/Workflows/Controllers/PostType.php:49
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:181
-#: assets/js/backupPanel.js:512
-#: assets/js/backupPanel.js:698
+#: assets/js/backupPanel.js:512 assets/js/backupPanel.js:698
 #: assets/js/workflowManualSelectionBlockEditor.js:2157
 #: assets/js/workflowManualSelectionBulkEdit.js:167
 #: assets/js/workflowManualSelectionQuickEdit.js:2217
@@ -483,14 +473,14 @@ msgstr "Uppgradera till Pro"
 #: assets/jsx/workflow-manual-selection/block-editor/index.jsx:49
 #: assets/jsx/workflow-manual-selection/bulk-edit/fieldset.jsx:88
 #: assets/jsx/workflow-manual-selection/quick-edit/index.jsx:75
-#: assets/js/backupPanel.js:405
-#: assets/js/backupPanel.js:559
+#: assets/js/backupPanel.js:405 assets/js/backupPanel.js:559
 #: assets/js/workflowManualSelectionBlockEditor.js:1629
 #: assets/js/workflowManualSelectionBulkEdit.js:114
 #: assets/js/workflowManualSelectionQuickEdit.js:1694
 msgid "Action Workflows"
 msgstr "Åtgärdsarbetsflöden"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: src/Modules/Expirator/Controllers/PluginsListController.php:70
 #: src/Modules/Expirator/Controllers/SettingsController.php:132
 #: src/Modules/Expirator/Controllers/SettingsController.php:133
@@ -500,7 +490,6 @@ msgstr "Åtgärdsarbetsflöden"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14436
 #: assets/jsx/workflow-editor/components/settings-sidebar/settings-sidebar.jsx:54
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11976
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Settings"
 msgstr "Inställningar"
 
@@ -551,9 +540,9 @@ msgstr "Utförd åtgärd för: %s (ID: %d)"
 msgid "Executed scheduled action"
 msgstr "Utförd schemalagd åtgärd"
 
+#. translators: %1$s is the link to the PHP strtotime function documentation, %2$s and %3$s are the opening and closing code tags. Please, do not translate the date format text, since PHP will not be able to calculate using non-english terms.
 #: src/Modules/Expirator/Controllers/SettingsController.php:252
 #: src/Views/menu-general.php:41
-#. translators: %1$s is the link to the PHP strtotime function documentation, %2$s and %3$s are the opening and closing code tags. Please, do not translate the date format text, since PHP will not be able to calculate using non-english terms.
 #, php-format
 msgid ""
 "Set the offset to use for the default action date and time. For information "
@@ -563,8 +552,8 @@ msgid ""
 msgstr ""
 "Ställ in offset för att använda för standard åtgärdsdatum och tid. För "
 "information om formatering, se %1$s. Till exempel kan du ange %2$s+1 "
-"månad%3$s eller %2$s+1 vecka 2 dagar 4 timmar 2 sekunder%3$s eller "
-"%2$snästa torsdag%3$s. Vänligen, använd endast termer på engelska."
+"månad%3$s eller %2$s+1 vecka 2 dagar 4 timmar 2 sekunder%3$s eller %2$snästa "
+"torsdag%3$s. Vänligen, använd endast termer på engelska."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:262
 msgid "Default Values"
@@ -618,12 +607,11 @@ msgid ""
 "No taxonomies found for this post type. Taxonomy actions will not be "
 "available."
 msgstr ""
-"Inga taxonomier hittades för denna posttyp. Taxonomiåtgärder kommer inte "
-"att vara tillgängliga."
+"Inga taxonomier hittades för denna posttyp. Taxonomiåtgärder kommer inte att "
+"vara tillgängliga."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:282
-#: src/Views/menu-notifications.php:116
-#: src/Views/menu-notifications.php:169
+#: src/Views/menu-notifications.php:116 src/Views/menu-notifications.php:169
 msgid "Who to Notify"
 msgstr "Vem att meddela"
 
@@ -631,7 +619,8 @@ msgstr "Vem att meddela"
 msgid ""
 "Enter a comma separated list of emails that you would like to be notified "
 "when the action runs."
-msgstr "En kommaseparerad lista över e-postadresser att skicka meddelandet till."
+msgstr ""
+"En kommaseparerad lista över e-postadresser att skicka meddelandet till."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:287
 #: src/Views/menu-general.php:29
@@ -721,7 +710,8 @@ msgstr ""
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:309
 msgid "This is a Pro feature. Upgrade to unlock this functionality."
-msgstr "Detta är en Pro-funktion. Uppgradera för att låsa upp denna funktionalitet."
+msgstr ""
+"Detta är en Pro-funktion. Uppgradera för att låsa upp denna funktionalitet."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:459
 #: src/Modules/Settings/Controllers/Controller.php:298
@@ -733,8 +723,8 @@ msgid ""
 "The shortcode [futureaction] must be used inside the loop or with the "
 "post_id attribute."
 msgstr ""
-"Shortcode [futureaction] måste användas inom loopen eller med "
-"post_id-attributet."
+"Shortcode [futureaction] måste användas inom loopen eller med post_id-"
+"attributet."
 
 #: src/Modules/Expirator/DBTableSchemas/ActionArgsSchema.php:96
 msgid "The column args length was not updated to 1000."
@@ -747,11 +737,11 @@ msgstr "Kolumnens args-längd uppdaterades inte till 1000."
 msgid "Status didn't change."
 msgstr "Status ändrades inte."
 
+#. translators: 1: old post status, 2: new post status
 #: src/Modules/Expirator/ExpirationActions/ChangePostStatus.php:62
 #: src/Modules/Expirator/ExpirationActions/PostStatusToDraft.php:60
 #: src/Modules/Expirator/ExpirationActions/PostStatusToPrivate.php:60
 #: src/Modules/Expirator/ExpirationActions/PostStatusToTrash.php:60
-#. translators: 1: old post status, 2: new post status
 #, php-format
 msgid "Status has been successfully changed from \"%1$s\" to \"%2$s\"."
 msgstr "Status har framgångsrikt ändrats från \"%1$s\" till \"%2$s\"."
@@ -760,14 +750,14 @@ msgstr "Status har framgångsrikt ändrats från \"%1$s\" till \"%2$s\"."
 msgid "Change status"
 msgstr "Ändra status"
 
-#: src/Modules/Expirator/ExpirationActions/DeletePost.php:47
 #. translators: %s: post type singular label
+#: src/Modules/Expirator/ExpirationActions/DeletePost.php:47
 #, php-format
 msgid "%s was not deleted."
 msgstr "%s har inte raderats."
 
-#: src/Modules/Expirator/ExpirationActions/DeletePost.php:54
 #. translators: %s: post type singular label
+#: src/Modules/Expirator/ExpirationActions/DeletePost.php:54
 #, php-format
 msgid "%s has been successfully deleted."
 msgstr "%s har raderats framgångsrikt."
@@ -783,96 +773,96 @@ msgstr "%s har raderats framgångsrikt."
 msgid "Delete"
 msgstr "Radera"
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:65
 #. translators: %s is the post type singular label
+#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:65
 #, php-format
 msgid "No terms were added to the %s."
 msgstr "Inga termer lades till i %s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:77
 #. translators: %1$s is the taxonomy label, %2$s is the post type singular label, %3$s is the list of terms added, %4$s is the list of terms on the post
+#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:77
 #, php-format
 msgid ""
 "The following terms (%1$s) were added to the %2$s: \"%3$s\". The full list "
 "of terms on the post is: %4$s."
 msgstr "Följande termer (%1$s) togs bort från %2$s: %3$s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:120
 #. translators: %s is the taxonomy name (plural)
+#: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:120
 #, php-format
 msgid "Add extra %s"
 msgstr "Lägg till extra %s"
 
+#. translators: %s is the post type singular label
 #: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:56
 #: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:56
-#. translators: %s is the post type singular label
 #, php-format
 msgid "No terms were removed from the %s."
 msgstr "Inga termer togs bort från %s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:67
 #. translators: %1$s is the taxonomy name, %2$s is the post type singular label, %3$s is the removed terms list, %4$s is the updated terms list
+#: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:67
 #, php-format
 msgid ""
-"The following terms (%1$s) were removed from the %2$s: %3$s. The new list "
-"of terms on the post is: %4$s."
+"The following terms (%1$s) were removed from the %2$s: %3$s. The new list of "
+"terms on the post is: %4$s."
 msgstr "Följande termer (%1$s) togs bort från %2$s: %3$s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:112
 #. translators: %s is the taxonomy name (plural)
+#: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:112
 #, php-format
 msgid "Remove selected %s"
 msgstr "Ta bort valda %s"
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:67
 #. translators: %1$s is the taxonomy name, %2$s is the post type singular label, %3$s is the list of term names
+#: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:67
 #, php-format
 msgid "The following terms (%1$s) were removed from the %2$s: %3$s."
 msgstr "Följande termer (%1$s) togs bort från %2$s: %3$s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:106
 #. translators: %s is the taxonomy name (plural)
+#: src/Modules/Expirator/ExpirationActions/PostCategoryRemoveAll.php:106
 #, php-format
 msgid "Remove all %s"
 msgstr "Ta bort alla %s"
 
-#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:58
 #. translators: %s is the post type singular label
+#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:58
 #, php-format
 msgid "No terms were changed on the %s."
 msgstr "Inga termer ändrades på %s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:69
 #. translators: 1: taxonomy name, 2: post type singular label, 3: updated terms, 4: original terms
+#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:69
 #, php-format
 msgid ""
 "The following terms (%1$s) were set to the %2$s: \"%3$s\". The old list of "
 "terms on the post was: %4$s."
 msgstr "Följande termer (%1$s) togs bort från %2$s: %3$s."
 
-#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:109
 #. translators: %s is the taxonomy name (plural)
+#: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:109
 #, php-format
 msgid "Replace all %s"
 msgstr "Ersätt alla %s"
 
+#. translators: %s: new post status
 #: src/Modules/Expirator/ExpirationActions/PostStatusToDraft.php:90
 #: src/Modules/Expirator/ExpirationActions/PostStatusToPrivate.php:90
 #: src/Modules/Expirator/ExpirationActions/PostStatusToTrash.php:90
-#. translators: %s: new post status
 #, php-format
 msgid "Change status to %s"
 msgstr "Ändra status till %s"
 
+#. translators: %s: post type singular label
 #: src/Modules/Expirator/ExpirationActions/StickPost.php:46
 #: src/Modules/Expirator/ExpirationActions/UnstickPost.php:46
-#. translators: %s: post type singular label
 #, php-format
 msgid "%s didn't change."
 msgstr "%s har inte ändrats."
 
-#: src/Modules/Expirator/ExpirationActions/StickPost.php:53
 #. translators: %s: post type singular label
+#: src/Modules/Expirator/ExpirationActions/StickPost.php:53
 #, php-format
 msgid "%s has been added to stickies list."
 msgstr "%s har lagts till i listan över klisterlappar."
@@ -881,8 +871,8 @@ msgstr "%s har lagts till i listan över klisterlappar."
 msgid "Stick"
 msgstr "Klistra"
 
-#: src/Modules/Expirator/ExpirationActions/UnstickPost.php:53
 #. translators: %s: post type singular label
+#: src/Modules/Expirator/ExpirationActions/UnstickPost.php:53
 #, php-format
 msgid "%s has been removed from stickies list."
 msgstr "%s har tagits bort från listan över klisterlappar."
@@ -927,35 +917,35 @@ msgstr "E-post skickad."
 msgid "Email not sent."
 msgstr "E-post inte skickad."
 
-#: src/Modules/Expirator/Models/ExpirablePostModel.php:644
 #. translators: %1$s: post title placeholder, %2$s: notification text, %3$s: action date placeholder, %4$s: post link placeholder
+#: src/Modules/Expirator/Models/ExpirablePostModel.php:644
 #, php-format
 msgid "%1$s. %2$s on %3$s. The post link is %4$s"
 msgstr "%1$s. %2$s den %3$s. Postlänken är %4$s"
 
-#: src/Modules/Expirator/Models/ExpirablePostModel.php:662
 #. translators: %s is the post title
+#: src/Modules/Expirator/Models/ExpirablePostModel.php:662
 #, php-format
 msgid "Future Action Complete \"%s\""
 msgstr "Framtida åtgärd slutförd \"%s\""
 
-#: src/Modules/Expirator/Models/ExpirablePostModel.php:666
 #. translators: 1: is the blog name, 2: the email subject
+#: src/Modules/Expirator/Models/ExpirablePostModel.php:666
 #, fuzzy, php-format
 msgid "[%1$s] %2$s"
 msgstr "[%1$s] %2$s"
 
-#: src/Modules/Expirator/Models/PostTypeDefaultDataModel.php:156
 #. translators: %s is the date/time offset and %s is the post type.
+#: src/Modules/Expirator/Models/PostTypeDefaultDataModel.php:156
 #, php-format
 msgid ""
 "Invalid date/time offset \"%s\" for post type \"%s\". Please ensure you use "
 "only English terms for the date/time offset, such as \"3 months\" or \"1 "
 "week\"."
 msgstr ""
-"Ogiltigt datum/tidsoffset \"%s\" för posttyp \"%s\". Vänligen säkerställ "
-"att du endast använder engelska termer för datum/tidsoffset, såsom \"3 "
-"månader\" eller \"1 vecka\"."
+"Ogiltigt datum/tidsoffset \"%s\" för posttyp \"%s\". Vänligen säkerställ att "
+"du endast använder engelska termer för datum/tidsoffset, såsom \"3 månader\" "
+"eller \"1 vecka\"."
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:53
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:234
@@ -992,64 +982,66 @@ msgid "Cancel"
 msgstr "Avbryt"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:77
-msgid "Cancel the action. This will prevent the action from running in the future"
-msgstr "Avbryt åtgärden. Detta kommer att förhindra att åtgärden körs i framtiden"
+msgid ""
+"Cancel the action. This will prevent the action from running in the future"
+msgstr ""
+"Avbryt åtgärden. Detta kommer att förhindra att åtgärden körs i framtiden"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:88
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:478
 msgid "Run"
 msgstr "Kör"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:96
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:96
 #, php-format
 msgid "%s year"
 msgid_plural "%s years"
 msgstr[0] "%s år"
 msgstr[1] "%s år"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:101
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:101
 #, php-format
 msgid "%s month"
 msgid_plural "%s months"
 msgstr[0] "%s månad"
 msgstr[1] "%s månader"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:106
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:106
 #, php-format
 msgid "%s week"
 msgid_plural "%s weeks"
 msgstr[0] "%s vecka"
 msgstr[1] "%s veckor"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:111
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:111
 #, php-format
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] "%s dag"
 msgstr[1] "%s dagar"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:116
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:116
 #, php-format
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] "%s timme"
 msgstr[1] "%s timmar"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:121
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:121
 #, php-format
 msgid "%s minute"
 msgid_plural "%s minutes"
 msgstr[0] "%s minut"
 msgstr[1] "%s minuter"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:126
 #. translators: %s: amount of time
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:126
 #, php-format
 msgid "%s second"
 msgid_plural "%s seconds"
@@ -1101,20 +1093,20 @@ msgstr "Genomförd"
 msgid "Process the action now"
 msgstr "Bearbeta åtgärden nu"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:524
 #. translators: %1$s: post type label, %2$d: post ID, %3$s: post link tag start, %4$s: post title, %5$s: post link tag end
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:524
 #, fuzzy, php-format
 msgid "%1$s: [%2$d] %3$s%4$s%5$s"
 msgstr "%1$s: [%2$d] %3$s%4$s%5$s"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:559
 #. translators: %s is the new status
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:559
 #, php-format
 msgid "New Status: %s"
 msgstr "Ny status: %s"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:567
 #. translators: %s is the list of terms
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:567
 #, php-format
 msgid "Terms: %s"
 msgstr "Villkor: %s"
@@ -1163,14 +1155,14 @@ msgstr "Meddelande"
 msgid "Async"
 msgstr "Asynkron"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:765
 #. translators: %s is the date interval in human readable format in the past
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:765
 #, php-format
 msgid " (%s ago)"
 msgstr " (%s sedan)"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:771
 #. translators: %s is the date interval in human readable format in the present or future
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:771
 #, fuzzy, php-format
 msgid " (%s)"
 msgstr " (%s)"
@@ -1179,8 +1171,8 @@ msgstr " (%s)"
 msgid "Now!"
 msgstr "Nu!"
 
-#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:845
 #. translators: %s: time interval
+#: src/Modules/Expirator/Tables/ScheduledActionsTable.php:845
 #, php-format
 msgid "Every %s"
 msgstr "Varje %s"
@@ -1262,19 +1254,18 @@ msgid ""
 "workflow steps will be preserved before automatic removal."
 msgstr ""
 "Varaktigheten, i dagar, för vilka slutförda, misslyckade och avbrutna "
-"schemalagda arbetsflödessteg kommer att bevaras innan automatisk "
-"borttagning."
+"schemalagda arbetsflödessteg kommer att bevaras innan automatisk borttagning."
 
 #: src/Modules/Settings/Controllers/Controller.php:274
 msgid "days"
 msgstr "dagar"
 
-#: src/Modules/VersionNotices/Module.php:95
 #. translators: %1$s and %2$s are placeholders for the link to by the Pro version
+#: src/Modules/VersionNotices/Module.php:95
 #, php-format
 msgid ""
-"You're using PublishPress Future Free. The Pro version has more features "
-"and support. %1$sUpgrade to Pro%2$s"
+"You're using PublishPress Future Free. The Pro version has more features and "
+"support. %1$sUpgrade to Pro%2$s"
 msgstr ""
 "Du använder PublishPress Future Free. Pro-versionen har fler funktioner och "
 "support. %1$sUppgradera till Pro%2$s"
@@ -1287,8 +1278,8 @@ msgstr "Manuell utlösning av arbetsflöde"
 msgid "Check and warn about past-due actions"
 msgstr "Kontrollera och varna om förfallna åtgärder"
 
-#: src/Modules/Workflows/Controllers/PastDueActions.php:148
 #. translators: %s is the admin URL to the scheduled actions page
+#: src/Modules/Workflows/Controllers/PastDueActions.php:148
 #, php-format
 msgid ""
 "You have past-due scheduled actions in PublishPress Future.\n"
@@ -1409,7 +1400,8 @@ msgstr "Avpublicera till utkast efter en vecka"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:40
 msgid "Change the post status to Draft a week after it was published."
-msgstr "Ändra inläggets status till utkast en vecka efter att det publicerades."
+msgstr ""
+"Ändra inläggets status till utkast en vecka efter att det publicerades."
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:44
 msgid "Unpublish and change category after 15 days"
@@ -1445,7 +1437,8 @@ msgstr "Ta bort inlägg en vecka efter publicering"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:60
 msgid "Sample workflow to delete post one week after publishing"
-msgstr "Exempel på arbetsflöde för att ta bort inlägg en vecka efter publicering"
+msgstr ""
+"Exempel på arbetsflöde för att ta bort inlägg en vecka efter publicering"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:64
 msgid "Remove all categories one week after publishing"
@@ -1491,7 +1484,8 @@ msgstr "Ta bort fästning av inlägg en vecka efter publicering"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:85
 msgid "Sample workflow to unstick post one week after publishing"
-msgstr "Exempel på arbetsflöde för att frigöra inlägg en vecka efter publicering"
+msgstr ""
+"Exempel på arbetsflöde för att frigöra inlägg en vecka efter publicering"
 
 #: src/Modules/Workflows/Controllers/ScheduledActions.php:201
 msgid "Workflow repeating scheduled step"
@@ -1570,20 +1564,20 @@ msgstr "Steg:"
 msgid "Workflow recurring scheduled action"
 msgstr "Återkommande schemalagd åtgärd i arbetsflöde"
 
-#: src/Modules/Workflows/Controllers/ScheduledActions.php:508
 #. translators: %1$s is the recurrence, %2$s is the date
+#: src/Modules/Workflows/Controllers/ScheduledActions.php:508
 #, php-format
 msgid "%1$s until %2$s"
 msgstr "%1$s tills %2$s"
 
-#: src/Modules/Workflows/Controllers/ScheduledActions.php:518
 #. translators: %1$s is the recurrence, %2$d is the repeat times
+#: src/Modules/Workflows/Controllers/ScheduledActions.php:518
 #, php-format
 msgid "%1$s for %2$d times"
 msgstr "%1$s för %2$d gånger"
 
-#: src/Modules/Workflows/Controllers/ScheduledActions.php:528
 #. translators: %1$s is the executed times, %2$d is the total repeat times
+#: src/Modules/Workflows/Controllers/ScheduledActions.php:528
 #, fuzzy, php-format
 msgid "[%1$s/%2$d]"
 msgstr "[%1$s/%2$d]"
@@ -1695,15 +1689,15 @@ msgstr ""
 "Om du har några frågor eller behöver hjälp, klicka på hjälpknappen i det "
 "övre högra hörnet för att få tillgång till supportresurserna."
 
+#. translators: Blocks tab title in the block inserter.
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:236
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14099
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:19
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11707
-#. translators: Blocks tab title in the block inserter.
 msgid "Triggers"
 msgstr "Utlösare"
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:280, fuzzy
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:280
 msgid "—"
 msgstr "—"
 
@@ -1784,8 +1778,8 @@ msgstr "Åtgärd Arbetsflödesredigerare"
 msgid "%s updated."
 msgstr "%s uppdaterad."
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:838
 #. translators: 1: Post type singular label, 2: Revision title
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:838
 #, php-format
 msgid "%1$s restored to revision from %2$s"
 msgstr "%1$s återställd till revision från %2$s"
@@ -1805,8 +1799,8 @@ msgstr "%s sparad."
 msgid "%s submitted."
 msgstr "%s inlämnad."
 
-#: src/Modules/Workflows/Controllers/WorkflowsList.php:857
 #. translators: 1: Post type singular label, 2: Scheduled date
+#: src/Modules/Workflows/Controllers/WorkflowsList.php:857
 #, php-format
 msgid "%1$s scheduled for: <strong>%2$s</strong>."
 msgstr "%1$s planerad för: <strong>%2$s</strong>."
@@ -2055,8 +2049,8 @@ msgstr "Lägg till extra termer till inlägg"
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostTerm.php:37
 msgid "This step keeps the current taxonomy terms and adds additional terms."
 msgstr ""
-"Detta steg behåller de aktuella taxonomitermerna och lägger till "
-"ytterligare termer."
+"Detta steg behåller de aktuella taxonomitermerna och lägger till ytterligare "
+"termer."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostTerm.php:65
 msgid "Select which post will have terms added."
@@ -2156,8 +2150,8 @@ msgstr "Villkorlig"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:37
 msgid ""
-"This step allows you to continue the workflow only if certain conditions "
-"are met. It is not required to have both a True and a False option."
+"This step allows you to continue the workflow only if certain conditions are "
+"met. It is not required to have both a True and a False option."
 msgstr ""
 "Detta steg tillåter dig att fortsätta arbetsflödet endast om vissa villkor "
 "är uppfyllda. Det är inte nödvändigt att ha både ett sant och ett falskt "
@@ -2178,7 +2172,8 @@ msgstr "Villkor"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:74
 msgid "The conditions that must be met for deciding which branch to take."
-msgstr "De villkor som måste uppfyllas för att avgöra vilken gren som ska väljas."
+msgstr ""
+"De villkor som måste uppfyllas för att avgöra vilken gren som ska väljas."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:124
 msgid "Branch"
@@ -2296,8 +2291,8 @@ msgid ""
 "Specify the meta value to delete from the post. If empty, all meta with the "
 "same key will be deleted."
 msgstr ""
-"Specificera meta-värdet som ska raderas från inlägget. Om det är tomt "
-"kommer alla meta med samma nyckel att raderas."
+"Specificera meta-värdet som ska raderas från inlägget. Om det är tomt kommer "
+"alla meta med samma nyckel att raderas."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:32
 msgid "Do custom action"
@@ -2408,7 +2403,8 @@ msgstr "Kopiera inläggsmeta"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DuplicatePost.php:105
 msgid "If enabled, all post meta will be copied to the new post."
-msgstr "Om aktiverat kommer all inläggsmeta att kopieras till det nya inlägget."
+msgstr ""
+"Om aktiverat kommer all inläggsmeta att kopieras till det nya inlägget."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DuplicatePost.php:111
 msgid "Copy Post Taxonomies"
@@ -2426,7 +2422,8 @@ msgstr "Kopiera utvald bild"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DuplicatePost.php:119
 msgid "If enabled, the featured image will be copied to the new post."
-msgstr "Om aktiverat kommer den utvalda bilden att kopieras till det nya inlägget."
+msgstr ""
+"Om aktiverat kommer den utvalda bilden att kopieras till det nya inlägget."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DuplicatePost.php:161
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DuplicatePost.php:174
@@ -2590,7 +2587,8 @@ msgstr "Upprepa begränsning"
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:146
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:123
 msgid "The maximum number of times the scheduled action will be repeated."
-msgstr "Det maximala antalet gånger den schemalagda åtgärden kommer att upprepas."
+msgstr ""
+"Det maximala antalet gånger den schemalagda åtgärden kommer att upprepas."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:183
 msgid "After delay"
@@ -2609,7 +2607,8 @@ msgstr "PublishPress-arbetsflöde: {{global.workflow.title}}"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:22
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:22
-msgid "This is a message sent by PublishPress Workflow: {{global.workflow.title}}."
+msgid ""
+"This is a message sent by PublishPress Workflow: {{global.workflow.title}}."
 msgstr ""
 "Detta är ett meddelande skickat av PublishPress Workflow: "
 "{{global.workflow.title}}."
@@ -2642,7 +2641,8 @@ msgstr "Mottagare"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:84
 msgid "A comma-separated list of email addresses to send the message to."
-msgstr "En kommaseparerad lista över e-postadresser att skicka meddelandet till."
+msgstr ""
+"En kommaseparerad lista över e-postadresser att skicka meddelandet till."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:92
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:142
@@ -2687,7 +2687,8 @@ msgstr "Mottagare"
 msgid ""
 "A comma-separated list of user names, ids, emails or user roles to send the "
 "message to."
-msgstr "En kommaseparerad lista över e-postadresser att skicka meddelandet till."
+msgstr ""
+"En kommaseparerad lista över e-postadresser att skicka meddelandet till."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:113
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:103
@@ -2787,7 +2788,8 @@ msgstr "Ersätt alla termer i inlägget"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SetPostTerm.php:37
 msgid "This step removes the current taxonomy terms and adds new terms."
-msgstr "Detta steg tar bort de aktuella taxonomitermerna och lägger till nya termer."
+msgstr ""
+"Detta steg tar bort de aktuella taxonomitermerna och lägger till nya termer."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SetPostTerm.php:65
 msgid "Select which post will have terms replaced."
@@ -2806,7 +2808,8 @@ msgid "New terms"
 msgstr "Nya termer"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SetPostTerm.php:83
-msgid "The terms that will be added to the posts after removing all the others."
+msgid ""
+"The terms that will be added to the posts after removing all the others."
 msgstr ""
 "De termer som kommer att läggas till i inläggen efter att alla andra har "
 "tagits bort."
@@ -3023,17 +3026,18 @@ msgid "Specify the message to be displayed to the responders."
 msgstr "Ange meddelandet som ska visas för respondenterna."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:97
-msgid "Please select an option to continue the workflow: {{global.workflow.title}}"
+msgid ""
+"Please select an option to continue the workflow: {{global.workflow.title}}"
 msgstr ""
 "Vänligen välj ett alternativ för att fortsätta arbetsflödet: "
 "{{global.workflow.title}}"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:129
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:201
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10119
 #: assets/jsx/workflow-editor/components/more-menu/menu-dropdown.jsx:11
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7867
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Options"
 msgstr "Alternativ"
 
@@ -3068,8 +3072,8 @@ msgstr "Alternativ > Alternativ"
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:227
 msgid "The responders to the interactive delay, as a list of user ids."
 msgstr ""
-"Responders till den interaktiva fördröjningen, som en lista över "
-"användar-id:n."
+"Responders till den interaktiva fördröjningen, som en lista över användar-"
+"id:n."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:232
 msgid "Option name"
@@ -3328,7 +3332,8 @@ msgid "Meta keys"
 msgstr "Metanycklar"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:95
-msgid "This field allow you to choose the post meta that will trigger this action."
+msgid ""
+"This field allow you to choose the post meta that will trigger this action."
 msgstr ""
 "Detta fält låter dig välja den inläggsmetadata som kommer att utlösa denna "
 "åtgärd."
@@ -3399,15 +3404,18 @@ msgstr "Kör manuellt via åtgärdsrad för inlägg"
 msgid ""
 "This trigger creates a custom post row action and activates when the row "
 "action is clicked in the Posts list screen."
-msgstr "Konfigurera åtgärdsrad för inlägg som kommer att skapas i inläggslistan."
+msgstr ""
+"Konfigurera åtgärdsrad för inlägg som kommer att skapas i inläggslistan."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:91
 msgid "Row Action"
 msgstr "Åtgärd"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:92
-msgid "Configure the post row action that will be created in the Posts list screen."
-msgstr "Konfigurera åtgärdsrad för inlägg som kommer att skapas i inläggslistan."
+msgid ""
+"Configure the post row action that will be created in the Posts list screen."
+msgstr ""
+"Konfigurera åtgärdsrad för inlägg som kommer att skapas i inläggslistan."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:100
 msgid "Action label"
@@ -3429,7 +3437,8 @@ msgstr "Be om bekräftelse"
 msgid ""
 "If enabled, the user will be asked to confirm the action before it is "
 "executed."
-msgstr "Om aktiverat kommer den utvalda bilden att kopieras till det nya inlägget."
+msgstr ""
+"Om aktiverat kommer den utvalda bilden att kopieras till det nya inlägget."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:119
 msgid "Are you sure you want to run this action?"
@@ -3448,8 +3457,8 @@ msgid ""
 "This trigger activates whenever a post is saved, regardless of whether it's "
 "newly created, imported, or updated."
 msgstr ""
-"Denna trigger aktiveras varje gång ett inlägg sparas, oavsett om det är "
-"nyss skapat, importerat eller uppdaterat."
+"Denna trigger aktiveras varje gång ett inlägg sparas, oavsett om det är nyss "
+"skapat, importerat eller uppdaterat."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostSave.php:118
 msgid "Is update"
@@ -3460,8 +3469,8 @@ msgid ""
 "Whether the action happened to an existing post or a new post. Enter True "
 "for an existing post, or False for a new post."
 msgstr ""
-"Om åtgärden inträffade för ett befintligt inlägg eller ett nytt inlägg. "
-"Ange True för ett befintligt inlägg, eller False för ett nytt inlägg."
+"Om åtgärden inträffade för ett befintligt inlägg eller ett nytt inlägg. Ange "
+"True för ett befintligt inlägg, eller False för ett nytt inlägg."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostSave.php:125
 msgid "Saved post ID"
@@ -3546,8 +3555,8 @@ msgstr "På schema"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:37
 msgid ""
-"This trigger allows you to run a workflow at a specific time, or relative "
-"to another date. You can also use this trigger to repeat workflows."
+"This trigger allows you to run a workflow at a specific time, or relative to "
+"another date. You can also use this trigger to repeat workflows."
 msgstr ""
 "Denna trigger tillåter dig att köra ett arbetsflöde vid en specifik "
 "tidpunkt, eller i förhållande till ett annat datum. Du kan också använda "
@@ -3614,7 +3623,8 @@ msgid "User Query"
 msgstr "Användarfråga"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:65
-msgid "Specify the criteria for users whose role changes will trigger this action."
+msgid ""
+"Specify the criteria for users whose role changes will trigger this action."
 msgstr ""
 "Specificera kriterierna för användare vars rolländringar kommer att utlösa "
 "denna åtgärd."
@@ -3660,7 +3670,8 @@ msgid "The roles that were removed from the user."
 msgstr "De roller som togs bort från användaren."
 
 #: src/Modules/Workflows/Migrations/V040500OnScheduledStepsSchema.php:58
-msgid "Migrate post_id and repetition_number on scheduled steps schema after v4.5.0"
+msgid ""
+"Migrate post_id and repetition_number on scheduled steps schema after v4.5.0"
 msgstr ""
 "Migrera post_id och repetition_number på schemat för schemalagda steg efter "
 "v4.5.0"
@@ -3674,7 +3685,7 @@ msgstr "Migrera schemat för arbetsflöde schemalagda steg efter v4.0.0"
 msgid "Unknown Step"
 msgstr "Okänd steg"
 
-#: src/Modules/Workflows/Models/StepTypesModel.php:99, fuzzy
+#: src/Modules/Workflows/Models/StepTypesModel.php:99
 msgid "PublishPress Future"
 msgstr "PublishPress Future"
 
@@ -3795,8 +3806,8 @@ msgstr "Visa kunskapsbas"
 msgid "Overdue: "
 msgstr "Förfallen: "
 
-#: src/Views/expire-column.php:77
 #. translators: %1$s opens a span tag, %2$s is the action name, %3$s ends a span tag, %4$s is the a span tag, %5$s is the a span tag, %6$s is the a span tag
+#: src/Views/expire-column.php:77
 #, php-format
 msgid "%1$s%2$s%3$s on %5$s%4$s%6$s"
 msgstr "%1$s%2$s%3$s på %5$s%4$s%6$s"
@@ -3818,7 +3829,8 @@ msgid "Metabox Title"
 msgstr "Metabox-titel"
 
 #: src/Views/menu-admin.php:48
-msgid "The title of the metabox that will be displayed in the post edit screen."
+msgid ""
+"The title of the metabox that will be displayed in the post edit screen."
 msgstr "Titeln på metaboxen som kommer att visas på inläggsredigeringsskärmen."
 
 #: src/Views/menu-admin.php:57
@@ -3843,9 +3855,9 @@ msgstr "Detaljerad"
 
 #: src/Views/menu-admin.php:96
 msgid ""
-"Displays all information in the Future Action column on the \"Posts\" "
-"screen."
-msgstr "Visar all information i kolumnen Framtida åtgärd på skärmen \"Inlägg\"."
+"Displays all information in the Future Action column on the \"Posts\" screen."
+msgstr ""
+"Visar all information i kolumnen Framtida åtgärd på skärmen \"Inlägg\"."
 
 #: src/Views/menu-admin.php:106
 msgid "Simplified"
@@ -3885,10 +3897,8 @@ msgstr "24 timmar"
 msgid "AM/PM"
 msgstr "FM/EM"
 
-#: src/Views/menu-admin.php:174
-#: src/Views/menu-advanced.php:99
-#: src/Views/menu-display.php:367
-#: src/Views/menu-general.php:118
+#: src/Views/menu-admin.php:174 src/Views/menu-advanced.php:99
+#: src/Views/menu-display.php:368 src/Views/menu-general.php:118
 #: src/Views/menu-notifications.php:186
 msgid "Save Changes"
 msgstr "Spara ändringar"
@@ -3926,7 +3936,8 @@ msgid "Delete data"
 msgstr "Radera data"
 
 #: src/Views/menu-advanced.php:88
-msgid "Toggle between preserving or deleting data after the plugin is deactivated."
+msgid ""
+"Toggle between preserving or deleting data after the plugin is deactivated."
 msgstr ""
 "Växla mellan att bevara eller radera data efter att tillägget har "
 "inaktiverats."
@@ -3963,30 +3974,32 @@ msgstr "Tidssekvens"
 msgid "Show only requests with trigger activated"
 msgstr "Visa endast begärningar med aktiverad trigger"
 
-#: src/Views/menu-debug-log.php:155
 #. translators: %1$d: displayed count, %2$d: filtered total, %3$d: sessions, %4$d: total unfiltered, %5$s: filtered log size, %6$s: total log size.
+#: src/Views/menu-debug-log.php:155
 #, php-format
 msgid ""
 "Showing the latest %1$d of %2$d logs (%3$d sessions). Total in database: "
 "%4$d. Log size: %5$s (total: %6$s)."
-msgstr "Visar de senaste %1$d av %2$d loggar (%3$d sessioner). Loggstorlek: %4$s."
+msgstr ""
+"Visar de senaste %1$d av %2$d loggar (%3$d sessioner). Loggstorlek: %4$s."
 
-#: src/Views/menu-debug-log.php:165
 #. translators: %1$d: displayed count, %2$d: total count, %3$d: sessions, %4$s: log size.
+#: src/Views/menu-debug-log.php:165
 #, php-format
 msgid "Showing the latest %1$d of %2$d logs (%3$d sessions). Log size: %4$s."
-msgstr "Visar de senaste %1$d av %2$d loggar (%3$d sessioner). Loggstorlek: %4$s."
+msgstr ""
+"Visar de senaste %1$d av %2$d loggar (%3$d sessioner). Loggstorlek: %4$s."
 
-#: src/Views/menu-debug-log.php:176
 #. translators: %1$d: filtered logs count, %2$d: sessions, %3$d: total unfiltered, %4$s: filtered log size, %5$s: total log size.
+#: src/Views/menu-debug-log.php:176
 #, php-format
 msgid ""
 "Showing all %1$d logs (%2$d sessions). Total in database: %3$d. Log size: "
 "%4$s (total: %5$s)."
 msgstr "Visar alla %1$d loggar (%2$d sessioner). Loggstorlek: %3$s."
 
-#: src/Views/menu-debug-log.php:185
 #. translators: %1$d: total logs count, %2$d: sessions count, %3$s: log size.
+#: src/Views/menu-debug-log.php:185
 #, php-format
 msgid "Showing all %1$d logs (%2$d sessions). Log size: %3$s."
 msgstr "Visar alla %1$d loggar (%2$d sessioner). Loggstorlek: %3$s."
@@ -3995,8 +4008,7 @@ msgstr "Visar alla %1$d loggar (%2$d sessioner). Loggstorlek: %3$s."
 msgid "Copy Debug Log"
 msgstr "Kopiera Debug-logg"
 
-#: src/Views/menu-debug-log.php:206
-#: assets/js/backupPanel.js:834
+#: src/Views/menu-debug-log.php:206 assets/js/backupPanel.js:834
 #: assets/jsx/backup-panel/components/tabs-content/hooks/export.jsx:76
 #: assets/js/backupPanel.js:667
 msgid "Download"
@@ -4018,8 +4030,7 @@ msgstr "Avancerad diagnostik och verktyg"
 msgid "WP-Cron Status Check"
 msgstr "WP-Cron statuskontroll"
 
-#: src/Views/menu-diagnostics.php:61
-#: src/Views/menu-diagnostics.php:80
+#: src/Views/menu-diagnostics.php:61 src/Views/menu-diagnostics.php:80
 msgid "Passed"
 msgstr "Godkänd"
 
@@ -4053,10 +4064,8 @@ msgstr "Försök att åtgärda databasen"
 msgid "Debug Logging"
 msgstr "Debug-loggning"
 
-#: src/Views/menu-diagnostics.php:128
-#: src/Views/menu-display.php:139
-#: src/Views/menu-notifications.php:67
-#: src/Views/menu-notifications.php:95
+#: src/Views/menu-diagnostics.php:128 src/Views/menu-display.php:139
+#: src/Views/menu-notifications.php:67 src/Views/menu-notifications.php:95
 #: src/Views/menu-notifications.php:150
 msgid "Enabled"
 msgstr "Aktiverad"
@@ -4073,10 +4082,8 @@ msgstr "Rensa felsökningslogg"
 msgid "View Debug Logs"
 msgstr "Visa felsökningsloggar"
 
-#: src/Views/menu-diagnostics.php:148
-#: src/Views/menu-display.php:150
-#: src/Views/menu-notifications.php:75
-#: src/Views/menu-notifications.php:104
+#: src/Views/menu-diagnostics.php:148 src/Views/menu-display.php:150
+#: src/Views/menu-notifications.php:75 src/Views/menu-notifications.php:104
 #: src/Views/menu-notifications.php:158
 msgid "Disabled"
 msgstr "Inaktiverad"
@@ -4128,8 +4135,8 @@ msgstr "Kör migration"
 
 #: src/Views/menu-diagnostics.php:191
 msgid ""
-"Migrate legacy future actions from WP Cron to the new Action Scheduler. "
-"This will run in the background and may take a while."
+"Migrate legacy future actions from WP Cron to the new Action Scheduler. This "
+"will run in the background and may take a while."
 msgstr ""
 "Migrera äldre framtida åtgärder från WP Cron till den nya "
 "Åtgärdsschemaläggaren. Detta kommer att köras i bakgrunden och kan ta ett "
@@ -4149,9 +4156,9 @@ msgid ""
 "issues with 3rd party plugins that read that data. This will run in the "
 "background and may take a while."
 msgstr ""
-"Återställ äldre åtgärdsargument som Post Meta. Detta är användbart om du "
-"har problem med tredjepartsplugins som läser den datan. Detta kommer att "
-"köras i bakgrunden och kan ta ett tag."
+"Återställ äldre åtgärdsargument som Post Meta. Detta är användbart om du har "
+"problem med tredjepartsplugins som läser den datan. Detta kommer att köras i "
+"bakgrunden och kan ta ett tag."
 
 #: src/Views/menu-diagnostics.php:221
 msgid "Legacy Cron Schedule"
@@ -4159,11 +4166,11 @@ msgstr "Gammal Cron-schema"
 
 #: src/Views/menu-diagnostics.php:229
 msgid ""
-"The below table will show all currently scheduled cron events for the "
-"plugin with the next run time."
+"The below table will show all currently scheduled cron events for the plugin "
+"with the next run time."
 msgstr ""
-"Nedanstående tabell kommer att visa alla för närvarande schemalagda "
-"cron-händelser för tillägget med nästa körtid."
+"Nedanstående tabell kommer att visa alla för närvarande schemalagda cron-"
+"händelser för tillägget med nästa körtid."
 
 #: src/Views/menu-diagnostics.php:244
 msgid "Event"
@@ -4175,7 +4182,8 @@ msgstr "Inlägg och utgångsinställningar"
 
 #: src/Views/menu-diagnostics.php:302
 msgid "This is a legacy feature and will be removed in a future version."
-msgstr "Detta är en gammal funktion och kommer att tas bort i en framtida version."
+msgstr ""
+"Detta är en gammal funktion och kommer att tas bort i en framtida version."
 
 #: src/Views/menu-display.php:34
 msgid "Default Formats"
@@ -4185,8 +4193,8 @@ msgstr "Standardformat"
 msgid "Date Format"
 msgstr "Datumformat"
 
-#: src/Views/menu-display.php:64
 #. translators: %s is a link to the PHP date function documentation
+#: src/Views/menu-display.php:64
 #, php-format
 msgid ""
 "The default format to use when displaying the action date within a post "
@@ -4197,8 +4205,7 @@ msgstr ""
 "med hjälp av shortcode eller i sidfoten. För information om giltiga "
 "formateringsalternativ, se: %s."
 
-#: src/Views/menu-display.php:68
-#: src/Views/menu-display.php:106
+#: src/Views/menu-display.php:68 src/Views/menu-display.php:106
 msgid "PHP Date Function"
 msgstr "PHP Datumfunktion"
 
@@ -4206,16 +4213,16 @@ msgstr "PHP Datumfunktion"
 msgid "Time Format"
 msgstr "Tidsformat"
 
-#: src/Views/menu-display.php:102
 #. translators: %s is a link to the PHP date function documentation
+#: src/Views/menu-display.php:102
 #, php-format
 msgid ""
 "The default format to use when displaying the action time within a post "
 "using the shortcode or within the footer.  For information on valid "
 "formatting options, see: %s."
 msgstr ""
-"Standardformatet som ska användas när åtgärdstiden visas inom ett inlägg "
-"med hjälp av shortcode eller i sidfoten. För information om giltiga "
+"Standardformatet som ska användas när åtgärdstiden visas inom ett inlägg med "
+"hjälp av shortcode eller i sidfoten. För information om giltiga "
 "formateringsalternativ, se: %s."
 
 #: src/Views/menu-display.php:116
@@ -4224,8 +4231,8 @@ msgstr "Visning av inläggssidfot"
 
 #: src/Views/menu-display.php:118
 msgid ""
-"Enabling this below will display the action date automatically at the end "
-"of any post which is set to run an action."
+"Enabling this below will display the action date automatically at the end of "
+"any post which is set to run an action."
 msgstr ""
 "Aktivera detta nedan för att automatiskt visa åtgärdsdatumet i slutet av "
 "varje inlägg som är inställt på att köra en åtgärd."
@@ -4239,8 +4246,8 @@ msgid ""
 "This will enable or disable displaying the future action date in the post "
 "footer."
 msgstr ""
-"Detta kommer att aktivera eller avaktivera skickandet av e-postavisering "
-"vid framtida åtgärder."
+"Detta kommer att aktivera eller avaktivera skickandet av e-postavisering vid "
+"framtida åtgärder."
 
 #: src/Views/menu-display.php:164
 msgid "Footer Contents"
@@ -4252,9 +4259,9 @@ msgid ""
 "has an action scheduled.  The following placeholders will be replaced with "
 "the future action date in the following format:"
 msgstr ""
-"Ange texten som du vill ska visas i botten av varje inlägg som har en "
-"åtgärd schemalagd. Följande platshållare kommer att ersättas med det "
-"framtida åtgärdsdatumet i följande format:"
+"Ange texten som du vill ska visas i botten av varje inlägg som har en åtgärd "
+"schemalagd. Följande platshållare kommer att ersättas med det framtida "
+"åtgärdsdatumet i följande format:"
 
 #: src/Views/menu-display.php:216
 msgid "Footer Style"
@@ -4272,8 +4279,8 @@ msgstr "Exempel: "
 msgid "Shortcode"
 msgstr "Shortcode"
 
-#: src/Views/menu-display.php:249
 #. translators: %s is a code tag that wraps the shortcode
+#: src/Views/menu-display.php:249
 #, php-format
 msgid ""
 "Use the %s[futureaction]%s shortcode to show when the future action will "
@@ -4289,10 +4296,12 @@ msgstr "Kortkodswrapper"
 
 #. translators: This is used to indicate that no wrapper should be used on the shortcode output
 #: src/Views/menu-display.php:266
+#, fuzzy
+#| msgid "— No Change —"
 msgid "— None —"
-msgstr "— Ingen —"
+msgstr "— Ingen förändring —"
 
-#: src/Views/menu-display.php:279
+#: src/Views/menu-display.php:280
 msgid ""
 "The shortcode output will be wrapped in the selected HTML tag, allowing you "
 "to control its structure and styling."
@@ -4300,52 +4309,51 @@ msgstr ""
 "Shortcode-utdata kommer att omges av den valda HTML-taggen, vilket gör att "
 "du kan kontrollera dess struktur och stil."
 
-#: src/Views/menu-display.php:289
+#: src/Views/menu-display.php:290
 msgid "Wrapper Class"
 msgstr "Wrapper-klass"
 
-#: src/Views/menu-display.php:295
+#: src/Views/menu-display.php:296
 msgid "Add a CSS class to the wrapper element for custom styling."
 msgstr "Lägg till en CSS-klass till wrapper-elementet för anpassad styling."
 
-#: src/Views/menu-display.php:302
+#: src/Views/menu-display.php:303
 msgid "Attributes"
 msgstr "Attribut"
 
-#: src/Views/menu-display.php:308
 #. translators: %s is the shortcode code wrapped in code tags
+#: src/Views/menu-display.php:309
 #, php-format
 msgid "The following attributes are available for the %s shortcode:"
 msgstr "Följande attribut är tillgängliga för shortcode %s:"
 
-#: src/Views/menu-display.php:315
 #. translators: %s is a code tag that wraps the shortcode attribute name
+#: src/Views/menu-display.php:316
 #, php-format
 msgid "%s - Available options:"
 msgstr "%s - Tillgängliga alternativ:"
 
-#: src/Views/menu-display.php:321
 #. translators: %s is a code tag that wraps the shortcode attribute value
+#: src/Views/menu-display.php:322
 #, php-format
 msgid "%s - Displays complete date/time.  Default value."
 msgstr "%s - Visar komplett datum/tid. Standardvärde."
 
-#: src/Views/menu-display.php:327
 #. translators: %s is a code tag that wraps the shortcode attribute value
+#: src/Views/menu-display.php:328
 #, php-format
 msgid "%s - Displays date only"
 msgstr "%s - Visar endast datum"
 
-#: src/Views/menu-display.php:333
 #. translators: %s is a code tag that wraps the shortcode attribute value
+#: src/Views/menu-display.php:334
 #, php-format
 msgid "%s - Displays time only"
 msgstr "%s - Visar endast tid"
 
-#: src/Views/menu-display.php:345
-#: src/Views/menu-display.php:353
 #. translators: %s is a code tag that wraps the shortcode attribute dateformat
 #. translators: %s is a code tag that wraps the shortcode attribute timeformat
+#: src/Views/menu-display.php:346 src/Views/menu-display.php:354
 #, php-format
 msgid "%s - Format set here will override the value set on the settings page"
 msgstr ""
@@ -4366,7 +4374,8 @@ msgstr "Kom ihåg senaste tillstånd"
 
 #: src/Views/menu-general.php:67
 msgid "Shows or hides the calendar based on the last user interaction."
-msgstr "Visar eller döljer kalendern baserat på den senaste användarinteraktionen."
+msgstr ""
+"Visar eller döljer kalendern baserat på den senaste användarinteraktionen."
 
 #: src/Views/menu-general.php:72
 msgid "Always hidden"
@@ -4399,20 +4408,22 @@ msgid "Enable Email Notification?"
 msgstr "Aktivera e-postavisering?"
 
 #: src/Views/menu-notifications.php:78
-msgid "This will enable or disable the send of email notification on future action."
+msgid ""
+"This will enable or disable the send of email notification on future action."
 msgstr ""
-"Detta kommer att aktivera eller avaktivera skickandet av e-postavisering "
-"vid framtida åtgärder."
+"Detta kommer att aktivera eller avaktivera skickandet av e-postavisering vid "
+"framtida åtgärder."
 
 #: src/Views/menu-notifications.php:86
 msgid "Include Blog Administrators?"
 msgstr "Inkludera bloggadministratörer?"
 
 #: src/Views/menu-notifications.php:107
-msgid "This will include all users with the role of \"Administrator\" in the email."
+msgid ""
+"This will include all users with the role of \"Administrator\" in the email."
 msgstr ""
-"Detta kommer att inkludera alla användare med rollen \"Administrator\" i "
-"e-posten."
+"Detta kommer att inkludera alla användare med rollen \"Administrator\" i e-"
+"posten."
 
 #: src/Views/menu-notifications.php:123
 msgid ""
@@ -4420,22 +4431,21 @@ msgid ""
 "when the action runs.  This will be applied to ALL post types.  You can set "
 "post type specific emails on the Defaults tab."
 msgstr ""
-"Ange en kommaseparerad lista med e-postadresser som du vill bli meddelad "
-"när åtgärden körs. Detta kommer att tillämpas på ALLA inläggstyper. Du kan "
+"Ange en kommaseparerad lista med e-postadresser som du vill bli meddelad när "
+"åtgärden körs. Detta kommer att tillämpas på ALLA inläggstyper. Du kan "
 "ställa in specifika e-postadresser för inläggstyper på fliken Standard."
 
 #: src/Views/menu-notifications.php:132
 msgid "Past-due Actions Notification"
 msgstr "Avisering om förfallna åtgärder"
 
-#: src/Views/menu-notifications.php:134
-#: src/Views/menu-notifications.php:161
+#: src/Views/menu-notifications.php:134 src/Views/menu-notifications.php:161
 msgid ""
 "This will enable or disable the send of email notification on past-due "
 "actions."
 msgstr ""
-"Detta kommer att aktivera eller avaktivera skickandet av e-postavisering "
-"vid framtida åtgärder."
+"Detta kommer att aktivera eller avaktivera skickandet av e-postavisering vid "
+"framtida åtgärder."
 
 #: src/Views/menu-notifications.php:142
 msgid "Enable Past-due Actions Notification?"
@@ -4446,69 +4456,57 @@ msgid ""
 "Enter a comma separate list of emails that you would like to be notified "
 "when past-due actions are detected."
 msgstr ""
-"Ange en kommaseparerad lista med e-postadresser som du vill bli meddelad "
-"när förfallna åtgärder upptäckts."
+"Ange en kommaseparerad lista med e-postadresser som du vill bli meddelad när "
+"förfallna åtgärder upptäckts."
 
-#: src/Views/tabs-future-actions.php:20
-#: assets/js/backupPanel.js:649
+#: src/Views/tabs-future-actions.php:20 assets/js/backupPanel.js:649
 #: assets/js/backupPanel.js:1232
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:24
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:104
-#: assets/js/backupPanel.js:500
-#: assets/js/backupPanel.js:912
+#: assets/js/backupPanel.js:500 assets/js/backupPanel.js:912
 msgid "Post Types"
 msgstr "Post typer"
 
-#: src/Views/tabs-future-actions.php:25
-#: assets/js/backupPanel.js:652
+#: src/Views/tabs-future-actions.php:25 assets/js/backupPanel.js:652
 #: assets/js/backupPanel.js:1235
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:28
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:108
-#: assets/js/backupPanel.js:504
-#: assets/js/backupPanel.js:916
+#: assets/js/backupPanel.js:504 assets/js/backupPanel.js:916
 msgid "General"
 msgstr "Allmän"
 
-#: src/Views/tabs-future-actions.php:30
-#: assets/js/backupPanel.js:655
+#: src/Views/tabs-future-actions.php:30 assets/js/backupPanel.js:655
 #: assets/js/backupPanel.js:1238
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:32
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:112
-#: assets/js/backupPanel.js:508
-#: assets/js/backupPanel.js:920
+#: assets/js/backupPanel.js:508 assets/js/backupPanel.js:920
 msgid "Notifications"
 msgstr "Aviseringar"
 
-#: src/Views/tabs-future-actions.php:35
-#: assets/js/backupPanel.js:658
+#: src/Views/tabs-future-actions.php:35 assets/js/backupPanel.js:658
 #: assets/js/backupPanel.js:1241
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:36
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:116
-#: assets/js/backupPanel.js:512
-#: assets/js/backupPanel.js:924
+#: assets/js/backupPanel.js:512 assets/js/backupPanel.js:924
 msgid "Display"
 msgstr "Visa"
 
-#: src/Views/tabs-future-actions.php:40
-#: assets/js/backupPanel.js:661
+#: src/Views/tabs-future-actions.php:40 assets/js/backupPanel.js:661
 #: assets/js/backupPanel.js:1244
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:40
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:120
-#: assets/js/backupPanel.js:516
-#: assets/js/backupPanel.js:928
+#: assets/js/backupPanel.js:516 assets/js/backupPanel.js:928
 msgid "Admin"
 msgstr "Admin"
 
 #: src/Views/tabs-settings.php:23
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11467
-#: assets/js/backupPanel.js:664
-#: assets/js/backupPanel.js:1247
+#: assets/js/backupPanel.js:664 assets/js/backupPanel.js:1247
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:44
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:124
 #: assets/jsx/workflow-editor/components/node-types/generic.jsx:248
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9212
-#: assets/js/backupPanel.js:520
-#: assets/js/backupPanel.js:932
+#: assets/js/backupPanel.js:520 assets/js/backupPanel.js:932
 msgid "Advanced"
 msgstr "Avancerad"
 
@@ -4580,7 +4578,8 @@ msgstr "Värde"
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:102
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:427
 msgid "The argument name should only contain letters, numbers and underscores."
-msgstr "Argumentnamnet ska endast innehålla bokstäver, siffror och understreck."
+msgstr ""
+"Argumentnamnet ska endast innehålla bokstäver, siffror och understreck."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:585
 #: assets/jsx/workflow-editor/components/data-fields/action-args/index.jsx:71
@@ -4674,14 +4673,12 @@ msgstr "Avbryt meddelandet"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1967
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:67
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1399
-#, js-format
 msgid "Option %s"
 msgstr "Alternativ %s"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2004
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:95
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1427
-#, js-format
 msgid "Option #%s"
 msgstr "Alternativ #%s"
 
@@ -4700,10 +4697,8 @@ msgstr "Lägg till ett nytt alternativ"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2037
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:132
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1464
-#, js-format
 msgid ""
-"You have reached the maximum number of options. You can add up to %s "
-"options."
+"You have reached the maximum number of options. You can add up to %s options."
 msgstr ""
 "Du har nått det maximala antalet alternativ. Du kan lägga till upp till %s "
 "alternativ."
@@ -4727,7 +4722,8 @@ msgstr "Tips"
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:107
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1583
 msgid "The option name should only contain letters, numbers and underscores."
-msgstr "Alternativets namn får endast innehålla bokstäver, siffror och understreck."
+msgstr ""
+"Alternativets namn får endast innehålla bokstäver, siffror och understreck."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2322
 #: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:61
@@ -4790,8 +4786,8 @@ msgid ""
 "Click the button to choose a custom date source from variables that can "
 "provide a date."
 msgstr ""
-"Klicka på knappen för att välja en anpassad datakälla från variabler som "
-"kan ge ett datum."
+"Klicka på knappen för att välja en anpassad datakälla från variabler som kan "
+"ge ett datum."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2414
 #: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:159
@@ -4814,7 +4810,6 @@ msgstr "Klicka för mer information"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2443
 #: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:197
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1815
-#, js-format
 msgid ""
 "For more information on formatting, see the %sPHP strtotime function%s. For "
 "example, you could enter %s+1 month%s or %s+1 week 2 days 4 hours 2 "
@@ -4885,14 +4880,13 @@ msgstr "Poststatus"
 msgid "Post Type"
 msgstr "Post Type"
 
+#. translators: %s is the database table name
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2752
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3346
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/column-item.jsx:10
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:10
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2027
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2527
-#. translators: %s is the database table name
-#, js-format
 msgid "Type the %s key and click on the button to insert it."
 msgstr "Skriv in %s nyckeln och klicka på knappen för att sätta in den."
 
@@ -4998,11 +4992,10 @@ msgstr "Antal"
 msgid "Number of posts assigned to this term."
 msgstr "Antal inlägg som är kopplade till denna term."
 
+#. translators: %s is the taxonomy label
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3364
 #: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:38
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2555
-#. translators: %s is the taxonomy label
-#, js-format
 msgid "%s terms for this post."
 msgstr "%s termer för detta inlägg."
 
@@ -5376,8 +5369,8 @@ msgstr "Upprepande åtgärd"
 #: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:131
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4228
 msgid ""
-"Choose how often this task should repeat. Select 'Non-repeating' for a "
-"one-time action or set an interval for automatic recurrence."
+"Choose how often this task should repeat. Select 'Non-repeating' for a one-"
+"time action or set an interval for automatic recurrence."
 msgstr ""
 "Välj hur ofta denna uppgift ska upprepas. Välj 'Icke-upprepande' för en "
 "engångsåtgärd eller ställ in ett intervall för automatisk upprepning."
@@ -5392,7 +5385,8 @@ msgstr "Unik uppgiftsidentifierare"
 #: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:154
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4251
 msgid "Define a unique ID to detect and prevent duplicate tasks."
-msgstr "Definiera ett unikt ID för att upptäcka och förhindra dubblettuppgifter."
+msgstr ""
+"Definiera ett unikt ID för att upptäcka och förhindra dubblettuppgifter."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5685
 #: assets/jsx/workflow-editor/components/data-fields/taxonomy-terms.jsx:69
@@ -5481,7 +5475,8 @@ msgstr "Pro"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7042
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9283
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11276
-msgid "Currently this step is being skipped. Upgrade to Pro to unlock this feature."
+msgid ""
+"Currently this step is being skipped. Upgrade to Pro to unlock this feature."
 msgstr ""
 "För närvarande hoppas detta steg över. Uppgradera till Pro för att låsa upp "
 "denna funktion."
@@ -5498,34 +5493,34 @@ msgstr "Lägg till"
 msgid "Close"
 msgstr "Stäng"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9618
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9621
 #: assets/jsx/workflow-editor/components/layout/header.jsx:140
 #: assets/jsx/workflow-editor/components/layout/header.jsx:145
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7425
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7430
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Auto Layout"
 msgstr "Automatisk layout"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9628
 #: assets/jsx/workflow-editor/components/layout/header.jsx:157
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7442
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Upgrade to Pro and unlock more features"
 msgstr "Uppgradera till Pro och lås upp fler funktioner"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9872
 #: assets/jsx/workflow-editor/components/left-toolbar/redo.jsx:31
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7674
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Redo"
 msgstr "Gör om"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10045
 #: assets/jsx/workflow-editor/components/left-toolbar/undo.jsx:31
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7823
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Undo"
 msgstr "Ångra"
 
@@ -5558,6 +5553,13 @@ msgstr "Funktion inaktiverad"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7931
 msgid "Feature activated"
 msgstr "Funktion aktiverad"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10239
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:23
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7974
+msgctxt "noun"
+msgid "View"
+msgstr "Visa"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10243
 #: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:27
@@ -5650,8 +5652,8 @@ msgid ""
 "Display the controls panel with buttons to zoon in, zoom out, fit the view "
 "and lock the viewport"
 msgstr ""
-"Visa kontrollpanelen med knappar för att zooma in, zooma ut, anpassa vyn "
-"och låsa vyområdet"
+"Visa kontrollpanelen med knappar för att zooma in, zooma ut, anpassa vyn och "
+"låsa vyområdet"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10271
 #: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:59
@@ -5764,7 +5766,6 @@ msgstr "Flera och olika element valda."
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10758
 #: assets/jsx/workflow-editor/components/node-inspector/index.jsx:116
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8445
-#, js-format
 msgid "%d steps selected"
 msgstr "%d steg valda"
 
@@ -5777,7 +5778,6 @@ msgstr "Flera steg valda."
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10764
 #: assets/jsx/workflow-editor/components/node-inspector/index.jsx:130
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8459
-#, js-format
 msgid "%d connections selected"
 msgstr "%d anslutningar valda"
 
@@ -5797,8 +5797,8 @@ msgstr "Anslutning"
 #: assets/jsx/workflow-editor/components/node-inspector/index.jsx:166
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8495
 msgid ""
-"The connection between nodes in the workflow. Signifies the path along "
-"which data or control flow one node to another."
+"The connection between nodes in the workflow. Signifies the path along which "
+"data or control flow one node to another."
 msgstr ""
 "Anslutningen mellan noder i arbetsflödet. Betyder vägen längs vilken data "
 "eller kontroll flödar från en nod till en annan."
@@ -5884,7 +5884,6 @@ msgstr "Ingen beskrivning"
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11310
 #: assets/jsx/workflow-editor/components/node-types/generic.jsx:57
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9021
-#, js-format
 msgid "Unknown node: %s"
 msgstr "Okänd nod: %s"
 
@@ -5969,14 +5968,12 @@ msgstr "Alla kontroller har passerat för detta steg."
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12191
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:122
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9878
-#, js-format
 msgid "The field \"%s\" contains an invalid variable."
 msgstr "Fältet \"%s\" innehåller en ogiltig variabel."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12192
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:126
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9882
-#, js-format
 msgid ""
 "The variable \"%s\" is not available in the current context. Please, check "
 "if it is spelled correctly."
@@ -5984,11 +5981,10 @@ msgstr ""
 "Variabeln \"%s\" är inte tillgänglig i det aktuella sammanhanget. Vänligen "
 "kontrollera om den är rättstavad."
 
+#. translators: %s is the workflow step slug.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12236
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:181
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9937
-#. translators: %s is the workflow step slug.
-#, js-format
 msgid "\"%s\" is not a variable or step slug."
 msgstr "\"%s\" är inte en variabel eller steg slug."
 
@@ -6010,62 +6006,55 @@ msgstr "Oavslutade platshållare är inte tillåtet."
 msgid "Unopened placeholder are not allowed."
 msgstr "Oöppnade platshållare är inte tillåtet."
 
+#. translators: %s is the field label.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12263
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:216
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9972
-#. translators: %s is the field label.
-#, js-format
 msgid "Invalid expression on %s"
 msgstr "Ogiltigt uttryck på %s"
 
+#. translators: %s is the field label.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12275
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12495
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:232
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:575
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9988
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10331
-#. translators: %s is the field label.
-#, js-format
 msgid "The field %s must be a list of options."
 msgstr "Fältet %s måste vara en lista med alternativ."
 
+#. translators: %s is the option name.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12297
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:261
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10017
-#. translators: %s is the option name.
-#, js-format
 msgid "The option \"%s\" does not have a name."
 msgstr "Alternativet \"%s\" har inget namn."
 
+#. translators: %s is the option name.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12303
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:270
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10026
-#. translators: %s is the option name.
-#, js-format
 msgid "The option \"%s\" does not have a label."
 msgstr "Alternativet \"%s\" har ingen etikett."
 
+#. translators: %s is the option name.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12309
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:279
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10035
-#. translators: %s is the option name.
-#, js-format
 msgid "The option \"%s\" has a duplicate name."
 msgstr "Alternativet \"%s\" har ett duplicerat namn."
 
+#. translators: %s is the option label.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12315
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:288
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10044
-#. translators: %s is the option label.
-#, js-format
 msgid "The option \"%s\" has a duplicate label."
 msgstr "Alternativet \"%s\" har en duplicerad etikett."
 
+#. translators: %s is the field label.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12325
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:302
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10058
-#. translators: %s is the field label.
-#, js-format
 msgid "The field %s must be a valid list of options."
 msgstr "Fältet %s måste vara en giltig lista med alternativ."
 
@@ -6087,21 +6076,18 @@ msgstr "Detta steg kräver en koppling till ett följande steg."
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:428
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10163
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10184
-#, js-format
 msgid "The field %s is required."
 msgstr "Fältet %s är obligatoriskt."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12429
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:450
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10206
-#, js-format
 msgid "The field %s must be a valid email address."
 msgstr "Fältet %s måste vara en giltig e-postadress."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12437
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:466
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10222
-#, js-format
 msgid "The field %s must be a valid email address list separated by commas."
 msgstr ""
 "Fältet %s måste vara en giltig lista med e-postadresser separerade med "
@@ -6110,14 +6096,12 @@ msgstr ""
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12443
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:480
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10236
-#, js-format
 msgid "The field %s must be an integer."
 msgstr "Fältet %s måste vara ett heltal."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12450
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:495
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10251
-#, js-format
 msgid "The field %s must be an integer list separated by commas."
 msgstr "Fältet %s måste vara en lista med heltal separerade med kommatecken."
 
@@ -6130,21 +6114,18 @@ msgstr "Fältet %s måste vara en lista med heltal separerade med kommatecken."
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10274
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10283
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10292
-#, js-format
 msgid "The field %s must be a list of name-value pairs."
 msgstr "Fältet %s måste vara en lista med namn-värde-par."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12467
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:528
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10284
-#, js-format
 msgid "The name of the pair is required on item %d."
 msgstr "Namnet på paret är obligatoriskt för objekt %d."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12470
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:537
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10293
-#, js-format
 msgid "The value of the pair is required on item %d."
 msgstr "Värdet för paret är obligatoriskt för objekt %d."
 
@@ -6178,11 +6159,10 @@ msgstr "Använd vänster och höger piltangenter för att navigera genom stegen"
 msgid "No results found."
 msgstr "Inga resultat hittades."
 
+#. translators: %d: number of results.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13239
 #: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:101
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10929
-#. translators: %d: number of results.
-#, js-format
 msgid "%d result found."
 msgid_plural "%d results found."
 msgstr[0] "%d resultat hittat."
@@ -6206,20 +6186,30 @@ msgstr "Noder"
 msgid "A tip for using the workflow editor"
 msgstr "Ett tips för att använda arbetsflödesredigeraren"
 
+#. translators: %d: Number of blocks.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13627
 #: assets/jsx/workflow-editor/components/secondary-sidebar/node-draggable-chip.jsx:27
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11310
-#. translators: %d: Number of blocks.
-#, js-format
 msgid "%d block"
 msgid_plural "%d blocks"
 msgstr[0] "%d Block"
 msgstr[1] "%d block"
 
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13793
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13798
+#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:80
+#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:85
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11459
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11464
+#, fuzzy
+msgctxt "nodes"
+msgid "Most used"
+msgstr "Mest använda"
+
+#. translators: Patterns tab title in the block inserter.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14104
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:24
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11712
-#. translators: Patterns tab title in the block inserter.
 msgid "Actions"
 msgstr "Åtgärder"
 
@@ -6256,7 +6246,8 @@ msgstr ""
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14156
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:18
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11760
-msgid "Double-click the workflow pane to increase the zoom level for a closer look."
+msgid ""
+"Double-click the workflow pane to increase the zoom level for a closer look."
 msgstr ""
 "Dubbelklicka på arbetsflödespanelen för att öka zoomnivån för en närmare "
 "titt."
@@ -6275,19 +6266,28 @@ msgstr ""
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:26
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11768
 msgid ""
-"Easily add new steps by clicking on a step's handle and dragging it. Drop "
-"it in the workflow pane to see a floating inserter where you can type and "
+"Easily add new steps by clicking on a step's handle and dragging it. Drop it "
+"in the workflow pane to see a floating inserter where you can type and "
 "search for the step you need."
 msgstr ""
-"Lägg enkelt till nya steg genom att klicka på ett stegs handtag och dra "
-"det. Släpp det i arbetsflödesfönstret för att se en flytande insättare där "
-"du kan skriva och söka efter det steg du behöver."
+"Lägg enkelt till nya steg genom att klicka på ett stegs handtag och dra det. "
+"Släpp det i arbetsflödesfönstret för att se en flytande insättare där du kan "
+"skriva och söka efter det steg du behöver."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14289
 #: assets/jsx/workflow-editor/components/settings-sidebar/plugin-sidebar.jsx:39
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11859
 msgid "(no name)"
 msgstr "(ingen namn)"
+
+#. translators: Default label for the Workflow sidebar tab, not selected.
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14336
+#: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:23
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11892
+#, fuzzy
+msgctxt "noun"
+msgid "Workflow"
+msgstr "Arbetsflöde"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14348
 #: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:37
@@ -6359,10 +6359,10 @@ msgstr "Är du säker på att du vill radera detta arbetsflöde?"
 msgid "Move to trash"
 msgstr "Flytta till papperskorgen"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14929
 #: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:79
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12407
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Publish"
 msgstr "Publicera"
 
@@ -6390,17 +6390,17 @@ msgstr "Uppdaterar..."
 msgid "Updated"
 msgstr "Uppdaterad"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15086
 #: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:82
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12550
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Save draft"
 msgstr "Spara utkast"
 
+#. translators: button label text should, if possible, be under 16 characters.
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15089
 #: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:85
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12553
-#. translators: button label text should, if possible, be under 16 characters.
 msgid "Save"
 msgstr "Spara"
 
@@ -6591,21 +6591,17 @@ msgstr "eller"
 msgid "Select a .json file"
 msgstr "Välj en .json-fil"
 
-#: assets/js/backupPanel.js:110
-#: assets/js/backupPanel.js:1283
+#: assets/js/backupPanel.js:110 assets/js/backupPanel.js:1283
 #: assets/jsx/backup-panel/components/file-dropzone/index.jsx:35
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:164
-#: assets/js/backupPanel.js:88
-#: assets/js/backupPanel.js:972
+#: assets/js/backupPanel.js:88 assets/js/backupPanel.js:972
 msgid "Selected file"
 msgstr "Vald fil"
 
-#: assets/js/backupPanel.js:110
-#: assets/js/backupPanel.js:1285
+#: assets/js/backupPanel.js:110 assets/js/backupPanel.js:1285
 #: assets/jsx/backup-panel/components/file-dropzone/index.jsx:36
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:165
-#: assets/js/backupPanel.js:89
-#: assets/js/backupPanel.js:973
+#: assets/js/backupPanel.js:89 assets/js/backupPanel.js:973
 msgid "File size"
 msgstr "Filstorlek"
 
@@ -6639,12 +6635,10 @@ msgstr "Laddar objekt, vänligen vänta..."
 msgid "Select the content you want to import."
 msgstr "Välj det innehåll du vill importera."
 
-#: assets/js/backupPanel.js:525
-#: assets/js/backupPanel.js:709
+#: assets/js/backupPanel.js:525 assets/js/backupPanel.js:709
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-import.jsx:83
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:94
-#: assets/js/backupPanel.js:420
-#: assets/js/backupPanel.js:570
+#: assets/js/backupPanel.js:420 assets/js/backupPanel.js:570
 msgid "Action Settings"
 msgstr "Åtgärdsinställningar"
 
@@ -6654,12 +6648,10 @@ msgstr "Åtgärdsinställningar"
 msgid "No workflows or settings found in the file."
 msgstr "Inga arbetsflöden eller inställningar hittades i filen."
 
-#: assets/js/backupPanel.js:546
-#: assets/js/backupPanel.js:581
+#: assets/js/backupPanel.js:546 assets/js/backupPanel.js:581
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-import.jsx:110
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-preview.jsx:14
-#: assets/js/backupPanel.js:447
-#: assets/js/backupPanel.js:469
+#: assets/js/backupPanel.js:447 assets/js/backupPanel.js:469
 msgid "Cancel and select a different file"
 msgstr "Avbryt och välj en annan fil"
 
@@ -6682,9 +6674,9 @@ msgid ""
 "Export the plugin settings and workflows to a .json file. This file can be "
 "imported later to restore the data or migrate to another site."
 msgstr ""
-"Exportera tilläggsinställningarna och arbetsflödena till en .json-fil. "
-"Denna fil kan importeras senare för att återställa datan eller migrera till "
-"en annan webbplats."
+"Exportera tilläggsinställningarna och arbetsflödena till en .json-fil. Denna "
+"fil kan importeras senare för att återställa datan eller migrera till en "
+"annan webbplats."
 
 #: assets/js/backupPanel.js:722
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:105
@@ -6728,30 +6720,22 @@ msgstr "Välj innehåll att importera"
 msgid "Raw Data Preview"
 msgstr "Förhandsgranskning av rådata"
 
-#: assets/js/blockEditor.js:1752
-#: assets/js/bulkEdit.js:1752
-#: assets/js/classicEditor.js:1752
-#: assets/js/quickEdit.js:1752
-#: assets/js/settingsGeneral.js:1752
-#: assets/js/settingsPostTypes.js:1752
+#: assets/js/blockEditor.js:1752 assets/js/bulkEdit.js:1752
+#: assets/js/classicEditor.js:1752 assets/js/quickEdit.js:1752
+#: assets/js/settingsGeneral.js:1752 assets/js/settingsPostTypes.js:1752
 #: assets/jsx/components/PostTypesSettingsPanels.jsx:81
-#: assets/js/blockEditor.js:1587
-#: assets/js/bulkEdit.js:1587
-#: assets/js/classicEditor.js:1587
-#: assets/js/quickEdit.js:1587
-#: assets/js/settingsGeneral.js:1587
-#: assets/js/settingsPostTypes.js:1587
+#: assets/js/blockEditor.js:1587 assets/js/bulkEdit.js:1587
+#: assets/js/classicEditor.js:1587 assets/js/quickEdit.js:1587
+#: assets/js/settingsGeneral.js:1587 assets/js/settingsPostTypes.js:1587
 msgid "Select a post type to edit:"
 msgstr "Välj en post type att redigera:"
 
-#: assets/js/legacyAction.js:230
-#: assets/jsx/legacy-action/index.jsx:78
+#: assets/js/legacyAction.js:230 assets/jsx/legacy-action/index.jsx:78
 #: assets/js/legacyAction.js:153
 msgid "Workflow to trigger"
 msgstr "Arbetsflöde att utlösa"
 
-#: assets/js/legacyAction.js:241
-#: assets/jsx/legacy-action/index.jsx:90
+#: assets/js/legacyAction.js:241 assets/jsx/legacy-action/index.jsx:90
 #: assets/js/legacyAction.js:165
 msgid "No compatible workflows available."
 msgstr "Inga kompatibla arbetsflöden tillgängliga."
@@ -6762,10 +6746,10 @@ msgstr "Inga kompatibla arbetsflöden tillgängliga."
 msgid "Change manually enabled workflows"
 msgstr "Ändra manuellt aktiverade arbetsflöden"
 
+#. translators: %s: Workflow title
 #: assets/js/workflowsListCancelAction.js:702
 #: assets/jsx/workflows-list/cancel-action/index.jsx:59
 #: assets/js/workflowsListCancelAction.js:497
-#. translators: %s: Workflow title
 msgid ""
 "Are you sure you want to cancel all scheduled actions for the \"%s\" "
 "workflow?"
@@ -6778,34 +6762,5 @@ msgid "Cancel Actions"
 msgstr "Avbryt åtgärder"
 
 #: assets/jsx/workflow-manual-selection/example-extending-with-slot.jsx:48
-#, js-format
 msgid "Enable workflow %s"
 msgstr "Aktivera arbetsflöde %s"
-
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10239
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:23
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7974
-msgctxt "noun"
-msgid "View"
-msgstr "Visa"
-
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14336
-#: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:23
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11892
-#. translators: Default label for the Workflow sidebar tab, not selected.
-#, fuzzy
-msgctxt "noun"
-msgid "Workflow"
-msgstr "Arbetsflöde"
-
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13793
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13798
-#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:80
-#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:85
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11459
-#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11464
-#, fuzzy
-msgctxt "nodes"
-msgid "Most used"
-msgstr "Mest använda"
-
