@@ -5,8 +5,6 @@ description: WP plugin security audit
 
 # WP Plugin Security Auditor
 
-**Communication:** Apply `/caveman` mode (full) to all responses and status updates when this skill is active. Drop articles/filler. Fragments OK. Technical terms exact. Code/commits/PR bodies stay normal unless user says otherwise.
-
 Activate on security audit request. GHSA findings + security report.
 
 ## Mission
@@ -18,8 +16,7 @@ Security audit WP plugin. Generate:
 
 ## Exclude Dirs
 
-NEVER analyze:
-`/vendor/` `/lib/vendor/` `/dist/` `/.git/` `.*` `/dev-workspace-cache/` `/dev-workspace/` `/node_modules/` `/tests/`
+Read `.cursor/skills/_fragments/exclude-dirs.md` before grep/search.
 
 ## Audit Methodology
 
@@ -75,13 +72,7 @@ Payment (if applicable): Stripe SDK/API/PCI/webhooks; PayPal IPN/webhook; API ke
 
 ## Security Scoring (0-5.0, one decimal)
 
-| Score | Grade | Criteria |
-|-------|-------|----------|
-| 4.5-5.0 | Excellent | No significant issues, best practices |
-| 3.5-4.4 | Good | Minor, easily fixable |
-| 2.5-3.4 | Fair | Patchable (outdated deps, weak validation) |
-| 1.5-2.4 | Poor | Serious (outdated payment SDKs, weak auth, no CSRF) |
-| 0.0-1.4 | Critical | Active vulns (SQLi, auth bypass, XSS) |
+**Scale:** 5.0 excellent → 4.0 healthy threshold → 2.5 needs-work → <2.5 critical
 
 Grade findings: CRITICAL / HIGH / MEDIUM / LOW with file:line.
 
@@ -95,108 +86,11 @@ Grade findings: CRITICAL / HIGH / MEDIUM / LOW with file:line.
 
 ### Output 1: AUDIT_REPORT.md
 
-```markdown
-# [PLUGIN_NAME] Security Audit
-
-## SPREADSHEET DATA
-
-**IMPORTANT**: TAB characters between columns, not spaces.
-
-    ```
-    Metric	Score/Value	Notes
-    Security Score	[X.X]	[Main findings, max 2 sentences]
-    Recommendation	[HEALTHY/NEEDS-WORK/CRITICAL]	[One-line rationale]
-    ```
-
-## 1. Security Assessment
-
-### Score: X.X/5.0
-
-🔴 **Critical Issues:**
-- [Issue] (file:line)
-
-🟡 **Concerns:**
-- [Issue] (file:line)
-
-🟢 **Strengths:**
-- [Positive finding]
-
-## 2. Dependencies
-
-**Critical Issues:** [Outdated/risky pkgs]
-**Immediate Updates:** [What needs updating]
-**PHP Version:** [Current req]
-**WordPress Version:** [Current req]
-
-## 3. Final Recommendation: [HEALTHY/NEEDS-WORK/CRITICAL]
-
-**Rationale:** [2-3 sentences]
-
-**Key Factors:**
-- [Factor 1]
-- [Factor 2]
-- [Factor 3]
-```
+Read `.cursor/skills/_fragments/audit-report-security.md` when generating the report.
 
 ### Output 2: GHSA Advisory Files
 
-Per vuln → `.md` in `/security-audit/`.
-
-**Naming:** `[plugin-name]-[###]-[SEVERITY]-[short-description].md`
-- `myplugin-001-CRITICAL-sql-injection-custom-query.md`
-- `myplugin-002-HIGH-xss-unescaped-output.md`
-- `myplugin-003-MEDIUM-csrf-missing-nonce.md`
-
-Rules: sequential 001+, SEVERITY uppercase, kebab-case, only if vulns.
-
-**GHSA format:**
-
-```markdown
-## Security Advisory
-
-### Summary
-[One-line description]
-
-### Severity
-[Critical / High / Medium / Low]
-
-### CVSS Score
-[CVSS 3.1 score, e.g., 8.8 (High)]
-
-### CWE
-[CWE ID + name, e.g., CWE-89: SQL Injection]
-
-### Affected Versions
-[Version range or "all versions"]
-
-### Vulnerability Details
-**Type:** [type]
-**Location:** [file:line]
-**Attack Vector:** [Network/Local]
-**User Interaction:** [Required/None]
-**Privileges Required:** [None/Low/High]
-
-### Description
-[Technical: what code does, why vulnerable, attacker outcome]
-
-### Proof of Concept
-[Steps or payloads]
-
-### Vulnerable Code
-      ```php
-      [Snippet with file:line]
-      ```
-
-### Remediation
-[Fix with corrected code]
-      ```php
-      [Fixed snippet]
-      ```
-
-### References
-- [OWASP links]
-- [WP security docs]
-```
+Read `.cursor/skills/_fragments/ghsa-template.md` when generating advisories.
 
 ## Security Accuracy Checklist
 

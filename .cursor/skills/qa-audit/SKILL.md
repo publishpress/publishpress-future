@@ -1,11 +1,9 @@
 ---
-name: wp-plugin-security-auditor
+name: wp-plugin-qa-auditor
 description: WP plugin security + code quality audit
 ---
 
 # WP Plugin Security & Code Quality Auditor
-
-**Communication:** Apply `/caveman` mode (full) to all responses and status updates when this skill is active. Drop articles/filler. Fragments OK. Technical terms exact. Code/commits/PR bodies stay normal unless user says otherwise.
 
 Activate on security audit or code quality review request. Output GHSA findings + spreadsheet metrics.
 
@@ -17,8 +15,7 @@ Audit security, code quality, maintainability. Produce:
 
 ## Exclude Dirs
 
-NEVER analyze (grep/search/phpmetrics):
-`/vendor/` `/lib/vendor/` `/dist/` `/.git/` `.*` `/dev-workspace-cache/` `/dev-workspace/` `/node_modules/` `/tests/`
+Read `.cursor/skills/_fragments/exclude-dirs.md` before grep/search/phpmetrics.
 
 ## Audit Methodology
 
@@ -34,13 +31,7 @@ Delegate to security-audit skill. Read `.cursor/skills/security-audit/SKILL.md`.
 - SOLID, separation of concerns, patterns
 - Coupling / cohesion / SRP
 
-| Score | Grade | Criteria |
-|-------|-------|----------|
-| 4.5-5.0 | Excellent | Clean arch, SOLID, well-organized |
-| 3.5-4.4 | Good | Solid structure, minor improvements |
-| 2.5-3.4 | Fair | Functional, needs refactor, some anti-patterns |
-| 1.5-2.4 | Poor | Spaghetti, tight coupling, hard to modify |
-| 0.0-1.4 | Critical | Chaotic, no clear patterns |
+**Scale:** 5.0 excellent → 4.0 healthy threshold → 2.5 needs-work → <2.5 critical
 
 #### 2.2 Code Maintainability (0-5.0)
 
@@ -51,13 +42,7 @@ Delegate to security-audit skill. Read `.cursor/skills/security-audit/SKILL.md`.
 - Error handling consistency
 - Duplication
 
-| Score | Grade | Criteria |
-|-------|-------|----------|
-| 4.5-5.0 | Excellent | Clean, self-documenting |
-| 3.5-4.4 | Good | Readable, consistent, minor issues |
-| 2.5-3.4 | Fair | Understandable with effort, inconsistent |
-| 1.5-2.4 | Poor | Hard to read, cryptic logic |
-| 0.0-1.4 | Critical | Unmaintainable |
+**Scale:** 5.0 excellent → 4.0 healthy threshold → 2.5 needs-work → <2.5 critical
 
 #### 2.3 Documentation (0-5.0)
 
@@ -65,13 +50,7 @@ Delegate to security-audit skill. Read `.cursor/skills/security-audit/SKILL.md`.
 - Inline comments on complex logic
 - README quality + examples
 
-| Score | Grade | Criteria |
-|-------|-------|----------|
-| 4.5-5.0 | Excellent | Comprehensive, examples |
-| 3.5-4.4 | Good | Good coverage |
-| 2.5-3.4 | Fair | Basic, gaps |
-| 1.5-2.4 | Poor | Minimal |
-| 0.0-1.4 | Critical | None |
+**Scale:** 5.0 excellent → 4.0 healthy threshold → 2.5 needs-work → <2.5 critical
 
 **Code Quality Score:** `(Architecture + Maintainability + Documentation) ÷ 3`
 
@@ -110,77 +89,11 @@ Extract: Violations, LOC, Classes, Avg Cyclomatic Complexity, Avg Bugs by Class.
 
 ### Output 1: AUDIT_REPORT.md
 
-```markdown
-# [PLUGIN_NAME] Security & Code Quality Audit
-
-## SPREADSHEET DATA
-
-**IMPORTANT**: TAB characters between columns, not spaces.
-
-      ```
-      Metric	Score/Value	Notes
-      Security Score	[X.X]	[Main findings, max 2 sentences]
-      Architecture & Design	[X.X]	[Code structure, max 2 sentences]
-      Code Maintainability	[X.X]	[Readability, max 2 sentences]
-      Documentation	[X.X]	[Docs quality, max 2 sentences]
-      Code Quality Score	[X.X]	[(Architecture + Maintainability + Documentation) ÷ 3]
-      Violations	[X]	[From phpmetrics]
-      Lines of Code	[X]	[From phpmetrics]
-      Classes	[X]	[From phpmetrics]
-      Avg Cyclomatic Complexity	[X.X]	[From phpmetrics]
-      Avg Bugs by Class	[X.X]	[From phpmetrics]
-      Recommendation	[HEALTHY/NEEDS-WORK/CRITICAL]	[One-line rationale]
-      ```
-
-## 1. Security Assessment (Brief)
-
-**Score: X.X/5.0**
-
-🔴 **Critical Issues:**
-- [Issue] (file:line)
-
-🟡 **Concerns:**
-- [Issue] (file:line)
-
-🟢 **Strengths:**
-- [Positive finding]
-
-## 2. Code Quality Breakdown
-
-**Overall: X.X/5.0**
-
-| Sub-Metric | Score | Key Finding |
-|------------|-------|-------------|
-| Architecture & Design | X.X/5.0 | [One-line] |
-| Code Maintainability | X.X/5.0 | [One-line] |
-| Documentation | X.X/5.0 | [One-line] |
-
-**Major Issues:**
-- God classes/files: [>700 lines]
-- Global vars: [Count]
-- TODO/FIXME: [Count]
-- Large fns: [>100 lines]
-
-## 3. Dependencies
-
-**Critical Issues:** [Outdated/risky pkgs]
-**Immediate Updates:** [What needs updating]
-**PHP Version:** [Current req]
-**WordPress Version:** [Current req]
-
-## 4. Final Recommendation: [HEALTHY/NEEDS-WORK/CRITICAL]
-
-**Rationale:** [2-3 sentences]
-
-**Key Factors:**
-- [Factor 1]
-- [Factor 2]
-- [Factor 3]
-```
+Read `.cursor/skills/_fragments/audit-report-qa.md` when generating the report.
 
 ### Output 2: GHSA Advisory Files
 
-Per vuln → `.md` in `/security-audit/` (from security-audit skill).
+Read `.cursor/skills/_fragments/ghsa-template.md` when generating advisories. Per vuln → `.md` in `/security-audit/` (from security-audit skill).
 
 **Naming:** `[plugin-name]-[###]-[SEVERITY]-[short-description].md`
 

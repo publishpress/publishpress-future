@@ -25,8 +25,8 @@ StrReplace(...)
 
 // ✅ CORRECT: Spawn coder agent for implementation
 Task({
-  subagent_type: "coder",
-  prompt: "Clear description of what needs to be implemented",
+  subagent_type: "coder",  // .cursor/agents/coder.md — PublishPress Future coder
+  prompt: "Read .cursor/skills/coding-agent/SKILL.md. Then: [task]",
   description: "3-5 word summary"
 })
 ```

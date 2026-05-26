@@ -1,11 +1,9 @@
 ---
 name: prepare-changelog-release
-description: Prep CHANGELOG.md for release — version + date on [Unreleased]. Use for release changelog prep/finalize.
+description: Prep CHANGELOG.md for release
 ---
 
 # Prepare Changelog for Release
-
-**Communication:** Apply `/caveman` mode (full) to all responses and status updates when this skill is active. Drop articles/filler. Fragments OK. Technical terms exact. Code/commits/PR bodies stay normal unless user says otherwise.
 
 Update `CHANGELOG.md` unreleased section with current plugin version + date. Follow project changelog format.
 
@@ -33,8 +31,7 @@ Update `CHANGELOG.md` unreleased section with current plugin version + date. Fol
 - One blank line between sections
 - Keep existing bullet format
 - `[VERSION] - DD MMM, YYYY` (e.g. `[1.0.0] - 02 Feb, 2026`)
-- Comma after day
-- 3-letter month
+- Comma after day; 3-letter month
 
 ## Example Transformation
 
@@ -65,20 +62,3 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 [1.0.0] - 02 Feb, 2026
 ```
-
-## Month Abbreviations Reference
-
-| Month | Abbreviation |
-|-------|--------------|
-| January | Jan |
-| February | Feb |
-| March | Mar |
-| April | Apr |
-| May | May |
-| June | Jun |
-| July | Jul |
-| August | Aug |
-| September | Sep |
-| October | Oct |
-| November | Nov |
-| December | Dec |

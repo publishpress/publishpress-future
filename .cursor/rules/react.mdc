@@ -1,6 +1,6 @@
 ---
 description: React functional components, hooks, clean composable code
-globs: *.tsx, *@*.jsx
+globs: assets/jsx/**
 alwaysApply: false
 ---
 

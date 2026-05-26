@@ -1,14 +1,12 @@
 ---
-description: PHP 7.2 min + clean code
+description: PHP 7.4 min + clean code
 globs: *.php
 alwaysApply: false
 ---
 
 # PHP
 
-**Min PHP 7.2.** No 7.3+ syntax/API without version check + 7.2 fallback.
-
-Avoid without fallback: typed properties, arrow functions, `??=`, union types, `match`, named arguments, attributes, constructor property promotion, `str_contains()` / `str_starts_with()` / `str_ends_with()` (use `strpos` on 7.2).
+**Min PHP 7.4.**
 
 ## Practices (Clean Code, design patterns)
 
