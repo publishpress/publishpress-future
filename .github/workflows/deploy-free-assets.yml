@@ -9,3 +9,6 @@ on:
 jobs:
   deploy-assets:
     uses: publishpress/github-workflows/.github/workflows/deploy-free-assets.yml@v3
+    with:
+      PLUGIN_SLUG: post-expirator
+    secrets: inherit
