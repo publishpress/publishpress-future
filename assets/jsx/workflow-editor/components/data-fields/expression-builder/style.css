@@ -120,21 +120,40 @@
 }
 
 .expression-builder-inline {
+    display: grid;
+    grid-template-columns: minmax(220px, 1fr) auto;
+    column-gap: 6px;
+    width: 100%;
     padding-top: 0 !important;
 }
 
 .expression-builder-inline .ace_editor {
+    grid-column: 1;
+    grid-row: 1;
     margin-top: 0 !important;
-    margin-right: 40px !important;
+    margin-right: 0 !important;
     margin-bottom: 0 !important;
     height: 40px !important;
-    width: 300px !important;
+    width: 100% !important;
+    min-width: 0;
 }
 
-.expression-builder-inline > button {
-    top: 0 !important;
-    right: 0 !important;
+.expression-builder-inline > .expression-builder-button {
+    grid-column: 2;
+    grid-row: 1;
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
     height: 40px !important;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.expression-builder-inline .description {
+    grid-column: 1 / -1;
+    grid-row: 2;
 }
 
 .ace_editor.settings-panel {

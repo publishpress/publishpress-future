@@ -1,3 +1,18 @@
+.conditional-editor-modal .rule-fields,
+.conditional-editor-modal .rule-value {
+    flex: 1 1 0;
+    min-width: 180px;
+}
+
+.conditional-editor-modal .rule-fields > div,
+.conditional-editor-modal .rule-value > div {
+    width: 100%;
+}
+
+.conditional-expression-builder {
+    width: 100%;
+}
+
 .conditional-editor-modal .expression-builder-button {
     padding-left: 5px;
     padding-bottom: 4px;
