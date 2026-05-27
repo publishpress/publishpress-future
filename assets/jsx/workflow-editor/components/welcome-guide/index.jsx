@@ -1,5 +1,5 @@
 import { Guide } from "@wordpress/components";
-import { __ } from "@publishpress/i18n";
+import { __ } from "@wordpress/i18n";
 import { store as editorStore } from "../editor-store";
 import { useDispatch } from "@wordpress/data";
 import { FEATURE_WELCOME_GUIDE } from "../../constants";

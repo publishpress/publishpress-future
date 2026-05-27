@@ -3,7 +3,7 @@ import { CheckboxControl, SelectControl } from '@wordpress/components';
 import { store } from '../store';
 import { useEffect, useState, useMemo } from '@wordpress/element';
 import apiFetch from '@wordpress/api-fetch';
-import { __ } from '@publishpress/i18n';
+import { __ } from '@wordpress/i18n';
 
 export function Fieldset({context, onChange}) {
     const {

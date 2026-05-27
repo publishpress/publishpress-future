@@ -1,0 +1,18 @@
+---
+description: React functional components, hooks, clean composable code
+globs: assets/jsx/**
+alwaysApply: false
+---
+
+# React
+
+- Functional components only — no class components
+- Hooks for state, effects, shared logic; custom hooks when shared
+- Composition over inheritance; small focused components
+
+## Practices (Clean Code, design patterns)
+
+- **Clean Code**: clear names, single responsibility, no deep nesting, no duplicate logic
+- **Design patterns**: when simplify design (container/presenter, strategy, factory) — not for pattern sake
+- Thin UI; non-trivial logic in hooks or shared modules
+- No god files: split by responsibility; one file ≠ unrelated features

@@ -4,7 +4,7 @@ import NodeIcon from '../node-icon';
 import { useSelect, useDispatch } from "@wordpress/data";
 import { store as workflowStore } from "../workflow-store";
 import { store as editorStore } from "../editor-store";
-import { __ } from '@publishpress/i18n';
+import { __ } from '@wordpress/i18n';
 import { Toolbar, ToolbarGroup, ToolbarButton, Popover } from '@wordpress/components';
 import PlayIcon from "../icons/play";
 import { SIDEBAR_NODE_EDGE } from '../settings-sidebar/constants';

@@ -1,7 +1,7 @@
 import { useContext } from '@wordpress/element';
 import { select } from '@wordpress/data';
 import { SelectControl } from '@wordpress/components';
-import { __ } from '@publishpress/i18n';
+import { __ } from '@wordpress/i18n';
 
 import { store as workflowStore } from '../../../workflow-store';
 import { FieldExpressionBuilder } from '../../conditional/components/field-expression-builder';

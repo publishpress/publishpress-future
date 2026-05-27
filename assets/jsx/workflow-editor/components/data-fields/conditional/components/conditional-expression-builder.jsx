@@ -19,7 +19,7 @@ export const ConditionalExpressionBuilder = ({
         value = '';
     }
 
-    return <div>
+    return <div className="conditional-expression-builder">
         <ExpressionBuilder
             name={context.name}
             label={context.label}

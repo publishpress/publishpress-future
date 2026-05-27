@@ -8,7 +8,7 @@ import {
     SelectControl,
     __experimentalHStack as HStack
 } from "@wordpress/components";
-import { __ } from "@publishpress/i18n";
+import { __ } from "@wordpress/i18n";
 
 export const PostTypesSettingsPanels = function (props) {
     const [currentTab, setCurrentTab] = useState(Object.keys(props.settings)[0]);

@@ -1,4 +1,4 @@
-import { __ } from "@publishpress/i18n";
+import { __ } from "@wordpress/i18n";
 import { RadioControl, __experimentalVStack as VStack } from "@wordpress/components";
 import { ExpressionBuilder } from "./expression-builder";
 import { useCallback, useEffect, useState } from "@wordpress/element";

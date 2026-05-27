@@ -1,7 +1,7 @@
 /**
  * WordPress dependencies
  */
-import { __, isRTL } from '@publishpress/i18n';
+import { __, isRTL } from '@wordpress/i18n';
 import { Button } from '@wordpress/components';
 import { useSelect, useDispatch } from '@wordpress/data';
 import { displayShortcut } from '@wordpress/keycodes';

@@ -2,7 +2,7 @@ import { QueryBuilder } from 'react-querybuilder';
 import { QueryBuilderDnD } from '@react-querybuilder/dnd';
 import { useCallback, useEffect, useMemo } from '@wordpress/element';
 import { Button, Modal } from '@wordpress/components';
-import { __ } from '@publishpress/i18n';
+import { __ } from '@wordpress/i18n';
 import { useDispatch } from '@wordpress/data';
 
 import { store as editorStore } from '../../../editor-store';

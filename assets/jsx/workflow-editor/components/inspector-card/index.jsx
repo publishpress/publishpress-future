@@ -1,6 +1,6 @@
 import { useDispatch } from "@wordpress/data";
 import { store as workflowStore } from "../workflow-store";
-import { __ } from "@publishpress/i18n";
+import { __ } from "@wordpress/i18n";
 import {
     Button,
     TextareaControl,

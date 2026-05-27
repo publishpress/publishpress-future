@@ -16,12 +16,13 @@
 .rsync-filters-pre-build
 .vscode
 *.code-workspace
-/dev-workspace-cache
 /.cursor
 /.wordpress-org
 /cache
 /dev-workspace
 /dev-workspace-cache
+/assets/jsx
+/assets/adobe-animate
 /dist
 /docs
 /lib/composer.json

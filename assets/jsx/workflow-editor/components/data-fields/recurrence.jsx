@@ -1,5 +1,5 @@
 import { TreeSelect } from '@wordpress/components';
-import { __ } from '@publishpress/i18n';
+import { __ } from '@wordpress/i18n';
 
 const settings = window.futureWorkflowEditor;
 

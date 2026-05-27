@@ -6,7 +6,6 @@ modules:
         - lucatume\WPBrowser\Module\WPDb
         - lucatume\WPBrowser\Module\WPFilesystem
         - lucatume\WPBrowser\Module\WPLoader
-        - Sequence
         - Asserts
     config:
         lucatume\WPBrowser\Module\WPWebDriver:
@@ -52,8 +51,6 @@ modules:
             domain: '%WP_TESTS_DOMAIN%'
             dbUrl: "%WP_TESTS_DB_URL%"
             plugins: ['post-expirator/post-expirator.php']
-        Sequence:
-            prefix: "uid_"
 step_decorators:
   - \Codeception\Step\TryTo
 

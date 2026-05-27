@@ -262,7 +262,8 @@ $shortcodeWrapperClass = $settingsFacade->getShortcodeWrapperClass();
                     <td>
                         <?php
                         $wrapperOptions = [
-                            '' => '— None —',
+                            // translators: This is used to indicate that no wrapper should be used on the shortcode output
+                            '' => __('— None —', 'post-expirator'),
                             'p' => '&lt;p&gt;',
                             'div' => '&lt;div&gt;',
                             'span' => '&lt;span&gt;',

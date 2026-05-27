@@ -4,7 +4,7 @@ import { store } from '../store';
 import { useEffect } from '@wordpress/element';
 import apiFetch from '@wordpress/api-fetch';
 
-export function Fieldset({context, postId, apiUrl, nonce, workflowNonce, onChange, wrapper}) {
+export function Fieldset({context, postId, apiUrl, nonce, workflowNonce, actionNonce, onChange, wrapper}) {
     const {
         workflowsWithManualTrigger,
         workflowsEnabledForPost
@@ -77,6 +77,9 @@ export function Fieldset({context, postId, apiUrl, nonce, workflowNonce, onChang
             {controls.length > 0 && (
                 <div id={`post-expirator-${context}-wrapper`}>
                     <input type='hidden' name='future_workflow_view' value={context} />
+                    {context === 'quick-edit' && actionNonce && (
+                        <input type='hidden' name='_future_action_nonce' value={actionNonce} />
+                    )}
                     {controls}
                 </div>
             )}

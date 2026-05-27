@@ -1,4 +1,4 @@
-import { __, sprintf } from "@publishpress/i18n";
+import { __, sprintf } from "@wordpress/i18n";
 import { formatVariableStructure } from "../../../utils";
 import { termProperties } from "./schemas/term-properties";
 

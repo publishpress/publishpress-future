@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the PublishPress Future Free plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: PublishPress Future Free 4.10.0\n"
+"Project-Id-Version: PublishPress Future Free 4.10.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/project\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,6 +14,8 @@ msgstr ""
 "X-Generator: WP-CLI 2.13.0-alpha\n"
 "X-Domain: post-expirator\n"
 
+#. Plugin Name of the plugin
+#. Plugin Name of the plugin
 #. Plugin Name of the plugin
 #: post-expirator.php:4
 msgid "PublishPress Future Free"
@@ -487,10 +489,6 @@ msgstr ""
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:120
 #: src/Modules/Workflows/Models/StepTypesModel.php:99
 msgid "PublishPress Future"
-msgstr ""
-
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:121
-msgid "Future"
 msgstr ""
 
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:140
@@ -3873,6 +3871,11 @@ msgstr ""
 
 #: src/Views/menu-display.php:259
 msgid "Shortcode Wrapper"
+msgstr ""
+
+#. translators: This is used to indicate that no wrapper should be used on the shortcode output
+#: src/Views/menu-display.php:266
+msgid "— None —"
 msgstr ""
 
 #: src/Views/menu-display.php:279

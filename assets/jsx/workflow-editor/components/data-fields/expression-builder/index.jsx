@@ -5,7 +5,7 @@ import {
     __experimentalHeading as Heading,
     TextareaControl
 } from "@wordpress/components";
-import { __ } from "@publishpress/i18n";
+import { __ } from "@wordpress/i18n";
 import { useState, useRef, useCallback, useEffect } from "@wordpress/element";
 import NodeIcon from "../../node-icon";
 import ColumnsContainer from "./columns-container";

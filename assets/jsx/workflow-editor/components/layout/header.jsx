@@ -2,7 +2,7 @@ import { useSelect, useDispatch } from '@wordpress/data';
 import { Button, ToolbarItem } from '@wordpress/components';
 import { PinnedItems } from '@wordpress/interface';
 import { useViewportMatch } from '@wordpress/compose';
-import { __, _x } from '@publishpress/i18n';
+import { __, _x } from '@wordpress/i18n';
 import { useRef, useCallback, lazy } from '@wordpress/element';
 import { plus, layout } from '@wordpress/icons';
 import { store as editorStore } from '../editor-store';

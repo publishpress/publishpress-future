@@ -350,14 +350,14 @@ class ScheduledActions implements InitializableInterface
                         || ! isset($step['node']['data'])
                         || ! isset($step['node']['data']['name'])
                     ) {
-                        $html = '<span style="color: red;">' . __('Schedule step is required for this workflow.', 'post-expirator') . '</span>';
+                        $html = '<span style="color: red;">' . esc_html__('Schedule step is required for this workflow.', 'post-expirator') . '</span>';
 
                         $html .= '<br>';
-                        $html .= '<strong>' . __('Workflow:', 'post-expirator') . '</strong> '
-                            . $workflowTitle . '<br>';
+                        $html .= '<strong>' . esc_html__('Workflow:', 'post-expirator') . '</strong> '
+                            . esc_html($workflowTitle) . '<br>';
 
-                        $html .= '<strong>' . __('Step:', 'post-expirator') . '</strong> '
-                            . $args['step']['nodeId'];
+                        $html .= '<strong>' . esc_html__('Step:', 'post-expirator') . '</strong> '
+                            . esc_html($args['step']['nodeId']);
 
                         return $html;
                     }
@@ -378,7 +378,7 @@ class ScheduledActions implements InitializableInterface
                     $nextNodes = '<ul class="future-workflows-outputs">';
                     foreach ($next as $handleId => $handlerNodes) {
                         $handleLabel = $sourceHandles[$handleId] ?? $handleId;
-                        $nextNodes .= '<li class="future-workflow-step-handler">' . $handleLabel . ':</li>';
+                        $nextNodes .= '<li class="future-workflow-step-handler">' . esc_html($handleLabel) . ':</li>';
                         $nextNodes .= '<ul>';
                         foreach ($handlerNodes as $nextStep) {
                             $stepLabel = '';
@@ -397,18 +397,18 @@ class ScheduledActions implements InitializableInterface
                                 $stepLabel = $nextStep['node']['data']['name'];
                             }
 
-                            $nextNodes .= '<li>' . $stepLabel . '</li>';
+                            $nextNodes .= '<li>' . esc_html($stepLabel) . '</li>';
                         }
                         $nextNodes .= '</ul>';
                     }
                     $nextNodes .= '</ul>';
 
-                    $argsText = '<strong>' . __('Workflow:', 'post-expirator') . '</strong> '
-                        . $workflowTitle . '<br>';
+                    $argsText = '<strong>' . esc_html__('Workflow:', 'post-expirator') . '</strong> '
+                        . esc_html($workflowTitle) . '<br>';
 
                     if (isset($args['pluginVersion'])) {
-                        $argsText .= '<strong>' . __('Trigger: ', 'post-expirator') . '</strong>'
-                            . $args['runtimeVariables']['global']['trigger']['value']['label'] . '<br>';
+                        $argsText .= '<strong>' . esc_html__('Trigger: ', 'post-expirator') . '</strong>'
+                            . esc_html($args['runtimeVariables']['global']['trigger']['value']['label']) . '<br>';
 
                         // Check if the trigger is related to a post and show the post title and permalink
                         if (isset($args['runtimeVariables']['global']['trigger']['value']['slug'])) {
@@ -435,25 +435,25 @@ class ScheduledActions implements InitializableInterface
 
                                 if ($post instanceof \WP_Post) {
                                     $postPermaling = get_permalink($post->ID);
-                                    $argsText .= '<strong>' . __('Post:', 'post-expirator')
+                                    $argsText .= '<strong>' . esc_html__('Post:', 'post-expirator')
                                         . '</strong> <a target="_blank" href="' . esc_url($postPermaling) . '">'
-                                        . $post->post_title . '</a><br>';
+                                        . esc_html($post->post_title) . '</a><br>';
                                 }
                             }
                         }
                     } else {
-                        $argsText .= '<strong>' . __('Trigger: ', 'post-expirator') . '</strong>'
-                            . $args['runtimeVariables']['global']['trigger']['label'] . '<br>';
+                        $argsText .= '<strong>' . esc_html__('Trigger: ', 'post-expirator') . '</strong>'
+                            . esc_html($args['runtimeVariables']['global']['trigger']['label']) . '<br>';
                     }
 
-                    $argsText .= '<strong>' . __('Steps:', 'post-expirator') . '</strong><br>' . $nextNodes;
+                    $argsText .= '<strong>' . esc_html__('Steps:', 'post-expirator') . '</strong><br>' . $nextNodes;
 
                     $html = $argsText;
                     break;
 
                 case WorkflowsHooksAbstract::ACTION_UNSCHEDULE_RECURRING_STEP_ACTION:
                 case WorkflowsHooksAbstract::ACTION_UNSCHEDULE_RECURRING_NODE_ACTION:
-                    $html = __('Workflow recurring scheduled action', 'post-expirator');
+                    $html = esc_html__('Workflow recurring scheduled action', 'post-expirator');
                     break;
             }
         } catch (Throwable $e) {

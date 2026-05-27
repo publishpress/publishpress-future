@@ -34,11 +34,11 @@ Before releasing the Free plugin, ensure every step in this checklist is complet
 
 **Build Assets**
 
-- [ ] Build JS/CSS files by running `composer build:assets` (if applicable)
+- [ ] Build JS/CSS files by running `composer build:js` (if applicable)
 
 **Code Quality**
 
-- [ ] Run `composer check` to verify the codebase has no warnings or errors
+- [ ] Run `composer check:all` to verify the codebase has no warnings or errors
 - [ ] Run `composer test Unit` to execute Unit tests and confirm all tests pass (if applicable)
 - [ ] Run `composer test Integration` to execute Integration tests and confirm all tests pass (if applicable)
 

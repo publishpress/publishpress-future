@@ -8,7 +8,7 @@ import isEmpty from 'lodash/isEmpty';
  * WordPress dependencies
  */
 import { useMemo, useEffect } from '@wordpress/element';
-import { __, _n, sprintf } from '@publishpress/i18n';
+import { __, _n, sprintf } from '@wordpress/i18n';
 import { VisuallyHidden } from '@wordpress/components';
 import { useDebounce } from '@wordpress/compose';
 import { speak } from '@wordpress/a11y';

@@ -1,7 +1,7 @@
 import { useRef, useState } from '@wordpress/element';
 import { dispatch } from '@wordpress/data';
 import { addQueryArgs } from '@wordpress/url';
-import { __ } from '@publishpress/i18n';
+import { __ } from '@wordpress/i18n';
 import { Dashicon } from '@wordpress/components';
 
 export const useExport = ({

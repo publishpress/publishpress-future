@@ -33,16 +33,6 @@ FutureActionPanelAfterActionField.Slot = FutureActionPanelAfterActionFieldSlot;
 
 /***/ },
 
-/***/ "@publishpress/i18n"
-/*!************************************!*\
-  !*** external "publishpress.i18n" ***!
-  \************************************/
-(module) {
-
-module.exports = publishpress.i18n;
-
-/***/ },
-
 /***/ "@wordpress/components"
 /*!********************************!*\
   !*** external "wp.components" ***!
@@ -70,6 +60,16 @@ module.exports = wp.data;
 (module) {
 
 module.exports = wp.element;
+
+/***/ },
+
+/***/ "@wordpress/i18n"
+/*!**************************!*\
+  !*** external "wp.i18n" ***!
+  \**************************/
+(module) {
+
+module.exports = wp.i18n;
 
 /***/ }
 
@@ -156,8 +156,8 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _publishpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @publishpress/i18n */ "@publishpress/i18n");
-/* harmony import */ var _publishpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_publishpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
@@ -227,7 +227,7 @@ var Fields = function Fields(_ref) {
   return /*#__PURE__*/React.createElement(React.Fragment, null, workflows.length > 0 && action === 'trigger-workflow' && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelRow, {
     className: "future-action-panel-content future-action-full-width"
   }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
-    label: (0,_publishpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Workflow to trigger', 'post-expirator'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Workflow to trigger', 'post-expirator'),
     value: workflowId,
     options: workflows,
     onChange: handleActionChange,
@@ -238,7 +238,7 @@ var Fields = function Fields(_ref) {
     value: workflowId
   })), workflows.length === 0 && action === 'trigger-workflow' && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelRow, {
     className: "future-action-panel-content future-action-full-width"
-  }, /*#__PURE__*/React.createElement("p", null, (0,_publishpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('No compatible workflows available.', 'post-expirator'))));
+  }, /*#__PURE__*/React.createElement("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('No compatible workflows available.', 'post-expirator'))));
 };
 var LegacyActionFields = function LegacyActionFields() {
   return /*#__PURE__*/React.createElement(_components_FutureActionPanelAfterActionField__WEBPACK_IMPORTED_MODULE_4__.FutureActionPanelAfterActionField, null, function (_ref2) {

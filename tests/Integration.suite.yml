@@ -7,7 +7,6 @@ bootstrap: _bootstrap.php
 modules:
     enabled:
         - lucatume\WPBrowser\Module\WPLoader
-        - Sequence
     config:
         lucatume\WPBrowser\Module\WPLoader:
             wpRootFolder: "%WP_TESTS_ROOT_DIR%"

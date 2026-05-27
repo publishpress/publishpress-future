@@ -2,6 +2,8 @@
 
 namespace PublishPress\Future\Modules\Workflows\Interfaces;
 
+use WP_Post;
+
 interface PostModelInterface
 {
     public function load(int $id): bool;
@@ -22,5 +24,10 @@ interface PostModelInterface
 
     public function getManuallyEnabledWorkflowsSchedule(int $workflowId): array;
 
-    public function getPostObject(): \WP_Post;
+
+    /**
+     * Get the WordPress post object.
+     * @return WP_Post|null
+     */
+    public function getPostObject();
 }

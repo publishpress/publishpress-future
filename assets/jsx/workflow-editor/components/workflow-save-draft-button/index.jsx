@@ -12,7 +12,7 @@ import {
 import { usePrevious, useViewportMatch } from '@wordpress/compose';
 import { useDispatch, useSelect } from '@wordpress/data';
 import { useEffect, useState } from '@wordpress/element';
-import { __ } from '@publishpress/i18n';
+import { __ } from '@wordpress/i18n';
 import { Icon, check, cloud, cloudUpload } from '@wordpress/icons';
 import { displayShortcut } from '@wordpress/keycodes';
 import { Button } from '@wordpress/components';

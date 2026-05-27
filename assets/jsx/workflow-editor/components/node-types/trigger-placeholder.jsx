@@ -1,5 +1,5 @@
 import { memo } from '@wordpress/element';
-import { __ } from '@publishpress/i18n';
+import { __ } from '@wordpress/i18n';
 
 import Placeholder from './placeholder';
 import { NODE_TYPE_TRIGGER } from '../../constants';

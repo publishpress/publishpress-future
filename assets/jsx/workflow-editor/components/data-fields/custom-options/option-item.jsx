@@ -1,4 +1,4 @@
-import { __ } from "@publishpress/i18n";
+import { __ } from "@wordpress/i18n";
 import InlineSetting from "../inline-setting";
 import { TextControl } from "@wordpress/components";
 import ExpressionBuilder from "../expression-builder";

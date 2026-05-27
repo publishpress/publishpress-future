@@ -117,8 +117,8 @@ class ScheduledActionsController implements InitializableInterface
     {
         try {
             add_menu_page(
-                __('PublishPress Future', 'post-expirator'),
-                __('Future', 'post-expirator'),
+                'PublishPress Future',
+                'Future',
                 'manage_options',
                 'publishpress-future',
                 [\PostExpirator_Display::getInstance(), 'future_actions_tabs'],
