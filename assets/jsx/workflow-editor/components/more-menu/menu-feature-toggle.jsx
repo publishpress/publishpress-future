@@ -3,7 +3,7 @@
  */
 import { useSelect, useDispatch } from '@wordpress/data';
 import { MenuItem } from '@wordpress/components';
-import { __ } from '@publishpress/i18n';
+import { __ } from '@wordpress/i18n';
 import { check } from '@wordpress/icons';
 import { speak } from '@wordpress/a11y';
 

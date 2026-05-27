@@ -1,4 +1,4 @@
-import { __ } from '@publishpress/i18n';
+import { __ } from '@wordpress/i18n';
 import { withConditional } from '../../conditional';
 import { PostFieldSelector } from './post-field-selector';
 import { PostValueSelector } from './post-value-selector';

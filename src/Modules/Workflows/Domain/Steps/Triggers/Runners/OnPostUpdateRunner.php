@@ -111,22 +111,72 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
             999,
             3
         );
+
+        if (function_exists('acf')) {
+            $this->hooks->addAction(
+                HooksAbstract::ACTION_ACF_SAVE_POST,
+                [$this, 'onAcfSavePostCallback'],
+                20,
+                1
+            );
+        } else {
+            foreach ($this->getPostTypes() as $postType) {
+                $this->hooks->addAction(
+                    sprintf(HooksAbstract::ACTION_REST_AFTER_INSERT_POST_TYPE, $postType),
+                    [$this, 'onRestAfterInsertPostCallback'],
+                    20,
+                    3
+                );
+            }
+        }
     }
 
-    /**
-     * Fires when the post is saved, after the metadata is saved.
-     *
-     * @param int $postId
-     * @param \WP_Post $post
-     * @param bool $update
-     * @return void
-     */
     public function onAfterInsertPostCallback($postId, $post, $update)
     {
         if ($post->post_type === 'revision') {
             return;
         }
 
+        if (defined('REST_REQUEST') && REST_REQUEST) {
+            return;
+        }
+
+        $this->processUpdate((int) $postId, (bool) $update);
+    }
+
+    public function onAcfSavePostCallback($postId): void
+    {
+        if (! defined('REST_REQUEST') || ! REST_REQUEST) {
+            return;
+        }
+
+        $post = get_post($postId);
+
+        if (! ($post instanceof \WP_Post)) {
+            return;
+        }
+
+        $cache = $this->postCache->getCacheForPostId($postId);
+        $update = isset($cache['postBefore']);
+
+        $this->processUpdate((int) $postId, $update);
+    }
+
+    public function onRestAfterInsertPostCallback(\WP_Post $post, \WP_REST_Request $request, bool $creating): void
+    {
+        $cache = $this->postCache->getCacheForPostId($post->ID);
+        $update = isset($cache['postBefore']);
+
+        $this->processUpdate($post->ID, $update);
+    }
+
+    private function getPostTypes(): array
+    {
+        return get_post_types();
+    }
+
+    private function processUpdate(int $postId, bool $update): void
+    {
         if (! $update) {
             $this->logger->debugWithArgs(
                 'Trigger skipped because post #%d was saved but not updated.',
@@ -191,7 +241,7 @@ class OnPostUpdateRunner implements TriggerRunnerInterface
                 $postAfter->post_status ?? 'unknown'
             );
 
-            return false;
+            return;
         }
 
         if ($this->shouldAbortExecution($postId)) {

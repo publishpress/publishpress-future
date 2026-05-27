@@ -42,6 +42,10 @@ function DebugLogAutoRefresh() {
                 }
                 textarea.scrollTop = textarea.scrollHeight;
             }
+            const footerEl = document.getElementById('debug-log-length');
+            if (footerEl && typeof data.footer_message === 'string') {
+                footerEl.textContent = data.footer_message;
+            }
             lastRefreshTimeRef.current = Date.now();
             setLastRefreshedSeconds(0);
         } catch (e) {

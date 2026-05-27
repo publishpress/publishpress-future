@@ -3,6 +3,7 @@ import {
     POST_TYPE,
     NODE_TYPE_PLACEHOLDER
 } from '../../constants';
+import { __ } from '@wordpress/i18n';
 import { newTriggerPlaceholderNode, getNodeById } from '../../utils';
 
 export const DEFAULT_STATE = {
@@ -96,50 +97,50 @@ function _setInitialStateForGlobalVariables(state, workflow = {}) {
     state = setGlobalVariable(state, {
         payload: {
             name: 'site',
-            label: 'Site',
+            label: __('Site', 'post-expirator'),
             type: 'site',
             runtimeOnly: true,
-            description: 'The current site.',
+            description: __('The current site.', 'post-expirator'),
         }
     });
 
     state = setGlobalVariable(state, {
         payload: {
             name: 'workflow',
-            label: 'Workflow',
+            label: __('Workflow', 'post-expirator'),
             type: 'workflow',
             runtimeOnly: false,
-            description: 'The current workflow.',
+            description: __('The current workflow.', 'post-expirator'),
         }
     });
 
     state = setGlobalVariable(state, {
         payload: {
             name: 'user',
-            label: 'Activating user',
+            label: __('Activating user', 'post-expirator'),
             type: 'user',
             runtimeOnly: true,
-            description: 'The current user.',
+            description: __('The current user.', 'post-expirator'),
         }
     });
 
     state = setGlobalVariable(state, {
         payload: {
             name: 'trigger',
-            label: 'Activating trigger',
+            label: __('Activating trigger', 'post-expirator'),
             type: 'node',
             runtimeOnly: true,
-            description: 'The node that activated the workflow.',
+            description: __('The node that activated the workflow.', 'post-expirator'),
         }
     });
 
     state = setGlobalVariable(state, {
         payload: {
             name: 'engine_execution_id',
-            label: 'Engine execution ID',
+            label: __('Engine execution ID', 'post-expirator'),
             type: 'string',
             runtimeOnly: true,
-            description: 'A unique identifier assigned each time the workflow engine runs. Useful for tracking specific workflow executions and debugging.',
+            description: __('A unique identifier assigned each time the workflow engine runs. Useful for tracking specific workflow executions and debugging.', 'post-expirator'),
             priority: 35,
         }
     });

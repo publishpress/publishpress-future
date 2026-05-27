@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from '@wordpress/element';
 import { Modal, Button } from '@wordpress/components';
-import { __, sprintf } from '@publishpress/i18n';
+import { __, sprintf } from '@wordpress/i18n';
 import { createRoot } from 'react-dom/client';
 import './style.css';
 

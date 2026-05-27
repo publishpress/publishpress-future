@@ -2,7 +2,7 @@ import { store as workflowStore } from "../workflow-store";
 import { store as editorStore } from "../editor-store";
 import { useDispatch, useSelect } from "@wordpress/data";
 import { useEffect, useMemo, useCallback } from "@wordpress/element";
-import { __, sprintf } from "@publishpress/i18n";
+import { __, sprintf } from "@wordpress/i18n";
 import { nodeHasIncomers, nodeHasOutgoers, getNodeIncomersRecursively } from "../../utils";
 import isEmail from "validator/lib/isEmail";
 import isInt from "validator/lib/isInt";
@@ -148,7 +148,7 @@ export function NodeValidator({})
             return successfulResult;
         }
 
-        const expressions = expression.match(/{{[^}]+}}/g);
+        const expressions = expression.match(/\{\{[^\}]+\}\}/g);
 
         if (expressions) {
             expressions.forEach((expression) => {
@@ -191,11 +191,11 @@ export function NodeValidator({})
         }
 
         const countOpenPlaceholders = (expression) => {
-            return (expression.match(/{{/g) || []).length;
+            return (expression.match(/\{\{/g) || []).length;
         }
 
         const countClosePlaceholders = (expression) => {
-            return (expression.match(/}}/g) || []).length;
+            return (expression.match(/\}\}/g) || []).length;
         }
 
         if (countOpenPlaceholders(expression) > countClosePlaceholders(expression)) {
@@ -345,7 +345,7 @@ export function NodeValidator({})
                             }
                             break;
 
-                        case 'hasIncomerOfName':
+                        case 'hasIncomerOfName': {
                             const allIncomers = getNodeIncomersRecursively(node);
 
                             let hasError = false;
@@ -371,6 +371,7 @@ export function NodeValidator({})
                                 );
                             }
                             break;
+                        }
                     }
                 });
             }
@@ -433,7 +434,7 @@ export function NodeValidator({})
                             }
                             break;
 
-                        case 'dataType':
+                        case 'dataType': {
                             const type = ruleData.type;
 
                             if (settingValue === undefined || settingValue === null || settingValue === '') {
@@ -540,7 +541,8 @@ export function NodeValidator({})
                             }
 
                             break;
-                        case 'validVariable':
+                        }
+                        case 'validVariable': {
                             const variableValidation = isVariableValid(node, settingValue, ruleData);
 
                             if (!variableValidation.isValid) {
@@ -552,8 +554,9 @@ export function NodeValidator({})
                                 );
                             }
                             break;
+                        }
 
-                        case 'validExpression':
+                        case 'validExpression': {
                             const expressionValidation = isExpressionValid(settingValue, ruleData);
 
                             if (!expressionValidation.isValid) {
@@ -565,8 +568,9 @@ export function NodeValidator({})
                                 );
                             }
                             break;
+                        }
 
-                        case 'validOptions':
+                        case 'validOptions': {
                             if (! Array.isArray(settingValue)) {
                                 addNodeError(node.id, `${fieldName}-validOptions`, sprintf(__('The field %s must be a list of options.', 'post-expirator'), fieldLabel));
                             }
@@ -583,8 +587,9 @@ export function NodeValidator({})
                             }
 
                             break;
+                        }
 
-                        case 'hasVariableSyntax':
+                        case 'hasVariableSyntax': {
                             if (!settingValue || settingValue === '') {
                                 break;
                             }
@@ -604,6 +609,7 @@ export function NodeValidator({})
                                 );
                             }
                             break;
+                        }
                     }
                 });
             }

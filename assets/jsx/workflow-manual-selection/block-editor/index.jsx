@@ -1,7 +1,7 @@
 import { useDispatch, useSelect } from '@wordpress/data';
 import { store } from '../store';
 import { Fieldset } from '../fieldset';
-import { __ } from '@publishpress/i18n';
+import { __ } from '@wordpress/i18n';
 
 import { registerPlugin } from '@wordpress/plugins';
 import { useEffect } from 'react';

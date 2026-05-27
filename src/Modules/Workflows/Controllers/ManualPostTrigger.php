@@ -149,7 +149,7 @@ class ManualPostTrigger implements InitializableInterface
     public function processQuickEditUpdate($postId)
     {
         try {
-            // phpcs:disable WordPress.Security.NonceVerification.Recommended, WordPress.Security.NonceVerification.Missing
+            // phpcs:disable WordPress.Security.NonceVerification.Missing
             // Don't run if this is an auto save
             if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
                 return;
@@ -165,6 +165,12 @@ class ManualPostTrigger implements InitializableInterface
             $view = $_POST['future_workflow_view'] ?? '';
 
             if (empty($view) || $view !== 'quick-edit') {
+                return;
+            }
+
+            check_ajax_referer('__future_action', '_future_action_nonce');
+            
+            if (! $this->userCanManageManualWorkflowForPost($postId)) {
                 return;
             }
 
@@ -189,8 +195,17 @@ class ManualPostTrigger implements InitializableInterface
         }
     }
 
+    private function userCanManageManualWorkflowForPost($postId)
+    {
+        return $this->currentUserModel->userCanEditPost((int) $postId);
+    }
+
     private function triggerManuallyEnabledWorkflow($postId, $manuallyEnabledWorkflows)
     {
+        if (! $this->userCanManageManualWorkflowForPost($postId)) {
+            return;
+        }
+
         // Trigger the action to trigger those workflows
         foreach ($manuallyEnabledWorkflows as $workflowId) {
             $this->hooks->doAction(HooksAbstract::ACTION_MANUALLY_TRIGGERED_WORKFLOW, (int)$postId, (int)$workflowId);
@@ -232,6 +247,7 @@ class ManualPostTrigger implements InitializableInterface
                 [
                     "nonce" => wp_create_nonce("wp_rest"),
                     "workflowNonce" => wp_create_nonce("pp_workflow_action"),
+                    "actionNonce" => wp_create_nonce('__future_action'),
                     "apiUrl" => rest_url("publishpress-future/v1"),
                 ]
             );
@@ -291,6 +307,10 @@ class ManualPostTrigger implements InitializableInterface
 
             if (! $post || is_null($post->ID)) {
                 $this->logger->error('Post is null or ID is not set, cannot enqueue block editor scripts.');
+                return;
+            }
+
+            if (! $this->userCanManageManualWorkflowForPost($post->ID)) {
                 return;
             }
 
@@ -365,6 +385,12 @@ class ManualPostTrigger implements InitializableInterface
                                 ];
                             }
 
+                            if (! $this->userCanManageManualWorkflowForPost($post->ID)) {
+                                return [
+                                    'enabledWorkflows' => []
+                                ];
+                            }
+
                             $postModel = new PostModel();
                             $postModel->load($post->ID);
 
@@ -375,6 +401,10 @@ class ManualPostTrigger implements InitializableInterface
                             ];
                         },
                         'update_callback' => function ($manualTriggerAttributes, $post) {
+                            if (! $this->userCanManageManualWorkflowForPost($post->ID)) {
+                                return false;
+                            }
+
                             $postModel = new PostModel();
                             $postModel->load($post->ID);
 
@@ -447,6 +477,10 @@ class ManualPostTrigger implements InitializableInterface
                 return;
             }
 
+            if (! $this->userCanManageManualWorkflowForPost($post->ID)) {
+                return;
+            }
+
             $postModel = new PostModel();
             $postModel->load($post->ID);
 
@@ -503,6 +537,10 @@ class ManualPostTrigger implements InitializableInterface
 
             check_ajax_referer('__future_action', '_future_action_nonce');
 
+            if (! $this->userCanManageManualWorkflowForPost($postId)) {
+                return;
+            }
+
             // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
             $manuallyEnabledWorkflows = $_POST['future_workflow_manual_trigger'] ?? [];
             $manuallyEnabledWorkflows = array_map('intval', $manuallyEnabledWorkflows);
@@ -554,6 +592,10 @@ class ManualPostTrigger implements InitializableInterface
 
             $post = get_post();
 
+            if (! $post || ! $this->userCanManageManualWorkflowForPost($post->ID)) {
+                return;
+            }
+
             wp_localize_script(
                 "future_workflow_manual_selection_script",
                 "futureWorkflowManualSelection",
@@ -583,10 +625,6 @@ class ManualPostTrigger implements InitializableInterface
                 || (! isset($_REQUEST['future_workflow_manual_trigger']))
                 || (! isset($_REQUEST['future_workflow_manual_strategy']))
             ) {
-                return;
-            }
-
-            if (! $this->currentUserModel->userCanExpirePosts()) {
                 return;
             }
 

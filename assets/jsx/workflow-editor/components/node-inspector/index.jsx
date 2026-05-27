@@ -1,8 +1,8 @@
 import { useSelect } from "@wordpress/data";
 import { store as workflowStore } from "../workflow-store";
 import { store as editorStore } from "../editor-store";
-import { __ } from "@publishpress/i18n";
-import { sprintf } from "@publishpress/i18n";
+import { __ } from "@wordpress/i18n";
+import { sprintf } from "@wordpress/i18n";
 import { useRef } from "@wordpress/element";
 import NodeInspectorCard from "./node-inspector-card";
 import InspectorCard from "../inspector-card";

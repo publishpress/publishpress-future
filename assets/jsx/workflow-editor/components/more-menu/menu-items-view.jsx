@@ -1,5 +1,5 @@
 import { MenuGroup, MenuItem } from '@wordpress/components';
-import { __, _x } from '@publishpress/i18n';
+import { __, _x } from '@wordpress/i18n';
 import { useViewportMatch } from '@wordpress/compose';
 import { displayShortcut } from '@wordpress/keycodes';
 import { MoreMenuFeatureToggle } from './menu-feature-toggle';

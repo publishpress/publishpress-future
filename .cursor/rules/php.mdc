@@ -1,0 +1,16 @@
+---
+description: PHP 7.4 min + clean code
+globs: *.php
+alwaysApply: false
+---
+
+# PHP
+
+**Min PHP 7.4.**
+
+## Practices (Clean Code, design patterns)
+
+- **Clean Code**: small methods, clear names, early returns, minimal duplication
+- **Design patterns**: when clarify structure (repository, strategy, factory) — no over-abstraction
+- Business logic separate from WP hooks/templates where practical — no strict layers required
+- No god files: split classes/files by responsibility; one file ≠ unrelated features

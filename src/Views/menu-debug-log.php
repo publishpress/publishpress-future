@@ -144,51 +144,16 @@ echo '</textarea>';
 
 $totalDisplayedLogs = count($results);
 
-if ($totalLogsUnfiltered === 0) {
-    echo '<p id="debug-log-length">' . esc_html__('Debugging table is currently empty.', 'post-expirator') . '</p>';
-} elseif ($totalLogs === 0) {
-    echo '<p id="debug-log-length">' . esc_html__('No results match the current filter.', 'post-expirator') . '</p>';
-} elseif ($totalLogs > $totalDisplayedLogs) {
-    $message = $triggerActivatedOnly
-        ? sprintf(
-            // translators: %1$d: displayed count, %2$d: filtered total, %3$d: sessions, %4$d: total unfiltered, %5$s: filtered log size, %6$s: total log size.
-            esc_html__('Showing the latest %1$d of %2$d logs (%3$d sessions). Total in database: %4$d. Log size: %5$s (total: %6$s).', 'post-expirator'),
-            esc_html((string) $totalDisplayedLogs),
-            esc_html((string) $totalLogs),
-            esc_html((string) $sessionCount),
-            esc_html((string) $totalLogsUnfiltered),
-            esc_html(PostExpirator_Util::formatBytes($logSizeInBytes)),
-            esc_html(PostExpirator_Util::formatBytes($logSizeInBytesTotal))
-        )
-        : sprintf(
-            // translators: %1$d: displayed count, %2$d: total count, %3$d: sessions, %4$s: log size.
-            esc_html__('Showing the latest %1$d of %2$d logs (%3$d sessions). Log size: %4$s.', 'post-expirator'),
-            esc_html((string) $totalDisplayedLogs),
-            esc_html((string) $totalLogs),
-            esc_html((string) $sessionCount),
-            esc_html(PostExpirator_Util::formatBytes($logSizeInBytes))
-        );
-    echo '<p id="debug-log-length">' . $message . '</p>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-} else {
-    $message = $triggerActivatedOnly
-        ? sprintf(
-            // translators: %1$d: filtered logs count, %2$d: sessions, %3$d: total unfiltered, %4$s: filtered log size, %5$s: total log size.
-            esc_html__('Showing all %1$d logs (%2$d sessions). Total in database: %3$d. Log size: %4$s (total: %5$s).', 'post-expirator'),
-            esc_html((string) $totalLogs),
-            esc_html((string) $sessionCount),
-            esc_html((string) $totalLogsUnfiltered),
-            esc_html(PostExpirator_Util::formatBytes($logSizeInBytes)),
-            esc_html(PostExpirator_Util::formatBytes($logSizeInBytesTotal))
-        )
-        : sprintf(
-            // translators: %1$d: total logs count, %2$d: sessions count, %3$s: log size.
-            esc_html__('Showing all %1$d logs (%2$d sessions). Log size: %3$s.', 'post-expirator'),
-            esc_html((string) $totalLogs),
-            esc_html((string) $sessionCount),
-            esc_html(PostExpirator_Util::formatBytes($logSizeInBytes))
-        );
-    echo '<p id="debug-log-length">' . $message . '</p>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-}
+$footerMessage = DebugLogDisplayHelper::buildFooterMessage(
+    $totalDisplayedLogs,
+    $totalLogs,
+    $sessionCount,
+    $totalLogsUnfiltered,
+    $logSizeInBytes,
+    $logSizeInBytesTotal,
+    (bool) $triggerActivatedOnly
+);
+echo '<p id="debug-log-length">' . $footerMessage . '</p>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 echo '<div class="pp-debug-log-actions">';
 

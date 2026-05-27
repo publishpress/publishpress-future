@@ -36,7 +36,7 @@ import { TriggerPlaceholder } from "../node-types/trigger-placeholder";
 import { createNewNode, getId } from "../../utils";
 import NodePlaceholder from "../node-types/node-placeholder";
 import AutoLayout from "./auto-layout";
-import { __ } from "@publishpress/i18n";
+import { __ } from "@wordpress/i18n";
 import { getNodeVariablesTree, filterVariablesTreeByDataType, getNodeById } from "../../utils";
 import { CUSTOM_EVENT_HANDLES_COUNT_CHANGED } from "../../constants";
 

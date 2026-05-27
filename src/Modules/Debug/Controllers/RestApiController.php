@@ -116,6 +116,15 @@ class RestApiController implements InitializableInterface
             'session_count' => $sessionCount,
             'log_size_bytes' => $logSizeInBytes,
             'log_size_bytes_total' => $logSizeBytesTotal,
+            'footer_message' => DebugLogDisplayHelper::buildFooterMessage(
+                count($results),
+                $totalLogs,
+                $sessionCount,
+                $totalLogsUnfiltered,
+                $logSizeInBytes,
+                $logSizeBytesTotal,
+                $triggerActivatedOnly
+            ),
         ]);
     }
 

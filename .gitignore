@@ -17,6 +17,10 @@
 /dev-workspace-cache
 /dist
 /lib/**/.git
+/lib/**/.gitignore
+/lib/**/.gitattributes
+/lib/**/.env.example
+/lib/**/.phpcs*
 /lib/vendor/woocommerce/action-scheduler/changelog.txt
 /tests-*
 /vendor
@@ -35,3 +39,4 @@ webpack-bundle-stats-*.html
 webpack-bundle-stats-*.json
 webpack-bundle-stats.html
 webpack-bundle-stats.json
+translation-audit-report.*

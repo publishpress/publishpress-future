@@ -1,5 +1,5 @@
 import { Button } from '@wordpress/components';
-import { __ } from '@publishpress/i18n';
+import { __ } from '@wordpress/i18n';
 import { useSelect, useDispatch } from '@wordpress/data';
 import { compose, useViewportMatch } from '@wordpress/compose';
 

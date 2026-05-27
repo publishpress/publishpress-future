@@ -4,7 +4,7 @@ import {
     Icon,
     __unstableMotion as motion
 } from "@wordpress/components";
-import { __ } from "@publishpress/i18n";
+import { __ } from "@wordpress/i18n";
 import { addQueryArgs } from '@wordpress/url';
 import { wordpress } from '@wordpress/icons';
 import { store as workflowStore } from './workflow-store';

@@ -63,7 +63,7 @@ class DoAction implements StepTypeInterface
             [
                 "label" => __("Action", "post-expirator"),
                 "description" => __(
-                    "Specify the hook that will trigger this action.",
+                    "Enter the action hook to trigger. Only hooks registered through the 'publishpress_future_allowed_action_hooks' filter are allowed.",
                     "post-expirator"
                 ),
                 "fields" => [

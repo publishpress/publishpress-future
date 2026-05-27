@@ -39,7 +39,7 @@ Before releasing the Pro plugin, ensure every step in this checklist is complete
 
 **Code Quality**
 
-- [ ] Run `composer check` to verify the codebase has no warnings or errors
+- [ ] Run `composer check:all` to verify the codebase has no warnings or errors
 - [ ] Run `composer test Unit` to execute Unit tests and confirm all tests pass (if applicable)
 - [ ] Run `composer test Integration` to execute Integration tests and confirm all tests pass (if applicable)
 

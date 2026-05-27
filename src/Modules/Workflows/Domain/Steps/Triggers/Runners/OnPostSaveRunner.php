@@ -102,9 +102,63 @@ class OnPostSaveRunner implements TriggerRunnerInterface
             20,
             3
         );
+
+        if (function_exists('acf')) {
+            $this->hooks->addAction(
+                HooksAbstract::ACTION_ACF_SAVE_POST,
+                [$this, 'onAcfSavePostCallback'],
+                20,
+                1
+            );
+        } else {
+            foreach ($this->getPostTypes() as $postType) {
+                $this->hooks->addAction(
+                    sprintf(HooksAbstract::ACTION_REST_AFTER_INSERT_POST_TYPE, $postType),
+                    [$this, 'onRestAfterInsertPostCallback'],
+                    20,
+                    3
+                );
+            }
+        }
     }
 
     public function onAfterInsertPostCallback($postId, $post, $update)
+    {
+        if (defined('REST_REQUEST') && REST_REQUEST) {
+            return;
+        }
+
+        $this->processSave($post, (int) $postId, (bool) $update);
+    }
+
+    public function onAcfSavePostCallback($postId): void
+    {
+        if (! defined('REST_REQUEST') || ! REST_REQUEST) {
+            return;
+        }
+
+        $post = get_post($postId);
+
+        if (! ($post instanceof \WP_Post)) {
+            return;
+        }
+
+        $update = $post->post_date !== $post->post_modified;
+
+        $this->processSave($post, $post->ID, $update);
+    }
+
+    public function onRestAfterInsertPostCallback(\WP_Post $post, \WP_REST_Request $request, bool $creating): void
+    {
+        $this->processSave($post, $post->ID, ! $creating);
+    }
+
+    private function getPostTypes(): array
+    {
+        return get_post_types();
+    }
+
+    private function processSave(\WP_Post $post, int $postId, bool $update): void
     {
         if ($post->post_type === 'revision') {
             return;
@@ -132,7 +186,7 @@ class OnPostSaveRunner implements TriggerRunnerInterface
                 $post->post_status ?? 'unknown'
             );
 
-            return false;
+            return;
         }
 
         if ($this->shouldAbortExecution($postId)) {

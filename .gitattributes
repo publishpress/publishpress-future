@@ -21,7 +21,6 @@
 .vscode export-ignore
 .wordpress-org export-ignore
 *.code-workspace export-ignore
-/dev-workspace-cache export-ignore
 /.cursor export-ignore
 /assets/adobe-animate export-ignore
 /cache export-ignore

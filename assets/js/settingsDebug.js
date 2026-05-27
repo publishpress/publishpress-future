@@ -1092,7 +1092,7 @@ function DebugLogAutoRefresh() {
   var fetchLogs = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
       var _document$getElementB, _document$querySelect;
-      var logCount, groupByChecked, groupByRequest, triggerOnly, apiRoot, data, textarea;
+      var logCount, groupByChecked, groupByRequest, triggerOnly, apiRoot, data, textarea, footerEl;
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
@@ -1124,23 +1124,27 @@ function DebugLogAutoRefresh() {
               }
               textarea.scrollTop = textarea.scrollHeight;
             }
+            footerEl = document.getElementById('debug-log-length');
+            if (footerEl && typeof data.footer_message === 'string') {
+              footerEl.textContent = data.footer_message;
+            }
             lastRefreshTimeRef.current = Date.now();
             setLastRefreshedSeconds(0);
-            _context.next = 20;
+            _context.next = 22;
             break;
-          case 17:
-            _context.prev = 17;
+          case 19:
+            _context.prev = 19;
             _context.t0 = _context["catch"](6);
             setError(text.refreshError || 'Failed to refresh log data.');
-          case 20:
-            _context.prev = 20;
+          case 22:
+            _context.prev = 22;
             setIsRefreshing(false);
-            return _context.finish(20);
-          case 23:
+            return _context.finish(22);
+          case 25:
           case "end":
             return _context.stop();
         }
-      }, _callee, null, [[6, 17, 20, 23]]);
+      }, _callee, null, [[6, 19, 22, 25]]);
     }));
     return function fetchLogs() {
       return _ref.apply(this, arguments);

@@ -3,7 +3,7 @@
  */
 import { ComplementaryArea } from '@wordpress/interface';
 import { useSelect } from '@wordpress/data';
-import { __ } from '@publishpress/i18n';
+import { __ } from '@wordpress/i18n';
 import { store as keyboardShortcutsStore } from '@wordpress/keyboard-shortcuts';
 
 /**

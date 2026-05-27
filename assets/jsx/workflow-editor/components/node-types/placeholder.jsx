@@ -1,5 +1,5 @@
 import { memo, useState, useEffect, useRef } from '@wordpress/element';
-import { __ } from '@publishpress/i18n';
+import { __ } from '@wordpress/i18n';
 import { Button, Popover, SearchControl } from '@wordpress/components';
 import { NodesTab } from '../secondary-sidebar/nodes-tab';
 import { store as editorStore } from '../editor-store';

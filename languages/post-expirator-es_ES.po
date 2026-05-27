@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Plugins - PublishPress Future: Automatically Unpublish "
 "WordPress Posts - Stable (latest release)\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/project\n"
-"POT-Creation-Date: 2026-04-10T20:34:37+00:00\n"
-"PO-Revision-Date: 2026-04-11 11:55+0200\n"
+"POT-Creation-Date: 2026-05-25T21:24:52+00:00\n"
+"PO-Revision-Date: 2026-05-26 06:58+0200\n"
 "Last-Translator: Angelo Giammarresi <info@wocmultimedia.biz>\n"
 "Language-Team: Spanish <https://weblate.publishpress.com/projects/"
 "publishpress-future/post-expirator/es/>\n"
@@ -25,16 +25,14 @@ msgstr "PublishPress Future Free"
 #. Plugin URI of the plugin
 #: post-expirator.php:5
 msgid "http://wordpress.org/extend/plugins/post-expirator/"
-msgstr "https://es.wordpress.org/plugins/post-expirator/"
+msgstr "http://wordpress.org/extend/plugins/post-expirator/"
 
 #. Description of the plugin
 #: post-expirator.php:6
 msgid ""
 "PublishPress Future allows you to schedule automatic changes to posts, pages "
 "and other content types."
-msgstr ""
-"PublishPress Future te permite programar cambios automáticos en entradas, "
-"páginas y otros tipos de contenido."
+msgstr "PublishPress Future te permite programar cambios automáticos en entradas, páginas y otros tipos de contenido."
 
 #. Author of the plugin
 #: post-expirator.php:7
@@ -44,7 +42,7 @@ msgstr "PublishPress"
 #. Author URI of the plugin
 #: post-expirator.php:9
 msgid "http://publishpress.com"
-msgstr "https://publishpress.com"
+msgstr "http://publishpress.com"
 
 #: legacy/classes/Display.class.php:113 legacy/classes/Display.class.php:141
 msgid "You do not have permission to configure PublishPress Future."
@@ -52,11 +50,11 @@ msgstr "No tienes permisos para configurar PublishPress Future."
 
 #: legacy/classes/Display.class.php:157
 msgid "Debug is disabled"
-msgstr "Depuración desactivada"
+msgstr "﻿Depuración desactivada"
 
 #: legacy/classes/Display.class.php:279
 msgid "Debugging Disabled"
-msgstr "Depuración desactivada"
+msgstr "﻿Depuración desactivada"
 
 #: legacy/classes/Display.class.php:285
 msgid "Debugging Enabled"
@@ -132,15 +130,15 @@ msgstr "Contacto"
 msgid "No taxonomies found"
 msgstr "No se han encontrado taxonomías"
 
-#: services.php:152 src/Modules/Settings/SettingsFacade.php:122
+#: services.php:151 src/Modules/Settings/SettingsFacade.php:122
 msgid "l F jS, Y"
-msgstr "l, j F Y"
+msgstr "l F jS, Y"
 
-#: services.php:156 src/Modules/Settings/SettingsFacade.php:123
+#: services.php:155 src/Modules/Settings/SettingsFacade.php:123
 msgid "g:ia"
 msgstr "g:ia"
 
-#: services.php:157 src/Modules/Settings/SettingsFacade.php:124
+#: services.php:156 src/Modules/Settings/SettingsFacade.php:124
 msgid "Post expires at EXPIRATIONTIME on ACTIONDATE"
 msgstr "La entrada caduca en EXPIRATIONTIME el ACTIONDATE"
 
@@ -241,7 +239,9 @@ msgstr "No hay resultados que coincidan con el filtro actual."
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:361
 #: src/Modules/Expirator/Controllers/QuickEditController.php:287
 #: src/Modules/Expirator/Controllers/SettingsController.php:280
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5675
 #: assets/jsx/workflow-editor/components/data-fields/taxonomy-terms.jsx:60
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4353
 msgid "Taxonomy"
 msgstr "Taxonomía"
 
@@ -279,7 +279,9 @@ msgstr "Categorías"
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:64
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:64
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:153
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11465
 #: assets/jsx/workflow-editor/components/node-types/generic.jsx:246
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9210
 msgid "Action"
 msgstr "Acción"
 
@@ -406,19 +408,19 @@ msgstr "Por favor, selecciona uno o más %s"
 msgid "New status"
 msgstr "Nuevo estado"
 
-#: src/Modules/Expirator/Controllers/BulkActionController.php:96
+#: src/Modules/Expirator/Controllers/BulkActionController.php:100
 msgid "No posts selected. Unable to sync Future Actions."
 msgstr ""
 "No hay entradas seleccionadas. No se pueden sincronizar las acciones de "
 "Future."
 
-#: src/Modules/Expirator/Controllers/BulkActionController.php:101
+#: src/Modules/Expirator/Controllers/BulkActionController.php:105
 msgid "Future Actions successfully synced with Post Metadata."
 msgstr ""
 "Acciones de Future sincronizadas correctamente con los metadatos de la "
 "entrada."
 
-#: src/Modules/Expirator/Controllers/BulkActionController.php:111
+#: src/Modules/Expirator/Controllers/BulkActionController.php:126
 msgid "Update Future Actions from Post Metadata"
 msgstr ""
 "Actualiza las acciones de Future a partir de los metadatos de la entrada"
@@ -456,27 +458,29 @@ msgstr "Categoría"
 
 #: src/Modules/Expirator/Controllers/PluginsListController.php:50
 #: src/Modules/VersionNotices/Module.php:137
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9630
 #: assets/jsx/workflow-editor/components/layout/header.jsx:160
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7445
 msgid "Upgrade to Pro"
 msgstr "Actualizar a Pro"
 
 #: src/Modules/Expirator/Controllers/PluginsListController.php:69
-#: src/Modules/Workflows/Controllers/ManualPostTrigger.php:461
+#: src/Modules/Workflows/Controllers/ManualPostTrigger.php:495
 #: src/Modules/Workflows/Controllers/PostType.php:49
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:181
 #: assets/js/backupPanel.js:512 assets/js/backupPanel.js:698
-#: assets/js/workflowManualSelectionBlockEditor.js:2162
+#: assets/js/workflowManualSelectionBlockEditor.js:2157
 #: assets/js/workflowManualSelectionBulkEdit.js:167
-#: assets/js/workflowManualSelectionQuickEdit.js:2220
+#: assets/js/workflowManualSelectionQuickEdit.js:2217
 #: assets/jsx/backup-panel/components/tabs-content/components/tabs/tab-import.jsx:68
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:83
 #: assets/jsx/workflow-manual-selection/block-editor/index.jsx:49
 #: assets/jsx/workflow-manual-selection/bulk-edit/fieldset.jsx:88
-#: assets/jsx/workflow-manual-selection/quick-edit/index.jsx:73
+#: assets/jsx/workflow-manual-selection/quick-edit/index.jsx:75
 #: assets/js/backupPanel.js:405 assets/js/backupPanel.js:559
-#: assets/js/workflowManualSelectionBlockEditor.js:1627
+#: assets/js/workflowManualSelectionBlockEditor.js:1629
 #: assets/js/workflowManualSelectionBulkEdit.js:114
-#: assets/js/workflowManualSelectionQuickEdit.js:1690
+#: assets/js/workflowManualSelectionQuickEdit.js:1694
 msgid "Action Workflows"
 msgstr "Flujos de trabajo de acción"
 
@@ -487,7 +491,9 @@ msgstr "Flujos de trabajo de acción"
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeactivatePostWorkflow.php:67
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostWorkflowEnable.php:67
 #: src/Views/tabs-settings.php:47
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14436
 #: assets/jsx/workflow-editor/components/settings-sidebar/settings-sidebar.jsx:54
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11976
 msgid "Settings"
 msgstr "Ajustes"
 
@@ -504,15 +510,6 @@ msgstr "Ninguna acción Future"
 #: src/Modules/Expirator/Controllers/RestAPIController.php:249
 msgid "Invalid date time offset."
 msgstr "Desplazamiento de fecha y hora no válido."
-
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:120
-#: src/Modules/Workflows/Models/StepTypesModel.php:99
-msgid "PublishPress Future"
-msgstr "PublishPress Future"
-
-#: src/Modules/Expirator/Controllers/ScheduledActionsController.php:121
-msgid "Future"
-msgstr "Future"
 
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:140
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:141
@@ -656,19 +653,25 @@ msgstr "Espera la validación…"
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:299
 #: src/Modules/Expirator/Controllers/SettingsController.php:357
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2424
 #: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:168
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1786
 msgid "Date Preview"
 msgstr "Vista previa de la fecha"
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:300
 #: src/Modules/Expirator/Controllers/SettingsController.php:358
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2425
 #: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:169
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1787
 msgid "Current Date"
 msgstr "Fecha actual"
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:301
 #: src/Modules/Expirator/Controllers/SettingsController.php:359
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2426
 #: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:170
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1788
 msgid "Computed Date"
 msgstr "Fecha calculada"
 
@@ -676,7 +679,9 @@ msgstr "Fecha calculada"
 #: src/Modules/Expirator/Controllers/SettingsController.php:360
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:130
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:120
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2597
 #: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:11
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1937
 msgid "Error"
 msgstr "Error"
 
@@ -768,8 +773,12 @@ msgstr "%s ha sido borrado correctamente."
 
 #: src/Modules/Expirator/ExpirationActions/DeletePost.php:76
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:87
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11503
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14823
 #: assets/jsx/workflow-editor/components/node-types/generic.jsx:292
 #: assets/jsx/workflow-editor/components/workflow-delete-button/index.jsx:39
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9256
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12322
 msgid "Delete"
 msgstr "Borrar"
 
@@ -1186,7 +1195,9 @@ msgid "Every %s"
 msgstr "Cada %s"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:851
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5363
 #: assets/jsx/workflow-editor/components/data-fields/recurrence.jsx:15
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4084
 msgid "Non-repeating"
 msgstr "No repetitiva"
 
@@ -1275,11 +1286,9 @@ msgstr "días"
 msgid ""
 "You're using PublishPress Future Free. The Pro version has more features and "
 "support. %1$sUpgrade to Pro%2$s"
-msgstr ""
-"Estás usando PublishPress Future Free. La versión Pro tiene más "
-"características y soporte. %1$sActualizar a Pro%2$s"
+msgstr "Estás usando PublishPress Future Free. La versión Pro tiene más características y soporte. %1$sActualizar a Pro%2$s"
 
-#: src/Modules/Workflows/Controllers/ManualPostTrigger.php:396
+#: src/Modules/Workflows/Controllers/ManualPostTrigger.php:426
 msgid "Workflow Manual Trigger"
 msgstr "Disparador del flujo de trabajo"
 
@@ -1294,10 +1303,7 @@ msgid ""
 "You have past-due scheduled actions in PublishPress Future.\n"
 "\n"
 "Please check them at %s"
-msgstr ""
-"Tienes acciones programadas vencidas en PublishPress Future.\n"
-"\n"
-"Por favor, compruébelas en %s"
+msgstr "Tienes acciones programadas vencidas en PublishPress Future.\n\nPor favor, compruébelas en %s"
 
 #: src/Modules/Workflows/Controllers/PastDueActions.php:155
 msgid "[PublishPress Future] Past-due Actions Found"
@@ -1373,7 +1379,9 @@ msgid "Action Workflows list"
 msgstr "Lista de los flujos de trabajos de acción"
 
 #: src/Modules/Workflows/Controllers/PostType.php:67
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15479
 #: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:190
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12797
 msgid "Workflow published."
 msgstr "Flujo de trabajo publicado."
 
@@ -1598,7 +1606,9 @@ msgid "[%1$s/%2$d]"
 msgstr "[%1$s/%2$d]"
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:264
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14659
 #: assets/jsx/workflow-editor/components/welcome-guide/index.jsx:21
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12163
 msgid "Welcome to the workflow editor"
 msgstr "Bienvenido al editor de flujos de trabajo"
 
@@ -1704,7 +1714,9 @@ msgstr ""
 
 #. translators: Blocks tab title in the block inserter.
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:236
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14099
 #: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:19
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11707
 msgid "Triggers"
 msgstr "Disparadores"
 
@@ -1949,7 +1961,9 @@ msgstr "El valor meta para añadir a la entrada."
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePostMeta.php:128
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:141
 #: src/Modules/Workflows/Models/StepTypesModel.php:90
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:402
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:34
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:359
 msgid "Post"
 msgstr "Publicación"
 
@@ -2090,8 +2104,12 @@ msgstr "Los términos que se añadirán a las entradas."
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SetPostTerm.php:91
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SetPostTerm.php:118
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnTermsAdded.php:123
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5701
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5713
 #: assets/jsx/workflow-editor/components/data-fields/taxonomy-terms.jsx:80
 #: assets/jsx/workflow-editor/components/data-fields/taxonomy-terms.jsx:94
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4373
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4387
 msgid "Terms"
 msgstr "Términos"
 
@@ -2115,7 +2133,9 @@ msgid "The message to be sent to the debug log."
 msgstr "El mensaje que se enviará al registro de depuración."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AppendDebugLog.php:75
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2614
 #: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:28
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1954
 msgid "Level"
 msgstr "Nivel"
 
@@ -2162,7 +2182,9 @@ msgstr ""
 "«Falso»."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:64
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1053
 #: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:57
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:800
 msgid "Condition"
 msgstr "Condición"
 
@@ -2233,6 +2255,9 @@ msgstr ""
 "entrada seleccionada."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeactivatePostWorkflow.php:125
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16035
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:110
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13229
 msgid "Workflow"
 msgstr "Flujo de trabajo"
 
@@ -2301,9 +2326,13 @@ msgid "This step executes a custom action."
 msgstr "Este paso ejecuta una acción personalizada."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:65
-#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:65
-msgid "Specify the hook that will trigger this action."
-msgstr "Especifica el gancho que activará esta acción."
+msgid ""
+"Enter the action hook to trigger. Only hooks registered through the "
+"'publishpress_future_allowed_action_hooks' filter are allowed."
+msgstr ""
+"Introducir el gancho del action a disparar. Están permitidos dolo los "
+"ganchos registrados mediante el filtro "
+"`publishpress_future_allowed_action_hooks`."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:73
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:73
@@ -2531,9 +2560,15 @@ msgstr "Programar > Expresión de ID único"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:104
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:113
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2331
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2398
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4214
 #: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:64
 #: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:139
 #: assets/jsx/workflow-editor/components/data-fields/post-data/post-date.jsx:72
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1682
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1757
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3190
 msgid "Custom date source"
 msgstr "Fuente de la fecha personalizada"
 
@@ -2690,7 +2725,9 @@ msgstr "Tipo de aviso"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:118
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:108
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2588
 #: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:8
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1934
 msgid "Info"
 msgstr "Información"
 
@@ -2701,7 +2738,9 @@ msgstr "Correcto"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:126
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:116
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2594
 #: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:10
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1936
 msgid "Warning"
 msgstr "Advertencia"
 
@@ -2757,7 +2796,9 @@ msgid "Data to output"
 msgstr "Datos de salida"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendRay.php:78
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2145
 #: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:80
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1556
 msgid "Label"
 msgstr "Etiqueta"
 
@@ -2990,9 +3031,9 @@ msgid ""
 "This step requires user action before the workflow can proceed. The actions "
 "are done via the in-site notification area."
 msgstr ""
-"Para este paso, es obligatorio que el usuario haga una acción antes de que "
-"el flujo de trabajo pueda continuar. Las acciones se hacen a través del área "
-"de avisos del sitio."
+"Para este paso es obligatorio que el usuario haga una acción antes de que el "
+"flujo de trabajo pueda continuar. Las acciones se hacen a través del área de "
+"avisos del sitio."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:64
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:168
@@ -3028,7 +3069,9 @@ msgstr ""
 #. translators: button label text should, if possible, be under 16 characters.
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:129
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:201
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10119
 #: assets/jsx/workflow-editor/components/more-menu/menu-dropdown.jsx:11
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7867
 msgid "Options"
 msgstr "Opciones"
 
@@ -3097,6 +3140,10 @@ msgstr ""
 "Este activador se activa mediante un gancho de acción personalizado de "
 "WordPress. Utilízalo para integrarlo con otros plugins o código "
 "personalizado."
+
+#: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:65
+msgid "Specify the hook that will trigger this action."
+msgstr "Especifica el gancho que activará esta acción."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:74
 msgid "The hook that will trigger this action."
@@ -3170,7 +3217,9 @@ msgstr ""
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostUpdate.php:64
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostWorkflowEnable.php:82
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnTermsAdded.php:64
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4649
 #: assets/jsx/workflow-editor/components/data-fields/post-filter/components/post-filter.jsx:83
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3579
 msgid "Post Filter"
 msgstr "Filtro de la entrada"
 
@@ -3257,8 +3306,12 @@ msgstr "La entrada se ha guardado con las nuevas propriedades."
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostUpdate.php:121
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostWorkflowEnable.php:133
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnTermsAdded.php:155
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4875
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5126
 #: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:105
 #: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:5
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3735
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3933
 msgid "Post ID"
 msgstr "ID de la entrada"
 
@@ -3673,12 +3726,26 @@ msgid "Migrate workflow scheduled steps schema after v4.0.0"
 msgstr ""
 "Migrar el esquema de pasos programados del flujo de trabajo después de v4.0.0"
 
+#: src/Modules/Workflows/Models/PostModel.php:397
+#: src/Modules/Workflows/Models/PostModel.php:401
+msgid "Unknown Step"
+msgstr "Paso desconocido"
+
+#: src/Modules/Workflows/Models/StepTypesModel.php:99
+msgid "PublishPress Future"
+msgstr "PublishPress Future"
+
 #: src/Modules/Workflows/Models/StepTypesModel.php:108
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:405
 #: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:35
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:360
 msgid "User"
 msgstr "Usuario"
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:117
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16026
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:100
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13219
 msgid "Site"
 msgstr "Sitio"
 
@@ -3692,7 +3759,9 @@ msgstr "Asíncrona"
 
 #: src/Modules/Workflows/Models/StepTypesModel.php:144
 #: src/Views/tabs-settings.php:36
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2585
 #: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:7
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1933
 msgid "Debug"
 msgstr "Depurar"
 
@@ -3733,15 +3802,21 @@ msgstr "El ID de la entrada"
 msgid "Workflow not found"
 msgstr "Flujo de trabajo no encontrado"
 
-#: src/Modules/Workflows/Rest/RestApiV1.php:458
+#: src/Modules/Workflows/Rest/RestApiV1.php:390
+msgid "Sorry, you are not allowed to view workflow settings for this post."
+msgstr ""
+"Lo sentimos, no tienes permisos para ver el flujo de trabajo para esta "
+"entrada."
+
+#: src/Modules/Workflows/Rest/RestApiV1.php:462
 msgid "Flow data must be an array."
 msgstr "Los datos del flujo debe ser un array."
 
-#: src/Modules/Workflows/Rest/RestApiV1.php:471
+#: src/Modules/Workflows/Rest/RestApiV1.php:475
 msgid "Each node must have an id and type."
 msgstr "Cada nodo debe tener un ID y un tipo."
 
-#: src/Modules/Workflows/Rest/RestApiV1.php:482
+#: src/Modules/Workflows/Rest/RestApiV1.php:486
 msgid "Each edge must have an id, source, and target."
 msgstr "Cada borde debe tener un ID, una fuente y un destino."
 
@@ -3877,7 +3952,7 @@ msgid "AM/PM"
 msgstr "AM/PM"
 
 #: src/Views/menu-admin.php:174 src/Views/menu-advanced.php:99
-#: src/Views/menu-display.php:367 src/Views/menu-general.php:118
+#: src/Views/menu-display.php:368 src/Views/menu-general.php:118
 #: src/Views/menu-notifications.php:186
 msgid "Save Changes"
 msgstr "Guardar los cambios"
@@ -4281,7 +4356,12 @@ msgstr ""
 msgid "Shortcode Wrapper"
 msgstr "Envoltura de shortcode"
 
-#: src/Views/menu-display.php:279
+#. translators: This is used to indicate that no wrapper should be used on the shortcode output
+#: src/Views/menu-display.php:266
+msgid "— None —"
+msgstr "— Ninguno —"
+
+#: src/Views/menu-display.php:280
 msgid ""
 "The shortcode output will be wrapped in the selected HTML tag, allowing you "
 "to control its structure and styling."
@@ -4289,52 +4369,52 @@ msgstr ""
 "La salida del shortcode se envolverá en la etiqueta HTML seleccionada, "
 "permitiéndote controlar su estructura y estilo."
 
-#: src/Views/menu-display.php:289
+#: src/Views/menu-display.php:290
 msgid "Wrapper Class"
 msgstr "Clase de envoltura"
 
-#: src/Views/menu-display.php:295
+#: src/Views/menu-display.php:296
 msgid "Add a CSS class to the wrapper element for custom styling."
 msgstr ""
 "Añade una clase CSS al elemento envoltorio para personalizar el estilo."
 
-#: src/Views/menu-display.php:302
+#: src/Views/menu-display.php:303
 msgid "Attributes"
 msgstr "Atributos"
 
 #. translators: %s is the shortcode code wrapped in code tags
-#: src/Views/menu-display.php:308
+#: src/Views/menu-display.php:309
 #, php-format
 msgid "The following attributes are available for the %s shortcode:"
 msgstr "Los siguientes atributos están disponibles para el shortcode %s:"
 
 #. translators: %s is a code tag that wraps the shortcode attribute name
-#: src/Views/menu-display.php:315
+#: src/Views/menu-display.php:316
 #, php-format
 msgid "%s - Available options:"
 msgstr "%s - Opciones disponibles:"
 
 #. translators: %s is a code tag that wraps the shortcode attribute value
-#: src/Views/menu-display.php:321
+#: src/Views/menu-display.php:322
 #, php-format
 msgid "%s - Displays complete date/time.  Default value."
 msgstr "%s - Muestra la fecha/hora completa.  Valor por defecto."
 
 #. translators: %s is a code tag that wraps the shortcode attribute value
-#: src/Views/menu-display.php:327
+#: src/Views/menu-display.php:328
 #, php-format
 msgid "%s - Displays date only"
 msgstr "%s - Muestra solo la fecha"
 
 #. translators: %s is a code tag that wraps the shortcode attribute value
-#: src/Views/menu-display.php:333
+#: src/Views/menu-display.php:334
 #, php-format
 msgid "%s - Displays time only"
 msgstr "%s - Muestra solo la hora"
 
 #. translators: %s is a code tag that wraps the shortcode attribute dateformat
 #. translators: %s is a code tag that wraps the shortcode attribute timeformat
-#: src/Views/menu-display.php:345 src/Views/menu-display.php:353
+#: src/Views/menu-display.php:346 src/Views/menu-display.php:354
 #, php-format
 msgid "%s - Format set here will override the value set on the settings page"
 msgstr ""
@@ -4482,11 +4562,13 @@ msgstr "Visualización"
 msgid "Admin"
 msgstr "Administrador"
 
-#: src/Views/tabs-settings.php:23 assets/js/backupPanel.js:664
-#: assets/js/backupPanel.js:1247
+#: src/Views/tabs-settings.php:23
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11467
+#: assets/js/backupPanel.js:664 assets/js/backupPanel.js:1247
 #: assets/jsx/backup-panel/components/tabs-content/export.jsx:44
 #: assets/jsx/backup-panel/components/tabs-content/import.jsx:124
 #: assets/jsx/workflow-editor/components/node-types/generic.jsx:248
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9212
 #: assets/js/backupPanel.js:520 assets/js/backupPanel.js:932
 msgid "Advanced"
 msgstr "Avanzado"
@@ -4494,6 +4576,2084 @@ msgstr "Avanzado"
 #: src/Views/tabs-settings.php:28
 msgid "Diagnostics and Tools"
 msgstr "Diagnóstico y herramientas"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:387
+#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:29
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:354
+msgid "Integer"
+msgstr "Entero"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:390
+#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:30
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:355
+msgid "String"
+msgstr "Cadena"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:393
+#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:31
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:356
+msgid "Boolean"
+msgstr "Booleano"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:396
+#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:32
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:357
+msgid "Object"
+msgstr "Asunto"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:399
+#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:33
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:358
+msgid "Array"
+msgstr "Array"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:434
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2121
+#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:57
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:50
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:382
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1526
+msgid "null"
+msgstr "null"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:452
+#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:80
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:405
+msgid "Argument name"
+msgstr "Nombre del argumento"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:457
+#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:86
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:411
+msgid "Data type"
+msgstr "Tipo de datos"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:463
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2154
+#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:94
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:92
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:419
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1568
+msgid "Value"
+msgstr "Valor"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:469
+#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:102
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:427
+msgid "The argument name should only contain letters, numbers and underscores."
+msgstr ""
+"El nombre del argumento debe contener solo letras, cifras y guiones bajos."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:585
+#: assets/jsx/workflow-editor/components/data-fields/action-args/index.jsx:71
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:506
+msgid "Argument #%s"
+msgstr "Argumento #%s"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:606
+#: assets/jsx/workflow-editor/components/data-fields/action-args/index.jsx:85
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:520
+msgid "No arguments added to the action."
+msgstr "No se han añadido argumentos a la acción."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:611
+#: assets/jsx/workflow-editor/components/data-fields/action-args/index.jsx:90
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:525
+msgid "Add a new argument"
+msgstr "Añadir un nuevo argumento"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:799
+#: assets/jsx/workflow-editor/components/data-fields/conditional-date-offset.jsx:35
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:646
+msgid "When to expire"
+msgstr "Cuando se caduca"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1036
+#: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:43
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:786
+msgid "Add Group"
+msgstr "Añadir un grupo"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1039
+#: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:44
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:787
+msgid "Add Rule"
+msgstr "Añadir regla"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1055
+#: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:58
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:801
+msgid ""
+"Create rules that will continue the workflow only if certain conditions are "
+"met."
+msgstr ""
+"Crea reglas que continuarán el flujo de trabajo solo si se cumplen "
+"determinadas condiciones."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1057
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4651
+#: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:59
+#: assets/jsx/workflow-editor/components/data-fields/post-filter/components/post-filter.jsx:85
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:802
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3581
+msgid "Edit rules"
+msgstr "Editar reglas"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1059
+#: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:60
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:803
+msgid ""
+"Conditional logic is a Pro feature. Upgrade to create advanced conditions "
+"for your workflows."
+msgstr ""
+"La lógica condicional es una característica Actualiza para crear condiciones "
+"avanzadas para tus flujos de trabajo."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1234
+#: assets/jsx/workflow-editor/components/data-fields/conditional/components/duplicate-rule-button.jsx:10
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:949
+msgid "Duplicate Rule"
+msgstr "Duplicar regla"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1322
+#: assets/jsx/workflow-editor/components/data-fields/conditional/components/not-toggle.jsx:30
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:997
+msgid "Not"
+msgstr "Not"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1915
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:12
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1344
+msgid "Dismiss"
+msgstr "Descartar"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1916
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:13
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1345
+msgid "Dismiss the notification"
+msgstr "Descartar el aviso"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1967
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:67
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1399
+msgid "Option %s"
+msgstr "Opción %s"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2004
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:95
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1427
+msgid "Option #%s"
+msgstr "Opción #%s"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2028
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:114
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1446
+msgid "No options added to the action."
+msgstr "No se han añadido ociones a la acción."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2033
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:120
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1452
+msgid "Add a new option"
+msgstr "Añadir una nueva opción"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2037
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:132
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1464
+msgid ""
+"You have reached the maximum number of options. You can add up to %s options."
+msgstr ""
+"Has alcanzado el número máximo de opciones. Puedes añadir hasta %s opciones."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2139
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3245
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:73
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:7
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1549
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2469
+msgid "Name"
+msgstr "Nombre"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2149
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:85
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1561
+msgid "Hint"
+msgstr "Pista"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2162
+#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:107
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1583
+msgid "The option name should only contain letters, numbers and underscores."
+msgstr ""
+"El nombre de la opción debe contener solo letras, cifras y guiones bajos."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2322
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:61
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1679
+msgid "Selected in the calendar"
+msgstr "Seleccionado en el calendario"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2325
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4203
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:62
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-date.jsx:59
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1680
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3177
+msgid "When the trigger is activated"
+msgstr "Cuando el disparador está activado"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2328
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4206
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:63
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-date.jsx:63
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1681
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3181
+msgid "When the step is activated"
+msgstr "Cuando el paso está activado"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2345
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:80
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1698
+msgid "As soon as possible"
+msgstr "Lo antes posible"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2348
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:81
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1699
+msgid "On a specific date"
+msgstr "En una fecha determinada"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2351
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:82
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1700
+msgid "Relative to a specific date"
+msgstr "En relación con una fecha específica"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2355
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:86
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1704
+msgid "Unchanged"
+msgstr "Sin cambio"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2379
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:119
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1737
+msgid "Date source"
+msgstr "Fuente de la fecha"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2409
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:147
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1765
+msgid ""
+"Click the button to choose a custom date source from variables that can "
+"provide a date."
+msgstr ""
+"Haz clic en el botón para elegir una fuente de fecha personalizada entre las "
+"variables que pueden proporcionar una fecha."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2414
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:159
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1777
+msgid "Offset"
+msgstr "Desfase"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2433
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:181
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1799
+msgid "Error: "
+msgstr "Error: "
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2436
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:188
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1806
+msgid "Click for more information"
+msgstr "Haz clic para más información"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2443
+#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:197
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1815
+msgid ""
+"For more information on formatting, see the %sPHP strtotime function%s. For "
+"example, you could enter %s+1 month%s or %s+1 week 2 days 4 hours 2 "
+"seconds%s or %snext Thursday%s. Please use only phrases in English."
+msgstr ""
+"Para más información sobre el formato, consulta la función %sPHP "
+"strtotime%s. Por ejemplo, puedes introducir %s+1 mes%s o %s+1 semana 2 días "
+"4 horas 2 segundos%s o %spróximo jueves%s. Por favor, utilice sólo frases en "
+"inglés."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2523
+#: assets/jsx/workflow-editor/components/data-fields/debug-data.jsx:39
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1881
+msgid "All received input"
+msgstr "Todas las entradas recibidas"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2526
+#: assets/jsx/workflow-editor/components/data-fields/debug-data.jsx:43
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1885
+msgid "Custom data"
+msgstr "Datos personalizados"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2544
+#: assets/jsx/workflow-editor/components/data-fields/debug-data.jsx:64
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1906
+msgid "Select the data to output"
+msgstr "Seleccionar los datos de salida"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2591
+#: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:9
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1935
+msgid "Notice"
+msgstr "Aviso"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2600
+#: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:12
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1938
+msgid "Critical"
+msgstr "Crítico"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2603
+#: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:13
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1939
+msgid "Alert"
+msgstr "Alerta"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2677
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4886
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5144
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/autocompleters/post-statuses.jsx:10
+#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:117
+#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:29
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1993
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3747
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3957
+msgid "Post Status"
+msgstr "Estado de la entrada"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2708
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4820
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5147
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/autocompleters/post-types.jsx:10
+#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:50
+#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:33
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2010
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3680
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3961
+msgid "Post Type"
+msgstr "Tipo de entrada"
+
+#. translators: %s is the database table name
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2752
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3346
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/column-item.jsx:10
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:10
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2027
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2527
+msgid "Type the %s key and click on the button to insert it."
+msgstr "Escribe la tecla %s y haz clic en el botón para insertarla."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2756
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3350
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/column-item.jsx:17
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:19
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2034
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2536
+msgid "Metadata key"
+msgstr "Clave de metadatos"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2774
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/column-item.jsx:31
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2048
+msgid "Insert"
+msgstr "Insertar"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3132
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3133
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:136
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:138
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2349
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2351
+msgid "Edit"
+msgstr "Editar"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3175
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:181
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2394
+msgid "Select a variable from the list below."
+msgstr "Selecciona una variable de la siguiente lista."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3175
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:185
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2398
+msgid "Type your expression here or use the variables below."
+msgstr "Escribe aquí tu expresión o utiliza las variables de abajo."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3210
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:212
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2425
+msgid "Variables"
+msgstr "Variables"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3210
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:215
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2428
+msgid "Double-click on a variable to select it."
+msgstr "Haz doble clic en una variable para seleccionarla."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3210
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:219
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2432
+msgid "Double-click on any variable to add it to your expression."
+msgstr "Haz doble clic en cualquier variable para añadirla a tu expresión."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3216
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:231
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2444
+msgid "Hover over a variable to see its description."
+msgstr "Pasa el cursor por encima de una variable para ver su descripción."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3246
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:8
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2470
+msgid "The name of the term."
+msgstr "El nombre del término."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3250
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:13
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2475
+msgid "Slug"
+msgstr "Slug"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3251
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:14
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2476
+msgid "The slug of the term."
+msgstr "El slug del término."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3255
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:19
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2481
+msgid "Term ID"
+msgstr "ID término"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3256
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:20
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2482
+msgid "The unique identifier of the term."
+msgstr "El identificador único del término."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3260
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:25
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2487
+msgid "Count"
+msgstr "Recuento"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3261
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:26
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2488
+msgid "Number of posts assigned to this term."
+msgstr "Número de entradas asignadas a este término."
+
+#. translators: %s is the taxonomy label
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3364
+#: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:38
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2555
+msgid "%s terms for this post."
+msgstr "%s términos por esta entrada."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3408
+#: assets/jsx/workflow-editor/components/data-fields/help-link.jsx:5
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2593
+msgid "Learn more"
+msgstr "Leer más"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3616
+#: assets/jsx/workflow-editor/components/data-fields/interactive-custom-options/index.jsx:30
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2774
+msgid ""
+"This option is used to connect to another step and cannot have its name "
+"changed until the connection is removed."
+msgstr ""
+"Esta opción se utiliza para conectarse a otro paso y no se puede cambiar su "
+"nombre hasta que se elimine la conexión."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3798
+#: assets/jsx/workflow-editor/components/data-fields/modal-footer.jsx:11
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2883
+msgid "OK"
+msgstr "OK"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3863
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5141
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:28
+#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:25
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2917
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3953
+msgid "Post Date"
+msgstr "Fecha de la entrada"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3876
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:34
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2923
+msgid "Update the post date"
+msgstr "Actualizar la fecha de la entrada"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3879
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5129
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:38
+#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:9
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2927
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3937
+msgid "Post Title"
+msgstr "Título de la entrada"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3892
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:44
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2933
+msgid "Update the post title"
+msgstr "Actualizar el título de la entrada"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3895
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:48
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2937
+msgid "Post Slug"
+msgstr "Slug de la entrada"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3908
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:54
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2943
+msgid "Update the post slug"
+msgstr "Actualizar el slug de la entrada"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3911
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5132
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:58
+#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:13
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2947
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3941
+msgid "Post Content"
+msgstr "Contenido de la entrada"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3924
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:64
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2953
+msgid "Update the post content"
+msgstr "Actualizar el contenido de la entrada"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3927
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5135
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:68
+#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:17
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2957
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3945
+msgid "Post Excerpt"
+msgstr "Extracto de la entrada"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3940
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:74
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2963
+msgid "Update the post excerpt"
+msgstr "Actualizar el extracto de la entrada"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3943
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:78
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2967
+msgid "Post Discussion"
+msgstr "Discusión de la entrada"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3954
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:82
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2971
+msgid "Update the post discussion"
+msgstr "Actualizar la discusión de la entrada"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3957
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:86
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2975
+msgid "Post Password"
+msgstr "Contraseña de la entrada"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3970
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:92
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2981
+msgid "Update the post password"
+msgstr "Actualizar la contraseña de la entrada"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3973
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4900
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5138
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:96
+#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:132
+#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:21
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2985
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3762
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3949
+msgid "Post Author"
+msgstr "Autor de la entrada"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3986
+#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:102
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2991
+msgid "Update the post author"
+msgstr "Actualizar el autor de la entrada"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4079
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-author.jsx:63
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3061
+msgid "Unable to load the list of authors. Please try again."
+msgstr ""
+"No se ha podido cargar la lista de autores. Por favor, inténtalo de nuevo."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4093
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4223
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4299
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4404
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-author.jsx:81
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-date.jsx:84
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:32
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-text.jsx:27
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3079
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3202
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3266
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3374
+msgid "Do not update"
+msgstr "No actualizar"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4114
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-author.jsx:103
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3101
+msgid "Author"
+msgstr "Autor"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4302
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:36
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3270
+msgid "Comments only"
+msgstr "Solo comentarios"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4303
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4316
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:37
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:56
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3271
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3290
+msgid "Closed"
+msgstr "Cerrado"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4304
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:38
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3272
+msgid "Pings only"
+msgstr "Solo pings"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4305
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4312
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:39
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:51
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3273
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3285
+msgid "Open"
+msgstr "Abrir"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4309
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:46
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3280
+msgid "Changed..."
+msgstr "Cambiado…"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4314
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:53
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3287
+msgid "Visitors can add new comments and replies."
+msgstr "Los visitantes pueden añadir nuevos comentarios y respuestas."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4318
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:58
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3292
+msgid ""
+"Visitors can not add new comments or replies. Existing comments remain "
+"visible."
+msgstr ""
+"Los visitantes no pueden añadir nuevos comentarios y respuestas. Los "
+"comentarios existentes quedan visible."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4349
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:97
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3331
+msgid "Enable pinbacks & trackbacks"
+msgstr "Activar pinbacks & trackbacks"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4354
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:104
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3338
+msgid "Learn more about pinbacks & trackbacks"
+msgstr "Leer más sobre pinbacks & trackbacks"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4407
+#: assets/jsx/workflow-editor/components/data-fields/post-data/post-text.jsx:31
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3378
+msgid "Clear content"
+msgstr "Vaciar el contenido"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4650
+#: assets/jsx/workflow-editor/components/data-fields/post-filter/components/post-filter.jsx:84
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3580
+msgid "Create filters to query specific posts based on rules."
+msgstr ""
+"Crea filtros para consultar entradas específicas en función de las reglas."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4845
+#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:78
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3708
+msgid "Post selection"
+msgstr "Selección de entradas"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4848
+#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:81
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3711
+msgid "Post received as input"
+msgstr "Entrada recibida como entrada"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4851
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5970
+#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:82
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:65
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3712
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4579
+msgid "Custom query"
+msgstr "Consulta personalizada"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4914
+#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:145
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3775
+msgid "Post Terms"
+msgstr "Términos de entrada"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4929
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:6020
+#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:160
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:116
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3790
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4630
+msgid "Separate multiple values with commas or Enter key."
+msgstr "Separar los valores múltiples con comas o la tecla «Intro»."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4931
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:6022
+#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:166
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:122
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3796
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4636
+msgid "* Required field"
+msgstr "* Campo obligatorio"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5079
+#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/post-search-query.jsx:84
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3908
+msgid "Post Search Query"
+msgstr "Consulta de búsqueda de entrada"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5080
+#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/post-search-query.jsx:85
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3909
+msgid "Create a search query to filter posts based on conditions."
+msgstr ""
+"Crear una consulta de búsqueda para filtrar las entradas en función de las "
+"condiciones."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5081
+#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/post-search-query.jsx:86
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3910
+msgid "Edit query"
+msgstr "Editar consulta"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5150
+#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:37
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:3965
+msgid "Post Parent"
+msgstr "Superior de la entrada"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5239
+#: assets/jsx/workflow-editor/components/data-fields/post-status.jsx:40
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4013
+msgid "New Status"
+msgstr "Nuevo estado"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5287
+#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:13
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4037
+msgid "No color"
+msgstr "Sin color"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5290
+#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:14
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4038
+msgid "Green"
+msgstr "Verde"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5293
+#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:15
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4039
+msgid "Orange"
+msgstr "Naranja"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5296
+#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:16
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4040
+msgid "Red"
+msgstr "Rojo"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5299
+#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:17
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4041
+msgid "Blue"
+msgstr "Azul"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5302
+#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:18
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4042
+msgid "Purple"
+msgstr "Púrpura"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5305
+#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:19
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4043
+msgid "Gray"
+msgstr "Gris"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5366
+#: assets/jsx/workflow-editor/components/data-fields/recurrence.jsx:16
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4085
+msgid "Custom interval in seconds"
+msgstr "Intervalo personalizado en segundos"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5521
+#: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:127
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4224
+msgid "Repeating Action"
+msgstr "Acción de repetición"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5526
+#: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:131
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4228
+msgid ""
+"Choose how often this task should repeat. Select 'Non-repeating' for a one-"
+"time action or set an interval for automatic recurrence."
+msgstr ""
+"Elige con qué frecuencia debe repetirse esta tarea. Selecciona «No repetir» "
+"para una acción única o establece un intervalo para la repetición automática."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5535
+#: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:148
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4245
+msgid "Unique Task Identifier"
+msgstr "Identificador único de tarea"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5544
+#: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:154
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4251
+msgid "Define a unique ID to detect and prevent duplicate tasks."
+msgstr "Define un ID único para detectar y evitar tareas duplicadas."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5685
+#: assets/jsx/workflow-editor/components/data-fields/taxonomy-terms.jsx:69
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4362
+msgid "Select the terms"
+msgstr "Selecciona los términos"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5691
+#: assets/jsx/workflow-editor/components/data-fields/taxonomy-terms.jsx:73
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4366
+msgid "Specific terms"
+msgstr "Términos específicos"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5955
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:45
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4559
+msgid "User Role"
+msgstr "Perfil de usuario"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5964
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:61
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4575
+msgid "User selection"
+msgstr "Selección de usuario"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:5967
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:64
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4578
+msgid "User received as input"
+msgstr "Usuario recibido como entrada"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:6008
+#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:105
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:4619
+msgid "User ID"
+msgstr "ID de usuario"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7939
+#: assets/jsx/workflow-editor/components/flow-editor/index.jsx:442
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:6374
+msgid "Applying auto layout."
+msgstr "Aplicación del diseño automático."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7960
+#: assets/jsx/workflow-editor/components/flow-editor/index.jsx:467
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:6399
+msgid "Auto layout applied."
+msgstr "Diseño automático aplicado."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8090
+#: assets/jsx/workflow-editor/components/fullscreen-mode-close.jsx:43
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:6525
+msgid "Back"
+msgstr "Volver"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9134
+#: assets/jsx/workflow-editor/components/inspector-card/index.jsx:51
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:6961
+msgid "Add a description to this step..."
+msgstr "Añade una descripción a este paso…"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9141
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9144
+#: assets/jsx/workflow-editor/components/inspector-card/index.jsx:68
+#: assets/jsx/workflow-editor/components/inspector-card/index.jsx:78
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:6978
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:6988
+msgid "Edit description"
+msgstr "Editar descripción"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9179
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13579
+#: assets/jsx/workflow-editor/components/inspector-card/index.jsx:116
+#: assets/jsx/workflow-editor/components/secondary-sidebar/node-card.jsx:16
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7026
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11263
+msgid "Pro"
+msgstr "Pro"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9186
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11520
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13583
+#: assets/jsx/workflow-editor/components/inspector-card/index.jsx:132
+#: assets/jsx/workflow-editor/components/node-types/generic.jsx:319
+#: assets/jsx/workflow-editor/components/secondary-sidebar/node-card.jsx:29
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7042
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9283
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11276
+msgid ""
+"Currently this step is being skipped. Upgrade to Pro to unlock this feature."
+msgstr ""
+"Actualmente este paso está omitido. Actualiza a Pro para desbloquear esta "
+"característica."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9610
+#: assets/jsx/workflow-editor/components/layout/header.jsx:129
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7414
+msgid "Add"
+msgstr "Añadir"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9610
+#: assets/jsx/workflow-editor/components/layout/header.jsx:129
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7414
+msgid "Close"
+msgstr "Cerrar"
+
+#. translators: button label text should, if possible, be under 16 characters.
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9618
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9621
+#: assets/jsx/workflow-editor/components/layout/header.jsx:140
+#: assets/jsx/workflow-editor/components/layout/header.jsx:145
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7425
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7430
+msgid "Auto Layout"
+msgstr "Diseño automático"
+
+#. translators: button label text should, if possible, be under 16 characters.
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9628
+#: assets/jsx/workflow-editor/components/layout/header.jsx:157
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7442
+msgid "Upgrade to Pro and unlock more features"
+msgstr "Actualiza a Pro y desbloquea más características"
+
+#. translators: button label text should, if possible, be under 16 characters.
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9872
+#: assets/jsx/workflow-editor/components/left-toolbar/redo.jsx:31
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7674
+msgid "Redo"
+msgstr "Rehacer"
+
+#. translators: button label text should, if possible, be under 16 characters.
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10045
+#: assets/jsx/workflow-editor/components/left-toolbar/undo.jsx:31
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7823
+msgid "Undo"
+msgstr "Deshacer"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10079
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10388
+#: assets/js/backupPanel.js:144
+#: assets/jsx/backup-panel/components/json-preview.jsx:15
+#: assets/jsx/workflow-editor/components/loading-message/index.jsx:7
+#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:18
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7843
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8099
+#: assets/js/backupPanel.js:110
+msgid "Loading..."
+msgstr "Cargando…"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10081
+#: assets/jsx/workflow-editor/components/loading-message/index.jsx:12
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7848
+msgid "Wait, we are loading the workflow..."
+msgstr "Espera, estamos cargando el flujo de trabajo…"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10189
+#: assets/jsx/workflow-editor/components/more-menu/menu-feature-toggle.jsx:32
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7929
+msgid "Feature deactivated"
+msgstr "Feature desactivado"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10191
+#: assets/jsx/workflow-editor/components/more-menu/menu-feature-toggle.jsx:34
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7931
+msgid "Feature activated"
+msgstr "Feature activado"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10239
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:23
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7974
+msgctxt "noun"
+msgid "View"
+msgstr "Vista"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10243
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:27
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7978
+msgid "Fullscreen mode"
+msgstr "Modo a pantalla completa"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10244
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:28
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7979
+msgid "Work without distraction"
+msgstr "Trabajar sin distracciones"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10245
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:29
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7980
+msgid "Fullscreen mode activated"
+msgstr "Modo a pantalla completa activado"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10246
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:30
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7981
+msgid "Fullscreen mode deactivated"
+msgstr "Modo a pantalla completa desactivado"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10251
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:36
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7987
+msgid "Advanced Settings"
+msgstr "Ajustes avanzados"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10252
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:37
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7988
+msgid "Display advanced settings for the workflow, triggers and steps"
+msgstr ""
+"Mostrar los ajustes avanzados del flujo de trabajo, los activadores y los "
+"pasos"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10253
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:38
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7989
+msgid "Advanced settings mode activated"
+msgstr "Modo «Ajustes avanzados» activado"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10254
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:39
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7990
+msgid "Advanced settings mode deactivated"
+msgstr "Modo «Ajustes avanzados» desactivado"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10259
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:45
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7996
+msgid "Display a mini map"
+msgstr "Mostrar un minimapa"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10260
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:46
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7997
+msgid "Display a mini map in the bottom of the editor, triggers and steps"
+msgstr ""
+"Mostrar un minimapa Mostrar un minimapa abajo del editor, disparadores y "
+"pasos"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10261
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10268
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:47
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:55
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7998
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8006
+msgid "Mini map activated"
+msgstr "Minimapa activado"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10262
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10269
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:48
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:56
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:7999
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8007
+msgid "Mini map deactivated"
+msgstr "Minimapa desactivado"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10266
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:53
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8004
+msgid "Display the controls panel"
+msgstr "Mostrar el panel de control"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10267
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:54
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8005
+msgid ""
+"Display the controls panel with buttons to zoon in, zoom out, fit the view "
+"and lock the viewport"
+msgstr ""
+"Mostrar el panel de control con los botones de ampliar, reducir, ajustar la "
+"vista y bloquear el área visible"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10271
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:59
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8010
+msgid "Tools"
+msgstr "Herramientas"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10275
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:63
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8014
+msgid "Developer mode"
+msgstr "Modo desarrollador"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10276
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:64
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8015
+msgid "Work in developer mode"
+msgstr "Trabajar en modo desarrollador"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10277
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:65
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8016
+msgid "Developer mode activated"
+msgstr "Modo desarrollador activado"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10278
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:66
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8017
+msgid "Developer mode deactivated"
+msgstr "Modo desarrollador desactivado"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10283
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:72
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8023
+msgid "Welcome guide"
+msgstr "Guía de bienvenida"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10284
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:73
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8024
+msgid "Display the welcome guide"
+msgstr "Mostrar la guía de bienvenida"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10285
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:74
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8025
+msgid "Welcome guide activated"
+msgstr "Guía de bienvenida activada"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10286
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:75
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8026
+msgid "Welcome guide deactivated"
+msgstr "Guía de bienvenida desactivada"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10292
+#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:83
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8034
+msgid "Help"
+msgstr "Ayuda"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10390
+#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:23
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8104
+msgid "Developer Info"
+msgstr "Información para desarrolladores"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10393
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11110
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11355
+#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:31
+#: assets/jsx/workflow-editor/components/node-inspector/node-inspector-card.jsx:18
+#: assets/jsx/workflow-editor/components/node-types/generic.jsx:109
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8112
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8850
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9073
+msgid "Node"
+msgstr "Nodo"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10401
+#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:41
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8122
+msgid "Node Data"
+msgstr "Datos del nodo"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10409
+#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:51
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8132
+msgid "Node Settings"
+msgstr "Ajustes del nodo"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10417
+#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:65
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8146
+msgid "Node Type"
+msgstr "Tipo de nodo"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10757
+#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:98
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8427
+msgid "No element selected."
+msgstr "No hay elementos seleccionados."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10757
+#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:106
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8435
+msgid "Multiple and different elements selected."
+msgstr "Múltiples y diferentes elementos seleccionados."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10758
+#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:116
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8445
+msgid "%d steps selected"
+msgstr "%d pasos seleccionados"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10759
+#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:119
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8448
+msgid "Multiple steps selected."
+msgstr "Múltiples pasos seleccionados."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10764
+#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:130
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8459
+msgid "%d connections selected"
+msgstr "%d conexiones seleccionadas"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10765
+#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:133
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8462
+msgid "Multiple connections selected."
+msgstr "Múltiples conexiones seleccionadas."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10785
+#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:165
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8494
+msgid "Connection"
+msgstr "Conexión"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10786
+#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:166
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8495
+msgid ""
+"The connection between nodes in the workflow. Signifies the path along which "
+"data or control flow one node to another."
+msgstr ""
+"La conexión entre los nodos del flujo de trabajo. Indica la ruta por la que "
+"los datos o el control fluyen de un nodo a otro."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11036
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:83
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8744
+msgid "Step Data Flow"
+msgstr "Flujo de datos por paso"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11040
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:85
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8746
+msgid "Inputs"
+msgstr "Entradas"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11040
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:89
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8750
+msgid "This step receives the following input from previous step:"
+msgstr "Este paso recibe la siguiente entrada del paso anterior:"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11046
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:100
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8761
+msgid "This step does not receive any input from previous step."
+msgstr "Este paso no recibe ninguna entrada del paso anterior."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11048
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:105
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8766
+msgid "Outputs"
+msgstr "Entradas"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11048
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:109
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8770
+msgid "This step outputs the following data:"
+msgstr "Este paso muestra los siguientes datos:"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11054
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:120
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8781
+msgid "This step does not output any data."
+msgstr "Este paso no genera ningún dato."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11056
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:125
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8786
+msgid "Step Scoped Variables"
+msgstr "Paso variables de ámbito"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11056
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:129
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8790
+msgid "This step receives the following step scoped variables:"
+msgstr "Este paso recibe el siguiente paso de variables de ámbito:"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11062
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:140
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8801
+msgid "This step does not have any step scoped variables."
+msgstr "Este paso no tiene ningún paso de variables de ámbito."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11064
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:145
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8806
+msgid "Global Variables"
+msgstr "Variables globales"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11064
+#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:149
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8810
+msgid "No global variables are declared"
+msgstr "No hay variable globales declaradas"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11111
+#: assets/jsx/workflow-editor/components/node-inspector/node-inspector-card.jsx:19
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:8851
+msgid "No description"
+msgstr "Sin descripción"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11310
+#: assets/jsx/workflow-editor/components/node-types/generic.jsx:57
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9021
+msgid "Unknown node: %s"
+msgstr "Nodo desconocido: %s"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11311
+#: assets/jsx/workflow-editor/components/node-types/generic.jsx:58
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9022
+msgid "This is a placeholder node for a node that does not exist."
+msgstr "Este es un nodo marcador de posición para un nodo que no existe."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11463
+#: assets/jsx/workflow-editor/components/node-types/generic.jsx:244
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9208
+msgid "Step"
+msgstr "Paso"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11469
+#: assets/jsx/workflow-editor/components/node-types/generic.jsx:250
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9214
+msgid "Trigger"
+msgstr "Disparador"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11499
+#: assets/jsx/workflow-editor/components/node-types/generic.jsx:286
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9250
+msgid "Step actions"
+msgstr "Acciones del paso"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11526
+#: assets/jsx/workflow-editor/components/node-types/generic.jsx:327
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9291
+msgid "This node has errors"
+msgstr "Este nodo tiene errores"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11607
+#: assets/jsx/workflow-editor/components/node-types/node-placeholder.jsx:31
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9392
+msgid "Add a step"
+msgstr "Añadir un paso"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11609
+#: assets/jsx/workflow-editor/components/node-types/node-placeholder.jsx:33
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9394
+msgid "Search for actions"
+msgstr "Búsqueda de acciones"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11802
+#: assets/jsx/workflow-editor/components/node-types/placeholder.jsx:168
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9569
+msgid "Search for steps"
+msgstr "Búsqueda de pasos"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11828
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11890
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13523
+#: assets/jsx/workflow-editor/components/node-types/placeholder.jsx:194
+#: assets/jsx/workflow-editor/components/node-types/trigger-placeholder.jsx:13
+#: assets/jsx/workflow-editor/components/secondary-sidebar/menu.jsx:161
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9595
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9653
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11210
+msgid "Search for triggers and steps"
+msgstr "Búsqueda de disparadores y pasos"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11888
+#: assets/jsx/workflow-editor/components/node-types/trigger-placeholder.jsx:11
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9651
+msgid "Click to add a trigger"
+msgstr "Haz clic para añadir un disparador"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11975
+#: assets/jsx/workflow-editor/components/node-validation-panel/index.jsx:19
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9692
+msgid "Validation"
+msgstr "Validación"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12004
+#: assets/jsx/workflow-editor/components/node-validation-panel/index.jsx:49
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9722
+msgid "All checks have passed for this step."
+msgstr "Todas las comprobaciones se han superado para este paso."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12191
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:122
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9878
+msgid "The field \"%s\" contains an invalid variable."
+msgstr "El campo «%» contiene una variable no válida."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12192
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:126
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9882
+msgid ""
+"The variable \"%s\" is not available in the current context. Please, check "
+"if it is spelled correctly."
+msgstr ""
+"La variable «%s» no está disponible en el contexto actual. Por favor, "
+"comprueba si está escrita correctamente."
+
+#. translators: %s is the workflow step slug.
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12236
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:181
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9937
+msgid "\"%s\" is not a variable or step slug."
+msgstr "«%» no es una variable o slug de paso."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12242
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:190
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9946
+msgid "Empty placeholder is not allowed."
+msgstr "Un marcador de posición vacío no está permitido."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12252
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:203
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9959
+msgid "Unclosed placeholder are not allowed."
+msgstr "Los marcadores de posición abiertos no están permitido."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12256
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:208
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9964
+msgid "Unopened placeholder are not allowed."
+msgstr "Los marcadores de posición cerrados no están permitido."
+
+#. translators: %s is the field label.
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12263
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:216
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9972
+msgid "Invalid expression on %s"
+msgstr "Expresión no válida en %s"
+
+#. translators: %s is the field label.
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12275
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12495
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:232
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:575
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9988
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10331
+msgid "The field %s must be a list of options."
+msgstr "El campo %s debe ser una lista de opciones."
+
+#. translators: %s is the option name.
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12297
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:261
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10017
+msgid "The option \"%s\" does not have a name."
+msgstr "La opción «%s» no tiene un nombre."
+
+#. translators: %s is the option name.
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12303
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:270
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10026
+msgid "The option \"%s\" does not have a label."
+msgstr "La opción «%s» no tiene una etiqueta."
+
+#. translators: %s is the option name.
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12309
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:279
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10035
+msgid "The option \"%s\" has a duplicate name."
+msgstr "La opción «%s» tiene un nombre duplicado."
+
+#. translators: %s is the option label.
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12315
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:288
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10044
+msgid "The option \"%s\" has a duplicate label."
+msgstr "La opción «%s» tiene una etiqueta duplicada."
+
+#. translators: %s is the field label.
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12325
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:302
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10058
+msgid "The field %s must be a valid list of options."
+msgstr "El campo %s debe ser una lista de opciones válidas."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12347
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:333
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10089
+msgid "This step requires a connection from a previous step."
+msgstr ""
+"Para este paso es obligatorio una conexión con la entrada del paso anterior."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12352
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:343
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10099
+msgid "This step requires a connection to a following step."
+msgstr "Para este paso es obligatorio una conexión con el paso siguiente."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12406
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12416
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:407
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:428
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10163
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10184
+msgid "The field %s is required."
+msgstr "El campo %s es obligatorio."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12429
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:450
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10206
+msgid "The field %s must be a valid email address."
+msgstr "El campo %s debe ser un correo electrónico válido."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12437
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:466
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10222
+msgid "The field %s must be a valid email address list separated by commas."
+msgstr ""
+"El campo %s debe ser una lista de correos electrónicos válidos separados por "
+"comas."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12443
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:480
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10236
+msgid "The field %s must be an integer."
+msgstr "El campo %s debe ser un número entero."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12450
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:495
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10251
+msgid "The field %s must be an integer list separated by commas."
+msgstr "El campo %s debe ser una lista de números enteros separados por comas."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12463
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12467
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12470
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:518
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:527
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:536
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10274
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10283
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10292
+msgid "The field %s must be a list of name-value pairs."
+msgstr "El campo %s debe ser una lista de pares nombre-valor."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12467
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:528
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10284
+msgid "The name of the pair is required on item %d."
+msgstr "El nombre de la pareja es obligatorio por el elemento %d."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12470
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:537
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10293
+msgid "The value of the pair is required on item %d."
+msgstr "El valor de la pareja es obligatorio por el elemento %d."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12511
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:605
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10361
+msgid "Invalid variable."
+msgstr "Variable no válida."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12511
+#: assets/jsx/workflow-editor/components/node-validator/index.jsx:608
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10364
+msgid "Please use the variable picker to select valid expression."
+msgstr ""
+"Por favor, utiliza el selector de variables para seleccionar una expresión "
+"válida."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12630
+#: assets/jsx/workflow-editor/components/pro-feature-button/index.jsx:26
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10467
+msgid "Upgrade to Pro to unlock this feature."
+msgstr "Actualiza a Pro para desbloquear esta característica."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12917
+#: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-listbox/group.jsx:14
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10691
+msgid "Use left and right arrow keys to move through steps"
+msgstr "Usa las flechas izquierda y derecha para moverte entre los bloques"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13096
+#: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-no-results.jsx:14
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10809
+msgid "No results found."
+msgstr "No se han encontrado resultados."
+
+#. translators: %d: number of results.
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13239
+#: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:101
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10929
+msgid "%d result found."
+msgid_plural "%d results found."
+msgstr[0] "%d resultado encontrado."
+msgstr[1] "%d resultados encontrados."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13244
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13249
+#: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:116
+#: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:123
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10944
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10951
+msgid "Nodes"
+msgstr "Nodos"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13477
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13497
+#: assets/jsx/workflow-editor/components/secondary-sidebar/menu.jsx:72
+#: assets/jsx/workflow-editor/components/secondary-sidebar/menu.jsx:111
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11121
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11160
+msgid "A tip for using the workflow editor"
+msgstr "Un consejo para utilizar el editor de flujos de trabajo"
+
+#. translators: %d: Number of blocks.
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13627
+#: assets/jsx/workflow-editor/components/secondary-sidebar/node-draggable-chip.jsx:27
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11310
+msgid "%d block"
+msgid_plural "%d blocks"
+msgstr[0] "%d bloque"
+msgstr[1] "%d bloques"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13793
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13798
+#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:80
+#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:85
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11459
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11464
+msgctxt "nodes"
+msgid "Most used"
+msgstr "Más utilizados"
+
+#. translators: Patterns tab title in the block inserter.
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14104
+#: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:24
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11712
+msgid "Actions"
+msgstr "Acciones"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14154
+#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:10
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11752
+msgid ""
+"Select multiple steps by pressing <kbd>cmd</kbd> and clicking on each step "
+"in the workflow."
+msgstr ""
+"Selecciona varios pasos manteniendo pulsado <kbd>cmd o ctrl</kbd> y haciendo "
+"clic en cada paso del flujo de trabajo."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14156
+#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:16
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11758
+msgid ""
+"Drag steps from the inserter and drop them directly into your workflow for "
+"easy customization."
+msgstr ""
+"Arrastra los pasos desde el insertador y suéltalos directamente en tu flujo "
+"de trabajo para personalizarlos fácilmente."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14156
+#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:17
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11759
+msgid ""
+"Simply double-click any step to bring up the settings sidebar for quick "
+"adjustments."
+msgstr ""
+"Simplemente haz doble clic en cualquier paso para abrir la barra lateral de "
+"ajustes y realizar ajustes rápidos."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14156
+#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:18
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11760
+msgid ""
+"Double-click the workflow pane to increase the zoom level for a closer look."
+msgstr ""
+"Haz doble clic en el panel de flujo de trabajo para aumentar el nivel de "
+"zoom y verlo más de cerca."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14156
+#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:20
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11762
+msgid ""
+"Hold down the <kbd>shift</kbd> key and double-click the workflow pane to "
+"decrease the zoom level."
+msgstr ""
+"Mantén pulsada la tecla <kbd>mayús</kbd> y haz doble clic en el panel de "
+"flujo de trabajo para reducir el nivel de zoom."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14158
+#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:26
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11768
+msgid ""
+"Easily add new steps by clicking on a step's handle and dragging it. Drop it "
+"in the workflow pane to see a floating inserter where you can type and "
+"search for the step you need."
+msgstr ""
+"Añade fácilmente nuevos pasos haciendo clic en el asa de un paso y "
+"arrastrándolo. Suéltalo en el panel de flujo de trabajo para ver un "
+"insertador flotante donde puedes escribir y buscar el paso que necesitas."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14289
+#: assets/jsx/workflow-editor/components/settings-sidebar/plugin-sidebar.jsx:39
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11859
+msgid "(no name)"
+msgstr "(sin nombre)"
+
+#. translators: Default label for the Workflow sidebar tab, not selected.
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14336
+#: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:23
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11892
+msgctxt "noun"
+msgid "Workflow"
+msgstr "Flujo de trabajo"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14348
+#: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:37
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11906
+msgid "Element"
+msgstr "Elemento"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14432
+#: assets/jsx/workflow-editor/components/settings-sidebar/settings-sidebar.jsx:50
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:11972
+msgid "Close settings"
+msgstr "Cerrar ajustes"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14660
+#: assets/jsx/workflow-editor/components/welcome-guide/index.jsx:22
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12164
+msgid "Get started"
+msgstr "Primeros pasos"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14752
+#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:50
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12242
+msgid "Ray Debug"
+msgstr "Depuración Ray"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14755
+#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:55
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12247
+msgid ""
+"Enable or disable the different types of debug information that is shown in "
+"Ray when this workflow is activated."
+msgstr ""
+"Activa o desactiva los diferentes tipos de información de depuración que se "
+"muestran en Ray cuando este flujo de trabajo está activado."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14756
+#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:59
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12251
+msgid "Show Queries"
+msgstr "Mostrar las consultas"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14760
+#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:66
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12258
+msgid "Show Emails"
+msgstr "Mostrar los correos electrónicos"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14764
+#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:73
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12265
+msgid "Show WordPress Errors"
+msgstr "Mostrar los errores de WordPress"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14768
+#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:80
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12272
+msgid "Show current running step"
+msgstr "Mostrar el paso actual en ejecución"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14812
+#: assets/jsx/workflow-editor/components/workflow-delete-button/index.jsx:24
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12307
+msgid "Are you sure you want to delete this workflow?"
+msgstr "¿Estás seguro de querer borrar este flujo de trabajo?"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14823
+#: assets/jsx/workflow-editor/components/workflow-delete-button/index.jsx:39
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12322
+msgid "Move to trash"
+msgstr "Mover a la papelera"
+
+#. translators: button label text should, if possible, be under 16 characters.
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14929
+#: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:79
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12407
+msgid "Publish"
+msgstr "Publicar"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14929
+#: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:79
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12407
+msgid "Update"
+msgstr "Actualizar"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14936
+#: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:90
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12418
+msgid "Autosaving..."
+msgstr "Guardando automáticamente…"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14936
+#: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:90
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12418
+msgid "Updating..."
+msgstr "Actualizando…"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14938
+#: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:92
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12420
+msgid "Updated"
+msgstr "Actualizado"
+
+#. translators: button label text should, if possible, be under 16 characters.
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15086
+#: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:82
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12550
+msgid "Save draft"
+msgstr "Guardar borrador"
+
+#. translators: button label text should, if possible, be under 16 characters.
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15089
+#: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:85
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12553
+msgid "Save"
+msgstr "Guardar"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15095
+#: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:94
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12562
+msgid "Autosaving"
+msgstr "Guardando automáticamente"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15095
+#: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:94
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12562
+msgid "Saving"
+msgstr "Guardando"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15097
+#: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:96
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12564
+msgid "Saved"
+msgstr "Guardado"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15245
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:31
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12638
+msgid "Unable to create a new workflow. Please try again."
+msgstr ""
+"No se ha podido crear un nuevo flujo de trabajo. Por favor, inténtalo de "
+"nuevo."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15278
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:51
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12658
+msgid "Unable to load the workflow. Please try again."
+msgstr ""
+"No se ha podido cargar el flujo de trabajo. Por favor, inténtalo de nuevo."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15340
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:94
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12701
+msgid "Workflow saved as draft."
+msgstr "Flujo de trabajo guardado como borrador."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15349
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15424
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:102
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:153
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12709
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12760
+msgid "Unable to save workflow. Please, try again."
+msgstr ""
+"No se ha podido guardar el flujo de trabajo. Por favor, inténtalo de nuevo."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15415
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:145
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12752
+msgid "Workflow saved."
+msgstr "Flujo de trabajo guardado."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15488
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:198
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12805
+msgid "Unable to publish the workflow. Please, try again."
+msgstr ""
+"No se ha podido publicar el flujo de trabajo. Por favor, inténtalo de nuevo."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15543
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:235
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12842
+msgid "Workflow switched to draft."
+msgstr "Flujo de trabajo cambiado a borrador."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15552
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:243
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12850
+msgid "Unable to switch workflow to draft. Please, try again."
+msgstr ""
+"No se ha podido cambiar el flujo de trabajo a borrador. Por favor, inténtalo "
+"de nuevo."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15654
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:334
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12941
+msgid "Workflow deleted. Redirecting..."
+msgstr "Flujo de trabajo eliminado. Redirigiendo…"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15666
+#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:345
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12952
+msgid "Unable to delete the workflow. Please, try again."
+msgstr ""
+"No se ha podido borrar el flujo de trabajo. Por favor, inténtalo de nuevo."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16029
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:103
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13222
+msgid "The current site."
+msgstr "El sitio actual."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16038
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:113
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13232
+msgid "The current workflow."
+msgstr "El flujo de trabajo actual."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16044
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:120
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13239
+msgid "Activating user"
+msgstr "Activación del usuario"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16047
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:123
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13242
+msgid "The current user."
+msgstr "El usuario actual."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16053
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:130
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13249
+msgid "Activating trigger"
+msgstr "Activación del desparador"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16056
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:133
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13252
+msgid "The node that activated the workflow."
+msgstr "El nodo que activó el flujo de trabajo."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16062
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:140
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13259
+msgid "Engine execution ID"
+msgstr "ID de la execución del motor"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16065
+#: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:143
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13262
+msgid ""
+"A unique identifier assigned each time the workflow engine runs. Useful for "
+"tracking specific workflow executions and debugging."
+msgstr ""
+"Un identificativo único asignado cada vez que se executa el flujo de "
+"trabajo. Útil para realizar un seguimiento de ejecuciones de flujos de "
+"trabajo específicos y para la depuración."
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16943
+#: assets/jsx/workflow-editor/components/workflow-summary/index.jsx:42
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14309
+msgid "Summary"
+msgstr "Resumen"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16949
+#: assets/jsx/workflow-editor/components/workflow-summary/index.jsx:48
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14315
+msgid "Title"
+msgstr "Título"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16956
+#: assets/jsx/workflow-editor/components/workflow-summary/index.jsx:57
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14324
+msgid "Description"
+msgstr "Descripción"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:17010
+#: assets/jsx/workflow-editor/components/workflow-switch-to-draft-button/index.jsx:33
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14374
+msgid "Are you sure you want to unpublish this workflow?"
+msgstr ""
+"¿Estás seguro de querer anular la publicación de este flujo de trabajo?"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:17024
+#: assets/jsx/workflow-editor/components/workflow-switch-to-draft-button/index.jsx:52
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14393
+msgid "Draft"
+msgstr "Borrador"
+
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:17024
+#: assets/jsx/workflow-editor/components/workflow-switch-to-draft-button/index.jsx:52
+#: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14393
+msgid "Switch to draft"
+msgstr "Cambiar a borrador"
 
 #: assets/js/backupPanel.js:104
 #: assets/jsx/backup-panel/components/file-dropzone/index.jsx:22
@@ -4526,14 +6686,6 @@ msgstr "Archivo seleccionado"
 #: assets/js/backupPanel.js:89 assets/js/backupPanel.js:973
 msgid "File size"
 msgstr "Tamaño del archivo"
-
-#: assets/js/backupPanel.js:144
-#: assets/jsx/backup-panel/components/json-preview.jsx:15
-#: assets/jsx/workflow-editor/components/loading-message/index.jsx:7
-#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:18
-#: assets/js/backupPanel.js:110
-msgid "Loading..."
-msgstr "Cargando…"
 
 #: assets/js/backupPanel.js:202
 #: assets/jsx/backup-panel/components/selectable-list/index.jsx:22
@@ -4695,1233 +6847,17 @@ msgstr ""
 msgid "Cancel Actions"
 msgstr "Cancelar acciones"
 
-#: assets/jsx/i18n.jsx:174 assets/jsx/i18n.jsx:176
-msgid "%d item"
-msgid_plural "%d items"
-msgstr[0] "%d elemento"
-msgstr[1] "%d elementos"
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:29
-msgid "Integer"
-msgstr "Entero"
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:30
-msgid "String"
-msgstr "Cadena"
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:31
-msgid "Boolean"
-msgstr "Booleano"
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:32
-msgid "Object"
-msgstr "Asunto"
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:33
-msgid "Array"
-msgstr "Array"
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:57
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:50
-msgid "null"
-msgstr "null"
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:80
-msgid "Argument name"
-msgstr "Nombre del argumento"
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:86
-msgid "Data type"
-msgstr "Tipo de datos"
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:94
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:92
-msgid "Value"
-msgstr "Valor"
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/argument-item.jsx:102
-msgid "The argument name should only contain letters, numbers and underscores."
-msgstr ""
-"El nombre del argumento debe contener solo letras, cifras y guiones bajos."
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/index.jsx:71
-msgid "Argument #%s"
-msgstr "Argumento #%s"
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/index.jsx:85
-msgid "No arguments added to the action."
-msgstr "No se han añadido argumentos a la acción."
-
-#: assets/jsx/workflow-editor/components/data-fields/action-args/index.jsx:90
-msgid "Add a new argument"
-msgstr "Añadir un nuevo argumento"
-
-#: assets/jsx/workflow-editor/components/data-fields/conditional-date-offset.jsx:35
-msgid "When to expire"
-msgstr "Cuando se caduca"
-
-#: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:43
-msgid "Add Group"
-msgstr "Añadir un grupo"
-
-#: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:44
-msgid "Add Rule"
-msgstr "Añadir regla"
-
-#: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:58
-msgid ""
-"Create rules that will continue the workflow only if certain conditions are "
-"met."
-msgstr ""
-"Crea reglas que continuarán el flujo de trabajo solo si se cumplen "
-"determinadas condiciones."
-
-#: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:59
-#: assets/jsx/workflow-editor/components/data-fields/post-filter/components/post-filter.jsx:85
-msgid "Edit rules"
-msgstr "Editar reglas"
-
-#: assets/jsx/workflow-editor/components/data-fields/conditional/components/conditional-hoc.jsx:60
-msgid ""
-"Conditional logic is a Pro feature. Upgrade to create advanced conditions "
-"for your workflows."
-msgstr ""
-"La lógica condicional es una característica Actualiza para crear condiciones "
-"avanzadas para tus flujos de trabajo."
-
-#: assets/jsx/workflow-editor/components/data-fields/conditional/components/duplicate-rule-button.jsx:10
-msgid "Duplicate Rule"
-msgstr "Duplicar regla"
-
-#: assets/jsx/workflow-editor/components/data-fields/conditional/components/not-toggle.jsx:30
-msgid "Not"
-msgstr "Not"
-
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:12
-msgid "Dismiss"
-msgstr "Descartar"
-
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:13
-msgid "Dismiss the notification"
-msgstr "Descartar el aviso"
-
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:67
-msgid "Option %s"
-msgstr "Opción %s"
-
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:95
-msgid "Option #%s"
-msgstr "Opción #%s"
-
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:114
-msgid "No options added to the action."
-msgstr "No se han añadido ociones a la acción."
-
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:120
-msgid "Add a new option"
-msgstr "Añadir una nueva opción"
-
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/index.jsx:132
-msgid ""
-"You have reached the maximum number of options. You can add up to %s options."
-msgstr ""
-"Has alcanzado el número máximo de opciones. Puedes añadir hasta %s opciones."
-
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:73
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:7
-msgid "Name"
-msgstr "Nombre"
-
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:85
-msgid "Hint"
-msgstr "Pista"
-
-#: assets/jsx/workflow-editor/components/data-fields/custom-options/option-item.jsx:107
-msgid "The option name should only contain letters, numbers and underscores."
-msgstr ""
-"El nombre de la opción debe contener solo letras, cifras y guiones bajos."
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:61
-msgid "Selected in the calendar"
-msgstr "Seleccionado en el calendario"
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:62
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-date.jsx:59
-msgid "When the trigger is activated"
-msgstr "Cuando el disparador está activado"
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:63
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-date.jsx:63
-msgid "When the step is activated"
-msgstr "Cuando el paso está activado"
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:80
-msgid "As soon as possible"
-msgstr "Lo antes posible"
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:81
-msgid "On a specific date"
-msgstr "En una fecha determinada"
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:82
-msgid "Relative to a specific date"
-msgstr "En relación con una fecha específica"
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:86
-msgid "Unchanged"
-msgstr "Sin cambio"
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:119
-msgid "Date source"
-msgstr "Fuente de la fecha"
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:147
-msgid ""
-"Click the button to choose a custom date source from variables that can "
-"provide a date."
-msgstr ""
-"Haz clic en el botón para elegir una fuente de fecha personalizada entre las "
-"variables que pueden proporcionar una fecha."
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:159
-msgid "Offset"
-msgstr "Desfase"
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:181
-msgid "Error: "
-msgstr "Error: "
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:188
-msgid "Click for more information"
-msgstr "Haz clic para más información"
-
-#: assets/jsx/workflow-editor/components/data-fields/date-offset/index.jsx:197
-msgid ""
-"For more information on formatting, see the %sPHP strtotime function%s. For "
-"example, you could enter %s+1 month%s or %s+1 week 2 days 4 hours 2 "
-"seconds%s or %snext Thursday%s. Please use only phrases in English."
-msgstr ""
-"Para más información sobre el formato, consulta la función %sPHP "
-"strtotime%s. Por ejemplo, puedes introducir %s+1 mes%s o %s+1 semana 2 días "
-"4 horas 2 segundos%s o %spróximo jueves%s. Por favor, utilice sólo frases en "
-"inglés."
-
-#: assets/jsx/workflow-editor/components/data-fields/debug-data.jsx:39
-msgid "All received input"
-msgstr "Todas las entradas recibidas"
-
-#: assets/jsx/workflow-editor/components/data-fields/debug-data.jsx:43
-msgid "Custom data"
-msgstr "Datos personalizados"
-
-#: assets/jsx/workflow-editor/components/data-fields/debug-data.jsx:64
-msgid "Select the data to output"
-msgstr "Seleccionar los datos de salida"
-
-#: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:9
-msgid "Notice"
-msgstr "Aviso"
-
-#: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:12
-msgid "Critical"
-msgstr "Crítico"
-
-#: assets/jsx/workflow-editor/components/data-fields/debug-levels.jsx:13
-msgid "Alert"
-msgstr "Alerta"
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/autocompleters/post-statuses.jsx:10
-#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:117
-#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:29
-msgid "Post Status"
-msgstr "Estado de la entrada"
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/autocompleters/post-types.jsx:10
-#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:50
-#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:33
-msgid "Post Type"
-msgstr "Tipo de entrada"
-
-#. translators: %s is the database table name
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/column-item.jsx:10
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:10
-msgid "Type the %s key and click on the button to insert it."
-msgstr "Escribe la tecla %s y haz clic en el botón para insertarla."
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/column-item.jsx:17
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:19
-msgid "Metadata key"
-msgstr "Clave de metadatos"
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/column-item.jsx:31
-msgid "Insert"
-msgstr "Insertar"
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:136
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:138
-msgid "Edit"
-msgstr "Editar"
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:181
-msgid "Select a variable from the list below."
-msgstr "Selecciona una variable de la siguiente lista."
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:185
-msgid "Type your expression here or use the variables below."
-msgstr "Escribe aquí tu expresión o utiliza las variables de abajo."
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:212
-msgid "Variables"
-msgstr "Variables"
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:215
-msgid "Double-click on a variable to select it."
-msgstr "Haz doble clic en una variable para seleccionarla."
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:219
-msgid "Double-click on any variable to add it to your expression."
-msgstr "Haz doble clic en cualquier variable para añadirla a tu expresión."
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/index.jsx:231
-msgid "Hover over a variable to see its description."
-msgstr "Pasa el cursor por encima de una variable para ver su descripción."
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:8
-msgid "The name of the term."
-msgstr "El nombre del término."
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:13
-msgid "Slug"
-msgstr "Slug"
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:14
-msgid "The slug of the term."
-msgstr "El slug del término."
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:19
-msgid "Term ID"
-msgstr "ID término"
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:20
-msgid "The unique identifier of the term."
-msgstr "El identificador único del término."
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:25
-msgid "Count"
-msgstr "Recuento"
-
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/schemas/term-properties.jsx:26
-msgid "Number of posts assigned to this term."
-msgstr "Número de entradas asignadas a este término."
-
-#. translators: %s is the taxonomy label
-#: assets/jsx/workflow-editor/components/data-fields/expression-builder/type-handlers.jsx:38
-msgid "%s terms for this post."
-msgstr "%s términos por esta entrada."
-
-#: assets/jsx/workflow-editor/components/data-fields/help-link.jsx:5
-msgid "Learn more"
-msgstr "Leer más"
-
-#: assets/jsx/workflow-editor/components/data-fields/interactive-custom-options/index.jsx:30
-msgid ""
-"This option is used to connect to another step and cannot have its name "
-"changed until the connection is removed."
-msgstr ""
-"Esta opción se utiliza para conectarse a otro paso y no se puede cambiar su "
-"nombre hasta que se elimine la conexión."
-
-#: assets/jsx/workflow-editor/components/data-fields/modal-footer.jsx:11
-msgid "OK"
-msgstr "OK"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:28
-#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:25
-msgid "Post Date"
-msgstr "Fecha de la entrada"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:34
-msgid "Update the post date"
-msgstr "Actualizar la fecha de la entrada"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:38
-#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:9
-msgid "Post Title"
-msgstr "Título de la entrada"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:44
-msgid "Update the post title"
-msgstr "Actualizar el título de la entrada"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:48
-msgid "Post Slug"
-msgstr "Slug de la entrada"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:54
-msgid "Update the post slug"
-msgstr "Actualizar el slug de la entrada"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:58
-#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:13
-msgid "Post Content"
-msgstr "Contenido de la entrada"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:64
-msgid "Update the post content"
-msgstr "Actualizar el contenido de la entrada"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:68
-#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:17
-msgid "Post Excerpt"
-msgstr "Extracto de la entrada"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:74
-msgid "Update the post excerpt"
-msgstr "Actualizar el extracto de la entrada"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:78
-msgid "Post Discussion"
-msgstr "Discusión de la entrada"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:82
-msgid "Update the post discussion"
-msgstr "Actualizar la discusión de la entrada"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:86
-msgid "Post Password"
-msgstr "Contraseña de la entrada"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:92
-msgid "Update the post password"
-msgstr "Actualizar la contraseña de la entrada"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:96
-#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:132
-#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:21
-msgid "Post Author"
-msgstr "Autor de la entrada"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/index.jsx:102
-msgid "Update the post author"
-msgstr "Actualizar el autor de la entrada"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-author.jsx:63
-msgid "Unable to load the list of authors. Please try again."
-msgstr ""
-"No se ha podido cargar la lista de autores. Por favor, inténtalo de nuevo."
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-author.jsx:81
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-date.jsx:84
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:32
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-text.jsx:27
-msgid "Do not update"
-msgstr "No actualizar"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-author.jsx:103
-msgid "Author"
-msgstr "Autor"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:36
-msgid "Comments only"
-msgstr "Solo comentarios"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:37
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:56
-msgid "Closed"
-msgstr "Cerrado"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:38
-msgid "Pings only"
-msgstr "Solo pings"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:39
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:51
-msgid "Open"
-msgstr "Abrir"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:46
-msgid "Changed..."
-msgstr "Cambiado…"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:53
-msgid "Visitors can add new comments and replies."
-msgstr "Los visitantes pueden añadir nuevos comentarios y respuestas."
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:58
-msgid ""
-"Visitors can not add new comments or replies. Existing comments remain "
-"visible."
-msgstr ""
-"Los visitantes no pueden añadir nuevos comentarios y respuestas. Los "
-"comentarios existentes quedan visible."
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:97
-msgid "Enable pinbacks & trackbacks"
-msgstr "Activar pinbacks & trackbacks"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-discussion.jsx:104
-msgid "Learn more about pinbacks & trackbacks"
-msgstr "Leer más sobre pinbacks & trackbacks"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-data/post-text.jsx:31
-msgid "Clear content"
-msgstr "Vaciar el contenido"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-filter/components/post-filter.jsx:84
-msgid "Create filters to query specific posts based on rules."
-msgstr ""
-"Crea filtros para consultar entradas específicas en función de las reglas."
-
-#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:78
-msgid "Post selection"
-msgstr "Selección de entradas"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:81
-msgid "Post received as input"
-msgstr "Entrada recibida como entrada"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:82
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:65
-msgid "Custom query"
-msgstr "Consulta personalizada"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:145
-msgid "Post Terms"
-msgstr "Términos de entrada"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:160
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:116
-msgid "Separate multiple values with commas or Enter key."
-msgstr "Separar los valores múltiples con comas o la tecla «Intro»."
-
-#: assets/jsx/workflow-editor/components/data-fields/post-query/index.jsx:166
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:122
-msgid "* Required field"
-msgstr "* Campo obligatorio"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/post-search-query.jsx:84
-msgid "Post Search Query"
-msgstr "Consulta de búsqueda de entrada"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/post-search-query.jsx:85
-msgid "Create a search query to filter posts based on conditions."
-msgstr ""
-"Crear una consulta de búsqueda para filtrar las entradas en función de las "
-"condiciones."
-
-#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/post-search-query.jsx:86
-msgid "Edit query"
-msgstr "Editar consulta"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-search-query/components/query-fields.jsx:37
-msgid "Post Parent"
-msgstr "Superior de la entrada"
-
-#: assets/jsx/workflow-editor/components/data-fields/post-status.jsx:40
-msgid "New Status"
-msgstr "Nuevo estado"
-
-#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:13
-msgid "No color"
-msgstr "Sin color"
-
-#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:14
-msgid "Green"
-msgstr "Verde"
-
-#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:15
-msgid "Orange"
-msgstr "Naranja"
-
-#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:16
-msgid "Red"
-msgstr "Rojo"
-
-#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:17
-msgid "Blue"
-msgstr "Azul"
-
-#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:18
-msgid "Purple"
-msgstr "Púrpura"
-
-#: assets/jsx/workflow-editor/components/data-fields/ray-color.jsx:19
-msgid "Gray"
-msgstr "Gris"
-
-#: assets/jsx/workflow-editor/components/data-fields/recurrence.jsx:16
-msgid "Custom interval in seconds"
-msgstr "Intervalo personalizado en segundos"
-
-#: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:127
-msgid "Repeating Action"
-msgstr "Acción de repetición"
-
-#: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:131
-msgid ""
-"Choose how often this task should repeat. Select 'Non-repeating' for a one-"
-"time action or set an interval for automatic recurrence."
-msgstr ""
-"Elige con qué frecuencia debe repetirse esta tarea. Selecciona «No repetir» "
-"para una acción única o establece un intervalo para la repetición automática."
-
-#: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:148
-msgid "Unique Task Identifier"
-msgstr "Identificador único de tarea"
-
-#: assets/jsx/workflow-editor/components/data-fields/schedule.jsx:154
-msgid "Define a unique ID to detect and prevent duplicate tasks."
-msgstr "Define un ID único para detectar y evitar tareas duplicadas."
-
-#: assets/jsx/workflow-editor/components/data-fields/taxonomy-terms.jsx:69
-msgid "Select the terms"
-msgstr "Selecciona los términos"
-
-#: assets/jsx/workflow-editor/components/data-fields/taxonomy-terms.jsx:73
-msgid "Specific terms"
-msgstr "Términos específicos"
-
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:45
-msgid "User Role"
-msgstr "Perfil de usuario"
-
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:61
-msgid "User selection"
-msgstr "Selección de usuario"
-
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:64
-msgid "User received as input"
-msgstr "Usuario recibido como entrada"
-
-#: assets/jsx/workflow-editor/components/data-fields/user-query.jsx:105
-msgid "User ID"
-msgstr "ID de usuario"
-
-#: assets/jsx/workflow-editor/components/flow-editor/index.jsx:442
-msgid "Applying auto layout."
-msgstr "Aplicación del diseño automático."
-
-#: assets/jsx/workflow-editor/components/flow-editor/index.jsx:467
-msgid "Auto layout applied."
-msgstr "Diseño automático aplicado."
-
-#: assets/jsx/workflow-editor/components/fullscreen-mode-close.jsx:43
-msgid "Back"
-msgstr "Volver"
-
-#: assets/jsx/workflow-editor/components/inspector-card/index.jsx:51
-msgid "Add a description to this step..."
-msgstr "Añade una descripción a este paso…"
-
-#: assets/jsx/workflow-editor/components/inspector-card/index.jsx:68
-#: assets/jsx/workflow-editor/components/inspector-card/index.jsx:78
-msgid "Edit description"
-msgstr "Editar descripción"
-
-#: assets/jsx/workflow-editor/components/inspector-card/index.jsx:116
-#: assets/jsx/workflow-editor/components/secondary-sidebar/node-card.jsx:16
-msgid "Pro"
-msgstr "Pro"
-
-#: assets/jsx/workflow-editor/components/inspector-card/index.jsx:132
-#: assets/jsx/workflow-editor/components/node-types/generic.jsx:319
-#: assets/jsx/workflow-editor/components/secondary-sidebar/node-card.jsx:29
-msgid ""
-"Currently this step is being skipped. Upgrade to Pro to unlock this feature."
-msgstr ""
-"Actualmente este paso está omitido. Actualiza a Pro para desbloquear esta "
-"característica."
-
-#: assets/jsx/workflow-editor/components/layout/header.jsx:129
-msgid "Add"
-msgstr "Añadir"
-
-#: assets/jsx/workflow-editor/components/layout/header.jsx:129
-msgid "Close"
-msgstr "Cerrar"
-
-#. translators: button label text should, if possible, be under 16 characters.
-#: assets/jsx/workflow-editor/components/layout/header.jsx:140
-#: assets/jsx/workflow-editor/components/layout/header.jsx:145
-msgid "Auto Layout"
-msgstr "Diseño automático"
-
-#. translators: button label text should, if possible, be under 16 characters.
-#: assets/jsx/workflow-editor/components/layout/header.jsx:157
-msgid "Upgrade to Pro and unlock more features"
-msgstr "Actualiza a Pro y desbloquea más características"
-
-#. translators: button label text should, if possible, be under 16 characters.
-#: assets/jsx/workflow-editor/components/left-toolbar/redo.jsx:31
-msgid "Redo"
-msgstr "Rehacer"
-
-#. translators: button label text should, if possible, be under 16 characters.
-#: assets/jsx/workflow-editor/components/left-toolbar/undo.jsx:31
-msgid "Undo"
-msgstr "Deshacer"
-
-#: assets/jsx/workflow-editor/components/loading-message/index.jsx:12
-msgid "Wait, we are loading the workflow..."
-msgstr "Espera, estamos cargando el flujo de trabajo…"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-feature-toggle.jsx:32
-msgid "Feature deactivated"
-msgstr "Feature desactivado"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-feature-toggle.jsx:34
-msgid "Feature activated"
-msgstr "Feature activado"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:23
-msgctxt "noun"
-msgid "View"
-msgstr "Vista"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:27
-msgid "Fullscreen mode"
-msgstr "Modo a pantalla completa"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:28
-msgid "Work without distraction"
-msgstr "Trabajar sin distracciones"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:29
-msgid "Fullscreen mode activated"
-msgstr "Modo a pantalla completa activado"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:30
-msgid "Fullscreen mode deactivated"
-msgstr "Modo a pantalla completa desactivado"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:36
-msgid "Advanced Settings"
-msgstr "Ajustes avanzados"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:37
-msgid "Display advanced settings for the workflow, triggers and steps"
-msgstr ""
-"Mostrar los ajustes avanzados del flujo de trabajo, los activadores y los "
-"pasos"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:38
-msgid "Advanced settings mode activated"
-msgstr "Modo \"Ajustes avanzados\" activado"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:39
-msgid "Advanced settings mode deactivated"
-msgstr "Modo \"Ajustes avanzados\" desactivado"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:45
-msgid "Display a mini map"
-msgstr "Mostrar un minimapa"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:46
-msgid "Display a mini map in the bottom of the editor, triggers and steps"
-msgstr ""
-"Mostrar un minimapa Mostrar un minimapa abajo del editor, disparadores y "
-"pasos"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:47
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:55
-msgid "Mini map activated"
-msgstr "Minimapa activado"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:48
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:56
-msgid "Mini map deactivated"
-msgstr "Minimapa desactivado"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:53
-msgid "Display the controls panel"
-msgstr "Mostrar el panel de control"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:54
-msgid ""
-"Display the controls panel with buttons to zoon in, zoom out, fit the view "
-"and lock the viewport"
-msgstr ""
-"Mostrar el panel de control con los botones de ampliar, reducir, ajustar la "
-"vista y bloquear el área visible"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:59
-msgid "Tools"
-msgstr "Herramientas"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:63
-msgid "Developer mode"
-msgstr "Modo desarrollador"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:64
-msgid "Work in developer mode"
-msgstr "Trabajar en modo desarrollador"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:65
-msgid "Developer mode activated"
-msgstr "Modo desarrollador activado"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:66
-msgid "Developer mode deactivated"
-msgstr "Modo desarrollador desactivado"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:72
-msgid "Welcome guide"
-msgstr "Guía de bienvenida"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:73
-msgid "Display the welcome guide"
-msgstr "Mostrar la guía de bienvenida"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:74
-msgid "Welcome guide activated"
-msgstr "Guía de bienvenida activada"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:75
-msgid "Welcome guide deactivated"
-msgstr "Guía de bienvenida desactivada"
-
-#: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:83
-msgid "Help"
-msgstr "Ayuda"
-
-#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:23
-msgid "Developer Info"
-msgstr "Información para desarrolladores"
-
-#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:31
-#: assets/jsx/workflow-editor/components/node-inspector/node-inspector-card.jsx:18
-#: assets/jsx/workflow-editor/components/node-types/generic.jsx:109
-msgid "Node"
-msgstr "Nodo"
-
-#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:41
-msgid "Node Data"
-msgstr "Datos del nodo"
-
-#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:51
-msgid "Node Settings"
-msgstr "Ajustes del nodo"
-
-#: assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx:65
-msgid "Node Type"
-msgstr "Tipo de nodo"
-
-#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:98
-msgid "No element selected."
-msgstr "No hay elementos seleccionados."
-
-#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:106
-msgid "Multiple and different elements selected."
-msgstr "Múltiples y diferentes elementos seleccionados."
-
-#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:116
-msgid "%d steps selected"
-msgstr "%d pasos seleccionados"
-
-#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:119
-msgid "Multiple steps selected."
-msgstr "Múltiples pasos seleccionados."
-
-#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:130
-msgid "%d connections selected"
-msgstr "%d conexiones seleccionadas"
-
-#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:133
-msgid "Multiple connections selected."
-msgstr "Múltiples conexiones seleccionadas."
-
-#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:165
-msgid "Connection"
-msgstr "Conexión"
-
-#: assets/jsx/workflow-editor/components/node-inspector/index.jsx:166
-msgid ""
-"The connection between nodes in the workflow. Signifies the path along which "
-"data or control flow one node to another."
-msgstr ""
-"La conexión entre los nodos del flujo de trabajo. Indica la ruta por la que "
-"los datos o el control fluyen de un nodo a otro."
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:83
-msgid "Step Data Flow"
-msgstr "Flujo de datos por paso"
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:85
-msgid "Inputs"
-msgstr "Entradas"
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:89
-msgid "This step receives the following input from previous step:"
-msgstr "Este paso recibe la siguiente entrada del paso anterior:"
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:100
-msgid "This step does not receive any input from previous step."
-msgstr "Este paso no recibe ninguna entrada del paso anterior."
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:105
-msgid "Outputs"
-msgstr "Entradas"
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:109
-msgid "This step outputs the following data:"
-msgstr "Este paso muestra los siguientes datos:"
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:120
-msgid "This step does not output any data."
-msgstr "Este paso no genera ningún dato."
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:125
-msgid "Step Scoped Variables"
-msgstr "Paso variables de ámbito"
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:129
-msgid "This step receives the following step scoped variables:"
-msgstr "Este paso recibe el siguiente paso de variables de ámbito:"
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:140
-msgid "This step does not have any step scoped variables."
-msgstr "Este paso no tiene ningún paso de variables de ámbito."
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:145
-msgid "Global Variables"
-msgstr "Variables globales"
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-data-flow-panel.jsx:149
-msgid "No global variables are declared"
-msgstr "No hay variable globales declaradas"
-
-#: assets/jsx/workflow-editor/components/node-inspector/node-inspector-card.jsx:19
-msgid "No description"
-msgstr "Sin descripción"
-
-#: assets/jsx/workflow-editor/components/node-types/generic.jsx:57
-msgid "Unknown node: %s"
-msgstr "Nodo desconocido: %s"
-
-#: assets/jsx/workflow-editor/components/node-types/generic.jsx:58
-msgid "This is a placeholder node for a node that does not exist."
-msgstr "Este es un nodo marcador de posición para un nodo que no existe."
-
-#: assets/jsx/workflow-editor/components/node-types/generic.jsx:244
-msgid "Step"
-msgstr "Paso"
-
-#: assets/jsx/workflow-editor/components/node-types/generic.jsx:250
-msgid "Trigger"
-msgstr "Disparador"
-
-#: assets/jsx/workflow-editor/components/node-types/generic.jsx:286
-msgid "Step actions"
-msgstr "Acciones del paso"
-
-#: assets/jsx/workflow-editor/components/node-types/generic.jsx:327
-msgid "This node has errors"
-msgstr "Este nodo tiene errores"
-
-#: assets/jsx/workflow-editor/components/node-types/node-placeholder.jsx:31
-msgid "Add a step"
-msgstr "Añadir un paso"
-
-#: assets/jsx/workflow-editor/components/node-types/node-placeholder.jsx:33
-msgid "Search for actions"
-msgstr "Búsqueda de acciones"
-
-#: assets/jsx/workflow-editor/components/node-types/placeholder.jsx:168
-msgid "Search for steps"
-msgstr "Búsqueda de pasos"
-
-#: assets/jsx/workflow-editor/components/node-types/placeholder.jsx:194
-#: assets/jsx/workflow-editor/components/node-types/trigger-placeholder.jsx:13
-#: assets/jsx/workflow-editor/components/secondary-sidebar/menu.jsx:161
-msgid "Search for triggers and steps"
-msgstr "Búsqueda de disparadores y pasos"
-
-#: assets/jsx/workflow-editor/components/node-types/trigger-placeholder.jsx:11
-msgid "Click to add a trigger"
-msgstr "Haz clic para añadir un disparador"
-
-#: assets/jsx/workflow-editor/components/node-validation-panel/index.jsx:19
-msgid "Validation"
-msgstr "Validación"
-
-#: assets/jsx/workflow-editor/components/node-validation-panel/index.jsx:49
-msgid "All checks have passed for this step."
-msgstr "Todas las comprobaciones se han superado para este paso."
-
-#: assets/jsx/workflow-editor/components/pro-feature-button/index.jsx:26
-msgid "Upgrade to Pro to unlock this feature."
-msgstr "Actualiza a Pro para desbloquear esta característica."
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-listbox/group.jsx:14
-msgid "Use left and right arrow keys to move through steps"
-msgstr "Usa las flechas izquierda y derecha para moverte entre los bloques"
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-no-results.jsx:14
-msgid "No results found."
-msgstr "No se han encontrado resultados."
-
-#. translators: %d: number of results.
-#: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:101
-msgid "%d result found."
-msgid_plural "%d results found."
-msgstr[0] "%d resultado encontrado."
-msgstr[1] "%d resultados encontrados."
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:116
-#: assets/jsx/workflow-editor/components/secondary-sidebar/inserter-search-results.jsx:123
-msgid "Nodes"
-msgstr "Nodos"
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/menu.jsx:72
-#: assets/jsx/workflow-editor/components/secondary-sidebar/menu.jsx:111
-msgid "A tip for using the workflow editor"
-msgstr "Un consejo para utilizar el editor de flujos de trabajo"
-
-#. translators: %d: Number of blocks.
-#: assets/jsx/workflow-editor/components/secondary-sidebar/node-draggable-chip.jsx:27
-msgid "%d block"
-msgid_plural "%d blocks"
-msgstr[0] "%d bloque"
-msgstr[1] "%d bloques"
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:80
-#: assets/jsx/workflow-editor/components/secondary-sidebar/nodes-tab.jsx:85
-msgctxt "nodes"
-msgid "Most used"
-msgstr "Más utilizados"
-
-#. translators: Patterns tab title in the block inserter.
-#: assets/jsx/workflow-editor/components/secondary-sidebar/tabs.jsx:24
-msgid "Actions"
-msgstr "Acciones"
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:10
-msgid ""
-"Select multiple steps by pressing <kbd>cmd</kbd> and clicking on each step "
-"in the workflow."
-msgstr ""
-"Selecciona varios pasos manteniendo pulsado <kbd>cmd o ctrl</kbd> y haciendo "
-"clic en cada paso del flujo de trabajo."
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:16
-msgid ""
-"Drag steps from the inserter and drop them directly into your workflow for "
-"easy customization."
-msgstr ""
-"Arrastra los pasos desde el insertador y suéltalos directamente en tu flujo "
-"de trabajo para personalizarlos fácilmente."
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:17
-msgid ""
-"Simply double-click any step to bring up the settings sidebar for quick "
-"adjustments."
-msgstr ""
-"Simplemente haz doble clic en cualquier paso para abrir la barra lateral de "
-"ajustes y realizar ajustes rápidos."
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:18
-msgid ""
-"Double-click the workflow pane to increase the zoom level for a closer look."
-msgstr ""
-"Haz doble clic en el panel de flujo de trabajo para aumentar el nivel de "
-"zoom y verlo más de cerca."
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:20
-msgid ""
-"Hold down the <kbd>shift</kbd> key and double-click the workflow pane to "
-"decrease the zoom level."
-msgstr ""
-"Mantén pulsada la tecla <kbd>mayús</kbd> y haz doble clic en el panel de "
-"flujo de trabajo para reducir el nivel de zoom."
-
-#: assets/jsx/workflow-editor/components/secondary-sidebar/tips.jsx:26
-msgid ""
-"Easily add new steps by clicking on a step's handle and dragging it. Drop it "
-"in the workflow pane to see a floating inserter where you can type and "
-"search for the step you need."
-msgstr ""
-"Añade fácilmente nuevos pasos haciendo clic en el asa de un paso y "
-"arrastrándolo. Suéltalo en el panel de flujo de trabajo para ver un "
-"insertador flotante donde puedes escribir y buscar el paso que necesitas."
-
-#: assets/jsx/workflow-editor/components/settings-sidebar/plugin-sidebar.jsx:39
-msgid "(no name)"
-msgstr "(sin nombre)"
-
-#. translators: Default label for the Workflow sidebar tab, not selected.
-#: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:23
-msgctxt "noun"
-msgid "Workflow"
-msgstr "Flujo de trabajo"
-
-#: assets/jsx/workflow-editor/components/settings-sidebar/settings-header.jsx:37
-msgid "Element"
-msgstr "Elemento"
-
-#: assets/jsx/workflow-editor/components/settings-sidebar/settings-sidebar.jsx:50
-msgid "Close settings"
-msgstr "Cerrar ajustes"
-
-#: assets/jsx/workflow-editor/components/welcome-guide/index.jsx:22
-msgid "Get started"
-msgstr "Primeros pasos"
-
-#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:50
-msgid "Ray Debug"
-msgstr "Depuración Ray"
-
-#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:55
-msgid ""
-"Enable or disable the different types of debug information that is shown in "
-"Ray when this workflow is activated."
-msgstr ""
-"Activa o desactiva los diferentes tipos de información de depuración que se "
-"muestran en Ray cuando este flujo de trabajo está activado."
-
-#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:59
-msgid "Show Queries"
-msgstr "Mostrar las consultas"
-
-#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:66
-msgid "Show Emails"
-msgstr "Mostrar los correos electrónicos"
-
-#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:73
-msgid "Show WordPress Errors"
-msgstr "Mostrar los errores de WordPress"
-
-#: assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx:80
-msgid "Show current running step"
-msgstr "Mostrar el paso actual en ejecución"
-
-#: assets/jsx/workflow-editor/components/workflow-delete-button/index.jsx:24
-msgid "Are you sure you want to delete this workflow?"
-msgstr "¿Estás seguro de querer borrar este flujo de trabajo?"
-
-#: assets/jsx/workflow-editor/components/workflow-delete-button/index.jsx:39
-msgid "Move to trash"
-msgstr "Mover a la papelera"
-
-#. translators: button label text should, if possible, be under 16 characters.
-#: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:79
-msgid "Publish"
-msgstr "Publicar"
-
-#: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:79
-msgid "Update"
-msgstr "Actualizar"
-
-#: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:90
-msgid "Autosaving..."
-msgstr "Guardando automáticamente…"
-
-#: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:90
-msgid "Updating..."
-msgstr "Actualizando…"
-
-#: assets/jsx/workflow-editor/components/workflow-publish-button/index.jsx:92
-msgid "Updated"
-msgstr "Actualizado"
-
-#. translators: button label text should, if possible, be under 16 characters.
-#: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:82
-msgid "Save draft"
-msgstr "Guardar borrador"
-
-#. translators: button label text should, if possible, be under 16 characters.
-#: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:85
-msgid "Save"
-msgstr "Guardar"
-
-#: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:94
-msgid "Autosaving"
-msgstr "Guardando automáticamente"
-
-#: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:94
-msgid "Saving"
-msgstr "Guardando"
-
-#: assets/jsx/workflow-editor/components/workflow-save-draft-button/index.jsx:96
-msgid "Saved"
-msgstr "Guardado"
-
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:31
-msgid "Unable to create a new workflow. Please try again."
-msgstr ""
-"No se ha podido crear un nuevo flujo de trabajo. Por favor, inténtalo de "
-"nuevo."
-
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:51
-msgid "Unable to load the workflow. Please try again."
-msgstr ""
-"No se ha podido cargar el flujo de trabajo. Por favor, inténtalo de nuevo."
-
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:94
-msgid "Workflow saved as draft."
-msgstr "Flujo de trabajo guardado como borrador."
-
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:102
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:153
-msgid "Unable to save workflow. Please, try again."
-msgstr ""
-"No se ha podido guardar el flujo de trabajo. Por favor, inténtalo de nuevo."
-
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:145
-msgid "Workflow saved."
-msgstr "Flujo de trabajo guardado."
-
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:198
-msgid "Unable to publish the workflow. Please, try again."
-msgstr ""
-"No se ha podido publicar el flujo de trabajo. Por favor, inténtalo de nuevo."
-
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:235
-msgid "Workflow switched to draft."
-msgstr "Flujo de trabajo cambiado a borrador."
-
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:243
-msgid "Unable to switch workflow to draft. Please, try again."
-msgstr ""
-"No se ha podido cambiar el flujo de trabajo a borrador. Por favor, inténtalo "
-"de nuevo."
-
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:334
-msgid "Workflow deleted. Redirecting..."
-msgstr "Flujo de trabajo eliminado. Redirigiendo…"
-
-#: assets/jsx/workflow-editor/components/workflow-store/actions.jsx:345
-msgid "Unable to delete the workflow. Please, try again."
-msgstr ""
-"No se ha podido borrar el flujo de trabajo. Por favor, inténtalo de nuevo."
-
-#: assets/jsx/workflow-editor/components/workflow-summary/index.jsx:42
-msgid "Summary"
-msgstr "Resumen"
-
-#: assets/jsx/workflow-editor/components/workflow-summary/index.jsx:48
-msgid "Title"
-msgstr "Título"
-
-#: assets/jsx/workflow-editor/components/workflow-summary/index.jsx:57
-msgid "Description"
-msgstr "Descripción"
-
-#: assets/jsx/workflow-editor/components/workflow-switch-to-draft-button/index.jsx:33
-msgid "Are you sure you want to unpublish this workflow?"
-msgstr ""
-"¿Estás seguro de querer anular la publicación de este flujo de trabajo?"
-
-#: assets/jsx/workflow-editor/components/workflow-switch-to-draft-button/index.jsx:52
-msgid "Draft"
-msgstr "Borrador"
-
-#: assets/jsx/workflow-editor/components/workflow-switch-to-draft-button/index.jsx:52
-msgid "Switch to draft"
-msgstr "Cambiar a borrador"
-
 #: assets/jsx/workflow-manual-selection/example-extending-with-slot.jsx:48
 msgid "Enable workflow %s"
 msgstr "Activar el flujos de trabajo %s"
+
+#~ msgid "%d item"
+#~ msgid_plural "%d items"
+#~ msgstr[0] "%d elemento"
+#~ msgstr[1] "%d elementos"
+
+#~ msgid "Future"
+#~ msgstr "Future"
 
 #, php-format
 #~ msgid "Showing all %d results. The approximate size of the log is %s."
