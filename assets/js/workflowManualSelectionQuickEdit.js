@@ -1685,39 +1685,6 @@ module.exports = function (item) {
 
 /***/ },
 
-/***/ "./node_modules/react-dom/client.js"
-/*!******************************************!*\
-  !*** ./node_modules/react-dom/client.js ***!
-  \******************************************/
-(__unused_webpack_module, exports, __webpack_require__) {
-
-
-
-var m = __webpack_require__(/*! react-dom */ "react-dom");
-if (false) // removed by dead control flow
-{} else {
-  var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
-  exports.createRoot = function(c, o) {
-    i.usingClientEntryPoint = true;
-    try {
-      return m.createRoot(c, o);
-    } finally {
-      i.usingClientEntryPoint = false;
-    }
-  };
-  exports.hydrateRoot = function(c, h, o) {
-    i.usingClientEntryPoint = true;
-    try {
-      return m.hydrateRoot(c, h, o);
-    } finally {
-      i.usingClientEntryPoint = false;
-    }
-  };
-}
-
-
-/***/ },
-
 /***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js"
 /*!****************************************************************************!*\
   !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
@@ -2043,16 +2010,6 @@ module.exports = wp.i18n;
 
 module.exports = wp.url;
 
-/***/ },
-
-/***/ "react-dom"
-/*!***************************!*\
-  !*** external "ReactDOM" ***!
-  \***************************/
-(module) {
-
-module.exports = ReactDOM;
-
 /***/ }
 
 /******/ 	});
@@ -2141,7 +2098,8 @@ var __webpack_exports__ = {};
   !*** ./assets/jsx/workflow-manual-selection/quick-edit/index.jsx ***!
   \*******************************************************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _fieldset__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../fieldset */ "./assets/jsx/workflow-manual-selection/fieldset/index.jsx");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
@@ -2180,7 +2138,7 @@ window.inlineEditPost.edit = function (button, id) {
   if (!container) {
     return;
   }
-  var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_0__.createRoot)(container);
+  var root = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createRoot)(container);
   var saveButton = document.querySelector('.inline-edit-save .save');
   if (saveButton) {
     saveButton.onclick = function () {

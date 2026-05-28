@@ -1,6 +1,5 @@
-import { useState, useEffect, useRef } from '@wordpress/element';
+import { useState, useEffect, useRef, createRoot } from '@wordpress/element';
 import apiFetch from '@wordpress/api-fetch';
-import { createRoot } from 'react-dom/client';
 
 const config = window.publishpressFutureSettingsDebug || {};
 const text = config.text || {};

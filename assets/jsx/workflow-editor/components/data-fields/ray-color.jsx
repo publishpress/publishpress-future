@@ -1,4 +1,4 @@
-import { sprintf, __ } from "@wordpress/i18n";
+import { __ } from "@wordpress/i18n";
 import { SelectControl } from "@wordpress/components";
 import { DatePicker } from "@wordpress/components";
 import { TextControl, Tooltip } from "@wordpress/components";

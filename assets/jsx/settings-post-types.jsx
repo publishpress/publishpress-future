@@ -11,11 +11,7 @@ import {
     NonceControl
 } from "./components";
 
-import { StrictMode, useState, useEffect } from "@wordpress/element";
-
-import { createRoot } from 'react-dom/client';
-
-import { render } from "react-dom";
+import { StrictMode, useState, useEffect, createRoot } from "@wordpress/element";
 
 const {
     nonce,

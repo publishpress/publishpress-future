@@ -1,4 +1,3 @@
-import { __ } from "@wordpress/i18n";
 import { __experimentalVStack as VStack } from "@wordpress/components";
 import { TextareaControl } from "@wordpress/components";
 

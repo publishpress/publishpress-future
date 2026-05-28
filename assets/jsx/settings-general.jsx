@@ -7,10 +7,9 @@ import { DateOffsetPreview } from "./components";
 import {
     StrictMode,
     useState,
-    useEffect
+    useEffect,
+    createRoot
 } from "@wordpress/element";
-
-import { createRoot } from 'react-dom/client';
 
 const { text } = window.publishpressFutureSettingsGeneralConfig;
 

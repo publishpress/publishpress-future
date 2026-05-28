@@ -1,7 +1,7 @@
 import { FutureActionPanelQuickEdit } from './components';
 import { createStore } from './data';
 import { getActionSettingsFromColumnData } from './utils';
-import { createRoot } from 'react-dom/client';
+import { createRoot } from '@wordpress/element';
 import { select, dispatch } from '@wordpress/data';
 
 const { inlineEditPost } = window;
