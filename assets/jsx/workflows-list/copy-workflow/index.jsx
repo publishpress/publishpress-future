@@ -1,6 +1,4 @@
-import { useEffect, useCallback } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
-
+import { useEffect, useCallback, createRoot } from '@wordpress/element';
 const CopyWorkflowHandler = () => {
     const handleCopyClick = useCallback((e) => {
         e.preventDefault();

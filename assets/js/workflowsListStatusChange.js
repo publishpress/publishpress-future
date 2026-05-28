@@ -10,16 +10,6 @@
 
 module.exports = wp.element;
 
-/***/ },
-
-/***/ "@wordpress/i18n"
-/*!**************************!*\
-  !*** external "wp.i18n" ***!
-  \**************************/
-(module) {
-
-module.exports = wp.i18n;
-
 /***/ }
 
 /******/ 	});
@@ -105,9 +95,6 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
-
 
 var StatusChangeHandler = function StatusChangeHandler() {
   var handleStatusChangeClick = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (e) {
@@ -131,7 +118,7 @@ var StatusChangeHandler = function StatusChangeHandler() {
   return null;
 };
 document.addEventListener('DOMContentLoaded', function () {
-  var root = createRoot(document.createElement('div'));
+  var root = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createRoot)(document.createElement('div'));
   root.render( /*#__PURE__*/React.createElement(StatusChangeHandler, null));
 });
 })();

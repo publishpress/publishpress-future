@@ -62,39 +62,6 @@ var CUSTOM_EVENT_HANDLES_COUNT_CHANGED = 'publishpress_future_workflow_editor_ha
 
 /***/ },
 
-/***/ "./node_modules/react-dom/client.js"
-/*!******************************************!*\
-  !*** ./node_modules/react-dom/client.js ***!
-  \******************************************/
-(__unused_webpack_module, exports, __webpack_require__) {
-
-
-
-var m = __webpack_require__(/*! react-dom */ "react-dom");
-if (false) // removed by dead control flow
-{} else {
-  var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
-  exports.createRoot = function(c, o) {
-    i.usingClientEntryPoint = true;
-    try {
-      return m.createRoot(c, o);
-    } finally {
-      i.usingClientEntryPoint = false;
-    }
-  };
-  exports.hydrateRoot = function(c, h, o) {
-    i.usingClientEntryPoint = true;
-    try {
-      return m.hydrateRoot(c, h, o);
-    } finally {
-      i.usingClientEntryPoint = false;
-    }
-  };
-}
-
-
-/***/ },
-
 /***/ "@wordpress/components"
 /*!********************************!*\
   !*** external "wp.components" ***!
@@ -516,7 +483,8 @@ var __webpack_exports__ = {};
   \**********************************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./constants */ "./assets/jsx/workflow-editor/constants.jsx");
-/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 
@@ -527,7 +495,7 @@ var WorkflowEditorApp = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_2__.lazy)
   return Promise.all(/*! import() */[__webpack_require__.e("vendors-node_modules_wordpress_a11y_build-module_index_js-node_modules_wordpress_compose_buil-22cb4f"), __webpack_require__.e("assets_jsx_workflow-editor_components_app_jsx")]).then(__webpack_require__.bind(__webpack_require__, /*! ./components/app */ "./assets/jsx/workflow-editor/components/app.jsx"));
 });
 if (container) {
-  (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container).render( /*#__PURE__*/React.createElement(react__WEBPACK_IMPORTED_MODULE_2__.Suspense, {
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container).render( /*#__PURE__*/React.createElement(react__WEBPACK_IMPORTED_MODULE_2__.Suspense, {
     fallback: /*#__PURE__*/React.createElement("div", {
       className: "workflow-editor-loading"
     }, "Loading...")

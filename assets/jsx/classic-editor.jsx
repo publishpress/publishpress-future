@@ -2,7 +2,7 @@ import { FutureActionPanelClassicEditor } from './components';
 import { createStore } from './data';
 import { isGutenbergEnabled } from './utils';
 import { select } from '@wordpress/data';
-import { createRoot } from 'react-dom/client';
+import { createRoot } from '@wordpress/element';
 
 const {
     postType,

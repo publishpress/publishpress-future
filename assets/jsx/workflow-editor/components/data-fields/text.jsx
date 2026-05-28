@@ -1,4 +1,3 @@
-import { __ } from "@wordpress/i18n";
 import { TextControl } from "@wordpress/components";
 import { __experimentalVStack as VStack } from "@wordpress/components";
 import { DescriptionText } from "./description-text";
