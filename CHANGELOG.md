@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fixed: Workflows list status change and copy workflow actions no longer throw `createRoot is not defined` in the browser console (Issue #1640).
 - Changed: Admin React entry points now mount via `createRoot` from `@wordpress/element` instead of `react-dom/client`, matching WordPress script dependencies (Issue #1640).
 - Changed: Removed unused `@wordpress/i18n` imports across workflow editor, backup panel, and workflows list components.
+- Changed: Update translation files.
 
 [4.10.2] - 27 May, 2026
 
