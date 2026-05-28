@@ -1,6 +1,10 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+[UNRELEASED]
+
+- Fixed: Future Action metabox now correctly appears in the sidebar (Issue #1641).
+
 [4.10.2] - 27 May, 2026
 
 - Added: Added new language files for locales: ar, cs_CZ, da_DK, el, en_US, fa_IR, he_IL, or_RO, pl_PL, sv_SE, th, tr_TR, and vi.
