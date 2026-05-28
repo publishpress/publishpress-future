@@ -4,6 +4,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 [UNRELEASED]
 
 - Fixed: Future Action metabox now correctly appears in the sidebar (Issue #1641).
+- Fixed: Improved compatibility with Polylang when post IDs include a language code (Issue #1637).
 
 [4.10.2] - 27 May, 2026
 
