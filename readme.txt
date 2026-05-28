@@ -7,7 +7,7 @@ Requires at least: 6.7
 Requires PHP: 7.4
 Tested up to: 7.0
 License: GPLv2 or later
-Stable tag: 4.10.2
+Stable tag: 4.10.3
 
 PublishPress Future can make scheduled changes to your content. You can unpublish posts, move posts to a new status, update the categories, and more.
 
