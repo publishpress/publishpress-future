@@ -120,11 +120,12 @@ class ClassicEditorController implements InitializableInterface
     public function registerClassicEditorMetabox($postType, $post)
     {
         try {
+            $isGutenbergAvailable = ! empty($post) && $this->isGutenbergAvailableForThePost($post);
+            $classicEditorActive = $this->classicEditorIsActiveForCurrentSession();
+
             // Only show the metabox if the block editor is not enabled for the post type
-            if (! empty($post) && $this->isGutenbergAvailableForThePost($post)) {
-                if (! $this->classicEditorIsActiveForCurrentSession()) {
-                    return;
-                }
+            if ($isGutenbergAvailable && ! $classicEditorActive) {
+                return;
             }
 
             $container = Container::getInstance();
@@ -132,14 +133,9 @@ class ClassicEditorController implements InitializableInterface
 
             $defaults = $settingsFacade->getPostTypeDefaults($postType);
             $hideMetabox = (bool)$this->hooks->applyFilters(HooksAbstract::FILTER_HIDE_METABOX, false, $postType);
-
-            $metaboxTitle = $settingsFacade->getMetaboxTitle() ?? __('Future Actions', 'post-expirator');
-
-            // if settings are not configured, show the metabox by default only for posts and pages
-            if (
-                $hideMetabox === false
-                &&
-                (
+            $activeMetaBox = $defaults['activeMetaBox'] ?? null;
+            $willAddMetabox = $hideMetabox === false
+                && (
                     (
                         ! isset($defaults['activeMetaBox'])
                         && in_array($postType, ['post', 'page'], true)
@@ -148,8 +144,12 @@ class ClassicEditorController implements InitializableInterface
                         is_array($defaults)
                         && (in_array((string)$defaults['activeMetaBox'], ['active', '1'], true))
                     )
-                )
-            ) {
+                );
+
+            $metaboxTitle = $settingsFacade->getMetaboxTitle() ?? __('Future Actions', 'post-expirator');
+
+            // if settings are not configured, show the metabox by default only for posts and pages
+            if ($willAddMetabox) {
                 add_meta_box(
                     'expirationdatediv',
                     $metaboxTitle,
@@ -303,6 +303,7 @@ class ClassicEditorController implements InitializableInterface
             $postType = $currentScreen->post_type;
 
             $postTypeDefaultConfig = $settingsFacade->getPostTypeDefaults($postType);
+            $activeMetaBox = $postTypeDefaultConfig['activeMetaBox'] ?? null;
 
             if (! in_array((string)$postTypeDefaultConfig['activeMetaBox'], ['active', '1', true])) {
                 return;

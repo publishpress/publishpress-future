@@ -21,7 +21,10 @@ const {
     wpTimezone
 } = window.publishpressFutureClassicEditorConfig;
 
-if (! isGutenbergEnabled()) {
+const gutenbergEnabled = isGutenbergEnabled();
+const container = document.getElementById('publishpress-future-classic-editor');
+
+if (! gutenbergEnabled) {
     const storeName = 'publishpress-future/future-action';
 
     if (!select(storeName)) {
@@ -39,7 +42,6 @@ if (! isGutenbergEnabled()) {
         });
     }
 
-    const container = document.getElementById("publishpress-future-classic-editor");
     if (container) {
         const component = (
             <FutureActionPanelClassicEditor

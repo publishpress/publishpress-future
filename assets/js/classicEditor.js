@@ -3583,7 +3583,9 @@ var _window$publishpressF = window.publishpressFutureClassicEditorConfig,
   hideCalendarByDefault = _window$publishpressF.hideCalendarByDefault,
   hiddenFields = _window$publishpressF.hiddenFields,
   wpTimezone = _window$publishpressF.wpTimezone;
-if (!(0,_utils__WEBPACK_IMPORTED_MODULE_2__.isGutenbergEnabled)()) {
+var gutenbergEnabled = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.isGutenbergEnabled)();
+var container = document.getElementById('publishpress-future-classic-editor');
+if (!gutenbergEnabled) {
   var storeName = 'publishpress-future/future-action';
   if (!(0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.select)(storeName)) {
     (0,_data__WEBPACK_IMPORTED_MODULE_1__.createStore)({
@@ -3599,7 +3601,6 @@ if (!(0,_utils__WEBPACK_IMPORTED_MODULE_2__.isGutenbergEnabled)()) {
       }
     });
   }
-  var container = document.getElementById("publishpress-future-classic-editor");
   if (container) {
     var component = /*#__PURE__*/React.createElement(_components__WEBPACK_IMPORTED_MODULE_0__.FutureActionPanelClassicEditor, {
       storeName: storeName,
