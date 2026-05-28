@@ -1,7 +1,6 @@
 /**
  * WordPress dependencies
  */
-import { __ } from '@wordpress/i18n';
 // import { MenuGroup } from '@wordpress/components';
 import { MoreMenuDropdown } from './menu-dropdown';
 import { useViewportMatch } from '@wordpress/compose';

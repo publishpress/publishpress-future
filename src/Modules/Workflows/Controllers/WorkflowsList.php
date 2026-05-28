@@ -727,20 +727,33 @@ class WorkflowsList implements InitializableInterface
             return $title;
         }
 
+        if (!is_admin()) {
+            return $title;
+        }
+
         $currentScreen = get_current_screen();
 
-        if (
-            !is_admin() || (
-                // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-                (!isset($_GET['post_type']) || $_GET['post_type'] !== Module::POST_TYPE_WORKFLOW) &&
-                    ($currentScreen && $currentScreen->id !== 'edit-' . Module::POST_TYPE_WORKFLOW)
-            )
-        ) {
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+        $isWorkflowContext = (isset($_GET['post_type']) && $_GET['post_type'] === Module::POST_TYPE_WORKFLOW)
+            || ($currentScreen && $currentScreen->id === 'edit-' . Module::POST_TYPE_WORKFLOW);
+
+        if (!$isWorkflowContext) {
+            return $title;
+        }
+
+        // Handle cases where post ID has a language suffix (e.g., "123_en", set by Polylang or other 3rd party plugins)
+        if (!is_numeric($id)) {
+            return $title;
+        }
+
+        $postId = (int) $id;
+
+        if ($postId <= 0) {
             return $title;
         }
 
         $workflowModel = new WorkflowModel();
-        $workflowModel->load($id);
+        $workflowModel->load($postId);
 
         if (empty($workflowModel)) {
             return $title;

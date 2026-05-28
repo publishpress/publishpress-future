@@ -8,7 +8,6 @@ import { Button } from "@wordpress/components";
 import { useViewportMatch } from "@wordpress/compose";
 import { store as workflowStore } from "../workflow-store";
 import { store as editorStore } from "../editor-store";
-import { __ } from "@wordpress/i18n";
 import { SIDEBAR_NODE_EDGE, SIDEBAR_WORKFLOW } from "../settings-sidebar/constants";
 import { SLOT_SCOPE_WORKFLOW_EDITOR, FEATURE_SHOW_ICON_LABELS } from "../../constants";
 import EditorNotices from "../editor-notices";

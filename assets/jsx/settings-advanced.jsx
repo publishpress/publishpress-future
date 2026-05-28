@@ -1,4 +1,4 @@
-import { createRoot } from 'react-dom/client';
+import { createRoot } from '@wordpress/element';
 import { ScheduledStepsCleanupSettings } from './workflow-editor-settings/scheduled-steps-cleanup';
 
 const {

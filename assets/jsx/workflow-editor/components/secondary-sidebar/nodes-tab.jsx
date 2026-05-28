@@ -9,7 +9,7 @@ import orderBy from 'lodash/orderBy';
 /**
  * WordPress dependencies
  */
-import { __, _x } from '@wordpress/i18n';
+import { _x } from '@wordpress/i18n';
 import { useMemo, useEffect } from '@wordpress/element';
 import { useAsyncList } from '@wordpress/compose';
 

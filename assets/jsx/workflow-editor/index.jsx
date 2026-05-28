@@ -1,5 +1,5 @@
 import { HTML_ELEMENT_ID } from "./constants";
-import { createRoot } from 'react-dom/client';
+import { createRoot } from '@wordpress/element';
 import { Suspense, lazy } from 'react';
 
 const container = document.getElementById(HTML_ELEMENT_ID);

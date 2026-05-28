@@ -1,5 +1,5 @@
 import { select, dispatch } from '@wordpress/data';
-import { createRoot } from 'react-dom/client';
+import { createRoot } from '@wordpress/element';
 import { store } from '../store';
 import { Fieldset } from '../fieldset';
 import apiFetch from '@wordpress/api-fetch';

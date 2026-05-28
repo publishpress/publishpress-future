@@ -1,5 +1,4 @@
 import { SelectControl } from '@wordpress/components';
-import { __ } from '@wordpress/i18n';
 import { queryFields } from './query-fields';
 
 /**
