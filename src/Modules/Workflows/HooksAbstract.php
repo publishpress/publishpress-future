@@ -45,6 +45,8 @@ abstract class HooksAbstract
      */
     public const ACTION_SET_OBJECT_TERMS = CoreHooksAbstract::ACTION_SET_OBJECT_TERMS;
 
+    public const ACTION_USER_REGISTER = CoreHooksAbstract::ACTION_USER_REGISTER;
+
     public const ACTION_INIT = CoreHooksAbstract::ACTION_INIT;
 
     public const ACTION_ADMIN_INIT = CoreHooksAbstract::ACTION_ADMIN_INIT;

@@ -71,6 +71,13 @@ body.admin_page_future_workflow_editor {
     display: none;
 }
 
+/* Extra spacing under token-field boxes (e.g. User roles filter) so the
+   field description doesn't crowd the box. */
+body.js.workflow-editor .components-form-token-field,
+body.admin_page_future_workflow_editor .components-form-token-field {
+    margin-bottom: 16px;
+}
+
 /* workflow editor modal */
 .workflow-editor-modal .components-modal__content {
     margin-bottom: 72px;
