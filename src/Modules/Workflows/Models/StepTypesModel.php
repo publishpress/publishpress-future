@@ -27,6 +27,9 @@ use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\Unsti
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\UpdatePost;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\UpdatePostMeta;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\DuplicatePost;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\SetPostAuthors;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\AddPostAuthor;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\RemovePostAuthor;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnAdminInit;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnCustomAction;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnTermsAdded;
@@ -44,6 +47,7 @@ use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnPo
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnPostWorkflowEnable;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnSchedule;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnUserRoleChange;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnPostAuthorsChanged;
 use PublishPress\Future\Modules\Workflows\HooksAbstract;
 use PublishPress\Future\Modules\Workflows\Interfaces\StepTypeInterface;
 
@@ -84,7 +88,7 @@ class StepTypesModel implements StepTypesModelInterface
 
     private function getDefaultCategories()
     {
-        return [
+        $categories = [
             [
                 "name" => "post",
                 "label" => __("Post", "post-expirator"),
@@ -168,6 +172,20 @@ class StepTypesModel implements StepTypesModelInterface
 
             ]
         ];
+
+        if (class_exists('MultipleAuthors\\Classes\\Utils')) {
+            $categories[] = [
+                "name" => "authors",
+                "label" => __("Authors", "post-expirator"),
+                "icon" => [
+                    "src" => "groups",
+                    "background" => self::DEFAULT_ICON_BACKGROUND,
+                    "foreground" => self::DEFAULT_ICON_FOREGROUND,
+                ],
+            ];
+        }
+
+        return $categories;
     }
 
     public function convertInstancesToArray($instances, $type): array
@@ -231,6 +249,10 @@ class StepTypesModel implements StepTypesModelInterface
             OnCustomAction::getNodeTypeName() => new OnCustomAction(),
         ];
 
+        if (class_exists('MultipleAuthors\\Classes\\Utils')) {
+            $nodesInstances[OnPostAuthorsChanged::getNodeTypeName()] = new OnPostAuthorsChanged();
+        }
+
         if ($this->settingsFacade->getExperimentalFeaturesStatus()) {
             $nodesInstances[OnInit::getNodeTypeName()] = new OnInit();
             $nodesInstances[OnAdminInit::getNodeTypeName()] = new OnAdminInit();
@@ -258,6 +280,12 @@ class StepTypesModel implements StepTypesModelInterface
             SendInSiteNotification::getNodeTypeName() => new SendInSiteNotification(),
             DuplicatePost::getNodeTypeName() => new DuplicatePost(),
         ];
+
+        if (class_exists('MultipleAuthors\\Classes\\Utils')) {
+            $nodesInstances[SetPostAuthors::getNodeTypeName()] = new SetPostAuthors();
+            $nodesInstances[AddPostAuthor::getNodeTypeName()] = new AddPostAuthor();
+            $nodesInstances[RemovePostAuthor::getNodeTypeName()] = new RemovePostAuthor();
+        }
 
         return $nodesInstances;
     }

@@ -100,6 +100,9 @@ use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\SendRayRu
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\SetPostTermRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\UpdatePostMetaRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\UpdatePostRunner;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\SetPostAuthorsRunner;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\AddPostAuthorRunner;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\RemovePostAuthorRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnAdminInitRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnInitRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnLegacyActionTriggerRunner;
@@ -115,6 +118,7 @@ use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnPostUp
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnPostWorkflowEnableRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnScheduleRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnUserRoleChangeRunner;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnPostAuthorsChangedRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnTermsAddedRunner;
 use PublishPress\Future\Modules\Workflows\HooksAbstract as WorkflowsHooksAbstract;
 use PublishPress\Future\Modules\Workflows\Logger\WorkflowLogger;
@@ -1118,6 +1122,17 @@ return [
                     );
                     break;
 
+                case OnPostAuthorsChangedRunner::getNodeTypeName():
+                    $stepRunner = new OnPostAuthorsChangedRunner(
+                        $container->get(ServicesAbstract::HOOKS),
+                        $generalStepProcessor,
+                        $workflowLogger,
+                        $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY),
+                        $container->get(ServicesAbstract::WORKFLOW_EXECUTION_SAFEGUARD),
+                        $executionContext
+                    );
+                    break;
+
                 case OnCustomActionRunner::getNodeTypeName():
                     $stepRunner = new OnCustomActionRunner(
                         $generalStepProcessor,
@@ -1224,6 +1239,48 @@ return [
                         $hooks,
                         $postStepProcessor,
                         $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY),
+                        $workflowLogger
+                    );
+                    break;
+
+                case SetPostAuthorsRunner::getNodeTypeName():
+                    $postStepProcessor = call_user_func(
+                        $container->get(ServicesAbstract::POST_STEP_PROCESSOR_FACTORY),
+                        $generalStepProcessor,
+                        $workflowExecutionId
+                    );
+
+                    $stepRunner = new SetPostAuthorsRunner(
+                        $postStepProcessor,
+                        $executionContext,
+                        $workflowLogger
+                    );
+                    break;
+
+                case AddPostAuthorRunner::getNodeTypeName():
+                    $postStepProcessor = call_user_func(
+                        $container->get(ServicesAbstract::POST_STEP_PROCESSOR_FACTORY),
+                        $generalStepProcessor,
+                        $workflowExecutionId
+                    );
+
+                    $stepRunner = new AddPostAuthorRunner(
+                        $postStepProcessor,
+                        $executionContext,
+                        $workflowLogger
+                    );
+                    break;
+
+                case RemovePostAuthorRunner::getNodeTypeName():
+                    $postStepProcessor = call_user_func(
+                        $container->get(ServicesAbstract::POST_STEP_PROCESSOR_FACTORY),
+                        $generalStepProcessor,
+                        $workflowExecutionId
+                    );
+
+                    $stepRunner = new RemovePostAuthorRunner(
+                        $postStepProcessor,
+                        $executionContext,
                         $workflowLogger
                     );
                     break;

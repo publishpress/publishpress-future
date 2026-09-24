@@ -128,9 +128,38 @@ class PostResolver implements VariableResolverInterface
 
             case 'future':
                 return new FutureActionResolver($this->post, $this->expirablePostModelFactory);
+
+            case 'ppma_authors':
+                return new ArrayResolver($this->getPpmaAuthorProperty('display_name'));
+
+            case 'ppma_author_emails':
+                return new ArrayResolver($this->getPpmaAuthorProperty('user_email'));
         }
 
         return '';
+    }
+
+    /**
+     * Read a property from every PublishPress Authors author assigned to the post.
+     * Returns an empty array when PublishPress Authors is not active.
+     *
+     * @return array
+     */
+    private function getPpmaAuthorProperty(string $property): array
+    {
+        if (! function_exists('get_post_authors')) {
+            return [];
+        }
+
+        $values = [];
+        foreach (get_post_authors($this->post->ID) as $author) {
+            $value = isset($author->$property) ? (string) $author->$property : '';
+            if ($value !== '') {
+                $values[] = $value;
+            }
+        }
+
+        return $values;
     }
 
     public function getValueAsString(string $property = ''): string
@@ -202,6 +231,8 @@ class PostResolver implements VariableResolverInterface
                 'author',
                 'terms',
                 'future',
+                'ppma_authors',
+                'ppma_author_emails',
             ]
         );
     }

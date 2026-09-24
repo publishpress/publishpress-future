@@ -57,6 +57,11 @@ abstract class HooksAbstract
     public const ACTION_TRIGGER_FIRED = 'publishpressfuture_workflow_trigger_fired_';
 
     /**
+     * Fired by PublishPress Authors after a post's authors are saved.
+     */
+    public const ACTION_PPMA_AUTHORS_SAVED = 'publishpress_authors_post_authors_metabox_action_saved';
+
+    /**
      * @deprecated 4.3.2 Use ACTION_EXECUTE_STEP instead.
      */
     public const ACTION_EXECUTE_NODE = 'publishpressfuture_workflow_execute_node';
