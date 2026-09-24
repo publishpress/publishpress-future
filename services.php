@@ -100,6 +100,9 @@ use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\SendRayRu
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\SetPostTermRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\UpdatePostMetaRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\UpdatePostRunner;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\NcsCartChangeOrderStatusRunner;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\NcsCartCancelSubscriptionRunner;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\NcsCartDuplicateProductRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnAdminInitRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnInitRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnLegacyActionTriggerRunner;
@@ -1232,6 +1235,30 @@ return [
                     $stepRunner = new SendEmailRunner(
                         $generalStepProcessor,
                         $container->get(ServicesAbstract::EMAIL),
+                        $executionContext,
+                        $workflowLogger
+                    );
+                    break;
+
+                case NcsCartChangeOrderStatusRunner::getNodeTypeName():
+                    $stepRunner = new NcsCartChangeOrderStatusRunner(
+                        $generalStepProcessor,
+                        $executionContext,
+                        $workflowLogger
+                    );
+                    break;
+
+                case NcsCartCancelSubscriptionRunner::getNodeTypeName():
+                    $stepRunner = new NcsCartCancelSubscriptionRunner(
+                        $generalStepProcessor,
+                        $executionContext,
+                        $workflowLogger
+                    );
+                    break;
+
+                case NcsCartDuplicateProductRunner::getNodeTypeName():
+                    $stepRunner = new NcsCartDuplicateProductRunner(
+                        $generalStepProcessor,
                         $executionContext,
                         $workflowLogger
                     );
