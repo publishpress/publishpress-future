@@ -82,6 +82,7 @@ use PublishPress\Future\Modules\Workflows\Domain\Engine\JsonLogicEngine;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Processors\Cron as CronStep;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Processors\General as GeneralStep;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Processors\Post as PostStep;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Processors\User as UserStep;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\ChangePostStatusRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\DeactivatePostWorkflowRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\DeletePostRunner;
@@ -100,6 +101,12 @@ use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\SendRayRu
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\SetPostTermRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\UpdatePostMetaRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\UpdatePostRunner;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\ChangeUserRoleRunner;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\AddUserRoleRunner;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\RemoveUserRoleRunner;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\UpdateUserMetaRunner;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\DeleteUserMetaRunner;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\UpdateUserProfileRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnAdminInitRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnInitRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnLegacyActionTriggerRunner;
@@ -877,6 +884,24 @@ return [
         };
     },
 
+    ServicesAbstract::USER_STEP_PROCESSOR_FACTORY =>
+    static function (ContainerInterface $container): \Closure {
+        return static function (
+            StepProcessorInterface $generalProcessor,
+            string $workflowExecutionId
+        ) use ($container): StepProcessorInterface {
+            $executionContext = $container->get(ServicesAbstract::EXECUTION_CONTEXT_REGISTRY)
+                ->getExecutionContext($workflowExecutionId);
+
+            return new UserStep(
+                $container->get(ServicesAbstract::HOOKS),
+                $generalProcessor,
+                $container->get(ServicesAbstract::LOGGER),
+                $executionContext
+            );
+        };
+    },
+
     ServicesAbstract::CRON_STEP_PROCESSOR_FACTORY =>
     static function (ContainerInterface $container): \Closure {
         return static function (
@@ -1224,6 +1249,86 @@ return [
                         $hooks,
                         $postStepProcessor,
                         $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY),
+                        $workflowLogger
+                    );
+                    break;
+
+                case ChangeUserRoleRunner::getNodeTypeName():
+                    $userStepProcessor = call_user_func(
+                        $container->get(ServicesAbstract::USER_STEP_PROCESSOR_FACTORY),
+                        $generalStepProcessor,
+                        $workflowExecutionId
+                    );
+
+                    $stepRunner = new ChangeUserRoleRunner(
+                        $userStepProcessor,
+                        $workflowLogger
+                    );
+                    break;
+
+                case AddUserRoleRunner::getNodeTypeName():
+                    $userStepProcessor = call_user_func(
+                        $container->get(ServicesAbstract::USER_STEP_PROCESSOR_FACTORY),
+                        $generalStepProcessor,
+                        $workflowExecutionId
+                    );
+
+                    $stepRunner = new AddUserRoleRunner(
+                        $userStepProcessor,
+                        $workflowLogger
+                    );
+                    break;
+
+                case RemoveUserRoleRunner::getNodeTypeName():
+                    $userStepProcessor = call_user_func(
+                        $container->get(ServicesAbstract::USER_STEP_PROCESSOR_FACTORY),
+                        $generalStepProcessor,
+                        $workflowExecutionId
+                    );
+
+                    $stepRunner = new RemoveUserRoleRunner(
+                        $userStepProcessor,
+                        $workflowLogger
+                    );
+                    break;
+
+                case UpdateUserMetaRunner::getNodeTypeName():
+                    $userStepProcessor = call_user_func(
+                        $container->get(ServicesAbstract::USER_STEP_PROCESSOR_FACTORY),
+                        $generalStepProcessor,
+                        $workflowExecutionId
+                    );
+
+                    $stepRunner = new UpdateUserMetaRunner(
+                        $userStepProcessor,
+                        $executionContext,
+                        $workflowLogger
+                    );
+                    break;
+
+                case DeleteUserMetaRunner::getNodeTypeName():
+                    $userStepProcessor = call_user_func(
+                        $container->get(ServicesAbstract::USER_STEP_PROCESSOR_FACTORY),
+                        $generalStepProcessor,
+                        $workflowExecutionId
+                    );
+
+                    $stepRunner = new DeleteUserMetaRunner(
+                        $userStepProcessor,
+                        $workflowLogger
+                    );
+                    break;
+
+                case UpdateUserProfileRunner::getNodeTypeName():
+                    $userStepProcessor = call_user_func(
+                        $container->get(ServicesAbstract::USER_STEP_PROCESSOR_FACTORY),
+                        $generalStepProcessor,
+                        $workflowExecutionId
+                    );
+
+                    $stepRunner = new UpdateUserProfileRunner(
+                        $userStepProcessor,
+                        $executionContext,
                         $workflowLogger
                     );
                     break;

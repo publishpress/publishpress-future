@@ -9,6 +9,12 @@ use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\AddPo
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\AddPostTerm;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\AppendDebugLog;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\ChangePostStatus;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\ChangeUserRole;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\AddUserRole;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\RemoveUserRole;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\UpdateUserMeta;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\DeleteUserMeta;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\UpdateUserProfile;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\Conditional;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\DeactivatePostWorkflow;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\DeletePost;
@@ -249,6 +255,12 @@ class StepTypesModel implements StepTypesModelInterface
             SetPostTerm::getNodeTypeName() => new SetPostTerm(),
             RemovePostTerm::getNodeTypeName() => new RemovePostTerm(),
             ChangePostStatus::getNodeTypeName() => new ChangePostStatus(),
+            ChangeUserRole::getNodeTypeName() => new ChangeUserRole(),
+            AddUserRole::getNodeTypeName() => new AddUserRole(),
+            RemoveUserRole::getNodeTypeName() => new RemoveUserRole(),
+            UpdateUserMeta::getNodeTypeName() => new UpdateUserMeta(),
+            DeleteUserMeta::getNodeTypeName() => new DeleteUserMeta(),
+            UpdateUserProfile::getNodeTypeName() => new UpdateUserProfile(),
             SendEmail::getNodeTypeName() => new SendEmail(),
             DeactivatePostWorkflow::getNodeTypeName() => new DeactivatePostWorkflow(),
             AddPostMeta::getNodeTypeName() => new AddPostMeta(),
