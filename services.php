@@ -100,6 +100,9 @@ use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\SendRayRu
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\SetPostTermRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\UpdatePostMetaRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\UpdatePostRunner;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\WooExpireCouponRunner;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\WooSetProductSalePriceRunner;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\WooSetProductStockRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnAdminInitRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnInitRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\OnLegacyActionTriggerRunner;
@@ -1232,6 +1235,30 @@ return [
                     $stepRunner = new SendEmailRunner(
                         $generalStepProcessor,
                         $container->get(ServicesAbstract::EMAIL),
+                        $executionContext,
+                        $workflowLogger
+                    );
+                    break;
+
+                case WooExpireCouponRunner::getNodeTypeName():
+                    $stepRunner = new WooExpireCouponRunner(
+                        $generalStepProcessor,
+                        $executionContext,
+                        $workflowLogger
+                    );
+                    break;
+
+                case WooSetProductSalePriceRunner::getNodeTypeName():
+                    $stepRunner = new WooSetProductSalePriceRunner(
+                        $generalStepProcessor,
+                        $executionContext,
+                        $workflowLogger
+                    );
+                    break;
+
+                case WooSetProductStockRunner::getNodeTypeName():
+                    $stepRunner = new WooSetProductStockRunner(
+                        $generalStepProcessor,
                         $executionContext,
                         $workflowLogger
                     );

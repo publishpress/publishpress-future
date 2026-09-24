@@ -27,6 +27,9 @@ use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\Unsti
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\UpdatePost;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\UpdatePostMeta;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\DuplicatePost;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\WooExpireCoupon;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\WooSetProductSalePrice;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\WooSetProductStock;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnAdminInit;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnCustomAction;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnTermsAdded;
@@ -84,7 +87,7 @@ class StepTypesModel implements StepTypesModelInterface
 
     private function getDefaultCategories()
     {
-        return [
+        $categories = [
             [
                 "name" => "post",
                 "label" => __("Post", "post-expirator"),
@@ -168,6 +171,20 @@ class StepTypesModel implements StepTypesModelInterface
 
             ]
         ];
+
+        if (class_exists('WooCommerce')) {
+            $categories[] = [
+                "name" => "woocommerce",
+                "label" => __("WooCommerce", "post-expirator"),
+                "icon" => [
+                    "src" => "cart",
+                    "background" => self::DEFAULT_ICON_BACKGROUND,
+                    "foreground" => self::DEFAULT_ICON_FOREGROUND,
+                ],
+            ];
+        }
+
+        return $categories;
     }
 
     public function convertInstancesToArray($instances, $type): array
@@ -258,6 +275,12 @@ class StepTypesModel implements StepTypesModelInterface
             SendInSiteNotification::getNodeTypeName() => new SendInSiteNotification(),
             DuplicatePost::getNodeTypeName() => new DuplicatePost(),
         ];
+
+        if (class_exists('WooCommerce')) {
+            $nodesInstances[WooExpireCoupon::getNodeTypeName()] = new WooExpireCoupon();
+            $nodesInstances[WooSetProductSalePrice::getNodeTypeName()] = new WooSetProductSalePrice();
+            $nodesInstances[WooSetProductStock::getNodeTypeName()] = new WooSetProductStock();
+        }
 
         return $nodesInstances;
     }
