@@ -3,14 +3,25 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 [UNRELEASED]
 
-- Changed: Upgrade woocommerce/action-scheduler from 3.9.3 to 4.1.0 (Issue #1655).
-- Changed: Raise minimum WordPress version to 6.8 (required by Action Scheduler 4.0+).
-- Changed: Action Scheduler 4.0+ breaking changes — unique actions now consider args when determining uniqueness; failed actions are purged after 3 months by default.
+[4.11.0] - 23 Sep, 2026
 
-- Fixed: Improved workflow compatibility with ACF Extended frontend forms by triggering only when the required metadata has already been processed (Issue #1649).
-- Fixed: Fatal error on Scheduled Actions screen when Action Scheduler 4.1 is loaded (Issue #1684).
-- Fixed: Activating a Workflow Sets Status to "Scheduled" Instead of "Active" on Sites with a Positive UTC Timezone Offset (Issue #1698).
-- Added: Copy workflow to text feature for development, support or debug work.
+- Added: Copy workflow to text for support and debugging.
+- Added: Workflow share summaries export human-readable setting values instead of raw JSON.
+- Added: Expression builder shows variable details on hover.
+- Changed: Upgrade Action Scheduler from 3.9.3 to 4.1.0 (Issue #1655).
+- Changed: Raise minimum WordPress version from 6.7 to 6.8 (required by Action Scheduler 4.0+).
+- Changed: Action Scheduler 4.0+ unique actions now include arguments when checking uniqueness, and failed actions are purged after 3 months by default.
+- Changed: Tested up to WordPress 7.1.
+- Fixed: Workflows no longer stay "Scheduled" instead of "Active" on sites with a positive UTC offset (Issue #1698).
+- Fixed: ACF Extended frontend forms trigger workflows only after the required metadata is saved (Issue #1649).
+- Fixed: REST API permission checks no longer return 403 for Application Password requests (Issue #1716).
+- Fixed: Block editor no longer marks posts without an expiration as unsaved (Issue #1651).
+- Fixed: Custom PHP date formats no longer gain extra backslashes when Display settings are saved (Issue #1686).
+- Fixed: Workflow editor toolbar aligns with WordPress 7.1 (Issue #1674).
+- Fixed: Schedule delay step no longer shows a false "custom date source is required" error (Issue #1658).
+- Fixed: Expression builder hides the insert-at-cursor hint on metadata form fields.
+- Fixed: Workflow execution safeguard no longer treats different triggers as an infinite loop (Issue #1680).
+- Fixed: Settings saves run only on the Future settings screen, so other plugins using `tab=license` are no longer blocked (Issue #1708).
 
 [4.10.5] - 12 Aug, 2026
 

@@ -395,6 +395,11 @@ class SettingsController implements InitializableInterface
             return;
         }
 
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Page comparison only, not a form save.
+        if (! isset($_GET['page']) || sanitize_key(wp_unslash($_GET['page'])) !== 'publishpress-future-settings') {
+            return;
+        }
+
         $tab = $this->getCurrentTab();
 
         $methodName = 'saveTab' . ucfirst($tab);

@@ -20,6 +20,34 @@ if (! function_exists('absint')) {
     }
 }
 
+if (! function_exists('wp_unslash')) {
+    /**
+     * @param mixed $value
+     * @return mixed
+     */
+    function wp_unslash($value)
+    {
+        if (is_string($value)) {
+            return stripslashes($value);
+        }
+
+        return $value;
+    }
+}
+
+if (! function_exists('sanitize_key')) {
+    /**
+     * @param string $key
+     * @return string
+     */
+    function sanitize_key($key)
+    {
+        $key = strtolower((string) $key);
+
+        return preg_replace('/[^a-z0-9_\-]/', '', $key);
+    }
+}
+
 use PublishPress\Future\Core\Autoloader;
 
 if (! defined('PUBLISHPRESS_FUTURE_LIB_VENDOR_PATH')) {
