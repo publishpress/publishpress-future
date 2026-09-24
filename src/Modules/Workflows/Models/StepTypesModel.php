@@ -44,6 +44,7 @@ use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnPo
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnPostWorkflowEnable;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnSchedule;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnUserRoleChange;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnUserDelete;
 use PublishPress\Future\Modules\Workflows\HooksAbstract;
 use PublishPress\Future\Modules\Workflows\Interfaces\StepTypeInterface;
 
@@ -227,6 +228,7 @@ class StepTypesModel implements StepTypesModelInterface
             OnPostAuthorChange::getNodeTypeName() => new OnPostAuthorChange(),
             OnPostRowAction::getNodeTypeName() => new OnPostRowAction(),
             OnUserRoleChange::getNodeTypeName() => new OnUserRoleChange(),
+            OnUserDelete::getNodeTypeName() => new OnUserDelete(),
             OnTermsAdded::getNodeTypeName() => new OnTermsAdded(),
             OnCustomAction::getNodeTypeName() => new OnCustomAction(),
         ];
