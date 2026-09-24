@@ -9,6 +9,8 @@ use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\AddPo
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\AddPostTerm;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\AppendDebugLog;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\ChangePostStatus;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\BulkChangePostStatus;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\BulkDeletePosts;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\Conditional;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\DeactivatePostWorkflow;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\DeletePost;
@@ -249,6 +251,8 @@ class StepTypesModel implements StepTypesModelInterface
             SetPostTerm::getNodeTypeName() => new SetPostTerm(),
             RemovePostTerm::getNodeTypeName() => new RemovePostTerm(),
             ChangePostStatus::getNodeTypeName() => new ChangePostStatus(),
+            BulkChangePostStatus::getNodeTypeName() => new BulkChangePostStatus(),
+            BulkDeletePosts::getNodeTypeName() => new BulkDeletePosts(),
             SendEmail::getNodeTypeName() => new SendEmail(),
             DeactivatePostWorkflow::getNodeTypeName() => new DeactivatePostWorkflow(),
             AddPostMeta::getNodeTypeName() => new AddPostMeta(),

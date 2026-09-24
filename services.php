@@ -82,7 +82,10 @@ use PublishPress\Future\Modules\Workflows\Domain\Engine\JsonLogicEngine;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Processors\Cron as CronStep;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Processors\General as GeneralStep;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Processors\Post as PostStep;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Processors\PostQuery as PostQueryStep;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\ChangePostStatusRunner;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\BulkChangePostStatusRunner;
+use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\BulkDeletePostsRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\DeactivatePostWorkflowRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\DeletePostRunner;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Runners\StickPostRunner;
@@ -877,6 +880,24 @@ return [
         };
     },
 
+    ServicesAbstract::POST_QUERY_STEP_PROCESSOR_FACTORY =>
+    static function (ContainerInterface $container): \Closure {
+        return static function (
+            StepProcessorInterface $generalProcessor,
+            string $workflowExecutionId
+        ) use ($container): StepProcessorInterface {
+            $executionContext = $container->get(ServicesAbstract::EXECUTION_CONTEXT_REGISTRY)
+                ->getExecutionContext($workflowExecutionId);
+
+            return new PostQueryStep(
+                $container->get(ServicesAbstract::HOOKS),
+                $generalProcessor,
+                $container->get(ServicesAbstract::LOGGER),
+                $executionContext
+            );
+        };
+    },
+
     ServicesAbstract::CRON_STEP_PROCESSOR_FACTORY =>
     static function (ContainerInterface $container): \Closure {
         return static function (
@@ -1223,6 +1244,35 @@ return [
                     $stepRunner = new ChangePostStatusRunner(
                         $hooks,
                         $postStepProcessor,
+                        $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY),
+                        $workflowLogger
+                    );
+                    break;
+
+                case BulkChangePostStatusRunner::getNodeTypeName():
+                    $postQueryStepProcessor = call_user_func(
+                        $container->get(ServicesAbstract::POST_QUERY_STEP_PROCESSOR_FACTORY),
+                        $generalStepProcessor,
+                        $workflowExecutionId
+                    );
+
+                    $stepRunner = new BulkChangePostStatusRunner(
+                        $hooks,
+                        $postQueryStepProcessor,
+                        $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY),
+                        $workflowLogger
+                    );
+                    break;
+
+                case BulkDeletePostsRunner::getNodeTypeName():
+                    $postQueryStepProcessor = call_user_func(
+                        $container->get(ServicesAbstract::POST_QUERY_STEP_PROCESSOR_FACTORY),
+                        $generalStepProcessor,
+                        $workflowExecutionId
+                    );
+
+                    $stepRunner = new BulkDeletePostsRunner(
+                        $postQueryStepProcessor,
                         $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY),
                         $workflowLogger
                     );

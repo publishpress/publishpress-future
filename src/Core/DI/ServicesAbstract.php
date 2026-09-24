@@ -178,6 +178,8 @@ abstract class ServicesAbstract
 
     public const POST_STEP_PROCESSOR_FACTORY = 'future.free/workflows/port-step-processor-factory';
 
+    public const POST_QUERY_STEP_PROCESSOR_FACTORY = 'future.free/workflows/post-query-step-processor-factory';
+
     /**
      * @deprecated 4.4.1 User CRON_STEP_PROCESSOR_FACTORY instead.
      */
