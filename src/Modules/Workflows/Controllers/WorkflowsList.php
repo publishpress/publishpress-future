@@ -573,8 +573,8 @@ class WorkflowsList implements InitializableInterface
             <input type="hidden" name="action" value="publishpress_future_change_workflow_status" />
             <input type="hidden" name="workflow_id" value="<?php echo esc_attr($postId); ?>" />
             <input type="hidden" name="new_status" value="<?php echo esc_attr($newStatus); ?>" />
-            <button type="submit" class="button-link" style="border: none; background: none; padding: 0; cursor: pointer;">
-                <i class="pp-future-workflow-status-icon dashicons dashicons-<?php echo esc_attr($icon); ?> <?php echo esc_attr($iconClass); ?>" title="<?php echo esc_attr($title); ?>"></i>
+            <button type="submit" class="button-link" aria-label="<?php echo esc_attr($title); ?>" style="border: none; background: none; padding: 0; cursor: pointer;">
+                <i class="pp-future-workflow-status-icon dashicons dashicons-<?php echo esc_attr($icon); ?> <?php echo esc_attr($iconClass); ?>" aria-hidden="true" title="<?php echo esc_attr($title); ?>"></i>
             </button>
         </form>
         <?php
