@@ -98,7 +98,7 @@ $rayDebugIsInstalled = function_exists('ray');
                                 <table class="widefat striped" style="margin-top: 10px; margin-bottom: 10px;">
                                     <thead>
                                         <tr>
-                                            <th><strong><?php echo esc_html($tableName); ?></strong></th>
+                                            <th scope="col"><strong><?php echo esc_html($tableName); ?></strong></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -237,13 +237,13 @@ $rayDebugIsInstalled = function_exists('ray');
                                 <table class="striped wp-list-table widefat fixed table-view-list">
                                     <thead>
                                         <tr>
-                                            <th class="pe-date-column">
+                                            <th scope="col" class="pe-date-column">
                                                 <?php esc_html_e('Date', 'post-expirator'); ?>
                                             </th>
-                                            <th class="pe-event-column">
+                                            <th scope="col" class="pe-event-column">
                                                 <?php esc_html_e('Event', 'post-expirator'); ?>
                                             </th>
-                                            <th>
+                                            <th scope="col">
                                                 <?php esc_html_e('Posts and expiration settings', 'post-expirator'); ?>
                                             </th>
                                         </tr>
