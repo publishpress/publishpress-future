@@ -395,8 +395,9 @@ class SettingsController implements InitializableInterface
             return;
         }
 
-        // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Page comparison only, not a form save.
-        if (! isset($_GET['page']) || sanitize_key(wp_unslash($_GET['page'])) !== 'publishpress-future-settings') {
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Only comparing admin page slug; no form action.
+        $page = isset($_GET['page']) ? sanitize_key(wp_unslash($_GET['page'])) : '';
+        if (! in_array($page, ['publishpress-future', 'publishpress-future-settings'], true)) {
             return;
         }
 
