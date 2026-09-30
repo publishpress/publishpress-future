@@ -1,0 +1,23 @@
+name: Classify issue types
+
+on:
+  schedule:
+    - cron: "0 5 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Log chosen types without applying them
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  issue_types:
+    uses: publishpress/github-workflows/.github/workflows/issue-types.yml@v3
+    with:
+      dry_run: ${{ inputs.dry_run || false }}
+    secrets: inherit
