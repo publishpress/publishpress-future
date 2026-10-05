@@ -167,16 +167,15 @@ class ShortcodeController implements InitializableInterface
             $defaultDateTimeFormat
         );
 
-        $wrapper = ($attrs['wrapper'] === tag_escape($attrs['wrapper']))
-            ? strtolower(trim($attrs['wrapper']))
-            : 'div';
+        $wrapper = $this->settingsFacade->sanitizeShortcodeWrapper((string) $attrs['wrapper']);
+        $output = esc_html($output);
 
-        if (!empty($attrs['wrapper'])) {
+        if ($wrapper !== '') {
             $output = sprintf(
                 '<%1$s class="%2$s">%3$s</%1$s>',
                 esc_html($wrapper),
                 esc_attr($attrs['class']),
-                esc_html($output)
+                $output
             );
         }
 

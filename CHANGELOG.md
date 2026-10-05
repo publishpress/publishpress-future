@@ -1,6 +1,10 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+[UNRELEASED]
+
+- Security: Restrict `[futureaction]` / `[postexpirator]` shortcode wrapper to safe container elements (`p`, `div`, `span`) and escape shortcode output when no wrapper is used, closing incomplete remediation of CVE-2026-5247. Thanks to Civitasmass for the responsible disclosure.
+
 [4.10.5] - 12 Aug, 2026
 
 - Fixed: Re-release of 4.10.4 for WordPress.org (correct plugin version header, stable tag, and checksums).
