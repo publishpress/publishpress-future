@@ -1,9 +1,11 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-[UNRELEASED]
+[4.10.6] - 06 Oct, 2026
 
 - Security: Restrict `[futureaction]` / `[postexpirator]` shortcode wrapper to safe container elements (`p`, `div`, `span`) and escape shortcode output when no wrapper is used, closing incomplete remediation of CVE-2026-5247. Thanks to Civitasmass for the responsible disclosure.
+- Changed: Upgrade publishpress/pimple-pimple (3.5.0.10 => 3.5.0.11)
+- Changed: Upgrade publishpress/wordpress-reviews (1.2.1 => 1.2.2)
 
 [4.10.5] - 12 Aug, 2026
 
