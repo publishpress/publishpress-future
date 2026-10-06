@@ -19,5 +19,7 @@ parameters:
         - dev-workspace-cache
         - cache
         - .cache
+        - .ddev
+        - .web
 rules:
     - Spatie\Ray\PHPStan\RemainingRayCallRule

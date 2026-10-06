@@ -1,6 +1,7 @@
 - .phpcs-plugin-review.xml
 - /.babelrc
 - /.cursor
+- /.ddev
 - /.deploy-state.json
 - /.distignore
 - /.env
@@ -18,6 +19,7 @@
 - /.rsync-filters-post-build
 - /.rsync-filters-pre-build
 - /.vscode
+- /.web
 - /.wordpress-org
 - /assets/adobe-animate
 - /codeception.yml

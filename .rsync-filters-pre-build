@@ -1,4 +1,6 @@
+- .ddev
 - .phpcs-plugin-review.xml
+- .web
 - /assets/adobe-animate
 - /assets/jsx
 - /builder
