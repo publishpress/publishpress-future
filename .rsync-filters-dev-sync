@@ -1,6 +1,7 @@
 - .phpcs-plugin-review.xml
 - /.babelrc
 - /.cursor
+- /.ddev
 - /.deploy-state.json
 - /.distignore
 - /.env
@@ -14,10 +15,12 @@
 - /.phpcs.xml
 - /.phplint-cache
 - /.phplint.yml
+- /phpmd.ruleset.xml
 - /.rsync-filters-dev-sync
 - /.rsync-filters-post-build
 - /.rsync-filters-pre-build
 - /.vscode
+- /.web
 - /.wordpress-org
 - /assets/adobe-animate
 - /codeception.yml
@@ -38,5 +41,3 @@
 - /version.txt
 - /webpack.config.js
 - /yarn.lock
-- .web
-- .ddev

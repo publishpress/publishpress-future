@@ -531,9 +531,32 @@ class SettingsFacade
         return $this->options->getOption('shortcodeWrapper', '');
     }
 
+    /**
+     * Restrict shortcode wrapper to safe container elements.
+     *
+     * @since 4.10.6
+     */
+    public function sanitizeShortcodeWrapper(string $value): string
+    {
+        $value = strtolower(trim($value));
+
+        if ($value === '') {
+            return '';
+        }
+
+        if (in_array($value, ['p', 'div', 'span'], true)) {
+            return $value;
+        }
+
+        return 'div';
+    }
+
     public function setShortcodeWrapper(string $value): void
     {
-        $this->options->updateOption('shortcodeWrapper', sanitize_text_field($value));
+        $this->options->updateOption(
+            'shortcodeWrapper',
+            $this->sanitizeShortcodeWrapper(sanitize_text_field($value))
+        );
     }
 
     public function getShortcodeWrapperClass(): string

@@ -1,4 +1,6 @@
+- .ddev
 - .phpcs-plugin-review.xml
+- .web
 - /assets/adobe-animate
 - /assets/jsx
 - /builder
@@ -24,6 +26,7 @@
 - jsconfig.json
 - package-lock.json
 - package.json
+- phpmd.ruleset.xml
 - phpstan.neon
 - psalm.xml
 - ray-dist.php
@@ -32,5 +35,3 @@
 - README.md
 - RoboFile.php
 - screenshot-*.png
-- .web
-- .ddev

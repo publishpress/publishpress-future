@@ -54,7 +54,7 @@ class ShortcodeControllerTest extends \lucatume\WPBrowser\TestCase\WPTestCase
         $this->assertStringContainsString('</span>', $output);
     }
 
-    public function estFutureactionUnsafeWrapperFallsBackToDivWithoutInjectedMarkup(): void
+    public function testFutureactionUnsafeWrapperFallsBackToDivWithoutInjectedMarkup(): void
     {
         $postId = $this->createPostWithScheduledExpiration();
 
