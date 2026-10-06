@@ -26,6 +26,7 @@
 - jsconfig.json
 - package-lock.json
 - package.json
+- phpmd.ruleset.xml
 - phpstan.neon
 - psalm.xml
 - ray-dist.php

@@ -48,6 +48,9 @@
         "plugin-composer-package": "publishpress/publishpress-future"
     },
     "scripts": {
+        "lint:phpmd": "vendor/publishpress/dev-workspace/scripts/run.sh phpmd src,legacy,post-expirator.php,services.php ansi phpmd.ruleset.xml",
+        "lint:phpmd:ci": "vendor/publishpress/dev-workspace/scripts/run.sh phpmd src,legacy,post-expirator.php,services.php github phpmd.ruleset.xml",
+        "lint:phpmd:text": "vendor/publishpress/dev-workspace/scripts/run.sh phpmd src,legacy,post-expirator.php,services.php text phpmd.ruleset.xml",
         "sync:pro": [
             "@pack:dir",
             "rsync -a --delete dist/post-expirator/ ../publishpress-future-pro/lib/vendor/publishpress/publishpress-future/"

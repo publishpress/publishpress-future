@@ -12,6 +12,7 @@
 .phpcs.xml
 .phplint-cache
 .phplint.yml
+phpmd.ruleset.xml
 .rsync-filters-post-build
 .rsync-filters-pre-build
 .vscode
