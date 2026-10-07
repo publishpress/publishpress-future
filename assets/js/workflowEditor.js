@@ -492,7 +492,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var container = document.getElementById(_constants__WEBPACK_IMPORTED_MODULE_0__.HTML_ELEMENT_ID);
 var WorkflowEditorApp = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_2__.lazy)(function () {
-  return Promise.all(/*! import() */[__webpack_require__.e("vendors-node_modules_wordpress_a11y_build-module_index_js-node_modules_wordpress_compose_buil-22cb4f"), __webpack_require__.e("assets_jsx_workflow-editor_components_app_jsx")]).then(__webpack_require__.bind(__webpack_require__, /*! ./components/app */ "./assets/jsx/workflow-editor/components/app.jsx"));
+  return Promise.all(/*! import() */[__webpack_require__.e("vendors-node_modules_wordpress_a11y_build-module_index_js-node_modules_wordpress_compose_buil-3f53e5"), __webpack_require__.e("assets_jsx_workflow-editor_components_app_jsx")]).then(__webpack_require__.bind(__webpack_require__, /*! ./components/app */ "./assets/jsx/workflow-editor/components/app.jsx"));
 });
 if (container) {
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container).render( /*#__PURE__*/React.createElement(react__WEBPACK_IMPORTED_MODULE_2__.Suspense, {

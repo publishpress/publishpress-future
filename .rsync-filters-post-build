@@ -1,1 +1,3 @@
 # Plugin-specific post-build excludes (optional).
+- .web
+- .ddev

@@ -20,3 +20,5 @@ jobs:
     uses: publishpress/github-workflows/.github/workflows/deploy-free.yml@v3
     needs: [code-check, run-unit-tests]
     secrets: inherit
+    with:
+      stable_branch: master

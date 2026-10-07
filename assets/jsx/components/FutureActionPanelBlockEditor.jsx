@@ -1,5 +1,7 @@
 import { FutureActionPanel } from './';
 import './css/block-editor.css';
+import { futureActionAttributesEqual } from '../utils';
+import { useCallback } from '@wordpress/element';
 
 export const FutureActionPanelBlockEditor = (props) => {
     const { PluginDocumentSettingPanel } = wp.editPost;
@@ -7,35 +9,35 @@ export const FutureActionPanelBlockEditor = (props) => {
 
     const { editPost } = useDispatch('core/editor');
 
-    const editPostAttribute = (newAttribute) => {
-        const attribute = {
-            publishpress_future_action: {}
-        };
+    const editPostAttribute = useCallback((newAttribute) => {
+        const currentAttribute = select('core/editor').getCurrentPostAttribute('publishpress_future_action');
 
-        // For each property on newAttribute, set the value on attribute
-        for (const [name, value] of Object.entries(newAttribute)) {
-            attribute.publishpress_future_action[name] = value;
+        if (futureActionAttributesEqual(newAttribute, currentAttribute)) {
+            return;
         }
 
-        editPost(attribute);
-    }
+        editPost({
+            publishpress_future_action: {
+                ...newAttribute,
+            },
+        });
+    }, [editPost]);
 
-    const onChangeData = (attribute, value) => {
+    const onChangeData = useCallback(() => {
         const store = select(props.storeName);
 
         const newAttribute = {
-            'enabled': store.getEnabled()
-        }
-
-        newAttribute['action'] = store.getAction();
-        newAttribute['newStatus'] = store.getNewStatus();
-        newAttribute['date'] = store.getDate();
-        newAttribute['terms'] = store.getTerms();
-        newAttribute['taxonomy'] = store.getTaxonomy();
-        newAttribute['extraData'] = store.getExtraData();
+            enabled: store.getEnabled(),
+            action: store.getAction(),
+            newStatus: store.getNewStatus(),
+            date: store.getDate(),
+            terms: store.getTerms(),
+            taxonomy: store.getTaxonomy(),
+            extraData: store.getExtraData(),
+        };
 
         editPostAttribute(newAttribute);
-    }
+    }, [props.storeName, editPostAttribute]);
 
     const rawData = select('core/editor').getEditedPostAttribute('publishpress_future_action');
     const data = rawData || {

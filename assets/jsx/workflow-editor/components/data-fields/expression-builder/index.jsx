@@ -6,7 +6,7 @@ import {
     TextareaControl
 } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
-import { useState, useRef, useCallback, useEffect } from "@wordpress/element";
+import { useState, useRef, useCallback, useEffect, createPortal } from "@wordpress/element";
 import NodeIcon from "../../node-icon";
 import ColumnsContainer from "./columns-container";
 import { DescriptionText } from "../description-text";
@@ -18,6 +18,19 @@ import "ace-builds/src-noconflict/ext-language_tools";
 import { ModalFooter } from './../modal-footer'
 
 import './style.css';
+
+const HOVER_HINT_DELAY = 700;
+
+const VariableHoverHint = ({ hint }) => createPortal(
+    <div
+        className="expression-builder-variable-hover-hint"
+        style={{ top: hint.top, left: hint.left }}
+    >
+        <code>{hint.item.id}</code>
+        {hint.item.description ? ` ${hint.item.description}` : ''}
+    </div>,
+    document.body
+);
 
 export const ExpressionBuilder = ({
     name,
@@ -41,10 +54,17 @@ export const ExpressionBuilder = ({
 }) => {
     const editorFullRef = useRef(null);
     const editorSmallRef = useRef(null);
+    const hoverHintTimeoutRef = useRef(null);
 
-    const [currentDescription, setCurrentDescription] = useState();
-    const [currentVariableId, setCurrentVariableId] = useState();
     const [isOpen, setIsOpen] = useState(false);
+    const [hoverHint, setHoverHint] = useState(null);
+
+    const clearHoverHintTimeout = useCallback(() => {
+        if (hoverHintTimeoutRef.current) {
+            clearTimeout(hoverHintTimeoutRef.current);
+            hoverHintTimeoutRef.current = null;
+        }
+    }, []);
 
     if (! defaultValue) {
         defaultValue = {};
@@ -75,8 +95,26 @@ export const ExpressionBuilder = ({
     }, [defaultValue]);
 
     const onClose = useCallback(() => {
+        clearHoverHintTimeout();
         setIsOpen(false);
-    }, [setIsOpen]);
+        setHoverHint(null);
+    }, [clearHoverHintTimeout, setIsOpen]);
+
+    const onVariableHover = useCallback((item, event) => {
+        clearHoverHintTimeout();
+        const rect = event.currentTarget.getBoundingClientRect();
+        const hint = { item, top: rect.top, left: rect.right + 8 };
+
+        hoverHintTimeoutRef.current = setTimeout(() => {
+            setHoverHint(hint);
+            hoverHintTimeoutRef.current = null;
+        }, HOVER_HINT_DELAY);
+    }, [clearHoverHintTimeout]);
+
+    const onVariableHoverEnd = useCallback(() => {
+        clearHoverHintTimeout();
+        setHoverHint(null);
+    }, [clearHoverHintTimeout]);
 
     const onDoubleClick = useCallback((item) => {
         if (editorFullRef.current) {
@@ -97,9 +135,26 @@ export const ExpressionBuilder = ({
         }
     }, [editorFullRef, singleVariableOnly]);
 
+    const renderLeafHint = useCallback((item) => (
+        <div className="column-leaf-hint-content">
+            <p>
+                {singleVariableOnly
+                    ? __("Click Select to use this variable.", "post-expirator")
+                    : __("The variable will be inserted at the current cursor position.", "post-expirator")}
+            </p>
+            <Button variant="secondary" onClick={() => onDoubleClick(item)}>
+                {singleVariableOnly ? __("Select", "post-expirator") : __("Insert", "post-expirator")}
+            </Button>
+        </div>
+    ), [singleVariableOnly, onDoubleClick]);
+
     const editorProps = {
         $blockScrolling: true,
     };
+
+    useEffect(() => {
+        return () => clearHoverHintTimeout();
+    }, [clearHoverHintTimeout]);
 
     useEffect(() => {
         if (wrapOnPreview && editorSmallRef.current) {
@@ -216,32 +271,24 @@ export const ExpressionBuilder = ({
                         )}
 
                         {! singleVariableOnly && (
-                            <p>{__("Double-click on any variable to add it to your expression.", "post-expirator")}</p>
-                        )}
-
-                        {currentDescription && (
-                            <p className="description margin-top">
-                                <code className="expression-builder-variable-name">
-                                    {currentVariableId}
-                                </code> {currentDescription}
-                            </p>
-                        )}
-
-                        {!currentDescription && (
-                            <p className="description margin-top">{__("Hover over a variable to see its description.", "post-expirator")}</p>
+                            <p>{__("Double-click on any variable to insert it into your expression.", "post-expirator")}</p>
                         )}
 
                         <ColumnsContainer
                             items={variables}
-                            setCurrentDescription={setCurrentDescription}
-                            setCurrentVariableId={setCurrentVariableId}
                             onDoubleClick={onDoubleClick}
+                            onVariableHover={onVariableHover}
+                            onVariableHoverEnd={onVariableHoverEnd}
+                            renderLeafHint={renderLeafHint}
                         />
+
                     </div>
                 </div>
                 <ModalFooter onClose={ onClose } />
             </Modal>
         )}
+
+        {hoverHint && isOpen && <VariableHoverHint hint={hoverHint} />}
     </div>;
 }
 

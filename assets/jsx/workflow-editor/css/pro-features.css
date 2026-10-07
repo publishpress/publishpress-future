@@ -39,10 +39,15 @@
     color: #000;
     padding: 4px 10px !important;
     border-radius: 4px;
+    height: 32px;
+    min-height: 32px;
+    display: inline-flex;
+    align-items: center;
 }
 
 .edit-post-header-toolbar__buy-pro .publishpress-icon {
     width: 18px !important;
     height: 18px !important;
     margin-right: 4px;
+    vertical-align: middle;
 }

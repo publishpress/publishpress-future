@@ -279,5 +279,15 @@ abstract class HooksAbstract
     /**
      * @since 4.10.0
      */
+    public const ACTION_ACFE_FORM_SUBMIT_FORM = 'acfe/form/submit_form';
+
+    /**
+     * @since 4.10.0
+     */
+    public const ACTION_ACFE_FORM_SUBMIT_POST = 'acfe/form/submit_post';
+
+    /**
+     * @since 4.10.0
+     */
     public const ACTION_REST_AFTER_INSERT_POST_TYPE = 'rest_after_insert_%s';
 }

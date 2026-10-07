@@ -200,13 +200,13 @@ class PostExpirator_Display
                 exit;
             } else {
                 // phpcs:disable WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.ValidatedSanitizedInput.InputNotValidated
-                $this->settingsFacade->setDefaultDateFormat(sanitize_text_field($_POST['expired-default-date-format']));
-                $this->settingsFacade->setDefaultTimeFormat(sanitize_text_field($_POST['expired-default-time-format']));
+                $this->settingsFacade->setDefaultDateFormat(sanitize_text_field(wp_unslash($_POST['expired-default-date-format'])));
+                $this->settingsFacade->setDefaultTimeFormat(sanitize_text_field(wp_unslash($_POST['expired-default-time-format'])));
                 $this->settingsFacade->setShowInPostFooter((bool)$_POST['expired-display-footer']);
-                $this->settingsFacade->setFooterContents(wp_kses($_POST['expired-footer-contents'], []));
-                $this->settingsFacade->setFooterStyle(wp_kses($_POST['expired-footer-style'], []));
-                $this->settingsFacade->setShortcodeWrapper(sanitize_text_field($_POST['shortcode-wrapper']));
-                $this->settingsFacade->setShortcodeWrapperClass(sanitize_text_field($_POST['shortcode-wrapper-class']));
+                $this->settingsFacade->setFooterContents(wp_kses(wp_unslash($_POST['expired-footer-contents']), []));
+                $this->settingsFacade->setFooterStyle(wp_kses(wp_unslash($_POST['expired-footer-style']), []));
+                $this->settingsFacade->setShortcodeWrapper(sanitize_text_field(wp_unslash($_POST['shortcode-wrapper'])));
+                $this->settingsFacade->setShortcodeWrapperClass(sanitize_text_field(wp_unslash($_POST['shortcode-wrapper-class'])));
                 // phpcs:enable WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.ValidatedSanitizedInput.InputNotValidated
             }
         }

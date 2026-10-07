@@ -14,6 +14,53 @@ function isVariable(value) {
     return trimmedValue.startsWith('{{') && trimmedValue.endsWith('}}');
 }
 
+function getNestedSettingValue(nodeSettings, fieldPath) {
+    if (!fieldPath) {
+        return undefined;
+    }
+
+    const fieldNames = fieldPath.split('.');
+    let value = nodeSettings;
+
+    for (let i = 0; i < fieldNames.length; i++) {
+        value = value?.[fieldNames[i]];
+    }
+
+    return value;
+}
+
+function matchesCondition(nodeSettings, condition) {
+    const value = getNestedSettingValue(nodeSettings, condition.field);
+
+    if (condition.operator === 'in') {
+        return Array.isArray(condition.value) && condition.value.includes(value);
+    }
+
+    return value == condition.value;
+}
+
+function matchesRuleConditions(nodeSettings, ruleData) {
+    if (Array.isArray(ruleData?.conditions)) {
+        return ruleData.conditions.every((condition) => matchesCondition(nodeSettings, condition));
+    }
+
+    if (ruleData?.condition) {
+        return matchesCondition(nodeSettings, ruleData.condition);
+    }
+
+    return true;
+}
+
+function isEmptySettingValue(value) {
+    return value === ''
+        || value === null
+        || value === undefined
+        || (Array.isArray(value) && value.length === 0)
+        // If the default value is an object with a rule, that is the default value
+        // and it was not set by the user yet.
+        || (typeof value === 'object' && value.rule);
+}
+
 const DEBOUNCE_TIME = 250;
 
 export function NodeValidator({})
@@ -383,23 +430,12 @@ export function NodeValidator({})
                     const fieldNames = fieldName?.split('.') || [];
                     const fieldLabel = ruleData?.label || settingsSchema.find((panel) => panel?.fields.find((field) => field.name === fieldNames[0]))?.label;
 
-                    let settingValue = nodeSettings;
-                    for (let i = 0; i < fieldNames.length; i++) {
-                        settingValue = settingValue?.[fieldNames[i]];
-                    }
+                    const settingValue = getNestedSettingValue(nodeSettings, fieldName);
 
                     switch(rule) {
                         case 'required':
-                            if (ruleData?.condition) {
-                                const conditionField = ruleData.condition.field;
-                                const conditionValue = ruleData.condition.value;
-
-                                let conditionSettingValue = nodeSettings;
-                                for (let i = 0; i < conditionField.split('.').length; i++) {
-                                    conditionSettingValue = conditionSettingValue?.[conditionField.split('.')[i]];
-                                }
-
-                                if (conditionSettingValue == conditionValue && (!settingValue || settingValue == '')) {
+                            if (ruleData?.condition || ruleData?.conditions) {
+                                if (matchesRuleConditions(nodeSettings, ruleData) && isEmptySettingValue(settingValue)) {
                                     addNodeError(
                                         node.id,
                                         `${fieldName}-required-if`,
@@ -409,28 +445,15 @@ export function NodeValidator({})
                                         )
                                     );
                                 }
-                            } else {
-                                const isEmpty = (value) => {
-                                    return value === ''
-                                        || value === null
-                                        || value === undefined
-                                        || (Array.isArray(value) && value.length === 0)
-                                        // If the default value is an object with a rule, that is the default value
-                                        // and it was not set by the user yet.
-                                        || (typeof value === 'object' && value.rule);
-                                };
-
-                                if (isEmpty(settingValue)) {
-                                    addNodeError(
-                                        node.id,
-                                        `${fieldName}-required`,
-                                        sprintf(
-                                            __('The field %s is required.', 'post-expirator'),
-                                            fieldLabel
-                                        )
-                                    );
-                                    break;
-                                }
+                            } else if (isEmptySettingValue(settingValue)) {
+                                addNodeError(
+                                    node.id,
+                                    `${fieldName}-required`,
+                                    sprintf(
+                                        __('The field %s is required.', 'post-expirator'),
+                                        fieldLabel
+                                    )
+                                );
                             }
                             break;
 
@@ -590,6 +613,10 @@ export function NodeValidator({})
                         }
 
                         case 'hasVariableSyntax': {
+                            if (!matchesRuleConditions(nodeSettings, ruleData)) {
+                                break;
+                            }
+
                             if (!settingValue || settingValue === '') {
                                 break;
                             }

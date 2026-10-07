@@ -102,9 +102,16 @@ class ScheduleDelay implements StepTypeInterface
                         "rule" => "required",
                         "field" => "schedule.customDateSource.expression",
                         "label" => __("Custom date source", "post-expirator"),
-                        "condition" => [
-                            "field" => "schedule.dateSource",
-                            "value" => "custom",
+                        "conditions" => [
+                            [
+                                "field" => "schedule.dateSource",
+                                "value" => "custom",
+                            ],
+                            [
+                                "field" => "schedule.whenToRun",
+                                "operator" => "in",
+                                "value" => ["date", "offset"],
+                            ],
                         ],
                     ],
                     [
@@ -112,6 +119,17 @@ class ScheduleDelay implements StepTypeInterface
                         "field" => "schedule.customDateSource.expression",
                         "label" => __("Custom date source", "post-expirator"),
                         "fieldLabel" => __("Schedule > Custom date source", "post-expirator"),
+                        "conditions" => [
+                            [
+                                "field" => "schedule.dateSource",
+                                "value" => "custom",
+                            ],
+                            [
+                                "field" => "schedule.whenToRun",
+                                "operator" => "in",
+                                "value" => ["date", "offset"],
+                            ],
+                        ],
                     ],
                 ],
             ],

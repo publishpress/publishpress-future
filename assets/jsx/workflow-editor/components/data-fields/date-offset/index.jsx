@@ -51,6 +51,14 @@ export const DateOffset = ({ name, label, defaultValue, onChange, variables = []
         const newValue = { ...defaultValue };
         newValue[settingName] = value;
 
+        if (settingName === "dateStrategy" && value === "now") {
+            if (newValue.dateSource === "custom") {
+                newValue.dateSource = "calendar";
+            }
+
+            delete newValue.customDateSource;
+        }
+
         if (onChange) {
             onChange(name, newValue);
         }

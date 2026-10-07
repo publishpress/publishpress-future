@@ -9,3 +9,16 @@
 .workflow-editor-dev-panel {
     background-color: #fffaf1;
 }
+
+.workflow-editor-share-summary-textarea textarea {
+    font-family: Menlo, Consolas, Monaco, monospace;
+    font-size: 12px;
+    line-height: 1.4;
+    white-space: pre;
+}
+
+.workflow-editor-share-summary-copy-feedback {
+    margin-left: 8px;
+    color: #1e1e1e;
+    font-size: 12px;
+}

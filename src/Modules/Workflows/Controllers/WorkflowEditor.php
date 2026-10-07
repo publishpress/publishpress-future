@@ -200,6 +200,11 @@ class WorkflowEditor implements InitializableInterface
         $postTermsModel = new PostTermModel();
         $postTerms = $postTermsModel->getAllTermsAsOptions();
 
+        $workflowPostTypeObject = get_post_type_object(Module::POST_TYPE_WORKFLOW);
+        $backButtonLabel = ($workflowPostTypeObject && ! empty($workflowPostTypeObject->labels->view_items))
+            ? $workflowPostTypeObject->labels->view_items
+            : __("Back", "post-expirator");
+
         wp_localize_script(
             "future_workflow_editor_script",
             "futureWorkflowEditor",
@@ -209,6 +214,12 @@ class WorkflowEditor implements InitializableInterface
                     "6.5",
                     ">="
                 ),
+                "isWP71OrLater" => version_compare(
+                    get_bloginfo("version"),
+                    "7.1-alpha",
+                    ">="
+                ),
+                "backButtonLabel" => $backButtonLabel,
                 "apiUrl" => rest_url("publishpress-future/v1"),
                 "pluginVersion" => PUBLISHPRESS_FUTURE_VERSION,
                 "assetsUrl" => PUBLISHPRESS_FUTURE_ASSETS_URL,

@@ -6,17 +6,20 @@ const RenderColumns = ({
     currentItemPath,
     currentItems,
     onClick,
-    setCurrentDescription,
     onDoubleClick,
+    onVariableHover,
+    onVariableHoverEnd,
     path = [],
-    setCurrentVariableId,
-    columnIndex
+    columnIndex,
+    renderLeafHint
 }) => {
     if (!currentItems) return null;
 
     const currentColumnIndex = path.length;
     const selectedItemIndex = currentItemPath[currentColumnIndex];
     let currentItem = processItemWithTypeHandler(currentItems[selectedItemIndex]);
+    const hasChildren = currentItem?.children && currentItem.children.length > 0;
+    const isFormItem = currentItem?.type === 'meta-key-input';
 
     return (
         <>
@@ -29,9 +32,9 @@ const RenderColumns = ({
                         item={item}
                         currentItemPath={currentItemPath}
                         onClick={onClick}
-                        setCurrentDescription={setCurrentDescription}
-                        setCurrentVariableId={setCurrentVariableId}
                         onDoubleClick={onDoubleClick}
+                        onVariableHover={onVariableHover}
+                        onVariableHoverEnd={onVariableHoverEnd}
                         path={[...path, index]}
                         index={index}
                         columnIndex={currentColumnIndex}
@@ -39,16 +42,23 @@ const RenderColumns = ({
                 })}
             </div>
 
-            {selectedItemIndex !== undefined && currentItem?.children && (
+            {selectedItemIndex !== undefined && hasChildren && (
                 <RenderColumns
                     currentItemPath={currentItemPath}
                     currentItems={currentItem.children}
                     path={[...path, selectedItemIndex]}
                     onClick={onClick}
-                    setCurrentDescription={setCurrentDescription}
-                    setCurrentVariableId={setCurrentVariableId}
-                onDoubleClick={onDoubleClick}
+                    onDoubleClick={onDoubleClick}
+                    onVariableHover={onVariableHover}
+                    onVariableHoverEnd={onVariableHoverEnd}
+                    renderLeafHint={renderLeafHint}
                 />
+            )}
+
+            {selectedItemIndex !== undefined && currentItem && !hasChildren && !isFormItem && renderLeafHint && (
+                <div className="column column-leaf-hint">
+                    {renderLeafHint(currentItem)}
+                </div>
             )}
         </>
     );
@@ -56,9 +66,10 @@ const RenderColumns = ({
 
 export const ColumnsContainer = ({
     items,
-    setCurrentDescription,
     onDoubleClick,
-    setCurrentVariableId
+    onVariableHover,
+    onVariableHoverEnd,
+    renderLeafHint
 }) => {
     const [currentItemPath, setCurrentItemPath] = useState([]);
 
@@ -84,8 +95,9 @@ export const ColumnsContainer = ({
                 currentItemPath={currentItemPath}
                 onClick={onClick}
                 onDoubleClick={onDoubleClick}
-                setCurrentDescription={setCurrentDescription}
-                setCurrentVariableId={setCurrentVariableId}
+                onVariableHover={onVariableHover}
+                onVariableHoverEnd={onVariableHoverEnd}
+                renderLeafHint={renderLeafHint}
             />
         </div>
     );

@@ -2,7 +2,6 @@ import { createStore } from './data';
 import { FutureActionPanelBlockEditor } from './components';
 import { select } from '@wordpress/data';
 import { registerPlugin } from '@wordpress/plugins';
-import { useEffect } from '@wordpress/element';
 
 const {
     actionsSelectOptions,
@@ -21,23 +20,22 @@ const {
 
 const storeName = 'publishpress-future/future-action';
 
+if (!select(storeName)) {
+    createStore({
+        name: storeName,
+        defaultState: {
+            postId: publishpressFutureBlockEditorConfig.postId,
+            autoEnable: postTypeDefaultConfig.autoEnable,
+            action: postTypeDefaultConfig.expireType,
+            newStatus: postTypeDefaultConfig.newStatus,
+            date: defaultDate,
+            taxonomy: postTypeDefaultConfig.taxonomy,
+            terms: postTypeDefaultConfig.terms,
+        }
+    });
+}
+
 const BlockEditorFutureActionPlugin = () => {
-
-    useEffect(() => {
-        createStore({
-            name: storeName,
-            defaultState: {
-                postId: publishpressFutureBlockEditorConfig.postId,
-                autoEnable: postTypeDefaultConfig.autoEnable,
-                action: postTypeDefaultConfig.expireType,
-                newStatus: postTypeDefaultConfig.newStatus,
-                date: defaultDate,
-                taxonomy: postTypeDefaultConfig.taxonomy,
-                terms: postTypeDefaultConfig.terms,
-            }
-        });
-    }, []);
-
     return (
         <FutureActionPanelBlockEditor
             postType={select('core/editor').getCurrentPostType()}

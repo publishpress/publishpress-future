@@ -15,6 +15,7 @@ import NodeDataFlowPanel from "./node-data-flow-panel";
 import ObjectGroupIcon from "../icons/object-group";
 import LinesLeaningIcon from "../icons/lines-leaning";
 import NodeDevInfoPanel from "../node-dev-info-panel";
+import NodeShareSummaryPanel from "../node-share-summary";
 import useScrollToTop from "../scrolled-to-top";
 import { getExpandedStepScopedVariables } from "../../utils";
 
@@ -152,6 +153,7 @@ export const NodeInspector = () => {
                         <>
                             <NodeDataFlowPanel inputSchema={mappedNodeInputSchema} outputSchema={mappedNodeOutputSchema} stepScopedVariables={stepScopedVariables} />
                             <NodeDevInfoPanel node={selectedNode} nodeType={nodeType} />
+                            <NodeShareSummaryPanel node={selectedNode} nodeType={nodeType} />
                         </>
                     )}
 

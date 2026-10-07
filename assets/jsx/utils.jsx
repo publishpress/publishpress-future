@@ -103,3 +103,62 @@ export function stripTags(string) {
     div.textContent = string;
     return div.innerHTML;
 }
+
+const normalizeTerms = (terms) => {
+    if (!Array.isArray(terms)) {
+        return [];
+    }
+
+    return [...terms].map((term) => Number(term)).sort((a, b) => a - b);
+};
+
+export const normalizeFutureActionExtraData = (extraData) => {
+    if (
+        extraData === null ||
+        extraData === undefined ||
+        (Array.isArray(extraData) && extraData.length === 0)
+    ) {
+        return {};
+    }
+
+    if (
+        typeof extraData === 'object' &&
+        !Array.isArray(extraData) &&
+        Object.keys(extraData).length === 0
+    ) {
+        return {};
+    }
+
+    return extraData;
+};
+
+const normalizeFutureActionAttribute = (attribute) => {
+    if (!attribute || typeof attribute !== 'object') {
+        return {
+            enabled: false,
+            action: '',
+            newStatus: '',
+            date: '',
+            terms: [],
+            taxonomy: '',
+            extraData: {},
+        };
+    }
+
+    return {
+        enabled: Boolean(attribute.enabled),
+        action: attribute.action || '',
+        newStatus: attribute.newStatus || '',
+        date: attribute.date || '',
+        terms: normalizeTerms(attribute.terms),
+        taxonomy: attribute.taxonomy || '',
+        extraData: normalizeFutureActionExtraData(attribute.extraData),
+    };
+};
+
+export const futureActionAttributesEqual = (proposed, current) => {
+    const normalizedProposed = normalizeFutureActionAttribute(proposed);
+    const normalizedCurrent = normalizeFutureActionAttribute(current);
+
+    return JSON.stringify(normalizedProposed) === JSON.stringify(normalizedCurrent);
+};

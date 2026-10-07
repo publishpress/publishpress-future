@@ -200,7 +200,7 @@ class WorkflowModel implements WorkflowModelInterface
 
         $this->setStatus(self::STATUS_ENABLED);
         $this->post->post_date = current_time('mysql');
-        $this->post->post_date_gmt = current_time('mysql');
+        $this->post->post_date_gmt = current_time('mysql', true);
         $this->save();
     }
 

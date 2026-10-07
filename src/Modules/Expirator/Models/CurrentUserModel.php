@@ -13,12 +13,12 @@ defined('ABSPATH') or die('Direct access not allowed.');
 
 class CurrentUserModel extends FrameworkCurrentUserModel
 {
-    public function userCanExpirePosts()
+    /**
+     * @return bool
+     */
+    public function userCanExpirePosts(): bool
     {
-        $user = $this->getUserInstance();
-
-        return is_object($user)
-            && $user->has_cap(Capabilities::EXPIRE_POST);
+        return current_user_can(Capabilities::EXPIRE_POST);
     }
 
     public function userCanEditPost($postId)

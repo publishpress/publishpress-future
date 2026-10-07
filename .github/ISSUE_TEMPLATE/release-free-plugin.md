@@ -88,10 +88,12 @@ Before releasing the Free plugin, ensure every step in this checklist is complet
 **Build & Test**
 
 - [ ] Build the release package with `composer build` (generates the package in `./dist`)
+  - For a **stable** `x.y.z` version, `composer build` also runs `check:release-if-stable` after packing
+- [ ] Run `composer check:release` and confirm it passes (stable version consistency: plugin header, version constant, Stable tag, CHANGELOG, and dist package; if `package.json` has a `version` field it must match; also fails if this version is already published on WordPress.org)
 - [ ] Review the `composer build` output and confirm the package file list is correct
   - Ensure configuration and development-only files are excluded from the final package
   - If needed, update `.rsync-filters-pre-build`, `.rsync-filters-post-build`, `.distignore`, and `.gitattributes`
-  - Shared pack excludes live in `vendor/puublishpress/dev-workspace/.rsync-filters-pre-build.default` and related files; use `composer run pack:dir:with-debug` only when the package must include source maps or JSX sources
+  - Shared pack excludes live in `vendor/publishpress/dev-workspace/.rsync-filters-pre-build.default` and related files; use `composer run pack:dir:with-debug` only when the package must include source maps or JSX sources
 - [ ] Share the generated package with the team for testing via the `#testing` Slack channel
 
 ### Release & Deployment
@@ -99,11 +101,14 @@ Before releasing the Free plugin, ensure every step in this checklist is complet
 - [ ] Open a PR and merge `release-<version>` into `master`
 - [ ] Merge `master` back into `development`
 - [ ] Create the GitHub release using a tag from `master`
-  - This triggers the automatic SVN deployment
+  - Tag the merged `master` commit. Do not move the tag after the deploy workflow has started.
+  - The tag name must match the plugin `Version` header (stable `x.y.z` only).
+  - This triggers the automatic SVN deployment. The workflow fails if the tag is a prerelease, the commit is not on `master`, or the built package version does not match the tag.
 
 ### Post-Release Validation
 
 - [ ] Monitor [GitHub Actions](https://github.com/publishpress/publishpress-future/actions) and confirm all release and deployment workflows complete successfully
+- [ ] Run `composer check:wporg` and confirm the live WordPress.org ZIP, Stable tag, checksums, and plugin page match `<version>` (update-check may WARN during the Protect the Shire cooldown — that is OK)
 - [ ] Verify the [WordPress.org plugin page](https://wordpress.org/plugins/post-expirator/) shows the new version and updated release information
 - [ ] Test updating to the new version on a staging site and run a basic smoke test of core functionality
 - [ ] Close the GitHub milestone for `<version>`

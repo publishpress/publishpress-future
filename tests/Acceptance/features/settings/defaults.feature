@@ -23,6 +23,7 @@ Feature: Settings - Tab Defaults
   | date_format |
   | l F jS, Y   |
   | Y-m-d       |
+  | l \d. j F Y |
 
   Scenario Outline: Custom Time format
     Given post "apost" exists

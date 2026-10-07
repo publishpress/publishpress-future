@@ -42,4 +42,6 @@
         <exclude name="WordPress.DB.PreparedSQLPlaceholders.LikeWithoutWildcards"/>
         <exclude name="PluginCheck.CodeAnalysis.DiscouragedFunctions.load_plugin_textdomainFound"/>
     </rule>
+    <exclude-pattern>/\.web/</exclude-pattern>
+    <exclude-pattern>/\.ddev/</exclude-pattern>
 </ruleset>

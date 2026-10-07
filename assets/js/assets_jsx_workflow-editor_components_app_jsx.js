@@ -167,6 +167,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   compact: () => (/* binding */ compact),
 /* harmony export */   debugLogFactory: () => (/* binding */ debugLogFactory),
+/* harmony export */   futureActionAttributesEqual: () => (/* binding */ futureActionAttributesEqual),
 /* harmony export */   getActionSettingsFromColumnData: () => (/* binding */ getActionSettingsFromColumnData),
 /* harmony export */   getElementByName: () => (/* binding */ getElementByName),
 /* harmony export */   getFieldByName: () => (/* binding */ getFieldByName),
@@ -175,8 +176,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   getFieldValueByNameAsBool: () => (/* binding */ getFieldValueByNameAsBool),
 /* harmony export */   isGutenbergEnabled: () => (/* binding */ isGutenbergEnabled),
 /* harmony export */   isNumber: () => (/* binding */ isNumber),
+/* harmony export */   normalizeFutureActionExtraData: () => (/* binding */ normalizeFutureActionExtraData),
 /* harmony export */   stripTags: () => (/* binding */ stripTags)
 /* harmony export */ });
+function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
+function _arrayWithoutHoles(r) { if (Array.isArray(r)) return _arrayLikeToArray(r); }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 var compact = function compact(array) {
   if (!array) {
@@ -268,6 +276,52 @@ function stripTags(string) {
   div.textContent = string;
   return div.innerHTML;
 }
+var normalizeTerms = function normalizeTerms(terms) {
+  if (!Array.isArray(terms)) {
+    return [];
+  }
+  return _toConsumableArray(terms).map(function (term) {
+    return Number(term);
+  }).sort(function (a, b) {
+    return a - b;
+  });
+};
+var normalizeFutureActionExtraData = function normalizeFutureActionExtraData(extraData) {
+  if (extraData === null || extraData === undefined || Array.isArray(extraData) && extraData.length === 0) {
+    return {};
+  }
+  if (_typeof(extraData) === 'object' && !Array.isArray(extraData) && Object.keys(extraData).length === 0) {
+    return {};
+  }
+  return extraData;
+};
+var normalizeFutureActionAttribute = function normalizeFutureActionAttribute(attribute) {
+  if (!attribute || _typeof(attribute) !== 'object') {
+    return {
+      enabled: false,
+      action: '',
+      newStatus: '',
+      date: '',
+      terms: [],
+      taxonomy: '',
+      extraData: {}
+    };
+  }
+  return {
+    enabled: Boolean(attribute.enabled),
+    action: attribute.action || '',
+    newStatus: attribute.newStatus || '',
+    date: attribute.date || '',
+    terms: normalizeTerms(attribute.terms),
+    taxonomy: attribute.taxonomy || '',
+    extraData: normalizeFutureActionExtraData(attribute.extraData)
+  };
+};
+var futureActionAttributesEqual = function futureActionAttributesEqual(proposed, current) {
+  var normalizedProposed = normalizeFutureActionAttribute(proposed);
+  var normalizedCurrent = normalizeFutureActionAttribute(current);
+  return JSON.stringify(normalizedProposed) === JSON.stringify(normalizedCurrent);
+};
 
 /***/ },
 
@@ -2306,6 +2360,12 @@ var DateOffset = function DateOffset(_ref) {
       value = _ref2.value;
     var newValue = _objectSpread({}, defaultValue);
     newValue[settingName] = value;
+    if (settingName === "dateStrategy" && value === "now") {
+      if (newValue.dateSource === "custom") {
+        newValue.dateSource = "calendar";
+      }
+      delete newValue.customDateSource;
+    }
     if (onChange) {
       onChange(name, newValue);
     }
@@ -2770,9 +2830,9 @@ var ColumnItemVariable = function ColumnItemVariable(_ref2) {
   var item = _ref2.item,
     currentItemPath = _ref2.currentItemPath,
     _onClick2 = _ref2.onClick,
-    setCurrentDescription = _ref2.setCurrentDescription,
-    setCurrentVariableId = _ref2.setCurrentVariableId,
     _onDoubleClick = _ref2.onDoubleClick,
+    onVariableHover = _ref2.onVariableHover,
+    onVariableHoverEnd = _ref2.onVariableHoverEnd,
     _ref2$path = _ref2.path,
     path = _ref2$path === void 0 ? [] : _ref2$path,
     index = _ref2.index,
@@ -2780,10 +2840,6 @@ var ColumnItemVariable = function ColumnItemVariable(_ref2) {
   var hasChildren = item.children && item.children.length > 0;
   var currentColumnIndex = path.length - 1;
   var selectedItemIndex = currentItemPath[currentColumnIndex];
-  var onMouseEnter = function onMouseEnter() {
-    setCurrentDescription("".concat(item.description));
-    setCurrentVariableId(item.id);
-  };
   var stepSlug = item.name.split('.')[0];
   var stepSlugLabel = stepSlug ? "(".concat(stepSlug, ")") : '';
   var showStepSlugLabel = columnIndex === 0 && stepSlug !== 'global';
@@ -2792,9 +2848,14 @@ var ColumnItemVariable = function ColumnItemVariable(_ref2) {
     onClick: function onClick() {
       return _onClick2(path, currentColumnIndex, index);
     },
-    onMouseEnter: onMouseEnter,
     onDoubleClick: function onDoubleClick() {
       return _onDoubleClick(item);
+    },
+    onMouseEnter: function onMouseEnter(e) {
+      return onVariableHover === null || onVariableHover === void 0 ? void 0 : onVariableHover(item, e);
+    },
+    onMouseLeave: function onMouseLeave() {
+      return onVariableHoverEnd === null || onVariableHoverEnd === void 0 ? void 0 : onVariableHoverEnd();
     }
   }, item.label, " ", showStepSlugLabel ? /*#__PURE__*/React.createElement("span", {
     className: "column-item-step-slug"
@@ -2804,9 +2865,9 @@ var ColumnItem = function ColumnItem(_ref3) {
   var item = _ref3.item,
     currentItemPath = _ref3.currentItemPath,
     onClick = _ref3.onClick,
-    setCurrentDescription = _ref3.setCurrentDescription,
-    setCurrentVariableId = _ref3.setCurrentVariableId,
     onDoubleClick = _ref3.onDoubleClick,
+    onVariableHover = _ref3.onVariableHover,
+    onVariableHoverEnd = _ref3.onVariableHoverEnd,
     _ref3$path = _ref3.path,
     path = _ref3$path === void 0 ? [] : _ref3$path,
     index = _ref3.index,
@@ -2821,9 +2882,9 @@ var ColumnItem = function ColumnItem(_ref3) {
     item: item,
     currentItemPath: currentItemPath,
     onClick: onClick,
-    setCurrentDescription: setCurrentDescription,
-    setCurrentVariableId: setCurrentVariableId,
     onDoubleClick: onDoubleClick,
+    onVariableHover: onVariableHover,
+    onVariableHoverEnd: onVariableHoverEnd,
     path: path,
     index: index,
     columnIndex: columnIndex
@@ -2865,16 +2926,19 @@ var RenderColumns = function RenderColumns(_ref) {
   var currentItemPath = _ref.currentItemPath,
     currentItems = _ref.currentItems,
     onClick = _ref.onClick,
-    setCurrentDescription = _ref.setCurrentDescription,
     onDoubleClick = _ref.onDoubleClick,
+    onVariableHover = _ref.onVariableHover,
+    onVariableHoverEnd = _ref.onVariableHoverEnd,
     _ref$path = _ref.path,
     path = _ref$path === void 0 ? [] : _ref$path,
-    setCurrentVariableId = _ref.setCurrentVariableId,
-    columnIndex = _ref.columnIndex;
+    columnIndex = _ref.columnIndex,
+    renderLeafHint = _ref.renderLeafHint;
   if (!currentItems) return null;
   var currentColumnIndex = path.length;
   var selectedItemIndex = currentItemPath[currentColumnIndex];
   var currentItem = (0,_type_handlers__WEBPACK_IMPORTED_MODULE_2__.processItemWithTypeHandler)(currentItems[selectedItemIndex]);
+  var hasChildren = (currentItem === null || currentItem === void 0 ? void 0 : currentItem.children) && currentItem.children.length > 0;
+  var isFormItem = (currentItem === null || currentItem === void 0 ? void 0 : currentItem.type) === 'meta-key-input';
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
     className: "column",
     key: "column-".concat(path.join('-'))
@@ -2885,28 +2949,32 @@ var RenderColumns = function RenderColumns(_ref) {
       item: item,
       currentItemPath: currentItemPath,
       onClick: onClick,
-      setCurrentDescription: setCurrentDescription,
-      setCurrentVariableId: setCurrentVariableId,
       onDoubleClick: onDoubleClick,
+      onVariableHover: onVariableHover,
+      onVariableHoverEnd: onVariableHoverEnd,
       path: [].concat(_toConsumableArray(path), [index]),
       index: index,
       columnIndex: currentColumnIndex
     });
-  })), selectedItemIndex !== undefined && (currentItem === null || currentItem === void 0 ? void 0 : currentItem.children) && /*#__PURE__*/React.createElement(RenderColumns, {
+  })), selectedItemIndex !== undefined && hasChildren && /*#__PURE__*/React.createElement(RenderColumns, {
     currentItemPath: currentItemPath,
     currentItems: currentItem.children,
     path: [].concat(_toConsumableArray(path), [selectedItemIndex]),
     onClick: onClick,
-    setCurrentDescription: setCurrentDescription,
-    setCurrentVariableId: setCurrentVariableId,
-    onDoubleClick: onDoubleClick
-  }));
+    onDoubleClick: onDoubleClick,
+    onVariableHover: onVariableHover,
+    onVariableHoverEnd: onVariableHoverEnd,
+    renderLeafHint: renderLeafHint
+  }), selectedItemIndex !== undefined && currentItem && !hasChildren && !isFormItem && renderLeafHint && /*#__PURE__*/React.createElement("div", {
+    className: "column column-leaf-hint"
+  }, renderLeafHint(currentItem)));
 };
 var ColumnsContainer = function ColumnsContainer(_ref2) {
   var items = _ref2.items,
-    setCurrentDescription = _ref2.setCurrentDescription,
     onDoubleClick = _ref2.onDoubleClick,
-    setCurrentVariableId = _ref2.setCurrentVariableId;
+    onVariableHover = _ref2.onVariableHover,
+    onVariableHoverEnd = _ref2.onVariableHoverEnd,
+    renderLeafHint = _ref2.renderLeafHint;
   var _useState = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
     _useState2 = _slicedToArray(_useState, 2),
     currentItemPath = _useState2[0],
@@ -2930,8 +2998,9 @@ var ColumnsContainer = function ColumnsContainer(_ref2) {
     currentItemPath: currentItemPath,
     onClick: onClick,
     onDoubleClick: onDoubleClick,
-    setCurrentDescription: setCurrentDescription,
-    setCurrentVariableId: setCurrentVariableId
+    onVariableHover: onVariableHover,
+    onVariableHoverEnd: onVariableHoverEnd,
+    renderLeafHint: renderLeafHint
   }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ColumnsContainer);
@@ -2994,60 +3063,74 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
-var ExpressionBuilder = function ExpressionBuilder(_ref) {
-  var name = _ref.name,
-    _ref$label = _ref.label,
-    label = _ref$label === void 0 ? '' : _ref$label,
-    defaultValue = _ref.defaultValue,
-    onChange = _ref.onChange,
-    _ref$variables = _ref.variables,
-    variables = _ref$variables === void 0 ? [] : _ref$variables,
-    _ref$propertyName = _ref.propertyName,
-    propertyName = _ref$propertyName === void 0 ? "expression" : _ref$propertyName,
-    _ref$settings = _ref.settings,
-    settings = _ref$settings === void 0 ? {} : _ref$settings,
-    _ref$description = _ref.description,
-    description = _ref$description === void 0 ? '' : _ref$description,
-    _ref$isInline = _ref.isInline,
-    isInline = _ref$isInline === void 0 ? false : _ref$isInline,
-    _ref$readOnlyPreview = _ref.readOnlyPreview,
-    readOnlyPreview = _ref$readOnlyPreview === void 0 ? false : _ref$readOnlyPreview,
-    _ref$singleVariableOn = _ref.singleVariableOnly,
-    singleVariableOnly = _ref$singleVariableOn === void 0 ? false : _ref$singleVariableOn,
-    _ref$wrapOnPreview = _ref.wrapOnPreview,
-    wrapOnPreview = _ref$wrapOnPreview === void 0 ? false : _ref$wrapOnPreview,
-    _ref$wrapOnEditor = _ref.wrapOnEditor,
-    wrapOnEditor = _ref$wrapOnEditor === void 0 ? false : _ref$wrapOnEditor,
-    _ref$oneLinePreview = _ref.oneLinePreview,
-    oneLinePreview = _ref$oneLinePreview === void 0 ? false : _ref$oneLinePreview,
-    _ref$helpUrl = _ref.helpUrl,
-    helpUrl = _ref$helpUrl === void 0 ? '' : _ref$helpUrl,
-    _ref$autoComplete = _ref.autoComplete,
-    autoComplete = _ref$autoComplete === void 0 ? true : _ref$autoComplete,
-    _ref$completers = _ref.completers,
-    completers = _ref$completers === void 0 ? [] : _ref$completers,
-    _ref$buttonText = _ref.buttonText,
-    buttonText = _ref$buttonText === void 0 ? null : _ref$buttonText;
+var HOVER_HINT_DELAY = 700;
+var VariableHoverHint = function VariableHoverHint(_ref) {
+  var hint = _ref.hint;
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.createPortal)( /*#__PURE__*/React.createElement("div", {
+    className: "expression-builder-variable-hover-hint",
+    style: {
+      top: hint.top,
+      left: hint.left
+    }
+  }, /*#__PURE__*/React.createElement("code", null, hint.item.id), hint.item.description ? " ".concat(hint.item.description) : ''), document.body);
+};
+var ExpressionBuilder = function ExpressionBuilder(_ref2) {
+  var name = _ref2.name,
+    _ref2$label = _ref2.label,
+    label = _ref2$label === void 0 ? '' : _ref2$label,
+    defaultValue = _ref2.defaultValue,
+    onChange = _ref2.onChange,
+    _ref2$variables = _ref2.variables,
+    variables = _ref2$variables === void 0 ? [] : _ref2$variables,
+    _ref2$propertyName = _ref2.propertyName,
+    propertyName = _ref2$propertyName === void 0 ? "expression" : _ref2$propertyName,
+    _ref2$settings = _ref2.settings,
+    settings = _ref2$settings === void 0 ? {} : _ref2$settings,
+    _ref2$description = _ref2.description,
+    description = _ref2$description === void 0 ? '' : _ref2$description,
+    _ref2$isInline = _ref2.isInline,
+    isInline = _ref2$isInline === void 0 ? false : _ref2$isInline,
+    _ref2$readOnlyPreview = _ref2.readOnlyPreview,
+    readOnlyPreview = _ref2$readOnlyPreview === void 0 ? false : _ref2$readOnlyPreview,
+    _ref2$singleVariableO = _ref2.singleVariableOnly,
+    singleVariableOnly = _ref2$singleVariableO === void 0 ? false : _ref2$singleVariableO,
+    _ref2$wrapOnPreview = _ref2.wrapOnPreview,
+    wrapOnPreview = _ref2$wrapOnPreview === void 0 ? false : _ref2$wrapOnPreview,
+    _ref2$wrapOnEditor = _ref2.wrapOnEditor,
+    wrapOnEditor = _ref2$wrapOnEditor === void 0 ? false : _ref2$wrapOnEditor,
+    _ref2$oneLinePreview = _ref2.oneLinePreview,
+    oneLinePreview = _ref2$oneLinePreview === void 0 ? false : _ref2$oneLinePreview,
+    _ref2$helpUrl = _ref2.helpUrl,
+    helpUrl = _ref2$helpUrl === void 0 ? '' : _ref2$helpUrl,
+    _ref2$autoComplete = _ref2.autoComplete,
+    autoComplete = _ref2$autoComplete === void 0 ? true : _ref2$autoComplete,
+    _ref2$completers = _ref2.completers,
+    completers = _ref2$completers === void 0 ? [] : _ref2$completers,
+    _ref2$buttonText = _ref2.buttonText,
+    buttonText = _ref2$buttonText === void 0 ? null : _ref2$buttonText;
   var editorFullRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useRef)(null);
   var editorSmallRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useRef)(null);
-  var _useState = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)(),
+  var hoverHintTimeoutRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useRef)(null);
+  var _useState = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)(false),
     _useState2 = _slicedToArray(_useState, 2),
-    currentDescription = _useState2[0],
-    setCurrentDescription = _useState2[1];
-  var _useState3 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)(),
+    isOpen = _useState2[0],
+    setIsOpen = _useState2[1];
+  var _useState3 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)(null),
     _useState4 = _slicedToArray(_useState3, 2),
-    currentVariableId = _useState4[0],
-    setCurrentVariableId = _useState4[1];
-  var _useState5 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)(false),
-    _useState6 = _slicedToArray(_useState5, 2),
-    isOpen = _useState6[0],
-    setIsOpen = _useState6[1];
+    hoverHint = _useState4[0],
+    setHoverHint = _useState4[1];
+  var clearHoverHintTimeout = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useCallback)(function () {
+    if (hoverHintTimeoutRef.current) {
+      clearTimeout(hoverHintTimeoutRef.current);
+      hoverHintTimeoutRef.current = null;
+    }
+  }, []);
   if (!defaultValue) {
     defaultValue = {};
   }
-  var onChangeSetting = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useCallback)(function (_ref2) {
-    var settingName = _ref2.settingName,
-      value = _ref2.value;
+  var onChangeSetting = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useCallback)(function (_ref3) {
+    var settingName = _ref3.settingName,
+      value = _ref3.value;
     var newValue = _objectSpread({}, defaultValue);
     newValue[settingName] = value;
     if (onChange) {
@@ -3069,8 +3152,27 @@ var ExpressionBuilder = function ExpressionBuilder(_ref) {
     }
   }, [defaultValue]);
   var onClose = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useCallback)(function () {
+    clearHoverHintTimeout();
     setIsOpen(false);
-  }, [setIsOpen]);
+    setHoverHint(null);
+  }, [clearHoverHintTimeout, setIsOpen]);
+  var onVariableHover = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useCallback)(function (item, event) {
+    clearHoverHintTimeout();
+    var rect = event.currentTarget.getBoundingClientRect();
+    var hint = {
+      item: item,
+      top: rect.top,
+      left: rect.right + 8
+    };
+    hoverHintTimeoutRef.current = setTimeout(function () {
+      setHoverHint(hint);
+      hoverHintTimeoutRef.current = null;
+    }, HOVER_HINT_DELAY);
+  }, [clearHoverHintTimeout]);
+  var onVariableHoverEnd = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useCallback)(function () {
+    clearHoverHintTimeout();
+    setHoverHint(null);
+  }, [clearHoverHintTimeout]);
   var onDoubleClick = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useCallback)(function (item) {
     if (editorFullRef.current) {
       var editor = editorFullRef.current.editor;
@@ -3086,9 +3188,24 @@ var ExpressionBuilder = function ExpressionBuilder(_ref) {
       }
     }
   }, [editorFullRef, singleVariableOnly]);
+  var renderLeafHint = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useCallback)(function (item) {
+    return /*#__PURE__*/React.createElement("div", {
+      className: "column-leaf-hint-content"
+    }, /*#__PURE__*/React.createElement("p", null, singleVariableOnly ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Click Select to use this variable.", "post-expirator") : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("The variable will be inserted at the current cursor position.", "post-expirator")), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
+      variant: "secondary",
+      onClick: function onClick() {
+        return onDoubleClick(item);
+      }
+    }, singleVariableOnly ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Select", "post-expirator") : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Insert", "post-expirator")));
+  }, [singleVariableOnly, onDoubleClick]);
   var editorProps = {
     $blockScrolling: true
   };
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useEffect)(function () {
+    return function () {
+      return clearHoverHintTimeout();
+    };
+  }, [clearHoverHintTimeout]);
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useEffect)(function () {
     if (wrapOnPreview && editorSmallRef.current) {
       editorSmallRef.current.editor.setOption("indentedSoftWrap", false);
@@ -3197,20 +3314,17 @@ var ExpressionBuilder = function ExpressionBuilder(_ref) {
   }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.__experimentalHeading, {
     level: 2,
     className: "components-truncate components-text components-heading block-editor-inspector-popover-header__heading"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Variables", "post-expirator")), singleVariableOnly && /*#__PURE__*/React.createElement("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Double-click on a variable to select it.", "post-expirator")), !singleVariableOnly && /*#__PURE__*/React.createElement("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Double-click on any variable to add it to your expression.", "post-expirator")), currentDescription && /*#__PURE__*/React.createElement("p", {
-    className: "description margin-top"
-  }, /*#__PURE__*/React.createElement("code", {
-    className: "expression-builder-variable-name"
-  }, currentVariableId), " ", currentDescription), !currentDescription && /*#__PURE__*/React.createElement("p", {
-    className: "description margin-top"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Hover over a variable to see its description.", "post-expirator")), /*#__PURE__*/React.createElement(_columns_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Variables", "post-expirator")), singleVariableOnly && /*#__PURE__*/React.createElement("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Double-click on a variable to select it.", "post-expirator")), !singleVariableOnly && /*#__PURE__*/React.createElement("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Double-click on any variable to insert it into your expression.", "post-expirator")), /*#__PURE__*/React.createElement(_columns_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
     items: variables,
-    setCurrentDescription: setCurrentDescription,
-    setCurrentVariableId: setCurrentVariableId,
-    onDoubleClick: onDoubleClick
+    onDoubleClick: onDoubleClick,
+    onVariableHover: onVariableHover,
+    onVariableHoverEnd: onVariableHoverEnd,
+    renderLeafHint: renderLeafHint
   }))), /*#__PURE__*/React.createElement(_modal_footer__WEBPACK_IMPORTED_MODULE_11__.ModalFooter, {
     onClose: onClose
-  })));
+  })), hoverHint && isOpen && /*#__PURE__*/React.createElement(VariableHoverHint, {
+    hint: hoverHint
+  }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ExpressionBuilder);
 
@@ -8009,10 +8123,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_url__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/url */ "@wordpress/url");
 /* harmony import */ var _wordpress_url__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_url__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/wordpress.js");
-/* harmony import */ var _workflow_store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./workflow-store */ "./assets/jsx/workflow-editor/components/workflow-store/index.jsx");
-/* harmony import */ var _editor_store__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./editor-store */ "./assets/jsx/workflow-editor/components/editor-store/index.jsx");
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../constants */ "./assets/jsx/workflow-editor/constants.jsx");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/chevron-left.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/chevron-right.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/wordpress.js");
+/* harmony import */ var _workflow_store__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./workflow-store */ "./assets/jsx/workflow-editor/components/workflow-store/index.jsx");
+/* harmony import */ var _editor_store__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./editor-store */ "./assets/jsx/workflow-editor/components/editor-store/index.jsx");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../constants */ "./assets/jsx/workflow-editor/constants.jsx");
 
 
 
@@ -8021,12 +8137,23 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var backButtonLabel = window.futureWorkflowEditor.backButtonLabel;
+function isWP71BackButton() {
+  var _window$futureWorkflo;
+  if ((_window$futureWorkflo = window.futureWorkflowEditor) !== null && _window$futureWorkflo !== void 0 && _window$futureWorkflo.isWP71OrLater) {
+    return true;
+  }
+  var bodyClass = document.body.className;
+
+  // branch-7-1, branch-7-2, version-7-1, etc. — NOT branch-7 alone (that's 7.0.x)
+  return /\bbranch-7-([1-9]|\d{2,})\b/.test(bodyClass) || /\bversion-7-([1-9]|\d{2,})\b/.test(bodyClass);
+}
 function FullscreenModeClose(_ref) {
   var showTooltip = _ref.showTooltip;
   var _useSelect = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_0__.useSelect)(function (select) {
-      var _select = select(_workflow_store__WEBPACK_IMPORTED_MODULE_5__.store),
+      var _select = select(_workflow_store__WEBPACK_IMPORTED_MODULE_7__.store),
         getPostType = _select.getPostType;
-      var _select2 = select(_editor_store__WEBPACK_IMPORTED_MODULE_6__.store),
+      var _select2 = select(_editor_store__WEBPACK_IMPORTED_MODULE_8__.store),
         isFeatureActive = _select2.isFeatureActive;
       return {
         isActive: isFeatureActive('fullscreenMode'),
@@ -8038,19 +8165,32 @@ function FullscreenModeClose(_ref) {
   if (!isActive || !postType) {
     return null;
   }
+  var backHref = (0,_wordpress_url__WEBPACK_IMPORTED_MODULE_3__.addQueryArgs)('edit.php', {
+    post_type: _constants__WEBPACK_IMPORTED_MODULE_9__.POST_TYPE
+  });
+  if (isWP71BackButton()) {
+    return /*#__PURE__*/React.createElement("div", {
+      className: "editor-header__back-button"
+    }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+      href: backHref,
+      label: backButtonLabel,
+      showTooltip: showTooltip !== null && showTooltip !== void 0 ? showTooltip : true,
+      tooltipPosition: "bottom",
+      icon: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.isRTL)() ? _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"] : _wordpress_icons__WEBPACK_IMPORTED_MODULE_4__["default"],
+      size: "compact"
+    }));
+  }
   var buttonIcon = /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     size: "36px",
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_4__["default"]
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"]
   });
   return /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__unstableMotion.div, {
     whileHover: "expand",
     className: "editor-header__back-button"
   }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     className: "edit-post-fullscreen-mode-close",
-    href: (0,_wordpress_url__WEBPACK_IMPORTED_MODULE_3__.addQueryArgs)('edit.php', {
-      post_type: _constants__WEBPACK_IMPORTED_MODULE_7__.POST_TYPE
-    }),
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Back', 'post-expirator'),
+    href: backHref,
+    label: backButtonLabel,
     showTooltip: showTooltip
   }, buttonIcon));
 }
@@ -10623,13 +10763,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _icons_object_group__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../icons/object-group */ "./assets/jsx/workflow-editor/components/icons/object-group.jsx");
 /* harmony import */ var _icons_lines_leaning__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../icons/lines-leaning */ "./assets/jsx/workflow-editor/components/icons/lines-leaning.jsx");
 /* harmony import */ var _node_dev_info_panel__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../node-dev-info-panel */ "./assets/jsx/workflow-editor/components/node-dev-info-panel/index.jsx");
-/* harmony import */ var _scrolled_to_top__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../scrolled-to-top */ "./assets/jsx/workflow-editor/components/scrolled-to-top/index.jsx");
+/* harmony import */ var _node_share_summary__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../node-share-summary */ "./assets/jsx/workflow-editor/components/node-share-summary/index.jsx");
+/* harmony import */ var _scrolled_to_top__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../scrolled-to-top */ "./assets/jsx/workflow-editor/components/scrolled-to-top/index.jsx");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
 function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+
 
 
 
@@ -10708,7 +10850,7 @@ var NodeInspector = function NodeInspector() {
       }
     });
   }
-  (0,_scrolled_to_top__WEBPACK_IMPORTED_MODULE_16__["default"])(sidebarRef, ".interface-interface-skeleton__sidebar");
+  (0,_scrolled_to_top__WEBPACK_IMPORTED_MODULE_17__["default"])(sidebarRef, ".interface-interface-skeleton__sidebar");
   return /*#__PURE__*/React.createElement("div", {
     ref: sidebarRef
   }, selectedElementsCount === 0 && /*#__PURE__*/React.createElement(_inspector_warning__WEBPACK_IMPORTED_MODULE_7__["default"], null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("No element selected.", "post-expirator")), selectedElementsCount > 1 && !onlyNodesSelected && !onlyEdgesSelected && /*#__PURE__*/React.createElement(_inspector_warning__WEBPACK_IMPORTED_MODULE_7__["default"], null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Multiple and different elements selected.", "post-expirator")), onlyNodesSelected && selectedElementsCount > 1 && /*#__PURE__*/React.createElement(_inspector_card__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -10734,6 +10876,9 @@ var NodeInspector = function NodeInspector() {
     outputSchema: mappedNodeOutputSchema,
     stepScopedVariables: stepScopedVariables
   }), /*#__PURE__*/React.createElement(_node_dev_info_panel__WEBPACK_IMPORTED_MODULE_15__["default"], {
+    node: selectedNode,
+    nodeType: nodeType
+  }), /*#__PURE__*/React.createElement(_node_share_summary__WEBPACK_IMPORTED_MODULE_16__["default"], {
     node: selectedNode,
     nodeType: nodeType
   })), /*#__PURE__*/React.createElement("div", {
@@ -11181,6 +11326,115 @@ var NodeSettingsPanel = function NodeSettingsPanel(_ref) {
   return /*#__PURE__*/React.createElement(React.Fragment, null, settingsPanels);
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (NodeSettingsPanel);
+
+/***/ },
+
+/***/ "./assets/jsx/workflow-editor/components/node-share-summary/index.jsx"
+/*!****************************************************************************!*\
+  !*** ./assets/jsx/workflow-editor/components/node-share-summary/index.jsx ***!
+  \****************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   NodeShareSummaryPanel: () => (/* binding */ NodeShareSummaryPanel),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _persistent_panel_body__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../persistent-panel-body */ "./assets/jsx/workflow-editor/components/persistent-panel-body/index.jsx");
+/* harmony import */ var _workflow_share_summary_generate_workflow_summary__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../workflow-share-summary/generate-workflow-summary */ "./assets/jsx/workflow-editor/components/workflow-share-summary/generate-workflow-summary.js");
+/* harmony import */ var _utils_copy_text_to_clipboard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../utils/copy-text-to-clipboard */ "./assets/jsx/workflow-editor/utils/copy-text-to-clipboard.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator.return && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, catch: function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t.return && (u = t.return(), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+
+
+
+
+var NodeShareSummaryPanel = function NodeShareSummaryPanel(_ref) {
+  var _node$data2, _node$data3, _node$data4, _node$data5, _node$data6;
+  var node = _ref.node,
+    nodeType = _ref.nodeType;
+  var _useState = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)(''),
+    _useState2 = _slicedToArray(_useState, 2),
+    copyFeedback = _useState2[0],
+    setCopyFeedback = _useState2[1];
+  var _useDispatch = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_2__.useDispatch)('core/notices'),
+    createSuccessNotice = _useDispatch.createSuccessNotice,
+    createErrorNotice = _useDispatch.createErrorNotice;
+  var settingsSignature = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useMemo)(function () {
+    var _node$data;
+    return JSON.stringify((node === null || node === void 0 || (_node$data = node.data) === null || _node$data === void 0 ? void 0 : _node$data.settings) || {});
+  }, [node === null || node === void 0 || (_node$data2 = node.data) === null || _node$data2 === void 0 ? void 0 : _node$data2.settings]);
+  var summaryText = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useMemo)(function () {
+    return (0,_workflow_share_summary_generate_workflow_summary__WEBPACK_IMPORTED_MODULE_5__.generateNodeSummaryText)({
+      node: node,
+      nodeType: nodeType
+    });
+  }, [node === null || node === void 0 ? void 0 : node.id, node === null || node === void 0 || (_node$data3 = node.data) === null || _node$data3 === void 0 ? void 0 : _node$data3.label, node === null || node === void 0 || (_node$data4 = node.data) === null || _node$data4 === void 0 ? void 0 : _node$data4.slug, node === null || node === void 0 || (_node$data5 = node.data) === null || _node$data5 === void 0 ? void 0 : _node$data5.name, node === null || node === void 0 || (_node$data6 = node.data) === null || _node$data6 === void 0 ? void 0 : _node$data6.elementaryType, settingsSignature, nodeType]);
+  var onCopySummary = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useCallback)( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+    return _regeneratorRuntime().wrap(function _callee$(_context) {
+      while (1) switch (_context.prev = _context.next) {
+        case 0:
+          _context.prev = 0;
+          _context.next = 3;
+          return (0,_utils_copy_text_to_clipboard__WEBPACK_IMPORTED_MODULE_6__.copyTextToClipboard)(summaryText);
+        case 3:
+          createSuccessNotice((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Step summary copied to clipboard.', 'post-expirator'), {
+            type: 'snackbar',
+            isDismissible: true
+          });
+          setCopyFeedback((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Copied!', 'post-expirator'));
+          _context.next = 11;
+          break;
+        case 7:
+          _context.prev = 7;
+          _context.t0 = _context["catch"](0);
+          createErrorNotice((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Unable to copy step summary. Please copy manually.', 'post-expirator'));
+          setCopyFeedback((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Copy failed', 'post-expirator'));
+        case 11:
+        case "end":
+          return _context.stop();
+      }
+    }, _callee, null, [[0, 7]]);
+  })), [summaryText, createSuccessNotice, createErrorNotice]);
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(_persistent_panel_body__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    className: "edit-post-post-status workflow-editor-dev-panel workflow-editor-share-summary-panel",
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Step Summary', 'post-expirator'),
+    initialOpen: true
+  }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelRow, null, /*#__PURE__*/React.createElement("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Copy this plain-text summary to share in conversations. It includes the step type and non-default settings.', 'post-expirator'))), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.TextareaControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Summary', 'post-expirator'),
+    value: summaryText,
+    readOnly: true,
+    rows: 12,
+    className: "workflow-editor-share-summary-textarea",
+    onChange: function onChange() {}
+  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
+    variant: "secondary",
+    onClick: onCopySummary,
+    disabled: !summaryText
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Copy to Clipboard', 'post-expirator')), copyFeedback && /*#__PURE__*/React.createElement("span", {
+    className: "workflow-editor-share-summary-copy-feedback"
+  }, copyFeedback))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (NodeShareSummaryPanel);
 
 /***/ },
 
@@ -12038,8 +12292,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var validator_lib_isInt__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! validator/lib/isInt */ "./node_modules/validator/lib/isInt.js");
 /* harmony import */ var validator_lib_isInt__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(validator_lib_isInt__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @wordpress/compose */ "./node_modules/@wordpress/compose/build-module/hooks/use-debounce/index.js");
-function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _objectDestructuringEmpty(t) { if (null == t) throw new TypeError("Cannot destructure " + t); }
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 
 
 
@@ -12053,6 +12307,42 @@ function _objectDestructuringEmpty(t) { if (null == t) throw new TypeError("Cann
 function isVariable(value) {
   var trimmedValue = value.trim();
   return trimmedValue.startsWith('{{') && trimmedValue.endsWith('}}');
+}
+function getNestedSettingValue(nodeSettings, fieldPath) {
+  if (!fieldPath) {
+    return undefined;
+  }
+  var fieldNames = fieldPath.split('.');
+  var value = nodeSettings;
+  for (var i = 0; i < fieldNames.length; i++) {
+    var _value;
+    value = (_value = value) === null || _value === void 0 ? void 0 : _value[fieldNames[i]];
+  }
+  return value;
+}
+function matchesCondition(nodeSettings, condition) {
+  var value = getNestedSettingValue(nodeSettings, condition.field);
+  if (condition.operator === 'in') {
+    return Array.isArray(condition.value) && condition.value.includes(value);
+  }
+  return value == condition.value;
+}
+function matchesRuleConditions(nodeSettings, ruleData) {
+  if (Array.isArray(ruleData === null || ruleData === void 0 ? void 0 : ruleData.conditions)) {
+    return ruleData.conditions.every(function (condition) {
+      return matchesCondition(nodeSettings, condition);
+    });
+  }
+  if (ruleData !== null && ruleData !== void 0 && ruleData.condition) {
+    return matchesCondition(nodeSettings, ruleData.condition);
+  }
+  return true;
+}
+function isEmptySettingValue(value) {
+  return value === '' || value === null || value === undefined || Array.isArray(value) && value.length === 0
+  // If the default value is an object with a rule, that is the default value
+  // and it was not set by the user yet.
+  || _typeof(value) === 'object' && value.rule;
 }
 var DEBOUNCE_TIME = 250;
 function NodeValidator(_ref) {
@@ -12341,35 +12631,15 @@ function NodeValidator(_ref) {
               return field.name === fieldNames[0];
             });
           })) === null || _settingsSchema$find === void 0 ? void 0 : _settingsSchema$find.label);
-          var settingValue = nodeSettings;
-          for (var i = 0; i < fieldNames.length; i++) {
-            var _settingValue;
-            settingValue = (_settingValue = settingValue) === null || _settingValue === void 0 ? void 0 : _settingValue[fieldNames[i]];
-          }
+          var settingValue = getNestedSettingValue(nodeSettings, fieldName);
           switch (rule) {
             case 'required':
-              if (ruleData !== null && ruleData !== void 0 && ruleData.condition) {
-                var conditionField = ruleData.condition.field;
-                var conditionValue = ruleData.condition.value;
-                var conditionSettingValue = nodeSettings;
-                for (var _i = 0; _i < conditionField.split('.').length; _i++) {
-                  var _conditionSettingValu;
-                  conditionSettingValue = (_conditionSettingValu = conditionSettingValue) === null || _conditionSettingValu === void 0 ? void 0 : _conditionSettingValu[conditionField.split('.')[_i]];
-                }
-                if (conditionSettingValue == conditionValue && (!settingValue || settingValue == '')) {
+              if (ruleData !== null && ruleData !== void 0 && ruleData.condition || ruleData !== null && ruleData !== void 0 && ruleData.conditions) {
+                if (matchesRuleConditions(nodeSettings, ruleData) && isEmptySettingValue(settingValue)) {
                   addNodeError(node.id, "".concat(fieldName, "-required-if"), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('The field %s is required.', 'post-expirator'), fieldLabel));
                 }
-              } else {
-                var isEmpty = function isEmpty(value) {
-                  return value === '' || value === null || value === undefined || Array.isArray(value) && value.length === 0
-                  // If the default value is an object with a rule, that is the default value
-                  // and it was not set by the user yet.
-                  || _typeof(value) === 'object' && value.rule;
-                };
-                if (isEmpty(settingValue)) {
-                  addNodeError(node.id, "".concat(fieldName, "-required"), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('The field %s is required.', 'post-expirator'), fieldLabel));
-                  break;
-                }
+              } else if (isEmptySettingValue(settingValue)) {
+                addNodeError(node.id, "".concat(fieldName, "-required"), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('The field %s is required.', 'post-expirator'), fieldLabel));
               }
               break;
             case 'dataType':
@@ -12385,8 +12655,8 @@ function NodeValidator(_ref) {
                 } else if (type === 'emailList') {
                   var emails = settingValue.split(',');
                   var email;
-                  for (var _i2 = 0; _i2 < emails.length; _i2++) {
-                    email = emails[_i2].trim();
+                  for (var i = 0; i < emails.length; i++) {
+                    email = emails[i].trim();
                     if (!validator_lib_isEmail__WEBPACK_IMPORTED_MODULE_6___default()(email) && !isVariable(email)) {
                       addNodeError(node.id, "".concat(fieldName, "-emailList"), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('The field %s must be a valid email address list separated by commas.', 'post-expirator'), fieldLabel));
                       break;
@@ -12398,8 +12668,8 @@ function NodeValidator(_ref) {
                   }
                 } else if (type === 'integerList') {
                   var integer;
-                  for (var _i3 = 0; _i3 < settingValue.length; _i3++) {
-                    integer = settingValue[_i3].trim();
+                  for (var _i = 0; _i < settingValue.length; _i++) {
+                    integer = settingValue[_i].trim();
                     if (!validator_lib_isInt__WEBPACK_IMPORTED_MODULE_7___default()(integer)) {
                       addNodeError(node.id, "".concat(fieldName, "-integerList"), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('The field %s must be an integer list separated by commas.', 'post-expirator'), fieldLabel));
                       break;
@@ -12456,6 +12726,9 @@ function NodeValidator(_ref) {
               }
             case 'hasVariableSyntax':
               {
+                if (!matchesRuleConditions(nodeSettings, ruleData)) {
+                  break;
+                }
                 if (!settingValue || settingValue === '') {
                   break;
                 }
@@ -14341,6 +14614,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_inspector__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../node-inspector */ "./assets/jsx/workflow-editor/components/node-inspector/index.jsx");
 /* harmony import */ var _editor_store__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../editor-store */ "./assets/jsx/workflow-editor/components/editor-store/index.jsx");
 /* harmony import */ var _workflow_debug_ray_panel__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../workflow-debug-ray-panel */ "./assets/jsx/workflow-editor/components/workflow-debug-ray-panel/index.jsx");
+/* harmony import */ var _workflow_share_summary__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../workflow-share-summary */ "./assets/jsx/workflow-editor/components/workflow-share-summary/index.jsx");
+
 
 
 
@@ -14391,7 +14666,7 @@ var SettingsSidebar = function SettingsSidebar() {
     toggleShortcut: keyboardShortcut,
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_2__["default"],
     isActiveByDefault: SIDEBAR_ACTIVE_BY_DEFAULT
-  }, sidebarName === _constants__WEBPACK_IMPORTED_MODULE_9__.SIDEBAR_WORKFLOW && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_workflow_summary__WEBPACK_IMPORTED_MODULE_10__.WorkflowSummary, null), isDeveloperModeEnabled && isRayDebugInstalled && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_workflow_debug_ray_panel__WEBPACK_IMPORTED_MODULE_13__["default"], null))), sidebarName === _constants__WEBPACK_IMPORTED_MODULE_9__.SIDEBAR_NODE_EDGE && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_node_inspector__WEBPACK_IMPORTED_MODULE_11__.NodeInspector, null)));
+  }, sidebarName === _constants__WEBPACK_IMPORTED_MODULE_9__.SIDEBAR_WORKFLOW && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_workflow_summary__WEBPACK_IMPORTED_MODULE_10__.WorkflowSummary, null), isDeveloperModeEnabled && /*#__PURE__*/React.createElement(_workflow_share_summary__WEBPACK_IMPORTED_MODULE_14__["default"], null), isDeveloperModeEnabled && isRayDebugInstalled && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_workflow_debug_ray_panel__WEBPACK_IMPORTED_MODULE_13__["default"], null))), sidebarName === _constants__WEBPACK_IMPORTED_MODULE_9__.SIDEBAR_NODE_EDGE && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_node_inspector__WEBPACK_IMPORTED_MODULE_11__.NodeInspector, null)));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SettingsSidebar);
 
@@ -15081,6 +15356,881 @@ function WorkflowSaveDraftButton(_ref) {
   }), text);
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (WorkflowSaveDraftButton);
+
+/***/ },
+
+/***/ "./assets/jsx/workflow-editor/components/workflow-share-summary/generate-workflow-summary.js"
+/*!***************************************************************************************************!*\
+  !*** ./assets/jsx/workflow-editor/components/workflow-share-summary/generate-workflow-summary.js ***!
+  \***************************************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   buildFlowOrder: () => (/* binding */ buildFlowOrder),
+/* harmony export */   generateAsciiDiagram: () => (/* binding */ generateAsciiDiagram),
+/* harmony export */   generateNodeSummaryText: () => (/* binding */ generateNodeSummaryText),
+/* harmony export */   generateWorkflowSummaryText: () => (/* binding */ generateWorkflowSummaryText),
+/* harmony export */   getNodeDisplayLabel: () => (/* binding */ getNodeDisplayLabel),
+/* harmony export */   getNonDefaultSettings: () => (/* binding */ getNonDefaultSettings)
+/* harmony export */ });
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../constants */ "./assets/jsx/workflow-editor/constants.jsx");
+
+
+const EXPRESSION_FIELD_TYPES = new Set([
+    'expression',
+    'debugData',
+    'askForConfirmation',
+]);
+
+const NATURAL_LANGUAGE_FIELD_TYPES = new Set([
+    'conditional',
+    'postFilter',
+    'postSearchQuery',
+    'conditionalDateOffset',
+]);
+
+/**
+ * Compare two values for equality (shallow for primitives, JSON for objects).
+ *
+ * @param {*} a
+ * @param {*} b
+ * @return {boolean}
+ */
+function valuesEqual(a, b) {
+    if (a === b) {
+        return true;
+    }
+
+    if (a === undefined || a === null) {
+        return b === undefined || b === null || b === '';
+    }
+
+    if (b === undefined || b === null) {
+        return a === '' || a === null || a === undefined;
+    }
+
+    if (typeof a === 'object' || typeof b === 'object') {
+        try {
+            return JSON.stringify(a) === JSON.stringify(b);
+        } catch (error) {
+            return false;
+        }
+    }
+
+    return String(a) === String(b);
+}
+
+/**
+ * Format an action argument entry for display.
+ *
+ * @param {Object} argument
+ * @return {string}
+ */
+function formatActionArgEntry(argument) {
+    const argumentName = argument?.name || '(unnamed)';
+    const dataType = argument?.type || argument?.value || 'integer';
+    const expression = argument?.expression?.expression;
+
+    if (expression) {
+        return `${argumentName}: ${expression} (${dataType})`;
+    }
+
+    return `${argumentName}: (${dataType})`;
+}
+
+/**
+ * Format an object setting value using field-aware rules.
+ *
+ * @param {Object} value
+ * @param {Object|null} field
+ * @return {string}
+ */
+function formatObjectSettingValue(value, field) {
+    const fieldType = field?.type;
+
+    if (NATURAL_LANGUAGE_FIELD_TYPES.has(fieldType) || (typeof value.natural === 'string' && 'json' in value)) {
+        return value.natural || '';
+    }
+
+    if (EXPRESSION_FIELD_TYPES.has(fieldType) || isExpressionObject(value)) {
+        return value.expression || '';
+    }
+
+    return JSON.stringify(value);
+}
+
+/**
+ * Check whether a value is an expression object.
+ *
+ * @param {*} value
+ * @return {boolean}
+ */
+function isExpressionObject(value) {
+    return Boolean(
+        value
+        && typeof value === 'object'
+        && !Array.isArray(value)
+        && typeof value.expression === 'string'
+        && !('json' in value)
+    );
+}
+
+/**
+ * Format a setting value for display in the summary.
+ *
+ * @param {*} value
+ * @param {Object|null} field
+ * @return {string}
+ */
+function formatSettingValue(value, field = null) {
+    if (value === undefined || value === null) {
+        return '';
+    }
+
+    if (typeof value === 'boolean') {
+        return value ? 'true' : 'false';
+    }
+
+    if (Array.isArray(value)) {
+        if (field?.type === 'actionArgs') {
+            return value.map(formatActionArgEntry).join('\n   ');
+        }
+
+        return value.map((item) => formatSettingValue(item, field)).join(', ');
+    }
+
+    if (typeof value === 'object') {
+        return formatObjectSettingValue(value, field);
+    }
+
+    return String(value);
+}
+
+/**
+ * Get the schema default value for a field.
+ *
+ * @param {Object} field
+ * @return {*}
+ */
+function getFieldDefault(field) {
+    return field.default;
+}
+
+/**
+ * Find a field definition in the settings schema by name.
+ *
+ * @param {Array} settingsSchema
+ * @param {string} fieldName
+ * @return {Object|null}
+ */
+function findFieldInSchema(settingsSchema, fieldName) {
+    if (!settingsSchema || !Array.isArray(settingsSchema)) {
+        return null;
+    }
+
+    for (const panel of settingsSchema) {
+        if (!panel?.fields) {
+            continue;
+        }
+
+        const field = panel.fields.find((item) => item.name === fieldName);
+
+        if (field) {
+            return field;
+        }
+    }
+
+    return null;
+}
+
+/**
+ * Get non-default settings for a node compared to its type schema.
+ *
+ * @param {Object} node
+ * @param {Object} nodeType
+ * @return {Array<{label: string, value: string}>}
+ */
+function getNonDefaultSettings(node, nodeType) {
+    const settings = node?.data?.settings || {};
+    const settingsSchema = nodeType?.settingsSchema || [];
+    const nonDefaults = [];
+    const processedFields = new Set();
+
+    if (Array.isArray(settingsSchema)) {
+        settingsSchema.forEach((panel) => {
+            if (!panel?.fields) {
+                return;
+            }
+
+            panel.fields.forEach((field) => {
+                processedFields.add(field.name);
+
+                const storedValue = settings[field.name];
+                const defaultValue = getFieldDefault(field);
+
+                if (defaultValue === undefined) {
+                    if (storedValue === undefined || storedValue === null || storedValue === '') {
+                        return;
+                    }
+                } else if (valuesEqual(storedValue, defaultValue)) {
+                    return;
+                }
+
+                nonDefaults.push({
+                    label: field.label || field.name,
+                    value: formatSettingValue(storedValue, field),
+                });
+            });
+        });
+    }
+
+    Object.keys(settings).forEach((fieldName) => {
+        if (processedFields.has(fieldName)) {
+            return;
+        }
+
+        const storedValue = settings[fieldName];
+
+        if (storedValue === undefined || storedValue === null || storedValue === '') {
+            return;
+        }
+
+        const field = findFieldInSchema(settingsSchema, fieldName);
+
+        nonDefaults.push({
+            label: field?.label || fieldName,
+            value: formatSettingValue(storedValue, field),
+        });
+    });
+
+    return nonDefaults;
+}
+
+/**
+ * Get a display label for a node in diagrams and step lists.
+ *
+ * @param {Object} node
+ * @param {Object} nodeType
+ * @return {string}
+ */
+function getNodeDisplayLabel(node, nodeType) {
+    const typeLabel = nodeType?.label || node?.data?.name || 'Node';
+    const customLabel = node?.data?.label;
+
+    if (customLabel && customLabel !== typeLabel) {
+        return `${typeLabel} (${customLabel})`;
+    }
+
+    return typeLabel;
+}
+
+/**
+ * Get a prefixed diagram label (Trigger:, Action:, etc.).
+ *
+ * @param {Object} node
+ * @param {Object} nodeType
+ * @return {string}
+ */
+function getNodeDiagramLabel(node, nodeType) {
+    const displayLabel = getNodeDisplayLabel(node, nodeType);
+    const elementaryType = node?.data?.elementaryType || nodeType?.elementaryType;
+
+    switch (elementaryType) {
+        case 'trigger':
+            return `Trigger: ${displayLabel}`;
+        case 'action':
+            return `Action: ${displayLabel}`;
+        case 'advanced':
+            return `Advanced: ${displayLabel}`;
+        default:
+            return displayLabel;
+    }
+}
+
+/**
+ * Filter out placeholder nodes from the workflow.
+ *
+ * @param {Array} nodes
+ * @return {Array}
+ */
+function getWorkflowNodes(nodes) {
+    return (nodes || []).filter(
+        (node) => node?.data?.elementaryType !== _constants__WEBPACK_IMPORTED_MODULE_0__.NODE_TYPE_PLACEHOLDER
+            && node?.type !== 'triggerPlaceholder'
+            && node?.type !== 'nodePlaceholder'
+    );
+}
+
+/**
+ * Find trigger nodes in the workflow.
+ *
+ * @param {Array} nodes
+ * @param {Array} edges
+ * @return {Array}
+ */
+function getTriggerNodes(nodes, edges) {
+    const workflowNodes = getWorkflowNodes(nodes);
+
+    const triggers = workflowNodes.filter(
+        (node) => node?.data?.elementaryType === 'trigger' || node?.type === 'trigger'
+    );
+
+    if (triggers.length > 0) {
+        return triggers;
+    }
+
+    const nodesWithNoIncoming = workflowNodes.filter((node) => {
+        return !(edges || []).some((edge) => edge.target === node.id);
+    });
+
+    if (nodesWithNoIncoming.length > 0) {
+        return nodesWithNoIncoming;
+    }
+
+    return workflowNodes.slice(0, 1);
+}
+
+/**
+ * Build an ordered list of node IDs starting from triggers via BFS.
+ *
+ * @param {Array} nodes
+ * @param {Array} edges
+ * @return {Array<string>}
+ */
+function buildFlowOrder(nodes, edges) {
+    const workflowNodes = getWorkflowNodes(nodes);
+    const nodeMap = new Map(workflowNodes.map((node) => [node.id, node]));
+    const triggers = getTriggerNodes(workflowNodes, edges);
+    const ordered = [];
+    const visited = new Set();
+    const queue = [...triggers.map((node) => node.id)];
+
+    while (queue.length > 0) {
+        const nodeId = queue.shift();
+
+        if (visited.has(nodeId) || !nodeMap.has(nodeId)) {
+            continue;
+        }
+
+        visited.add(nodeId);
+        ordered.push(nodeId);
+
+        const outgoingEdges = (edges || [])
+            .filter((edge) => edge.source === nodeId)
+            .sort((a, b) => {
+                const handleA = a.sourceHandle || '';
+                const handleB = b.sourceHandle || '';
+
+                return handleA.localeCompare(handleB);
+            });
+
+        outgoingEdges.forEach((edge) => {
+            if (!visited.has(edge.target)) {
+                queue.push(edge.target);
+            }
+        });
+    }
+
+    workflowNodes.forEach((node) => {
+        if (!visited.has(node.id)) {
+            ordered.push(node.id);
+        }
+    });
+
+    return ordered;
+}
+
+/**
+ * Get the human-readable label for an edge source handle.
+ *
+ * @param {Object} edge
+ * @param {Object} sourceNode
+ * @param {Object} nodeType
+ * @return {string}
+ */
+function getHandleLabel(edge, sourceNode, nodeType) {
+    const handleId = edge.sourceHandle;
+
+    if (!handleId) {
+        return 'Next';
+    }
+
+    const handleSchema = nodeType?.handleSchema?.source || [];
+
+    const staticHandle = handleSchema.find((handle) => handle.id === handleId);
+
+    if (staticHandle?.label) {
+        return staticHandle.label;
+    }
+
+    const dynamicHandles = [];
+
+    handleSchema.forEach((handle) => {
+        if (handle?.type?.startsWith('__dynamic__:')) {
+            const settingName = handle.type.replace('__dynamic__:', '');
+            const options = sourceNode?.data?.settings?.[settingName] || [];
+
+            options.forEach((option) => {
+                dynamicHandles.push(option);
+            });
+        }
+    });
+
+    const dynamicHandle = dynamicHandles.find((handle) => handle.name === handleId || handle.id === handleId);
+
+    if (dynamicHandle?.label) {
+        return dynamicHandle.label;
+    }
+
+    return handleId;
+}
+
+/**
+ * Draw a single ASCII box for a node label.
+ *
+ * @param {string} label
+ * @return {Array<string>}
+ */
+function drawBox(label) {
+    const innerWidth = Math.max(label.length, 19);
+    const horizontalRule = '─'.repeat(innerWidth + 2);
+    const paddedLabel = ` ${label.padEnd(innerWidth)} `;
+
+    return [
+        `┌${horizontalRule}┐`,
+        `│${paddedLabel}│`,
+        `└${horizontalRule}┘`,
+    ];
+}
+
+/**
+ * Draw vertical connector lines between boxes.
+ *
+ * @param {number} indent
+ * @return {Array<string>}
+ */
+function drawConnector(indent = 0) {
+    const prefix = ' '.repeat(indent);
+
+    return [
+        `${prefix}     │`,
+        `${prefix}     v`,
+    ];
+}
+
+/**
+ * Recursively generate ASCII diagram lines for a node subtree.
+ *
+ * @param {string} nodeId
+ * @param {Map} nodeMap
+ * @param {Array} edges
+ * @param {Function} getNodeTypeByName
+ * @param {Set} visitedInPath
+ * @param {Set} globalVisited
+ * @param {number} indent
+ * @return {Array<string>}
+ */
+function generateNodeDiagramLines(nodeId, nodeMap, edges, getNodeTypeByName, visitedInPath, globalVisited, indent = 0) {
+    const node = nodeMap.get(nodeId);
+
+    if (!node) {
+        return [];
+    }
+
+    globalVisited.add(nodeId);
+
+    const prefix = ' '.repeat(indent);
+    const nodeType = getNodeTypeByName(node.data.name) || {};
+    const label = getNodeDiagramLabel(node, nodeType);
+    const lines = drawBox(label).map((line) => prefix + line);
+
+    if (visitedInPath.has(nodeId)) {
+        lines.push(`${prefix}     (cycle detected)`);
+        return lines;
+    }
+
+    const newVisited = new Set(visitedInPath);
+    newVisited.add(nodeId);
+
+    const outgoingEdges = (edges || [])
+        .filter((edge) => edge.source === nodeId)
+        .sort((a, b) => {
+            const handleA = a.sourceHandle || '';
+            const handleB = b.sourceHandle || '';
+
+            return handleA.localeCompare(handleB);
+        });
+
+    if (outgoingEdges.length === 0) {
+        return lines;
+    }
+
+    if (outgoingEdges.length === 1) {
+        lines.push(...drawConnector(indent));
+
+        const childLines = generateNodeDiagramLines(
+            outgoingEdges[0].target,
+            nodeMap,
+            edges,
+            getNodeTypeByName,
+            newVisited,
+            globalVisited,
+            indent
+        );
+
+        lines.push(...childLines);
+
+        return lines;
+    }
+
+    lines.push(`${prefix}     │`);
+
+    outgoingEdges.forEach((edge, index) => {
+        const isLast = index === outgoingEdges.length - 1;
+        const branchPrefix = isLast ? '└─' : '├─';
+        const handleLabel = getHandleLabel(edge, node, nodeType);
+        const targetNode = nodeMap.get(edge.target);
+        const targetType = targetNode ? getNodeTypeByName(targetNode.data.name) || {} : {};
+        const targetLabel = targetNode
+            ? getNodeDiagramLabel(targetNode, targetType)
+            : edge.target;
+
+        lines.push(`${prefix}     ${branchPrefix}[${handleLabel}]──> ${targetLabel}`);
+
+        const childLines = generateNodeDiagramLines(
+            edge.target,
+            nodeMap,
+            edges,
+            getNodeTypeByName,
+            newVisited,
+            globalVisited,
+            indent + 5
+        );
+
+        if (childLines.length > 0) {
+            lines.push(...childLines);
+        }
+    });
+
+    return lines;
+}
+
+/**
+ * Generate an ASCII diagram representing the workflow flow.
+ *
+ * @param {Array} nodes
+ * @param {Array} edges
+ * @param {Function} getNodeTypeByName
+ * @return {string}
+ */
+function generateAsciiDiagram(nodes, edges, getNodeTypeByName) {
+    const workflowNodes = getWorkflowNodes(nodes);
+
+    if (workflowNodes.length === 0) {
+        return '(No workflow steps configured)';
+    }
+
+    const triggers = getTriggerNodes(workflowNodes, edges);
+    const nodeMap = new Map(workflowNodes.map((node) => [node.id, node]));
+    const lines = [];
+    const globalVisited = new Set();
+
+    triggers.forEach((trigger, index) => {
+        if (index > 0) {
+            lines.push('');
+        }
+
+        const diagramLines = generateNodeDiagramLines(
+            trigger.id,
+            nodeMap,
+            edges,
+            getNodeTypeByName,
+            new Set(),
+            globalVisited,
+            0
+        );
+
+        lines.push(...diagramLines);
+    });
+
+    workflowNodes.forEach((node) => {
+        if (globalVisited.has(node.id)) {
+            return;
+        }
+
+        lines.push('');
+        lines.push('(Disconnected step)');
+
+        const diagramLines = generateNodeDiagramLines(
+            node.id,
+            nodeMap,
+            edges,
+            getNodeTypeByName,
+            new Set(),
+            globalVisited,
+            0
+        );
+
+        lines.push(...diagramLines);
+    });
+
+    return lines.join('\n');
+}
+
+/**
+ * Generate the steps and configuration section.
+ *
+ * @param {Array} nodes
+ * @param {Array} edges
+ * @param {Function} getNodeTypeByName
+ * @return {string}
+ */
+function generateStepsSection(nodes, edges, getNodeTypeByName) {
+    const orderedIds = buildFlowOrder(nodes, edges);
+    const nodeMap = new Map(getWorkflowNodes(nodes).map((node) => [node.id, node]));
+    const lines = [];
+
+    if (orderedIds.length === 0) {
+        return '(No steps configured)';
+    }
+
+    orderedIds.forEach((nodeId, index) => {
+        const node = nodeMap.get(nodeId);
+
+        if (!node) {
+            return;
+        }
+
+        const nodeType = getNodeTypeByName(node.data.name) || {};
+        const displayLabel = getNodeDisplayLabel(node, nodeType);
+        const slug = node.data.slug || node.id;
+        const nodeName = node.data.name || 'unknown';
+
+        lines.push(`${index + 1}. ${displayLabel} (${slug}) [${nodeName}]`);
+
+        const nonDefaultSettings = getNonDefaultSettings(node, nodeType);
+
+        if (nonDefaultSettings.length === 0) {
+            lines.push('   (default settings)');
+        } else {
+            nonDefaultSettings.forEach((setting) => {
+                lines.push(`   - ${setting.label}: ${setting.value}`);
+            });
+        }
+    });
+
+    return lines.join('\n');
+}
+
+/**
+ * Generate a plain-text summary for a single workflow step.
+ *
+ * @param {Object} params
+ * @param {Object} params.node
+ * @param {Object} params.nodeType
+ * @return {string}
+ */
+function generateNodeSummaryText({ node, nodeType }) {
+    if (!node) {
+        return '';
+    }
+
+    const resolvedNodeType = nodeType || {};
+    const displayLabel = getNodeDisplayLabel(node, resolvedNodeType);
+    const slug = node.data?.slug || node.id;
+    const nodeName = node.data?.name || 'unknown';
+    const elementaryType = node?.data?.elementaryType || resolvedNodeType?.elementaryType;
+
+    const lines = [
+        `${displayLabel} (${slug}) [${nodeName}]`,
+    ];
+
+    if (elementaryType) {
+        lines.push(`   Type: ${elementaryType}`);
+    }
+
+    const nonDefaultSettings = getNonDefaultSettings(node, resolvedNodeType);
+
+    if (nonDefaultSettings.length === 0) {
+        lines.push('   (default settings)');
+    } else {
+        nonDefaultSettings.forEach((setting) => {
+            lines.push(`   - ${setting.label}: ${setting.value}`);
+        });
+    }
+
+    return lines.join('\n');
+}
+
+/**
+ * Generate the full plain-text workflow summary for sharing.
+ *
+ * @param {Object} params
+ * @param {Object} params.workflow
+ * @param {Function} params.getNodeTypeByName
+ * @return {string}
+ */
+function generateWorkflowSummaryText({ workflow, getNodeTypeByName }) {
+    const title = workflow?.title || '(Untitled workflow)';
+    const description = workflow?.description || '';
+    const status = workflow?.status || 'draft';
+    const nodes = workflow?.flow?.nodes || [];
+    const edges = workflow?.flow?.edges || [];
+    const workflowNodes = getWorkflowNodes(nodes);
+
+    const lines = [
+        `Workflow: ${title}`,
+    ];
+
+    if (description.trim()) {
+        lines.push(`Description: ${description.trim()}`);
+    }
+
+    lines.push(`Status: ${status}`);
+    lines.push('');
+    lines.push('Flow:');
+
+    if (workflowNodes.length === 0) {
+        lines.push('(Empty workflow — add a trigger to get started)');
+    } else {
+        lines.push(generateAsciiDiagram(nodes, edges, getNodeTypeByName));
+    }
+
+    lines.push('');
+    lines.push('Steps & Configuration:');
+    lines.push(generateStepsSection(nodes, edges, getNodeTypeByName));
+
+    return lines.join('\n');
+}
+
+
+/***/ },
+
+/***/ "./assets/jsx/workflow-editor/components/workflow-share-summary/index.jsx"
+/*!********************************************************************************!*\
+  !*** ./assets/jsx/workflow-editor/components/workflow-share-summary/index.jsx ***!
+  \********************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   WorkflowShareSummaryPanel: () => (/* binding */ WorkflowShareSummaryPanel),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _workflow_store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../workflow-store */ "./assets/jsx/workflow-editor/components/workflow-store/index.jsx");
+/* harmony import */ var _editor_store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../editor-store */ "./assets/jsx/workflow-editor/components/editor-store/index.jsx");
+/* harmony import */ var _persistent_panel_body__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../persistent-panel-body */ "./assets/jsx/workflow-editor/components/persistent-panel-body/index.jsx");
+/* harmony import */ var _generate_workflow_summary__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./generate-workflow-summary */ "./assets/jsx/workflow-editor/components/workflow-share-summary/generate-workflow-summary.js");
+/* harmony import */ var _utils_copy_text_to_clipboard__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../utils/copy-text-to-clipboard */ "./assets/jsx/workflow-editor/utils/copy-text-to-clipboard.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator.return && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, catch: function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t.return && (u = t.return(), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+
+
+
+
+
+
+var WorkflowShareSummaryPanel = function WorkflowShareSummaryPanel() {
+  var _workflow$flow3, _workflow$flow4;
+  var _useState = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)(''),
+    _useState2 = _slicedToArray(_useState, 2),
+    copyFeedback = _useState2[0],
+    setCopyFeedback = _useState2[1];
+  var _useSelect = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_2__.useSelect)(function (select) {
+      return {
+        workflow: select(_workflow_store__WEBPACK_IMPORTED_MODULE_4__.store).getWorkflow(),
+        getNodeTypeByName: select(_editor_store__WEBPACK_IMPORTED_MODULE_5__.store).getNodeTypeByName,
+        isLoadingWorkflow: select(_workflow_store__WEBPACK_IMPORTED_MODULE_4__.store).isLoadingWorkflow()
+      };
+    }),
+    workflow = _useSelect.workflow,
+    getNodeTypeByName = _useSelect.getNodeTypeByName,
+    isLoadingWorkflow = _useSelect.isLoadingWorkflow;
+  var _useDispatch = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_2__.useDispatch)('core/notices'),
+    createSuccessNotice = _useDispatch.createSuccessNotice,
+    createErrorNotice = _useDispatch.createErrorNotice;
+  var flowSignature = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useMemo)(function () {
+    var _workflow$flow, _workflow$flow2;
+    var nodes = (workflow === null || workflow === void 0 || (_workflow$flow = workflow.flow) === null || _workflow$flow === void 0 ? void 0 : _workflow$flow.nodes) || [];
+    var edges = (workflow === null || workflow === void 0 || (_workflow$flow2 = workflow.flow) === null || _workflow$flow2 === void 0 ? void 0 : _workflow$flow2.edges) || [];
+    return JSON.stringify({
+      nodes: nodes,
+      edges: edges
+    });
+  }, [workflow === null || workflow === void 0 || (_workflow$flow3 = workflow.flow) === null || _workflow$flow3 === void 0 ? void 0 : _workflow$flow3.nodes, workflow === null || workflow === void 0 || (_workflow$flow4 = workflow.flow) === null || _workflow$flow4 === void 0 ? void 0 : _workflow$flow4.edges]);
+  var summaryText = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useMemo)(function () {
+    return (0,_generate_workflow_summary__WEBPACK_IMPORTED_MODULE_7__.generateWorkflowSummaryText)({
+      workflow: workflow,
+      getNodeTypeByName: getNodeTypeByName
+    });
+  }, [workflow === null || workflow === void 0 ? void 0 : workflow.title, workflow === null || workflow === void 0 ? void 0 : workflow.description, workflow === null || workflow === void 0 ? void 0 : workflow.status, flowSignature, getNodeTypeByName]);
+  var onCopySummary = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useCallback)( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+    return _regeneratorRuntime().wrap(function _callee$(_context) {
+      while (1) switch (_context.prev = _context.next) {
+        case 0:
+          _context.prev = 0;
+          _context.next = 3;
+          return (0,_utils_copy_text_to_clipboard__WEBPACK_IMPORTED_MODULE_8__.copyTextToClipboard)(summaryText);
+        case 3:
+          createSuccessNotice((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Workflow summary copied to clipboard.', 'post-expirator'), {
+            type: 'snackbar',
+            isDismissible: true
+          });
+          setCopyFeedback((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Copied!', 'post-expirator'));
+          _context.next = 11;
+          break;
+        case 7:
+          _context.prev = 7;
+          _context.t0 = _context["catch"](0);
+          createErrorNotice((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Unable to copy workflow summary. Please copy manually.', 'post-expirator'));
+          setCopyFeedback((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Copy failed', 'post-expirator'));
+        case 11:
+        case "end":
+          return _context.stop();
+      }
+    }, _callee, null, [[0, 7]]);
+  })), [summaryText, createSuccessNotice, createErrorNotice]);
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(_persistent_panel_body__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    className: "edit-post-post-status workflow-editor-dev-panel workflow-editor-share-summary-panel",
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Workflow Summary', 'post-expirator'),
+    initialOpen: true,
+    disabled: isLoadingWorkflow
+  }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelRow, null, /*#__PURE__*/React.createElement("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Copy this plain-text summary to share in conversations. It includes the workflow flow and non-default step settings.', 'post-expirator'))), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.TextareaControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Summary', 'post-expirator'),
+    value: summaryText,
+    readOnly: true,
+    rows: 18,
+    className: "workflow-editor-share-summary-textarea",
+    onChange: function onChange() {}
+  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
+    variant: "secondary",
+    onClick: onCopySummary,
+    disabled: isLoadingWorkflow || !summaryText
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Copy to Clipboard', 'post-expirator')), copyFeedback && /*#__PURE__*/React.createElement("span", {
+    className: "workflow-editor-share-summary-copy-feedback"
+  }, copyFeedback))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (WorkflowShareSummaryPanel);
 
 /***/ },
 
@@ -17782,6 +18932,67 @@ function getNodeSourceHandleNamesByNodeId(nodeId) {
 
 /***/ },
 
+/***/ "./assets/jsx/workflow-editor/utils/copy-text-to-clipboard.js"
+/*!********************************************************************!*\
+  !*** ./assets/jsx/workflow-editor/utils/copy-text-to-clipboard.js ***!
+  \********************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   copyTextToClipboard: () => (/* binding */ copyTextToClipboard)
+/* harmony export */ });
+/**
+ * Copy text using the Clipboard API.
+ *
+ * @param {string} text
+ * @return {Promise<void>}
+ */
+async function copyTextToClipboardWithApi(text) {
+    await navigator.clipboard.writeText(text);
+}
+
+/**
+ * Copy text using the legacy execCommand approach for older browsers.
+ *
+ * @param {string} text
+ * @return {void}
+ */
+function copyTextToClipboardLegacy(text) {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.setAttribute('readonly', '');
+    textarea.style.position = 'absolute';
+    textarea.style.left = '-9999px';
+    document.body.appendChild(textarea);
+    textarea.select();
+
+    const copied = document.execCommand('copy');
+    document.body.removeChild(textarea);
+
+    if (!copied) {
+        throw new Error('Copy command failed');
+    }
+}
+
+/**
+ * Copy text to the clipboard with a fallback for older browsers.
+ *
+ * @param {string} text
+ * @return {Promise<void>}
+ */
+async function copyTextToClipboard(text) {
+    if (navigator.clipboard?.writeText) {
+        await copyTextToClipboardWithApi(text);
+        return;
+    }
+
+    copyTextToClipboardLegacy(text);
+}
+
+
+/***/ },
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./assets/jsx/workflow-editor/css/block-types-list.css"
 /*!***************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./assets/jsx/workflow-editor/css/block-types-list.css ***!
@@ -17882,11 +19093,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `.components-button svg {
-    height: 100%;
-}
-
-#wpfooter {
+___CSS_LOADER_EXPORT___.push([module.id, `#wpfooter {
     display: none !important;
 }
 
@@ -18020,7 +19227,37 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.components-button svg {
 .editor-inserter-sidebar *, .editor-inserter-sidebar :after, .editor-inserter-sidebar :before {
     box-sizing: inherit;
 }
-`, "",{"version":3,"sources":["webpack://./assets/jsx/workflow-editor/css/custom.css"],"names":[],"mappings":"AAAA;IACI,YAAY;AAChB;;AAEA;IACI,wBAAwB;AAC5B;;AAEA;IACI,sBAAsB;AAC1B;;AAEA;IACI,sBAAsB;IACtB,uBAAuB;AAC3B;;AAEA;;;;;;;;;;;;IAYI,6BAA6B;AACjC;;AAEA;;GAEG;;AAEH;IACI,eAAe;IACf,WAAW;IACX,mBAAmB;AACvB;;AAEA;IACI,eAAe;IACf,WAAW;IACX,YAAY;IACZ,aAAa;IACb,kBAAkB;IAClB,iBAAiB;AACrB;;AAEA;IACI,kBAAkB;IAClB,SAAS;IACT,WAAW;AACf;;AAEA;IACI,aAAa;IACb,sBAAsB;IACtB,iBAAiB;IACjB,2BAA2B;IAC3B,uBAAuB;AAC3B;;AAEA;IACI,gBAAgB;IAChB,kBAAkB;IAClB,eAAe;IACf,mBAAmB;IACnB,cAAc;AAClB;;AAEA;IACI,6BAA6B;AACjC;;AAEA;IACI,eAAe;IACf,WAAW;IACX,mBAAmB;AACvB;;AAEA;IACI,eAAe;IACf,gBAAgB;IAChB,gBAAgB;IAChB,yBAAyB;IACzB,qBAAqB;IACrB,wBAAwB;IACxB,YAAY;AAChB;AACA;IACI,SAAS;IACT,YAAY;IACZ,8DAA8D;AAClE;;AAEA;IACI,gBAAgB;IAChB,iBAAiB;AACrB;;AAEA;IACI,gBAAgB;AACpB;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,sBAAsB;IACtB,SAAS;IACT,YAAY;IACZ,kBAAkB;IAClB,kBAAkB;AACtB;;AAEA;IACI,gBAAgB;AACpB;;AAEA;IACI,gBAAgB;IAChB,iBAAiB;IACjB,sBAAsB;AAC1B;;AAEA;IACI,2CAA2C;IAC3C,wBAAwB;AAC5B;;AAEA;IACI,mBAAmB;AACvB","sourcesContent":[".components-button svg {\n    height: 100%;\n}\n\n#wpfooter {\n    display: none !important;\n}\n\n.react-flow {\n    width: 100% !important;\n}\n\n.components-menu-items__item-icon.has-icon-right {\n    width: 24px !important;\n    height: 24px !important;\n}\n\n.react-flow__node-default.selectable.selected,\n.react-flow__node-default.selectable:focus,\n.react-flow__node-default.selectable:focus-visible,\n.react-flow__node-input.selectable.selected,\n.react-flow__node-input.selectable:focus,\n.react-flow__node-input.selectable:focus-visible,\n.react-flow__node-output.selectable.selected,\n.react-flow__node-output.selectable:focus,\n.react-flow__node-output.selectable:focus-visible,\n.react-flow__node-group.selectable.selected,\n.react-flow__node-group.selectable:focus,\n.react-flow__node-group.selectable:focus-visible {\n    box-shadow: 0 0 0 2px #1a192b;\n}\n\n/* .react-flow {\n    background-color: #e1e1e1 !important;\n} */\n\n.settings-field-description {\n    font-size: 12px;\n    color: #666;\n    margin-bottom: 15px;\n}\n\n.settings-field-help-popover {\n    font-size: 12px;\n    color: #666;\n    width: 320px;\n    padding: 16px;\n    position: relative;\n    padding-top: 50px;\n}\n\n.settings-field-help-popover button {\n    position: absolute;\n    top: 10px;\n    right: 10px;\n}\n\n.workflow-editor-inspector-card__handles-schema {\n    display: flex;\n    flex-direction: column;\n    flex-wrap: nowrap;\n    justify-content: flex-start;\n    align-items: flex-start;\n}\n\n.workflow-editor-inspector-card__handles-schema code {\n    padding: 3px 6px;\n    border-radius: 4px;\n    font-size: 12px;\n    background: #ebebeb;\n    color: #696969;\n}\n\n.workflow-editor-inspector-card__handles-schema h3 {\n    margin-bottom: 4px !important;\n}\n\n.workflow-editor-global-variables-description {\n    font-size: 12px;\n    color: #666;\n    margin-bottom: 15px;\n}\n\n.workflow-editor-global-variables-label {\n    font-size: 11px;\n    font-weight: 500;\n    line-height: 1.4;\n    text-transform: uppercase;\n    display: inline-block;\n    margin-bottom: calc(8px);\n    padding: 0px;\n}\n.workflow-editor-global-var-list {\n    margin: 0;\n    padding: 5px;\n    border: 1px solid var(--wp-components-color-gray-600, #949494);\n}\n\n.workflow-editor-global-var-list ul {\n    list-style: disc;\n    margin-left: 30px;\n}\n\n.workflow-editor-global-var-list ul li {\n    margin-bottom: 0;\n}\n\n.edit-post-editor__inserter-panel-content {\n    height: 100%;\n}\n\n.block-editor-inserter__content {\n    display: flex;\n    flex-direction: column;\n    gap: 16px;\n    height: 100%;\n    overflow-y: hidden;\n    position: relative;\n}\n\n.block-editor-inserter__panel-content {\n    overflow-y: auto;\n}\n\n.interface-interface-skeleton__footer {\n    min-height: 25px;\n    padding: 3px 20px;\n    box-sizing: border-box;\n}\n\n.interface-interface-skeleton__secondary-sidebar {\n    box-shadow: 1px 1px 0 0 rgba(0, 0, 0, .133);\n    outline: 1px solid #0000;\n}\n\n.editor-inserter-sidebar *, .editor-inserter-sidebar :after, .editor-inserter-sidebar :before {\n    box-sizing: inherit;\n}\n"],"sourceRoot":""}]);
+
+#future-workflow-editor .editor-header__back-button {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    width: auto;
+    min-width: 0;
+}
+
+#future-workflow-editor .editor-header__back-button .components-button.is-compact.has-icon {
+    width: 32px;
+    min-width: 32px;
+    justify-content: center;
+}
+
+#future-workflow-editor.show-icon-labels .editor-header__back-button .components-button.has-icon,
+#future-workflow-editor .show-icon-labels .editor-header__back-button .components-button.has-icon {
+    width: 32px;
+    min-width: 32px;
+}
+
+#future-workflow-editor.show-icon-labels .editor-header__back-button .components-button.has-icon svg,
+#future-workflow-editor .show-icon-labels .editor-header__back-button .components-button.has-icon svg {
+    display: block;
+}
+
+#future-workflow-editor.show-icon-labels .editor-header__back-button .components-button.has-icon::after,
+#future-workflow-editor .show-icon-labels .editor-header__back-button .components-button.has-icon::after {
+    content: none;
+}
+`, "",{"version":3,"sources":["webpack://./assets/jsx/workflow-editor/css/custom.css"],"names":[],"mappings":"AAAA;IACI,wBAAwB;AAC5B;;AAEA;IACI,sBAAsB;AAC1B;;AAEA;IACI,sBAAsB;IACtB,uBAAuB;AAC3B;;AAEA;;;;;;;;;;;;IAYI,6BAA6B;AACjC;;AAEA;;GAEG;;AAEH;IACI,eAAe;IACf,WAAW;IACX,mBAAmB;AACvB;;AAEA;IACI,eAAe;IACf,WAAW;IACX,YAAY;IACZ,aAAa;IACb,kBAAkB;IAClB,iBAAiB;AACrB;;AAEA;IACI,kBAAkB;IAClB,SAAS;IACT,WAAW;AACf;;AAEA;IACI,aAAa;IACb,sBAAsB;IACtB,iBAAiB;IACjB,2BAA2B;IAC3B,uBAAuB;AAC3B;;AAEA;IACI,gBAAgB;IAChB,kBAAkB;IAClB,eAAe;IACf,mBAAmB;IACnB,cAAc;AAClB;;AAEA;IACI,6BAA6B;AACjC;;AAEA;IACI,eAAe;IACf,WAAW;IACX,mBAAmB;AACvB;;AAEA;IACI,eAAe;IACf,gBAAgB;IAChB,gBAAgB;IAChB,yBAAyB;IACzB,qBAAqB;IACrB,wBAAwB;IACxB,YAAY;AAChB;AACA;IACI,SAAS;IACT,YAAY;IACZ,8DAA8D;AAClE;;AAEA;IACI,gBAAgB;IAChB,iBAAiB;AACrB;;AAEA;IACI,gBAAgB;AACpB;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,sBAAsB;IACtB,SAAS;IACT,YAAY;IACZ,kBAAkB;IAClB,kBAAkB;AACtB;;AAEA;IACI,gBAAgB;AACpB;;AAEA;IACI,gBAAgB;IAChB,iBAAiB;IACjB,sBAAsB;AAC1B;;AAEA;IACI,2CAA2C;IAC3C,wBAAwB;AAC5B;;AAEA;IACI,mBAAmB;AACvB;;AAEA;IACI,aAAa;IACb,mBAAmB;IACnB,cAAc;IACd,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,WAAW;IACX,eAAe;IACf,uBAAuB;AAC3B;;AAEA;;IAEI,WAAW;IACX,eAAe;AACnB;;AAEA;;IAEI,cAAc;AAClB;;AAEA;;IAEI,aAAa;AACjB","sourcesContent":["#wpfooter {\n    display: none !important;\n}\n\n.react-flow {\n    width: 100% !important;\n}\n\n.components-menu-items__item-icon.has-icon-right {\n    width: 24px !important;\n    height: 24px !important;\n}\n\n.react-flow__node-default.selectable.selected,\n.react-flow__node-default.selectable:focus,\n.react-flow__node-default.selectable:focus-visible,\n.react-flow__node-input.selectable.selected,\n.react-flow__node-input.selectable:focus,\n.react-flow__node-input.selectable:focus-visible,\n.react-flow__node-output.selectable.selected,\n.react-flow__node-output.selectable:focus,\n.react-flow__node-output.selectable:focus-visible,\n.react-flow__node-group.selectable.selected,\n.react-flow__node-group.selectable:focus,\n.react-flow__node-group.selectable:focus-visible {\n    box-shadow: 0 0 0 2px #1a192b;\n}\n\n/* .react-flow {\n    background-color: #e1e1e1 !important;\n} */\n\n.settings-field-description {\n    font-size: 12px;\n    color: #666;\n    margin-bottom: 15px;\n}\n\n.settings-field-help-popover {\n    font-size: 12px;\n    color: #666;\n    width: 320px;\n    padding: 16px;\n    position: relative;\n    padding-top: 50px;\n}\n\n.settings-field-help-popover button {\n    position: absolute;\n    top: 10px;\n    right: 10px;\n}\n\n.workflow-editor-inspector-card__handles-schema {\n    display: flex;\n    flex-direction: column;\n    flex-wrap: nowrap;\n    justify-content: flex-start;\n    align-items: flex-start;\n}\n\n.workflow-editor-inspector-card__handles-schema code {\n    padding: 3px 6px;\n    border-radius: 4px;\n    font-size: 12px;\n    background: #ebebeb;\n    color: #696969;\n}\n\n.workflow-editor-inspector-card__handles-schema h3 {\n    margin-bottom: 4px !important;\n}\n\n.workflow-editor-global-variables-description {\n    font-size: 12px;\n    color: #666;\n    margin-bottom: 15px;\n}\n\n.workflow-editor-global-variables-label {\n    font-size: 11px;\n    font-weight: 500;\n    line-height: 1.4;\n    text-transform: uppercase;\n    display: inline-block;\n    margin-bottom: calc(8px);\n    padding: 0px;\n}\n.workflow-editor-global-var-list {\n    margin: 0;\n    padding: 5px;\n    border: 1px solid var(--wp-components-color-gray-600, #949494);\n}\n\n.workflow-editor-global-var-list ul {\n    list-style: disc;\n    margin-left: 30px;\n}\n\n.workflow-editor-global-var-list ul li {\n    margin-bottom: 0;\n}\n\n.edit-post-editor__inserter-panel-content {\n    height: 100%;\n}\n\n.block-editor-inserter__content {\n    display: flex;\n    flex-direction: column;\n    gap: 16px;\n    height: 100%;\n    overflow-y: hidden;\n    position: relative;\n}\n\n.block-editor-inserter__panel-content {\n    overflow-y: auto;\n}\n\n.interface-interface-skeleton__footer {\n    min-height: 25px;\n    padding: 3px 20px;\n    box-sizing: border-box;\n}\n\n.interface-interface-skeleton__secondary-sidebar {\n    box-shadow: 1px 1px 0 0 rgba(0, 0, 0, .133);\n    outline: 1px solid #0000;\n}\n\n.editor-inserter-sidebar *, .editor-inserter-sidebar :after, .editor-inserter-sidebar :before {\n    box-sizing: inherit;\n}\n\n#future-workflow-editor .editor-header__back-button {\n    display: flex;\n    align-items: center;\n    flex-shrink: 0;\n    width: auto;\n    min-width: 0;\n}\n\n#future-workflow-editor .editor-header__back-button .components-button.is-compact.has-icon {\n    width: 32px;\n    min-width: 32px;\n    justify-content: center;\n}\n\n#future-workflow-editor.show-icon-labels .editor-header__back-button .components-button.has-icon,\n#future-workflow-editor .show-icon-labels .editor-header__back-button .components-button.has-icon {\n    width: 32px;\n    min-width: 32px;\n}\n\n#future-workflow-editor.show-icon-labels .editor-header__back-button .components-button.has-icon svg,\n#future-workflow-editor .show-icon-labels .editor-header__back-button .components-button.has-icon svg {\n    display: block;\n}\n\n#future-workflow-editor.show-icon-labels .editor-header__back-button .components-button.has-icon::after,\n#future-workflow-editor .show-icon-labels .editor-header__back-button .components-button.has-icon::after {\n    content: none;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -18057,7 +19294,20 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.workflow-editor-dev-info-panel .compo
 .workflow-editor-dev-panel {
     background-color: #fffaf1;
 }
-`, "",{"version":3,"sources":["webpack://./assets/jsx/workflow-editor/css/dev.css"],"names":[],"mappings":"AAAA;IACI,gBAAgB;AACpB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,yBAAyB;AAC7B","sourcesContent":[".workflow-editor-dev-info-panel .components-panel__row {\n    overflow: scroll;\n}\n\n.workflow-editor-dev-info-wrapper {\n    min-width: 1000px;\n}\n\n.workflow-editor-dev-panel {\n    background-color: #fffaf1;\n}\n"],"sourceRoot":""}]);
+
+.workflow-editor-share-summary-textarea textarea {
+    font-family: Menlo, Consolas, Monaco, monospace;
+    font-size: 12px;
+    line-height: 1.4;
+    white-space: pre;
+}
+
+.workflow-editor-share-summary-copy-feedback {
+    margin-left: 8px;
+    color: #1e1e1e;
+    font-size: 12px;
+}
+`, "",{"version":3,"sources":["webpack://./assets/jsx/workflow-editor/css/dev.css"],"names":[],"mappings":"AAAA;IACI,gBAAgB;AACpB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,yBAAyB;AAC7B;;AAEA;IACI,+CAA+C;IAC/C,eAAe;IACf,gBAAgB;IAChB,gBAAgB;AACpB;;AAEA;IACI,gBAAgB;IAChB,cAAc;IACd,eAAe;AACnB","sourcesContent":[".workflow-editor-dev-info-panel .components-panel__row {\n    overflow: scroll;\n}\n\n.workflow-editor-dev-info-wrapper {\n    min-width: 1000px;\n}\n\n.workflow-editor-dev-panel {\n    background-color: #fffaf1;\n}\n\n.workflow-editor-share-summary-textarea textarea {\n    font-family: Menlo, Consolas, Monaco, monospace;\n    font-size: 12px;\n    line-height: 1.4;\n    white-space: pre;\n}\n\n.workflow-editor-share-summary-copy-feedback {\n    margin-left: 8px;\n    color: #1e1e1e;\n    font-size: 12px;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -19039,14 +20289,19 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.block-editor-block-types-list__item-p
     color: #000;
     padding: 4px 10px !important;
     border-radius: 4px;
+    height: 32px;
+    min-height: 32px;
+    display: inline-flex;
+    align-items: center;
 }
 
 .edit-post-header-toolbar__buy-pro .publishpress-icon {
     width: 18px !important;
     height: 18px !important;
     margin-right: 4px;
+    vertical-align: middle;
 }
-`, "",{"version":3,"sources":["webpack://./assets/jsx/workflow-editor/css/pro-features.css"],"names":[],"mappings":"AAAA;IACI,yBAAyB;IACzB,WAAW;IACX,gBAAgB;IAChB,kBAAkB;IAClB,eAAe;IACf,gBAAgB;IAChB,WAAW;AACf;AACA;;IAEI,yBAAyB;IACzB,WAAW;IACX,gBAAgB;IAChB,kBAAkB;IAClB,eAAe;IACf,gBAAgB;AACpB;;AAEA;;IAEI,gBAAgB;AACpB;;AAEA;;IAEI,eAAe;IACf,cAAc;IACd,eAAe;IACf,gBAAgB;IAChB,kBAAkB;IAClB,gBAAgB;IAChB,6BAA6B;IAC7B,gBAAgB;AACpB;;AAEA;IACI,yBAAyB;IACzB,WAAW;IACX,4BAA4B;IAC5B,kBAAkB;AACtB;;AAEA;IACI,sBAAsB;IACtB,uBAAuB;IACvB,iBAAiB;AACrB","sourcesContent":[".block-editor-block-types-list__item-pro-badge {\n    background-color: #ffb200;\n    color: #000;\n    padding: 3px 8px;\n    border-radius: 4px;\n    font-size: 10px;\n    font-weight: 600;\n    width: 100%;\n}\n.workflow-editor-inspector-card__pro-badge,\n.block-editor-block-card__pro-badge {\n    background-color: #ffb200;\n    color: #000;\n    padding: 3px 8px;\n    border-radius: 4px;\n    font-size: 10px;\n    font-weight: 600;\n}\n\n.workflow-editor-inspector-card__pro-badge,\n.components-popover__content .block-editor-block-card__pro-badge {\n    margin-left: 8px;\n}\n\n.workflow-editor-inspector-card__pro-instructions,\n.block-editor-block-card__pro-instructions {\n    font-size: 12px;\n    color: #757575;\n    margin-top: 8px;\n    line-height: 1.5;\n    font-style: italic;\n    font-weight: 400;\n    border-top: 1px solid #e0e0e0;\n    padding-top: 8px;\n}\n\n.edit-post-header-toolbar__buy-pro {\n    background-color: #ffb200;\n    color: #000;\n    padding: 4px 10px !important;\n    border-radius: 4px;\n}\n\n.edit-post-header-toolbar__buy-pro .publishpress-icon {\n    width: 18px !important;\n    height: 18px !important;\n    margin-right: 4px;\n}\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./assets/jsx/workflow-editor/css/pro-features.css"],"names":[],"mappings":"AAAA;IACI,yBAAyB;IACzB,WAAW;IACX,gBAAgB;IAChB,kBAAkB;IAClB,eAAe;IACf,gBAAgB;IAChB,WAAW;AACf;AACA;;IAEI,yBAAyB;IACzB,WAAW;IACX,gBAAgB;IAChB,kBAAkB;IAClB,eAAe;IACf,gBAAgB;AACpB;;AAEA;;IAEI,gBAAgB;AACpB;;AAEA;;IAEI,eAAe;IACf,cAAc;IACd,eAAe;IACf,gBAAgB;IAChB,kBAAkB;IAClB,gBAAgB;IAChB,6BAA6B;IAC7B,gBAAgB;AACpB;;AAEA;IACI,yBAAyB;IACzB,WAAW;IACX,4BAA4B;IAC5B,kBAAkB;IAClB,YAAY;IACZ,gBAAgB;IAChB,oBAAoB;IACpB,mBAAmB;AACvB;;AAEA;IACI,sBAAsB;IACtB,uBAAuB;IACvB,iBAAiB;IACjB,sBAAsB;AAC1B","sourcesContent":[".block-editor-block-types-list__item-pro-badge {\n    background-color: #ffb200;\n    color: #000;\n    padding: 3px 8px;\n    border-radius: 4px;\n    font-size: 10px;\n    font-weight: 600;\n    width: 100%;\n}\n.workflow-editor-inspector-card__pro-badge,\n.block-editor-block-card__pro-badge {\n    background-color: #ffb200;\n    color: #000;\n    padding: 3px 8px;\n    border-radius: 4px;\n    font-size: 10px;\n    font-weight: 600;\n}\n\n.workflow-editor-inspector-card__pro-badge,\n.components-popover__content .block-editor-block-card__pro-badge {\n    margin-left: 8px;\n}\n\n.workflow-editor-inspector-card__pro-instructions,\n.block-editor-block-card__pro-instructions {\n    font-size: 12px;\n    color: #757575;\n    margin-top: 8px;\n    line-height: 1.5;\n    font-style: italic;\n    font-weight: 400;\n    border-top: 1px solid #e0e0e0;\n    padding-top: 8px;\n}\n\n.edit-post-header-toolbar__buy-pro {\n    background-color: #ffb200;\n    color: #000;\n    padding: 4px 10px !important;\n    border-radius: 4px;\n    height: 32px;\n    min-height: 32px;\n    display: inline-flex;\n    align-items: center;\n}\n\n.edit-post-header-toolbar__buy-pro .publishpress-icon {\n    width: 18px !important;\n    height: 18px !important;\n    margin-right: 4px;\n    vertical-align: middle;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -19461,8 +20716,45 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.columns-container {
     text-wrap: auto;
 }
 
-.expression-builder-variable-name {
-    margin-left: 5px;
+.column-leaf-hint {
+    min-width: 202px;
+    overflow-y: auto;
+    white-space: normal;
+}
+
+.column-leaf-hint-content {
+    padding: 10px;
+    max-width: 202px;
+    white-space: normal;
+}
+
+.column-leaf-hint-content p {
+    text-wrap: auto;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.expression-builder-variable-hover-hint {
+    position: fixed;
+    z-index: 999999999;
+    max-width: 280px;
+    white-space: normal;
+    padding: 8px 12px;
+    background: #1e1e1e;
+    color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    font-size: 12px;
+    line-height: 1.4;
+    pointer-events: none;
+}
+
+.expression-builder-variable-hover-hint code {
+    font-family: Menlo, Consolas, monaco, monospace;
+    font-size: 11px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1px 4px;
+    border-radius: 2px;
 }
 
 .expression-builder-inline {
@@ -19529,13 +20821,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.columns-container {
     margin-top: 10px !important;
 }
 
-.expression-builder-modal-variables .description code {
-    color: #00458b;
-    margin-left: 0;
-    padding: 5px;
-    font-size: 12px;
-}
-
 .expression-builder .expression-builder-small-heading {
     font-size: 11px;
     font-weight: 500;
@@ -19557,7 +20842,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.columns-container {
 .expression-builder-modal-variables .column-item-step-slug {
     color: #a3a3a3;
 }
-`, "",{"version":3,"sources":["webpack://./assets/jsx/workflow-editor/components/data-fields/expression-builder/style.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,mBAAmB;IACnB,sBAAsB;IACtB,gBAAgB;IAChB,mBAAmB;IACnB,iBAAiB;IACjB,kBAAkB;IAClB,kBAAkB;AACtB;;AAEA;IACI,aAAa;IACb,sBAAsB;IACtB,gBAAgB;IAChB,cAAc;IACd,4BAA4B;IAC5B,kBAAkB;IAClB,iBAAiB;AACrB;;AAEA;IACI,eAAe;IACf,gBAAgB;IAChB,kBAAkB;IAClB,iBAAiB;IACjB,yBAAyB;IACzB,sBAAsB;IACtB,qBAAqB;IACrB,mBAAmB;AACvB;;AAEA;IACI,YAAY;IACZ,qBAAqB;IACrB,kBAAkB;IAClB,UAAU;IACV,QAAQ;IACR,2BAA2B;IAC3B,WAAW;AACf;;AAEA;IACI,mFAAmF;IACnF,uDAAuD;IACvD,YAAY;AAChB;;AAEA;IACI,mFAAmF;IACnF,uDAAuD;AAC3D;;AAEA;IACI,uDAAuD;AAC3D;;AAEA;IACI,mFAAmF;IACnF,uDAAuD;IACvD,YAAY;AAChB;;AAEA;IACI,sBAAsB;IACtB,mBAAmB;IACnB,gBAAgB;AACpB;;AAEA;IACI,mBAAmB;IACnB,sBAAsB;AAC1B;;AAEA;IACI,sBAAsB;IACtB,mBAAmB;AACvB;;AAEA;IACI,kBAAkB;IAClB,eAAe;IACf,mBAAmB;AACvB;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,kBAAkB;IAClB,WAAW;AACf;;AAEA;IACI,kBAAkB;IAClB,MAAM;IACN,QAAQ;IACR,YAAY;IACZ,sBAAsB;IACtB,eAAe;IACf,qBAAqB;IACrB,gBAAgB;IAChB,oBAAoB;IACpB,iBAAiB;IACjB,kBAAkB;AACtB;;AAEA;IACI,aAAa;IACb,gBAAgB;AACpB;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,gBAAgB;AACpB;;AAEA;IACI,aAAa;IACb,8CAA8C;IAC9C,eAAe;IACf,WAAW;IACX,yBAAyB;AAC7B;;AAEA;IACI,cAAc;IACd,WAAW;IACX,wBAAwB;IACxB,0BAA0B;IAC1B,2BAA2B;IAC3B,uBAAuB;IACvB,sBAAsB;IACtB,YAAY;AAChB;;AAEA;IACI,cAAc;IACd,WAAW;IACX,2BAA2B;IAC3B,oBAAoB;IACpB,sBAAsB;IACtB,uBAAuB;IACvB,cAAc;IACd,iBAAiB;IACjB,iBAAiB;IACjB,kBAAkB;AACtB;;AAEA;IACI,mBAAmB;IACnB,WAAW;AACf;;AAEA;IACI,uBAAuB;IACvB,wBAAwB;IACxB,2BAA2B;AAC/B;;AAEA;IACI,oCAAoC;AACxC;;AAEA;IACI,QAAQ;AACZ;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,2BAA2B;AAC/B;;AAEA;IACI,2BAA2B;IAC3B,2BAA2B;AAC/B;;AAEA;IACI,cAAc;IACd,cAAc;IACd,YAAY;IACZ,eAAe;AACnB;;AAEA;IACI,eAAe;IACf,gBAAgB;IAChB,gBAAgB;IAChB,yBAAyB;IACzB,sBAAsB;IACtB,cAAc;IACd,gBAAgB;IAChB,mBAAmB;IACnB,eAAe;IACf,UAAU;IACV,gBAAgB;IAChB,uBAAuB;IACvB,mBAAmB;IACnB,sBAAsB;IACtB,mBAAmB;AACvB;;AAEA;IACI,cAAc;AAClB","sourcesContent":[".columns-container {\n    display: flex;\n    flex-direction: row;\n    border: 1px solid #ccc;\n    overflow-x: auto;\n    white-space: nowrap;\n    max-height: 212px;\n    overflow-y: hidden;\n    overflow-x: scroll;\n}\n\n.column {\n    display: flex;\n    flex-direction: column;\n    min-width: 150px;\n    flex: 0 0 auto;\n    border-right: 1px solid #ccc;\n    overflow-y: scroll;\n    max-height: 212px;\n}\n\n.column-item {\n    cursor: pointer;\n    padding: 2px 6px;\n    position: relative;\n    user-select: none;\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    padding-right: 20px;\n}\n\n.column-item.has-children::after {\n    content: '▶';\n    display: inline-block;\n    position: absolute;\n    right: 4px;\n    top: 50%;\n    transform: translateY(-50%);\n    color: #ccc;\n}\n\n.column-item:hover {\n    background: var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9));\n    color: var(--wp-components-color-accent-inverted, #fff);\n    opacity: 0.4;\n}\n\n.selected {\n    background: var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9));\n    color: var(--wp-components-color-accent-inverted, #fff);\n}\n\n.column-item.has-children.selected::after {\n    color: var(--wp-components-color-accent-inverted, #fff);\n}\n\n.column-item.selected:hover {\n    background: var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9));\n    color: var(--wp-components-color-accent-inverted, #fff);\n    opacity: 0.8;\n}\n\n#expression-editor-full {\n    border: 1px solid #ccc;\n    margin-bottom: 10px;\n    margin-top: 10px;\n}\n\n#expression-editor-preview {\n    margin-bottom: 10px;\n    border: 1px solid #ccc;\n}\n\n.ace_editor {\n    border: 1px solid #ccc;\n    margin-bottom: 10px;\n}\n\n.ace_editor.ace_autocomplete {\n    z-index: 999999999;\n    margin-top: 5px;\n    padding-bottom: 5px;\n}\n\n.components-modal__screen-overlay {\n    z-index: 999999998;\n}\n\n.expression-builder {\n    position: relative;\n    width: 100%;\n}\n\n.expression-builder .expression-builder-button {\n    position: absolute;\n    top: 0;\n    right: 0;\n    height: 24px;\n    width: auto !important;\n    min-width: 24px;\n    display: inline-block;\n    padding-top: 4px;\n    padding-bottom: 23px;\n    padding-left: 8px;\n    padding-right: 8px;\n}\n\n.column-item-form {\n    padding: 10px;\n    max-width: 202px;\n}\n\n.column-item-form p {\n    text-wrap: auto;\n}\n\n.expression-builder-variable-name {\n    margin-left: 5px;\n}\n\n.expression-builder-inline {\n    display: grid;\n    grid-template-columns: minmax(220px, 1fr) auto;\n    column-gap: 6px;\n    width: 100%;\n    padding-top: 0 !important;\n}\n\n.expression-builder-inline .ace_editor {\n    grid-column: 1;\n    grid-row: 1;\n    margin-top: 0 !important;\n    margin-right: 0 !important;\n    margin-bottom: 0 !important;\n    height: 40px !important;\n    width: 100% !important;\n    min-width: 0;\n}\n\n.expression-builder-inline > .expression-builder-button {\n    grid-column: 2;\n    grid-row: 1;\n    position: static !important;\n    top: auto !important;\n    right: auto !important;\n    height: 40px !important;\n    padding-top: 0;\n    padding-bottom: 0;\n    padding-left: 8px;\n    padding-right: 8px;\n}\n\n.expression-builder-inline .description {\n    grid-column: 1 / -1;\n    grid-row: 2;\n}\n\n.ace_editor.settings-panel {\n    width: 246px !important;\n    height: 180px !important;\n    margin-top: 10px !important;\n}\n\n.ace_editor.read-only-editor {\n    background-color: #f3f3f3 !important;\n}\n\n.ace_content {\n    top: 5px;\n}\n\n#expression-builder-full .ace_content {\n    top: 0 !important;\n}\n\n.expression-builder .description {\n    margin-top: 10px !important;\n}\n\n.expression-builder-modal .description:last-of-type {\n    min-height: 40px !important;\n    margin-top: 10px !important;\n}\n\n.expression-builder-modal-variables .description code {\n    color: #00458b;\n    margin-left: 0;\n    padding: 5px;\n    font-size: 12px;\n}\n\n.expression-builder .expression-builder-small-heading {\n    font-size: 11px;\n    font-weight: 500;\n    line-height: 1.4;\n    text-transform: uppercase;\n    box-sizing: border-box;\n    display: block;\n    padding-top: 0px;\n    padding-bottom: 0px;\n    max-width: 100%;\n    z-index: 1;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n    color: rgb(30, 30, 30);\n    margin-bottom: 15px;\n}\n\n.expression-builder-modal-variables .column-item-step-slug {\n    color: #a3a3a3;\n}\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./assets/jsx/workflow-editor/components/data-fields/expression-builder/style.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,mBAAmB;IACnB,sBAAsB;IACtB,gBAAgB;IAChB,mBAAmB;IACnB,iBAAiB;IACjB,kBAAkB;IAClB,kBAAkB;AACtB;;AAEA;IACI,aAAa;IACb,sBAAsB;IACtB,gBAAgB;IAChB,cAAc;IACd,4BAA4B;IAC5B,kBAAkB;IAClB,iBAAiB;AACrB;;AAEA;IACI,eAAe;IACf,gBAAgB;IAChB,kBAAkB;IAClB,iBAAiB;IACjB,yBAAyB;IACzB,sBAAsB;IACtB,qBAAqB;IACrB,mBAAmB;AACvB;;AAEA;IACI,YAAY;IACZ,qBAAqB;IACrB,kBAAkB;IAClB,UAAU;IACV,QAAQ;IACR,2BAA2B;IAC3B,WAAW;AACf;;AAEA;IACI,mFAAmF;IACnF,uDAAuD;IACvD,YAAY;AAChB;;AAEA;IACI,mFAAmF;IACnF,uDAAuD;AAC3D;;AAEA;IACI,uDAAuD;AAC3D;;AAEA;IACI,mFAAmF;IACnF,uDAAuD;IACvD,YAAY;AAChB;;AAEA;IACI,sBAAsB;IACtB,mBAAmB;IACnB,gBAAgB;AACpB;;AAEA;IACI,mBAAmB;IACnB,sBAAsB;AAC1B;;AAEA;IACI,sBAAsB;IACtB,mBAAmB;AACvB;;AAEA;IACI,kBAAkB;IAClB,eAAe;IACf,mBAAmB;AACvB;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,kBAAkB;IAClB,WAAW;AACf;;AAEA;IACI,kBAAkB;IAClB,MAAM;IACN,QAAQ;IACR,YAAY;IACZ,sBAAsB;IACtB,eAAe;IACf,qBAAqB;IACrB,gBAAgB;IAChB,oBAAoB;IACpB,iBAAiB;IACjB,kBAAkB;AACtB;;AAEA;IACI,aAAa;IACb,gBAAgB;AACpB;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,gBAAgB;IAChB,gBAAgB;IAChB,mBAAmB;AACvB;;AAEA;IACI,aAAa;IACb,gBAAgB;IAChB,mBAAmB;AACvB;;AAEA;IACI,eAAe;IACf,aAAa;IACb,mBAAmB;AACvB;;AAEA;IACI,eAAe;IACf,kBAAkB;IAClB,gBAAgB;IAChB,mBAAmB;IACnB,iBAAiB;IACjB,mBAAmB;IACnB,WAAW;IACX,kBAAkB;IAClB,wCAAwC;IACxC,eAAe;IACf,gBAAgB;IAChB,oBAAoB;AACxB;;AAEA;IACI,+CAA+C;IAC/C,eAAe;IACf,oCAAoC;IACpC,gBAAgB;IAChB,kBAAkB;AACtB;;AAEA;IACI,aAAa;IACb,8CAA8C;IAC9C,eAAe;IACf,WAAW;IACX,yBAAyB;AAC7B;;AAEA;IACI,cAAc;IACd,WAAW;IACX,wBAAwB;IACxB,0BAA0B;IAC1B,2BAA2B;IAC3B,uBAAuB;IACvB,sBAAsB;IACtB,YAAY;AAChB;;AAEA;IACI,cAAc;IACd,WAAW;IACX,2BAA2B;IAC3B,oBAAoB;IACpB,sBAAsB;IACtB,uBAAuB;IACvB,cAAc;IACd,iBAAiB;IACjB,iBAAiB;IACjB,kBAAkB;AACtB;;AAEA;IACI,mBAAmB;IACnB,WAAW;AACf;;AAEA;IACI,uBAAuB;IACvB,wBAAwB;IACxB,2BAA2B;AAC/B;;AAEA;IACI,oCAAoC;AACxC;;AAEA;IACI,QAAQ;AACZ;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,2BAA2B;AAC/B;;AAEA;IACI,2BAA2B;IAC3B,2BAA2B;AAC/B;;AAEA;IACI,eAAe;IACf,gBAAgB;IAChB,gBAAgB;IAChB,yBAAyB;IACzB,sBAAsB;IACtB,cAAc;IACd,gBAAgB;IAChB,mBAAmB;IACnB,eAAe;IACf,UAAU;IACV,gBAAgB;IAChB,uBAAuB;IACvB,mBAAmB;IACnB,sBAAsB;IACtB,mBAAmB;AACvB;;AAEA;IACI,cAAc;AAClB","sourcesContent":[".columns-container {\n    display: flex;\n    flex-direction: row;\n    border: 1px solid #ccc;\n    overflow-x: auto;\n    white-space: nowrap;\n    max-height: 212px;\n    overflow-y: hidden;\n    overflow-x: scroll;\n}\n\n.column {\n    display: flex;\n    flex-direction: column;\n    min-width: 150px;\n    flex: 0 0 auto;\n    border-right: 1px solid #ccc;\n    overflow-y: scroll;\n    max-height: 212px;\n}\n\n.column-item {\n    cursor: pointer;\n    padding: 2px 6px;\n    position: relative;\n    user-select: none;\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    padding-right: 20px;\n}\n\n.column-item.has-children::after {\n    content: '▶';\n    display: inline-block;\n    position: absolute;\n    right: 4px;\n    top: 50%;\n    transform: translateY(-50%);\n    color: #ccc;\n}\n\n.column-item:hover {\n    background: var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9));\n    color: var(--wp-components-color-accent-inverted, #fff);\n    opacity: 0.4;\n}\n\n.selected {\n    background: var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9));\n    color: var(--wp-components-color-accent-inverted, #fff);\n}\n\n.column-item.has-children.selected::after {\n    color: var(--wp-components-color-accent-inverted, #fff);\n}\n\n.column-item.selected:hover {\n    background: var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9));\n    color: var(--wp-components-color-accent-inverted, #fff);\n    opacity: 0.8;\n}\n\n#expression-editor-full {\n    border: 1px solid #ccc;\n    margin-bottom: 10px;\n    margin-top: 10px;\n}\n\n#expression-editor-preview {\n    margin-bottom: 10px;\n    border: 1px solid #ccc;\n}\n\n.ace_editor {\n    border: 1px solid #ccc;\n    margin-bottom: 10px;\n}\n\n.ace_editor.ace_autocomplete {\n    z-index: 999999999;\n    margin-top: 5px;\n    padding-bottom: 5px;\n}\n\n.components-modal__screen-overlay {\n    z-index: 999999998;\n}\n\n.expression-builder {\n    position: relative;\n    width: 100%;\n}\n\n.expression-builder .expression-builder-button {\n    position: absolute;\n    top: 0;\n    right: 0;\n    height: 24px;\n    width: auto !important;\n    min-width: 24px;\n    display: inline-block;\n    padding-top: 4px;\n    padding-bottom: 23px;\n    padding-left: 8px;\n    padding-right: 8px;\n}\n\n.column-item-form {\n    padding: 10px;\n    max-width: 202px;\n}\n\n.column-item-form p {\n    text-wrap: auto;\n}\n\n.column-leaf-hint {\n    min-width: 202px;\n    overflow-y: auto;\n    white-space: normal;\n}\n\n.column-leaf-hint-content {\n    padding: 10px;\n    max-width: 202px;\n    white-space: normal;\n}\n\n.column-leaf-hint-content p {\n    text-wrap: auto;\n    margin-top: 0;\n    margin-bottom: 10px;\n}\n\n.expression-builder-variable-hover-hint {\n    position: fixed;\n    z-index: 999999999;\n    max-width: 280px;\n    white-space: normal;\n    padding: 8px 12px;\n    background: #1e1e1e;\n    color: #fff;\n    border-radius: 2px;\n    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);\n    font-size: 12px;\n    line-height: 1.4;\n    pointer-events: none;\n}\n\n.expression-builder-variable-hover-hint code {\n    font-family: Menlo, Consolas, monaco, monospace;\n    font-size: 11px;\n    background: rgba(255, 255, 255, 0.1);\n    padding: 1px 4px;\n    border-radius: 2px;\n}\n\n.expression-builder-inline {\n    display: grid;\n    grid-template-columns: minmax(220px, 1fr) auto;\n    column-gap: 6px;\n    width: 100%;\n    padding-top: 0 !important;\n}\n\n.expression-builder-inline .ace_editor {\n    grid-column: 1;\n    grid-row: 1;\n    margin-top: 0 !important;\n    margin-right: 0 !important;\n    margin-bottom: 0 !important;\n    height: 40px !important;\n    width: 100% !important;\n    min-width: 0;\n}\n\n.expression-builder-inline > .expression-builder-button {\n    grid-column: 2;\n    grid-row: 1;\n    position: static !important;\n    top: auto !important;\n    right: auto !important;\n    height: 40px !important;\n    padding-top: 0;\n    padding-bottom: 0;\n    padding-left: 8px;\n    padding-right: 8px;\n}\n\n.expression-builder-inline .description {\n    grid-column: 1 / -1;\n    grid-row: 2;\n}\n\n.ace_editor.settings-panel {\n    width: 246px !important;\n    height: 180px !important;\n    margin-top: 10px !important;\n}\n\n.ace_editor.read-only-editor {\n    background-color: #f3f3f3 !important;\n}\n\n.ace_content {\n    top: 5px;\n}\n\n#expression-builder-full .ace_content {\n    top: 0 !important;\n}\n\n.expression-builder .description {\n    margin-top: 10px !important;\n}\n\n.expression-builder-modal .description:last-of-type {\n    min-height: 40px !important;\n    margin-top: 10px !important;\n}\n\n.expression-builder .expression-builder-small-heading {\n    font-size: 11px;\n    font-weight: 500;\n    line-height: 1.4;\n    text-transform: uppercase;\n    box-sizing: border-box;\n    display: block;\n    padding-top: 0px;\n    padding-bottom: 0px;\n    max-width: 100%;\n    z-index: 1;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n    color: rgb(30, 30, 30);\n    margin-bottom: 15px;\n}\n\n.expression-builder-modal-variables .column-item-step-slug {\n    color: #a3a3a3;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
