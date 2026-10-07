@@ -1,4 +1,6 @@
 - .ddev
+- .php-cs-fixer.dist.php
+- .php-cs-fixer.php
 - .phpcs-plugin-review.xml
 - .web
 - /assets/adobe-animate

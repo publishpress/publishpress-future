@@ -43,3 +43,4 @@ translation-audit-report.*
 /scripts/
 .web/
 .ddev/
+/.php-cs-fixer.php
