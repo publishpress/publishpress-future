@@ -3,17 +3,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 [UNRELEASED]
 
-- Changed: Expand the readme FAQ and correct the Future menu paths and Action Scheduler notes.
 - Security: Require the matching WordPress capability before a Future Action is scheduled. Publish and make private require `publish_posts`, stick and unstick require `edit_others_posts`, and delete requires `delete_post`. The editor only lists actions the current user can schedule.
 - Security: Require the taxonomy `edit_terms` capability before a Future Action creates terms, and only allow taxonomies registered for that post type. Users without that capability can still select existing terms.
 - Security: Restrict the `publishpress_future_action` REST field to the edit context and to users who can edit the post. Public wp/v2 responses no longer include Future Action schedule metadata.
 - Added: Workflow share summaries show human-readable setting values instead of raw JSON.
 - Added: Expression builder shows variable details on hover.
 - Added: Copy a workflow as plain text for development, support, or debugging.
+- Changed: Expand the readme FAQ and correct the Future menu paths and Action Scheduler notes.
 - Changed: Upgrade Action Scheduler from 3.9.3 to 4.1.0 (Issue #1655).
 - Changed: Raise the minimum WordPress version from 6.7 to 6.8, required by Action Scheduler 4.0+.
 - Changed: With Action Scheduler 4.0+, unique actions include their arguments when checking uniqueness, and failed actions are purged after 3 months by default.
 - Changed: Tested up to WordPress 7.1.
+- Fixed: Mark diagnostics and scheduled-action log table headers with scope.
 - Fixed: Settings form no longer intercepts other plugins' submissions that use `?tab=license` (Issue #1708).
 - Fixed: Workflows no longer stay "Scheduled" instead of "Active" on sites with a positive UTC offset (Issue #1698).
 - Fixed: ACF Extended frontend forms trigger workflows only after the required metadata is saved (Issue #1649).

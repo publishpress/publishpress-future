@@ -688,25 +688,25 @@ class ScheduledActionsTable extends \ActionScheduler_ListTable
             $html .= '<tbody>';
 
             $html .= '<tr>';
-            $html .= '<td>' . esc_html__('Action: ', 'post-expirator') . '</td><td>' . $this->column_hook(
+            $html .= '<th scope="row">' . esc_html__('Action: ', 'post-expirator') . '</th><td>' . $this->column_hook(
                 $row
             ) . '</td>';
             $html .= '</tr>';
 
             $html .= '<tr>';
-            $html .= '<td>' . esc_html__('Status: ', 'post-expirator') . '</td><td>' . $this->column_status(
+            $html .= '<th scope="row">' . esc_html__('Status: ', 'post-expirator') . '</th><td>' . $this->column_status(
                 $row
             ) . '</td>';
             $html .= '</tr>';
 
             $html .= '<tr>';
-            $html .= '<td>' . esc_html__('Arguments: ', 'post-expirator') . '</td><td>' . $this->column_args(
+            $html .= '<th scope="row">' . esc_html__('Arguments: ', 'post-expirator') . '</th><td>' . $this->column_args(
                 $row
             ) . '</td>';
             $html .= '</tr>';
 
             $html .= '<tr>';
-            $html .= '<td>' . esc_html__('Scheduled date: ', 'post-expirator') . '</td><td>' . $this->column_schedule(
+            $html .= '<th scope="row">' . esc_html__('Scheduled date: ', 'post-expirator') . '</th><td>' . $this->column_schedule(
                 $row
             ) . '</td>';
             $html .= '</tr>';
@@ -720,8 +720,8 @@ class ScheduledActionsTable extends \ActionScheduler_ListTable
             $html .= '<table class="wp-list-table widefat striped">';
             $html .= '<thead>';
             $html .= '<tr>';
-            $html .= '<th>' . esc_html__('Date', 'post-expirator') . '</th>';
-            $html .= '<th>' . esc_html__('Message', 'post-expirator') . '</th>';
+            $html .= '<th scope="col">' . esc_html__('Date', 'post-expirator') . '</th>';
+            $html .= '<th scope="col">' . esc_html__('Message', 'post-expirator') . '</th>';
             $html .= '</tr>';
             $html .= '</thead>';
             $html .= '<tbody>';
