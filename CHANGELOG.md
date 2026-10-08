@@ -1,6 +1,31 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+[UNRELEASED]
+
+- Changed: Expand the readme FAQ and correct the Future menu paths and Action Scheduler notes.
+- Security: Require the matching WordPress capability before a Future Action is scheduled. Publish and make private require `publish_posts`, stick and unstick require `edit_others_posts`, and delete requires `delete_post`. The editor only lists actions the current user can schedule.
+- Security: Require the taxonomy `edit_terms` capability before a Future Action creates terms, and only allow taxonomies registered for that post type. Users without that capability can still select existing terms.
+- Security: Restrict the `publishpress_future_action` REST field to the edit context and to users who can edit the post. Public wp/v2 responses no longer include Future Action schedule metadata.
+- Added: Workflow share summaries show human-readable setting values instead of raw JSON.
+- Added: Expression builder shows variable details on hover.
+- Added: Copy a workflow as plain text for development, support, or debugging.
+- Changed: Upgrade Action Scheduler from 3.9.3 to 4.1.0 (Issue #1655).
+- Changed: Raise the minimum WordPress version from 6.7 to 6.8, required by Action Scheduler 4.0+.
+- Changed: With Action Scheduler 4.0+, unique actions include their arguments when checking uniqueness, and failed actions are purged after 3 months by default.
+- Changed: Tested up to WordPress 7.1.
+- Fixed: Settings form no longer intercepts other plugins' submissions that use `?tab=license` (Issue #1708).
+- Fixed: Workflows no longer stay "Scheduled" instead of "Active" on sites with a positive UTC offset (Issue #1698).
+- Fixed: ACF Extended frontend forms trigger workflows only after the required metadata is saved (Issue #1649).
+- Fixed: REST API permission checks no longer return 403 for Application Password requests (Issue #1716).
+- Fixed: Block editor no longer marks posts without an expiration as unsaved (Issue #1651).
+- Fixed: Custom PHP date formats no longer gain extra backslashes when Display settings are saved (Issue #1686).
+- Fixed: Workflow editor toolbar aligns with WordPress 7.1 (Issue #1674).
+- Fixed: Schedule delay step no longer shows a false "custom date source is required" error (Issue #1658).
+- Fixed: Expression builder no longer shows the insert-at-cursor hint on metadata form fields.
+- Fixed: Workflow execution safeguard no longer treats different triggers as an infinite loop (Issue #1680).
+- Fixed: Translation strings now include translator comments and ordered placeholders.
+
 [4.10.7] - 07 Oct, 2026
 
 - Fixed: Fatal error: Cannot redeclare class ComposerAutoloaderInit4e236dcfe4d243372f5b41b5aead30db (Issue #1733).

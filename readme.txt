@@ -57,7 +57,7 @@ With PublishPress Future Pro, you can build Action Workflows. These allow you to
 
 ## Display the Action Date in Your Content
 
-PublishPress Future allows you to place automatically show the expiry or action date inside your articles. The date will be added at the bottom of your post.
+PublishPress Future can automatically show the expiry or action date inside your articles. The date will be added at the bottom of your post.
 
 [Click here to see the Footer Display options](https://publishpress.com/knowledge-base/footer-display/).
 
@@ -67,19 +67,19 @@ You can use shortcodes to show the expiration date inside your posts. You can cu
 
 ## Choose Actions Defaults for Post Types
 
-PublishPress Future can support any post type in WordPress. Go to Settings > PublishPress Future > Defaults and you can choose default actions for each post type.
+PublishPress Future can support any post type in WordPress. Go to Future > Post Types and you can choose default actions for each post type. Turn on "Automatically create actions" if new content should get that action on its own.
 
 [Click here to see the default options](https://publishpress.com/knowledge-base/defaults-for-post-types/).
 
 ## PublishPress Future Email Notifications
 
-The PublishPress Future plugin can send you email notifications when your content is changed. You can control the emails by going to Settings > PublishPress Future > General Settings.
+The PublishPress Future plugin can send you email notifications when your content is changed. You can control the emails by going to Future > Notifications.
 
 [Click here to see the notification options](https://publishpress.com/knowledge-base/email-notifications/).
 
 ## Integrations With Other Plugins
 
-In PublishPress Future Pro it is possible to schedule changes to your posts based on metadata. This makes it possible to integrate PublishPress Future with other plugins.  For example, you can create a date field in the Advanced Custom Fields plugin and use that to control the date for Future Actions.
+In PublishPress Future Pro it is possible to schedule changes to your posts based on metadata. This makes it possible to integrate PublishPress Future with other plugins. For example, you can create a date field in the Advanced Custom Fields plugin and use that to control the date for Future Actions.
 
 When you are using an integration, there are five types of data that you can update in PublishPress Future:
 
@@ -101,7 +101,7 @@ The best approach is to use the Metadata Scheduling feature. If you're using a p
 
 ## Details on How Post Changes Works
 
-For each expiration event, a custom cron job is scheduled. This can help reduce server overhead for busy sites. This plugin REQUIRES that WP-CRON is setup and functional on your webhost.  Some hosts do not support this, so please check and confirm if you run into issues using the plugin.
+Each scheduled change is stored as an Action Scheduler action. Action Scheduler usually runs that queue through WP-Cron, which keeps the load down on busy sites. If a change does not happen, check that WP-Cron is running. Sites that disable WP-Cron on purpose can still process the queue with Action Scheduler's async runner or with WP-CLI.
 
 [Click here to see the technical details for this plugin](https://publishpress.com/knowledge-base/scheduling-cron-jobs/).
 
@@ -141,10 +141,22 @@ Bug reports for PublishPress Future are welcomed in our [repository on GitHub](h
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
+= Install from within WordPress =
 
-1. Unzip the plugin contents to the `/wp-content/plugins/post-expirator/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
+1. Go to Plugins > Add New in your WordPress admin.
+2. Search for "PublishPress Future".
+3. Click Install Now, then Activate.
+
+= Install manually =
+
+1. Unzip the plugin contents to the `/wp-content/plugins/post-expirator/` directory.
+2. Activate the plugin through the 'Plugins' menu in WordPress.
+
+= After activating =
+
+Open a post and look for the Future panel in the right sidebar to set your first action date. To apply an action to a whole post type by default, go to Future > Post Types and turn on "Automatically create actions".
+
+Scheduled changes are stored with Action Scheduler, which usually runs through WP-Cron. See the FAQ below.
 
 == Screenshots ==
 
@@ -159,17 +171,67 @@ This section describes how to install the plugin and get it working.
 
 == Frequently Asked Questions ==
 
+= What can PublishPress Future do to a post when the date arrives? =
+
+Change the status to Draft or Private, send the post to the Trash, delete it, turn the "Stick to the top of the blog" option on or off, or change its categories — replacing them, adding to them, or removing only the ones you name. The Pro version can also move a post to a custom status.
+
+= How do I schedule a change to a post? =
+
+While editing it. The Future panel in the right sidebar sets the action and the date, and it works with the block editor, the Classic Editor and most page builders.
+
+= Can I schedule changes to a lot of posts at once? =
+
+Yes. Action dates can be set through Quick Edit and Bulk Edit on the posts list, so you can apply the same action to as many posts as you need without opening each one.
+
+= Can I set a default action for a whole post type? =
+
+Yes. Go to Future > Post Types, choose the action and timing for that post type, and turn on "Automatically create actions". The default action alone does not schedule anything; that option is what creates the action on new content.
+
+= Which post types does it work with? =
+
+Any of them. Posts and pages, WooCommerce products, LearnDash courses, and any custom post type — you enable each one under Future > Post Types.
+
 = Can I schedule changes to WooCommerce Products? =
 
-Yes, the PublishPress Future plugin allows you to schedule automatic changes to posts, pages and other content types including WooCommerce products. To enable this feature, go to Future > Post Types. Check the “Active” box in the “Product” area.
+Yes. Go to Future > Post Types and check the "Active" box in the "Product" area.
 
 [Click here for more details on WooCommerce changes](https://publishpress.com/knowledge-base/schedule-changes-woocommerce-products/)
 
 = Can I schedule changes to Elementor posts? =
 
-Yes, the PublishPress Future plugin allows you to schedule automatic changes to posts, pages and other content types including WooCommerce products. To enable this feature, go to Future > Post Types. Check the “Active” box for the post type you're using with Elementor.
+Yes. Go to Future > Post Types and check the "Active" box for the post type you are using with Elementor.
 
 [Click here for more details on Elementor post changes](https://publishpress.com/knowledge-base/schedule-changes-elementor/)
+
+= Will I be told when a change happens? =
+
+Yes, if you want to be. PublishPress Future can email you when it acts on your content. Turn the emails on under Future > Notifications.
+
+= Can I show the scheduled date to my readers? =
+
+Yes, in two ways. The footer display adds the date to the bottom of the post automatically, and a shortcode puts it anywhere in the content, with formatting options for how the date reads.
+
+= Does this plugin need WP-Cron? =
+
+Scheduled changes are Action Scheduler actions, not separate WP-Cron events. Action Scheduler usually runs its queue through WP-Cron, so a broken or disabled WP-Cron is the first thing to check if a change does not happen. Sites that disable WP-Cron on purpose can still run the queue with Action Scheduler's async runner or with WP-CLI. Some hosts disable WP-Cron.
+
+[Click here for the technical details](https://publishpress.com/knowledge-base/scheduling-cron-jobs/)
+
+= Is there a record of what was changed? =
+
+PublishPress Future Pro keeps a log of every action: which post it ran on, what was changed, and when.
+
+= Can I use a date from Advanced Custom Fields to control the action? =
+
+Yes, in the Pro version. Metadata Scheduling lets a date field from ACF, or another plugin, supply the action date, along with the action status, action type and taxonomy terms.
+
+= Can I import posts that already have action dates? =
+
+Yes, in the Pro version. Importers such as WP All Import can map their columns onto the Metadata Scheduling fields, so imported posts arrive with their Future Actions already set.
+
+= What do I get in the Pro version? =
+
+Action Workflows with multiple steps and schedules, custom post statuses, the action log, Metadata Scheduling and its plugin integrations, and imports.
 
 == Changelog ==
 
