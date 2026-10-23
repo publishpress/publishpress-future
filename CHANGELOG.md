@@ -2,6 +2,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 [Unreleased]
 
+- Changed: Display the PublishPress Hub translation update notice on Future Actions, Workflows, the workflow editor, Settings, and Scheduled Actions.
 
 [4.12.0] - 18 Nov, 2026
 
