@@ -13,6 +13,8 @@ export const ScheduledStepsCleanupSettings = () => {
         <>
             <th scope="row">{text.scheduledStepsCleanup}</th>
             <td>
+                <fieldset className="pp-a11y-fieldset" style={{ border: 0, margin: 0, padding: 0, minWidth: 0 }}>
+                <legend className="screen-reader-text">{text.scheduledStepsCleanup}</legend>
                 <div className="pp-settings-field-row">
                     <input type="radio"
                         checked={cleanupStatus}
@@ -57,6 +59,7 @@ export const ScheduledStepsCleanupSettings = () => {
                     <label htmlFor="future-step-schedule-cleanup-disabled">{text.scheduledStepsCleanupDisable}</label>
                     <p className="description offset">{text.scheduledStepsCleanupDisableDesc}</p>
                 </div>
+                </fieldset>
             </td>
         </>
     )

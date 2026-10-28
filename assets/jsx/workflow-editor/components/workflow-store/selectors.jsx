@@ -153,6 +153,10 @@ export function getNodeErrors(state, nodeId) {
     return state.nodeErrors[nodeId] || [];
 }
 
+export function getAllNodeErrors(state) {
+    return state.nodeErrors || {};
+}
+
 export function getDraggingFromHandle(state) {
     return state.draggingFromHandle;
 }

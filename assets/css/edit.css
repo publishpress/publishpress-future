@@ -51,7 +51,7 @@ div.pe-qe-fields > div {
 
 
 .future-action-gray {
-    color: #afafaf;
+    color: #646970;
 }
 
 .future-action-action-name {
@@ -63,7 +63,7 @@ div.pe-qe-fields > div {
 }
 
 .future-action-help-text {
-    color: #a6a6a6;
+    color: #646970;
     font-style: italic;
     line-height: 20px;
 }
@@ -189,7 +189,7 @@ body.espresso-admin #publishpress-future-classic-editor .components-input-contro
 }
 
 .pp-future-workflow-status-icon.active {
-    color: #46b450;
+    color: #008a20;
 }
 
 .pp-future-workflow-status-icon.inactive {

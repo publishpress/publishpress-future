@@ -36,11 +36,51 @@ import { TriggerPlaceholder } from "../node-types/trigger-placeholder";
 import { createNewNode, getId } from "../../utils";
 import NodePlaceholder from "../node-types/node-placeholder";
 import AutoLayout from "./auto-layout";
-import { __ } from "@wordpress/i18n";
+import { __, sprintf } from "@wordpress/i18n";
 import { getNodeVariablesTree, filterVariablesTreeByDataType, getNodeById } from "../../utils";
 import { CUSTOM_EVENT_HANDLES_COUNT_CHANGED } from "../../constants";
 
 const GRID_SIZE = 10;
+
+/**
+ * Build a human readable name for a node, without internal ids.
+ */
+function getNodeAccessibleName(node, getNodeTypeByName) {
+    if (node?.data?.elementaryType === NODE_TYPE_PLACEHOLDER || node?.type === 'triggerPlaceholder' || node?.type === 'nodePlaceholder') {
+        return node?.type === 'triggerPlaceholder'
+            ? __('Trigger placeholder', 'post-expirator')
+            : __('Step placeholder', 'post-expirator');
+    }
+
+    const nodeType = getNodeTypeByName(node?.data?.name);
+    const label = nodeType?.label || __('Step', 'post-expirator');
+
+    let typeLabel = __('Step', 'post-expirator');
+    if (node?.data?.elementaryType === 'trigger') {
+        typeLabel = __('Trigger', 'post-expirator');
+    } else if (node?.data?.elementaryType === 'action') {
+        typeLabel = __('Action', 'post-expirator');
+    } else if (node?.data?.elementaryType === 'advanced') {
+        typeLabel = __('Advanced', 'post-expirator');
+    }
+
+    let name = sprintf(
+        /* translators: 1: the step type (Trigger, Action...), 2: the step name. */
+        __('%1$s: %2$s', 'post-expirator'),
+        typeLabel,
+        label
+    );
+
+    if (node?.data?.label) {
+        name += ` (${node.data.label})`;
+    }
+
+    if (node?.data?.slug) {
+        name += `, ${node.data.slug}`;
+    }
+
+    return name;
+}
 
 export const FlowEditor = (props) => {
     const {
@@ -57,6 +97,7 @@ export const FlowEditor = (props) => {
         isConnectingNodes,
         getNodeTypeByName,
         globalVariables,
+        allNodeErrors,
     } = useSelect((select) => {
         const activeComplementaryArea = select(
             "core/interface",
@@ -78,8 +119,62 @@ export const FlowEditor = (props) => {
             isConnectingNodes: select(workflowStore).isConnectingNodes(),
             getNodeTypeByName: select(editorStore).getNodeTypeByName,
             globalVariables: select(workflowStore).getGlobalVariables(),
+            allNodeErrors: select(workflowStore).getAllNodeErrors(),
         };
     });
+
+    /**
+     * Add accessible names to nodes and edges. Only passed to React Flow,
+     * the store keeps the original objects.
+     */
+    const accessibleNodes = useMemo(() => {
+        return nodes.map((node) => {
+            let ariaLabel = getNodeAccessibleName(node, getNodeTypeByName);
+
+            if (Object.keys(allNodeErrors?.[node.id] || {}).length > 0) {
+                ariaLabel = sprintf(
+                    /* translators: %s: the step name. */
+                    __('%s, has errors', 'post-expirator'),
+                    ariaLabel
+                );
+            }
+
+            return {
+                ...node,
+                ariaLabel,
+            };
+        });
+    }, [nodes, allNodeErrors, getNodeTypeByName]);
+
+    const accessibleEdges = useMemo(() => {
+        return edges.map((edge) => {
+            const sourceNode = getNodeById(edge.source, nodes);
+            const targetNode = getNodeById(edge.target, nodes);
+
+            if (! sourceNode || ! targetNode) {
+                return edge;
+            }
+
+            let sourceName = getNodeAccessibleName(sourceNode, getNodeTypeByName);
+            const sourceNodeType = getNodeTypeByName(sourceNode?.data?.name);
+            const sourceHandles = sourceNodeType?.handleSchema?.source || [];
+            const sourceHandle = sourceHandles.find((handle) => handle?.id === edge.sourceHandle);
+
+            if (sourceHandles.length > 1 && sourceHandle?.label) {
+                sourceName += ` (${sourceHandle.label})`;
+            }
+
+            return {
+                ...edge,
+                ariaLabel: sprintf(
+                    /* translators: 1: the source step name, 2: the target step name. */
+                    __('From %1$s to %2$s', 'post-expirator'),
+                    sourceName,
+                    getNodeAccessibleName(targetNode, getNodeTypeByName)
+                ),
+            };
+        });
+    }, [edges, nodes, getNodeTypeByName]);
 
     const {
         setNodes,
@@ -501,8 +596,8 @@ export const FlowEditor = (props) => {
             <AutoLayout onLayout={onAutoLayout} />
             {! isLoadingWorkflow && (
                 <ReactFlow
-                    nodes={nodes}
-                    edges={edges}
+                    nodes={accessibleNodes}
+                    edges={accessibleEdges}
                     onNodesChange={onNodesChange}
                     onEdgesChange={onEdgesChange}
                     onEdgeUpdate={onEdgeUpdate}

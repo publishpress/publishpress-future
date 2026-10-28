@@ -17,7 +17,9 @@ export const ToggleArrowButton = function (props) {
     return (
         <Button
             isSmall
-            title={title}
+            label={title}
+            showTooltip
+            aria-expanded={!! props.isExpanded}
             icon={icon}
             onClick={onClick}
             className={props.className}

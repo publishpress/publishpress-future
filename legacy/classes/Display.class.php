@@ -566,15 +566,17 @@ class PostExpirator_Display
                         // translators: %1$s is the plugin name, %2$s is the star rating markup
                         esc_html__('If you like %1$s, please leave us a %2$s rating. Thank you!', 'post-expirator'),
                         '<strong>PublishPress Future</strong>',
-                        '<span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span>'
+                        '<span class="screen-reader-text">' . esc_html__('five-star', 'post-expirator') . '</span>'
+                            . '<span aria-hidden="true"><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span></span>'
                     );
                     ?>
+                    <span class="screen-reader-text"><?php esc_html_e('(opens in a new tab)', 'post-expirator'); ?></span>
                 </a>
             </div>
 
             <hr>
 
-            <nav>
+            <nav aria-label="<?php esc_attr_e('PublishPress Future footer', 'post-expirator'); ?>">
                 <ul>
                     <li>
                         <a href="https://publishpress.com/future/" target="_blank" rel="noopener noreferrer"
@@ -582,6 +584,7 @@ class PostExpirator_Display
                             esc_attr_e('About PublishPress Future', 'post-expirator'); ?>">
                             <?php
                             esc_html_e('About', 'post-expirator'); ?>
+                            <span class="screen-reader-text"><?php esc_html_e('(opens in a new tab)', 'post-expirator'); ?></span>
                         </a>
                     </li>
                     <li>
@@ -590,6 +593,7 @@ class PostExpirator_Display
                             esc_attr_e('Future Documentation', 'post-expirator'); ?>">
                             <?php
                             esc_html_e('Documentation', 'post-expirator'); ?>
+                            <span class="screen-reader-text"><?php esc_html_e('(opens in a new tab)', 'post-expirator'); ?></span>
                         </a>
                     </li>
                     <li>
@@ -598,6 +602,7 @@ class PostExpirator_Display
                             esc_attr_e('Contact the PublishPress team', 'post-expirator'); ?>">
                             <?php
                             esc_html_e('Contact', 'post-expirator'); ?>
+                            <span class="screen-reader-text"><?php esc_html_e('(opens in a new tab)', 'post-expirator'); ?></span>
                         </a>
                     </li>
                 </ul>
@@ -606,7 +611,8 @@ class PostExpirator_Display
             <div class="pp-pressshack-logo">
                 <a href="https://publishpress.com" target="_blank" rel="noopener noreferrer">
                     <img src="<?php
-                    echo esc_url(plugins_url('../assets/images/publishpress-logo.png', dirname(__FILE__))) ?>"/>
+                    echo esc_url(plugins_url('../assets/images/publishpress-logo.png', dirname(__FILE__))) ?>" alt="PublishPress"/>
+                    <span class="screen-reader-text"><?php esc_html_e('(opens in a new tab)', 'post-expirator'); ?></span>
                 </a>
             </div>
         </footer>

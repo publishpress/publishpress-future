@@ -108,12 +108,12 @@ function DebugLogAutoRefresh() {
                         </span>
                     )}
                     {!isRefreshing && lastRefreshedSeconds !== null && (
-                        <span style={{ marginLeft: '10px', color: '#666' }}>
+                        <span style={{ marginLeft: '10px', color: '#646970' }}>
                             {text.lastRefreshed || 'Last refreshed:'} {lastRefreshedSeconds} {text.secondsAgo || 'seconds ago'}
                         </span>
                     )}
                     {error && (
-                        <span style={{ marginLeft: '10px', color: 'red' }}>{error}</span>
+                        <span style={{ marginLeft: '10px', color: '#b32d2e' }}>{error}</span>
                     )}
                 </>
             )}

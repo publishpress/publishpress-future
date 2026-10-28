@@ -49,14 +49,15 @@ $tabs = $hooks->applyFilters(HooksAbstract::FILTER_FUTURE_ACTIONS_TABS, $tabs);
 ?>
 
 <div class="wrap">
-    <h2 class="pp-settings-title"><?php
-        esc_html_e('Future Actions', 'post-expirator'); ?></h2>
+    <h1 class="pp-settings-title"><?php
+        esc_html_e('Future Actions', 'post-expirator'); ?></h1>
     <div id="pe-settings-tabs">
-        <nav class="nav-tab-wrapper postexpirator-nav-tab-wrapper" id="postexpirator-nav">
+        <nav class="nav-tab-wrapper postexpirator-nav-tab-wrapper" id="postexpirator-nav" aria-label="<?php esc_attr_e('Future Actions sections', 'post-expirator'); ?>">
             <?php foreach ($tabs as $tab) : ?>
                 <a href="<?php echo esc_url($tab['link']); ?>"
                    class="pe-tab nav-tab <?php
                     echo($current_tab === $tab['slug'] ? 'nav-tab-active' : ''); ?>"
+                    <?php echo $current_tab === $tab['slug'] ? 'aria-current="page"' : ''; ?>
                 >
                     <?php echo esc_html($tab['title']); ?>
                 </a>

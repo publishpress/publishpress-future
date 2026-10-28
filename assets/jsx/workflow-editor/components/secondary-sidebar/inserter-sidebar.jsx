@@ -4,6 +4,7 @@
 import { useDispatch, useSelect } from '@wordpress/data';
 import { Button } from '@wordpress/components';
 import { close } from '@wordpress/icons';
+import { __ } from '@wordpress/i18n';
 import {
     useViewportMatch,
     __experimentalUseDialog as useDialog,
@@ -43,6 +44,7 @@ export function InserterSidebar() {
             <div className="editor-inserter-sidebar__header">
                 <Button
                     icon={close}
+                    label={__('Close block inserter', 'post-expirator')}
                     onClick={() => closeInserter()}
                     className="block-editor-tabbed-sidebar__close-button is-small"
                 />

@@ -46,7 +46,7 @@
 .react-flow__node-description {
     font-size: 8px;
     line-height: 10px;
-    color: #0000008a;
+    color: rgba(0, 0, 0, 0.85);
     margin-top: 0px;
     margin-left: 16px;
     padding: 0px 6px;
@@ -75,6 +75,19 @@
     width: 8px !important;
     height: 8px !important;
     box-sizing: border-box;
+}
+
+/* Enlarge the handle hit area to 24x24 while keeping the visible dot at 8x8. */
+.react-flow__handle::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    border-radius: 50%;
 }
 
 .react-flow__handle.react-flow__handle-bottom {
@@ -151,12 +164,12 @@
 
 .react-flow__node-genericNode {
     background-color: #b2b2c9;
-    border-color: #b2b2c9;
+    border-color: #8c8f94;
 }
 
 .react-flow__node-genericNode .react-flow__handle {
     background-color: #fff;
-    border-color: #b2b2c9;
+    border-color: #8c8f94;
 }
 
 .react-flow__node-genericNode .react-flow__node-top {
@@ -319,8 +332,36 @@
 /* PLACEHOLDER FOR EMPTY FLOW */
 .react-flow__node-triggerPlaceholderNode {
     background-color: #fff;
-    border: 1px dashed #d2d2d2;
+    border: 1px dashed #8c8f94;
     cursor: pointer;
+}
+
+/* The placeholder is a Button: reset the component styles to keep the node look. */
+.components-button.react-flow__node-placeholder-button {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    padding: 0;
+    font-size: 10px;
+    line-height: normal;
+    text-align: left;
+    color: #171717;
+    background-color: #fff;
+    border: 1px dashed #8c8f94;
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+.components-button.react-flow__node-placeholder-button:hover {
+    border: 1px dashed #50575e;
+    background-color: #fff;
+}
+
+.components-button.react-flow__node-placeholder-button:focus-visible {
+    outline: 2px solid var(--wp-admin-theme-color, #2271b1);
+    outline-offset: 2px;
+    box-shadow: none;
 }
 
 .react-flow__node-triggerPlaceholderNode .react-flow__node-header {
@@ -330,7 +371,7 @@
 
 .react-flow__node-triggerPlaceholderNode .react-flow__node-header .icon {
     color: #fff;
-    background-color: #d2d2d2;
+    background-color: #646970;
     padding: 2px;
     display: inline-block;
     width: 12px;
@@ -351,7 +392,7 @@
 }
 
 .react-flow__node-triggerPlaceholderNode .react-flow__node-header .react-flow__node-label {
-    color: #d2d2d2
+    color: #646970;
 }
 
 .react-flow__node-triggerPlaceholderNode .react-flow__node-header {
@@ -359,15 +400,15 @@
 }
 
 .react-flow__node-triggerPlaceholderNode:hover {
-    border: 1px dashed #aeaeae;
+    border: 1px dashed #50575e;
 }
 
 .react-flow__node-triggerPlaceholderNode:hover .react-flow__node-header .icon {
-    background-color: #aeaeae;
+    background-color: #50575e;
 }
 
 .react-flow__node-triggerPlaceholderNode:hover .react-flow__node-header .react-flow__node-label {
-    color: #aeaeae;
+    color: #3c434a;
 }
 
 .react-flow__node-triggerPlaceholderNode .react-flow__node-inner-body {
@@ -480,7 +521,7 @@
 }
 
 body.workflow-editor.is-free .react-flow__node-handle-name {
-    color: #838383;
+    color: #646970;
 }
 
 body.workflow-editor.is-free .react-flow__node-handle-name.handle-area-source-output,
@@ -489,5 +530,32 @@ body.workflow-editor.is-free .react-flow__node-handle-name.handle-area-source-tr
 }
 
 .react-flow__node-top .node-slug {
-    color: #0000008a;
+    color: rgba(0, 0, 0, 0.85);
+}
+
+/* EDGES: non-text contrast (WCAG 1.4.11) */
+.react-flow__edge:not(.selected) .react-flow__edge-path {
+    stroke: #8c8f94;
+}
+
+.react-flow__arrowhead polyline {
+    stroke: #8c8f94 !important;
+    fill: #8c8f94 !important;
+}
+
+/* KEYBOARD FOCUS FOR CUSTOM NODE TYPES */
+.react-flow__node-generic:focus,
+.react-flow__node-trigger:focus,
+.react-flow__node-triggerPlaceholder:focus,
+.react-flow__node-nodePlaceholder:focus {
+    outline: none;
+}
+
+.react-flow__node-generic:focus-visible,
+.react-flow__node-trigger:focus-visible,
+.react-flow__node-triggerPlaceholder:focus-visible,
+.react-flow__node-nodePlaceholder:focus-visible {
+    outline: none;
+    border-radius: 8px;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--wp-admin-theme-color, #2271b1);
 }

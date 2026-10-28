@@ -1168,12 +1168,12 @@ function DebugLogAutoRefresh() {
   }, text.refreshing || 'Refreshing...'), !isRefreshing && lastRefreshedSeconds !== null && /*#__PURE__*/React.createElement("span", {
     style: {
       marginLeft: '10px',
-      color: '#666'
+      color: '#646970'
     }
   }, text.lastRefreshed || 'Last refreshed:', " ", lastRefreshedSeconds, " ", text.secondsAgo || 'seconds ago'), error && /*#__PURE__*/React.createElement("span", {
     style: {
       marginLeft: '10px',
-      color: 'red'
+      color: '#b32d2e'
     }
   }, error)));
 }

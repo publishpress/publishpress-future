@@ -1,8 +1,9 @@
 import { store as workflowStore } from "../workflow-store";
 import { store as editorStore } from "../editor-store";
 import { useDispatch, useSelect } from "@wordpress/data";
-import { useEffect, useMemo, useCallback } from "@wordpress/element";
-import { __, sprintf } from "@wordpress/i18n";
+import { useEffect, useMemo, useCallback, useRef } from "@wordpress/element";
+import { speak } from "@wordpress/a11y";
+import { __, _n, sprintf } from "@wordpress/i18n";
 import { nodeHasIncomers, nodeHasOutgoers, getNodeIncomersRecursively } from "../../utils";
 import isEmail from "validator/lib/isEmail";
 import isInt from "validator/lib/isInt";
@@ -70,14 +71,59 @@ export function NodeValidator({})
         edges,
         getNodeTypeByName,
         globalVariables,
+        allNodeErrors,
     } = useSelect((select) => {
         return {
             nodes: select(workflowStore).getNodes(),
             edges: select(workflowStore).getEdges(),
             getNodeTypeByName: select(editorStore).getNodeTypeByName,
             globalVariables: select(workflowStore).getGlobalVariables(),
+            allNodeErrors: select(workflowStore).getAllNodeErrors(),
         }
     });
+
+    // Announce the number of steps with errors when it changes.
+    const stepsWithErrorsCount = useMemo(() => {
+        const nodeIds = nodes.map((node) => node.id);
+
+        return Object.keys(allNodeErrors || {}).filter((nodeId) => {
+            return nodeIds.includes(nodeId) && Object.keys(allNodeErrors[nodeId] || {}).length > 0;
+        }).length;
+    }, [nodes, allNodeErrors]);
+
+    // Last announced count. Validation resets and re-adds errors, so the count can
+    // change for a moment; only the settled value is compared and announced.
+    const lastAnnouncedCountRef = useRef(0);
+
+    const announceErrorsCount = useDebounce((count) => {
+        if (count === lastAnnouncedCountRef.current) {
+            return;
+        }
+
+        lastAnnouncedCountRef.current = count;
+
+        if (count === 0) {
+            speak(__('No steps have errors.', 'post-expirator'), 'polite');
+            return;
+        }
+
+        speak(
+            sprintf(
+                /* translators: %d: number of steps with errors. */
+                _n('%d step has errors.', '%d steps have errors.', count, 'post-expirator'),
+                count
+            ),
+            'polite'
+        );
+    }, 1000);
+
+    useEffect(() => {
+        announceErrorsCount(stepsWithErrorsCount);
+    }, [stepsWithErrorsCount, announceErrorsCount]);
+
+    useEffect(() => {
+        return () => announceErrorsCount.cancel();
+    }, [announceErrorsCount]);
 
     const {
         addNodeError,

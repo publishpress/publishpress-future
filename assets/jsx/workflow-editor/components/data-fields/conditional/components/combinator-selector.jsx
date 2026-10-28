@@ -1,8 +1,11 @@
 import { SelectControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
-export const CombinatorSelector = ({ label, value, options, handleOnChange }) => {
+// react-querybuilder passes the accessible text as `title`, not `label`.
+export const CombinatorSelector = ({ label, title, value, options, handleOnChange }) => {
     return <SelectControl
-        label={label}
+        label={label || title || __('Combinator', 'post-expirator')}
+        hideLabelFromVision
         value={value}
         options={options}
         onChange={handleOnChange}
