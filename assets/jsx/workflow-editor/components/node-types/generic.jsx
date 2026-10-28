@@ -397,7 +397,7 @@ export const GenericNode = memo(({ id, data, isConnectable, selected, nodeTypeIc
 
 export default GenericNode;
 
-function filterHandlesByConditions(handles, data) {
+export function filterHandlesByConditions(handles, data) {
     return handles?.filter((handle) => {
         if (handle?.conditions) {
             return jsonLogic.apply(handle.conditions, data.settings);

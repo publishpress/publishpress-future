@@ -17,20 +17,30 @@ import InserterSearchResults from './inserter-search-results';
 import { Popover } from '@wordpress/components';
 import InserterPreviewPanel from './inserter-preview-panel';
 import { store as workflowStore } from '../workflow-store';
-import { createNewNode, getNodeById } from '../../utils';
+import { createNewNode, getNodeById, getNodeHandleSchema } from '../../utils';
+import { filterHandlesByConditions } from '../node-types/generic';
 
 const NEW_NODE_VERTICAL_GAP = 80;
 const DEFAULT_NODE_HEIGHT = 80;
 
 /**
- * Find the first source handle of a node that has no outgoing edge.
+ * Find the first visible source handle of a node that has no outgoing edge.
+ *
+ * Uses the same handle list the node renders (resolved schema, filtered by conditions),
+ * so the new edge never starts from a handle that isn't on screen.
  */
 function getFirstFreeSourceHandleId(node, nodeType, edges) {
-    const sourceHandles = nodeType?.handleSchema?.source || [];
+    if (! nodeType?.handleSchema?.source) {
+        return null;
+    }
+
+    const sourceHandles = filterHandlesByConditions(
+        getNodeHandleSchema(nodeType, node.data, 'source'),
+        node.data
+    ) || [];
 
     const freeHandle = sourceHandles.find((handle) => {
-        if (! handle?.id || handle?.type) {
-            // Skip dynamic handles, their ids depend on the node settings.
+        if (! handle?.id) {
             return false;
         }
 

@@ -77,7 +77,10 @@
     box-sizing: border-box;
 }
 
-/* Enlarge the handle hit area to 24x24 while keeping the visible dot at 8x8. */
+/*
+ * Enlarge the handle hit area to 24x24 while keeping the visible dot at 8x8.
+ * The area is shifted outward so it barely overlaps the node body, where a click should select the step.
+ */
 .react-flow__handle::before {
     content: "";
     position: absolute;
@@ -88,6 +91,14 @@
     transform: translate(-50%, -50%);
     background: transparent;
     border-radius: 50%;
+}
+
+.react-flow__handle.react-flow__handle-top::before {
+    transform: translate(-50%, -80%);
+}
+
+.react-flow__handle.react-flow__handle-bottom::before {
+    transform: translate(-50%, -20%);
 }
 
 .react-flow__handle.react-flow__handle-bottom {

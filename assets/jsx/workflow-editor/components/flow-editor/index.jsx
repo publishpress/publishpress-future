@@ -33,7 +33,7 @@ import TriggerNode from "../node-types/trigger";
 import NodeValidator from "../node-validator";
 import { GenericEdge } from "../edge-types";
 import { TriggerPlaceholder } from "../node-types/trigger-placeholder";
-import { createNewNode, getId } from "../../utils";
+import { createNewNode, getId, getFlowForSaving } from "../../utils";
 import NodePlaceholder from "../node-types/node-placeholder";
 import AutoLayout from "./auto-layout";
 import { __, sprintf } from "@wordpress/i18n";
@@ -258,7 +258,7 @@ export const FlowEditor = (props) => {
     const updateFlowInEditedWorkflow = useCallback(() => {
         // We need to delay the update of the flow to avoid missing the changes.
         setTimeout(() => {
-            setEditedWorkflowAttribute("flow", reactFlowInstance.toObject());
+            setEditedWorkflowAttribute("flow", getFlowForSaving(reactFlowInstance));
         }, 400);
     }, [reactFlowInstance]);
 

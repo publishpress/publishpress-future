@@ -149,8 +149,11 @@ export function getBaseSlugCounts(state) {
     return state.baseSlugCounts;
 }
 
+const NO_NODE_ERRORS = [];
+
 export function getNodeErrors(state, nodeId) {
-    return state.nodeErrors[nodeId] || [];
+    // Shared empty value, so useSelect doesn't see a new array (and re-render) on every store change.
+    return state.nodeErrors[nodeId] || NO_NODE_ERRORS;
 }
 
 export function getAllNodeErrors(state) {

@@ -1044,29 +1044,41 @@ function DebugLogAutoRefresh() {
   var intervalRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
   var lastRefreshTimeRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
   var tickRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+
+  // Filters only take effect when the form is submitted with Apply, so read them once
+  // (as rendered on page load) rather than picking up unapplied changes on each refresh.
+  var appliedFiltersRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  var getAppliedFilters = function getAppliedFilters() {
+    if (!appliedFiltersRef.current) {
+      var _document$getElementB, _document$querySelect;
+      var groupByChecked = document.querySelector('input[name="group_by_request"]:checked');
+      appliedFiltersRef.current = {
+        logCount: ((_document$getElementB = document.getElementById('log-count')) === null || _document$getElementB === void 0 ? void 0 : _document$getElementB.value) || 500,
+        groupByRequest: groupByChecked ? groupByChecked.value : 1,
+        triggerOnly: (_document$querySelect = document.querySelector('input[name="trigger_activated_only"]')) !== null && _document$querySelect !== void 0 && _document$querySelect.checked ? 1 : 0
+      };
+    }
+    return appliedFiltersRef.current;
+  };
   var fetchLogs = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-      var _document$getElementB, _document$querySelect;
-      var logCount, groupByChecked, groupByRequest, triggerOnly, apiRoot, data, textarea, footerEl;
+      var _getAppliedFilters, logCount, groupByRequest, triggerOnly, apiRoot, data, textarea, footerEl;
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
-            logCount = ((_document$getElementB = document.getElementById('log-count')) === null || _document$getElementB === void 0 ? void 0 : _document$getElementB.value) || 500;
-            groupByChecked = document.querySelector('input[name="group_by_request"]:checked');
-            groupByRequest = groupByChecked ? groupByChecked.value : 1;
-            triggerOnly = (_document$querySelect = document.querySelector('input[name="trigger_activated_only"]')) !== null && _document$querySelect !== void 0 && _document$querySelect.checked ? 1 : 0;
+            _getAppliedFilters = getAppliedFilters(), logCount = _getAppliedFilters.logCount, groupByRequest = _getAppliedFilters.groupByRequest, triggerOnly = _getAppliedFilters.triggerOnly;
             setIsRefreshing(true);
             setError('');
-            _context.prev = 6;
+            _context.prev = 3;
             apiRoot = config.apiRoot || '';
-            _context.next = 10;
+            _context.next = 7;
             return (0,_wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_1__["default"])({
               url: "".concat(apiRoot, "?log_count=").concat(logCount, "&group_by_request=").concat(groupByRequest, "&trigger_activated_only=").concat(triggerOnly),
               headers: {
                 'X-WP-Nonce': config.nonce || ''
               }
             });
-          case 10:
+          case 7:
             data = _context.sent;
             textarea = document.querySelector('.pp-debug-log textarea');
             if (textarea) {
@@ -1085,21 +1097,21 @@ function DebugLogAutoRefresh() {
             }
             lastRefreshTimeRef.current = Date.now();
             setLastRefreshedSeconds(0);
-            _context.next = 22;
+            _context.next = 19;
             break;
+          case 16:
+            _context.prev = 16;
+            _context.t0 = _context["catch"](3);
+            setError(text.refreshError || 'Failed to refresh log data.');
           case 19:
             _context.prev = 19;
-            _context.t0 = _context["catch"](6);
-            setError(text.refreshError || 'Failed to refresh log data.');
-          case 22:
-            _context.prev = 22;
             setIsRefreshing(false);
-            return _context.finish(22);
-          case 25:
+            return _context.finish(19);
+          case 22:
           case "end":
             return _context.stop();
         }
-      }, _callee, null, [[6, 19, 22, 25]]);
+      }, _callee, null, [[3, 16, 19, 22]]);
     }));
     return function fetchLogs() {
       return _ref.apply(this, arguments);

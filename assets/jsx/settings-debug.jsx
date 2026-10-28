@@ -14,11 +14,26 @@ function DebugLogAutoRefresh() {
     const lastRefreshTimeRef = useRef(null);
     const tickRef = useRef(null);
 
+    // Filters only take effect when the form is submitted with Apply, so read them once
+    // (as rendered on page load) rather than picking up unapplied changes on each refresh.
+    const appliedFiltersRef = useRef(null);
+
+    const getAppliedFilters = () => {
+        if (! appliedFiltersRef.current) {
+            const groupByChecked = document.querySelector('input[name="group_by_request"]:checked');
+
+            appliedFiltersRef.current = {
+                logCount: document.getElementById('log-count')?.value || 500,
+                groupByRequest: groupByChecked ? groupByChecked.value : 1,
+                triggerOnly: document.querySelector('input[name="trigger_activated_only"]')?.checked ? 1 : 0,
+            };
+        }
+
+        return appliedFiltersRef.current;
+    };
+
     const fetchLogs = async () => {
-        const logCount = document.getElementById('log-count')?.value || 500;
-        const groupByChecked = document.querySelector('input[name="group_by_request"]:checked');
-        const groupByRequest = groupByChecked ? groupByChecked.value : 1;
-        const triggerOnly = document.querySelector('input[name="trigger_activated_only"]')?.checked ? 1 : 0;
+        const { logCount, groupByRequest, triggerOnly } = getAppliedFilters();
 
         setIsRefreshing(true);
         setError('');
