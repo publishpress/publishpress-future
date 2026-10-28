@@ -1,5 +1,9 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+[4.12.0] - [Unreleased]
+
+- Added: Connect AI services through PublishPress Hub to manage Future actions, workflow graphs, settings and scheduled actions with native WordPress permissions.
+
 [4.11.2]
 
 - Fixed: Prevent the PublishPress Hub notice from appearing on admin pages outside the plugins screen by updating the translation library.

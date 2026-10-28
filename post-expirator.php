@@ -5,7 +5,7 @@
  * Plugin URI: http://wordpress.org/extend/plugins/post-expirator/
  * Description: PublishPress Future allows you to schedule automatic changes to posts, pages and other content types.
  * Author: PublishPress
- * Version: 4.11.2
+ * Version: 4.12.0-beta.1
  * Author URI: http://publishpress.com
  * Text Domain: post-expirator
  * Domain Path: /languages
@@ -53,7 +53,7 @@ if (version_compare($wp_version, MINIMUM_WP_VERSION, '<')) {
     return;
 }
 
-define('PUBLISHPRESS_FUTURE_VERSION', '4.11.2');
+define('PUBLISHPRESS_FUTURE_VERSION', '4.12.0-beta.1');
 define('PUBLISHPRESS_FUTURE_BASE_PATH', __DIR__);
 define('PUBLISHPRESS_FUTURE_SRC_PATH', __DIR__ . '/src');
 define('PUBLISHPRESS_FUTURE_PLUGIN_FILE', __FILE__);
@@ -87,6 +87,10 @@ try {
     ) {
         require_once $autoloadFilePath;
     }
+
+    // Register versioned library loaders before their plugins_loaded callbacks run.
+    require_once PUBLISHPRESS_FUTURE_LIB_VENDOR_PATH . '/publishpress/psr-container/lib/include.php';
+    require_once PUBLISHPRESS_FUTURE_LIB_VENDOR_PATH . '/publishpress/pimple-pimple/lib/include.php';
 
     require_once PUBLISHPRESS_FUTURE_LIB_VENDOR_PATH . '/woocommerce/action-scheduler/action-scheduler.php';
     require_once PUBLISHPRESS_FUTURE_LIB_VENDOR_PATH . '/publishpress/bundled-translations/core/include.php';
