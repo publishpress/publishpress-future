@@ -88,6 +88,10 @@ try {
         require_once $autoloadFilePath;
     }
 
+    // Register versioned library loaders before their plugins_loaded callbacks run.
+    require_once PUBLISHPRESS_FUTURE_LIB_VENDOR_PATH . '/publishpress/psr-container/lib/include.php';
+    require_once PUBLISHPRESS_FUTURE_LIB_VENDOR_PATH . '/publishpress/pimple-pimple/lib/include.php';
+
     require_once PUBLISHPRESS_FUTURE_LIB_VENDOR_PATH . '/woocommerce/action-scheduler/action-scheduler.php';
     require_once PUBLISHPRESS_FUTURE_LIB_VENDOR_PATH . '/publishpress/bundled-translations/core/include.php';
 
