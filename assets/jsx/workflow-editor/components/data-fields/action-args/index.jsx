@@ -80,7 +80,18 @@ export function ActionArgs({
                             withExpression={settings?.withExpression}
                             variables={variables}
                         />
-                        <Button onClick={() => onClickRemoveArg(index)} isSmall={true} iconSize={16} icon={'trash'} />
+                        <Button
+                            onClick={() => onClickRemoveArg(index)}
+                            isSmall={true}
+                            iconSize={16}
+                            icon={'trash'}
+                            label={sprintf(
+                                /* translators: %s is the argument number. */
+                                __('Remove argument #%s', 'post-expirator'),
+                                index + 1
+                            )}
+                            showTooltip
+                        />
                     </div>
                 ))}
 

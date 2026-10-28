@@ -3,11 +3,16 @@
  */
 import { Fragment } from "@wordpress/element";
 import { SelectControl as WPSelectControl } from "@wordpress/components";
+import { useControlA11yAttributes } from "./a11yUtils";
 
 export const SelectControl = function (props) {
     const onChange = (value) => {
         props.onChange(value);
     };
+
+    const descriptionId = props.description ? props.name + '-description' : undefined;
+
+    useControlA11yAttributes(props.name, [descriptionId, props.ariaDescribedBy], props.isInvalid);
 
     return (
         <Fragment>
@@ -18,6 +23,7 @@ export const SelectControl = function (props) {
             {props.options.length > 0 && (
                 <WPSelectControl
                     label={props.label}
+                    hideLabelFromVision={props.hideLabelFromVision}
                     name={props.name}
                     id={props.name}
                     className={props.className}
@@ -30,7 +36,7 @@ export const SelectControl = function (props) {
 
             {props.children}
 
-            <p className="description">{props.description}</p>
+            <p className="description" id={descriptionId}>{props.description}</p>
         </Fragment>
     )
 }

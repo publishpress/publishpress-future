@@ -154,6 +154,7 @@ class ScheduledActionsTable extends \ActionScheduler_ListTable
             'publishpressFutureActionsConfig',
             [
                 'dialogTitle' => esc_js(__('Action Logs', 'post-expirator')),
+                'closeLabel' => __('Close', 'post-expirator'),
             ]
         );
 
@@ -388,7 +389,7 @@ class ScheduledActionsTable extends \ActionScheduler_ListTable
             $status = __('Completed', 'post-expirator');
         }
 
-        return '<span class="' . esc_attr($iconClass) . '"></span> ' . esc_html($status);
+        return '<span class="' . esc_attr($iconClass) . '" aria-hidden="true"></span> ' . esc_html($status);
     }
 
     private function rowIsAWorkflow(array $row)
@@ -677,7 +678,7 @@ class ScheduledActionsTable extends \ActionScheduler_ListTable
         }
 
         if ($userLogFormat === 'popup') {
-            $html = '<a href="javascript:void(0);" class="publishpres-future-view-log" data-id="' . $row['ID'] . '">' . esc_html__(
+            $html = '<a href="javascript:void(0);" role="button" class="publishpres-future-view-log" data-id="' . esc_attr($row['ID']) . '">' . esc_html__(
                 'View log',
                 'post-expirator'
             ) . '</a>';

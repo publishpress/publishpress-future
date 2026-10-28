@@ -12,6 +12,7 @@ import {
 } from "./components";
 
 import { StrictMode, useState, useEffect, createRoot } from "@wordpress/element";
+import { useSpeakOnChange } from "./components/a11yUtils";
 
 const {
     nonce,
@@ -77,6 +78,9 @@ const SettingsFormPanel = (props) => {
     }
 
     const saveButtonText = hasNoPendingValidation ? text.saveChanges : text.saveChangesPendingValidation;
+
+    // Announce the "pending validation" state of the Save button. Debounced so quick validations stay silent.
+    useSpeakOnChange(hasNoPendingValidation ? '' : text.saveChangesPendingValidation, 'polite', 600);
 
     return (
         <StrictMode>

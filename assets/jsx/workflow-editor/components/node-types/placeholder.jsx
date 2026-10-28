@@ -157,11 +157,17 @@ export const Placeholder = memo(({id, label, popoverIsOpen = false, searchLabel,
             nodeId.current = id;
         }
 
-        window.addEventListener('keydown', (event) => {
+        const onKeyDown = (event) => {
             if (event.key === 'Escape' || event.keyCode === 27) {
                 onClosePopup();
             }
-        });
+        };
+
+        window.addEventListener('keydown', onKeyDown);
+
+        return () => {
+            window.removeEventListener('keydown', onKeyDown);
+        };
     }, []);
 
     if (! searchLabel) {
@@ -221,16 +227,21 @@ export const Placeholder = memo(({id, label, popoverIsOpen = false, searchLabel,
                     >{__('Browse all')}</Button>
                 </Popover>
             )}
-            <div className={"react-flow__node-body react-flow__node-triggerPlaceholderNode"} onClick={onClickAddButton}>
-                <div className='react-flow__node-inner-body'>
-                    <div className='react-flow__node-header'>
-                        <div className='icon'>
+            <Button
+                className={"react-flow__node-body react-flow__node-triggerPlaceholderNode react-flow__node-placeholder-button"}
+                onClick={onClickAddButton}
+                aria-haspopup="dialog"
+                aria-expanded={inserterIsOpen}
+            >
+                <span className='react-flow__node-inner-body'>
+                    <span className='react-flow__node-header'>
+                        <span className='icon' aria-hidden="true">
                             <PlusIcon size={12} />
-                        </div>
-                        <div className="react-flow__node-label">{nodeLabel}</div>
-                    </div>
-                </div>
-            </div>
+                        </span>
+                        <span className="react-flow__node-label">{nodeLabel}</span>
+                    </span>
+                </span>
+            </Button>
         </>
     );
 });
