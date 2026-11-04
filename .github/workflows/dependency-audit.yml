@@ -4,6 +4,7 @@ on:
     branches: [development]
   schedule:
     - cron: '0 6 * * *'
+  workflow_dispatch:
 permissions:
   contents: read
   vulnerability-alerts: read
