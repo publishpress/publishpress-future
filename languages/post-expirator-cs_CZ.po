@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-05-28T20:05:06+00:00\n"
-"PO-Revision-Date: 2026-10-14 20:56+0000\n"
+"POT-Creation-Date: 2026-04-10T20:34:37+00:00\n"
+"PO-Revision-Date: 2026-10-21 19:02+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "Language: cs_CZ\n"
@@ -24,7 +24,7 @@ msgstr "PublishPress Future Free"
 #: post-expirator.php:5
 #. Plugin URI of the plugin
 msgid "http://wordpress.org/extend/plugins/post-expirator/"
-msgstr "http://wordpress.org/extend/plugins/post-expirator/"
+msgstr "http://cs.wordpress.org/extend/plugins/post-expirator/"
 
 #: post-expirator.php:6
 #. Description of the plugin
@@ -607,10 +607,7 @@ msgid ""
 "Use the values below to set the default actions/values to be used for each "
 "for the corresponding post types.  These values can all be overwritten when "
 "creating/editing the post/page."
-msgstr ""
-"Níže nastavte výchozí hodnoty, které mají být použity pro jednotlivé typy "
-"obsahu. Hodnoty mohou být unikátně upraveny přímo u obsahu, který vytváříte "
-"nebo upravujete."
+msgstr "Níže nastavte výchozí hodnoty, které mají být použity pro jednotlivé typy obsahu. Hodnoty mohou být unikátně upraveny přímo u obsahu, který vytváříte nebo upravujete."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:267
 msgid "Active"
@@ -2342,9 +2339,8 @@ msgid ""
 "Enter the action hook to trigger. Only hooks registered through the "
 "'publishpress_future_allowed_action_hooks' filter are allowed."
 msgstr ""
-"Zadejte akční háček, který se má spustit. Povolené jsou pouze háčky "
-"registrované prostřednictvím filtru "
-"'publishpress_future_allowed_action_hooks'."
+"Zadejte akční hook k aktivaci. Povolené jsou pouze hooky registrované přes "
+"filtr 'publishpress_future_allowed_action_hooks'."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:73
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:73
@@ -3788,7 +3784,7 @@ msgstr "Pracovní postup nebyl nalezen"
 #: src/Modules/Workflows/Rest/RestApiV1.php:390
 msgid "Sorry, you are not allowed to view workflow settings for this post."
 msgstr ""
-"Omlouváme se, nemáte povolení zobrazit nastavení pracovního postupu pro "
+"Omlouváme se, nemáte oprávnění zobrazit nastavení pracovního postupu pro "
 "tento příspěvek."
 
 #: src/Modules/Workflows/Rest/RestApiV1.php:462
@@ -3977,9 +3973,7 @@ msgstr "Debug log"
 msgid ""
 "Below is a dump of the debugging table, this should be useful for "
 "troubleshooting."
-msgstr ""
-"Níže je zobrazen výpis tabulky ladění, který by mohl pomoci při řešení "
-"problémů."
+msgstr "Níže je zobrazen výpis tabulky ladění, který by mohl pomoci při řešení problémů."
 
 #: src/Views/menu-debug-log.php:83
 msgid "Number of logs to display:"
@@ -4231,9 +4225,7 @@ msgstr "Zobrazení v zápatí obsahu"
 msgid ""
 "Enabling this below will display the action date automatically at the end "
 "of any post which is set to run an action."
-msgstr ""
-"Umožní zobrazit datum a čas expirace v zápatí obsahu, u kterého je "
-"nastavena a povolena expirace."
+msgstr "Umožní zobrazit datum a čas expirace v zápatí obsahu, u kterého je nastavena a povolena expirace."
 
 #: src/Views/menu-display.php:127
 msgid "Show in Post Footer?"
@@ -4254,10 +4246,7 @@ msgid ""
 "Enter the text you would like to appear at the bottom of every post which "
 "has an action scheduled.  The following placeholders will be replaced with "
 "the future action date in the following format:"
-msgstr ""
-"Zadejte text, který chcete zobrazit v dolní části každého příspěvku, který "
-"skončí. Následující zástupné symboly budou nahrazeny s datem vypršení "
-"platnosti po v následujícím formátu:"
+msgstr "Zadejte text, který chcete zobrazit v dolní části každého příspěvku, který skončí. Následující zástupné symboly budou nahrazeny s datem vypršení platnosti po v následujícím formátu:"
 
 #: src/Views/menu-display.php:216
 msgid "Footer Style"
@@ -4401,9 +4390,7 @@ msgstr "Aktivovat e-mailové upozornění"
 
 #: src/Views/menu-notifications.php:78
 msgid "This will enable or disable the send of email notification on future action."
-msgstr ""
-"Toto nastavení povolí nebo zakáže e-mailové upozornění na vypršení "
-"platnosti příspěvku."
+msgstr "Toto nastavení povolí nebo zakáže e-mailové upozornění na vypršení platnosti příspěvku."
 
 #: src/Views/menu-notifications.php:86
 msgid "Include Blog Administrators?"
@@ -4411,9 +4398,7 @@ msgstr "Zahrnout Administrátory?"
 
 #: src/Views/menu-notifications.php:107
 msgid "This will include all users with the role of \"Administrator\" in the email."
-msgstr ""
-"Toto nastavení zahrne všechny uživatele s právem Administrátor do e-mailu o "
-"vypršení platnosti příspěvku."
+msgstr "Toto nastavení zahrne všechny uživatele s právem Administrátor do e-mailu o vypršení platnosti příspěvku."
 
 #: src/Views/menu-notifications.php:123
 msgid ""
@@ -5984,8 +5969,8 @@ msgid ""
 "The variable \"%s\" is not available in the current context. Please, check "
 "if it is spelled correctly."
 msgstr ""
-"Proměnná \"%s\" není dostupná v aktuálním kontextu. Zkontrolujte prosím, "
-"zda je napsána správně."
+"Proměnná \"%s\" není dostupná v aktuálním kontextu. Zkontrolujte, zda je "
+"správně napsaná."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12190
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:181
@@ -5993,7 +5978,7 @@ msgstr ""
 #. translators: %s is the workflow step slug.
 #, js-format
 msgid "\"%s\" is not a variable or step slug."
-msgstr "\"%s\" není proměnná ani slug kroku."
+msgstr "\"%s\" není proměnná nebo slug kroku."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12196
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:190
@@ -6005,13 +5990,13 @@ msgstr "Prázdný zástupný znak není povolen."
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:203
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10264
 msgid "Unclosed placeholder are not allowed."
-msgstr "Neuzavřený zástupný znak není povolen."
+msgstr "Nepřerušené zástupné znaky nejsou povoleny."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12210
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:208
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10269
 msgid "Unopened placeholder are not allowed."
-msgstr "Neotevřený zástupný znak není povolen."
+msgstr "Neotevřené zástupné znaky nejsou povoleny."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12217
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:216
@@ -6070,7 +6055,7 @@ msgstr "Možnost \"%s\" má duplicitní štítek."
 #. translators: %s is the field label.
 #, js-format
 msgid "The field %s must be a valid list of options."
-msgstr "Pole %s musí být platným seznamem možností."
+msgstr "Pole %s musí být platný seznam možností."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12301
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:333
@@ -6139,7 +6124,7 @@ msgstr "Pole %s musí být seznam celých čísel oddělených čárkami."
 #. translators: %s is the field label.
 #, js-format
 msgid "The field %s must be a list of name-value pairs."
-msgstr "Pole %s musí být seznam jmen-hodnot."
+msgstr "Pole %s musí být seznam párů název-hodnota."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12421
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:528
@@ -6530,13 +6515,13 @@ msgstr "Aktivující spouštěč"
 #: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:133
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14412
 msgid "The node that activated the workflow."
-msgstr "Uzlová část, která aktivovala pracovní postup."
+msgstr "Uzlová, která aktivovala pracovní postup."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16016
 #: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:140
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14419
 msgid "Engine execution ID"
-msgstr "ID provádění motoru"
+msgstr "ID provedení motoru"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16019
 #: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:143
@@ -6545,8 +6530,8 @@ msgid ""
 "A unique identifier assigned each time the workflow engine runs. Useful for "
 "tracking specific workflow executions and debugging."
 msgstr ""
-"Jedinečný identifikátor přidělený pokaždé, když se spustí pracovní motor. "
-"Užitečné pro sledování konkrétních provádění pracovního postupu a pro "
+"Unikátní identifikátor přidělený pokaždé, když se spustí motor pracovního "
+"postupu. Užitečné pro sledování konkrétních provedení pracovního postupu a "
 "ladění."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16897
@@ -6804,9 +6789,9 @@ msgid ""
 "For example, you could enter %3$s+1 month%4$s or %5$s+1 week 2 days 4 hours "
 "2 seconds%6$s or %7$snext Thursday%8$s. Please use only phrases in English."
 msgstr ""
-"Pro více informací o formátování si přečtěte %1$sPHP strtotime funkci%2$s. "
+"Pro více informací o formátování viz %1$sPHP strtotime funkce%2$s. "
 "Například můžete zadat %3$s+1 měsíc%4$s nebo %5$s+1 týden 2 dny 4 hodiny 2 "
-"sekundy%6$s nebo %7$spříští čtvrtek%8$s. Prosím, používejte pouze fráze v "
+"sekundy%6$s nebo %7$spříští čtvrtek%8$s. Používejte pouze fráze v "
 "angličtině."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2440
@@ -6823,7 +6808,7 @@ msgstr "Vybrat"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2572
 msgid "Double-click on any variable to insert it into your expression."
-msgstr "Dvakrát klikněte na jakoukoli proměnnou pro její vložení do vašeho výrazu."
+msgstr "Dvojitým kliknutím na jakoukoli proměnnou ji vložíte do svého výrazu."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9155
 msgid "Step summary copied to clipboard."
@@ -6836,7 +6821,7 @@ msgstr "Zkopírováno!"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9165
 msgid "Unable to copy step summary. Please copy manually."
-msgstr "Nelze zkopírovat shrnutí kroku. Prosím, zkopírujte ručně."
+msgstr "Nelze zkopírovat shrnutí kroku. Prosím zkopírujte ručně."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9168
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13717
@@ -6852,13 +6837,13 @@ msgid ""
 "Copy this plain-text summary to share in conversations. It includes the "
 "step type and non-default settings."
 msgstr ""
-"Zkopírujte toto shrnutí v prostém textu, abyste jej mohli sdílet v "
-"konverzacích. Obsahuje typ kroku a nastavení, která nejsou výchozí."
+"Zkopírujte toto shrnutí v prostém textu, abyste ho mohli sdílet v "
+"konverzacích. Zahrnuje typ kroku a nastavení, která nejsou výchozí."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9203
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13753
 msgid "Copy to Clipboard"
-msgstr "Zkopírovat do schránky"
+msgstr "Kopírovat do schránky"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13704
 msgid "Workflow summary copied to clipboard."
@@ -6866,7 +6851,7 @@ msgstr "Shrnutí pracovního postupu zkopírováno do schránky."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13714
 msgid "Unable to copy workflow summary. Please copy manually."
-msgstr "Nelze zkopírovat shrnutí pracovního postupu. Prosím, zkopírujte ručně."
+msgstr "Nelze zkopírovat shrnutí pracovního postupu. Prosím zkopírujte ručně."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13725
 msgid "Workflow Summary"
@@ -6877,8 +6862,8 @@ msgid ""
 "Copy this plain-text summary to share in conversations. It includes the "
 "workflow flow and non-default step settings."
 msgstr ""
-"Zkopírujte toto shrnutí v prostém textu, abyste jej mohli sdílet v "
-"konverzacích. Obsahuje tok pracovního postupu a nastavení kroků, která "
+"Zkopírujte toto shrnutí v prostém textu, abyste ho mohli sdílet v "
+"konverzacích. Zahrnuje tok pracovního postupu a nastavení kroků, která "
 "nejsou výchozí."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10199

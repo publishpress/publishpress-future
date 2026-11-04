@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-05-28T20:05:06+00:00\n"
-"PO-Revision-Date: 2026-10-14 20:56+0000\n"
+"POT-Creation-Date: 2026-04-10T20:34:37+00:00\n"
+"PO-Revision-Date: 2026-10-21 19:02+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -2386,8 +2386,8 @@ msgid ""
 "Enter the action hook to trigger. Only hooks registered through the "
 "'publishpress_future_allowed_action_hooks' filter are allowed."
 msgstr ""
-"Εισάγετε το action hook για να ενεργοποιηθεί. Μόνο τα hooks που είναι "
-"καταχωρημένα μέσω του φίλτρου 'publishpress_future_allowed_action_hooks' "
+"Εισάγετε το hook δράσης που θα ενεργοποιήσει. Μόνο hooks που έχουν "
+"καταχωριστεί μέσω του φίλτρου 'publishpress_future_allowed_action_hooks' "
 "επιτρέπονται."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:73
@@ -6080,7 +6080,7 @@ msgstr "Όλοι οι έλεγχοι έχουν περάσει για αυτό �
 #. translators: %s is the field label.
 #, js-format
 msgid "The field \"%s\" contains an invalid variable."
-msgstr "Το πεδίο \"%s\" περιέχει μία μη έγκυρη μεταβλητή."
+msgstr "Το πεδίο \"%s\" περιέχει μια μη έγκυρη μεταβλητή."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12146
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:126
@@ -6092,7 +6092,7 @@ msgid ""
 "if it is spelled correctly."
 msgstr ""
 "Η μεταβλητή \"%s\" δεν είναι διαθέσιμη στο τρέχον πλαίσιο. Παρακαλώ, "
-"ελέγξτε αν είναι σωστά γραμμένη."
+"ελέγξτε αν είναι γραμμένη σωστά."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12190
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:181
@@ -6100,7 +6100,7 @@ msgstr ""
 #. translators: %s is the workflow step slug.
 #, js-format
 msgid "\"%s\" is not a variable or step slug."
-msgstr "\"%s\" δεν είναι μια μεταβλητή ή slug βήματος."
+msgstr "\"%s\" δεν είναι μεταβλητή ή slug βήματος."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12196
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:190
@@ -6112,13 +6112,13 @@ msgstr "Κενό placeholder δεν επιτρέπεται."
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:203
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10264
 msgid "Unclosed placeholder are not allowed."
-msgstr "Ανοιχτά placeholder δεν επιτρέπονται."
+msgstr "Μη κλεισμένα placeholder δεν επιτρέπονται."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12210
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:208
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10269
 msgid "Unopened placeholder are not allowed."
-msgstr "Κλειστά placeholder δεν επιτρέπονται."
+msgstr "Μη ανοιγμένα placeholder δεν επιτρέπονται."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12217
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:216
@@ -6217,7 +6217,7 @@ msgstr "Το πεδίο %s πρέπει να είναι μια έγκυρη δι
 #, js-format
 msgid "The field %s must be a valid email address list separated by commas."
 msgstr ""
-"Το πεδίο %s πρέπει να είναι μια έγκυρη λίστα διευθύνσεων email χωρισμένων "
+"Το πεδίο %s πρέπει να είναι μια έγκυρη λίστα διευθύνσεων email χωρισμένες "
 "με κόμματα."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12397
@@ -6250,7 +6250,7 @@ msgstr ""
 #. translators: %s is the field label.
 #, js-format
 msgid "The field %s must be a list of name-value pairs."
-msgstr "Το πεδίο %s πρέπει να είναι μια λίστα ζευγών όνομα-τιμή."
+msgstr "Το πεδίο %s πρέπει να είναι μια λίστα ζευγών ονόματος-τιμής."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12421
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:528
@@ -6258,7 +6258,7 @@ msgstr "Το πεδίο %s πρέπει να είναι μια λίστα ζευ
 #. translators: %d is the item index.
 #, js-format
 msgid "The name of the pair is required on item %d."
-msgstr "Το όνομα του ζευγαριού είναι υποχρεωτικό στο στοιχείο %d."
+msgstr "Το όνομα του ζευγαριού είναι υποχρεωτικό για το στοιχείο %d."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12424
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:537
@@ -6266,7 +6266,7 @@ msgstr "Το όνομα του ζευγαριού είναι υποχρεωτι�
 #. translators: %d is the item index.
 #, js-format
 msgid "The value of the pair is required on item %d."
-msgstr "Η τιμή του ζευγαριού είναι υποχρεωτική στο στοιχείο %d."
+msgstr "Η τιμή του ζευγαριού είναι υποχρεωτική για το στοιχείο %d."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12465
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:605
@@ -6627,7 +6627,7 @@ msgstr "Η τρέχουσα ροή εργασίας."
 #: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:120
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14399
 msgid "Activating user"
-msgstr "Ενεργοποίηση χρήστη"
+msgstr "Ενεργοποιώντας χρήστη"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16001
 #: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:123
@@ -6639,7 +6639,7 @@ msgstr "Ο τρέχων χρήστης."
 #: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:130
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14409
 msgid "Activating trigger"
-msgstr "Ενεργοποίηση ενεργοποιητή"
+msgstr "Ενεργοποιώντας trigger"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16010
 #: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:133
@@ -6651,7 +6651,7 @@ msgstr "Ο κόμβος που ενεργοποίησε τη ροή εργασί
 #: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:140
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14419
 msgid "Engine execution ID"
-msgstr "Ταυτότητα εκτέλεσης κινητήρα"
+msgstr "ID εκτέλεσης μηχανής"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16019
 #: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:143
@@ -6660,8 +6660,8 @@ msgid ""
 "A unique identifier assigned each time the workflow engine runs. Useful for "
 "tracking specific workflow executions and debugging."
 msgstr ""
-"Ένας μοναδικός αναγνωριστικός αριθμός που ανατίθεται κάθε φορά που "
-"εκτελείται η μηχανή ροής εργασίας. Χρήσιμος για την παρακολούθηση "
+"Ένας μοναδικός αναγνωριστικός αριθμός που αποδίδεται κάθε φορά που "
+"εκτελείται η μηχανή ροής εργασίας. Χρήσιμο για την παρακολούθηση "
 "συγκεκριμένων εκτελέσεων ροής εργασίας και την αποσφαλμάτωση."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16897
@@ -6922,16 +6922,16 @@ msgid ""
 msgstr ""
 "Για περισσότερες πληροφορίες σχετικά με τη μορφοποίηση, δείτε τη %1$sPHP "
 "strtotime function%2$s. Για παράδειγμα, μπορείτε να εισάγετε %3$s+1 "
-"μήνας%4$s ή %5$s+1 εβδομάδα 2 ημέρες 4 ώρες 2 δευτερόλεπτα%6$s ή "
-"%7$sεπόμενη Πέμπτη%8$s. Παρακαλώ χρησιμοποιήστε μόνο φράσεις στα Αγγλικά."
+"μήνα%4$s ή %5$s+1 εβδομάδα 2 ημέρες 4 ώρες 2 δευτερόλεπτα%6$s ή %7$sτην "
+"επόμενη Πέμπτη%8$s. Παρακαλώ χρησιμοποιήστε μόνο φράσεις στα Αγγλικά."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2440
 msgid "Click Select to use this variable."
-msgstr "Κάντε κλικ στο Επιλογή για να χρησιμοποιήσετε αυτήν τη μεταβλητή."
+msgstr "Κάντε κλικ στο Επιλογή για να χρησιμοποιήσετε αυτή τη μεταβλητή."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2441
 msgid "The variable will be inserted at the current cursor position."
-msgstr "Η μεταβλητή θα εισαχθεί στη θέση του τρέχοντος κέρσορα."
+msgstr "Η μεταβλητή θα εισαχθεί στη τρέχουσα θέση του κέρσορα."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2444
 msgid "Select"
@@ -6948,18 +6948,18 @@ msgstr "Η περίληψη βήματος αντιγράφηκε στο πρό�
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9162
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13711
 msgid "Copied!"
-msgstr "Αντιγράφτηκε!"
+msgstr "Αντιγράφηκε!"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9165
 msgid "Unable to copy step summary. Please copy manually."
 msgstr ""
-"Δεν ήταν δυνατή η αντιγραφή της περίληψης βήματος. Παρακαλώ αντιγράψτε "
+"Αδύνατη η αντιγραφή της περίληψης βήματος. Παρακαλώ αντιγράψτε το "
 "χειροκίνητα."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9168
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13717
 msgid "Copy failed"
-msgstr "Η αντιγραφή απέτυχε"
+msgstr "Αποτυχία αντιγραφής"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9176
 msgid "Step Summary"
@@ -6970,9 +6970,8 @@ msgid ""
 "Copy this plain-text summary to share in conversations. It includes the "
 "step type and non-default settings."
 msgstr ""
-"Αντιγράψτε αυτήν την απλή περίληψη κειμένου για να τη μοιραστείτε σε "
-"συνομιλίες. Περιλαμβάνει τον τύπο βήματος και τις μη προεπιλεγμένες "
-"ρυθμίσεις."
+"Αντιγράψτε αυτή τη συνοπτική κείμενο για να το μοιραστείτε σε συνομιλίες. "
+"Περιλαμβάνει τον τύπο βήματος και μη προεπιλεγμένες ρυθμίσεις."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9203
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13753
@@ -6986,8 +6985,8 @@ msgstr "Η περίληψη ροής εργασίας αντιγράφηκε σ�
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13714
 msgid "Unable to copy workflow summary. Please copy manually."
 msgstr ""
-"Δεν ήταν δυνατή η αντιγραφή της περίληψης ροής εργασίας. Παρακαλώ "
-"αντιγράψτε χειροκίνητα."
+"Αδύνατη η αντιγραφή της περίληψης ροής εργασίας. Παρακαλώ αντιγράψτε το "
+"χειροκίνητα."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13725
 msgid "Workflow Summary"
@@ -6998,9 +6997,8 @@ msgid ""
 "Copy this plain-text summary to share in conversations. It includes the "
 "workflow flow and non-default step settings."
 msgstr ""
-"Αντιγράψτε αυτήν την απλή περίληψη κειμένου για να τη μοιραστείτε σε "
-"συνομιλίες. Περιλαμβάνει τη ροή εργασίας και τις μη προεπιλεγμένες "
-"ρυθμίσεις βήματος."
+"Αντιγράψτε αυτή τη συνοπτική κείμενο για να το μοιραστείτε σε συνομιλίες. "
+"Περιλαμβάνει τη ροή εργασίας και μη προεπιλεγμένες ρυθμίσεις βήματος."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10199
 #: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:23
