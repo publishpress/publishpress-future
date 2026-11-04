@@ -1,0 +1,24 @@
+name: Dependency audit
+on:
+  push:
+    branches: [development]
+  schedule:
+    - cron: '0 6 * * *'
+permissions:
+  contents: read
+  vulnerability-alerts: read
+  security-events: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: publishpress/infra/.github/actions/dependency-audit@development
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          dashboard_url: ${{ secrets.INFRA_DASHBOARD_URL }}
+          entity_slug: post-expirator
+          composer_prod_dir: lib
+          username: ${{ secrets.INFRA_PLUGIN_USER }}
+          app_password: ${{ secrets.INFRA_PLUGIN_PASSWORD }}
