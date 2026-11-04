@@ -19,7 +19,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           dashboard_url: ${{ secrets.INFRA_DASHBOARD_URL }}
-          entity_slug: post-expirator
+          entity_slug: wp-plugin-future-free
           composer_prod_dir: lib
           username: ${{ secrets.INFRA_PLUGIN_USER }}
           app_password: ${{ secrets.INFRA_PLUGIN_PASSWORD }}
