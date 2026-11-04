@@ -1,5 +1,10 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+[UNRELEASED]
+
+- Changed: Raise the minimum PHP version from 7.4 to 8.2.
+- Fixed: Future Action column no longer fatals when the posts or pages list has no current post (Issue #1705).
+
 [4.11.2]
 
 - Fixed: Prevent the PublishPress Hub notice from appearing on admin pages outside the plugins screen by updating the translation library.

@@ -32,11 +32,11 @@
     "prefer-stable": true,
     "minimum-stability": "stable",
     "require": {
-        "php": ">=7.4",
+        "php": ">=8.2",
         "ext-json": "*"
     },
     "require-dev": {
-        "publishpress/dev-workspace": "^2"
+        "publishpress/dev-workspace": "^2.0"
     },
     "extra": {
         "plugin-slug": "post-expirator",

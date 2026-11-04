@@ -10,7 +10,7 @@
  * Text Domain: post-expirator
  * Domain Path: /languages
  * Requires at least: 6.8
- * Requires PHP: 7.4
+ * Requires PHP: 8.2
  *
  *
  * @package     PublishPress\Future
@@ -39,7 +39,7 @@ if (defined('PUBLISHPRESS_FUTURE_LOADED')) {
     return;
 }
 
-const MINIMUM_PHP_VERSION = '7.4';
+const MINIMUM_PHP_VERSION = '8.2';
 const MINIMUM_WP_VERSION = '6.8';
 
 global $wp_version;
