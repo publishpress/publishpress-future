@@ -13,13 +13,25 @@ jobs:
   audit:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
-      - uses: publishpress/infra/.github/actions/dependency-audit@b73489c42e84fa948b071a443e5ea4b985a9c988
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Checkout plugin
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - name: Checkout dependency audit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
-          dashboard_url: ${{ secrets.INFRA_DASHBOARD_URL }}
-          entity_slug: wp-plugin-future-free
-          composer_prod_dir: lib
-          username: ${{ secrets.INFRA_PLUGIN_USER }}
-          app_password: ${{ secrets.INFRA_PLUGIN_PASSWORD }}
+          repository: publishpress/infra
+          ref: development
+          token: ${{ secrets.INFRA_READ_TOKEN }}
+          path: .infra-audit
+          sparse-checkout: .github/actions/dependency-audit
+          persist-credentials: false
+
+      - name: Post dependency audit
+        env:
+          DASHBOARD_URL: ${{ secrets.INFRA_DASHBOARD_URL }}
+          ENTITY_SLUG: wp-plugin-future-free
+          COMPOSER_PROD_DIR: lib
+          USERNAME: ${{ secrets.INFRA_PLUGIN_USER }}
+          APP_PASSWORD: ${{ secrets.INFRA_PLUGIN_PASSWORD }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bash .infra-audit/.github/actions/dependency-audit/audit.sh
