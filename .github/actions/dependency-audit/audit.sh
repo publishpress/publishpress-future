@@ -124,7 +124,22 @@ if [[ -n $COMPOSER_PROD_DIR ]]; then
 fi
 
 npm_manifest=$(manifest_present package.json)
-npm_lock_json package-lock.json "$ACTION_WORK_DIR/npm-lock.json"
+if [[ -e package-lock.json ]]; then
+  npm_lock_json package-lock.json "$ACTION_WORK_DIR/npm-lock.json"
+  printf null > "$ACTION_WORK_DIR/yarn.json"
+elif [[ -e yarn.lock ]]; then
+  printf null > "$ACTION_WORK_DIR/npm-lock.json"
+  if [[ $npm_manifest != true ]]; then
+    echo 'yarn.lock requires package.json.' >&2
+    exit 1
+  fi
+  jq -n --rawfile lockfile yarn.lock --slurpfile pkg package.json \
+    '{lockfile: $lockfile, dependencies: ($pkg[0].dependencies // {}), devDependencies: ($pkg[0].devDependencies // {})}' \
+    > "$ACTION_WORK_DIR/yarn.json"
+else
+  printf null > "$ACTION_WORK_DIR/npm-lock.json"
+  printf null > "$ACTION_WORK_DIR/yarn.json"
+fi
 
 collect_alerts dependabot "$ACTION_WORK_DIR/dependabot.json"
 collect_alerts secret-scanning "$ACTION_WORK_DIR/secret-scanning.json"
@@ -138,6 +153,7 @@ jq -n \
   --slurpfile prod_lock "$ACTION_WORK_DIR/prod-lock.json" \
   --argjson npm_manifest "$npm_manifest" \
   --slurpfile npm_lock "$ACTION_WORK_DIR/npm-lock.json" \
+  --slurpfile yarn "$ACTION_WORK_DIR/yarn.json" \
   --slurpfile dependabot "$ACTION_WORK_DIR/dependabot.json" \
   --slurpfile secret_scanning "$ACTION_WORK_DIR/secret-scanning.json" \
   --slurpfile code_scanning "$ACTION_WORK_DIR/code-scanning.json" \
@@ -149,7 +165,7 @@ jq -n \
       prod_manifest: $prod_manifest,
       prod_lock: $prod_lock[0]
     },
-    npm: {manifest: $npm_manifest, lock: $npm_lock[0]},
+    npm: {manifest: $npm_manifest, lock: $npm_lock[0], yarn: $yarn[0]},
     alerts: {
       dependabot: $dependabot[0],
       "secret-scanning": $secret_scanning[0],
