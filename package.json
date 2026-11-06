@@ -106,6 +106,7 @@
     "@tootallnate/once": "2.0.1",
     "**/stylelint-scss/postcss-selector-parser": "7.1.6",
     "**/stylelint/postcss-selector-parser": "7.1.6",
+    "postcss-selector-parser": "6.1.5",
     "baseline-browser-mapping": "^2.11.0",
     "basic-ftp": "5.2.2",
     "body-parser": "1.20.9",
