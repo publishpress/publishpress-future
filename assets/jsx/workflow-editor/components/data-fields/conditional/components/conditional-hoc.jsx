@@ -10,6 +10,7 @@ import { NotToggle } from './not-toggle';
 import { AddElementButton } from './add-element-button';
 import { RemoveElementButton } from './remove-element-button';
 import { DuplicateRuleButton } from './duplicate-rule-button';
+import { ShiftActions } from './shift-actions';
 import { CombinatorSelector } from './combinator-selector';
 import { OperatorSelector } from './operator-selector';
 import { ConditionPreview } from './condition-preview';
@@ -41,7 +42,13 @@ const EDITOR_OPTIONS = {
 
 const QUERY_BUILDER_TRANSLATIONS = {
     addGroup: { label: __('Add Group', 'post-expirator') },
-    addRule: { label: __('Add Rule', 'post-expirator') }
+    addRule: { label: __('Add Rule', 'post-expirator') },
+    removeRule: { label: '', title: __('Remove rule', 'post-expirator') },
+    removeGroup: { label: '', title: __('Remove group', 'post-expirator') },
+    cloneRule: { label: '', title: __('Duplicate rule', 'post-expirator') },
+    cloneRuleGroup: { label: '', title: __('Duplicate group', 'post-expirator') },
+    combinators: { title: __('Combinator', 'post-expirator') },
+    operators: { title: __('Operator', 'post-expirator') },
 };
 
 const QUERY_BUILDER_CONTROL_CLASSNAMES = {
@@ -108,6 +115,7 @@ export const withConditional = ({
             cloneGroupAction: DuplicateRuleButton,
             combinatorSelector: CombinatorSelector,
             operatorSelector: OperatorSelector,
+            shiftActions: ShiftActions,
         };
 
         const queryBuilderContext = useMemo(() => ({
@@ -162,6 +170,7 @@ export const withConditional = ({
                                 showCombinatorsBetweenRules
                                 showNotToggle
                                 enableDragAndDrop={true}
+                                showShiftActions={true}
                                 showCloneButtons={true}
                                 controlClassnames={QUERY_BUILDER_CONTROL_CLASSNAMES}
                                 translations={QUERY_BUILDER_TRANSLATIONS}

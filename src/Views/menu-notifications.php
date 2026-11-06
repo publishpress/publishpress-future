@@ -58,6 +58,8 @@ $systemAdminEmail = $optionsFacade->getOption('admin_email');
                     <th scope="row"><?php
                                         esc_html_e('Enable Email Notification?', 'post-expirator'); ?></th>
                     <td>
+                        <fieldset class="pp-a11y-fieldset">
+                        <legend class="screen-reader-text"><?php esc_html_e('Enable Email Notification?', 'post-expirator'); ?></legend>
                         <div class="pp-settings-field-row">
                             <input type="radio" name="expired-email-notification" id="expired-email-notification-true"
                                 value="1" <?php
@@ -79,12 +81,15 @@ $systemAdminEmail = $optionsFacade->getOption('admin_email');
                                                 'This will enable or disable the send of email notification on future action.',
                                                 'post-expirator'
                                             ); ?></p>
+                        </fieldset>
                     </td>
                 </tr>
                 <tr valign="top">
                     <th scope="row"><?php
                         esc_html_e('Include Blog Administrators?', 'post-expirator'); ?></th>
                     <td>
+                        <fieldset class="pp-a11y-fieldset">
+                        <legend class="screen-reader-text"><?php esc_html_e('Include Blog Administrators?', 'post-expirator'); ?></legend>
                         <div class="pp-settings-field-row">
                             <input type="radio" name="expired-email-notification-admins"
                                 id="expired-email-notification-admins-true"
@@ -108,6 +113,7 @@ $systemAdminEmail = $optionsFacade->getOption('admin_email');
                                 'This will include all users with the role of "Administrator" in the email.',
                                 'post-expirator'
                             ); ?></p>
+                        </fieldset>
                     </td>
                 </tr>
                 <tr valign="top">
@@ -141,6 +147,8 @@ $systemAdminEmail = $optionsFacade->getOption('admin_email');
                     <th scope="row"><?php
                         esc_html_e('Enable Past-due Actions Notification?', 'post-expirator'); ?></th>
                     <td>
+                        <fieldset class="pp-a11y-fieldset">
+                        <legend class="screen-reader-text"><?php esc_html_e('Enable Past-due Actions Notification?', 'post-expirator'); ?></legend>
                         <div class="pp-settings-field-row">
                             <input type="radio" name="past-due-actions-notification" id="past-due-actions-notification-true"
                                 value="1" <?php
@@ -162,11 +170,12 @@ $systemAdminEmail = $optionsFacade->getOption('admin_email');
                             'This will enable or disable the send of email notification on past-due actions.',
                             'post-expirator'
                         ); ?></p>
+                        </fieldset>
                     </td>
                 </tr>
                 <tr valign="top">
-                    <th scope="row"><?php
-                        esc_html_e('Who to Notify', 'post-expirator'); ?></th>
+                    <th scope="row"><label for="past-due-actions-notification-list"><?php
+                        esc_html_e('Who to Notify', 'post-expirator'); ?></label></th>
                     <td>
                         <input class="large-text" type="text" name="past-due-actions-notification-list"
                                id="past-due-actions-notification-list" placeholder="<?php echo esc_attr($systemAdminEmail); ?>" value="<?php

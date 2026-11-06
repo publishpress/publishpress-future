@@ -4,7 +4,7 @@ import NodeIcon from '../node-icon';
 import { useSelect, useDispatch } from "@wordpress/data";
 import { store as workflowStore } from "../workflow-store";
 import { store as editorStore } from "../editor-store";
-import { __ } from '@wordpress/i18n';
+import { __, sprintf } from '@wordpress/i18n';
 import { Toolbar, ToolbarGroup, ToolbarButton, Popover } from '@wordpress/components';
 import PlayIcon from "../icons/play";
 import { SIDEBAR_NODE_EDGE } from '../settings-sidebar/constants';
@@ -271,21 +271,39 @@ export const GenericNode = memo(({ id, data, isConnectable, selected, nodeTypeIc
     }
 
 
-    // Unfocus the tolbar button when the node is selected
+    // Move the focus to the node only when it was selected with the pointer.
+    // Keyboard users already have the focus on the node, and forcing it here
+    // would steal the focus from other places (e.g. the inserter or the inspector).
     const nodeRef = useRef(null);
+    const selectedWithPointerRef = useRef(false);
+
+    const onPointerDown = () => {
+        selectedWithPointerRef.current = true;
+    };
+
     useEffect(() => {
-        if (selected && isSingularElementSelected) {
-            setTimeout(() => {
-                jQuery(nodeRef.current.parentNode).focus();
-            }, 100);
+        if (! (selected && isSingularElementSelected) || ! selectedWithPointerRef.current) {
+            return;
         }
+
+        selectedWithPointerRef.current = false;
+
+        const timeout = setTimeout(() => {
+            const wrapper = nodeRef.current?.parentNode;
+
+            if (wrapper && wrapper.ownerDocument.activeElement !== wrapper) {
+                wrapper.focus();
+            }
+        }, 100);
+
+        return () => clearTimeout(timeout);
     }, [selected, isSingularElementSelected]);
 
     return (
         <>
             {selected && isSingularElementSelected && (
                 <>
-                    <Popover placement="top-start" offset={14}>
+                    <Popover placement="top-start" offset={14} focusOnMount={false}>
                         <Toolbar
                             label={__('Step actions', 'post-expirator')}
                             className="components-accessible-toolbar block-editor-block-contextual-toolbar react-flow__node-toolbar"
@@ -306,6 +324,7 @@ export const GenericNode = memo(({ id, data, isConnectable, selected, nodeTypeIc
             <div
                 className={"react-flow__node-body " + nodeClassName}
                 onDoubleClick={onDoubleClick}
+                onPointerDown={onPointerDown}
                 ref={nodeRef}
             >
                 {targetHandles}
@@ -329,6 +348,8 @@ export const GenericNode = memo(({ id, data, isConnectable, selected, nodeTypeIc
                             {nodeHasErrors && (
                                 <div className='react-flow__node-error'
                                     title={__('This node has errors', 'post-expirator')}
+                                    role="img"
+                                    aria-label={__('This node has errors', 'post-expirator')}
                                 >
                                     <NodeIcon icon={'exclamation'} iconSize={8} />
                                 </div>
@@ -376,7 +397,7 @@ export const GenericNode = memo(({ id, data, isConnectable, selected, nodeTypeIc
 
 export default GenericNode;
 
-function filterHandlesByConditions(handles, data) {
+export function filterHandlesByConditions(handles, data) {
     return handles?.filter((handle) => {
         if (handle?.conditions) {
             return jsonLogic.apply(handle.conditions, data.settings);

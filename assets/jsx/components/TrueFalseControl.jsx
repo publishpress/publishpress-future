@@ -14,8 +14,13 @@ export const TrueFalseControl = function (props) {
         }
     };
 
+    const groupLabel = props.label || props.legend;
+
     return (
-        <Fragment>
+        <fieldset className="pp-a11y-fieldset" style={{ border: 0, margin: 0, padding: 0, minWidth: 0 }}>
+            {groupLabel && (
+                <legend className="screen-reader-text">{groupLabel}</legend>
+            )}
             <input
                 type="radio"
                 name={props.name}
@@ -39,6 +44,6 @@ export const TrueFalseControl = function (props) {
                 htmlFor={props.name + '-false'}>{props.falseLabel}</label>
 
             <p className="description">{props.description}</p>
-        </Fragment>
+        </fieldset>
     )
 }

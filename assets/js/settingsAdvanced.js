@@ -35,7 +35,17 @@ var ScheduledStepsCleanupSettings = function ScheduledStepsCleanupSettings() {
     setCleanupRetention = _useState4[1];
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("th", {
     scope: "row"
-  }, text.scheduledStepsCleanup), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("div", {
+  }, text.scheduledStepsCleanup), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("fieldset", {
+    className: "pp-a11y-fieldset",
+    style: {
+      border: 0,
+      margin: 0,
+      padding: 0,
+      minWidth: 0
+    }
+  }, /*#__PURE__*/React.createElement("legend", {
+    className: "screen-reader-text"
+  }, text.scheduledStepsCleanup), /*#__PURE__*/React.createElement("div", {
     className: "pp-settings-field-row"
   }, /*#__PURE__*/React.createElement("input", {
     type: "radio",
@@ -95,7 +105,7 @@ var ScheduledStepsCleanupSettings = function ScheduledStepsCleanupSettings() {
     htmlFor: "future-step-schedule-cleanup-disabled"
   }, text.scheduledStepsCleanupDisable), /*#__PURE__*/React.createElement("p", {
     className: "description offset"
-  }, text.scheduledStepsCleanupDisableDesc))));
+  }, text.scheduledStepsCleanupDisableDesc)))));
 };
 
 /***/ },

@@ -101,12 +101,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_url__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/url */ "@wordpress/url");
 /* harmony import */ var _wordpress_url__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_url__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _a11yUtils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./a11yUtils */ "./assets/jsx/components/a11yUtils.jsx");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t.return && (u = t.return(), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
 
 
 var _wp = wp,
@@ -121,7 +123,8 @@ var DateOffsetPreview = function DateOffsetPreview(_ref) {
     setHasPendingValidationCallback = _ref.setHasPendingValidationCallback,
     setHasValidDataCallback = _ref.setHasValidDataCallback,
     _ref$compactView = _ref.compactView,
-    compactView = _ref$compactView === void 0 ? false : _ref$compactView;
+    compactView = _ref$compactView === void 0 ? false : _ref$compactView,
+    headingLevel = _ref.headingLevel;
   var _useState = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
     _useState2 = _slicedToArray(_useState, 2),
     offsetPreview = _useState2[0],
@@ -172,9 +175,23 @@ var DateOffsetPreview = function DateOffsetPreview(_ref) {
     validateDateOffset();
   }, [offset]);
   var compactClass = compactView ? ' compact' : '';
+
+  // The compact view keeps h4 because its CSS targets `.compact h4`.
+  var level = headingLevel || (compactView ? 4 : 3);
+  var HeadingTag = 'h' + Math.min(Math.max(parseInt(level, 10) || 3, 2), 6);
+  // Keep the original h4 look when another level is used.
+  var headingStyle = HeadingTag !== 'h4' ? {
+    fontSize: '1em',
+    margin: '1.33em 0'
+  } : undefined;
+
+  // Announce the computed date (politely, debounced) so screen reader users hear the result of the offset they typed.
+  (0,_a11yUtils__WEBPACK_IMPORTED_MODULE_2__.useSpeakOnChange)(offset && offsetPreview ? "".concat(labelOffsetPreview, ": ").concat(offsetPreview) : '', 'polite', 1000);
   return /*#__PURE__*/React.createElement(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, offset && /*#__PURE__*/React.createElement("div", {
     className: 'publishpress-future-date-preview' + compactClass
-  }, /*#__PURE__*/React.createElement("h4", null, label), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement(HeadingTag, {
+    style: headingStyle
+  }, label), /*#__PURE__*/React.createElement("div", {
     className: "publishpress-future-date-preview-body"
   }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("span", {
     className: "publishpress-future-date-preview-label"
@@ -242,6 +259,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _FutureActionPanelAfterActionField__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./FutureActionPanelAfterActionField */ "./assets/jsx/components/FutureActionPanelAfterActionField.jsx");
 /* harmony import */ var _FutureActionPanelTop__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./FutureActionPanelTop */ "./assets/jsx/components/FutureActionPanelTop.jsx");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _wordpress_a11y__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @wordpress/a11y */ "./node_modules/@wordpress/a11y/build-module/index.js");
 function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t.return || t.return(); } finally { if (u) throw o; } } }; }
 function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -260,6 +280,8 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
+
+
 var _wp$components = wp.components,
   PanelRow = _wp$components.PanelRow,
   CheckboxControl = _wp$components.CheckboxControl,
@@ -270,7 +292,8 @@ var _wp$components = wp.components,
 var _wp$element = wp.element,
   Fragment = _wp$element.Fragment,
   useEffect = _wp$element.useEffect,
-  useState = _wp$element.useState;
+  useState = _wp$element.useState,
+  useRef = _wp$element.useRef;
 var decodeEntities = wp.htmlEntities.decodeEntities;
 var addQueryArgs = wp.url.addQueryArgs;
 var _wp$data = wp.data,
@@ -278,7 +301,30 @@ var _wp$data = wp.data,
   useDispatch = _wp$data.useDispatch;
 var _wp = wp,
   apiFetch = _wp.apiFetch;
+var futureActionPanelInstanceCounter = 0;
+
+/**
+ * Admin URL used for links to core settings screens. Prefer a localized value
+ * when the PHP side provides one, else derive it from ajaxurl, which WordPress
+ * prints on every admin screen.
+ */
+var getAdminUrl = function getAdminUrl(props) {
+  if (props.adminUrl) {
+    return props.adminUrl;
+  }
+  if (typeof window.ajaxurl === 'string' && window.ajaxurl.indexOf('admin-ajax.php') !== -1) {
+    return window.ajaxurl.replace(/admin-ajax\.php.*$/, '');
+  }
+  return '/wp-admin/';
+};
 var FutureActionPanel = function FutureActionPanel(props) {
+  var _useState = useState(function () {
+      return ++futureActionPanelInstanceCounter;
+    }),
+    _useState2 = _slicedToArray(_useState, 1),
+    instanceId = _useState2[0];
+  var panelRef = useRef(null);
+  var errorId = 'future-action-validation-error-' + instanceId;
   var _useSelect = useSelect(function (select) {
       return {
         action: select(props.storeName).getAction(),
@@ -316,10 +362,10 @@ var FutureActionPanel = function FutureActionPanel(props) {
     }
   }, [extraData, props.context, props.onChangeData]);
   var hiddenFields = props.hiddenFields || {};
-  var _useState = useState(''),
-    _useState2 = _slicedToArray(_useState, 2),
-    validationError = _useState2[0],
-    setValidationError = _useState2[1];
+  var _useState3 = useState(''),
+    _useState4 = _slicedToArray(_useState3, 2),
+    validationError = _useState4[0],
+    setValidationError = _useState4[1];
   var _useDispatch = useDispatch(props.storeName),
     setAction = _useDispatch.setAction,
     setDate = _useDispatch.setDate,
@@ -503,8 +549,11 @@ var FutureActionPanel = function FutureActionPanel(props) {
         result.push( /*#__PURE__*/React.createElement("a", {
           href: href,
           target: target,
-          key: href
-        }, before));
+          key: href,
+          rel: target === '_blank' ? 'noopener noreferrer' : undefined
+        }, before, target === '_blank' && /*#__PURE__*/React.createElement("span", {
+          className: "screen-reader-text"
+        }, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_6__.__)('(opens in a new tab)', 'post-expirator'))));
         result.push(after);
       }
     } catch (err) {
@@ -522,7 +571,8 @@ var FutureActionPanel = function FutureActionPanel(props) {
       return ['category', 'category-add', 'category-remove', 'category-remove-all'].indexOf(item.value) === -1;
     });
   }
-  var HelpText = replaceCurlyBracketsWithLink(props.strings.timezoneSettingsHelp, '/wp-admin/options-general.php#timezone_string', '_blank');
+  var timezoneSettingsUrl = props.strings.timezoneSettingsUrl || getAdminUrl(props) + 'options-general.php#timezone_string';
+  var HelpText = replaceCurlyBracketsWithLink(props.strings.timezoneSettingsHelp, timezoneSettingsUrl, '_blank');
   var displayTaxonomyField = String(action).includes('category') && action !== 'category-remove-all';
   var termsFieldLabel = taxonomyName;
   switch (action) {
@@ -606,6 +656,59 @@ var FutureActionPanel = function FutureActionPanel(props) {
     setHasValidData(validateData());
   }, [action, date, enabled, terms, taxonomy]);
 
+  // Link the validation error to the field it is about and flag that field as invalid.
+  var showValidationError = enabled && !hasValidData && !!validationError;
+  useEffect(function () {
+    var panel = panelRef.current;
+    if (!panel) {
+      return;
+    }
+
+    // Clear the previous link.
+    panel.querySelectorAll('[data-pe-error-linked]').forEach(function (element) {
+      var ids = (element.getAttribute('aria-describedby') || '').split(' ').filter(function (id) {
+        return id && id !== errorId;
+      });
+      if (ids.length) {
+        element.setAttribute('aria-describedby', ids.join(' '));
+      } else {
+        element.removeAttribute('aria-describedby');
+      }
+      element.removeAttribute('aria-invalid');
+      element.removeAttribute('data-pe-error-linked');
+    });
+    if (!showValidationError) {
+      return;
+    }
+    var selector = null;
+    if (validationError === props.strings.errorActionRequired) {
+      selector = '.future-action-select-action select';
+    } else if (validationError === props.strings.errorDateRequired || validationError === props.strings.errorDateInPast) {
+      selector = '.future-action-date-panel input, .future-action-date-panel select';
+    } else if (validationError === props.strings.errorTermsRequired) {
+      selector = '.future-action-terms input';
+    }
+    if (!selector) {
+      return;
+    }
+    panel.querySelectorAll(selector).forEach(function (element) {
+      var ids = (element.getAttribute('aria-describedby') || '').split(' ').filter(Boolean);
+      ids.push(errorId);
+      element.setAttribute('aria-describedby', ids.join(' '));
+      element.setAttribute('aria-invalid', 'true');
+      element.setAttribute('data-pe-error-linked', '1');
+    });
+  }, [showValidationError, validationError, action, calendarIsVisible]);
+  var savingDisabledMessage = (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_6__.__)('Saving is disabled until this is fixed.', 'post-expirator');
+
+  // Announce the error when it appears or changes. The visible notice is not a live
+  // region, so this is the only announcement and it is not repeated on re-render.
+  useEffect(function () {
+    if (showValidationError) {
+      (0,_wordpress_a11y__WEBPACK_IMPORTED_MODULE_7__.speak)(validationError + ' ' + savingDisabledMessage, 'assertive');
+    }
+  }, [showValidationError, validationError]);
+
   // This adds a 'cancel' class to the input when the user clicks on the
   // field to prevent the form from being submitted. This is a workaround
   // for the issue on the quick-edit form where the form is submitted when
@@ -614,15 +717,21 @@ var FutureActionPanel = function FutureActionPanel(props) {
     jQuery(e.target).addClass('cancel');
   };
   return /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SlotFillProvider, null, /*#__PURE__*/React.createElement("div", {
-    className: panelClass
+    className: panelClass,
+    ref: panelRef
   }, props.autoEnableAndHideCheckbox && /*#__PURE__*/React.createElement("input", {
     type: "hidden",
     name: 'future_action_enabled',
     value: 1
-  }), props.showTitle && /*#__PURE__*/React.createElement("div", {
+  }), props.showTitle && /*#__PURE__*/React.createElement("h3", {
+    className: "future-action-panel-title",
     style: {
       fontWeight: 'bold',
-      marginBottom: '10px'
+      marginTop: 0,
+      marginBottom: '10px',
+      fontSize: 'inherit',
+      lineHeight: 'inherit',
+      padding: 0
     }
   }, props.strings.panelTitle), /*#__PURE__*/React.createElement(_FutureActionPanelTop__WEBPACK_IMPORTED_MODULE_5__.FutureActionPanelTop.Slot, {
     fillProps: {
@@ -659,12 +768,14 @@ var FutureActionPanel = function FutureActionPanel(props) {
     label: taxonomyName,
     className: "future-action-warning"
   }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("i", {
-    className: "dashicons dashicons-warning"
+    className: "dashicons dashicons-warning",
+    "aria-hidden": "true"
   }), " ", props.strings.noTaxonomyFound))) || termsListByNameKeys.length === 0 && /*#__PURE__*/React.createElement(PanelRow, null, /*#__PURE__*/React.createElement(BaseControl, {
     label: taxonomyName,
     className: "future-action-warning"
   }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("i", {
-    className: "dashicons dashicons-warning"
+    className: "dashicons dashicons-warning",
+    "aria-hidden": "true"
   }), " ", props.strings.noTermsFound))) || /*#__PURE__*/React.createElement(PanelRow, {
     className: "future-action-full-width"
   }, /*#__PURE__*/React.createElement(BaseControl, null, /*#__PURE__*/React.createElement(FormTokenField, {
@@ -693,10 +804,15 @@ var FutureActionPanel = function FutureActionPanel(props) {
   })), /*#__PURE__*/React.createElement(PanelRow, null, /*#__PURE__*/React.createElement("div", {
     className: "future-action-help-text"
   }, /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement("span", {
-    className: "dashicons dashicons-info"
+    className: "dashicons dashicons-info",
+    "aria-hidden": "true"
   }), " ", HelpText))), !hasValidData && /*#__PURE__*/React.createElement(PanelRow, null, /*#__PURE__*/React.createElement(BaseControl, {
     className: "notice notice-error"
-  }, /*#__PURE__*/React.createElement("div", null, validationError))))), /*#__PURE__*/React.createElement(_wordpress_plugins__WEBPACK_IMPORTED_MODULE_2__.PluginArea, {
+  }, /*#__PURE__*/React.createElement("div", {
+    id: errorId
+  }, validationError, validationError && /*#__PURE__*/React.createElement("span", {
+    className: "future-action-saving-disabled"
+  }, " ", savingDisabledMessage)))))), /*#__PURE__*/React.createElement(_wordpress_plugins__WEBPACK_IMPORTED_MODULE_2__.PluginArea, {
     scope: "publishpress-future"
   }));
 };
@@ -1307,6 +1423,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _DateOffsetPreview__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./DateOffsetPreview */ "./assets/jsx/components/DateOffsetPreview.jsx");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_6__);
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
@@ -1316,6 +1434,7 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 /*
  * Copyright (c) 2025, Ramble Ventures
  */
+
 
 
 
@@ -1510,6 +1629,8 @@ var PostTypeSettingsPanel = function PostTypeSettingsPanel(props) {
   var termOptionsLabels = termOptions.map(function (term) {
     return term.label;
   });
+  var offsetErrorId = 'pe-offset-error-' + props.postType;
+  var hasOffsetError = !hasValidData;
   var settingsRows = [/*#__PURE__*/React.createElement(___WEBPACK_IMPORTED_MODULE_0__.SettingRow, {
     label: props.text.fieldActive,
     key: 'expirationdate_activemeta-' + props.postType
@@ -1532,6 +1653,7 @@ var PostTypeSettingsPanel = function PostTypeSettingsPanel(props) {
     if (isAutoEnabled) {
       settingsRows.push( /*#__PURE__*/React.createElement(___WEBPACK_IMPORTED_MODULE_0__.SettingRow, {
         label: props.text.fieldTaxonomy,
+        id: 'expirationdate_taxonomy-' + props.postType,
         key: 'expirationdate_taxonomy-' + props.postType
       }, /*#__PURE__*/React.createElement(___WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
         name: 'expirationdate_taxonomy-' + props.postType,
@@ -1544,6 +1666,7 @@ var PostTypeSettingsPanel = function PostTypeSettingsPanel(props) {
       })));
       settingsRows.push( /*#__PURE__*/React.createElement(___WEBPACK_IMPORTED_MODULE_0__.SettingRow, {
         label: props.text.fieldHowToExpire,
+        id: 'expirationdate_expiretype-' + props.postType,
         key: 'expirationdate_expiretype-' + props.postType
       }, /*#__PURE__*/React.createElement(___WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
         name: 'expirationdate_expiretype-' + props.postType,
@@ -1554,6 +1677,8 @@ var PostTypeSettingsPanel = function PostTypeSettingsPanel(props) {
         onChange: onChangeHowToExpire
       }), settingHowToExpire === 'change-status' && /*#__PURE__*/React.createElement(___WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
         name: 'expirationdate_newstatus-' + props.postType,
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_6__.__)('New status', 'post-expirator'),
+        hideLabelFromVision: true,
         options: props.statusesList,
         selected: newStatus,
         onChange: setNewStatus
@@ -1571,6 +1696,7 @@ var PostTypeSettingsPanel = function PostTypeSettingsPanel(props) {
       })));
       settingsRows.push( /*#__PURE__*/React.createElement(___WEBPACK_IMPORTED_MODULE_0__.SettingRow, {
         label: props.text.fieldDefaultDateTimeOffset,
+        id: 'expired-custom-date-' + props.postType,
         key: 'expired-custom-date-' + props.postType
       }, /*#__PURE__*/React.createElement(___WEBPACK_IMPORTED_MODULE_0__.TextControl, {
         name: 'expired-custom-date-' + props.postType,
@@ -1579,6 +1705,8 @@ var PostTypeSettingsPanel = function PostTypeSettingsPanel(props) {
         placeholder: props.settings.globalDefaultExpireOffset,
         description: props.text.fieldDefaultDateTimeOffsetDescription,
         unescapedDescription: true,
+        ariaDescribedBy: hasOffsetError ? offsetErrorId : '',
+        isInvalid: hasOffsetError,
         onChange: onChangeExpireOffset
       }), /*#__PURE__*/React.createElement(_DateOffsetPreview__WEBPACK_IMPORTED_MODULE_4__["default"], {
         offset: offset,
@@ -1591,6 +1719,7 @@ var PostTypeSettingsPanel = function PostTypeSettingsPanel(props) {
       })));
       settingsRows.push( /*#__PURE__*/React.createElement(___WEBPACK_IMPORTED_MODULE_0__.SettingRow, {
         label: props.text.fieldWhoToNotify,
+        id: 'expirationdate_emailnotification-' + props.postType,
         key: 'expirationdate_emailnotification-' + props.postType
       }, /*#__PURE__*/React.createElement(___WEBPACK_IMPORTED_MODULE_0__.TextControl, {
         name: 'expirationdate_emailnotification-' + props.postType,
@@ -1607,26 +1736,32 @@ var PostTypeSettingsPanel = function PostTypeSettingsPanel(props) {
       settingsRows.push( /*#__PURE__*/React.createElement(___WEBPACK_IMPORTED_MODULE_0__.SettingRow, {
         label: props.text.fieldCustomStatuses,
         key: 'custom-statuses_promo'
-      }, /*#__PURE__*/React.createElement(FieldRow, null, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("input", {
+      }, /*#__PURE__*/React.createElement(FieldRow, null, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("label", null, /*#__PURE__*/React.createElement("input", {
         type: "checkbox",
         disabled: true
-      }), props.text.fieldCustomStatusesLabel, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Tooltip, {
+      }), props.text.fieldCustomStatusesLabel, /*#__PURE__*/React.createElement("span", {
+        className: "screen-reader-text"
+      }, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_6__.__)('(Pro feature)', 'post-expirator'))), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Tooltip, {
         text: props.text.proFeatureTooltip
       }, /*#__PURE__*/React.createElement("span", {
-        className: "dashicons dashicons-lock pp-pro-loc-icon"
+        className: "dashicons dashicons-lock pp-pro-loc-icon",
+        "aria-hidden": "true"
       })), /*#__PURE__*/React.createElement(HelpText, null, props.text.fieldCustomStatusesDescription)))));
 
       // Metadata scheduling promotional field
       settingsRows.push( /*#__PURE__*/React.createElement(___WEBPACK_IMPORTED_MODULE_0__.SettingRow, {
         label: props.text.fieldMetadataScheduling,
         key: 'metadata_mapping_promo'
-      }, /*#__PURE__*/React.createElement(FieldRow, null, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("input", {
+      }, /*#__PURE__*/React.createElement(FieldRow, null, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("label", null, /*#__PURE__*/React.createElement("input", {
         type: "checkbox",
         disabled: true
-      }), props.text.fieldMetadataSchedulingLabel, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Tooltip, {
+      }), props.text.fieldMetadataSchedulingLabel, /*#__PURE__*/React.createElement("span", {
+        className: "screen-reader-text"
+      }, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_6__.__)('(Pro feature)', 'post-expirator'))), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Tooltip, {
         text: props.text.proFeatureTooltip
       }, /*#__PURE__*/React.createElement("span", {
-        className: "dashicons dashicons-lock pp-pro-loc-icon"
+        className: "dashicons dashicons-lock pp-pro-loc-icon",
+        "aria-hidden": "true"
       }))), /*#__PURE__*/React.createElement(HelpText, null, props.text.fieldMetadataSchedulingDescription))));
     }
   }
@@ -1637,8 +1772,10 @@ var PostTypeSettingsPanel = function PostTypeSettingsPanel(props) {
   }, /*#__PURE__*/React.createElement("h2", null, props.postTypeLabel), /*#__PURE__*/React.createElement(___WEBPACK_IMPORTED_MODULE_0__.SettingsTable, {
     bodyChildren: settingsRows
   }), !hasValidData && /*#__PURE__*/React.createElement(PanelRow, null, /*#__PURE__*/React.createElement("div", {
-    className: "publishpress-future-notice publishpress-future-notice-error"
-  }, /*#__PURE__*/React.createElement("strong", null, props.text.error, ":"), " ", validationError)));
+    className: "publishpress-future-notice publishpress-future-notice-error",
+    id: offsetErrorId,
+    role: "alert"
+  }, /*#__PURE__*/React.createElement("strong", null, props.text.error, ":"), " ", validationError, ' ', (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_6__.__)('Saving is disabled until this is fixed.', 'post-expirator'))));
 };
 
 /***/ },
@@ -1743,10 +1880,12 @@ var PostTypesSettingsPanels = function PostTypesSettingsPanels(props) {
       marginBottom: '10px'
     }
   }, /*#__PURE__*/React.createElement("label", {
+    htmlFor: "pe-post-type-selector",
     style: {
       lineHeight: '33px'
     }
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Select a post type to edit:', 'post-expirator')), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
+    id: "pe-post-type-selector",
     value: selectedPostType,
     options: postTypeOptions,
     onChange: onSelectPostType
@@ -1769,17 +1908,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _a11yUtils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./a11yUtils */ "./assets/jsx/components/a11yUtils.jsx");
 /*
  * Copyright (c) 2025, Ramble Ventures
  */
+
 
 
 var SelectControl = function SelectControl(props) {
   var onChange = function onChange(value) {
     props.onChange(value);
   };
+  var descriptionId = props.description ? props.name + '-description' : undefined;
+  (0,_a11yUtils__WEBPACK_IMPORTED_MODULE_2__.useControlA11yAttributes)(props.name, [descriptionId, props.ariaDescribedBy], props.isInvalid);
   return /*#__PURE__*/React.createElement(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, props.options.length === 0 && /*#__PURE__*/React.createElement("div", null, props.noItemFoundMessage), props.options.length > 0 && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
     label: props.label,
+    hideLabelFromVision: props.hideLabelFromVision,
     name: props.name,
     id: props.name,
     className: props.className,
@@ -1788,7 +1932,8 @@ var SelectControl = function SelectControl(props) {
     "data-data": props.data,
     options: props.options
   }), props.children, /*#__PURE__*/React.createElement("p", {
-    className: "description"
+    className: "description",
+    id: descriptionId
   }, props.description));
 };
 
@@ -1806,18 +1951,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /*
  * Copyright (c) 2025, Ramble Ventures
  */
 
+
+/**
+ * A settings table row.
+ *
+ * Pass `id` with the id of the row's control so the row label is
+ * programmatically associated with it. When the row holds a group of
+ * controls (checkbox list, radio group), pass `labelId` instead and use it as
+ * `aria-labelledby` on the group.
+ */
 var SettingRow = function SettingRow(props) {
+  var labelProps = {};
+  if (props.id) {
+    labelProps.htmlFor = props.id;
+  }
+  if (props.labelId) {
+    labelProps.id = props.labelId;
+  }
   return /*#__PURE__*/React.createElement("tr", {
     valign: "top"
   }, /*#__PURE__*/React.createElement("th", {
     scope: "row"
-  }, /*#__PURE__*/React.createElement("label", {
-    htmlFor: ""
-  }, props.label)), /*#__PURE__*/React.createElement("td", null, props.children));
+  }, props.id ? /*#__PURE__*/React.createElement("label", labelProps, props.label) : /*#__PURE__*/React.createElement("span", _extends({
+    className: "pe-setting-row-label"
+  }, labelProps), props.label)), /*#__PURE__*/React.createElement("td", null, props.children));
 };
 
 /***/ },
@@ -1920,13 +2082,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Spinner: () => (/* binding */ Spinner)
 /* harmony export */ });
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
 /*
  * Copyright (c) 2025, Ramble Ventures
  */
+
 var Spinner = function Spinner(props) {
+  var label = props.label || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Loading…', 'post-expirator');
   return /*#__PURE__*/React.createElement("span", {
-    className: "publishpress-future-spinner"
-  }, /*#__PURE__*/React.createElement("div", null), /*#__PURE__*/React.createElement("div", null), /*#__PURE__*/React.createElement("div", null), /*#__PURE__*/React.createElement("div", null));
+    className: "publishpress-future-spinner",
+    role: "status"
+  }, /*#__PURE__*/React.createElement("div", {
+    "aria-hidden": "true"
+  }), /*#__PURE__*/React.createElement("div", {
+    "aria-hidden": "true"
+  }), /*#__PURE__*/React.createElement("div", {
+    "aria-hidden": "true"
+  }), /*#__PURE__*/React.createElement("div", {
+    "aria-hidden": "true"
+  }), /*#__PURE__*/React.createElement("span", {
+    className: "screen-reader-text"
+  }, label));
 };
 
 /***/ },
@@ -1973,6 +2150,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var ___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ */ "./assets/jsx/components/index.jsx");
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils */ "./assets/jsx/utils.jsx");
+/* harmony import */ var _a11yUtils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./a11yUtils */ "./assets/jsx/components/a11yUtils.jsx");
 /*
  * Copyright (c) 2025, Ramble Ventures
  */
@@ -1980,21 +2158,26 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var TextControl = function TextControl(props) {
   var description;
+  var descriptionId = props.description ? props.name + '-description' : undefined;
   if (props.unescapedDescription) {
     // If using this option, the HTML has to be escaped before injected into the JS interface.
     description = /*#__PURE__*/React.createElement("p", {
       className: "description",
+      id: descriptionId,
       dangerouslySetInnerHTML: {
         __html: (0,_utils__WEBPACK_IMPORTED_MODULE_3__.stripTags)(props.description)
       }
     });
   } else {
     description = /*#__PURE__*/React.createElement("p", {
-      className: "description"
+      className: "description",
+      id: descriptionId
     }, props.description);
   }
+  (0,_a11yUtils__WEBPACK_IMPORTED_MODULE_4__.useControlA11yAttributes)(props.name, [descriptionId, props.ariaDescribedBy], props.isInvalid);
   var onChange = function onChange(value) {
     if (props.onChange) {
       props.onChange(value);
@@ -2009,6 +2192,7 @@ var TextControl = function TextControl(props) {
   }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
     type: "text",
     label: props.label,
+    hideLabelFromVision: props.hideLabelFromVision,
     name: props.name,
     id: props.name,
     className: props.className,
@@ -2045,7 +2229,9 @@ var ToggleArrowButton = function ToggleArrowButton(props) {
   var title = props.isExpanded ? props.titleExpanded : props.titleCollapsed;
   return /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
     isSmall: true,
-    title: title,
+    label: title,
+    showTooltip: true,
+    "aria-expanded": !!props.isExpanded,
     icon: icon,
     onClick: onClick,
     className: props.className
@@ -2223,7 +2409,18 @@ var TrueFalseControl = function TrueFalseControl(props) {
       // Check only the true radio... using the field name? or directly the ID
     }
   };
-  return /*#__PURE__*/React.createElement(Fragment, null, /*#__PURE__*/React.createElement("input", {
+  var groupLabel = props.label || props.legend;
+  return /*#__PURE__*/React.createElement("fieldset", {
+    className: "pp-a11y-fieldset",
+    style: {
+      border: 0,
+      margin: 0,
+      padding: 0,
+      minWidth: 0
+    }
+  }, groupLabel && /*#__PURE__*/React.createElement("legend", {
+    className: "screen-reader-text"
+  }, groupLabel), /*#__PURE__*/React.createElement("input", {
     type: "radio",
     name: props.name,
     id: props.name + '-true',
@@ -2244,6 +2441,97 @@ var TrueFalseControl = function TrueFalseControl(props) {
   }, props.falseLabel), /*#__PURE__*/React.createElement("p", {
     className: "description"
   }, props.description));
+};
+
+/***/ },
+
+/***/ "./assets/jsx/components/a11yUtils.jsx"
+/*!*********************************************!*\
+  !*** ./assets/jsx/components/a11yUtils.jsx ***!
+  \*********************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   useControlA11yAttributes: () => (/* binding */ useControlA11yAttributes),
+/* harmony export */   useSpeakOnChange: () => (/* binding */ useSpeakOnChange)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_a11y__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/a11y */ "./node_modules/@wordpress/a11y/build-module/index.js");
+/*
+ * Copyright (c) 2025, Ramble Ventures
+ */
+
+
+
+/**
+ * Set aria-describedby / aria-invalid on a control rendered by a WP component
+ * that overrides those attributes (SelectControl, TextControl only set
+ * aria-describedby for their own `help` prop).
+ *
+ * @param {string}           controlId     DOM id of the control.
+ * @param {string|string[]}  describedByIds Ids of the describing elements. Falsy entries are ignored.
+ * @param {boolean}          isInvalid     Whether the control has a validation error.
+ */
+var useControlA11yAttributes = function useControlA11yAttributes(controlId, describedByIds) {
+  var isInvalid = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+  var ids = (Array.isArray(describedByIds) ? describedByIds : [describedByIds]).filter(Boolean).join(' ');
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (!controlId) {
+      return;
+    }
+    var element = document.getElementById(controlId);
+    if (!element) {
+      return;
+    }
+
+    // Keep any aria-describedby the control already had (from PHP or the WP component).
+    if (!element.hasAttribute('data-pe-base-describedby')) {
+      element.setAttribute('data-pe-base-describedby', element.getAttribute('aria-describedby') || '');
+    }
+    var baseIds = element.getAttribute('data-pe-base-describedby');
+    var allIds = [baseIds, ids].filter(Boolean).join(' ');
+    if (allIds) {
+      element.setAttribute('aria-describedby', allIds);
+    } else {
+      element.removeAttribute('aria-describedby');
+    }
+    if (isInvalid) {
+      element.setAttribute('aria-invalid', 'true');
+    } else {
+      element.removeAttribute('aria-invalid');
+    }
+  });
+};
+
+/**
+ * Announce a message through the wp.a11y live region when it changes.
+ *
+ * @param {string}  message   Message to announce. Nothing is announced when empty.
+ * @param {string}  politeness 'polite' or 'assertive'.
+ * @param {number}  delay     Debounce delay in milliseconds.
+ */
+var useSpeakOnChange = function useSpeakOnChange(message) {
+  var politeness = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'polite';
+  var delay = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
+  var lastSpoken = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)('');
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (!message) {
+      lastSpoken.current = '';
+      return;
+    }
+    if (message === lastSpoken.current) {
+      return;
+    }
+    var timer = setTimeout(function () {
+      lastSpoken.current = message;
+      (0,_wordpress_a11y__WEBPACK_IMPORTED_MODULE_1__.speak)(message, politeness);
+    }, delay);
+    return function () {
+      return clearTimeout(timer);
+    };
+  }, [message, politeness, delay]);
 };
 
 /***/ },
@@ -2931,6 +3219,315 @@ var futureActionAttributesEqual = function futureActionAttributesEqual(proposed,
   var normalizedCurrent = normalizeFutureActionAttribute(current);
   return JSON.stringify(normalizedProposed) === JSON.stringify(normalizedCurrent);
 };
+
+/***/ },
+
+/***/ "./node_modules/@wordpress/a11y/build-module/add-container.js"
+/*!********************************************************************!*\
+  !*** ./node_modules/@wordpress/a11y/build-module/add-container.js ***!
+  \********************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ addContainer)
+/* harmony export */ });
+/**
+ * Build the live regions markup.
+ *
+ * @param {string} [ariaLive] Value for the 'aria-live' attribute; default: 'polite'.
+ *
+ * @return {HTMLDivElement} The ARIA live region HTML element.
+ */
+function addContainer(ariaLive = 'polite') {
+  const container = document.createElement('div');
+  container.id = `a11y-speak-${ariaLive}`;
+  container.className = 'a11y-speak-region';
+  container.setAttribute('style', 'position: absolute;' + 'margin: -1px;' + 'padding: 0;' + 'height: 1px;' + 'width: 1px;' + 'overflow: hidden;' + 'clip: rect(1px, 1px, 1px, 1px);' + '-webkit-clip-path: inset(50%);' + 'clip-path: inset(50%);' + 'border: 0;' + 'word-wrap: normal !important;');
+  container.setAttribute('aria-live', ariaLive);
+  container.setAttribute('aria-relevant', 'additions text');
+  container.setAttribute('aria-atomic', 'true');
+  const {
+    body
+  } = document;
+  if (body) {
+    body.appendChild(container);
+  }
+  return container;
+}
+//# sourceMappingURL=add-container.js.map
+
+/***/ },
+
+/***/ "./node_modules/@wordpress/a11y/build-module/add-intro-text.js"
+/*!*********************************************************************!*\
+  !*** ./node_modules/@wordpress/a11y/build-module/add-intro-text.js ***!
+  \*********************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ addIntroText)
+/* harmony export */ });
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+/**
+ * WordPress dependencies
+ */
+
+
+/**
+ * Build the explanatory text to be placed before the aria live regions.
+ *
+ * This text is initially hidden from assistive technologies by using a `hidden`
+ * HTML attribute which is then removed once a message fills the aria-live regions.
+ *
+ * @return {HTMLParagraphElement} The explanatory text HTML element.
+ */
+function addIntroText() {
+  const introText = document.createElement('p');
+  introText.id = 'a11y-speak-intro-text';
+  introText.className = 'a11y-speak-intro-text';
+  introText.textContent = (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Notifications');
+  introText.setAttribute('style', 'position: absolute;' + 'margin: -1px;' + 'padding: 0;' + 'height: 1px;' + 'width: 1px;' + 'overflow: hidden;' + 'clip: rect(1px, 1px, 1px, 1px);' + '-webkit-clip-path: inset(50%);' + 'clip-path: inset(50%);' + 'border: 0;' + 'word-wrap: normal !important;');
+  introText.setAttribute('hidden', 'hidden');
+  const {
+    body
+  } = document;
+  if (body) {
+    body.appendChild(introText);
+  }
+  return introText;
+}
+//# sourceMappingURL=add-intro-text.js.map
+
+/***/ },
+
+/***/ "./node_modules/@wordpress/a11y/build-module/clear.js"
+/*!************************************************************!*\
+  !*** ./node_modules/@wordpress/a11y/build-module/clear.js ***!
+  \************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ clear)
+/* harmony export */ });
+/**
+ * Clears the a11y-speak-region elements and hides the explanatory text.
+ */
+function clear() {
+  const regions = document.getElementsByClassName('a11y-speak-region');
+  const introText = document.getElementById('a11y-speak-intro-text');
+  for (let i = 0; i < regions.length; i++) {
+    regions[i].textContent = '';
+  }
+
+  // Make sure the explanatory text is hidden from assistive technologies.
+  if (introText) {
+    introText.setAttribute('hidden', 'hidden');
+  }
+}
+//# sourceMappingURL=clear.js.map
+
+/***/ },
+
+/***/ "./node_modules/@wordpress/a11y/build-module/filter-message.js"
+/*!*********************************************************************!*\
+  !*** ./node_modules/@wordpress/a11y/build-module/filter-message.js ***!
+  \*********************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ filterMessage)
+/* harmony export */ });
+let previousMessage = '';
+
+/**
+ * Filter the message to be announced to the screenreader.
+ *
+ * @param {string} message The message to be announced.
+ *
+ * @return {string} The filtered message.
+ */
+function filterMessage(message) {
+  /*
+   * Strip HTML tags (if any) from the message string. Ideally, messages should
+   * be simple strings, carefully crafted for specific use with A11ySpeak.
+   * When re-using already existing strings this will ensure simple HTML to be
+   * stripped out and replaced with a space. Browsers will collapse multiple
+   * spaces natively.
+   */
+  message = message.replace(/<[^<>]+>/g, ' ');
+
+  /*
+   * Safari + VoiceOver don't announce repeated, identical strings. We use
+   * a `no-break space` to force them to think identical strings are different.
+   */
+  if (previousMessage === message) {
+    message += '\u00A0';
+  }
+  previousMessage = message;
+  return message;
+}
+//# sourceMappingURL=filter-message.js.map
+
+/***/ },
+
+/***/ "./node_modules/@wordpress/a11y/build-module/index.js"
+/*!************************************************************!*\
+  !*** ./node_modules/@wordpress/a11y/build-module/index.js ***!
+  \************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   setup: () => (/* binding */ setup),
+/* harmony export */   speak: () => (/* binding */ speak)
+/* harmony export */ });
+/* harmony import */ var _wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/dom-ready */ "./node_modules/@wordpress/dom-ready/build-module/index.js");
+/* harmony import */ var _add_intro_text__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./add-intro-text */ "./node_modules/@wordpress/a11y/build-module/add-intro-text.js");
+/* harmony import */ var _add_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./add-container */ "./node_modules/@wordpress/a11y/build-module/add-container.js");
+/* harmony import */ var _clear__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./clear */ "./node_modules/@wordpress/a11y/build-module/clear.js");
+/* harmony import */ var _filter_message__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./filter-message */ "./node_modules/@wordpress/a11y/build-module/filter-message.js");
+/**
+ * WordPress dependencies
+ */
+
+
+/**
+ * Internal dependencies
+ */
+
+
+
+
+
+/**
+ * Create the live regions.
+ */
+function setup() {
+  const introText = document.getElementById('a11y-speak-intro-text');
+  const containerAssertive = document.getElementById('a11y-speak-assertive');
+  const containerPolite = document.getElementById('a11y-speak-polite');
+  if (introText === null) {
+    (0,_add_intro_text__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  }
+  if (containerAssertive === null) {
+    (0,_add_container__WEBPACK_IMPORTED_MODULE_2__["default"])('assertive');
+  }
+  if (containerPolite === null) {
+    (0,_add_container__WEBPACK_IMPORTED_MODULE_2__["default"])('polite');
+  }
+}
+
+/**
+ * Run setup on domReady.
+ */
+(0,_wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_0__["default"])(setup);
+
+/**
+ * Allows you to easily announce dynamic interface updates to screen readers using ARIA live regions.
+ * This module is inspired by the `speak` function in `wp-a11y.js`.
+ *
+ * @param {string} message    The message to be announced by assistive technologies.
+ * @param {string} [ariaLive] The politeness level for aria-live; default: 'polite'.
+ *
+ * @example
+ * ```js
+ * import { speak } from '@wordpress/a11y';
+ *
+ * // For polite messages that shouldn't interrupt what screen readers are currently announcing.
+ * speak( 'The message you want to send to the ARIA live region' );
+ *
+ * // For assertive messages that should interrupt what screen readers are currently announcing.
+ * speak( 'The message you want to send to the ARIA live region', 'assertive' );
+ * ```
+ */
+function speak(message, ariaLive) {
+  /*
+   * Clear previous messages to allow repeated strings being read out and hide
+   * the explanatory text from assistive technologies.
+   */
+  (0,_clear__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  message = (0,_filter_message__WEBPACK_IMPORTED_MODULE_4__["default"])(message);
+  const introText = document.getElementById('a11y-speak-intro-text');
+  const containerAssertive = document.getElementById('a11y-speak-assertive');
+  const containerPolite = document.getElementById('a11y-speak-polite');
+  if (containerAssertive && ariaLive === 'assertive') {
+    containerAssertive.textContent = message;
+  } else if (containerPolite) {
+    containerPolite.textContent = message;
+  }
+
+  /*
+   * Make the explanatory text available to assistive technologies by removing
+   * the 'hidden' HTML attribute.
+   */
+  if (introText) {
+    introText.removeAttribute('hidden');
+  }
+}
+//# sourceMappingURL=index.js.map
+
+/***/ },
+
+/***/ "./node_modules/@wordpress/dom-ready/build-module/index.js"
+/*!*****************************************************************!*\
+  !*** ./node_modules/@wordpress/dom-ready/build-module/index.js ***!
+  \*****************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ domReady)
+/* harmony export */ });
+/**
+ * @typedef {() => void} Callback
+ *
+ * TODO: Remove this typedef and inline `() => void` type.
+ *
+ * This typedef is used so that a descriptive type is provided in our
+ * automatically generated documentation.
+ *
+ * An in-line type `() => void` would be preferable, but the generated
+ * documentation is `null` in that case.
+ *
+ * @see https://github.com/WordPress/gutenberg/issues/18045
+ */
+
+/**
+ * Specify a function to execute when the DOM is fully loaded.
+ *
+ * @param {Callback} callback A function to execute after the DOM is ready.
+ *
+ * @example
+ * ```js
+ * import domReady from '@wordpress/dom-ready';
+ *
+ * domReady( function() {
+ * 	//do something after DOM loads.
+ * } );
+ * ```
+ *
+ * @return {void}
+ */
+function domReady(callback) {
+  if (typeof document === 'undefined') {
+    return;
+  }
+  if (document.readyState === 'complete' ||
+  // DOMContentLoaded + Images/Styles/etc loaded, so we call directly.
+  document.readyState === 'interactive' // DOMContentLoaded fires at this point, so we call directly.
+  ) {
+    return void callback();
+  }
+
+  // DOMContentLoaded has not fired yet, delay callback until then.
+  document.addEventListener('DOMContentLoaded', callback);
+}
+//# sourceMappingURL=index.js.map
 
 /***/ },
 

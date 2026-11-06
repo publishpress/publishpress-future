@@ -5,6 +5,7 @@ import {
     Fragment
 } from '@wordpress/element';
 import { addQueryArgs } from '@wordpress/url';
+import { useSpeakOnChange } from './a11yUtils';
 const { apiFetch } = wp;
 
 require('./css/dateOffsetPreview.css');
@@ -17,7 +18,8 @@ export const DateOffsetPreview = ({
     setValidationErrorCallback,
     setHasPendingValidationCallback,
     setHasValidDataCallback,
-    compactView = false
+    compactView = false,
+    headingLevel
 }) => {
     const [offsetPreview, setOffsetPreview] = useState('');
     const [currentTime, setCurrentTime] = useState();
@@ -75,11 +77,24 @@ export const DateOffsetPreview = ({
 
     const compactClass = compactView ? ' compact' : '';
 
+    // The compact view keeps h4 because its CSS targets `.compact h4`.
+    const level = headingLevel || (compactView ? 4 : 3);
+    const HeadingTag = 'h' + Math.min(Math.max(parseInt(level, 10) || 3, 2), 6);
+    // Keep the original h4 look when another level is used.
+    const headingStyle = HeadingTag !== 'h4' ? { fontSize: '1em', margin: '1.33em 0' } : undefined;
+
+    // Announce the computed date (politely, debounced) so screen reader users hear the result of the offset they typed.
+    useSpeakOnChange(
+        offset && offsetPreview ? `${labelOffsetPreview}: ${offsetPreview}` : '',
+        'polite',
+        1000
+    );
+
     return (
         <Fragment>
             { offset && (
                 <div className={'publishpress-future-date-preview' + compactClass}>
-                    <h4>{ label }</h4>
+                    <HeadingTag style={headingStyle}>{ label }</HeadingTag>
                     <div className="publishpress-future-date-preview-body">
                         <div>
                             <span className="publishpress-future-date-preview-label">{ labelDatePreview }: </span>
