@@ -7,6 +7,8 @@ use PublishPress\Future\Modules\Workflows\Module;
 use PublishPress\Future\Modules\Workflows\Interfaces\WorkflowsModelInterface;
 use WP_Query;
 
+use function _prime_post_caches;
+
 \defined('ABSPATH') || exit;
 
 class WorkflowsModel implements WorkflowsModelInterface
@@ -20,11 +22,18 @@ class WorkflowsModel implements WorkflowsModelInterface
             'post_status' => 'publish',
             'posts_per_page' => $limit,
             'fields' => 'ids',
+            'no_found_rows' => true,
         ];
 
         $query = new WP_Query($args);
 
-        return $query->posts;
+        /** @var int[] $ids */
+        $ids = $query->posts;
+
+        // Batch the reads the engine needs without rebuilding already cached posts.
+        _prime_post_caches($ids, false, true);
+
+        return $ids;
     }
 
     public function getAllWorkflowsIds(): array
