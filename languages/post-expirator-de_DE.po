@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-04-10T20:34:37+00:00\n"
-"PO-Revision-Date: 2026-10-29 19:48+0000\n"
+"PO-Revision-Date: 2026-11-09 14:52+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
@@ -560,7 +560,7 @@ msgstr "Ungültiger Datum-Zeit-Abstand"
 
 #: src/Modules/Expirator/Controllers/RestAPIController.php:584
 msgid "You are not allowed to schedule this action."
-msgstr "Sie dürfen diese Aktion nicht planen."
+msgstr "Sie sind nicht berechtigt, diese Aktion zu planen."
 
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:140
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:141
@@ -590,7 +590,7 @@ msgstr "Unbekannter Beitrag"
 #. translators: 1: post title, 2: post ID.
 #, php-format
 msgid "Executed action for: %1$s (ID: %2$d)"
-msgstr "Aktion ausgeführt für: %1$s (ID: %2$d)"
+msgstr "Ausgeführte Aktion für: %1$s (ID: %2$d)"
 
 #: src/Modules/Expirator/Controllers/ScheduledActionsController.php:314
 msgid "Executed scheduled action"
@@ -1009,9 +1009,9 @@ msgid ""
 "use only English terms for the date/time offset, such as \"3 months\" or "
 "\"1 week\"."
 msgstr ""
-"Ungültiger Datum/Uhrzeit-Versatz \"%1$s\" für post type \"%2$s\". Bitte "
+"Ungültiger Datum/Zeit-Versatz \"%1$s\" für post type \"%2$s\". Bitte "
 "stellen Sie sicher, dass Sie nur englische Begriffe für den "
-"Datum/Uhrzeit-Versatz verwenden, wie \"3 months\" oder \"1 week\"."
+"Datum/Zeit-Versatz verwenden, wie \"3 months\" oder \"1 week\"."
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:53
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:236
@@ -4382,8 +4382,8 @@ msgid ""
 "Use the %1$s[futureaction]%2$s shortcode to show when the future action "
 "will occur. You can add this shortcode anywhere in your post content."
 msgstr ""
-"Verwenden Sie den %1$s[futureaction]%2$s Shortcode, um anzuzeigen, wann die "
-"zukünftige Aktion stattfinden wird. Sie können diesen Shortcode überall in "
+"Verwenden Sie den %1$s[futureaction]%2$s shortcode, um anzuzeigen, wann die "
+"zukünftige Aktion stattfinden wird. Sie können diesen shortcode überall in "
 "Ihrem Post-Inhalt hinzufügen."
 
 #: src/Views/menu-display.php:260

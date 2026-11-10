@@ -2505,16 +2505,16 @@
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v3.95.28",
+            "version": "v3.95.30",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer.git",
-                "reference": "de66c41256ad603e63cf033bd153fa4a14ebaca4"
+                "reference": "e85cafc4d861c122839d5409eda3325ac0ec0300"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/de66c41256ad603e63cf033bd153fa4a14ebaca4",
-                "reference": "de66c41256ad603e63cf033bd153fa4a14ebaca4",
+                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/e85cafc4d861c122839d5409eda3325ac0ec0300",
+                "reference": "e85cafc4d861c122839d5409eda3325ac0ec0300",
                 "shasum": ""
             },
             "require": {
@@ -2548,12 +2548,12 @@
             "require-dev": {
                 "facile-it/paraunit": "^1.3.1 || ^2.11.0",
                 "infection/infection": "^0.32.7",
-                "justinrainbow/json-schema": "^6.12.0",
+                "justinrainbow/json-schema": "^6.14.0",
                 "keradus/cli-executor": "^2.3",
                 "php-coveralls/php-coveralls": "^2.9.1",
                 "php-cs-fixer/phpunit-constraint-isidenticalstring": "^1.8",
                 "php-cs-fixer/phpunit-constraint-xmlmatchesxsd": "^1.8",
-                "phpunit/phpunit": "^9.6.36 || ^10.5.64 || ^11.5.56 || ^12.5.35 || ^13.3.3",
+                "phpunit/phpunit": "^9.6.38 || ^10.5.66 || ^11.5.57 || ^12.5.43 || ^13.4.6",
                 "symfony/polyfill-php85": "^1.43",
                 "symfony/var-dumper": "^5.4.54 || ^6.4.49 || ^7.4.22 || ^8.1.10",
                 "symfony/yaml": "^5.4.56 || ^6.4.50 || ^7.4.23 || ^8.1.11"
@@ -2597,7 +2597,7 @@
             ],
             "support": {
                 "issues": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/issues",
-                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.95.28"
+                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.95.30"
             },
             "funding": [
                 {
@@ -2605,8 +2605,8 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-11-04T13:04:49+00:00",
-            "published-time": "2026-11-04T13:04:58+00:00"
+            "time": "2026-11-09T14:32:19+00:00",
+            "published-time": "2026-11-09T14:32:30+00:00"
         },
         {
             "name": "gettext/gettext",
@@ -6267,16 +6267,16 @@
         },
         {
             "name": "publishpress/translations",
-            "version": "v1.6.1",
+            "version": "v1.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/publishpress/library-publishpress-translator.git",
-                "reference": "4e52429394a261b440c7df9ba3a40556fab13e31"
+                "reference": "aa9421e14127010657a1bdb5c5e1bd3e6db3c649"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/publishpress/library-publishpress-translator/zipball/4e52429394a261b440c7df9ba3a40556fab13e31",
-                "reference": "4e52429394a261b440c7df9ba3a40556fab13e31",
+                "url": "https://api.github.com/repos/publishpress/library-publishpress-translator/zipball/aa9421e14127010657a1bdb5c5e1bd3e6db3c649",
+                "reference": "aa9421e14127010657a1bdb5c5e1bd3e6db3c649",
                 "shasum": ""
             },
             "require": {
@@ -6318,10 +6318,10 @@
             "description": "AI-powered translation automation for PublishPress plugins using Potomatic",
             "support": {
                 "issues": "https://github.com/publishpress/library-publishpress-translator/issues",
-                "source": "https://github.com/publishpress/library-publishpress-translator/tree/v1.6.1"
+                "source": "https://github.com/publishpress/library-publishpress-translator/tree/v1.6.2"
             },
-            "time": "2026-10-14T16:48:54+00:00",
-            "published-time": "2026-10-14T16:50:02+00:00"
+            "time": "2026-11-09T14:34:44+00:00",
+            "published-time": "2026-11-09T14:34:57+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -8448,16 +8448,16 @@
         },
         {
             "name": "spatie/ray",
-            "version": "1.48.0",
+            "version": "1.48.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/ray.git",
-                "reference": "974ac9c6e315033ab8ace883d60e094522f88ede"
+                "reference": "1b82467e05eb4cabccd876344d2a48c4e98c6dd5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/ray/zipball/974ac9c6e315033ab8ace883d60e094522f88ede",
-                "reference": "974ac9c6e315033ab8ace883d60e094522f88ede",
+                "url": "https://api.github.com/repos/spatie/ray/zipball/1b82467e05eb4cabccd876344d2a48c4e98c6dd5",
+                "reference": "1b82467e05eb4cabccd876344d2a48c4e98c6dd5",
                 "shasum": ""
             },
             "require": {
@@ -8517,7 +8517,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/ray/issues",
-                "source": "https://github.com/spatie/ray/tree/1.48.0"
+                "source": "https://github.com/spatie/ray/tree/1.48.1"
             },
             "funding": [
                 {
@@ -8529,8 +8529,8 @@
                     "type": "other"
                 }
             ],
-            "time": "2026-03-31T12:44:31+00:00",
-            "published-time": "2026-03-31T12:45:03+00:00"
+            "time": "2026-11-05T09:15:00+00:00",
+            "published-time": "2026-11-05T09:17:03+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
