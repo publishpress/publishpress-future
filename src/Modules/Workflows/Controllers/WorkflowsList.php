@@ -569,14 +569,17 @@ class WorkflowsList implements InitializableInterface
         $newStatus = $isActive ? 'draft' : 'publish';
         $icon = $isActive ? 'yes' : 'no';
         $iconClass = $isActive ? 'active' : 'inactive';
+        $ariaLabel = $isActive
+            ? __('Workflow is active. Deactivate workflow', 'post-expirator')
+            : __('Workflow is inactive. Activate workflow', 'post-expirator');
         ?>
         <form method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" style="display: inline;">
             <?php wp_nonce_field('workflow_status_change', 'workflow_nonce'); ?>
             <input type="hidden" name="action" value="publishpress_future_change_workflow_status" />
             <input type="hidden" name="workflow_id" value="<?php echo esc_attr($postId); ?>" />
             <input type="hidden" name="new_status" value="<?php echo esc_attr($newStatus); ?>" />
-            <button type="submit" class="button-link" style="border: none; background: none; padding: 0; cursor: pointer;">
-                <i class="pp-future-workflow-status-icon dashicons dashicons-<?php echo esc_attr($icon); ?> <?php echo esc_attr($iconClass); ?>" title="<?php echo esc_attr($title); ?>"></i>
+            <button type="submit" class="button-link" style="border: none; background: none; padding: 0; cursor: pointer;" aria-label="<?php echo esc_attr($ariaLabel); ?>" title="<?php echo esc_attr($title); ?>">
+                <i class="pp-future-workflow-status-icon dashicons dashicons-<?php echo esc_attr($icon); ?> <?php echo esc_attr($iconClass); ?>" aria-hidden="true"></i>
             </button>
         </form>
         <?php

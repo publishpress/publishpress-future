@@ -1,4 +1,5 @@
 import { useState, useCallback } from "@wordpress/element";
+import { __ } from "@wordpress/i18n";
 import { ColumnItem } from "./column-item";
 import { processItemWithTypeHandler } from "./type-handlers";
 
@@ -11,7 +12,8 @@ const RenderColumns = ({
     onVariableHoverEnd,
     path = [],
     columnIndex,
-    renderLeafHint
+    renderLeafHint,
+    columnLabel = '',
 }) => {
     if (!currentItems) return null;
 
@@ -20,12 +22,19 @@ const RenderColumns = ({
     let currentItem = processItemWithTypeHandler(currentItems[selectedItemIndex]);
     const hasChildren = currentItem?.children && currentItem.children.length > 0;
     const isFormItem = currentItem?.type === 'meta-key-input';
+    const processedItems = currentItems.map((item) => processItemWithTypeHandler(item));
+    const columnHasFormItems = processedItems.some((item) => item?.type === 'meta-key-input');
 
     return (
         <>
-            <div className="column" key={`column-${path.join('-')}`}>
-                {currentItems.map((item, index) => {
-                    item = processItemWithTypeHandler(item);
+            <div
+                className="column"
+                key={`column-${path.join('-')}`}
+                role={columnHasFormItems ? 'group' : 'listbox'}
+                aria-label={columnLabel || __('Variables', 'post-expirator')}
+                aria-orientation={columnHasFormItems ? undefined : 'vertical'}
+            >
+                {processedItems.map((item, index) => {
 
                     return <ColumnItem
                         key={`column-item-${path.join('-')}-${index}`}
@@ -38,6 +47,7 @@ const RenderColumns = ({
                         path={[...path, index]}
                         index={index}
                         columnIndex={currentColumnIndex}
+                        itemsCount={currentItems.length}
                     />;
                 })}
             </div>
@@ -52,6 +62,7 @@ const RenderColumns = ({
                     onVariableHover={onVariableHover}
                     onVariableHoverEnd={onVariableHoverEnd}
                     renderLeafHint={renderLeafHint}
+                    columnLabel={currentItem?.label}
                 />
             )}
 

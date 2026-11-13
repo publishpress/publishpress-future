@@ -558,10 +558,25 @@ export function createNewNode({item, position, reactFlowInstance}) {
     return newNode;
 }
 
+/**
+ * Flow data to save. Accessible names are derived in the editor for screen readers
+ * (in the user's language), so they are not stored with the workflow.
+ */
+export function getFlowForSaving(reactFlowInstance) {
+    const flow = reactFlowInstance.toObject();
+    const stripAriaLabel = ({ ariaLabel, ...item }) => item;
+
+    return {
+        ...flow,
+        nodes: (flow.nodes || []).map(stripAriaLabel),
+        edges: (flow.edges || []).map(stripAriaLabel),
+    };
+}
+
 export function updateFlowInEditedWorkflow(reactFlowInstance) {
     // We need to delay the update of the flow to avoid missing the changes.
     setTimeout(() => {
-        dispatch(workflowStore).setEditedWorkflowAttribute("flow", reactFlowInstance.toObject());
+        dispatch(workflowStore).setEditedWorkflowAttribute("flow", getFlowForSaving(reactFlowInstance));
     }, 400);
 }
 

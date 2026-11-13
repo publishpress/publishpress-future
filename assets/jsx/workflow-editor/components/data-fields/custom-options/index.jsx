@@ -112,7 +112,18 @@ export function CustomOptions({
                             onNameChangeCallback={onNameChangeCallback}
                         />
                         {! hasOnlyOneOption && (
-                            <Button onClick={() => onClickRemoveOption(index)} isSmall={true} iconSize={16} icon={'trash'} />
+                            <Button
+                                onClick={() => onClickRemoveOption(index)}
+                                isSmall={true}
+                                iconSize={16}
+                                icon={'trash'}
+                                label={sprintf(
+                                    /* translators: %s is the option number. */
+                                    __('Remove option #%s', 'post-expirator'),
+                                    index + 1
+                                )}
+                                showTooltip
+                            />
                         )}
                     </div>
                 ))}

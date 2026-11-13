@@ -4,6 +4,7 @@ import {
     __experimentalHStack as HStack,
     Button,
  } from "@wordpress/components";
+import { __ } from "@wordpress/i18n";
 
 export const SettingPopover = ({ onClose, title, children, className, offset = 40, placement = "left-start", ...props }) => {
     return (
@@ -22,6 +23,8 @@ export const SettingPopover = ({ onClose, title, children, className, offset = 4
                     <Button
                         icon={'no-alt'}
                         isSmall={true}
+                        label={__('Close', 'post-expirator')}
+                        showTooltip
                         className="block-editor-inspector-popover-header__action"
                         onClick={onClose}
                     />

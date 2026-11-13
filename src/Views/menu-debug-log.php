@@ -83,20 +83,24 @@ echo '<form method="post" action="' . esc_url($viewDebugUrl) . '" id="pp-debug-l
 echo wp_nonce_field($filterNonceAction, '_pp_future_debug_filter_nonce', true, false); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 echo '<div class="pp-debug-log-option">';
 echo '<label for="log-count">' . esc_html__('Number of logs to display:', 'post-expirator') . '</label>';
-echo '<select id="log-count" name="log_count" onchange="this.form.submit()">';
+echo '<select id="log-count" name="log_count">';
 foreach ($logCountOptions as $value => $label) {
     $selected = $currentLogCount === $value ? ' selected' : '';
     echo '<option value="' . esc_attr((string) $value) . '"' . $selected . '>' . esc_html($label) . '</option>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 echo '</select>';
 echo '</div>';
+echo '<fieldset class="pp-debug-log-option pp-a11y-fieldset">';
+echo '<legend class="screen-reader-text">' . esc_html__('Display:', 'post-expirator') . '</legend>';
+echo '<span class="pp-debug-log-option-label" aria-hidden="true">' . esc_html__('Display:', 'post-expirator') . '</span>';
+echo '<label class="pp-radio-label"><input type="radio" name="group_by_request" value="1" ' . ($groupByRequest === 1 ? 'checked' : '') . '> ' . esc_html__('Grouped by request', 'post-expirator') . '</label>';
+echo '<label class="pp-radio-label"><input type="radio" name="group_by_request" value="0" ' . ($groupByRequest === 0 ? 'checked' : '') . '> ' . esc_html__('Time sequence', 'post-expirator') . '</label>';
+echo '</fieldset>';
 echo '<div class="pp-debug-log-option">';
-echo '<label>' . esc_html__('Display:', 'post-expirator') . '</label>';
-echo '<label class="pp-radio-label"><input type="radio" name="group_by_request" value="1" ' . ($groupByRequest === 1 ? 'checked' : '') . ' onchange="this.form.submit()"> ' . esc_html__('Grouped by request', 'post-expirator') . '</label>';
-echo '<label class="pp-radio-label"><input type="radio" name="group_by_request" value="0" ' . ($groupByRequest === 0 ? 'checked' : '') . ' onchange="this.form.submit()"> ' . esc_html__('Time sequence', 'post-expirator') . '</label>';
+echo '<label class="pp-checkbox-label"><input type="checkbox" name="trigger_activated_only" value="1" ' . ($triggerActivatedOnly ? 'checked' : '') . '> ' . esc_html__('Show only requests with trigger activated', 'post-expirator') . '</label>';
 echo '</div>';
 echo '<div class="pp-debug-log-option">';
-echo '<label class="pp-checkbox-label"><input type="checkbox" name="trigger_activated_only" value="1" ' . ($triggerActivatedOnly ? 'checked' : '') . ' onchange="this.form.submit()"> ' . esc_html__('Show only requests with trigger activated', 'post-expirator') . '</label>';
+echo '<button type="submit" class="button" id="pp-debug-log-apply">' . esc_html__('Apply', 'post-expirator') . '</button>';
 echo '</div>';
 echo '</form>';
 echo '<div id="pp-debug-log-autorefresh"></div>';
@@ -109,7 +113,8 @@ if ($groupByRequest) {
     $results = DebugLogDisplayHelper::sortResultsByRequest($results);
 }
 
-echo '<textarea readonly>';
+echo '<label for="pp-debug-log-textarea" class="screen-reader-text">' . esc_html__('Debug log', 'post-expirator') . '</label>';
+echo '<textarea id="pp-debug-log-textarea" readonly>';
 if (empty($results)) {
     if ($totalLogsUnfiltered === 0) {
         echo esc_html__('Debugging table is currently empty.', 'post-expirator');
