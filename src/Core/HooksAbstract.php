@@ -34,6 +34,8 @@ abstract class HooksAbstract
 
     public const ACTION_INSERT_POST = 'wp_insert_post';
 
+    public const ACTION_USER_DELETED = 'deleted_user';
+
     public const ACTION_PURGE_PLUGIN_CACHE = 'publishpressfuture_purge_plugin_cache';
 
     public const ACTION_BULK_EDIT_CUSTOM_BOX = 'bulk_edit_custom_box';
