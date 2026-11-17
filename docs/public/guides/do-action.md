@@ -2,6 +2,7 @@
 title: "Do Action (Pro)"
 order: 10
 doc_category: future
+section: "Action Workflows: Actions"
 ---
 
 # Do Action (Pro)

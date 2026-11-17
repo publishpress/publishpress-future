@@ -2,6 +2,7 @@
 title: "Send In-Site Notification (Pro)"
 order: 35
 doc_category: future
+section: "Action Workflows: Actions"
 ---
 
 # Send In-Site Notification (Pro)

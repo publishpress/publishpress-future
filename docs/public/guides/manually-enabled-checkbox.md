@@ -2,6 +2,7 @@
 title: "Manually Run Via Checkbox Step"
 order: 21
 doc_category: future
+section: "Action Workflows: Triggers"
 ---
 
 # Manually Run Via Checkbox Step

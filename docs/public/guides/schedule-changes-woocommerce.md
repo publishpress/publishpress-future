@@ -2,6 +2,7 @@
 title: "Schedule Changes to WooCommerce Products"
 order: 32
 doc_category: future
+section: Future Actions and Other Plugins
 ---
 
 # Schedule Changes to WooCommerce Products

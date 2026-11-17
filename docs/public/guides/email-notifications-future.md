@@ -2,6 +2,7 @@
 title: "Email Notifications for Actions"
 order: 11
 doc_category: future
+section: Future Actions
 ---
 
 # Email Notifications for Actions

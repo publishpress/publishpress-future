@@ -2,6 +2,7 @@
 title: "Introduction to Action Workflows"
 order: 46
 doc_category: future
+section: Action Workflows
 ---
 
 # Introduction to Action Workflows

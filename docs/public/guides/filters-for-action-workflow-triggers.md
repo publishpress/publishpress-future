@@ -2,6 +2,7 @@
 title: "Filters for Action Workflow Triggers"
 order: 13
 doc_category: future
+section: "Action Workflows: Triggers"
 ---
 
 # Filters for Action Workflow Triggers

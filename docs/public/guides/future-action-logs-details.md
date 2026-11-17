@@ -2,6 +2,7 @@
 title: "Technical Details for Scheduled Action Logs"
 order: 16
 doc_category: future
+section: Publishpress Future Logs
 ---
 
 # Technical Details for Scheduled Action Logs

@@ -2,6 +2,7 @@
 title: "Permissions in PublishPress Future"
 order: 28
 doc_category: future
+section: PublishPress Future Logs
 ---
 
 # Permissions in PublishPress Future

@@ -2,6 +2,7 @@
 title: "How to Use Post Meta in Workflows"
 order: 18
 doc_category: future
+section: Action Workflows
 ---
 
 # How to Use Post Meta in Workflows

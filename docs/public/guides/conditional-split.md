@@ -2,6 +2,7 @@
 title: "Conditional (Pro)"
 order: 5
 doc_category: future
+section: "Action Workflows: Actions"
 ---
 
 # Conditional (Pro)

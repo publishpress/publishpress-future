@@ -2,6 +2,7 @@
 title: "Metadata Scheduling Example With ACF (Pro)"
 order: 24
 doc_category: future
+section: "Future Actions: Metadata Scheduling"
 ---
 
 # Metadata Scheduling Example With ACF (Pro)

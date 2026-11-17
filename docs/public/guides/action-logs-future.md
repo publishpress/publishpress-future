@@ -2,6 +2,7 @@
 title: "Scheduled Actions and Logs"
 order: 1
 doc_category: future
+section: Publishpress Future Logs
 ---
 
 # Scheduled Actions and Logs

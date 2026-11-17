@@ -2,6 +2,7 @@
 title: "Technical Details for Metadata Scheduling (Pro)"
 order: 25
 doc_category: future
+section: "Future Actions: Metadata Scheduling"
 ---
 
 # Technical Details for Metadata Scheduling (Pro)

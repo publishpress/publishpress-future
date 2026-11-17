@@ -2,6 +2,7 @@
 title: "Post Footer Display for Action Dates"
 order: 14
 doc_category: future
+section: "Future Actions: Show the Date"
 ---
 
 # Post Footer Display for Action Dates

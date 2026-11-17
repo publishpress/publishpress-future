@@ -2,6 +2,7 @@
 title: "Introduction to PublishPress Future"
 order: 17
 doc_category: future
+section: Getting Started
 ---
 
 # Introduction to PublishPress Future

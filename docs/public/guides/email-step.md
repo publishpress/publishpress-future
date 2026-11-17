@@ -2,6 +2,7 @@
 title: "Send Email"
 order: 12
 doc_category: future
+section: "Action Workflows: Actions"
 ---
 
 # Send Email

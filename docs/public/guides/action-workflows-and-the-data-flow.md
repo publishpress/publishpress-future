@@ -2,6 +2,7 @@
 title: "Action Workflows and the Data Flow"
 order: 3
 doc_category: future
+section: "Action Workflows: Technical Details"
 ---
 
 # Action Workflows and the Data Flow

@@ -2,6 +2,7 @@
 title: "Using Metadata in Workflows"
 order: 44
 doc_category: future
+section: "Action Workflows: Technical Details"
 ---
 
 # Using Metadata in Workflows

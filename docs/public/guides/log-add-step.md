@@ -2,6 +2,7 @@
 title: "Send to Debug Log"
 order: 20
 doc_category: future
+section: "Action Workflows: Actions"
 ---
 
 # Send to Debug Log
