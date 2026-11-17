@@ -83,6 +83,10 @@ class SettingsService
         );
         $variants = [];
         foreach ($this->schemas() as $name => $schema) {
+            // Roles can be registered later on init; update() validates current native choices.
+            if ($name === 'general') {
+                unset($schema['properties']['allowUserRoles']['items']['enum']);
+            }
             $schema['minProperties'] = 1;
             $variants[] = Registry::object(['group' => ['type' => 'string', 'enum' => [$name]],
                 'expected_hash' => Registry::revision(), 'settings' => $schema,
