@@ -9,6 +9,26 @@
  * @license GPLv2 or later
  */
 
+$lateRole = 'mcp_late_role_fixture';
+$roleState = $success($call('get-plugin-settings', ['group' => 'general']), 'Initial role settings');
+add_role($lateRole, 'Late role fixture', ['read' => true]);
+try {
+    $roles = array_values(array_unique(array_merge($roleState['settings']->allowUserRoles, [$lateRole])));
+    $input = ['group' => 'general', 'expected_hash' => $roleState['hash'], 'settings' => ['allowUserRoles' => $roles]];
+    $success($call('update-plugin-settings', $input + ['dry_run' => true]), 'Preview a role registered after abilities');
+    $check($call('get-plugin-settings', ['group' => 'general'])['hash'] === $roleState['hash'], 'Late-role preview preserves settings');
+    $savedRole = $success($call('update-plugin-settings', $input), 'Save a late native role through Adapter');
+    $check(in_array($lateRole, $savedRole['settings']->allowUserRoles, true), 'Late role survives native read-back');
+    $check(is_wp_error($call('update-plugin-settings', ['group' => 'general', 'expected_hash' => $savedRole['hash'],
+        'settings' => ['allowUserRoles' => ['not-a-native-role'], 'hideCalendarByDefault' => true]])), 'Unknown mixed role patch is rejected');
+    $check($call('get-plugin-settings', ['group' => 'general'])['hash'] === $savedRole['hash'], 'Rejected role patch writes nothing');
+} finally {
+    $freshRole = $call('get-plugin-settings', ['group' => 'general']);
+    $call('update-plugin-settings', ['group' => 'general', 'expected_hash' => $freshRole['hash'],
+        'settings' => ['allowUserRoles' => $roleState['settings']->allowUserRoles]]);
+    remove_role($lateRole);
+}
+
 foreach (['general', 'notifications', 'display', 'admin', 'advanced'] as $group) {
     $state = $call('get-plugin-settings', ['group' => $group]);
     foreach ($state['schema']['properties'] as $field => $schema) {
