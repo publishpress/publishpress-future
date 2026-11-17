@@ -200,7 +200,6 @@ return [
             ServicesAbstract::MODULE_WOOCOMMERCE,
             ServicesAbstract::MODULE_WORKFLOWS,
             ServicesAbstract::MODULE_BACKUP,
-            ServicesAbstract::MODULE_MCP,
         ];
 
         $modules = [];

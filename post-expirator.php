@@ -24,6 +24,7 @@ namespace PublishPress\Future;
 use PublishPress\Future\Core\ActionSchedulerFallbackInitializer;
 use PublishPress\Future\Core\Autoloader;
 use PublishPress\Future\Core\DI\Container;
+use PublishPress\Future\Core\DI\ContainerInterface;
 use PublishPress\Future\Core\DI\ServicesAbstract;
 use PublishPress\Future\Framework\Logger\LoggerInterface;
 use PublishPress\Future\Framework\WordPress\Facade\HooksFacade;
@@ -138,6 +139,63 @@ try {
         define('PUBLISHPRESS_FUTURE_LOADED_DEPENDENCIES', true);
     }
 
+    /**
+     * Log a caught error through the plugin logger, falling back to the PHP error log.
+     *
+     * @since 4.12.0
+     */
+    function logCaughtError(?ContainerInterface $container, Throwable $e): void
+    {
+        if (is_object($container)) {
+            try {
+                $logger = $container->get(ServicesAbstract::LOGGER);
+
+                if ($logger instanceof LoggerInterface) {
+                    $logger->error('Caught ' . get_class($e) . ': ' . $e->getMessage() . ' on file ' . $e->getFile() . ', line ' . $e->getLine());
+                    return;
+                }
+            } catch (Throwable $loggerError) {
+                logError('PUBLISHPRESS FUTURE', $loggerError);
+            }
+        }
+
+        logError('PUBLISHPRESS FUTURE', $e);
+    }
+
+    /**
+     * WordPress starts the abilities registry on first access, which can happen before the init boot.
+     *
+     * @since 4.12.0
+     */
+    function registerAbilityCategories(): void
+    {
+        $container = null;
+        try {
+            loadPluginDependencies();
+
+            $container = Container::getInstance();
+            $container->get(ServicesAbstract::MODULE_MCP)->registerCategory();
+        } catch (Throwable $e) {
+            logCaughtError($container, $e);
+        }
+    }
+
+    /**
+     * @since 4.12.0
+     */
+    function registerAbilities(): void
+    {
+        $container = null;
+        try {
+            loadPluginDependencies();
+
+            $container = Container::getInstance();
+            $container->get(ServicesAbstract::MODULE_MCP)->register();
+        } catch (Throwable $e) {
+            logCaughtError($container, $e);
+        }
+    }
+
     require_once PUBLISHPRESS_FUTURE_SRC_PATH . '/install.php';
     require_once PUBLISHPRESS_FUTURE_SRC_PATH . '/uninstall.php';
 
@@ -169,22 +227,12 @@ try {
             $container = Container::getInstance();
             $container->get(ServicesAbstract::PLUGIN)->initialize();
         } catch (Throwable $e) {
-            $isLogged = false;
-
-            if (is_object($container)) {
-                $logger = $container->get(ServicesAbstract::LOGGER);
-
-                if ($logger instanceof LoggerInterface) {
-                    $logger->error('Caught ' . get_class($e) . ': ' . $e->getMessage() . ' on file ' . $e->getFile() . ', line ' . $e->getLine());
-                    $isLogged = true;
-                }
-            }
-
-            if (! $isLogged) {
-                logError('PUBLISHPRESS FUTURE', $e);
-            }
+            logCaughtError($container, $e);
         }
     }, 10, 0);
+
+    add_action('wp_abilities_api_categories_init', __NAMESPACE__ . '\\registerAbilityCategories', 10, 0);
+    add_action('wp_abilities_api_init', __NAMESPACE__ . '\\registerAbilities', 10, 0);
 } catch (Throwable $e) {
     logError('PUBLISHPRESS FUTURE - Error starting the plugin. File: ' . $e->getFile() . ', Line: ' . $e->getLine(), $e);
 }
