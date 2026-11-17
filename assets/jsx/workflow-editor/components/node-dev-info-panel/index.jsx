@@ -5,6 +5,14 @@ import { lazy, Suspense } from "@wordpress/element";
 
 const ReactJson = lazy(() => import('@microlink/react-json-view'));
 
+const toPlainJson = (value) => {
+    try {
+        return JSON.stringify(value, null, 2);
+    } catch (error) {
+        return String(error);
+    }
+};
+
 export function NodeDevInfoPanel({node, nodeType}) {
     const reactJSONParams = {
         collapsed: 1,
@@ -57,6 +65,17 @@ export function NodeDevInfoPanel({node, nodeType}) {
                         </div>
                     </PanelRow>
                 </>
+            )}
+
+            {(node || nodeType) && (
+                <PanelRow>
+                    <details className="workflow-editor-dev-info-plain">
+                        <summary>{__('Plain text JSON (keyboard and screen reader friendly)', 'post-expirator')}</summary>
+                        <pre tabIndex={0} style={{ maxHeight: '300px', overflow: 'auto', whiteSpace: 'pre-wrap', fontSize: '11px' }}>
+                            {toPlainJson({ node, nodeType })}
+                        </pre>
+                    </details>
+                </PanelRow>
             )}
 
             {nodeType && (

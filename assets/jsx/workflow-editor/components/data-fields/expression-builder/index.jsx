@@ -6,6 +6,7 @@ import {
     TextareaControl
 } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
+import { speak } from "@wordpress/a11y";
 import { useState, useRef, useCallback, useEffect, createPortal } from "@wordpress/element";
 import NodeIcon from "../../node-icon";
 import ColumnsContainer from "./columns-container";
@@ -25,6 +26,7 @@ const VariableHoverHint = ({ hint }) => createPortal(
     <div
         className="expression-builder-variable-hover-hint"
         style={{ top: hint.top, left: hint.left }}
+        role="tooltip"
     >
         <code>{hint.item.id}</code>
         {hint.item.description ? ` ${hint.item.description}` : ''}
@@ -129,6 +131,12 @@ export const ExpressionBuilder = ({
 
             editor.focus();
 
+            speak(
+                singleVariableOnly
+                    ? __("Variable selected.", "post-expirator")
+                    : __("Variable inserted.", "post-expirator")
+            );
+
             if (singleVariableOnly) {
                 setIsOpen(false);
             }
@@ -155,6 +163,39 @@ export const ExpressionBuilder = ({
     useEffect(() => {
         return () => clearHoverHintTimeout();
     }, [clearHoverHintTimeout]);
+
+    // Let Escape dismiss the variable hint without closing the modal (WCAG 1.4.13).
+    useEffect(() => {
+        if (! hoverHint) {
+            return;
+        }
+
+        const onKeyDown = (event) => {
+            if (event.key === 'Escape' || event.keyCode === 27) {
+                event.preventDefault();
+                event.stopPropagation();
+                clearHoverHintTimeout();
+                setHoverHint(null);
+            }
+        };
+
+        document.addEventListener('keydown', onKeyDown, true);
+
+        return () => {
+            document.removeEventListener('keydown', onKeyDown, true);
+        };
+    }, [hoverHint, clearHoverHintTimeout]);
+
+    // Give the Ace editor's hidden text input an accessible name.
+    const setEditorAccessibleName = useCallback((editor, accessibleLabel) => {
+        const textInput = editor?.textInput?.getElement?.();
+
+        if (textInput) {
+            textInput.setAttribute('aria-label', accessibleLabel);
+        }
+    }, []);
+
+    const editorAccessibleLabel = label || __('Expression', 'post-expirator');
 
     useEffect(() => {
         if (wrapOnPreview && editorSmallRef.current) {
@@ -208,7 +249,9 @@ export const ExpressionBuilder = ({
             editorProps={editorProps}
             wrapEnabled={wrapOnPreview}
             onChange={(value) => onChangeSetting({ settingName: propertyName, value })}
+            onLoad={(editor) => setEditorAccessibleName(editor, editorAccessibleLabel)}
             setOptions={{
+                enableKeyboardAccessibility: true,
                 enableBasicAutocompletion: autoComplete,
                 enableLiveAutocompletion: autoComplete,
                 showGutter: false,
@@ -231,7 +274,7 @@ export const ExpressionBuilder = ({
                 onRequestClose={onClose}
                 className="workflow-editor-modal expression-builder-modal"
             >
-                <div style={{ minWidth: '600px', maxWidth: '600px' }}>
+                <div style={{ minWidth: 'min(600px, calc(100vw - 32px))', maxWidth: '600px' }}>
                     {singleVariableOnly && (
                         <p>{__("Select a variable from the list below.", "post-expirator")}</p>
                     )}
@@ -251,7 +294,9 @@ export const ExpressionBuilder = ({
                         value={expression}
                         editorProps={editorProps}
                         readOnly={singleVariableOnly}
+                        onLoad={(editor) => setEditorAccessibleName(editor, editorAccessibleLabel)}
                         setOptions={{
+                            enableKeyboardAccessibility: true,
                             enableBasicAutocompletion: autoComplete,
                             enableLiveAutocompletion: autoComplete,
                             showLineNumbers: !singleVariableOnly,
@@ -267,11 +312,11 @@ export const ExpressionBuilder = ({
                         <Heading level={2} className="components-truncate components-text components-heading block-editor-inspector-popover-header__heading">{__("Variables", "post-expirator")}</Heading>
 
                         {singleVariableOnly && (
-                            <p>{__("Double-click on a variable to select it.", "post-expirator")}</p>
+                            <p>{__("Double-click on a variable, or press Enter, to select it. Use the arrow keys to move between variables.", "post-expirator")}</p>
                         )}
 
                         {! singleVariableOnly && (
-                            <p>{__("Double-click on any variable to insert it into your expression.", "post-expirator")}</p>
+                            <p>{__("Double-click on any variable, or press Enter, to insert it into your expression. Use the arrow keys to move between variables.", "post-expirator")}</p>
                         )}
 
                         <ColumnsContainer

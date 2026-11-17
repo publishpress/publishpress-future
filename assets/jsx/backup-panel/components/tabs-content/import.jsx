@@ -155,6 +155,7 @@ const ImportTab = () => {
                         }}
                         file={file}
                         formatFileSize={formatFileSize}
+                        describedBy={validationError ? 'pe-import-validation-error' : undefined}
                     />
                 )}
 
@@ -207,7 +208,7 @@ const ImportTab = () => {
                 )}
 
                 {validationError && (
-                    <p className="error">{validationError}</p>
+                    <p className="error" id="pe-import-validation-error" role="alert">{validationError}</p>
                 )}
             </VStack>
         </SettingsTab>

@@ -197,7 +197,8 @@ export const DateOffset = ({ name, label, defaultValue, onChange, variables = []
                                         {isHelpVisible && (
                                             <Popover>
                                                 <div className="settings-field-help-popover">
-                                                    <Button variant="tertiary" icon={'no-alt'} />
+                                                    {/* No onClick: the click bubbles (through the portal) to the parent toggle button, which closes the help. */}
+                                                    <Button variant="tertiary" icon={'no-alt'} label={__("Close", "post-expirator")} />
 
                                                     <div dangerouslySetInnerHTML={{
                                                         __html: sprintf(

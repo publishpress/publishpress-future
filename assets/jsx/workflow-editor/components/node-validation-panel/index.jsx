@@ -1,13 +1,22 @@
 import NodeIcon from '../node-icon';
-import { PanelRow } from "@wordpress/components";
+import { PanelRow, Button } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 import PersistentPanelBody from '../persistent-panel-body';
 import { useState } from '@wordpress/element';
+import { useInstanceId } from '@wordpress/compose';
 
 import './style.css';
 
 export function NodeValidationPanel({ errors = {} }) {
-    const [isDetailsOpen, setIsDetailsOpen] = useState(false);
+    const [openDetails, setOpenDetails] = useState({});
+    const instanceId = useInstanceId(NodeValidationPanel, 'workflow-editor-validation-details');
+
+    const toggleDetails = (key) => {
+        setOpenDetails((previous) => ({
+            ...previous,
+            [key]: ! previous[key],
+        }));
+    };
 
     const iconSize = 18;
 
@@ -20,6 +29,10 @@ export function NodeValidationPanel({ errors = {} }) {
             {hasNotifications && (
                 <>
                     {nodeErrors.map((error, index) => {
+                        const detailsKey = `${error.error}-${index}`;
+                        const isDetailsOpen = !! openDetails[detailsKey];
+                        const detailsId = `${instanceId}-${index}`;
+
                         return (
                             <PanelRow key={`${error.error}-${index}`} className="workflow-editor-validation-notification workflow-editor-error">
                                 <NodeIcon icon={'error'} size={iconSize} />
@@ -28,13 +41,20 @@ export function NodeValidationPanel({ errors = {} }) {
                                         <div className="workflow-editor-validation-notification-message">{error.message}</div>
 
                                         {error.details && (
-                                            <span className="workflow-editor-validation-notification-details-toggle" onClick={() => setIsDetailsOpen(!isDetailsOpen)}>
+                                            <Button
+                                                className="workflow-editor-validation-notification-details-toggle"
+                                                onClick={() => toggleDetails(detailsKey)}
+                                                aria-expanded={isDetailsOpen}
+                                                aria-controls={detailsId}
+                                                label={isDetailsOpen ? __('Hide error details', 'post-expirator') : __('Show error details', 'post-expirator')}
+                                                showTooltip
+                                            >
                                                 <NodeIcon icon={isDetailsOpen ? 'arrow-down' : 'arrow-right'} size={iconSize} />
-                                            </span>
+                                            </Button>
                                         )}
                                     </div>
                                     {error.details && isDetailsOpen && (
-                                        <div className="workflow-editor-validation-notification-details">{error.details}</div>
+                                        <div id={detailsId} className="workflow-editor-validation-notification-details">{error.details}</div>
                                     )}
                                 </div>
                             </PanelRow>

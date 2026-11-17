@@ -25,7 +25,7 @@ $pluginFacade = PostExpirator_Facade::getInstance();
                 esc_html_e('Defaults', 'post-expirator'); ?></h3>
             <table class="form-table">
                 <tr valign="top">
-                    <th scope="row"><label for="expired-default-expiration-date"><?php
+                    <th scope="row"><label for="expired-custom-expiration-date"><?php
                                                                                     esc_html_e('Default Date/Time Offset', 'post-expirator'); ?></label></th>
                     <td>
                         <div id="expired-custom-container" class="pe-custom-date-container">
@@ -45,7 +45,7 @@ $pluginFacade = PostExpirator_Facade::getInstance();
 
                                 echo sprintf(
                                     $description, // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-                                    '<a href="https://www.php.net/manual/en/function.strtotime.php" target="_new">' . esc_html__('PHP strtotime function', 'post-expirator') . '</a>',
+                                    '<a href="https://www.php.net/manual/en/function.strtotime.php" target="_new">' . esc_html__('PHP strtotime function', 'post-expirator') . '<span class="screen-reader-text"> ' . esc_html__('(opens in a new tab)', 'post-expirator') . '</span></a>',
                                     '<code>',
                                     '</code>'
                                 ); ?></p>
@@ -55,9 +55,11 @@ $pluginFacade = PostExpirator_Facade::getInstance();
                     </td>
                 </tr>
                 <tr valign="top">
-                    <th scope="row"><label for="expired-hide-calendar-by-default"><?php
+                    <th scope="row"><label><?php
                     esc_html_e('Calendar Visibility', 'post-expirator'); ?></label></th>
                     <td>
+                        <fieldset class="pp-a11y-fieldset">
+                        <legend class="screen-reader-text"><?php esc_html_e('Calendar Visibility', 'post-expirator'); ?></legend>
                         <div class="pp-settings-field-row">
                             <input type="radio" name="expired-hide-calendar-by-default" id="expired-hide-calendar-by-default-false"
                                 value="0" <?php echo $calendarHiddenByDefault ? '' : 'checked="checked"'; ?> /> <label
@@ -72,6 +74,7 @@ $pluginFacade = PostExpirator_Facade::getInstance();
                                 esc_html_e('Always hidden', 'post-expirator'); ?></label>
                         </div>
                         <p class="description"><?php esc_html_e('The calendar is always hidden by default.', 'post-expirator'); ?></p>
+                        </fieldset>
                     </td>
                 </tr>
             </table>
@@ -85,6 +88,8 @@ $pluginFacade = PostExpirator_Facade::getInstance();
                         esc_html_e('Choose Which User Roles Can Create Future Actions', 'post-expirator'); ?>
                     </th>
                     <td class="pe-checklist">
+                        <fieldset class="pp-a11y-fieldset">
+                        <legend class="screen-reader-text"><?php esc_html_e('Choose Which User Roles Can Create Future Actions', 'post-expirator'); ?></legend>
                         <?php
                         foreach ($userRoles as $role_name => $role_label) : ?>
                             <label for="allow-user-role-<?php
@@ -109,6 +114,7 @@ $pluginFacade = PostExpirator_Facade::getInstance();
                             <?php
                         endforeach;
                         ?>
+                        </fieldset>
                     </td>
                 </tr>
             </table>
