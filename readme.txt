@@ -2,24 +2,26 @@
 Contributors: publishpress, kevinB, stevejburge, andergmartins
 Author: publishpress
 Author URI: https://publishpress.com
-Tags: unpublish posts, update posts, schedule changes, automatic changes, workflows
+Tags: automation, workflow, schedule, expire, unpublish posts
 Requires at least: 6.8
 Requires PHP: 8.2
 Tested up to: 7.1
 License: GPLv2 or later
 Stable tag: 4.11.2
 
-PublishPress Future can make scheduled changes to your content. You can unpublish posts, move posts to a new status, update the categories, and more.
+Schedule and automate changes to your WordPress posts. Unpublish, expire, change status or categories, and build workflows with multiple steps.
 
 == Description ==
 
-The PublishPress Future plugin allows you to schedule changes to posts, pages and other content types. With this plugin you can create automatic actions to unpublish, delete, trash, move a post to a new status and more. With the Pro version you can update your content using custom workflows with multiple steps and schedules.
+PublishPress Future is content automation for WordPress. It makes changes to your posts, pages and other content types so you do not have to remember to do it. You can schedule a single change, such as unpublishing a post on a set date. You can also build workflows that run several steps on their own, such as moving a post to Draft 15 days after it is published, adding a category, and emailing the editor.
 
 Here's an overview of what you can do with PublishPress Future:
 
-* Select future action dates in the right sidebar when you are editing a post. This makes it very easy to schedule changes to your content.
+* Select future action dates in the right sidebar when you are editing a post. This makes it very easy to expire, unpublish, or update your content on a set date.
+* Build Action Workflows in a visual editor. A workflow starts when something happens to a post, then runs the steps you choose: wait, change the status, update the categories, send an email, and more.
+* Start with the sample workflows that are added when you install the plugin, and change them to fit your site.
 * Receive email notifications when Future makes changes to your content.
-* Build Action Workflows that allow you to update your content using custom workflows with multiple steps and schedules (available in the Pro version).
+* Add conditions, scheduled runs, post queries, custom fields, and more workflow steps (available in the Pro version).
 * Control post changes via integrations with Advanced Custom Fields and other plugins (available in the Pro version).
 
 ## PublishPress Future Pro ##
@@ -44,14 +46,42 @@ With PublishPress Future, you can configure actions that will happen automatical
 
 [Click here for details on scheduling post changes](https://publishpress.com/knowledge-base/ways-to-expire-posts/).
 
-## Custom Workflows to Schedule Content Changes
+## Automate Content Changes With Action Workflows
 
-With PublishPress Future Pro, you can build Action Workflows. These allow you to update your content using custom workflows with multiple steps and schedules. Here are some examples of what you can do with Action Workflows:
+With PublishPress Future, you can build Action Workflows. A workflow has a trigger that starts it and one or more steps that run afterwards. You build it in a visual editor by connecting the steps. Here are some examples of what you can do with Action Workflows:
 
 * Email the site admin when a post is updated.
 * Change the post status to “Trash” a week after it was published.
 * 15 days after the post is published, move the post to the “Draft” status and add a new category.
 * 1 year after a post is published, send an email to the author asking them to check the content.
+
+These triggers are available to start a workflow:
+
+* A post is published.
+* A post is saved.
+* A post is updated.
+* Categories or other terms are added to a post.
+* The workflow is enabled by hand on a single post.
+* A Future Action in the post sidebar runs the workflow.
+
+These steps are available to use in a workflow:
+
+* Wait before the next step runs.
+* Change the post status.
+* Add, remove, or replace the categories and other terms.
+* Stick or unstick the post.
+* Delete the post.
+* Send an email.
+
+PublishPress Future Pro adds more triggers and steps:
+
+* Run a workflow on a schedule, without waiting for a post to change.
+* Find a group of posts with a query and update all of them.
+* Add conditions, so a workflow can take different paths.
+* Start a workflow when a post is created, when its status, author, or custom fields change, or when a user role changes.
+* Update the post content and custom fields, or duplicate the post.
+* Send notifications inside the WordPress admin and ask a user to make a choice.
+* Connect workflows to other plugins with custom actions.
 
 [Click here for details on workflows for changes](https://publishpress.com/knowledge-base/workflows/).
 
