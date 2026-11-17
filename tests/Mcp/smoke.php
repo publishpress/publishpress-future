@@ -12,9 +12,18 @@
 if (PHP_SAPI !== 'cli' || !isset($argv[1]) || !in_array(getenv('FUTURE_MCP_MODE'), ['free', 'pro'], true)) {
     exit("Usage: FUTURE_MCP_MODE=free|pro php smoke.php /isolated/wp-load.php [adapter-directory]\n");
 }
+// Set PUBLISHPRESS_MCP_EARLY_REGISTRY=1 to exercise registration before native init callbacks.
+if (getenv('PUBLISHPRESS_MCP_EARLY_REGISTRY') === '1') {
+    $GLOBALS['wp_filter']['init'][0][] = ['function' => static function () {
+        wp_get_abilities();
+    }, 'accepted_args' => 0];
+}
 require $argv[1];
 if ($GLOBALS['wpdb']->prefix !== 'mcp_smoke_') {
     exit("Use an isolated mcp_smoke_ database.\n");
+}
+if (isset($argv[2])) {
+    require_once $argv[2] . '/mcp-adapter.php';
 }
 require_once ABSPATH . 'wp-admin/includes/user.php';
 $container = \PublishPress\Future\Core\DI\Container::getInstance();
@@ -46,7 +55,13 @@ $check = static function ($condition, $message) use (&$checks) {
 $call = static function ($name, $input = []) {
 
     $GLOBALS['wpdb']->last_error = '';
-    $result = wp_get_ability('publishpress-future/' . $name)->execute($input);
+    $ability = wp_get_ability('publishpress-future/' . $name);
+    if (class_exists('WP\\MCP\\Domain\\Tools\\McpTool')) {
+        $tool = \WP\MCP\Domain\Tools\McpTool::fromAbility($ability);
+        $result = is_wp_error($tool) ? $tool : $tool->execute($input);
+    } else {
+        $result = $ability->execute($input);
+    }
     if ($GLOBALS['wpdb']->last_error !== '') {
         throw new RuntimeException($name . ' produced an unexpected database error');
     }
