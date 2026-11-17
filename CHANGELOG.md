@@ -2,6 +2,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 [4.12.0] - [Unreleased]
 
+- Changed: Admin screens and the workflow editor improve keyboard use, labels, contrast, and screen-reader announcements for WCAG 2.2 AA.
+- Fixed: A workflow step can be added from the inserter with a click or Enter.
+- Changed: Debug log filters apply when the user presses Apply.
+- Fixed: Backup export and import notices are shown.
 - Added: Connect AI services through PublishPress Hub to manage Future actions, workflow graphs, settings and scheduled actions with native WordPress permissions.
 - Security: Pin uuid to 11.1.1 so older transitive copies are not installed (GHSA-w5hq-g745-h8pq).
 - Changed: Raise the minimum PHP version from 7.4 to 8.2.
