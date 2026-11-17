@@ -11857,7 +11857,7 @@ var NodeSettingsPanel = function NodeSettingsPanel(_ref2) {
     nodeErrors = _useSelect.nodeErrors;
   var getFieldErrorMessages = function getFieldErrorMessages(fieldName) {
     return Object.keys(nodeErrors || {}).filter(function (errorKey) {
-      return errorKey === fieldName || errorKey.startsWith("".concat(fieldName, "-"));
+      return errorKey === fieldName || errorKey.startsWith("".concat(fieldName, "-")) || errorKey.startsWith("".concat(fieldName, "."));
     }).map(function (errorKey) {
       var _nodeErrors$errorKey;
       return (_nodeErrors$errorKey = nodeErrors[errorKey]) === null || _nodeErrors$errorKey === void 0 ? void 0 : _nodeErrors$errorKey.message;

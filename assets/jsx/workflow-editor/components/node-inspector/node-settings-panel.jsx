@@ -81,7 +81,7 @@ export const NodeSettingsPanel = ({ node }) => {
 
     const getFieldErrorMessages = (fieldName) => {
         return Object.keys(nodeErrors || {})
-            .filter((errorKey) => errorKey === fieldName || errorKey.startsWith(`${fieldName}-`))
+            .filter((errorKey) => errorKey === fieldName || errorKey.startsWith(`${fieldName}-`) || errorKey.startsWith(`${fieldName}.`))
             .map((errorKey) => nodeErrors[errorKey]?.message)
             .filter(Boolean);
     };
