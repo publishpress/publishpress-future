@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Initialize Future's private Abilities API integration through its module lifecycle.
+ * Register Future's private Abilities API integration when WordPress starts the registry.
  *
  * @package PublishPress\Future
  * @author PublishPress
@@ -14,12 +14,14 @@ declare(strict_types=1);
 namespace PublishPress\Future\Modules\Mcp;
 
 use PublishPress\Future\Core\HookableInterface;
-use PublishPress\Future\Framework\InitializableInterface;
 use PublishPress\Future\Framework\WordPress\Facade\McpFacade;
 
 \defined('ABSPATH') || exit;
 
-class Module implements InitializableInterface
+/**
+ * The registry can start before Plugin::initialize(), so post-expirator.php attaches these callbacks.
+ */
+class Module
 {
     private HookableInterface $hooks;
     private McpFacade $wordpress;
@@ -40,23 +42,21 @@ class Module implements InitializableInterface
         $this->providers = $providers;
     }
 
-    /**
-     * @since 4.12.0
-     *
-     * @return mixed
-     */
-    public function initialize()
+    /** @since 4.12.0 */
+    public function registerCategory(): void
     {
         if (!$this->wordpress->available()) {
             return;
         }
-        $this->hooks->addAction(HooksAbstract::ACTION_REGISTER_CATEGORIES, [$this->wordpress, 'category']);
-        $this->hooks->addAction(HooksAbstract::ACTION_REGISTER_ABILITIES, [$this, 'register']);
+        $this->wordpress->category();
     }
 
     /** @since 4.12.0 */
     public function register(): void
     {
+        if (!$this->wordpress->available()) {
+            return;
+        }
         foreach ($this->providers as $provider) {
             $provider->register($this->registry);
         }

@@ -24,7 +24,8 @@ $wordpress = new \PublishPress\Future\Framework\WordPress\Facade\McpFacade();
 $registry = new \PublishPress\Future\Modules\Mcp\Registry($wordpress);
 $hooks = new \PublishPress\Future\Framework\WordPress\Facade\HooksFacade();
 $module = new \PublishPress\Future\Modules\Mcp\Module($hooks, $wordpress, $registry, []);
-$module->initialize();
+$module->registerCategory();
+$module->register();
 if ($wordpress->available()) {
     throw new RuntimeException('Missing API must not be reported available.');
 }

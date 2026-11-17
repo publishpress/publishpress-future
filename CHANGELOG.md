@@ -5,6 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Added: Connect AI services through PublishPress Hub to manage Future actions, workflow graphs, settings and scheduled actions with native WordPress permissions.
 - Security: Pin uuid to 11.1.1 so older transitive copies are not installed (GHSA-w5hq-g745-h8pq).
 - Changed: Raise the minimum PHP version from 7.4 to 8.2.
+- Fixed: Future abilities are registered when another plugin starts the WordPress Abilities API before Future initializes on `init`.
 - Fixed: Future Action column no longer fatals when the posts or pages list has no current post (Issue #1705).
 
 [4.11.2]
