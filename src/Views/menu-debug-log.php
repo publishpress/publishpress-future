@@ -109,7 +109,8 @@ if ($groupByRequest) {
     $results = DebugLogDisplayHelper::sortResultsByRequest($results);
 }
 
-echo '<textarea readonly>';
+echo '<label class="screen-reader-text" for="pp-debug-log-output">' . esc_html__('Debug log output', 'post-expirator') . '</label>';
+echo '<textarea id="pp-debug-log-output" readonly>';
 if (empty($results)) {
     if ($totalLogsUnfiltered === 0) {
         echo esc_html__('Debugging table is currently empty.', 'post-expirator');
