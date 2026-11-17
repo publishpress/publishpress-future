@@ -606,7 +606,8 @@ class PostExpirator_Display
             <div class="pp-pressshack-logo">
                 <a href="https://publishpress.com" target="_blank" rel="noopener noreferrer">
                     <img src="<?php
-                    echo esc_url(plugins_url('../assets/images/publishpress-logo.png', dirname(__FILE__))) ?>"/>
+                    echo esc_url(plugins_url('../assets/images/publishpress-logo.png', dirname(__FILE__))) ?>" alt="<?php
+                    esc_attr_e('PublishPress', 'post-expirator'); ?>"/>
                 </a>
             </div>
         </footer>
