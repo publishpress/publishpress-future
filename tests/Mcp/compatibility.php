@@ -31,18 +31,17 @@ if ($wordpress->available()) {
 }
 if (isset($argv[1])) {
     require $argv[1] . '/src/classes/Modules/Mcp/Module.php';
-    $captured = [];
-    function add_action($name, $callback, $priority = 10, $accepted = 1)
-    {
-        $GLOBALS['captured'][$name] = $callback;
-        return true;
-    }
-    $pro = new \PublishPress\FuturePro\Modules\Mcp\Module($hooks, static function () {
-        throw new RuntimeException('An older Free package must not resolve new shared providers.');
+    $resolved = false;
+    $pro = new \PublishPress\FuturePro\Modules\Mcp\Module(static function () use (&$resolved) {
+        $resolved = true;
+        return [];
     });
-    $pro->initialize();
-    if (!isset($captured['publishpress_future_mcp_register'])) {
-        throw new RuntimeException('Pro extension hook was not registered.');
+    if ($resolved) {
+        throw new RuntimeException('An older Free package must not resolve new shared providers.');
+    }
+    $pro->register($registry);
+    if (!$resolved) {
+        throw new RuntimeException('Pro providers were not resolved on registration.');
     }
 }
 echo "PASS: missing Abilities API and lazy Pro extension initialization.\n";
