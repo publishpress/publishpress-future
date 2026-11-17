@@ -1,25 +1,32 @@
 parameters:
     level: 8
+    dynamicConstantNames:
+        - PUBLISHPRESS_FUTURE_WORKFLOW_EXPERIMENTAL
+        - PUBLISHPRESS_FUTURE_FORCE_DEBUG
+    scanDirectories:
+        - lib/vendor/woocommerce/action-scheduler/classes
     paths:
     	- .
     excludePaths:
-        - lib
-        - vendor
-        - .github
-        - .vscode
-        - .idea
-        - tests
-        - tests-old
-        - .wordpress-org
-        - bin
-        - vendor
-        - dist
-        - languages
-        - node_modules
-        - dev-workspace-cache
-        - cache
-        - .cache
-        - .ddev
-        - .web
+        analyse:
+            - lib
+        analyseAndScan:
+            - vendor
+            - .github
+            - .vscode
+            - .idea
+            - tests
+            - tests-old
+            - .wordpress-org
+            - bin
+            - vendor
+            - dist
+            - languages
+            - node_modules
+            - dev-workspace-cache
+            - cache
+            - .cache
+            - .ddev
+            - .web
 rules:
     - Spatie\Ray\PHPStan\RemainingRayCallRule

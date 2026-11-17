@@ -230,4 +230,39 @@ abstract class ServicesAbstract
     public const EXECUTION_CONTEXT_REGISTRY = 'future.free/execution-context-registry';
 
     public const WORKFLOW_SANITIZATION_UTIL = 'future.free/workflow-sanitization-util';
+    public const MODULE_MCP = 'future.free/mcp/module-mcp';
+
+    public const MCP_WORDPRESS = 'future.free/mcp/mcp-wordpress';
+
+    public const MCP_REGISTRY = 'future.free/mcp/mcp-registry';
+
+    public const MCP_WORKFLOW_FACTORY = 'future.free/mcp/mcp-workflow-factory';
+
+    public const MCP_POST_WORKFLOW_FACTORY = 'future.free/mcp/mcp-post-workflow-factory';
+
+    public const MCP_POST_TYPES_MODEL = 'future.free/mcp/mcp-post-types-model';
+
+    public const MCP_GRAPH = 'future.free/mcp/mcp-graph';
+
+    public const MCP_SCHEDULES = 'future.free/mcp/mcp-schedules';
+
+    public const MCP_SETTINGS = 'future.free/mcp/mcp-settings';
+
+    public const MCP_POST_TYPES = 'future.free/mcp/mcp-post-types';
+
+    public const MCP_WORKFLOWS = 'future.free/mcp/mcp-workflows';
+
+    public const MCP_POST_WORKFLOWS = 'future.free/mcp/mcp-post-workflows';
+
+
+    public const MCP_RUNTIME = 'future.free/mcp/runtime';
+
+    public const MCP_CONFIGURATION = 'future.free/mcp/configuration';
+
+    public const MCP_STEP_VALIDATION = 'future.free/mcp/step-validation';
+
+    public const MCP_WORKFLOW_CHOICES = 'future.free/mcp/workflow-choices';
+
+    public const MCP_FEATURES = 'future.free/mcp/features';
+
 }

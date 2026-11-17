@@ -140,6 +140,18 @@ use PublishPress\Future\Modules\Workflows\Interfaces\ExecutionContextInterface;
 
 defined("ABSPATH") || exit;
 
+use PublishPress\Future\Framework\WordPress\Facade\McpFacade;
+use PublishPress\Future\Modules\Mcp\Module as ModuleMcp;
+use PublishPress\Future\Modules\Mcp\Registry as McpRegistry;
+use PublishPress\Future\Modules\Mcp\Services\SchedulesService as McpSchedules;
+use PublishPress\Future\Modules\Mcp\Services\SettingsService as McpSettings;
+use PublishPress\Future\Modules\Mcp\Services\PostTypeSettingsService as McpPostTypes;
+use PublishPress\Future\Modules\Mcp\Services\WorkflowGraph as McpGraph;
+use PublishPress\Future\Modules\Mcp\Services\WorkflowsService as McpWorkflows;
+use PublishPress\Future\Modules\Mcp\Services\PostWorkflowsService as McpPostWorkflows;
+use PublishPress\Future\Modules\Mcp\Services\RuntimeService as McpRuntime;
+use PublishPress\Future\Modules\Mcp\Services\ConfigurationService as McpConfiguration;
+
 return [
     ServicesAbstract::PLUGIN_VERSION => PUBLISHPRESS_FUTURE_VERSION,
 
@@ -188,6 +200,7 @@ return [
             ServicesAbstract::MODULE_WOOCOMMERCE,
             ServicesAbstract::MODULE_WORKFLOWS,
             ServicesAbstract::MODULE_BACKUP,
+            ServicesAbstract::MODULE_MCP,
         ];
 
         $modules = [];
@@ -1423,4 +1436,125 @@ return [
     ServicesAbstract::WORKFLOW_SANITIZATION_UTIL => static function (ContainerInterface $container) {
         return new Utils\WorkflowSanitizationUtil();
     },
+    ServicesAbstract::MCP_WORDPRESS => static function (ContainerInterface $container) {
+        return new McpFacade();
+    },
+    ServicesAbstract::MCP_REGISTRY => static function (ContainerInterface $container) {
+        return new McpRegistry($container->get(ServicesAbstract::MCP_WORDPRESS));
+    },
+    ServicesAbstract::MCP_WORKFLOW_FACTORY => static function (ContainerInterface $container) {
+        return static function () {
+            return new \PublishPress\Future\Modules\Workflows\Models\WorkflowModel();
+        };
+    },
+    ServicesAbstract::MCP_POST_WORKFLOW_FACTORY => static function (ContainerInterface $container) {
+        return static function () {
+            return new \PublishPress\Future\Modules\Workflows\Models\PostModel();
+        };
+    },
+    ServicesAbstract::MCP_POST_TYPES_MODEL => static function (ContainerInterface $container) {
+        return new \PublishPress\Future\Modules\Settings\Models\SettingsPostTypesModel();
+    },
+    ServicesAbstract::MCP_STEP_VALIDATION => static function (ContainerInterface $container) {
+        return new \PublishPress\Future\Modules\Mcp\Services\StepValidation($container->get(ServicesAbstract::MCP_WORDPRESS));
+    },
+    ServicesAbstract::MCP_GRAPH => static function (ContainerInterface $container) {
+        return new McpGraph(
+            $container->get(ServicesAbstract::MCP_WORDPRESS),
+            $container->get(ServicesAbstract::STEP_TYPES_MODEL),
+            $container->get(ServicesAbstract::WORKFLOW_SANITIZATION_UTIL),
+            $container->get(ServicesAbstract::MCP_STEP_VALIDATION)
+        );
+    },
+    ServicesAbstract::MCP_SCHEDULES => static function (ContainerInterface $container) {
+        $userFactory = $container->get(ServicesAbstract::CURRENT_USER_MODEL_FACTORY);
+        return new McpSchedules(
+            $container->get(ServicesAbstract::MCP_WORDPRESS),
+            $container->get(ServicesAbstract::EXPIRATION_SCHEDULER),
+            $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY),
+            $userFactory(),
+            $container->get(ServicesAbstract::EXPIRATION_ACTIONS_MODEL),
+            $container->get(ServicesAbstract::MCP_POST_TYPES_MODEL),
+            $container->get(ServicesAbstract::MCP_WORKFLOW_FACTORY),
+            $container->get(ServicesAbstract::ACTION_ARGS_MODEL_FACTORY)
+        );
+    },
+    ServicesAbstract::MCP_SETTINGS => static function (ContainerInterface $container) {
+        return new McpSettings($container->get(ServicesAbstract::MCP_WORDPRESS), $container->get(ServicesAbstract::SETTINGS));
+    },
+    ServicesAbstract::MCP_POST_TYPES => static function (ContainerInterface $container) {
+        return new McpPostTypes(
+            $container->get(ServicesAbstract::MCP_WORDPRESS),
+            $container->get(ServicesAbstract::SETTINGS),
+            $container->get(ServicesAbstract::MCP_POST_TYPES_MODEL),
+            $container->get(ServicesAbstract::EXPIRATION_ACTIONS_MODEL)
+        );
+    },
+
+    ServicesAbstract::MCP_WORKFLOW_CHOICES => static function (ContainerInterface $container) {
+        return new \PublishPress\Future\Modules\Mcp\Services\WorkflowChoices(
+            new \PublishPress\Future\Modules\Workflows\Models\PostTypesModel(),
+            new \PublishPress\Future\Modules\Workflows\Models\PostStatusesModel(),
+            new \PublishPress\Future\Modules\Workflows\Models\TaxonomiesModel(),
+            new \PublishPress\Future\Modules\Workflows\Models\UserRolesModel(),
+            $container->get(ServicesAbstract::CRON_SCHEDULES_MODEL)
+        );
+    },
+    ServicesAbstract::MCP_WORKFLOWS => static function (ContainerInterface $container) {
+        return new McpWorkflows(
+            $container->get(ServicesAbstract::MCP_WORDPRESS),
+            $container->get(ServicesAbstract::MCP_GRAPH),
+            $container->get(ServicesAbstract::MCP_WORKFLOW_FACTORY),
+            $container->get(ServicesAbstract::MCP_WORKFLOW_CHOICES)
+        );
+    },
+    ServicesAbstract::MCP_POST_WORKFLOWS => static function (ContainerInterface $container) {
+        return new McpPostWorkflows(
+            $container->get(ServicesAbstract::MCP_WORDPRESS),
+            $container->get(ServicesAbstract::MCP_POST_WORKFLOW_FACTORY),
+            $container->get(ServicesAbstract::HOOKS)
+        );
+    },
+
+    ServicesAbstract::MCP_RUNTIME => static function (ContainerInterface $container) {
+        return new McpRuntime(
+            $container->get(ServicesAbstract::MCP_WORDPRESS),
+            $container->get(ServicesAbstract::ACTION_SCHEDULER_STORE),
+            $container->get(ServicesAbstract::ACTION_SCHEDULER_RUNNER),
+            $container->get(ServicesAbstract::LOGGER),
+            static function () {
+                return new \PublishPress\Future\Modules\Workflows\Models\WorkflowScheduledStepModel();
+            },
+            $container->get(ServicesAbstract::MCP_SCHEDULES)
+        );
+    },
+    ServicesAbstract::MCP_CONFIGURATION => static function (ContainerInterface $container) {
+        return new McpConfiguration(
+            $container->get(ServicesAbstract::MCP_WORDPRESS),
+            $container->get(ServicesAbstract::MCP_SETTINGS),
+            $container->get(ServicesAbstract::MCP_POST_TYPES),
+            $container->get(ServicesAbstract::MCP_WORKFLOWS)
+        );
+    },
+    ServicesAbstract::MCP_FEATURES => static function (ContainerInterface $container) {
+        return new \PublishPress\Future\Modules\Mcp\Services\FeatureCatalogService($container->get(ServicesAbstract::MCP_WORDPRESS));
+    },
+    ServicesAbstract::MODULE_MCP => static function (ContainerInterface $container) {
+        return new ModuleMcp(
+            $container->get(ServicesAbstract::HOOKS),
+            $container->get(ServicesAbstract::MCP_WORDPRESS),
+            $container->get(ServicesAbstract::MCP_REGISTRY),
+            [
+                $container->get(ServicesAbstract::MCP_FEATURES),
+                $container->get(ServicesAbstract::MCP_SCHEDULES),
+                $container->get(ServicesAbstract::MCP_SETTINGS),
+                $container->get(ServicesAbstract::MCP_POST_TYPES),
+                $container->get(ServicesAbstract::MCP_WORKFLOWS),
+                $container->get(ServicesAbstract::MCP_POST_WORKFLOWS),
+                $container->get(ServicesAbstract::MCP_RUNTIME),
+                $container->get(ServicesAbstract::MCP_CONFIGURATION),
+            ]
+        );
+    },
+
 ];
