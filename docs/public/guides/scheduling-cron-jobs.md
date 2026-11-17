@@ -2,6 +2,7 @@
 title: "How Scheduling Works in PublishPress Future"
 order: 34
 doc_category: future
+section: "Future Actions: Technical Details"
 ---
 
 # How Scheduling Works in PublishPress Future

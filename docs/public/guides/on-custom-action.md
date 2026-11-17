@@ -2,6 +2,7 @@
 title: "On Custom Action (Pro)"
 order: 27
 doc_category: future
+section: "Action Workflows: Triggers"
 ---
 
 # On Custom Action (Pro)

@@ -2,6 +2,7 @@
 title: "Technical Details for PublishPress Future"
 order: 37
 doc_category: future
+section: "Future Actions: Technical Details"
 ---
 
 # Technical Details for PublishPress Future

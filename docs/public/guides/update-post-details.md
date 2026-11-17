@@ -2,6 +2,7 @@
 title: "Update Post Details (Pro)"
 order: 42
 doc_category: future
+section: "Action Workflows: Actions"
 ---
 
 # Update Post Details (Pro)

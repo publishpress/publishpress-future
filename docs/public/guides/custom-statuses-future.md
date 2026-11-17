@@ -2,6 +2,7 @@
 title: "Schedule Posts to Move to Custom Statuses"
 order: 6
 doc_category: future
+section: Future Actions
 ---
 
 # Schedule Posts to Move to Custom Statuses

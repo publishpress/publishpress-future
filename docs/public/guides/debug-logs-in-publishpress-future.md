@@ -2,6 +2,7 @@
 title: "Debug Logs in PublishPress Future"
 order: 8
 doc_category: future
+section: "Action Workflows: Technical Details"
 ---
 
 # Debug Logs in PublishPress Future

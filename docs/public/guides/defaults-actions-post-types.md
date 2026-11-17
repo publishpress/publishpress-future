@@ -2,6 +2,7 @@
 title: "Default Actions for Post Types"
 order: 9
 doc_category: future
+section: Future Actions
 ---
 
 # Default Actions for Post Types

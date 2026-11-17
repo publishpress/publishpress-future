@@ -2,6 +2,7 @@
 title: "Differences Between Future Free and Pro"
 order: 15
 doc_category: future
+section: Gettting Started
 ---
 
 # Differences Between Future Free and Pro

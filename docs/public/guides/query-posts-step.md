@@ -2,6 +2,7 @@
 title: "Query Posts (Pro)"
 order: 30
 doc_category: future
+section: "Action Workflows: Actions"
 ---
 
 # Query Posts (Pro)

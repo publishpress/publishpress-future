@@ -2,6 +2,7 @@
 title: "Getting Started With Metadata Scheduling (Pro)"
 order: 26
 doc_category: future
+section: "Future Actions: Metadata Scheduling"
 ---
 
 # Getting Started With Metadata Scheduling (Pro)

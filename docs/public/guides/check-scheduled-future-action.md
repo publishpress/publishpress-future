@@ -2,6 +2,7 @@
 title: "Programmatically Check for Future Actions"
 order: 4
 doc_category: future
+section: "Future Actions: Technical Details"
 ---
 
 # Programmatically Check for Future Actions

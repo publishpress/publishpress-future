@@ -2,6 +2,7 @@
 title: "Date Formats in Action Workflows"
 order: 7
 doc_category: future
+section: "Action Workflows: Technical Details"
 ---
 
 # Date Formats in Action Workflows

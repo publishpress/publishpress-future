@@ -2,6 +2,7 @@
 title: "Manually Run Via Future Actions Box"
 order: 22
 doc_category: future
+section: "Action Workflows: Triggers"
 ---
 
 # Manually Run Via Future Actions Box

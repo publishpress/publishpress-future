@@ -2,6 +2,7 @@
 title: "On Schedule (Pro)"
 order: 39
 doc_category: future
+section: "Action Workflows: Triggers"
 ---
 
 # On Schedule (Pro)

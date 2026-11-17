@@ -2,6 +2,7 @@
 title: "Schedule Changes to Elementor Posts"
 order: 31
 doc_category: future
+section: Future Actions and Other Plugins
 ---
 
 # Schedule Changes to Elementor Posts

@@ -2,6 +2,7 @@
 title: "Programmatically Add or Remove Future Actions"
 order: 29
 doc_category: future
+section: "Future Actions: Technical Details"
 ---
 
 # Programmatically Add or Remove Future Actions

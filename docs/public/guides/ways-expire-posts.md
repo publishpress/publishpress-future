@@ -2,6 +2,7 @@
 title: "Future Actions for Posts"
 order: 45
 doc_category: future
+section: Future Actions
 ---
 
 # Future Actions for Posts

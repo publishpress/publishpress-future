@@ -2,6 +2,7 @@
 title: "Shortcodes to Show Action Date"
 order: 36
 doc_category: future
+section: "Future Actions: Show the Date"
 ---
 
 # Shortcodes to Show Action Date

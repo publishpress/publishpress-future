@@ -2,6 +2,7 @@
 title: "Manually Run Via Post Row Action (Pro)"
 order: 23
 doc_category: future
+section: "Action Workflows: Triggers"
 ---
 
 # Manually Run Via Post Row Action (Pro)

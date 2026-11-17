@@ -2,6 +2,7 @@
 title: "Troubleshooting in PublishPress Future"
 order: 41
 doc_category: future
+section: Future Actions
 ---
 
 # Troubleshooting in PublishPress Future

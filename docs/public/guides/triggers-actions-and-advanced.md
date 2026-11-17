@@ -2,6 +2,7 @@
 title: "Available Steps in Action Workflows"
 order: 40
 doc_category: future
+section: Action Workflows
 ---
 
 # Available Steps in Action Workflows

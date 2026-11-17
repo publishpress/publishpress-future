@@ -2,6 +2,7 @@
 title: "Imports and Metadata Scheduling (Pro)"
 order: 19
 doc_category: future
+section: "Future Actions: Metadata Scheduling"
 ---
 
 # Imports and Metadata Scheduling (Pro)
