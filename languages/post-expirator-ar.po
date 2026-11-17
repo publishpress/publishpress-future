@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-05-28T20:05:06+00:00\n"
-"PO-Revision-Date: 2026-10-14 20:56+0000\n"
+"POT-Creation-Date: 2026-04-10T20:34:37+00:00\n"
+"PO-Revision-Date: 2026-10-21 19:02+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "% 100 >= 3 && n % 100 <= 10 ? 3 : n % 100 >= 11 ? 4 : 5);\n"
@@ -2341,8 +2341,8 @@ msgid ""
 "Enter the action hook to trigger. Only hooks registered through the "
 "'publishpress_future_allowed_action_hooks' filter are allowed."
 msgstr ""
-"أدخل الخطاف الإجراء الذي سيتم تفعيله. فقط الخطافات المسجلة من خلال فلتر "
-"'publishpress_future_allowed_action_hooks' مسموح بها."
+"أدخل رابط الإجراء للتفعيل. فقط الروابط المسجلة من خلال فلتر "
+"'publishpress_future_allowed_action_hooks' مسموحة."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:73
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:73
@@ -3766,7 +3766,7 @@ msgstr "لم يتم العثور على عملية العمل"
 
 #: src/Modules/Workflows/Rest/RestApiV1.php:390
 msgid "Sorry, you are not allowed to view workflow settings for this post."
-msgstr "عذراً، لا يُسمح لك بعرض إعدادات سير العمل لهذه المشاركة."
+msgstr "عذراً، لا يُسمح لك بعرض إعدادات سير العمل لهذا المنشور."
 
 #: src/Modules/Workflows/Rest/RestApiV1.php:462
 msgid "Flow data must be an array."
@@ -5969,19 +5969,19 @@ msgstr "\"%s\" ليس متغيرًا أو شريحة خطوة."
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:190
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10251
 msgid "Empty placeholder is not allowed."
-msgstr "لا يُسمح بوجود عنصر نائب فارغ."
+msgstr "لا يُسمح بحقل فارغ."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12206
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:203
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10264
 msgid "Unclosed placeholder are not allowed."
-msgstr "لا يُسمح بوجود عنصر نائب غير مغلق."
+msgstr "لا يُسمح بحقل غير مغلق."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12210
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:208
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10269
 msgid "Unopened placeholder are not allowed."
-msgstr "لا يُسمح بوجود عنصر نائب غير مفتوح."
+msgstr "لا يُسمح بحقل غير مفتوح."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12217
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:216
@@ -6079,7 +6079,9 @@ msgstr "يجب أن يكون الحقل %s عنوان بريد إلكتروني 
 #. translators: %s is the field label.
 #, js-format
 msgid "The field %s must be a valid email address list separated by commas."
-msgstr "يجب أن يكون الحقل %s قائمة عناوين بريد إلكتروني صالحة مفصولة بفواصل."
+msgstr ""
+"يجب أن يكون الحقل %s قائمة من عناوين البريد الإلكتروني الصالحة مفصولة "
+"بفواصل."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12397
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:480
@@ -6095,7 +6097,7 @@ msgstr "يجب أن يكون الحقل %s عددًا صحيحًا."
 #. translators: %s is the field label.
 #, js-format
 msgid "The field %s must be an integer list separated by commas."
-msgstr "يجب أن يكون الحقل %s قائمة أعداد صحيحة مفصولة بفواصل."
+msgstr "يجب أن يكون الحقل %s قائمة من الأعداد الصحيحة مفصولة بفواصل."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12417
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12421
@@ -6109,7 +6111,7 @@ msgstr "يجب أن يكون الحقل %s قائمة أعداد صحيحة مف
 #. translators: %s is the field label.
 #, js-format
 msgid "The field %s must be a list of name-value pairs."
-msgstr "يجب أن يكون الحقل %s قائمة من أزواج الاسم والقيمة."
+msgstr "يجب أن يكون الحقل %s قائمة من أزواج الاسم-القيمة."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12421
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:528
@@ -6137,7 +6139,7 @@ msgstr "متغير غير صالح."
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:608
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10675
 msgid "Please use the variable picker to select valid expression."
-msgstr "يرجى استخدام أداة اختيار المتغيرات لاختيار تعبير صالح."
+msgstr "يرجى استخدام منتقي المتغيرات لاختيار تعبير صالح."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12584
 #: assets/jsx/workflow-editor/components/pro-feature-button/index.jsx:26
@@ -6505,7 +6507,7 @@ msgstr "العقدة التي فعلت سير العمل."
 #: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:140
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14419
 msgid "Engine execution ID"
-msgstr "معرف تنفيذ المحرك"
+msgstr "معرّف تنفيذ المحرك"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16019
 #: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:143
@@ -6514,8 +6516,8 @@ msgid ""
 "A unique identifier assigned each time the workflow engine runs. Useful for "
 "tracking specific workflow executions and debugging."
 msgstr ""
-"معرف فريد يتم تعيينه في كل مرة يعمل فيها محرك سير العمل. مفيد لتتبع تنفيذات "
-"سير العمل المحددة وتصحيح الأخطاء."
+"معرّف فريد يتم تعيينه في كل مرة يتم فيها تشغيل محرك سير العمل. مفيد لتتبع "
+"تنفيذات سير العمل المحددة وتصحيح الأخطاء."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16897
 #: assets/jsx/workflow-editor/components/workflow-summary/index.jsx:42
@@ -6772,14 +6774,14 @@ msgid ""
 "For example, you could enter %3$s+1 month%4$s or %5$s+1 week 2 days 4 hours "
 "2 seconds%6$s or %7$snext Thursday%8$s. Please use only phrases in English."
 msgstr ""
-"لمزيد من المعلومات حول التنسيق، راجع %1$sوظيفة PHP strtotime%2$s. على سبيل "
-"المثال، يمكنك إدخال %3$s+1 شهر%4$s أو %5$s+1 أسبوع و 2 يوم و 4 ساعة و 2 "
-"ثانية%6$s أو %7$sالخميس القادم%8$s. يرجى استخدام عبارات باللغة الإنجليزية "
+"لمزيد من المعلومات حول التنسيق، راجع %1$sدالة PHP strtotime%2$s. على سبيل "
+"المثال، يمكنك إدخال %3$s+1 شهر%4$s أو %5$s+1 أسبوع 2 أيام 4 ساعات 2 "
+"ثوانٍ%6$s أو %7$sالخميس المقبل%8$s. يرجى استخدام العبارات باللغة الإنجليزية "
 "فقط."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2440
 msgid "Click Select to use this variable."
-msgstr "انقر على تحديد لاستخدام هذه المتغير."
+msgstr "انقر فوق تحديد لاستخدام هذا المتغير."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2441
 msgid "The variable will be inserted at the current cursor position."
@@ -6791,7 +6793,7 @@ msgstr "تحديد"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2572
 msgid "Double-click on any variable to insert it into your expression."
-msgstr "انقر مزدوجًا على أي متغير لإدراجه في تعبيرك."
+msgstr "انقر نقرًا مزدوجًا على أي متغير لإضافته إلى تعبيرك."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9155
 msgid "Step summary copied to clipboard."
@@ -6820,7 +6822,7 @@ msgid ""
 "Copy this plain-text summary to share in conversations. It includes the "
 "step type and non-default settings."
 msgstr ""
-"انسخ هذا الملخص النصي البسيط لمشاركته في المحادثات. يتضمن نوع الخطوة "
+"انسخ هذا الملخص النصي البسيط للمشاركة في المحادثات. يتضمن نوع الخطوة "
 "والإعدادات غير الافتراضية."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9203
@@ -6845,7 +6847,7 @@ msgid ""
 "Copy this plain-text summary to share in conversations. It includes the "
 "workflow flow and non-default step settings."
 msgstr ""
-"انسخ هذا الملخص النصي البسيط لمشاركته في المحادثات. يتضمن تدفق سير العمل "
+"انسخ هذا الملخص النصي البسيط للمشاركة في المحادثات. يتضمن تدفق سير العمل "
 "وإعدادات الخطوة غير الافتراضية."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10199

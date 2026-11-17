@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-05-28T20:05:06+00:00\n"
-"PO-Revision-Date: 2026-10-14 20:56+0000\n"
+"PO-Revision-Date: 2026-10-21 19:02+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
@@ -33,9 +33,7 @@ msgstr "http://wordpress.org/extend/plugins/post-expirator/"
 msgid ""
 "PublishPress Future allows you to schedule automatic changes to posts, "
 "pages and other content types."
-msgstr ""
-"Met PublishPress Future kun je automatische wijzigingen plannen voor "
-"berichten, pagina's en andere inhoudstypen."
+msgstr "Met PublishPress Future kun je automatische wijzigingen plannen voor berichten, pagina's en andere inhoudstypen."
 
 #: post-expirator.php:7
 #. Author of the plugin
@@ -74,17 +72,13 @@ msgstr "Debugging tabel leeggemaakt"
 msgid ""
 "The legacy future actions migration has been enqueued and will run "
 "asynchronously."
-msgstr ""
-"De migratie van verouderde toekomstige acties is gepland en zal asynchroon "
-"worden uitgevoerd."
+msgstr "De migratie van verouderde toekomstige acties is gepland en zal asynchroon worden uitgevoerd."
 
 #: legacy/classes/Display.class.php:308
 msgid ""
 "The legacy actions arguments restoration has been enqueued and will run "
 "asynchronously."
-msgstr ""
-"De verouderde argumenten van de acties terugzetten is gepland en zal "
-"asynchroon worden uitgevoerd."
+msgstr "De verouderde argumenten van de acties terugzetten is gepland en zal asynchroon worden uitgevoerd."
 
 #: legacy/classes/Display.class.php:323
 msgid "The database schema was fixed."
@@ -92,9 +86,7 @@ msgstr "Het databaseschema is hersteld."
 
 #: legacy/classes/Display.class.php:328
 msgid "The database schema could not be fixed. Please, contact the support team."
-msgstr ""
-"Het databaseschema kon niet worden hersteld. Neem contact op met het "
-"ondersteuningsteam."
+msgstr "Het databaseschema kon niet worden hersteld. Neem contact op met het ondersteuningsteam."
 
 #: legacy/classes/Display.class.php:399
 #: legacy/classes/Display.class.php:453
@@ -201,21 +193,15 @@ msgstr "Import"
 
 #: src/Modules/Backup/Controllers/BackupRestApi.php:142
 msgid "Failed to get workflows. Check the logs for more details."
-msgstr ""
-"Het is niet gelukt om workflows te verkrijgen. Bekijk de logs voor meer "
-"details."
+msgstr "Het is niet gelukt om workflows te verkrijgen. Bekijk de logs voor meer details."
 
 #: src/Modules/Backup/Controllers/BackupRestApi.php:194
 msgid "Failed to export the file. Check the logs for more details."
-msgstr ""
-"Het is niet gelukt om het bestand te exporteren. Bekijk de logs voor meer "
-"details."
+msgstr "Het is niet gelukt om het bestand te exporteren. Bekijk de logs voor meer details."
 
 #: src/Modules/Backup/Controllers/BackupRestApi.php:363
 msgid "Failed to import the file. Check the logs for more details."
-msgstr ""
-"Het is niet gelukt om het bestand te importeren. Bekijk de logs voor meer "
-"details."
+msgstr "Het is niet gelukt om het bestand te importeren. Bekijk de logs voor meer details."
 
 #: src/Modules/Debug/Controllers/Controller.php:106
 msgid "You do not have sufficient permissions to access this page."
@@ -245,17 +231,13 @@ msgstr "Geen resultaten komen overeen met het huidige filter."
 msgid ""
 "Showing the latest %1$d of %2$d logs (%3$d sessions). Total in database: "
 "%4$d. Log size: %5$s (total: %6$s)."
-msgstr ""
-"Weergave van de laatste %1$d van %2$d logs (%3$d sessies). Totaal in "
-"database: %4$d. Grootte log: %5$s (totaal: %6$s)."
+msgstr "Weergave van de laatste %1$d van %2$d logs (%3$d sessies). Totaal in database: %4$d. Grootte log: %5$s (totaal: %6$s)."
 
 #: src/Modules/Debug/DebugLogDisplayHelper.php:114
 #. translators: %1$d: displayed count, %2$d: total count, %3$d: sessions, %4$s: log size.
 #, php-format
 msgid "Showing the latest %1$d of %2$d logs (%3$d sessions). Log size: %4$s."
-msgstr ""
-"Weergave van de laatste %1$d van %2$d logs (%3$d sessies). Grootte log: "
-"%4$s."
+msgstr "Weergave van de laatste %1$d van %2$d logs (%3$d sessies). Grootte log: %4$s."
 
 #: src/Modules/Debug/DebugLogDisplayHelper.php:125
 #. translators: %1$d: filtered logs count, %2$d: sessions, %3$d: total unfiltered, %4$s: filtered log size, %5$s: total log size.
@@ -263,9 +245,7 @@ msgstr ""
 msgid ""
 "Showing all %1$d logs (%2$d sessions). Total in database: %3$d. Log size: "
 "%4$s (total: %5$s)."
-msgstr ""
-"Alle logs van %1$d weergeven (%2$d sessies). Totaal in database: %3$d. "
-"Grootte log: %4$s (totaal: %5$s)."
+msgstr "Alle logs van %1$d weergeven (%2$d sessies). Totaal in database: %3$d. Grootte log: %4$s (totaal: %5$s)."
 
 #: src/Modules/Debug/DebugLogDisplayHelper.php:136
 #. translators: %1$d: total logs count, %2$d: sessions count, %3$s: log size.
@@ -277,9 +257,7 @@ msgstr "Alle logs van %1$d weergeven (%2$d sessies). Grootte log: %3$s."
 msgid ""
 "Add request_id and trigger_activated columns to debug log table after "
 "v4.10.0"
-msgstr ""
-"request_id en trigger_activated kolommen toegevoegd aan debug log tabel na "
-"v4.10.0"
+msgstr "request_id en trigger_activated kolommen toegevoegd aan debug log tabel na v4.10.0"
 
 #: src/Modules/Debug/Migrations/V04906DebugLogTimestampMilliseconds.php:79
 msgid "Add millisecond precision to debug log timestamp column (v4.10.0)"
@@ -381,9 +359,7 @@ msgstr "Geen %s gevonden."
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:434
 #: src/Modules/Expirator/Controllers/QuickEditController.php:359
 msgid "You must assign a taxonomy to this post type to use this feature."
-msgstr ""
-"Je moet een hiërarchische taxonomie toewijzen aan dit berichttype om deze "
-"functie te gebruiken."
+msgstr "Je moet een hiërarchische taxonomie toewijzen aan dit berichttype om deze functie te gebruiken."
 
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:196
 #: src/Modules/Expirator/Controllers/BulkEditController.php:243
@@ -463,9 +439,7 @@ msgstr "Nieuwe status"
 
 #: src/Modules/Expirator/Controllers/BulkActionController.php:100
 msgid "No posts selected. Unable to sync Future Actions."
-msgstr ""
-"Geen berichten geselecteerd. Toekomstige acties kunnen niet worden "
-"gesynchroniseerd."
+msgstr "Geen berichten geselecteerd. Toekomstige acties kunnen niet worden gesynchroniseerd."
 
 #: src/Modules/Expirator/Controllers/BulkActionController.php:105
 msgid "Future Actions successfully synced with Post Metadata."
@@ -605,11 +579,7 @@ msgid ""
 "on formatting, see %1$s. For example, you could enter %2$s+1 month%3$s or "
 "%2$s+1 week 2 days 4 hours 2 seconds%3$s or %2$snext Thursday%3$s. Please, "
 "use only terms in English."
-msgstr ""
-"Stel de offset in voor de standaard datum en tijd van de actie. Voor "
-"informatie over formatting, zie %1$s. Je kunt bijvoorbeeld %2$s+1 month%3$s "
-"of %2$s+1 week 2 days 4 hours 2 seconds%3$s of %2$snext Thursday%3$s "
-"invoeren. Gebruik alleen termen in het Engels."
+msgstr "Stel de offset in voor de standaard datum en tijd van de actie. Voor informatie over formatting, zie %1$s. Je kunt bijvoorbeeld %2$s+1 month%3$s of %2$s+1 week 2 days 4 hours 2 seconds%3$s of %2$snext Thursday%3$s invoeren. Gebruik alleen termen in het Engels."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:262
 msgid "Default Values"
@@ -620,11 +590,7 @@ msgid ""
 "Use the values below to set the default actions/values to be used for each "
 "for the corresponding post types.  These values can all be overwritten when "
 "creating/editing the post/page."
-msgstr ""
-"Gebruik de onderstaande waarden om de standaard acties/waarden in te "
-"stellen die voor elk van de overeenkomstige berichttypes moeten worden "
-"gebruikt.  Deze waarden kunnen allemaal overschreven worden bij het "
-"maken/bewerken van het bericht/de pagina."
+msgstr "Gebruik de onderstaande waarden om de standaard acties/waarden in te stellen die voor elk van de overeenkomstige berichttypes moeten worden gebruikt.  Deze waarden kunnen allemaal overschreven worden bij het maken/bewerken van het bericht/de pagina."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:267
 msgid "Active"
@@ -655,17 +621,13 @@ msgstr "Automatisch acties maken"
 msgid ""
 "This will automatically create an action for new posts, using the default "
 "settings on this screen"
-msgstr ""
-"Dit zal automatisch een actie aanmaken voor nieuwe berichten, met de "
-"standaardinstellingen op dit scherm"
+msgstr "Dit zal automatisch een actie aanmaken voor nieuwe berichten, met de standaardinstellingen op dit scherm"
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:281
 msgid ""
 "No taxonomies found for this post type. Taxonomy actions will not be "
 "available."
-msgstr ""
-"Geen hiërarchische taxonomieën gevonden voor dit berichttype. Taxonomie "
-"acties zijn niet beschikbaar."
+msgstr "Geen hiërarchische taxonomieën gevonden voor dit berichttype. Taxonomie acties zijn niet beschikbaar."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:282
 #: src/Views/menu-notifications.php:116
@@ -677,9 +639,7 @@ msgstr "Wie te berichten"
 msgid ""
 "Enter a comma separated list of emails that you would like to be notified "
 "when the action runs."
-msgstr ""
-"Voer een komma gescheiden lijst met e-mails in die je wil laten weten "
-"wanneer actie wordt uitgevoerd."
+msgstr "Voer een komma gescheiden lijst met e-mails in die je wil laten weten wanneer actie wordt uitgevoerd."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:287
 #: src/Views/menu-general.php:29
@@ -747,9 +707,7 @@ msgstr "Ondersteuning voor aangepaste statussen inschakelen"
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:305
 msgid "Checking this option will allow you to move posts to a custom status."
-msgstr ""
-"Als je deze optie aanvinkt, kun je berichten naar een aangepaste status "
-"verplaatsen."
+msgstr "Als je deze optie aanvinkt, kun je berichten naar een aangepaste status verplaatsen."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:306
 msgid "Metadata scheduling"
@@ -763,9 +721,7 @@ msgstr "Planning van metagegevens inschakelen"
 msgid ""
 "Checking this option will allow you to use post metadata to control the "
 "scheduling of actions."
-msgstr ""
-"Als je deze optie aanvinkt, kun je metagegevens van berichten gebruiken om "
-"het plannen van acties te regelen."
+msgstr "Als je deze optie aanvinkt, kun je metagegevens van berichten gebruiken om het plannen van acties te regelen."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:309
 msgid "This is a Pro feature. Upgrade to unlock this functionality."
@@ -780,9 +736,7 @@ msgstr "Formulier validatie fout: je nonce is niet geverifieerd."
 msgid ""
 "The shortcode [futureaction] must be used inside the loop or with the "
 "post_id attribute."
-msgstr ""
-"De shortcode [futureaction] moet binnen de loop of met de post_id attribuut "
-"worden gebruikt."
+msgstr "De shortcode [futureaction] moet binnen de loop of met de post_id attribuut worden gebruikt."
 
 #: src/Modules/Expirator/DBTableSchemas/ActionArgsSchema.php:96
 msgid "The column args length was not updated to 1000."
@@ -843,9 +797,7 @@ msgstr "Er werden geen termen aan het %s toegevoegd."
 msgid ""
 "The following terms (%1$s) were added to the %2$s: \"%3$s\". The full list "
 "of terms on the post is: %4$s."
-msgstr ""
-"De volgende termen (%1$s) zijn toegevoegd aan de %2$s: \"%3$s\". De "
-"volledige lijst van termen op het bericht is: %4$s."
+msgstr "De volgende termen (%1$s) zijn toegevoegd aan de %2$s: \"%3$s\". De volledige lijst van termen op het bericht is: %4$s."
 
 #: src/Modules/Expirator/ExpirationActions/PostCategoryAdd.php:120
 #. translators: %s is the taxonomy name (plural)
@@ -866,9 +818,7 @@ msgstr "Er werden geen termen uit het %s verwijderd."
 msgid ""
 "The following terms (%1$s) were removed from the %2$s: %3$s. The new list "
 "of terms on the post is: %4$s."
-msgstr ""
-"De volgende termen (%1$s) zijn verwijderd uit de %2$s: %3$s. De nieuwe "
-"lijst van termen op het bericht is: %4$s."
+msgstr "De volgende termen (%1$s) zijn verwijderd uit de %2$s: %3$s. De nieuwe lijst van termen op het bericht is: %4$s."
 
 #: src/Modules/Expirator/ExpirationActions/PostCategoryRemove.php:112
 #. translators: %s is the taxonomy name (plural)
@@ -900,9 +850,7 @@ msgstr "Er werden geen termen gewijzigd op het %s."
 msgid ""
 "The following terms (%1$s) were set to the %2$s: \"%3$s\". The old list of "
 "terms on the post was: %4$s."
-msgstr ""
-"De volgende termen (%1$s) zijn ingesteld op de %2$s: \"%3$s\". De oude "
-"lijst van termen op het bericht was: %4$s."
+msgstr "De volgende termen (%1$s) zijn ingesteld op de %2$s: \"%3$s\". De oude lijst van termen op het bericht was: %4$s."
 
 #: src/Modules/Expirator/ExpirationActions/PostCategorySet.php:109
 #. translators: %s is the taxonomy name (plural)
@@ -965,9 +913,7 @@ msgstr "Bericht meta gegevens na v3.0.1 terugzetten"
 msgid ""
 "Change args column length to 1000 in the table _ppfuture_actions_args after "
 "v3.1.4"
-msgstr ""
-"Wijzig de kolomlengte van args naar 1000 in de tabel _ppfuture_actions_args "
-"na v3.1.4"
+msgstr "Wijzig de kolomlengte van args naar 1000 in de tabel _ppfuture_actions_args na v3.1.4"
 
 #: src/Modules/Expirator/Models/ExpirablePostModel.php:489
 msgid "Email is disabled."
@@ -1048,9 +994,7 @@ msgstr "Annuleren"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:77
 msgid "Cancel the action. This will prevent the action from running in the future"
-msgstr ""
-"Annuleer de actie. Hierdoor wordt voorkomen dat de actie in de toekomst "
-"wordt uitgevoerd"
+msgstr "Annuleer de actie. Hierdoor wordt voorkomen dat de actie in de toekomst wordt uitgevoerd"
 
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:88
 #: src/Modules/Expirator/Tables/ScheduledActionsTable.php:488
@@ -1294,9 +1238,7 @@ msgstr "Geplande workflowstappen automatisch verwijderen"
 msgid ""
 "Automatically remove scheduled workflow steps that have been marked as "
 "failed, completed, or cancelled."
-msgstr ""
-"Verwijder automatisch geplande workflowstappen die zijn gemarkeerd als "
-"mislukt, afgerond of geannuleerd."
+msgstr "Verwijder automatisch geplande workflowstappen die zijn gemarkeerd als mislukt, afgerond of geannuleerd."
 
 #: src/Modules/Settings/Controllers/Controller.php:261
 msgid "Retain all scheduled workflow steps"
@@ -1307,10 +1249,7 @@ msgid ""
 "Retain all scheduled workflow steps indefinitely, including those marked as "
 "failed, completed, or cancelled. This may impact database performance over "
 "time."
-msgstr ""
-"Bewaar alle geplande workflowstappen voor onbepaalde tijd, inclusief de "
-"stappen die zijn gemarkeerd als mislukt, afgerond of geannuleerd. Dit kan "
-"na verloop van tijd de databaseprestaties beïnvloeden."
+msgstr "Bewaar alle geplande workflowstappen voor onbepaalde tijd, inclusief de stappen die zijn gemarkeerd als mislukt, afgerond of geannuleerd. Dit kan na verloop van tijd de databaseprestaties beïnvloeden."
 
 #: src/Modules/Settings/Controllers/Controller.php:269
 msgid "Retention"
@@ -1320,9 +1259,7 @@ msgstr "Retentie"
 msgid ""
 "The duration, in days, for which completed, failed, and canceled scheduled "
 "workflow steps will be preserved before automatic removal."
-msgstr ""
-"De duur, in dagen, waarvoor afgeronde, mislukte en geannuleerde geplande "
-"workflowstappen worden bewaard voordat ze automatisch worden verwijderd."
+msgstr "De duur, in dagen, waarvoor afgeronde, mislukte en geannuleerde geplande workflowstappen worden bewaard voordat ze automatisch worden verwijderd."
 
 #: src/Modules/Settings/Controllers/Controller.php:274
 msgid "days"
@@ -1334,9 +1271,7 @@ msgstr "dagen"
 msgid ""
 "You're using PublishPress Future Free. The Pro version has more features "
 "and support. %1$sUpgrade to Pro%2$s"
-msgstr ""
-"Je gebruikt PublishPress Future Free. De Pro versie heeft meer functies en "
-"ondersteuning. %1$sUpgrade naar Pro%2$s"
+msgstr "Je gebruikt PublishPress Future Free. De Pro versie heeft meer functies en ondersteuning. %1$sUpgrade naar Pro%2$s"
 
 #: src/Modules/Workflows/Controllers/ManualPostTrigger.php:426
 msgid "Workflow Manual Trigger"
@@ -1353,10 +1288,7 @@ msgid ""
 "You have past-due scheduled actions in PublishPress Future.\n"
 "\n"
 "Please check them at %s"
-msgstr ""
-"Je hebt achterstallige geplande acties in PublishPress future. \n"
-"\n"
-" controleer ze op %s"
+msgstr "Je hebt achterstallige geplande acties in PublishPress future. \n\n controleer ze op %s"
 
 #: src/Modules/Workflows/Controllers/PastDueActions.php:155
 msgid "[PublishPress Future] Past-due Actions Found"
@@ -1468,9 +1400,7 @@ msgstr "Publicatie ongedaan maken naar concept na week"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:40
 msgid "Change the post status to Draft a week after it was published."
-msgstr ""
-"Verander de status van het bericht in concept een week nadat het is "
-"gepubliceerd."
+msgstr "Verander de status van het bericht in concept een week nadat het is gepubliceerd."
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:44
 msgid "Unpublish and change category after 15 days"
@@ -1486,9 +1416,7 @@ msgstr "Een maand na publicatie extra categorieën toevoegen"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:50
 msgid "Sample workflow to add extra categories one month after publishing"
-msgstr ""
-"Voorbeeld workflow om een maand na publicatie extra categorieën toe te "
-"voegen"
+msgstr "Voorbeeld workflow om een maand na publicatie extra categorieën toe te voegen"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:54
 msgid "Change status to draft one week after publishing"
@@ -1496,9 +1424,7 @@ msgstr "Wijzig status in concept een week na publicatie"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:55
 msgid "Sample workflow to change status to draft one week after publishing"
-msgstr ""
-"Voorbeeld workflow om de status een week na publicatie te wijzigen in "
-"concept"
+msgstr "Voorbeeld workflow om de status een week na publicatie te wijzigen in concept"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:59
 msgid "Delete post one week after publishing"
@@ -1522,9 +1448,7 @@ msgstr "Verwijder geselecteerde categorieën een week na publicatie"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:70
 msgid "Sample workflow to remove selected categories one week after publishing"
-msgstr ""
-"Voorbeeld workflow om geselecteerde categorieën een week na publicatie te "
-"verwijderen"
+msgstr "Voorbeeld workflow om geselecteerde categorieën een week na publicatie te verwijderen"
 
 #: src/Modules/Workflows/Controllers/SampleWorkflows.php:74
 msgid "Replace all categories one week after publishing"
@@ -1658,9 +1582,7 @@ msgstr "Welkom bij de workflow-editor"
 msgid ""
 "In the PublishPress Workflow Editor, each workflow step is presented as a "
 "distinct 'node' in the workflow."
-msgstr ""
-"In de PublishPress workflow editor wordt elke workflow stap gepresenteerd "
-"als een aparte 'node' in de workflow."
+msgstr "In de PublishPress workflow editor wordt elke workflow stap gepresenteerd als een aparte 'node' in de workflow."
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:269
 msgid "Use your imagination"
@@ -1670,9 +1592,7 @@ msgstr "Gebruik je verbeelding"
 msgid ""
 "You're free to create very distinct workflows in your site, according to "
 "your needs."
-msgstr ""
-"Je bent gratis in staat om heel verschillende workflows te maken in je "
-"site, afhankelijk van je behoeften."
+msgstr "Je bent gratis in staat om heel verschillende workflows te maken in je site, afhankelijk van je behoeften."
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:274
 msgid "A basic workflow"
@@ -1682,9 +1602,7 @@ msgstr "Een basisworkflow"
 msgid ""
 "Every workflow requires at least two steps connected to each other: one "
 "trigger and one action."
-msgstr ""
-"Voor elke workflow zijn ten minste twee stappen met elkaar verbonden: een "
-"trigger en een actie."
+msgstr "Voor elke workflow zijn ten minste twee stappen met elkaar verbonden: een trigger en een actie."
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:279
 msgid "Add steps to your workflow"
@@ -1694,9 +1612,7 @@ msgstr "Stappen toevoegen aan je workflow"
 msgid ""
 "Drag and drop steps to add them to your workflow. Connect the steps to "
 "create a workflow."
-msgstr ""
-"Versleep stappen om ze toe te voegen aan je workflow. Verbind de stappen om "
-"een workflow te creëren."
+msgstr "Versleep stappen om ze toe te voegen aan je workflow. Verbind de stappen om een workflow te creëren."
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:284
 msgid "Output and input"
@@ -1714,9 +1630,7 @@ msgstr "De workflow aanpassen"
 msgid ""
 "Click on a step to customize it. You can change the step's settings in the "
 "right sidebar."
-msgstr ""
-"Klik op een stap om deze aan te passen. Je kunt de instellingen van de stap "
-"wijzigen in de rechter zijbalk."
+msgstr "Klik op een stap om deze aan te passen. Je kunt de instellingen van de stap wijzigen in de rechter zijbalk."
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:294
 msgid "Workflow validation"
@@ -1727,10 +1641,7 @@ msgid ""
 "Error messages will appear for any unfilled required settings, missed "
 "connections, or invalid values. Select the step to view the corresponding "
 "error in the sidebar."
-msgstr ""
-"Foutmeldingen verschijnen voor niet ingevulde instellingen, gemiste "
-"verbindingen of ongeldige waarden. Selecteer de stap om de bijbehorende "
-"fout in de zijbalk te bekijken."
+msgstr "Foutmeldingen verschijnen voor niet ingevulde instellingen, gemiste verbindingen of ongeldige waarden. Selecteer de stap om de bijbehorende fout in de zijbalk te bekijken."
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:299
 msgid "Publish your workflow"
@@ -1738,9 +1649,7 @@ msgstr "Je workflow publiceren"
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:300
 msgid "When you're ready, click the publish button to make your workflow live."
-msgstr ""
-"Als je klaar bent, klik je op de knop publiceren om je workflow live te "
-"zetten."
+msgstr "Als je klaar bent, klik je op de knop publiceren om je workflow live te zetten."
 
 #: src/Modules/Workflows/Controllers/WorkflowEditor.php:304
 msgid "Need help?"
@@ -1750,9 +1659,7 @@ msgstr "Hulp nodig?"
 msgid ""
 "If you have any questions or need help, click the help button in the top "
 "right corner to access the support resources."
-msgstr ""
-"Als je vragen hebt of hulp nodig hebt, klik dan op de knop help in de "
-"rechterbovenhoek om naar de gegevensbronnen voor ondersteuning te gaan."
+msgstr "Als je vragen hebt of hulp nodig hebt, klik dan op de knop help in de rechterbovenhoek om naar de gegevensbronnen voor ondersteuning te gaan."
 
 #: src/Modules/Workflows/Controllers/WorkflowsList.php:236
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14053
@@ -1965,10 +1872,7 @@ msgstr "Is single"
 msgid ""
 "If enabled, only one meta value will be allowed. If disabled, multiple meta "
 "values can be added as an array."
-msgstr ""
-"Als deze optie is ingeschakeld, is slechts één metawaarde toegestaan. Als "
-"deze optie is uitgeschakeld, kunnen meerdere meta waarden worden toegevoegd "
-"als een array."
+msgstr "Als deze optie is ingeschakeld, is slechts één metawaarde toegestaan. Als deze optie is uitgeschakeld, kunnen meerdere meta waarden worden toegevoegd als een array."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/AddPostMeta.php:98
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeletePostMeta.php:91
@@ -2221,10 +2125,7 @@ msgstr "Voorwaardelijk"
 msgid ""
 "This step allows you to continue the workflow only if certain conditions "
 "are met. It is not required to have both a True and a False option."
-msgstr ""
-"Met deze stap kun je de workflow alleen voortzetten als aan bepaalde "
-"voorwaarden is voldaan. Het is niet vereist om zowel een true als een false "
-"optie te hebben."
+msgstr "Met deze stap kun je de workflow alleen voortzetten als aan bepaalde voorwaarden is voldaan. Het is niet vereist om zowel een true als een false optie te hebben."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:64
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:1049
@@ -2241,9 +2142,7 @@ msgstr "Voorwaarden"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:74
 msgid "The conditions that must be met for deciding which branch to take."
-msgstr ""
-"De voorwaarden waaraan moet worden voldaan om te beslissen welke tak je "
-"neemt."
+msgstr "De voorwaarden waaraan moet worden voldaan om te beslissen welke tak je neemt."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:124, fuzzy
 msgid "Branch"
@@ -2253,9 +2152,7 @@ msgstr "Branch"
 msgid ""
 "Shows which path was taken: 'true' if conditions were met, or 'false' if "
 "they weren't."
-msgstr ""
-"Toont welk pad is genomen: 'true' als aan de voorwaarden is voldaan, of "
-"'false' als dat niet het geval was."
+msgstr "Toont welk pad is genomen: 'true' als aan de voorwaarden is voldaan, of 'false' als dat niet het geval was."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/Conditional.php:147
 msgid "True"
@@ -2273,9 +2170,7 @@ msgstr "Workflow voor bericht deactiveren"
 msgid ""
 "This step enables you to deactivate the \"Manually enabled via checkbox\" "
 "workflow after use."
-msgstr ""
-"Met deze stap kun je de workflow \"Handmatig ingeschakeld via "
-"selectievakje\" na gebruik deactiveren."
+msgstr "Met deze stap kun je de workflow \"Handmatig ingeschakeld via selectievakje\" na gebruik deactiveren."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeactivatePostWorkflow.php:68
 msgid "Select which post will have its workflow deactivated."
@@ -2297,9 +2192,7 @@ msgstr "Workflow om te deactiveren"
 msgid ""
 "Choose the manually enabling workflow that will be deactivated for the "
 "selected post."
-msgstr ""
-"Kies de handmatig in te schakelen workflow die voor het geselecteerde "
-"bericht wordt gedeactiveerd."
+msgstr "Kies de handmatig in te schakelen workflow die voor het geselecteerde bericht wordt gedeactiveerd."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DeactivatePostWorkflow.php:125
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15989
@@ -2361,9 +2254,7 @@ msgstr "De meta sleutel om te verwijderen uit het bericht."
 msgid ""
 "Specify the meta value to delete from the post. If empty, all meta with the "
 "same key will be deleted."
-msgstr ""
-"Geef de meta waarde op die uit het bericht moet worden verwijderd. Als deze "
-"leeg is, worden alle meta met dezelfde sleutel verwijderd."
+msgstr "Geef de meta waarde op die uit het bericht moet worden verwijderd. Als deze leeg is, worden alle meta met dezelfde sleutel verwijderd."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:32
 msgid "Do custom action"
@@ -2377,10 +2268,7 @@ msgstr "Deze stap voert een aangepaste actie uit."
 msgid ""
 "Enter the action hook to trigger. Only hooks registered through the "
 "'publishpress_future_allowed_action_hooks' filter are allowed."
-msgstr ""
-"Voer de actie hook in om te activeren. Alleen hooks die via het filter "
-"'publishpress_future_allowed_action_hooks' zijn geregistreerd zijn "
-"toegestaan."
+msgstr "Voer de actie hook in om te activeren. Alleen hooks die via het filter 'publishpress_future_allowed_action_hooks' zijn geregistreerd zijn toegestaan."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:73
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:73
@@ -2406,9 +2294,7 @@ msgstr "Actie argumenten"
 msgid ""
 "The arguments to pass to the action. These arguments will be available as "
 "variables in subsequent workflow steps."
-msgstr ""
-"De argumenten om door te geven aan de actie. Deze argumenten zullen "
-"beschikbaar zijn als variabelen in volgende workflowstappen."
+msgstr "De argumenten om door te geven aan de actie. Deze argumenten zullen beschikbaar zijn als variabelen in volgende workflowstappen."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:113
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:122
@@ -2462,9 +2348,7 @@ msgstr "Titel voorvoegsel"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DuplicatePost.php:98
 msgid "Text to add before the original title. Leave empty for no prefix."
-msgstr ""
-"Tekst om toe te voegen vóór de oorspronkelijke titel. Laat leeg voor geen "
-"voorvoegsel."
+msgstr "Tekst om toe te voegen vóór de oorspronkelijke titel. Laat leeg voor geen voorvoegsel."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DuplicatePost.php:99
 msgid "Copy of "
@@ -2476,9 +2360,7 @@ msgstr "Kopieer bericht Meta"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DuplicatePost.php:105
 msgid "If enabled, all post meta will be copied to the new post."
-msgstr ""
-"Als dit is ingeschakeld, worden alle meta van berichten gekopieerd naar het "
-"nieuwe bericht."
+msgstr "Als dit is ingeschakeld, worden alle meta van berichten gekopieerd naar het nieuwe bericht."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DuplicatePost.php:111
 msgid "Copy Post Taxonomies"
@@ -2486,9 +2368,7 @@ msgstr "Bericht taxonomieën kopiëren"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DuplicatePost.php:112
 msgid "If enabled, all post taxonomies will be copied to the new post."
-msgstr ""
-"Als deze optie is ingeschakeld, worden alle bericht taxonomieën gekopieerd "
-"naar het nieuwe bericht."
+msgstr "Als deze optie is ingeschakeld, worden alle bericht taxonomieën gekopieerd naar het nieuwe bericht."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DuplicatePost.php:118
 msgid "Copy Featured Image"
@@ -2496,9 +2376,7 @@ msgstr "Uitgelichte afbeelding kopiëren"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DuplicatePost.php:119
 msgid "If enabled, the featured image will be copied to the new post."
-msgstr ""
-"Als deze optie is ingeschakeld, wordt de uitgelichte afbeelding gekopieerd "
-"naar het nieuwe bericht."
+msgstr "Als deze optie is ingeschakeld, wordt de uitgelichte afbeelding gekopieerd naar het nieuwe bericht."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DuplicatePost.php:161
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DuplicatePost.php:174
@@ -2519,9 +2397,7 @@ msgstr "Query berichten"
 msgid ""
 "This step defines the posts that will be passed to the next step in the "
 "workflow."
-msgstr ""
-"Deze stap definieert de berichten die worden doorgegeven aan de volgende "
-"stap in de workflow."
+msgstr "Deze stap definieert de berichten die worden doorgegeven aan de volgende stap in de workflow."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/QueryPosts.php:72
 msgid "Post query"
@@ -2583,10 +2459,7 @@ msgid ""
 "This step allows you to run the next part of a workflow at a specific time, "
 "or relative to another date. You can also use this step to repeat the next "
 "part of the workflow."
-msgstr ""
-"Met deze stap kun je het volgende deel van een workflow op een bepaalde "
-"tijd uitvoeren, of ten opzichte van een andere datum. Je kunt deze stap ook "
-"gebruiken om het volgende deel van de workflow te herhalen."
+msgstr "Met deze stap kun je het volgende deel van een workflow op een bepaalde tijd uitvoeren, of ten opzichte van een andere datum. Je kunt deze stap ook gebruiken om het volgende deel van de workflow te herhalen."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/ScheduleDelay.php:67
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:64
@@ -2686,9 +2559,7 @@ msgstr "PublishPress workflow: {{global.workflow.title}}"
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:22
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:22
 msgid "This is a message sent by PublishPress Workflow: {{global.workflow.title}}."
-msgstr ""
-"Dit is een bericht verzonden door PublishPress workflow: "
-"{{global.workflow.title}}."
+msgstr "Dit is een bericht verzonden door PublishPress workflow: {{global.workflow.title}}."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:45
 msgid "Send email"
@@ -2718,9 +2589,7 @@ msgstr "Ontvanger"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:84
 msgid "A comma-separated list of email addresses to send the message to."
-msgstr ""
-"Een door komma's gescheiden lijst van e-mailadressen om het bericht naar te "
-"verzenden."
+msgstr "Een door komma's gescheiden lijst van e-mailadressen om het bericht naar te verzenden."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:92
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendEmail.php:142
@@ -2765,9 +2634,7 @@ msgstr "Ontvangers"
 msgid ""
 "A comma-separated list of user names, ids, emails or user roles to send the "
 "message to."
-msgstr ""
-"Een door komma's gescheiden lijst van gebruikersnamen, id's, e-mails of "
-"gebruikersrollen om het bericht naar te verzenden."
+msgstr "Een door komma's gescheiden lijst van gebruikersnamen, id's, e-mails of gebruikersrollen om het bericht naar te verzenden."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SendInSiteNotification.php:113
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:103
@@ -2888,9 +2755,7 @@ msgstr "Nieuwe voorwaarden"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/SetPostTerm.php:83
 msgid "The terms that will be added to the posts after removing all the others."
-msgstr ""
-"De termen die worden toegevoegd aan de berichten nadat alle andere zijn "
-"verwijderd."
+msgstr "De termen die worden toegevoegd aan de berichten nadat alle andere zijn verwijderd."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/StickPost.php:32
 msgid "Stick post"
@@ -2912,9 +2777,7 @@ msgstr "Bericht naar stick"
 msgid ""
 "Choose the post that will be marked as sticky. You can select a post "
 "variable or enter a post ID."
-msgstr ""
-"Kies het bericht dat als sticky wordt gemarkeerd. Je kunt een "
-"berichtvariabele selecteren of een ID van het bericht invoeren."
+msgstr "Kies het bericht dat als sticky wordt gemarkeerd. Je kunt een berichtvariabele selecteren of een ID van het bericht invoeren."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UnstickPost.php:32
 msgid "Unstick post"
@@ -2936,9 +2799,7 @@ msgstr "Bericht naar unstick"
 msgid ""
 "Choose the post that will be unmarked as sticky. You can select a post "
 "variable or enter a post ID."
-msgstr ""
-"Kies het bericht dat niet gemarkeerd wordt als sticky. Je kunt een "
-"berichtvariabele selecteren of een ID van het bericht invoeren."
+msgstr "Kies het bericht dat niet gemarkeerd wordt als sticky. Je kunt een berichtvariabele selecteren of een ID van het bericht invoeren."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePost.php:32
 msgid "Update post details"
@@ -2948,9 +2809,7 @@ msgstr "Bericht details updaten"
 msgid ""
 "This step updates key information about each post such as the data, title, "
 "content, author, and more."
-msgstr ""
-"In deze stap wordt sleutelinformatie over elk bericht geüpdatet, zoals de "
-"gegevens, titel, inhoud, auteur en meer."
+msgstr "In deze stap wordt sleutelinformatie over elk bericht geüpdatet, zoals de gegevens, titel, inhoud, auteur en meer."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UpdatePost.php:65
 msgid "Select which post will be updated."
@@ -3080,9 +2939,7 @@ msgstr "Interactie van de gebruiker"
 msgid ""
 "This step requires user action before the workflow can proceed. The actions "
 "are done via the in-site notification area."
-msgstr ""
-"Voor deze stap is actie van de gebruiker vereist voordat de workflow verder "
-"kan gaan. De acties worden uitgevoerd via het meldingsgebied op locatie."
+msgstr "Voor deze stap is actie van de gebruiker vereist voordat de workflow verder kan gaan. De acties worden uitgevoerd via het meldingsgebied op locatie."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:64
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:168
@@ -3099,9 +2956,7 @@ msgstr "Kies welke gebruikers meldingen van deze actie te zien krijgen."
 msgid ""
 "A comma-separated list of user names, ids, emails or user roles that can "
 "interact with this step."
-msgstr ""
-"Een door komma's gescheiden lijst van gebruikersnamen, id's, e-mails of "
-"gebruikersrollen die met deze stap kunnen communiceren."
+msgstr "Een door komma's gescheiden lijst van gebruikersnamen, id's, e-mails of gebruikersrollen die met deze stap kunnen communiceren."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:82
 msgid "Specify the message to be displayed to the responders."
@@ -3109,9 +2964,7 @@ msgstr "Geef aan welk bericht moet worden getoond aan de respondenten."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:97
 msgid "Please select an option to continue the workflow: {{global.workflow.title}}"
-msgstr ""
-"Selecteer een optie om de workflow voort te zetten: "
-"{{global.workflow.title}}"
+msgstr "Selecteer een optie om de workflow voort te zetten: {{global.workflow.title}}"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:129
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:201
@@ -3153,9 +3006,7 @@ msgstr "Opties > Opties"
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:227
 msgid "The responders to the interactive delay, as a list of user ids."
-msgstr ""
-"De respondenten op de interactieve vertraging, als een lijst met gebruikers "
-"ID's."
+msgstr "De respondenten op de interactieve vertraging, als een lijst met gebruikers ID's."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/UserInteraction.php:232
 msgid "Option name"
@@ -3185,9 +3036,7 @@ msgstr "Op aangepaste actie"
 msgid ""
 "This trigger activates upon a custom WordPress action hook. Use it to "
 "integrate with other plugins or custom code."
-msgstr ""
-"Deze trigger wordt geactiveerd door een aangepaste WordPress actiehaak. "
-"Gebruik deze om te integreren met andere plugins of aangepaste code."
+msgstr "Deze trigger wordt geactiveerd door een aangepaste WordPress actiehaak. Gebruik deze om te integreren met andere plugins of aangepaste code."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:65
 msgid "Specify the hook that will trigger this action."
@@ -3221,9 +3070,7 @@ msgstr "Handmatig uitvoeren via vak Toekomstige acties"
 msgid ""
 "This trigger allows users to choose the workflow from the dropdown menu in "
 "the Future Actions options."
-msgstr ""
-"Met deze trigger kunnen gebruikers de workflow kiezen uit het dropdown menu "
-"in de opties voor toekomstige acties."
+msgstr "Met deze trigger kunnen gebruikers de workflow kiezen uit het dropdown menu in de opties voor toekomstige acties."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnLegacyActionTrigger.php:114
 msgid "Action Post"
@@ -3249,9 +3096,7 @@ msgstr "Auteur van bericht gewijzigd"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostAuthorChange.php:37
 msgid "This trigger activates when an existing post author is changed."
-msgstr ""
-"Deze trigger activeert wanneer een bestaande auteur van een bericht wordt "
-"gewijzigd."
+msgstr "Deze trigger activeert wanneer een bestaande auteur van een bericht wordt gewijzigd."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostAuthorChange.php:64
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostCreate.php:64
@@ -3401,9 +3246,7 @@ msgstr "Bericht meta gewijzigd"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:37
 msgid "This trigger activates when a post meta field is changed."
-msgstr ""
-"Deze trigger wordt geactiveerd wanneer een meta veld van een bericht wordt "
-"gewijzigd."
+msgstr "Deze trigger wordt geactiveerd wanneer een meta veld van een bericht wordt gewijzigd."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:88
 msgid "Meta settings"
@@ -3435,9 +3278,7 @@ msgstr "Het bericht dat deze actie heeft veroorzaakt."
 msgid ""
 "The action taken when the meta key is changed: 'added', 'updated' or "
 "'deleted'."
-msgstr ""
-"De actie die wordt ondernomen wanneer de meta sleutel wordt gewijzigd: "
-"\"toegevoegd\", \"geüpdatet\" of \"verwijderd\"."
+msgstr "De actie die wordt ondernomen wanneer de meta sleutel wordt gewijzigd: \"toegevoegd\", \"geüpdatet\" of \"verwijderd\"."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostMetaChange.php:160
 msgid "The meta ID."
@@ -3487,9 +3328,7 @@ msgstr "Handmatig uitvoeren via berichten rij actie"
 msgid ""
 "This trigger creates a custom post row action and activates when the row "
 "action is clicked in the Posts list screen."
-msgstr ""
-"Deze trigger creëert een aangepaste bericht rijactie en activeert wanneer "
-"de rijactie wordt aangeklikt in het berichtenlijst scherm."
+msgstr "Deze trigger creëert een aangepaste bericht rijactie en activeert wanneer de rijactie wordt aangeklikt in het berichtenlijst scherm."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:91
 msgid "Row Action"
@@ -3497,9 +3336,7 @@ msgstr "Rijactie"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:92
 msgid "Configure the post row action that will be created in the Posts list screen."
-msgstr ""
-"Configureer de bericht rij actie die zal worden aangemaakt in het "
-"berichtenlijst scherm."
+msgstr "Configureer de bericht rij actie die zal worden aangemaakt in het berichtenlijst scherm."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:100
 msgid "Action label"
@@ -3521,9 +3358,7 @@ msgstr "Vraag om bevestiging"
 msgid ""
 "If enabled, the user will be asked to confirm the action before it is "
 "executed."
-msgstr ""
-"Als het is ingeschakeld, wordt de gebruiker gevraagd de actie te bevestigen "
-"voordat deze wordt uitgevoerd."
+msgstr "Als het is ingeschakeld, wordt de gebruiker gevraagd de actie te bevestigen voordat deze wordt uitgevoerd."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostRowAction.php:119
 msgid "Are you sure you want to run this action?"
@@ -3541,9 +3376,7 @@ msgstr "Bericht is opgeslagen"
 msgid ""
 "This trigger activates whenever a post is saved, regardless of whether it's "
 "newly created, imported, or updated."
-msgstr ""
-"Deze trigger wordt geactiveerd wanneer een bericht wordt opgeslagen, "
-"ongeacht of het nieuw is aangemaakt, geïmporteerd of geüpdatet."
+msgstr "Deze trigger wordt geactiveerd wanneer een bericht wordt opgeslagen, ongeacht of het nieuw is aangemaakt, geïmporteerd of geüpdatet."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostSave.php:118
 #, fuzzy
@@ -3554,10 +3387,7 @@ msgstr "Is updaten"
 msgid ""
 "Whether the action happened to an existing post or a new post. Enter True "
 "for an existing post, or False for a new post."
-msgstr ""
-"Of de actie heeft plaatsgevonden bij een bestaand bericht of een nieuw "
-"bericht. Voer True in voor een bestaand bericht, of False voor een nieuw "
-"bericht."
+msgstr "Of de actie heeft plaatsgevonden bij een bestaand bericht of een nieuw bericht. Voer True in voor een bestaand bericht, of False voor een nieuw bericht."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostSave.php:125
 msgid "Saved post ID"
@@ -3620,10 +3450,7 @@ msgstr "Handmatig uitvoeren via selectievakje"
 msgid ""
 "This trigger activates when the option is manually enabled. It can be "
 "enabled via the post editing screen or the Quick Edit panel."
-msgstr ""
-"Deze trigger wordt geactiveerd wanneer de optie handmatig wordt "
-"ingeschakeld. Hij kan worden ingeschakeld via het scherm bericht bewerken "
-"of het snel bewerken paneel."
+msgstr "Deze trigger wordt geactiveerd wanneer de optie handmatig wordt ingeschakeld. Hij kan worden ingeschakeld via het scherm bericht bewerken of het snel bewerken paneel."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnPostWorkflowEnable.php:68
 msgid "Settings for the trigger."
@@ -3645,10 +3472,7 @@ msgstr "Op schema"
 msgid ""
 "This trigger allows you to run a workflow at a specific time, or relative "
 "to another date. You can also use this trigger to repeat workflows."
-msgstr ""
-"Met deze trigger kun je een workflow uitvoeren op een bepaalde tijd, of ten "
-"opzichte van een andere datum. Je kunt deze trigger ook gebruiken om "
-"workflows te herhalen."
+msgstr "Met deze trigger kun je een workflow uitvoeren op een bepaalde tijd, of ten opzichte van een andere datum. Je kunt deze trigger ook gebruiken om workflows te herhalen."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnSchedule.php:65
 msgid "Choose a schedule to activate the workflow."
@@ -3668,9 +3492,7 @@ msgstr "Termen zijn toegevoegd aan bericht"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnTermsAdded.php:37
 msgid "This trigger activates when taxonomy terms are added to a post."
-msgstr ""
-"Deze trigger wordt geactiveerd wanneer taxonomietermen worden toegevoegd "
-"aan een bericht."
+msgstr "Deze trigger wordt geactiveerd wanneer taxonomietermen worden toegevoegd aan een bericht."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnTermsAdded.php:88
 msgid "Terms Filter"
@@ -3714,9 +3536,7 @@ msgstr "Gebruikersvraag"
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:65
 msgid "Specify the criteria for users whose role changes will trigger this action."
-msgstr ""
-"Specificeer de criteria voor gebruikers waarvan de rolwijzigingen deze "
-"actie zullen activeren."
+msgstr "Specificeer de criteria voor gebruikers waarvan de rolwijzigingen deze actie zullen activeren."
 
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnUserRoleChange.php:73
 msgid "User query"
@@ -3760,9 +3580,7 @@ msgstr "De rollen die van de gebruiker zijn verwijderd."
 
 #: src/Modules/Workflows/Migrations/V040500OnScheduledStepsSchema.php:58
 msgid "Migrate post_id and repetition_number on scheduled steps schema after v4.5.0"
-msgstr ""
-"Migreer post_id en repetition_number in het schema van geplande stappen na "
-"v4.5.0"
+msgstr "Migreer post_id en repetition_number in het schema van geplande stappen na v4.5.0"
 
 #: src/Modules/Workflows/Migrations/V40000WorkflowScheduledStepsSchema.php:58
 msgid "Migrate workflow scheduled steps schema after v4.0.0"
@@ -3847,9 +3665,7 @@ msgstr "Workflow niet gevonden"
 
 #: src/Modules/Workflows/Rest/RestApiV1.php:390
 msgid "Sorry, you are not allowed to view workflow settings for this post."
-msgstr ""
-"Je hebt geen toestemming om workflowinstellingen voor dit bericht te "
-"bekijken."
+msgstr "Je hebt geen toestemming om workflowinstellingen voor dit bericht te bekijken."
 
 #: src/Modules/Workflows/Rest/RestApiV1.php:462
 msgid "Flow data must be an array."
@@ -3877,9 +3693,7 @@ msgstr "Toekomstige ondersteuning voor PublishPress nodig?"
 
 #: src/Views/ad-banner-right-sidebar.php:18
 msgid "If you need help or have a new feature request, let us know."
-msgstr ""
-"Als je hulp nodig hebt of een nieuwe functie aanvraag hebt, laat het ons "
-"weten."
+msgstr "Als je hulp nodig hebt of een nieuwe functie aanvraag hebt, laat het ons weten."
 
 #: src/Views/ad-banner-right-sidebar.php:24
 msgid "Request Support"
@@ -3907,9 +3721,7 @@ msgstr "%1$s%2$s%3$s op %5$s%4$s%6$s"
 msgid ""
 "Action was not scheduled due to a configuration issue. Please attempt to "
 "schedule it again."
-msgstr ""
-"De actie kon niet worden ingepland vanwege een configuratieprobleem. "
-"Probeer het opnieuw in te plannen."
+msgstr "De actie kon niet worden ingepland vanwege een configuratieprobleem. Probeer het opnieuw in te plannen."
 
 #: src/Views/menu-admin.php:27
 #, fuzzy
@@ -3922,9 +3734,7 @@ msgstr "Metabox titel"
 
 #: src/Views/menu-admin.php:48
 msgid "The title of the metabox that will be displayed in the post edit screen."
-msgstr ""
-"De titel van de metabox die wordt weergegeven in het scherm bericht "
-"bewerken."
+msgstr "De titel van de metabox die wordt weergegeven in het scherm bericht bewerken."
 
 #: src/Views/menu-admin.php:57
 msgid "Checkbox Field Label"
@@ -3950,9 +3760,7 @@ msgstr "Gedetailleerd"
 msgid ""
 "Displays all information in the Future Action column on the \"Posts\" "
 "screen."
-msgstr ""
-"Toont alle informatie in de kolom toekomstige actie op het scherm "
-"\"Berichten\"."
+msgstr "Toont alle informatie in de kolom toekomstige actie op het scherm \"Berichten\"."
 
 #: src/Views/menu-admin.php:106
 msgid "Simplified"
@@ -3962,9 +3770,7 @@ msgstr "Vereenvoudigd"
 msgid ""
 "Displays only the icon and date/time in the Future Action column on the "
 "\"Posts\" screen."
-msgstr ""
-"Toont alleen het icoon en de datum/tijd in de kolom toekomstige actie op "
-"het scherm \"Berichten\"."
+msgstr "Toont alleen het icoon en de datum/tijd in de kolom toekomstige actie op het scherm \"Berichten\"."
 
 #: src/Views/menu-admin.php:118
 msgid "Future Actions Editor"
@@ -3972,9 +3778,7 @@ msgstr "Toekomstige acties editor"
 
 #: src/Views/menu-admin.php:121
 msgid "This controls the time format used to select dates for Future Actions."
-msgstr ""
-"Dit bepaalt de tijdnotatie die wordt gebruikt om datums te selecteren voor "
-"toekomstige acties."
+msgstr "Dit bepaalt de tijdnotatie die wordt gebruikt om datums te selecteren voor toekomstige acties."
 
 #: src/Views/menu-admin.php:128
 msgid "Time format in the date picker"
@@ -4017,9 +3821,7 @@ msgstr "Experimentele functies inschakelen"
 msgid ""
 "Enable experimental features that are still in development and may not be "
 "fully functional."
-msgstr ""
-"Experimentele functies inschakelen die nog in ontwikkeling zijn en mogelijk "
-"niet volledig functioneel."
+msgstr "Experimentele functies inschakelen die nog in ontwikkeling zijn en mogelijk niet volledig functioneel."
 
 #: src/Views/menu-advanced.php:63
 msgid "Preserve Data After Deactivating the Plugin"
@@ -4035,9 +3837,7 @@ msgstr "Gegevens verwijderen"
 
 #: src/Views/menu-advanced.php:88
 msgid "Toggle between preserving or deleting data after the plugin is deactivated."
-msgstr ""
-"Toggle tussen bewaren of wissen van gegevens nadat de plugin gedeactiveerd "
-"is."
+msgstr "Toggle tussen bewaren of wissen van gegevens nadat de plugin gedeactiveerd is."
 
 #: src/Views/menu-debug-log.php:14
 msgid "Debug Log"
@@ -4047,9 +3847,7 @@ msgstr "Debug log"
 msgid ""
 "Below is a dump of the debugging table, this should be useful for "
 "troubleshooting."
-msgstr ""
-"Onderstaand is een overzicht van de debugging tabel, welke handig is voor "
-"foutopsporing."
+msgstr "Onderstaand is een overzicht van de debugging tabel, welke handig is voor foutopsporing."
 
 #: src/Views/menu-debug-log.php:83
 msgid "Number of logs to display:"
@@ -4115,10 +3913,7 @@ msgstr "Database schema controle"
 msgid ""
 "After activating the plugin, tables are updated automatically on the next "
 "page load. Use the button below if you still see schema errors."
-msgstr ""
-"Na het activeren van de plugin worden tabellen automatisch geüpdatet bij de "
-"volgende pagina lading. Gebruik de knop hieronder als je nog steeds schema "
-"fouten ziet."
+msgstr "Na het activeren van de plugin worden tabellen automatisch geüpdatet bij de volgende pagina lading. Gebruik de knop hieronder als je nog steeds schema fouten ziet."
 
 #: src/Views/menu-diagnostics.php:84
 msgid "Error found on the database schema:"
@@ -4180,9 +3975,7 @@ msgstr "Spatie ray gedetecteerd"
 msgid ""
 "Spatie Ray Debug is detected. The \"Send to Ray\" workflow step will be "
 "available in the workflow editor."
-msgstr ""
-"Spatie ray debug is gedetecteerd. De workflowstap \"Verzenden naar ray\" is "
-"beschikbaar in de workflow-editor."
+msgstr "Spatie ray debug is gedetecteerd. De workflowstap \"Verzenden naar ray\" is beschikbaar in de workflow-editor."
 
 #: src/Views/menu-diagnostics.php:170
 msgid "Spatie Ray Not Detected"
@@ -4192,10 +3985,7 @@ msgstr "Spatie straal niet gedetecteerd"
 msgid ""
 "Spatie Ray Debug is not detected. This is not an error, but the \"Send to "
 "Ray\" workflow step will not be available in the workflow editor."
-msgstr ""
-"Spatie ray debug wordt niet gedetecteerd. Dit is geen fout, maar de "
-"workflowstap \"Verzenden naar ray\" zal niet beschikbaar zijn in de "
-"workflow-editor."
+msgstr "Spatie ray debug wordt niet gedetecteerd. Dit is geen fout, maar de workflowstap \"Verzenden naar ray\" zal niet beschikbaar zijn in de workflow-editor."
 
 #: src/Views/menu-diagnostics.php:175
 msgid "Learn more about Spatie Ray"
@@ -4213,9 +4003,7 @@ msgstr "Voer migratie uit"
 msgid ""
 "Migrate legacy future actions from WP Cron to the new Action Scheduler. "
 "This will run in the background and may take a while."
-msgstr ""
-"Migreer verouderde toekomstige acties van WP cron naar de nieuwe action "
-"scheduler. Dit gebeurt op de achtergrond en kan even duren."
+msgstr "Migreer verouderde toekomstige acties van WP cron naar de nieuwe action scheduler. Dit gebeurt op de achtergrond en kan even duren."
 
 #: src/Views/menu-diagnostics.php:201
 msgid "Restore Legacy Action Arguments"
@@ -4230,10 +4018,7 @@ msgid ""
 "Restore legacy action arguments as Post Meta. This is useful if you have "
 "issues with 3rd party plugins that read that data. This will run in the "
 "background and may take a while."
-msgstr ""
-"Verouderde actie argumenten terugzetten als bericht meta. Dit is handig als "
-"je problemen hebt met externe plugins die die gegevens lezen. Dit zal op de "
-"achtergrond worden uitgevoerd en kan even duren."
+msgstr "Verouderde actie argumenten terugzetten als bericht meta. Dit is handig als je problemen hebt met externe plugins die die gegevens lezen. Dit zal op de achtergrond worden uitgevoerd en kan even duren."
 
 #: src/Views/menu-diagnostics.php:221
 msgid "Legacy Cron Schedule"
@@ -4243,9 +4028,7 @@ msgstr "Verouderde cron planning"
 msgid ""
 "The below table will show all currently scheduled cron events for the "
 "plugin with the next run time."
-msgstr ""
-"De onderstaande tabel toont alle momenteel geplande cron gebeurtenissen "
-"voor de plugin met de volgende runtime."
+msgstr "De onderstaande tabel toont alle momenteel geplande cron gebeurtenissen voor de plugin met de volgende runtime."
 
 #: src/Views/menu-diagnostics.php:244
 msgid "Event"
@@ -4274,10 +4057,7 @@ msgid ""
 "The default format to use when displaying the action date within a post "
 "using the shortcode or within the footer.  For information on valid "
 "formatting options, see: %s."
-msgstr ""
-"Het standaard format om de actiedatum weer te geven in een bericht met "
-"behulp van de shortcode of in de footer. Voor informatie over geldige "
-"opties, zie: %s."
+msgstr "Het standaard format om de actiedatum weer te geven in een bericht met behulp van de shortcode of in de footer. Voor informatie over geldige opties, zie: %s."
 
 #: src/Views/menu-display.php:68
 #: src/Views/menu-display.php:106
@@ -4295,10 +4075,7 @@ msgid ""
 "The default format to use when displaying the action time within a post "
 "using the shortcode or within the footer.  For information on valid "
 "formatting options, see: %s."
-msgstr ""
-"Het standaard format om de actietijd weer te geven binnen een bericht met "
-"behulp van de shortcode of binnen de footer. Voor informatie over geldige "
-"format opties, zie: %s."
+msgstr "Het standaard format om de actietijd weer te geven binnen een bericht met behulp van de shortcode of binnen de footer. Voor informatie over geldige format opties, zie: %s."
 
 #: src/Views/menu-display.php:116
 msgid "Post Footer Display"
@@ -4308,9 +4085,7 @@ msgstr "Bericht footer weergave"
 msgid ""
 "Enabling this below will display the action date automatically at the end "
 "of any post which is set to run an action."
-msgstr ""
-"Het inschakelen hiervan hieronder zal automatisch de actiedatum weergeven "
-"aan het einde van elk bericht dat is ingesteld om een actie uit te voeren."
+msgstr "Het inschakelen hiervan hieronder zal automatisch de actiedatum weergeven aan het einde van elk bericht dat is ingesteld om een actie uit te voeren."
 
 #: src/Views/menu-display.php:127
 msgid "Show in Post Footer?"
@@ -4320,9 +4095,7 @@ msgstr "Tonen in bericht footer?"
 msgid ""
 "This will enable or disable displaying the future action date in the post "
 "footer."
-msgstr ""
-"Dit zal het weergeven van de toekomstige actiedatum in het bericht footer "
-"in- of uitschakelen."
+msgstr "Dit zal het weergeven van de toekomstige actiedatum in het bericht footer in- of uitschakelen."
 
 #: src/Views/menu-display.php:164
 msgid "Footer Contents"
@@ -4333,10 +4106,7 @@ msgid ""
 "Enter the text you would like to appear at the bottom of every post which "
 "has an action scheduled.  The following placeholders will be replaced with "
 "the future action date in the following format:"
-msgstr ""
-"Voer de tekst in die je onderaan elk bericht wilt laten verschijnen "
-"waarvoor een actie is gepland. De volgende plaatshouders worden vervangen "
-"door de toekomstige actiedatum in het volgende format:"
+msgstr "Voer de tekst in die je onderaan elk bericht wilt laten verschijnen waarvoor een actie is gepland. De volgende plaatshouders worden vervangen door de toekomstige actiedatum in het volgende format:"
 
 #: src/Views/menu-display.php:216
 msgid "Footer Style"
@@ -4381,9 +4151,7 @@ msgstr "- Geen -"
 msgid ""
 "The shortcode output will be wrapped in the selected HTML tag, allowing you "
 "to control its structure and styling."
-msgstr ""
-"De uitvoer van de shortcode wordt verpakt in de geselecteerde HTML tag, "
-"zodat je de structuur en styling ervan kunt bepalen."
+msgstr "De uitvoer van de shortcode wordt verpakt in de geselecteerde HTML tag, zodat je de structuur en styling ervan kunt bepalen."
 
 #: src/Views/menu-display.php:290
 msgid "Wrapper Class"
@@ -4433,9 +4201,7 @@ msgstr "%s - Geeft alleen de tijd weer"
 #. translators: %s is a code tag that wraps the shortcode attribute timeformat
 #, php-format
 msgid "%s - Format set here will override the value set on the settings page"
-msgstr ""
-"%s - format dat hier is ingesteld, overschrijft de waarde die is ingesteld "
-"op de instellingenpagina"
+msgstr "%s - format dat hier is ingesteld, overschrijft de waarde die is ingesteld op de instellingenpagina"
 
 #: src/Views/menu-general.php:25
 msgid "Defaults"
@@ -4475,9 +4241,7 @@ msgstr "Melding per e-mail"
 
 #: src/Views/menu-notifications.php:52
 msgid "Whenever an action runs, an email can be sent to alert users."
-msgstr ""
-"Wanneer een actie wordt uitgevoerd, kan een e-mail worden verzonden om "
-"gebruikers te waarschuwen."
+msgstr "Wanneer een actie wordt uitgevoerd, kan een e-mail worden verzonden om gebruikers te waarschuwen."
 
 #: src/Views/menu-notifications.php:59
 msgid "Enable Email Notification?"
@@ -4485,9 +4249,7 @@ msgstr "E-mailmelding inschakelen?"
 
 #: src/Views/menu-notifications.php:78
 msgid "This will enable or disable the send of email notification on future action."
-msgstr ""
-"Dit zal het verzenden van e-mail meldingen bij toekomstige acties in- of "
-"uitschakelen."
+msgstr "Dit zal het verzenden van e-mail meldingen bij toekomstige acties in- of uitschakelen."
 
 #: src/Views/menu-notifications.php:86
 msgid "Include Blog Administrators?"
@@ -4502,11 +4264,7 @@ msgid ""
 "Enter a comma separate list of emails that you would like to be notified "
 "when the action runs.  This will be applied to ALL post types.  You can set "
 "post type specific emails on the Defaults tab."
-msgstr ""
-"Voer een lijst met e-mails gescheiden door komma's in waarvan je op de "
-"hoogte wil worden gesteld wanneer de actie wordt uitgevoerd. Dit wordt "
-"toegepast op ALLE berichttypes. Je kunt berichttype specifieke e-mails "
-"instellen op de tab Standaardinstellingen."
+msgstr "Voer een lijst met e-mails gescheiden door komma's in waarvan je op de hoogte wil worden gesteld wanneer de actie wordt uitgevoerd. Dit wordt toegepast op ALLE berichttypes. Je kunt berichttype specifieke e-mails instellen op de tab Standaardinstellingen."
 
 #: src/Views/menu-notifications.php:132
 msgid "Past-due Actions Notification"
@@ -4517,9 +4275,7 @@ msgstr "Melding van achterstallige acties"
 msgid ""
 "This will enable or disable the send of email notification on past-due "
 "actions."
-msgstr ""
-"Hiermee wordt het verzenden van e-mail meldingen over achterstallige acties "
-"in- of uitgeschakeld."
+msgstr "Hiermee wordt het verzenden van e-mail meldingen over achterstallige acties in- of uitgeschakeld."
 
 #: src/Views/menu-notifications.php:142
 msgid "Enable Past-due Actions Notification?"
@@ -4529,10 +4285,7 @@ msgstr "Melding van achterstallige acties inschakelen?"
 msgid ""
 "Enter a comma separate list of emails that you would like to be notified "
 "when past-due actions are detected."
-msgstr ""
-"Voer een lijst met e-mails in die je met komma's wilt scheiden en die je op "
-"de hoogte wilt stellen wanneer er acties worden gedetecteerd die al zijn "
-"afgerond."
+msgstr "Voer een lijst met e-mails in die je met komma's wilt scheiden en die je op de hoogte wilt stellen wanneer er acties worden gedetecteerd die al zijn afgerond."
 
 #: src/Views/tabs-future-actions.php:20
 #: assets/js/backupPanel.js:646

@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-05-28T20:05:06+00:00\n"
-"PO-Revision-Date: 2026-10-14 20:56+0000\n"
+"PO-Revision-Date: 2026-10-21 19:02+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "&& (n % 100 < 10 || n % 100 >= 20) ? 1 : 2);\n"
@@ -26,7 +26,7 @@ msgstr "PublishPress Future Free"
 #: post-expirator.php:5
 #. Plugin URI of the plugin
 msgid "http://wordpress.org/extend/plugins/post-expirator/"
-msgstr "http://wordpress.org/extend/plugins/post-expirator/"
+msgstr "https://pl.wordpress.org/plugins/post-expirator/"
 
 #: post-expirator.php:6
 #. Description of the plugin
@@ -608,10 +608,7 @@ msgid ""
 "Use the values below to set the default actions/values to be used for each "
 "for the corresponding post types.  These values can all be overwritten when "
 "creating/editing the post/page."
-msgstr ""
-"Użyj poniższych wartości, aby ustawić domyślne akcje/wartości, które mają "
-"być używane dla każdego z odpowiednich typów wpisów.  Wszystkie te wartości "
-"mogą zostać nadpisane podczas tworzenia/edycji postów/strony."
+msgstr "Użyj poniższych wartości, aby ustawić domyślne akcje/wartości, które mają być używane dla każdego z odpowiednich typów wpisów.  Wszystkie te wartości mogą zostać nadpisane podczas tworzenia/edycji postów/strony."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:267
 msgid "Active"
@@ -3976,9 +3973,7 @@ msgstr "Dziennik debugowania"
 msgid ""
 "Below is a dump of the debugging table, this should be useful for "
 "troubleshooting."
-msgstr ""
-"Poniżej znajduje się zrzut tabeli debugowania. Może być przydatne do "
-"rozwiązywania problemów."
+msgstr "Poniżej znajduje się zrzut tabeli debugowania. Może być przydatne do rozwiązywania problemów."
 
 #: src/Views/menu-debug-log.php:83
 msgid "Number of logs to display:"
@@ -4170,9 +4165,7 @@ msgstr "Harmonogram Cron w wersji Legacy"
 msgid ""
 "The below table will show all currently scheduled cron events for the "
 "plugin with the next run time."
-msgstr ""
-"Poniższa tabela pokaże wszystkie aktualnie zaplanowane wydarzenia cykliczne "
-"z następnym czasem wykonania."
+msgstr "Poniższa tabela pokaże wszystkie aktualnie zaplanowane wydarzenia cykliczne z następnym czasem wykonania."
 
 #: src/Views/menu-diagnostics.php:244
 msgid "Event"

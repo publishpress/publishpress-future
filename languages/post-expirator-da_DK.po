@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-05-28T20:05:06+00:00\n"
-"PO-Revision-Date: 2026-10-14 20:56+0000\n"
+"POT-Creation-Date: 2026-04-10T20:34:37+00:00\n"
+"PO-Revision-Date: 2026-10-21 19:02+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -360,9 +360,7 @@ msgstr "Ingen %s fundet."
 #: src/Modules/Expirator/Controllers/ClassicEditorController.php:434
 #: src/Modules/Expirator/Controllers/QuickEditController.php:359
 msgid "You must assign a taxonomy to this post type to use this feature."
-msgstr ""
-"Du skal tildele en klassificering til denne indholdstype for at bruge denne "
-"funktion."
+msgstr "Du skal tildele en klassificering til denne indholdstype for at bruge denne funktion."
 
 #: src/Modules/Expirator/Controllers/BlockEditorController.php:196
 #: src/Modules/Expirator/Controllers/BulkEditController.php:243
@@ -597,10 +595,7 @@ msgid ""
 "Use the values below to set the default actions/values to be used for each "
 "for the corresponding post types.  These values can all be overwritten when "
 "creating/editing the post/page."
-msgstr ""
-"Brug værdierne herunder til at indstille de standard hændelser/værdier der "
-"skal bruges for hver af de tilhørende indlægstyper. Disse værdier kan alle "
-"overskrives, når du opretter/redigerer indlægget/siden."
+msgstr "Brug værdierne herunder til at indstille de standard hændelser/værdier der skal bruges for hver af de tilhørende indlægstyper. Disse værdier kan alle overskrives, når du opretter/redigerer indlægget/siden."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:267
 msgid "Active"
@@ -653,9 +648,7 @@ msgstr "Hvem skal underrettes"
 msgid ""
 "Enter a comma separated list of emails that you would like to be notified "
 "when the action runs."
-msgstr ""
-"Indtast en kommasepareret liste over e-mails, som du gerne vil give besked, "
-"når handlingen kører."
+msgstr "Indtast en kommasepareret liste over e-mails, som du gerne vil give besked, når handlingen kører."
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:287
 #: src/Views/menu-general.php:29
@@ -2338,8 +2331,9 @@ msgid ""
 "Enter the action hook to trigger. Only hooks registered through the "
 "'publishpress_future_allowed_action_hooks' filter are allowed."
 msgstr ""
-"Indtast den handling hook, der skal udløses. Kun hooks, der er registreret "
-"gennem 'publishpress_future_allowed_action_hooks' filteret, er tilladt."
+"Indtast den handling hook, der skal aktiveres. Kun hooks, der er "
+"registreret gennem 'publishpress_future_allowed_action_hooks' filteret, er "
+"tilladt."
 
 #: src/Modules/Workflows/Domain/Steps/Actions/Definitions/DoAction.php:73
 #: src/Modules/Workflows/Domain/Steps/Triggers/Definitions/OnCustomAction.php:73
@@ -3971,9 +3965,7 @@ msgstr "Fejllog"
 msgid ""
 "Below is a dump of the debugging table, this should be useful for "
 "troubleshooting."
-msgstr ""
-"Herunder er et dump af debug-tabellen. Den kan være til hjælp ved "
-"problemløsning."
+msgstr "Herunder er et dump af debug-tabellen. Den kan være til hjælp ved problemløsning."
 
 #: src/Views/menu-debug-log.php:83
 msgid "Number of logs to display:"
@@ -4164,9 +4156,7 @@ msgstr "Ældre Cron-plan"
 msgid ""
 "The below table will show all currently scheduled cron events for the "
 "plugin with the next run time."
-msgstr ""
-"Tabellen herunder viser alle nuværende planlagte cron-hændelser der udføres "
-"næste gang."
+msgstr "Tabellen herunder viser alle nuværende planlagte cron-hændelser der udføres næste gang."
 
 #: src/Views/menu-diagnostics.php:244
 msgid "Event"
@@ -4195,10 +4185,7 @@ msgid ""
 "The default format to use when displaying the action date within a post "
 "using the shortcode or within the footer.  For information on valid "
 "formatting options, see: %s."
-msgstr ""
-"Standardformat for visning af handlingsdato i et indlæg med brug af "
-"genvejskode eller i sidefoden. For information om gyldig gyldig "
-"formateringsindstillinger, se %s."
+msgstr "Standardformat for visning af handlingsdato i et indlæg med brug af genvejskode eller i sidefoden. For information om gyldig gyldig formateringsindstillinger, se %s."
 
 #: src/Views/menu-display.php:68
 #: src/Views/menu-display.php:106
@@ -4216,10 +4203,7 @@ msgid ""
 "The default format to use when displaying the action time within a post "
 "using the shortcode or within the footer.  For information on valid "
 "formatting options, see: %s."
-msgstr ""
-"Standardformatet, der skal bruges, når handlingstiden vises i et indlæg ved "
-"hjælp af genvejskoden eller i sidefoden.  Se oplysninger om gyldige "
-"formateringsmuligheder: %s."
+msgstr "Standardformatet, der skal bruges, når handlingstiden vises i et indlæg ved hjælp af genvejskoden eller i sidefoden.  Se oplysninger om gyldige formateringsmuligheder: %s."
 
 #: src/Views/menu-display.php:116
 msgid "Post Footer Display"
@@ -4229,9 +4213,7 @@ msgstr "Visning af indlægsfod"
 msgid ""
 "Enabling this below will display the action date automatically at the end "
 "of any post which is set to run an action."
-msgstr ""
-"Hvis du aktiverer dette nedenfor, vises handlingsdatoen automatisk i "
-"slutningen af ethvert indlæg, der er indstillet til at køre en handling."
+msgstr "Hvis du aktiverer dette nedenfor, vises handlingsdatoen automatisk i slutningen af ethvert indlæg, der er indstillet til at køre en handling."
 
 #: src/Views/menu-display.php:127
 msgid "Show in Post Footer?"
@@ -4241,9 +4223,7 @@ msgstr "Vis i indlæggets sidefod?"
 msgid ""
 "This will enable or disable displaying the future action date in the post "
 "footer."
-msgstr ""
-"Dette vil aktivere eller deaktivere visning af den fremtidige handlingsdato "
-"i indlæggets sidefod."
+msgstr "Dette vil aktivere eller deaktivere visning af den fremtidige handlingsdato i indlæggets sidefod."
 
 #: src/Views/menu-display.php:164
 msgid "Footer Contents"
@@ -4254,10 +4234,7 @@ msgid ""
 "Enter the text you would like to appear at the bottom of every post which "
 "has an action scheduled.  The following placeholders will be replaced with "
 "the future action date in the following format:"
-msgstr ""
-"Indtast den tekst, du gerne vil have vist i bunden af hvert indlæg, der har "
-"en planlagt handling.  Følgende pladsholdere vil blive erstattet med den "
-"fremtidige handlingsdato i følgende format:"
+msgstr "Indtast den tekst, du gerne vil have vist i bunden af hvert indlæg, der har en planlagt handling.  Følgende pladsholdere vil blive erstattet med den fremtidige handlingsdato i følgende format:"
 
 #: src/Views/menu-display.php:216
 msgid "Footer Style"
@@ -4352,9 +4329,7 @@ msgstr "%s - Viser kun tid"
 #. translators: %s is a code tag that wraps the shortcode attribute timeformat
 #, php-format
 msgid "%s - Format set here will override the value set on the settings page"
-msgstr ""
-"%s - Det format, der er indstillet her, tilsidesætter den værdi, der er "
-"indstillet på indstillingssiden"
+msgstr "%s - Det format, der er indstillet her, tilsidesætter den værdi, der er indstillet på indstillingssiden"
 
 #: src/Views/menu-general.php:25
 msgid "Defaults"
@@ -4404,9 +4379,7 @@ msgstr "Aktivér e-mail underretning?"
 
 #: src/Views/menu-notifications.php:78
 msgid "This will enable or disable the send of email notification on future action."
-msgstr ""
-"Dette vil aktivere eller deaktivere udsendelse af e-mailnotifikationer ved "
-"fremtidige handlinger."
+msgstr "Dette vil aktivere eller deaktivere udsendelse af e-mailnotifikationer ved fremtidige handlinger."
 
 #: src/Views/menu-notifications.php:86
 msgid "Include Blog Administrators?"
@@ -4421,11 +4394,7 @@ msgid ""
 "Enter a comma separate list of emails that you would like to be notified "
 "when the action runs.  This will be applied to ALL post types.  You can set "
 "post type specific emails on the Defaults tab."
-msgstr ""
-"Indtast en kommasepareret liste med de e-mail adresser du ønsker "
-"underrettet, når handlingen udføres. Dette gælder ALLE indholdstyper. Du "
-"kan opsætte indholdstype-specifikke e-mail adresser under fanebladet "
-"Standard."
+msgstr "Indtast en kommasepareret liste med de e-mail adresser du ønsker underrettet, når handlingen udføres. Dette gælder ALLE indholdstyper. Du kan opsætte indholdstype-specifikke e-mail adresser under fanebladet Standard."
 
 #: src/Views/menu-notifications.php:132
 msgid "Past-due Actions Notification"
@@ -5981,7 +5950,7 @@ msgstr "Alle tjek er bestået for dette trin."
 #. translators: %s is the field label.
 #, js-format
 msgid "The field \"%s\" contains an invalid variable."
-msgstr "Felter \"%s\" indeholder en ugyldig variabel."
+msgstr "Feltet \"%s\" indeholder en ugyldig variabel."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12146
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:126
@@ -5992,7 +5961,7 @@ msgid ""
 "The variable \"%s\" is not available in the current context. Please, check "
 "if it is spelled correctly."
 msgstr ""
-"Variablen \"%s\" er ikke tilgængelig i den aktuelle kontekst. Kontroller "
+"Variablen \"%s\" er ikke tilgængelig i den nuværende kontekst. Tjek "
 "venligst, om den er stavet korrekt."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12190
@@ -6007,19 +5976,19 @@ msgstr "\"%s\" er ikke en variabel eller trin slug."
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:190
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10251
 msgid "Empty placeholder is not allowed."
-msgstr "Tom pladsindhold er ikke tilladt."
+msgstr "Tom placeholder er ikke tilladt."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12206
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:203
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10264
 msgid "Unclosed placeholder are not allowed."
-msgstr "Uafsluttede pladsindhold er ikke tilladt."
+msgstr "Uafsluttede placeholders er ikke tilladt."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12210
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:208
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10269
 msgid "Unopened placeholder are not allowed."
-msgstr "Uåbnede pladsindhold er ikke tilladt."
+msgstr "Uåbnede placeholders er ikke tilladt."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12217
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:216
@@ -6038,7 +6007,7 @@ msgstr "Ugyldig udtryk på %s"
 #. translators: %s is the field label.
 #, js-format
 msgid "The field %s must be a list of options."
-msgstr "Felter %s skal være en liste af muligheder."
+msgstr "Feltet %s skal være en liste over muligheder."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12251
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:261
@@ -6062,7 +6031,7 @@ msgstr "Muligheden \"%s\" har ikke en etikette."
 #. translators: %s is the option name.
 #, js-format
 msgid "The option \"%s\" has a duplicate name."
-msgstr "Muligheden \"%s\" har et duplikeret navn."
+msgstr "Muligheden \"%s\" har et duplikatnavn."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12269
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:288
@@ -6070,7 +6039,7 @@ msgstr "Muligheden \"%s\" har et duplikeret navn."
 #. translators: %s is the option label.
 #, js-format
 msgid "The option \"%s\" has a duplicate label."
-msgstr "Muligheden \"%s\" har en duplikeret etikette."
+msgstr "Muligheden \"%s\" har en duplikatetikette."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12279
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:302
@@ -6078,7 +6047,7 @@ msgstr "Muligheden \"%s\" har en duplikeret etikette."
 #. translators: %s is the field label.
 #, js-format
 msgid "The field %s must be a valid list of options."
-msgstr "Felter %s skal være en gyldig liste af muligheder."
+msgstr "Feltet %s skal være en gyldig liste over muligheder."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12301
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:333
@@ -6090,7 +6059,7 @@ msgstr "Dette trin kræver en forbindelse fra et tidligere trin."
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:343
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10404
 msgid "This step requires a connection to a following step."
-msgstr "Dette trin kræver en forbindelse til et følgende trin."
+msgstr "Dette trin kræver en forbindelse til et efterfølgende trin."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12360
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12370
@@ -6101,7 +6070,7 @@ msgstr "Dette trin kræver en forbindelse til et følgende trin."
 #. translators: %s is the field label.
 #, js-format
 msgid "The field %s is required."
-msgstr "Felter %s er påkrævet."
+msgstr "Feltet %s er påkrævet."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12383
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:450
@@ -6109,7 +6078,7 @@ msgstr "Felter %s er påkrævet."
 #. translators: %s is the field label.
 #, js-format
 msgid "The field %s must be a valid email address."
-msgstr "Felter %s skal være en gyldig e-mailadresse."
+msgstr "Feltet %s skal være en gyldig e-mailadresse."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12391
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:466
@@ -6117,7 +6086,7 @@ msgstr "Felter %s skal være en gyldig e-mailadresse."
 #. translators: %s is the field label.
 #, js-format
 msgid "The field %s must be a valid email address list separated by commas."
-msgstr "Felter %s skal være en gyldig liste af e-mailadresser adskilt af kommaer."
+msgstr "Feltet %s skal være en gyldig liste over e-mailadresser adskilt af kommaer."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12397
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:480
@@ -6125,7 +6094,7 @@ msgstr "Felter %s skal være en gyldig liste af e-mailadresser adskilt af kommae
 #. translators: %s is the field label.
 #, js-format
 msgid "The field %s must be an integer."
-msgstr "Felter %s skal være et heltal."
+msgstr "Feltet %s skal være et heltal."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12404
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:495
@@ -6133,7 +6102,7 @@ msgstr "Felter %s skal være et heltal."
 #. translators: %s is the field label.
 #, js-format
 msgid "The field %s must be an integer list separated by commas."
-msgstr "Felter %s skal være en liste af heltal adskilt af kommaer."
+msgstr "Feltet %s skal være en liste over heltal adskilt af kommaer."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12417
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12421
@@ -6147,7 +6116,7 @@ msgstr "Felter %s skal være en liste af heltal adskilt af kommaer."
 #. translators: %s is the field label.
 #, js-format
 msgid "The field %s must be a list of name-value pairs."
-msgstr "Feltet %s skal være en liste over navn-værdi-par."
+msgstr "Feltet %s skal være en liste over navne-værdi par."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12421
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:528
@@ -6155,7 +6124,7 @@ msgstr "Feltet %s skal være en liste over navn-værdi-par."
 #. translators: %d is the item index.
 #, js-format
 msgid "The name of the pair is required on item %d."
-msgstr "Navnet på paret er påkrævet på element %d."
+msgstr "Navnet på parret er påkrævet på element %d."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12424
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:537
@@ -6163,7 +6132,7 @@ msgstr "Navnet på paret er påkrævet på element %d."
 #. translators: %d is the item index.
 #, js-format
 msgid "The value of the pair is required on item %d."
-msgstr "Værdien af paret er påkrævet på element %d."
+msgstr "Værdien af parret er påkrævet på element %d."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12465
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:605
@@ -6175,7 +6144,7 @@ msgstr "Ugyldig variabel."
 #: assets/jsx/workflow-editor/components/node-validator/index.jsx:608
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10675
 msgid "Please use the variable picker to select valid expression."
-msgstr "Brug venligst variabelvælgeren til at vælge en gyldig udtryk."
+msgstr "Brug venligst variabelvælgeren til at vælge gyldig udtryk."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:12584
 #: assets/jsx/workflow-editor/components/pro-feature-button/index.jsx:26
@@ -6506,19 +6475,19 @@ msgstr "Kan ikke slette workflowet. Prøv venligst igen."
 #: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:103
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14382
 msgid "The current site."
-msgstr "Den nuværende side."
+msgstr "Den nuværende hjemmeside."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15992
 #: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:113
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14392
 msgid "The current workflow."
-msgstr "Den nuværende arbejdsproces."
+msgstr "Det nuværende arbejdsflow."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:15998
 #: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:120
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14399
 msgid "Activating user"
-msgstr "Aktiverer bruger"
+msgstr "Aktiverende bruger"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16001
 #: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:123
@@ -6530,19 +6499,19 @@ msgstr "Den nuværende bruger."
 #: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:130
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14409
 msgid "Activating trigger"
-msgstr "Aktiverer trigger"
+msgstr "Aktiverende trigger"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16010
 #: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:133
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14412
 msgid "The node that activated the workflow."
-msgstr "Den node, der aktiverede arbejdsprocessen."
+msgstr "Den node, der aktiverede arbejdsflowet."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16016
 #: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:140
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:14419
 msgid "Engine execution ID"
-msgstr "Motorens udførelses-ID"
+msgstr "Motorudførelses-ID"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16019
 #: assets/jsx/workflow-editor/components/workflow-store/reducer.jsx:143
@@ -6551,8 +6520,8 @@ msgid ""
 "A unique identifier assigned each time the workflow engine runs. Useful for "
 "tracking specific workflow executions and debugging."
 msgstr ""
-"Et unikt id, der tildeles hver gang arbejdsprocessesystemet kører. Nyttigt "
-"til at spore specifikke arbejdsprocesudførelser og fejlretning."
+"Et unikt identifikationsnummer tildelt hver gang arbejdsflowmotoren kører. "
+"Nyttigt til at spore specifikke arbejdsflowudførelser og til fejlfinding."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:16897
 #: assets/jsx/workflow-editor/components/workflow-summary/index.jsx:42
@@ -6809,10 +6778,10 @@ msgid ""
 "For example, you could enter %3$s+1 month%4$s or %5$s+1 week 2 days 4 hours "
 "2 seconds%6$s or %7$snext Thursday%8$s. Please use only phrases in English."
 msgstr ""
-"For mere information om formatering, se %1$sPHP strtotime-funktionen%2$s. "
-"For eksempel kunne du indtaste %3$s+1 måned%4$s eller %5$s+1 uge 2 dage 4 "
-"timer 2 sekunder%6$s eller %7$snæste torsdag%8$s. Brug venligst kun "
-"sætninger på engelsk."
+"For flere oplysninger om formatering, se %1$sPHP strtotime funktion%2$s. "
+"For eksempel kan du indtaste %3$s+1 måned%4$s eller %5$s+1 uge 2 dage 4 "
+"timer 2 sekunder%6$s eller %7$snæste torsdag%8$s. Brug kun sætninger på "
+"engelsk."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2440
 msgid "Click Select to use this variable."
@@ -6820,7 +6789,7 @@ msgstr "Klik på Vælg for at bruge denne variabel."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2441
 msgid "The variable will be inserted at the current cursor position."
-msgstr "Variablen vil blive indsat på den aktuelle markørposition."
+msgstr "Variablen vil blive indsat på den nuværende cursorposition."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2444
 msgid "Select"
@@ -6828,9 +6797,7 @@ msgstr "Vælg"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:2572
 msgid "Double-click on any variable to insert it into your expression."
-msgstr ""
-"Dobbeltklik på en hvilken som helst variabel for at indsætte den i dit "
-"udtryk."
+msgstr "Dobbeltklik på enhver variabel for at indsætte den i dit udtryk."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9155
 msgid "Step summary copied to clipboard."
@@ -6843,12 +6810,12 @@ msgstr "Kopieret!"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9165
 msgid "Unable to copy step summary. Please copy manually."
-msgstr "Kunne ikke kopiere trinoversigt. Kopier venligst manuelt."
+msgstr "Kunne ikke kopiere trinoversigten. Kopier venligst manuelt."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9168
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13717
 msgid "Copy failed"
-msgstr "Kopiering mislykkedes"
+msgstr "Kopiering fejlede"
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9176
 msgid "Step Summary"
@@ -6859,8 +6826,8 @@ msgid ""
 "Copy this plain-text summary to share in conversations. It includes the "
 "step type and non-default settings."
 msgstr ""
-"Kopier denne tekstoversigt for at dele i samtaler. Den inkluderer trin "
-"typen og ikke-standardindstillinger."
+"Kopier denne almindelige tekstoversigt for at dele i samtaler. Den "
+"inkluderer trin typen og ikke-standardindstillinger."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:9203
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13753
@@ -6873,7 +6840,7 @@ msgstr "Workflow-oversigt kopieret til udklipsholder."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13714
 msgid "Unable to copy workflow summary. Please copy manually."
-msgstr "Kunne ikke kopiere workflow-oversigt. Kopier venligst manuelt."
+msgstr "Kunne ikke kopiere workflow-oversigten. Kopier venligst manuelt."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:13725
 msgid "Workflow Summary"
@@ -6884,8 +6851,8 @@ msgid ""
 "Copy this plain-text summary to share in conversations. It includes the "
 "workflow flow and non-default step settings."
 msgstr ""
-"Kopier denne tekstoversigt for at dele i samtaler. Den inkluderer "
-"workflow-flowet og ikke-standard trinindstillinger."
+"Kopier denne almindelige tekstoversigt for at dele i samtaler. Den "
+"inkluderer workflow-strømmen og ikke-standard trinindstillinger."
 
 #: assets/js/assets_jsx_workflow-editor_components_app_jsx.js:10199
 #: assets/jsx/workflow-editor/components/more-menu/menu-items-view.jsx:23

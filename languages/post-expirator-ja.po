@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-05-28T20:05:06+00:00\n"
-"PO-Revision-Date: 2026-10-14 20:56+0000\n"
+"PO-Revision-Date: 2026-10-21 19:02+0000\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: post-expirator\n"
 "Language: ja\n"
@@ -25,7 +25,7 @@ msgstr "PublishPress Future Free"
 #. Plugin URI of the plugin
 #, fuzzy
 msgid "http://wordpress.org/extend/plugins/post-expirator/"
-msgstr "http://wordpress.org/extend/plugins/post-expirator/"
+msgstr "http://ja.wordpress.org/extend/plugins/post-expirator/"
 
 #: post-expirator.php:6
 #. Description of the plugin
@@ -590,9 +590,7 @@ msgid ""
 "Use the values below to set the default actions/values to be used for each "
 "for the corresponding post types.  These values can all be overwritten when "
 "creating/editing the post/page."
-msgstr ""
-"対応する投稿タイプのそれぞれに使用するデフォルトアクションおよび初期値を設定するには、以下の値を使用してください。これらの設定値は記事の作成および更新時"
-"にすべて上書きすることができます。"
+msgstr "対応する投稿タイプのそれぞれに使用するデフォルトアクションおよび初期値を設定するには、以下の値を使用してください。これらの設定値は記事の作成および更新時にすべて上書きすることができます。"
 
 #: src/Modules/Expirator/Controllers/SettingsController.php:267
 msgid "Active"
@@ -4048,9 +4046,7 @@ msgid ""
 "The default format to use when displaying the action date within a post "
 "using the shortcode or within the footer.  For information on valid "
 "formatting options, see: %s."
-msgstr ""
-"ショートコードを使用して投稿内またはフッター内に有効期限を表示するときに使用するデフォルトの形式。 有効な書式のオプションについては、%s: "
-"を参照してください。"
+msgstr "ショートコードを使用して投稿内またはフッター内に有効期限を表示するときに使用するデフォルトの形式。 有効な書式のオプションについては、%s: を参照してください。"
 
 #: src/Views/menu-display.php:68
 #: src/Views/menu-display.php:106
@@ -4068,9 +4064,7 @@ msgid ""
 "The default format to use when displaying the action time within a post "
 "using the shortcode or within the footer.  For information on valid "
 "formatting options, see: %s."
-msgstr ""
-"ショートコードを使用して投稿内またはフッター内に有効期限を表示するときに使用するデフォルトの形式。 有効な書式のオプションについては、%s: "
-"を参照してください。"
+msgstr "ショートコードを使用して投稿内またはフッター内に有効期限を表示するときに使用するデフォルトの形式。 有効な書式のオプションについては、%s: を参照してください。"
 
 #: src/Views/menu-display.php:116
 msgid "Post Footer Display"
@@ -4256,9 +4250,7 @@ msgid ""
 "Enter a comma separate list of emails that you would like to be notified "
 "when the action runs.  This will be applied to ALL post types.  You can set "
 "post type specific emails on the Defaults tab."
-msgstr ""
-"投稿が期限切れになったときに通知を受けとるメールアドレスのリストをカンマ区切りで入力します。この設定はすべての投稿タイプに適用されます。初期設定タブで、"
-"投稿タイプごとにメールアドレスを設定できます。"
+msgstr "投稿が期限切れになったときに通知を受けとるメールアドレスのリストをカンマ区切りで入力します。この設定はすべての投稿タイプに適用されます。初期設定タブで、投稿タイプごとにメールアドレスを設定できます。"
 
 #: src/Views/menu-notifications.php:132
 msgid "Past-due Actions Notification"

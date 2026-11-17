@@ -11,6 +11,7 @@ use PublishPress\Future\Modules\Workflows\Models\PostModel;
 use PublishPress\Future\Modules\Workflows\Models\WorkflowModel;
 use PublishPress\Future\Modules\Workflows\Models\WorkflowsModel;
 use PublishPress\Future\Modules\Workflows\Module;
+use WP_Post;
 
 \defined('ABSPATH') || exit;
 
@@ -45,12 +46,16 @@ class PostsList implements ModuleInterface
 
         $this->hooks->addAction(
             ExpiratorHooksAbstract::ACTION_MANAGE_POSTS_CUSTOM_COLUMN,
-            [$this, 'managePostsCustomColumn']
+            [$this, 'managePostsCustomColumn'],
+            10,
+            2
         );
 
         $this->hooks->addAction(
             ExpiratorHooksAbstract::ACTION_MANAGE_PAGES_CUSTOM_COLUMN,
-            [$this, 'managePostsCustomColumn']
+            [$this, 'managePostsCustomColumn'],
+            10,
+            2
         );
     }
 
@@ -90,16 +95,20 @@ class PostsList implements ModuleInterface
         }
     }
 
-    public function managePostsCustomColumn($column_name)
+    public function managePostsCustomColumn($column_name, $postId = null)
     {
         if ($column_name !== 'expirationdate') {
             return;
         }
 
-        $post = get_post();
+        $post = get_post($postId);
+        if (! $post instanceof WP_Post) {
+            return;
+        }
+
         $postModel = new PostModel();
 
-        if (! $postModel->load($post->ID)) {
+        if (! $postModel->load((int) $post->ID)) {
             return;
         }
 

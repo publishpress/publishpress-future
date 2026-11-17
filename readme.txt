@@ -4,7 +4,7 @@ Author: publishpress
 Author URI: https://publishpress.com
 Tags: unpublish posts, update posts, schedule changes, automatic changes, workflows
 Requires at least: 6.8
-Requires PHP: 7.4
+Requires PHP: 8.2
 Tested up to: 7.1
 License: GPLv2 or later
 Stable tag: 4.11.2

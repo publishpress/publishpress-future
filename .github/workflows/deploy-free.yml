@@ -17,10 +17,12 @@ jobs:
     secrets: inherit
 
   deploy-wp-org:
+    needs:
+      - code-check
+      - run-unit-tests
     permissions:
       contents: write
     uses: publishpress/github-workflows/.github/workflows/deploy-free.yml@v3
-    needs: [code-check, run-unit-tests]
-    secrets: inherit
     with:
       stable_branch: master
+    secrets: inherit
