@@ -292,8 +292,36 @@ class RestApiV1 implements RestApiManagerInterface
             $request['flow'] = $this->sanitizeWorkflowData($request['flow']);
         }
 
-        $isPublishing = $workflowModel->getStatus() !== 'publish' && $request['status'] === 'publish';
-        $isUnpublishing = $workflowModel->getStatus() === 'publish' && $request['status'] !== 'publish';
+        $currentStatus = $workflowModel->getStatus();
+        $statusWasSent = isset($request['status']);
+        $requestedStatus = $statusWasSent ? (string) $request['status'] : '';
+
+        $isPublishing = $statusWasSent
+            && $currentStatus !== 'publish'
+            && $requestedStatus === 'publish';
+        $isUnpublishing = $statusWasSent
+            && $currentStatus === 'publish'
+            && $requestedStatus !== 'publish';
+
+        if (
+            $statusWasSent
+            && ($requestedStatus === 'publish' || $currentStatus === 'publish')
+            && ! current_user_can(CapabilitiesAbstract::PUBLISH_WORKFLOWS)
+        ) {
+            return new WP_Error(
+                'rest_forbidden',
+                __('You cannot publish or change an enabled workflow.', 'post-expirator'),
+                ['status' => 403]
+            );
+        }
+
+        if ($isUnpublishing && ! current_user_can(CapabilitiesAbstract::UNPUBLISH_WORKFLOWS)) {
+            return new WP_Error(
+                'rest_forbidden',
+                __('You cannot disable this workflow.', 'post-expirator'),
+                ['status' => 403]
+            );
+        }
 
         if (isset($request['title'])) {
             $workflowModel->setTitle($request['title']);
@@ -350,6 +378,14 @@ class RestApiV1 implements RestApiManagerInterface
                 self::ERROR_WORKFLOW_NOT_FOUND,
                 __('Workflow not found', 'post-expirator'),
                 ['status' => 404]
+            );
+        }
+
+        if (! current_user_can(CapabilitiesAbstract::UNPUBLISH_WORKFLOWS)) {
+            return new WP_Error(
+                'rest_forbidden',
+                __('You cannot delete this workflow.', 'post-expirator'),
+                ['status' => 403]
             );
         }
 

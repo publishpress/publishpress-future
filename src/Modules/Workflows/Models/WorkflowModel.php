@@ -299,13 +299,14 @@ class WorkflowModel implements WorkflowModelInterface
             return;
         }
 
-        wp_delete_post($this->post->ID);
+        $workflowId = $this->post->ID;
+        wp_delete_post($workflowId);
         $this->reset();
 
         /**
          * @param int $workflowId
          */
-        $this->hooks->doAction(WorkflowsHooksAbstract::ACTION_WORKFLOW_DELETED, $this->post->ID);
+        $this->hooks->doAction(WorkflowsHooksAbstract::ACTION_WORKFLOW_DELETED, $workflowId);
     }
 
     private function getAllNodeTypesByType(): array

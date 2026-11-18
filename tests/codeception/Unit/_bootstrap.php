@@ -42,6 +42,21 @@ if (! function_exists('wp_unslash')) {
     }
 }
 
+if (! function_exists('current_user_can')) {
+    /**
+     * Unit tests have no users. Settings form handlers call this directly.
+     *
+     * @param string $capability
+     * @return bool
+     */
+    function current_user_can($capability)
+    {
+        unset($capability);
+
+        return true;
+    }
+}
+
 if (! function_exists('sanitize_key')) {
     /**
      * @param string $key

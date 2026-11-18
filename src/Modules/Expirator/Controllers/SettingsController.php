@@ -401,6 +401,10 @@ class SettingsController implements InitializableInterface
             return;
         }
 
+        if (! current_user_can('manage_options')) {
+            return;
+        }
+
         $tab = $this->getCurrentTab();
 
         $methodName = 'saveTab' . ucfirst($tab);

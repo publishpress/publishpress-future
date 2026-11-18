@@ -16,6 +16,7 @@ use PublishPress\Future\Modules\Expirator\ExpirationActionsAbstract;
 use PublishPress\Future\Modules\Expirator\HooksAbstract;
 use PublishPress\Future\Modules\Settings\Models\TaxonomiesModel;
 use PublishPress\Future\Modules\Expirator\Models\CurrentUserModel;
+use PublishPress\Future\Modules\Expirator\Models\PostTypesModel;
 use PublishPress\Future\Framework\System\DateTimeHandlerInterface;
 use WP_Error;
 use WP_REST_Request;
@@ -468,6 +469,11 @@ class RestAPIController implements InitializableInterface
         $taxonomy = $request->get_param('taxonomy');
         $taxonomy = sanitize_key($taxonomy);
 
+        $taxonomyObject = get_taxonomy($taxonomy);
+        if (! is_object($taxonomyObject) || ! $this->taxonomyIsOnSupportedPostType($taxonomy)) {
+            return rest_ensure_response(['terms' => [], 'count' => 0, 'taxonomyName' => '']);
+        }
+
         $terms = $this->getUnfilteredTerms($taxonomy);
 
         $response = [];
@@ -482,11 +488,38 @@ class RestAPIController implements InitializableInterface
                 ];
             }, $terms);
 
-            $taxonomyName = get_taxonomy($taxonomy)->labels->name;
+            $taxonomyName = $taxonomyObject->labels->name;
             $response = ['terms' => $terms, 'count' => count($terms), 'taxonomyName' => $taxonomyName];
         }
 
         return rest_ensure_response($response);
+    }
+
+    /**
+     * Whether the taxonomy is registered on a post type Future can expire.
+     *
+     * @since 4.12.0
+     *
+     * @param string $taxonomy
+     * @return bool
+     */
+    private function taxonomyIsOnSupportedPostType(string $taxonomy): bool
+    {
+        $container = Container::getInstance();
+        $postTypesModel = new PostTypesModel($container);
+        $postTypes = $postTypesModel->getPostTypes();
+
+        foreach (array_keys($postTypes) as $postType) {
+            if (! is_string($postType) || $postType === '') {
+                continue;
+            }
+
+            if (is_object_in_taxonomy($postType, $taxonomy)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public function getFutureActionData(WP_REST_Request $request)

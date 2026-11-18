@@ -2,6 +2,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 [4.12.0] - [Unreleased]
 
+- Security: Require `publish_publishpress_workflows` before a workflow is enabled or an enabled workflow is changed, and `unpublish_publishpress_workflows` before a workflow is disabled or deleted, on the workflow REST API and the workflows list. Stock administrator accounts already have both capabilities. See [GHSA-9cgh-x983-rc5r](https://github.com/publishpress/publishpress-future/security/advisories/GHSA-9cgh-x983-rc5r).
+- Security: Require `manage_options` before the Future settings form and the advanced settings form save.
+- Security: `GET /publishpress-future/v1/terms/{taxonomy}` returns terms only when the taxonomy belongs to a supported post type.
+- Fixed: The workflow deleted hook receives the workflow ID after the model resets.
 - Changed: Admin screens and the workflow editor improve keyboard use, labels, contrast, and screen-reader announcements for WCAG 2.2 AA.
 - Fixed: A workflow step can be added from the inserter with a click or Enter.
 - Changed: Debug log filters apply when the user presses Apply.

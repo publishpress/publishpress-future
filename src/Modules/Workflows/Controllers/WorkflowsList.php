@@ -330,6 +330,14 @@ class WorkflowsList implements InitializableInterface
         $workflowId = (int) $_POST['workflow_id'];
         $newStatus = sanitize_key($_POST['new_status']);
 
+        if ('publish' === $newStatus) {
+            if (!current_user_can(WorkflowCapabilities::PUBLISH_WORKFLOWS)) {
+                return;
+            }
+        } elseif (!current_user_can(WorkflowCapabilities::UNPUBLISH_WORKFLOWS)) {
+            return;
+        }
+
         try {
             $workflowModel = new WorkflowModel();
             $workflowModel->load($workflowId);

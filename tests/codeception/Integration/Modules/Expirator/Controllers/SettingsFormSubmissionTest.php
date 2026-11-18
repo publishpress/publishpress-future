@@ -31,18 +31,32 @@ class SettingsFormSubmissionTest extends \lucatume\WPBrowser\TestCase\WPTestCase
      */
     private array $filterCallbacks = [];
 
+    /**
+     * @var int
+     */
+    private $originalUserId = 0;
+
     public function setUp(): void
     {
         parent::setUp();
 
         $this->originalGet = $_GET;
         $this->originalPost = $_POST;
+        $this->originalUserId = get_current_user_id();
+
+        $adminId = $this->factory()->user->create(
+            [
+                'role' => 'administrator',
+            ]
+        );
+        wp_set_current_user($adminId);
     }
 
     public function tearDown(): void
     {
         $_GET = $this->originalGet;
         $_POST = $this->originalPost;
+        wp_set_current_user($this->originalUserId);
 
         foreach ($this->filterCallbacks as $callback) {
             remove_filter(SettingsHooksAbstract::FILTER_ALLOWED_TABS, $callback);
@@ -129,6 +143,36 @@ class SettingsFormSubmissionTest extends \lucatume\WPBrowser\TestCase\WPTestCase
         $this->dispatchAdminInit();
 
         $this->assertSame(1, $licenseSaveCount);
+    }
+
+    public function test_should_not_fire_save_tab_when_user_cannot_manage_options(): void
+    {
+        $subscriberId = $this->factory()->user->create(
+            [
+                'role' => 'subscriber',
+            ]
+        );
+        wp_set_current_user($subscriberId);
+        $this->assertFalse(current_user_can('manage_options'));
+
+        $displaySaveCount = 0;
+
+        add_action(
+            SettingsHooksAbstract::ACTION_SAVE_TAB_PREFIX . 'display',
+            static function () use (&$displaySaveCount): void {
+                $displaySaveCount++;
+            }
+        );
+
+        $_GET = [
+            'page' => 'publishpress-future-settings',
+            'tab' => 'display',
+        ];
+        $_POST = ['dummy_field' => '1'];
+
+        $this->dispatchAdminInit();
+
+        $this->assertSame(0, $displaySaveCount);
     }
 
     private function dispatchAdminInit(): void
