@@ -1,6 +1,9 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
-[4.12.0] - [Unreleased]
+[Unreleased]
+
+
+[4.12.0] - 17 Nov, 2026
 
 - Security: Require `publish_publishpress_workflows` before a workflow is enabled or an enabled workflow is changed, and `unpublish_publishpress_workflows` before a workflow is disabled or deleted, on the workflow REST API and the workflows list. Stock administrator accounts already have both capabilities. See [GHSA-9cgh-x983-rc5r](https://github.com/publishpress/publishpress-future/security/advisories/GHSA-9cgh-x983-rc5r).
 - Security: Require `manage_options` before the Future settings form and the advanced settings form save.

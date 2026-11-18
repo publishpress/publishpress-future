@@ -7,7 +7,7 @@ Requires at least: 6.8
 Requires PHP: 8.2
 Tested up to: 7.1
 License: GPLv2 or later
-Stable tag: 4.11.2
+Stable tag: 4.12.0
 
 Schedule and automate changes to your WordPress posts. Unpublish, expire, change status or categories, and build workflows with multiple steps.
 
