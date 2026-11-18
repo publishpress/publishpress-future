@@ -6,7 +6,6 @@ Actionable remediation for [PublishPress Future Security Audit](../security-audi
 
 | Guide | Focus | Start here |
 |-------|-------|------------|
-| [Authentication & Authorization](authentication-and-authorization.md) | Workflow publish caps, schedule caps | Caps are in [Already in place](authentication-and-authorization.md) |
 | [Injection & Output Encoding](injection-and-output-encoding.md) | Shortcode, SQL, templates | Keep the wrapper allow-list |
 | [File Handling & Downloads](file-handling-and-downloads.md) | Log download, template include | No open issue |
 | [Secrets & Dependencies](secrets-and-dependencies.md) | Bundled libraries, PHP header | Align the PHP requirement text |
@@ -24,9 +23,8 @@ Actionable remediation for [PublishPress Future Security Audit](../security-audi
 
 ## How to use
 
-1. Read [Authentication & Authorization](authentication-and-authorization.md). The listed caps are already in place.
-2. Treat a row as open only when it is still listed as open in that guide.
-3. Re-run the security audit and update [security-audit-report.md](../security-audit-report.md).
+1. Treat a row as open only when that guide still lists it as open.
+2. Re-run the security audit and update [security-audit-report.md](../security-audit-report.md).
 
 ## Related
 
