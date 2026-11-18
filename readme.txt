@@ -33,15 +33,14 @@ Here's an overview of what you can do with PublishPress Future:
 
 With PublishPress Future, you can configure actions that will happen automatically to your content. Here are the changes you can choose for your posts:
 
-* Change the status to "Draft".
+* Change the status to "Draft", "Private", "Trash", or "Published".
 * Delete the post.
-* Send the post to the Trash.
-* Change the status to "Private".
 * Enable the “Stick to the top of the blog” option.
 * Disable the “Stick to the top of the blog” option.
 * Remove all existing categories, and add new categories.
 * Keep all existing categories, and add new categories.
 * Keep all existing categories, except for those specified in this change.
+* Remove all existing categories.
 * Move the post to a custom status (available in the Pro version)
 
 [Click here for details on scheduling post changes](https://publishpress.com/knowledge-base/ways-to-expire-posts/).
@@ -72,14 +71,17 @@ These steps are available to use in a workflow:
 * Stick or unstick the post.
 * Delete the post.
 * Send an email.
+* Turn the workflow off for that post.
+* Write the workflow data to the debug log.
 
 PublishPress Future Pro adds more triggers and steps:
 
 * Run a workflow on a schedule, without waiting for a post to change.
 * Find a group of posts with a query and update all of them.
 * Add conditions, so a workflow can take different paths.
-* Start a workflow when a post is created, when its status, author, or custom fields change, or when a user role changes.
-* Update the post content and custom fields, or duplicate the post.
+* Start a workflow when a post is created or scheduled, or when its status, author, or custom fields change.
+* Start a workflow when a user role changes, from a link on the posts list, or when the site or the admin area loads.
+* Update the post content and custom fields, add or delete custom fields, or duplicate the post.
 * Send notifications inside the WordPress admin and ask a user to make a choice.
 * Connect workflows to other plugins with custom actions.
 
