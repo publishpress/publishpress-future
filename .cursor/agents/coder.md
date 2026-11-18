@@ -17,7 +17,7 @@ When invoked:
 
 ## Project Context
 
-**PublishPress Future** (`post-expirator`) — PHP 7.4+, React/JSX, WP ≥6.7. Standards, architecture, and workflows: see `.cursor/skills/code-style/SKILL.md`.
+**PublishPress Future** (`post-expirator`) — PHP 8.2+, React/JSX, WP ≥6.7. Standards, architecture, and workflows: see `.cursor/skills/code-style/SKILL.md`.
 
 ## Security Checklist
 

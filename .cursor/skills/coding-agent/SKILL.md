@@ -78,7 +78,7 @@ From code-style — confirm before done:
 
 **Security:** nonces, caps, sanitize (Facades), escape output, prepared SQL, `ABSPATH` guard, no raw superglobals, REST permissions.
 
-**Quality:** PHP 7.4 type hints, file + method PHPDoc with `@since`, DI not `new`, Abstract constants, tests for non-trivial logic.
+**Quality:** PHP 8.2 native types, file + method PHPDoc with `@since`, DI not `new`, Abstract constants, tests for non-trivial logic.
 
 **Architecture:** correct layer, `ModuleInterface`, `DBTableSchemaInterface`, `V{version}{description}` migrations, `services.php` registration.
 
