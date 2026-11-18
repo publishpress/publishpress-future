@@ -546,7 +546,7 @@ var FutureActionPanel = function FutureActionPanel(props) {
           _part$split2 = _slicedToArray(_part$split, 2),
           before = _part$split2[0],
           after = _part$split2[1];
-        result.push( /*#__PURE__*/React.createElement("a", {
+        result.push(/*#__PURE__*/React.createElement("a", {
           href: href,
           target: target,
           key: href,
@@ -870,7 +870,7 @@ function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbol
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
-function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r; if ("undefined" != typeof Symbol && void 0 !== (r = t[Symbol.toPrimitive])) { var i = r.call(t, e || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === e ? String : Number)(t); }
 
 
 
@@ -1464,49 +1464,49 @@ var PostTypeSettingsPanel = function PostTypeSettingsPanel(props) {
     selectedTerms = _useState8[0],
     setSelectedTerms = _useState8[1];
   var _useState9 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(props.settings.howToExpire),
-    _useState10 = _slicedToArray(_useState9, 2),
-    settingHowToExpire = _useState10[0],
-    setSettingHowToExpire = _useState10[1];
-  var _useState11 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(props.settings.active),
+    _useState0 = _slicedToArray(_useState9, 2),
+    settingHowToExpire = _useState0[0],
+    setSettingHowToExpire = _useState0[1];
+  var _useState1 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(props.settings.active),
+    _useState10 = _slicedToArray(_useState1, 2),
+    isActive = _useState10[0],
+    setIsActive = _useState10[1];
+  var _useState11 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(props.settings.defaultExpireOffset),
     _useState12 = _slicedToArray(_useState11, 2),
-    isActive = _useState12[0],
-    setIsActive = _useState12[1];
-  var _useState13 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(props.settings.defaultExpireOffset),
+    expireOffset = _useState12[0],
+    setExpireOffset = _useState12[1];
+  var _useState13 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(props.settings.emailNotification),
     _useState14 = _slicedToArray(_useState13, 2),
-    expireOffset = _useState14[0],
-    setExpireOffset = _useState14[1];
-  var _useState15 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(props.settings.emailNotification),
+    emailNotification = _useState14[0],
+    setEmailNotification = _useState14[1];
+  var _useState15 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(props.settings.autoEnabled),
     _useState16 = _slicedToArray(_useState15, 2),
-    emailNotification = _useState16[0],
-    setEmailNotification = _useState16[1];
-  var _useState17 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(props.settings.autoEnabled),
+    isAutoEnabled = _useState16[0],
+    setIsAutoEnabled = _useState16[1];
+  var _useState17 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(true),
     _useState18 = _slicedToArray(_useState17, 2),
-    isAutoEnabled = _useState18[0],
-    setIsAutoEnabled = _useState18[1];
-  var _useState19 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(true),
+    hasValidData = _useState18[0],
+    setHasValidData = _useState18[1];
+  var _useState19 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
     _useState20 = _slicedToArray(_useState19, 2),
-    hasValidData = _useState20[0],
-    setHasValidData = _useState20[1];
+    validationError = _useState20[0],
+    setValidationError = _useState20[1];
   var _useState21 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
     _useState22 = _slicedToArray(_useState21, 2),
-    validationError = _useState22[0],
-    setValidationError = _useState22[1];
-  var _useState23 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
+    taxonomyLabel = _useState22[0],
+    setTaxonomyLabel = _useState22[1];
+  var _useState23 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(originalExpireTypeList),
     _useState24 = _slicedToArray(_useState23, 2),
-    taxonomyLabel = _useState24[0],
-    setTaxonomyLabel = _useState24[1];
-  var _useState25 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(originalExpireTypeList),
+    howToExpireList = _useState24[0],
+    setHowToExpireList = _useState24[1];
+  var _useState25 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(props.settings.newStatus),
     _useState26 = _slicedToArray(_useState25, 2),
-    howToExpireList = _useState26[0],
-    setHowToExpireList = _useState26[1];
-  var _useState27 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(props.settings.newStatus),
+    newStatus = _useState26[0],
+    setNewStatus = _useState26[1];
+  var _useState27 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
     _useState28 = _slicedToArray(_useState27, 2),
-    newStatus = _useState28[0],
-    setNewStatus = _useState28[1];
-  var _useState29 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
-    _useState30 = _slicedToArray(_useState29, 2),
-    hasPendingValidation = _useState30[0],
-    setHasPendingValidation = _useState30[1];
+    hasPendingValidation = _useState28[0],
+    setHasPendingValidation = _useState28[1];
   var offset = expireOffset ? expireOffset : props.settings.globalDefaultExpireOffset;
   var isPro = props.isPro != "" && props.isPro === "1";
   var HelpText = function HelpText(props) {
@@ -1641,7 +1641,7 @@ var PostTypeSettingsPanel = function PostTypeSettingsPanel(props) {
     onChange: onChangeActive
   }))];
   if (isActive) {
-    settingsRows.push( /*#__PURE__*/React.createElement(___WEBPACK_IMPORTED_MODULE_0__.SettingRow, {
+    settingsRows.push(/*#__PURE__*/React.createElement(___WEBPACK_IMPORTED_MODULE_0__.SettingRow, {
       label: props.text.fieldAutoEnable,
       key: 'expirationdate_autoenable-' + props.postType
     }, /*#__PURE__*/React.createElement(___WEBPACK_IMPORTED_MODULE_0__.CheckboxControl, {
@@ -1651,7 +1651,7 @@ var PostTypeSettingsPanel = function PostTypeSettingsPanel(props) {
       onChange: onChangeAutoEnabled
     })));
     if (isAutoEnabled) {
-      settingsRows.push( /*#__PURE__*/React.createElement(___WEBPACK_IMPORTED_MODULE_0__.SettingRow, {
+      settingsRows.push(/*#__PURE__*/React.createElement(___WEBPACK_IMPORTED_MODULE_0__.SettingRow, {
         label: props.text.fieldTaxonomy,
         id: 'expirationdate_taxonomy-' + props.postType,
         key: 'expirationdate_taxonomy-' + props.postType
@@ -1664,7 +1664,7 @@ var PostTypeSettingsPanel = function PostTypeSettingsPanel(props) {
         data: props.postType,
         onChange: onChangeTaxonomy
       })));
-      settingsRows.push( /*#__PURE__*/React.createElement(___WEBPACK_IMPORTED_MODULE_0__.SettingRow, {
+      settingsRows.push(/*#__PURE__*/React.createElement(___WEBPACK_IMPORTED_MODULE_0__.SettingRow, {
         label: props.text.fieldHowToExpire,
         id: 'expirationdate_expiretype-' + props.postType,
         key: 'expirationdate_expiretype-' + props.postType
@@ -1694,7 +1694,7 @@ var PostTypeSettingsPanel = function PostTypeSettingsPanel(props) {
         expandOnFocus: true,
         autoSelectFirstMatch: true
       })));
-      settingsRows.push( /*#__PURE__*/React.createElement(___WEBPACK_IMPORTED_MODULE_0__.SettingRow, {
+      settingsRows.push(/*#__PURE__*/React.createElement(___WEBPACK_IMPORTED_MODULE_0__.SettingRow, {
         label: props.text.fieldDefaultDateTimeOffset,
         id: 'expired-custom-date-' + props.postType,
         key: 'expired-custom-date-' + props.postType
@@ -1717,7 +1717,7 @@ var PostTypeSettingsPanel = function PostTypeSettingsPanel(props) {
         setHasPendingValidationCallback: setHasPendingValidation,
         setHasValidDataCallback: setHasValidData
       })));
-      settingsRows.push( /*#__PURE__*/React.createElement(___WEBPACK_IMPORTED_MODULE_0__.SettingRow, {
+      settingsRows.push(/*#__PURE__*/React.createElement(___WEBPACK_IMPORTED_MODULE_0__.SettingRow, {
         label: props.text.fieldWhoToNotify,
         id: 'expirationdate_emailnotification-' + props.postType,
         key: 'expirationdate_emailnotification-' + props.postType
@@ -1733,7 +1733,7 @@ var PostTypeSettingsPanel = function PostTypeSettingsPanel(props) {
     // Add promotional fields for non-pro users
     if (!isPro) {
       // Custom statuses promotional field
-      settingsRows.push( /*#__PURE__*/React.createElement(___WEBPACK_IMPORTED_MODULE_0__.SettingRow, {
+      settingsRows.push(/*#__PURE__*/React.createElement(___WEBPACK_IMPORTED_MODULE_0__.SettingRow, {
         label: props.text.fieldCustomStatuses,
         key: 'custom-statuses_promo'
       }, /*#__PURE__*/React.createElement(FieldRow, null, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("label", null, /*#__PURE__*/React.createElement("input", {
@@ -1749,7 +1749,7 @@ var PostTypeSettingsPanel = function PostTypeSettingsPanel(props) {
       })), /*#__PURE__*/React.createElement(HelpText, null, props.text.fieldCustomStatusesDescription)))));
 
       // Metadata scheduling promotional field
-      settingsRows.push( /*#__PURE__*/React.createElement(___WEBPACK_IMPORTED_MODULE_0__.SettingRow, {
+      settingsRows.push(/*#__PURE__*/React.createElement(___WEBPACK_IMPORTED_MODULE_0__.SettingRow, {
         label: props.text.fieldMetadataScheduling,
         key: 'metadata_mapping_promo'
       }, /*#__PURE__*/React.createElement(FieldRow, null, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("label", null, /*#__PURE__*/React.createElement("input", {
@@ -1835,7 +1835,7 @@ var PostTypesSettingsPanels = function PostTypesSettingsPanels(props) {
     var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
       postType = _Object$entries$_i[0],
       postTypeSettings = _Object$entries$_i[1];
-    panels.push( /*#__PURE__*/React.createElement(___WEBPACK_IMPORTED_MODULE_0__.PostTypeSettingsPanel, {
+    panels.push(/*#__PURE__*/React.createElement(___WEBPACK_IMPORTED_MODULE_0__.PostTypeSettingsPanel, {
       legend: postTypeSettings.label,
       text: props.text,
       isPro: isPro,
@@ -2737,7 +2737,7 @@ function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbol
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
-function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function _toPrimitive(t, e) { if ("object" != _typeof(t) || !t) return t; var r; if ("undefined" != typeof Symbol && void 0 !== (r = t[Symbol.toPrimitive])) { var i = r.call(t, e || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === e ? String : Number)(t); }
 
 
 

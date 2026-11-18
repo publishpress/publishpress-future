@@ -212,7 +212,7 @@ if ('advanced' === settingsTab) {
   var scheduledStepsCleanupContainer = document.getElementById('scheduled-steps-cleanup-settings');
   if (scheduledStepsCleanupContainer) {
     var root = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createRoot)(scheduledStepsCleanupContainer);
-    root.render( /*#__PURE__*/React.createElement(_workflow_editor_settings_scheduled_steps_cleanup__WEBPACK_IMPORTED_MODULE_1__.ScheduledStepsCleanupSettings, null));
+    root.render(/*#__PURE__*/React.createElement(_workflow_editor_settings_scheduled_steps_cleanup__WEBPACK_IMPORTED_MODULE_1__.ScheduledStepsCleanupSettings, null));
   }
 }
 })();
