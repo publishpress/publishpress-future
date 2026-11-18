@@ -8,8 +8,8 @@ Reviewed tree: `4.12.0-beta.1` (`post-expirator.php`). First-party code only: `s
 
 ```
 Metric	Score/Value	Notes
-Security Score	4.4	No confirmed exploit for a stock role or an unauthenticated user. One likely cap gap on workflow publish.
-Recommendation	HEALTHY	Score is at least 4.0. Fix the publish cap check before sites split workflow caps.
+Security Score	4.4	No confirmed exploit for a stock role or an unauthenticated user. The four prior cap concerns are fixed in this tree. Score stays 4.4 until a new scored audit.
+Recommendation	HEALTHY	Score is at least 4.0. Workflow, trash, taxonomy, and settings caps are enforced in this tree.
 ```
 
 ## 1. Security Assessment
@@ -22,13 +22,14 @@ Recommendation	HEALTHY	Score is at least 4.0. Fix the publish cap check before s
 
 🟡 **Concerns:**
 
-- Workflow publish, unpublish, and delete check `edit_publishpress_workflows` only (`src/Modules/Workflows/Rest/RestApiV1.php:125-150`, `src/Modules/Workflows/Rest/RestApiV1.php:295-357`, `src/Modules/Workflows/Controllers/WorkflowsList.php:322-341`). The post type and the Capabilities screen treat `publish_publishpress_workflows` and `unpublish_publishpress_workflows` as separate caps (`src/Modules/Workflows/Controllers/PostType.php:76-85`, `legacy/classes/Facade.class.php:194-206`). Stock install grants all three caps to administrator only (`legacy/classes/Facade.class.php:111-113`). Exploitability: Likely. Reachability: Capability `edit_publishpress_workflows` when an admin has removed the publish cap.
-- Status change to `trash` does not check `delete_post` (`src/Modules/Expirator/Models/CurrentUserModel.php:61-64`, `src/Modules/Expirator/Models/CurrentUserModel.php:159-175`). `delete` does check `delete_post` (line 87-89). Cron runs the saved action with no logged-in user (`src/Modules/Expirator/ExpirationScheduler.php:254-264`) through `wp_update_post` (`src/Framework/WordPress/Models/PostModel.php:73-84`). Stock roles that can edit a post can also delete it. Exploitability: Theoretical. Reachability: custom role with `publishpress_future_expire_post` and `edit_post` but without `delete_post`.
-- Taxonomy actions do not check `assign_terms` (`src/Modules/Expirator/Models/CurrentUserModel.php:91-98`). `POST /publishpress-future/v1/post-expiration/{id}` accepts any taxonomy key (`src/Modules/Expirator/Controllers/RestAPIController.php:521-528`). Execution calls `wp_set_object_terms` (`src/Framework/WordPress/Models/PostModel.php:300-302`). Stock `category` and `post_tag` use `assign_terms = edit_posts`, which `edit_post` already implies. Exploitability: Theoretical. Reachability: custom taxonomy whose `assign_terms` the user lacks.
-- Settings save checks the page slug and a nonce, not `manage_options`, inside the handler (`src/Modules/Expirator/Controllers/SettingsController.php:391-411`, `src/Modules/Settings/Controllers/Controller.php:289-338`). The menu cap is `manage_options` (`src/Modules/Expirator/Controllers/ScheduledActionsController.php:119-127`). WordPress nonces are bound to the user and the session. Exploitability: Theoretical.
+- None. The four cap items below are fixed in this tree.
 
 🟢 **Strengths:**
 
+- Workflow enable requires `publish_publishpress_workflows`. Disable and delete require `unpublish_publishpress_workflows` (`RestApiV1::updateWorkflow`, `RestApiV1::deleteWorkflow`, `WorkflowsList::updateWorkflowStatus`). See GHSA-9cgh-x983-rc5r.
+- Status `trash` requires `delete_post`. Post ID 0 uses the post type `delete_posts` cap (`CurrentUserModel::userCanScheduleStatusChange`). Stock roles that can edit a post already have this cap.
+- Taxonomy actions require `assign_terms` and a taxonomy registered for the post type (`CurrentUserModel::userCanScheduleAction`). `GET /publishpress-future/v1/terms/{taxonomy}` returns no terms without `assign_terms`. Stock roles that can edit a post already have this cap.
+- Settings save returns before nonce checks when `current_user_can('manage_options')` is false (`SettingsController::processFormSubmission`, `Settings\Controllers\Controller::processFormSubmission`).
 - `[futureaction]` and `[postexpirator]` escape the date and allow only `p`, `div`, and `span` as the wrapper (`src/Modules/Expirator/Controllers/ShortcodeController.php:170-179`, `src/Modules/Settings/SettingsFacade.php:539-551`). This closes the CVE-2026-5247 wrapper path in this tree.
 - Future Actions settings return unless `page` is `publishpress-future` or `publishpress-future-settings` (`src/Modules/Expirator/Controllers/SettingsController.php:398-402`).
 - REST routes set `permission_callback`. Post expiration checks `read_post` or `edit_post` plus `publishpress_future_expire_post` (`src/Modules/Expirator/Controllers/RestAPIController.php:104-136`). Backup and debug log require `manage_options`.
@@ -58,10 +59,10 @@ JSON Logic operators in workflow conditions are data keys, not PHP callables (`s
 
 ## 3. Final Recommendation: HEALTHY
 
-**Rationale:** No confirmed issue is reachable by an unauthenticated user or by a stock role. The score stays under 5.0 because workflow publish caps are advertised as separate and two handlers ignore them. Trash and taxonomy checks are theoretical on stock WordPress caps.
+**Rationale:** No confirmed issue is reachable by an unauthenticated user or by a stock role. The four prior cap concerns are fixed in this tree. The score stays 4.4 until a new scored audit.
 
 **Key Factors:**
 
 - Shortcode output encoding and the settings page allowlist are present.
 - REST, backup, debug download, and MCP abilities check a capability.
-- Publish and unpublish workflow caps are not enforced on the REST update route or the list status form.
+- Workflow publish and unpublish caps, trash `delete_post`, taxonomy `assign_terms`, and settings `manage_options` are enforced in this tree.

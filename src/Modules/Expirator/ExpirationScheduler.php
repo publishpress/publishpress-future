@@ -221,12 +221,17 @@ class ExpirationScheduler implements SchedulerInterface
             $newStatus = $opts['newStatus'];
         }
 
+        $taxonomy = '';
+        if (isset($opts['categoryTaxonomy']) && is_string($opts['categoryTaxonomy'])) {
+            $taxonomy = $opts['categoryTaxonomy'];
+        }
+
         $currentUserModelFactory = $this->currentUserModelFactory;
         $currentUserModel = $currentUserModelFactory();
 
         if (
             ! $currentUserModel instanceof CurrentUserModel
-            || ! $currentUserModel->userCanScheduleAction($postId, $expireType, $newStatus)
+            || ! $currentUserModel->userCanScheduleAction($postId, $expireType, $newStatus, $taxonomy)
         ) {
             $this->logger->debug(
                 sprintf(

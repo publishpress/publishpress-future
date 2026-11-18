@@ -367,7 +367,12 @@ class RestAPIController implements InitializableInterface
                                     $newStatus = 'trash';
                                 }
 
-                                if (! $currentUserModel->userCanScheduleAction((int) $post->ID, $expireType, $newStatus)) {
+                                $taxonomy = '';
+                                if (isset($value['taxonomy']) && is_string($value['taxonomy'])) {
+                                    $taxonomy = sanitize_text_field($value['taxonomy']);
+                                }
+
+                                if (! $currentUserModel->userCanScheduleAction((int) $post->ID, $expireType, $newStatus, $taxonomy)) {
                                     return $this->scheduleActionForbiddenError();
                                 }
 
@@ -375,7 +380,7 @@ class RestAPIController implements InitializableInterface
                                     'expireType' => $expireType,
                                     'newStatus' => $newStatus,
                                     'category' => array_map('sanitize_text_field', $value['terms']),
-                                    'categoryTaxonomy' => sanitize_text_field($value['taxonomy']),
+                                    'categoryTaxonomy' => $taxonomy,
                                 ];
 
                                 $modelFactory = $this->taxonomiesModelFactory;
@@ -469,16 +474,27 @@ class RestAPIController implements InitializableInterface
         $taxonomy = $request->get_param('taxonomy');
         $taxonomy = sanitize_key($taxonomy);
 
+        $emptyTerms = ['terms' => [], 'count' => 0, 'taxonomyName' => ''];
+
         $taxonomyObject = get_taxonomy($taxonomy);
         if (! is_object($taxonomyObject) || ! $this->taxonomyIsOnSupportedPostType($taxonomy)) {
-            return rest_ensure_response(['terms' => [], 'count' => 0, 'taxonomyName' => '']);
+            return rest_ensure_response($emptyTerms);
+        }
+
+        if (
+            ! isset($taxonomyObject->cap->assign_terms)
+            || ! is_string($taxonomyObject->cap->assign_terms)
+            || $taxonomyObject->cap->assign_terms === ''
+            || ! current_user_can($taxonomyObject->cap->assign_terms)
+        ) {
+            return rest_ensure_response($emptyTerms);
         }
 
         $terms = $this->getUnfilteredTerms($taxonomy);
 
         $response = [];
         if (is_wp_error($terms)) {
-            $response = ['terms' => [], 'count' => 0, 'taxonomyName' => ''];
+            $response = $emptyTerms;
         } else {
             $terms = array_map(function ($term) {
                 return [
@@ -551,14 +567,17 @@ class RestAPIController implements InitializableInterface
                 $newStatus = sanitize_key((string) $newStatusParam);
             }
 
-            if (! $this->getRequestCurrentUserModel()->userCanScheduleAction($postId, $expireType, $newStatus)) {
+            $taxonomyParam = $request->get_param('taxonomy');
+            $taxonomy = is_string($taxonomyParam) ? sanitize_key($taxonomyParam) : '';
+
+            if (! $this->getRequestCurrentUserModel()->userCanScheduleAction($postId, $expireType, $newStatus, $taxonomy)) {
                 return $this->scheduleActionForbiddenError();
             }
 
             $opts = [
                 'expireType' => $expireType,
                 'category' => array_map('absint', (array) $request->get_param('terms')),
-                'categoryTaxonomy' => sanitize_key($request->get_param('taxonomy')),
+                'categoryTaxonomy' => $taxonomy,
             ];
 
             if ($newStatus !== '') {

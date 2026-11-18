@@ -174,7 +174,9 @@ class QuickEditController implements InitializableInterface
                     $newStatus = 'trash';
                 }
 
-                if (! $currentUserModel->userCanScheduleAction((int) $postId, $expireType, $newStatus)) {
+                $taxonomy = isset($_POST['future_action_taxonomy']) ? sanitize_text_field($_POST['future_action_taxonomy']) : '';
+
+                if (! $currentUserModel->userCanScheduleAction((int) $postId, $expireType, $newStatus, $taxonomy)) {
                     $this->logger->debug(
                         sprintf(
                             '%1$d  -> ACTION NOT SCHEDULED: user cannot schedule %2$s (status %3$s)',
@@ -191,7 +193,7 @@ class QuickEditController implements InitializableInterface
                     'expireType' => $expireType,
                     'newStatus' => $newStatus,
                     'category' => isset($_POST['future_action_terms']) ? sanitize_text_field($_POST['future_action_terms']) : '',
-                    'categoryTaxonomy' => isset($_POST['future_action_taxonomy']) ? sanitize_text_field($_POST['future_action_taxonomy']) : '',
+                    'categoryTaxonomy' => $taxonomy,
                 ];
 
                 if (! empty($opts['category'])) {

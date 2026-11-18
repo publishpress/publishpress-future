@@ -259,7 +259,7 @@ class SchedulesService
             if (!$this->wordpress->canRepresentSchedule($settings['timestamp'])) {
                 return Registry::error(__('The native scheduler cannot represent this ambiguous daylight-saving time. Choose a time outside the transition.', 'post-expirator'));
             }
-            if (!$this->user->userCanScheduleAction($post->ID, $settings['action'], $settings['new_status'])) {
+            if (!$this->user->userCanScheduleAction($post->ID, $settings['action'], $settings['new_status'], (string) $settings['taxonomy'])) {
                 return Registry::error(__('You cannot schedule this action or post status.', 'post-expirator'), 403);
             }
             if ($settings['action'] === TriggerWorkflow::ACTION_NAME) {
@@ -396,7 +396,7 @@ class SchedulesService
             return false;
         }
         $settings = (array) $this->get(['post_id' => $postId])['settings'];
-        if (!$settings['enabled'] || !$this->user->userCanScheduleAction($postId, $settings['action'], $settings['new_status'])) {
+        if (!$settings['enabled'] || !$this->user->userCanScheduleAction($postId, $settings['action'], $settings['new_status'], (string) $settings['taxonomy'])) {
             return false;
         }
         if (strpos($settings['action'], 'category') === 0) {

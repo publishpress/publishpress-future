@@ -44,10 +44,15 @@ class CurrentUserModel extends FrameworkCurrentUserModel
      * @param int $postId
      * @param string $expireType
      * @param string $newStatus
+     * @param string $taxonomy Taxonomy for category actions. Empty fails closed.
      * @return bool
      */
-    public function userCanScheduleAction(int $postId, string $expireType, string $newStatus): bool
-    {
+    public function userCanScheduleAction(
+        int $postId,
+        string $expireType,
+        string $newStatus,
+        string $taxonomy = ''
+    ): bool {
         if ($expireType === ExpirationActionsAbstract::POST_STATUS_TO_DRAFT) {
             $expireType = ExpirationActionsAbstract::CHANGE_POST_STATUS;
             $newStatus = ExpirationActionsAbstract::POST_STATUS_TO_DRAFT;
@@ -74,7 +79,7 @@ class CurrentUserModel extends FrameworkCurrentUserModel
         }
 
         if ($expireType === ExpirationActionsAbstract::CHANGE_POST_STATUS) {
-            return $this->userCanScheduleStatusChange($postType, $postTypeObject, $newStatus);
+            return $this->userCanScheduleStatusChange($postType, $postTypeObject, $newStatus, $postId);
         }
 
         if (
@@ -94,15 +99,22 @@ class CurrentUserModel extends FrameworkCurrentUserModel
         }
 
         $actions = $actionsModel->getActions($postType);
+        if (! isset($actions[$expireType])) {
+            return false;
+        }
 
-        return isset($actions[$expireType]);
+        if ($this->isTaxonomyExpirationAction($expireType)) {
+            return $this->userCanAssignTaxonomyTerms($postType, $taxonomy);
+        }
+
+        return true;
     }
 
     /**
      * Drop action and status choices the current user cannot schedule.
      *
-     * List screens pass post ID 0. Delete is then gated by the post type
-     * delete_posts cap. A known post ID uses delete_post for that post.
+     * List screens pass post ID 0. Delete and the trash status then use the
+     * post type delete_posts cap. A known post ID uses delete_post.
      *
      * @since 4.10.6
      *
@@ -141,6 +153,9 @@ class CurrentUserModel extends FrameworkCurrentUserModel
             $deniedStatuses[] = 'publish';
             $deniedStatuses[] = 'private';
         }
+        if (! $canDelete) {
+            $deniedStatuses[] = ExpirationActionsAbstract::POST_STATUS_TO_TRASH;
+        }
 
         return [
             'actions' => $this->removeSelectOptionValues($actions, $deniedActions),
@@ -154,10 +169,15 @@ class CurrentUserModel extends FrameworkCurrentUserModel
      * @param string $postType
      * @param object $postTypeObject
      * @param string $newStatus
+     * @param int $postId Post ID 0 uses the post type delete_posts cap for trash.
      * @return bool
      */
-    private function userCanScheduleStatusChange(string $postType, object $postTypeObject, string $newStatus): bool
-    {
+    private function userCanScheduleStatusChange(
+        string $postType,
+        object $postTypeObject,
+        string $newStatus,
+        int $postId
+    ): bool {
         $actionsModel = $this->getExpirationActionsModel();
         if (! $actionsModel instanceof ExpirationActionsModel) {
             return false;
@@ -172,7 +192,66 @@ class CurrentUserModel extends FrameworkCurrentUserModel
             return $this->currentUserHasPostTypeCap($postTypeObject, 'publish_posts');
         }
 
+        if ($newStatus === ExpirationActionsAbstract::POST_STATUS_TO_TRASH) {
+            if ($postId > 0) {
+                return current_user_can('delete_post', $postId);
+            }
+
+            return $this->currentUserHasPostTypeCap($postTypeObject, 'delete_posts');
+        }
+
         return true;
+    }
+
+    /**
+     * Category actions need assign_terms on a taxonomy registered for the post type.
+     *
+     * @since 4.12.0
+     *
+     * @param string $expireType
+     * @return bool
+     */
+    private function isTaxonomyExpirationAction(string $expireType): bool
+    {
+        return in_array(
+            $expireType,
+            [
+                ExpirationActionsAbstract::POST_CATEGORY_SET,
+                ExpirationActionsAbstract::POST_CATEGORY_ADD,
+                ExpirationActionsAbstract::POST_CATEGORY_REMOVE,
+                ExpirationActionsAbstract::POST_CATEGORY_REMOVE_ALL,
+            ],
+            true
+        );
+    }
+
+    /**
+     * @since 4.12.0
+     *
+     * @param string $postType
+     * @param string $taxonomy
+     * @return bool
+     */
+    private function userCanAssignTaxonomyTerms(string $postType, string $taxonomy): bool
+    {
+        if ($taxonomy === '') {
+            return false;
+        }
+
+        $taxonomyObject = get_taxonomy($taxonomy);
+        if (! is_object($taxonomyObject) || ! is_object_in_taxonomy($postType, $taxonomy)) {
+            return false;
+        }
+
+        if (
+            ! isset($taxonomyObject->cap->assign_terms)
+            || ! is_string($taxonomyObject->cap->assign_terms)
+            || $taxonomyObject->cap->assign_terms === ''
+        ) {
+            return false;
+        }
+
+        return current_user_can($taxonomyObject->cap->assign_terms);
     }
 
     /**

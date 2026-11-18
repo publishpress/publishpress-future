@@ -366,7 +366,10 @@ class BulkEditController implements InitializableInterface
             $newStatus = 'trash';
         }
 
-        if (! $this->currentUserModel->userCanScheduleAction((int) $postModel->getPostId(), $expireType, $newStatus)) {
+        $taxonomy = isset($_REQUEST['future_action_bulk_taxonomy'])
+            ? $this->sanitization->sanitizeTextField($_REQUEST['future_action_bulk_taxonomy']) : '';
+
+        if (! $this->currentUserModel->userCanScheduleAction((int) $postModel->getPostId(), $expireType, $newStatus, $taxonomy)) {
             $this->logger->debug(
                 sprintf(
                     '%1$d  -> ACTION NOT SCHEDULED: user cannot schedule %2$s (status %3$s)',
@@ -384,8 +387,7 @@ class BulkEditController implements InitializableInterface
             'newStatus' => $newStatus,
             'category' => isset($_REQUEST['future_action_bulk_terms'])
                 ? $this->sanitization->sanitizeTextField($_REQUEST['future_action_bulk_terms']) : '',
-            'categoryTaxonomy' => isset($_REQUEST['future_action_bulk_taxonomy'])
-                ? $this->sanitization->sanitizeTextField($_REQUEST['future_action_bulk_taxonomy']) : '',
+            'categoryTaxonomy' => $taxonomy,
         ];
 
         if (! empty($opts['category'])) {
