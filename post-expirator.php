@@ -229,6 +229,10 @@ try {
 
     add_filter('publishpress_bundled_translations_hub_notice_screens', function ($screens, $domain) {
         if ($domain === 'post-expirator') {
+            if (! is_array($screens)) {
+                $screens = [];
+            }
+
             return array_merge($screens, [
                 'toplevel_page_publishpress-future',
                 'future_page_publishpress-future-settings',
