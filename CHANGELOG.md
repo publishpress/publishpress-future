@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Fixed: The workflow deleted hook receives the workflow ID after the model resets.
 - Changed: Admin screens and the workflow editor improve keyboard use, labels, contrast, and screen-reader announcements for WCAG 2.2 AA.
 - Fixed: A workflow step can be added from the inserter with a click or Enter.
+- Fixed: A nested workflow field, such as `recipient.expression`, is marked invalid when its validation key uses a dot path.
 - Changed: Debug log filters apply when the user presses Apply.
 - Fixed: Backup export and import notices are shown.
 - Added: Connect AI services through PublishPress Hub to manage Future actions, workflow graphs, settings and scheduled actions with native WordPress permissions.
