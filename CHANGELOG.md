@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 [4.12.0] - 18 Nov, 2026
 
 - Added: MCP, connect AI services through PublishPress Hub to manage Future actions, workflow graphs, settings and scheduled actions with native WordPress permissions.
-- Security: Require `publish_publishpress_workflows` before a workflow is enabled or an enabled workflow is changed, and `unpublish_publishpress_workflows` before a workflow is disabled or deleted, on the workflow REST API and the workflows list. Stock administrator accounts already have both capabilities. See [GHSA-9cgh-x983-rc5r](https://github.com/publishpress/publishpress-future/security/advisories/GHSA-9cgh-x983-rc5r).
+- Security: Require `publish_publishpress_workflows` before a workflow is enabled or an enabled workflow is changed, and `unpublish_publishpress_workflows` before a workflow is disabled or deleted, on the workflow REST API and the workflows list. Stock administrator accounts already have both capabilities. See (GHSA-9cgh-x983-rc5r).
 - Security: Require `manage_options` before the Future settings form and the advanced settings form save.
 - Security: `GET /publishpress-future/v1/terms/{taxonomy}` returns terms only when the taxonomy belongs to a supported post type.
 - Security: Require `delete_post` before a Future Action changes a post to trash. Post ID 0 uses the post type `delete_posts` capability. Stock roles that can edit a post already have this capability.
