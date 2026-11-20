@@ -3,6 +3,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 [Unreleased]
 
 - Changed: Display the PublishPress Hub translation update notice on Future Actions, Workflows, the workflow editor, Settings, and Scheduled Actions.
+- Changed: The release workflow attaches `post-expirator-locales.zip` for the package server. Language files stay in the repository.
 
 [4.12.0] - 18 Nov, 2026
 

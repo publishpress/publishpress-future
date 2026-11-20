@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1d24780e5acd139bc3384d16e1cee6de",
+    "content-hash": "0cfaee512cff6022505f181332b4fb91",
     "packages": [
         {
             "name": "jwadhams/json-logic-php",
