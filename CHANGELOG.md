@@ -1,8 +1,5 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
-[Unreleased]
-
-
 [4.12.0] - 23 Nov, 2026
 
 - Added: MCP, connect AI services through PublishPress Hub to manage Future actions, workflow graphs, settings and scheduled actions with native WordPress permissions.
