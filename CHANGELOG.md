@@ -3,7 +3,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 [Unreleased]
 
 
-[4.12.0] - 18 Nov, 2026
+[4.12.0] - 23 Nov, 2026
 
 - Added: MCP, connect AI services through PublishPress Hub to manage Future actions, workflow graphs, settings and scheduled actions with native WordPress permissions.
 - Security: Require `publish_publishpress_workflows` before a workflow is enabled or an enabled workflow is changed, and `unpublish_publishpress_workflows` before a workflow is disabled or deleted, on the workflow REST API and the workflows list. Stock administrator accounts already have both capabilities. See (GHSA-9cgh-x983-rc5r).
