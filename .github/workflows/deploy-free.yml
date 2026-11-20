@@ -26,3 +26,15 @@ jobs:
     with:
       stable_branch: master
     secrets: inherit
+
+  language-packs:
+    name: Publish language packs
+    needs:
+      - code-check
+      - run-unit-tests
+    permissions:
+      contents: write
+    uses: publishpress/github-workflows/.github/workflows/language-pack.yml@v3
+    with:
+      text_domain: post-expirator
+    secrets: inherit

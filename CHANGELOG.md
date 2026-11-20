@@ -19,6 +19,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Changed: Admin screens and the workflow editor improve keyboard use, labels, contrast, and screen-reader announcements for WCAG 2.2 AA.
 - Changed: Debug log filters apply when the user presses Apply.
 - Changed: Raise the minimum PHP version from 7.4 to 8.2.
+- Changed: Display the PublishPress Hub translation update notice on Future Actions, Workflows, the workflow editor, Settings, and Scheduled Actions.
+- Changed: The release workflow attaches `post-expirator-locales.zip` for the package server. Language files stay in the repository.
 
 [4.11.2]
 

@@ -219,6 +219,33 @@ try {
         $bundledTranslations->init();
     });
 
+    add_filter('publishpress_bundled_translations_hub_notice_enabled', function ($enabled, $domain) {
+        if ($domain === 'post-expirator') {
+            return true;
+        }
+
+        return $enabled;
+    }, 10, 2);
+
+    add_filter('publishpress_bundled_translations_hub_notice_screens', function ($screens, $domain) {
+        if ($domain === 'post-expirator') {
+            if (! is_array($screens)) {
+                $screens = [];
+            }
+
+            return array_merge($screens, [
+                'toplevel_page_publishpress-future',
+                'future_page_publishpress-future-settings',
+                'edit-ppfuture_workflow',
+                'admin_page_future_workflow_editor',
+                'future_page_publishpress-future-scheduled-actions',
+                'admin_page_publishpress-future-scheduled-actions',
+            ]);
+        }
+
+        return $screens;
+    }, 10, 2);
+
     add_action('init', function () {
         $container = null;
         try {
