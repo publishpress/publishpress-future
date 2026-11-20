@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4d470276fb325ca033cb5fada9737091",
+    "content-hash": "849f8cc1f24b42172dfc0959bb2b9e70",
     "packages": [],
     "packages-dev": [
         {
@@ -2291,42 +2291,42 @@
         },
         {
             "name": "ergebnis/agent-detector",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ergebnis/agent-detector.git",
-                "reference": "bcc63004284c61c6df6e9625acf2673e3be1889b"
+                "reference": "ae2169d42024c6009abd0bb0aec5cf46c902fb1d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ergebnis/agent-detector/zipball/bcc63004284c61c6df6e9625acf2673e3be1889b",
-                "reference": "bcc63004284c61c6df6e9625acf2673e3be1889b",
+                "url": "https://api.github.com/repos/ergebnis/agent-detector/zipball/ae2169d42024c6009abd0bb0aec5cf46c902fb1d",
+                "reference": "ae2169d42024c6009abd0bb0aec5cf46c902fb1d",
                 "shasum": ""
             },
             "require": {
                 "php": "~7.4.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0 || ~8.6.0"
             },
             "require-dev": {
-                "ergebnis/composer-normalize": "^2.54.0",
-                "ergebnis/license": "^2.8.0",
+                "ergebnis/composer-normalize": "^2.56.1",
+                "ergebnis/license": "^2.9.0",
                 "ergebnis/php-cs-fixer-config": "^6.60.2",
-                "ergebnis/phpstan-rules": "^2.14.2",
+                "ergebnis/phpstan-rules": "^2.17.1",
                 "ergebnis/phpunit-slow-test-detector": "^2.27.0",
-                "ergebnis/rector-rules": "^1.18.5",
+                "ergebnis/rector-rules": "^1.19.0",
                 "fakerphp/faker": "^1.24.1",
                 "infection/infection": "^0.26.6",
                 "phpstan/extension-installer": "^1.4.3",
                 "phpstan/phpstan": "^2.2.14",
                 "phpstan/phpstan-deprecation-rules": "^2.0.5",
-                "phpstan/phpstan-phpunit": "^2.1.1",
-                "phpstan/phpstan-strict-rules": "^2.1.0",
+                "phpstan/phpstan-phpunit": "^2.1.2",
+                "phpstan/phpstan-strict-rules": "^2.1.1",
                 "phpunit/phpunit": "^9.6.34",
                 "rector/rector": "^2.7.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "2.0-dev"
+                    "dev-main": "2.1-dev"
                 },
                 "composer-normalize": {
                     "indent-size": 2,
@@ -2356,7 +2356,7 @@
                 "security": "https://github.com/ergebnis/agent-detector/blob/main/.github/SECURITY.md",
                 "source": "https://github.com/ergebnis/agent-detector"
             },
-            "time": "2026-10-29T17:44:55+00:00"
+            "time": "2026-11-19T13:07:04+00:00"
         },
         {
             "name": "evenement/evenement",
@@ -2919,16 +2919,16 @@
         },
         {
             "name": "guzzlehttp/promises",
-            "version": "2.6.0",
+            "version": "2.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
-                "reference": "3d88c829bd5f13d13847b39067dbf09a60af2154"
+                "reference": "a1b6aceb39165acd5c421239e6abfa1b83dbe224"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/3d88c829bd5f13d13847b39067dbf09a60af2154",
-                "reference": "3d88c829bd5f13d13847b39067dbf09a60af2154",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/a1b6aceb39165acd5c421239e6abfa1b83dbe224",
+                "reference": "a1b6aceb39165acd5c421239e6abfa1b83dbe224",
                 "shasum": ""
             },
             "require": {
@@ -2983,7 +2983,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/promises/issues",
-                "source": "https://github.com/guzzle/promises/tree/2.6.0"
+                "source": "https://github.com/guzzle/promises/tree/2.6.1"
             },
             "funding": [
                 {
@@ -2999,20 +2999,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-10-18T12:46:59+00:00"
+            "time": "2026-11-20T00:03:12+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "2.13.4",
+            "version": "2.13.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "ad5e3f872690e1151e1171de2963150fc45ea1e3"
+                "reference": "5aa00c5418afbe3f435910af0e98cb03d659c49d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/ad5e3f872690e1151e1171de2963150fc45ea1e3",
-                "reference": "ad5e3f872690e1151e1171de2963150fc45ea1e3",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/5aa00c5418afbe3f435910af0e98cb03d659c49d",
+                "reference": "5aa00c5418afbe3f435910af0e98cb03d659c49d",
                 "shasum": ""
             },
             "require": {
@@ -3102,7 +3102,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/psr7/issues",
-                "source": "https://github.com/guzzle/psr7/tree/2.13.4"
+                "source": "https://github.com/guzzle/psr7/tree/2.13.5"
             },
             "funding": [
                 {
@@ -3118,7 +3118,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-11-17T16:15:51+00:00"
+            "time": "2026-11-19T20:34:53+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -6057,16 +6057,16 @@
         },
         {
             "name": "publishpress/dev-workspace",
-            "version": "2.1.1",
+            "version": "2.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/publishpress/library-dev-workspace.git",
-                "reference": "34c895273a402dcfcee5b9db89ffc619eeb4e993"
+                "reference": "9858d42aefd7c29e2ab8c770e9fe45fee7ebf680"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/publishpress/library-dev-workspace/zipball/34c895273a402dcfcee5b9db89ffc619eeb4e993",
-                "reference": "34c895273a402dcfcee5b9db89ffc619eeb4e993",
+                "url": "https://api.github.com/repos/publishpress/library-dev-workspace/zipball/9858d42aefd7c29e2ab8c770e9fe45fee7ebf680",
+                "reference": "9858d42aefd7c29e2ab8c770e9fe45fee7ebf680",
                 "shasum": ""
             },
             "require": {
@@ -6097,7 +6097,7 @@
                 "phpstan/phpstan": "^1.10",
                 "phpunit/phpunit": "^10",
                 "publishpress/publishpress-phpcs-standards": "^1.2",
-                "publishpress/translations": "^1.4",
+                "publishpress/translations": "^1.8",
                 "spatie/ray": "^1.41",
                 "squizlabs/php_codesniffer": "^3.8",
                 "symfony/http-client": "^7.1",
@@ -6123,9 +6123,9 @@
             "description": "Shared Composer scripts for PublishPress plugins",
             "support": {
                 "issues": "https://github.com/publishpress/library-dev-workspace/issues",
-                "source": "https://github.com/publishpress/library-dev-workspace/tree/2.1.1"
+                "source": "https://github.com/publishpress/library-dev-workspace/tree/2.1.4"
             },
-            "time": "2026-11-16T20:01:03+00:00"
+            "time": "2026-11-20T01:42:13+00:00"
         },
         {
             "name": "publishpress/publishpress-phpcs-standards",
@@ -6177,16 +6177,16 @@
         },
         {
             "name": "publishpress/translations",
-            "version": "v1.6.2",
+            "version": "v1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/publishpress/library-publishpress-translator.git",
-                "reference": "aa9421e14127010657a1bdb5c5e1bd3e6db3c649"
+                "reference": "4294e0ffbf8eeb8566cc7b830466059007c630b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/publishpress/library-publishpress-translator/zipball/aa9421e14127010657a1bdb5c5e1bd3e6db3c649",
-                "reference": "aa9421e14127010657a1bdb5c5e1bd3e6db3c649",
+                "url": "https://api.github.com/repos/publishpress/library-publishpress-translator/zipball/4294e0ffbf8eeb8566cc7b830466059007c630b4",
+                "reference": "4294e0ffbf8eeb8566cc7b830466059007c630b4",
                 "shasum": ""
             },
             "require": {
@@ -6228,9 +6228,9 @@
             "description": "AI-powered translation automation for PublishPress plugins using Potomatic",
             "support": {
                 "issues": "https://github.com/publishpress/library-publishpress-translator/issues",
-                "source": "https://github.com/publishpress/library-publishpress-translator/tree/v1.6.2"
+                "source": "https://github.com/publishpress/library-publishpress-translator/tree/v1.8.0"
             },
-            "time": "2026-11-09T14:34:44+00:00"
+            "time": "2026-11-20T01:37:50+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -8139,21 +8139,21 @@
         },
         {
             "name": "softcreatr/jsonpath",
-            "version": "2.1.0",
+            "version": "2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SoftCreatR/JSONPath.git",
-                "reference": "105243c9a3a3cf7ef76d81a2ec306dfdb83ab53a"
+                "reference": "378549b0d3a78061756e3032cc3a71978f0437c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SoftCreatR/JSONPath/zipball/105243c9a3a3cf7ef76d81a2ec306dfdb83ab53a",
-                "reference": "105243c9a3a3cf7ef76d81a2ec306dfdb83ab53a",
+                "url": "https://api.github.com/repos/SoftCreatR/JSONPath/zipball/378549b0d3a78061756e3032cc3a71978f0437c0",
+                "reference": "378549b0d3a78061756e3032cc3a71978f0437c0",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "php": "^8.3"
+                "php": "^8.2"
             },
             "replace": {
                 "flow/jsonpath": "*"
@@ -8161,8 +8161,9 @@
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^3.92",
                 "phpstan/phpstan": "^2.1",
-                "phpunit/phpunit": "^12",
-                "squizlabs/php_codesniffer": "^4.0"
+                "phpunit/phpunit": "^11.5.50 || ^12.5.8",
+                "symfony/filesystem": "^5.4.56 || ^6.4.50 || ^7.4.23 || ^8.1.11",
+                "symfony/process": "^5.4.51 || ^6.4.33 || ^7.3.11 || ^8.0.5"
             },
             "type": "library",
             "autoload": {
@@ -8205,7 +8206,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-09-28T16:20:10+00:00"
+            "time": "2026-11-19T02:27:56+00:00"
         },
         {
             "name": "spatie/backtrace",
