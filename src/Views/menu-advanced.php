@@ -4,7 +4,7 @@ use PublishPress\Future\Core\DI\Container as DIContainer;
 use PublishPress\Future\Core\DI\ServicesAbstract;
 use PublishPress\Future\Modules\Settings\HooksAbstract;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+defined('ABSPATH') || exit;
 
 // phpcs:disable Generic.Files.LineLength.TooLong
 
@@ -63,6 +63,8 @@ $preserveData = $settingsFacade->getSettingPreserveData();
                         esc_html_e('Preserve Data After Deactivating the Plugin', 'post-expirator'); ?>
                     </th>
                     <td>
+                        <fieldset class="pp-a11y-fieldset">
+                        <legend class="screen-reader-text"><?php esc_html_e('Preserve Data After Deactivating the Plugin', 'post-expirator'); ?></legend>
                         <div class="pp-settings-field-row">
                             <input type="radio" name="expired-preserve-data-deactivating"
                                 id="expired-preserve-data-deactivating-true"
@@ -90,6 +92,7 @@ $preserveData = $settingsFacade->getSettingPreserveData();
                                 'post-expirator'
                             ); ?>
                         </p>
+                        </fieldset>
                     </td>
                 </tr>
             </table>

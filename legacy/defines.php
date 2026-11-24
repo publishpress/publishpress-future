@@ -2,7 +2,7 @@
 
 use PublishPress\Future\Core\DI\ServicesAbstract;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+defined('ABSPATH') || exit;
 
 $defaultData = $container->get(ServicesAbstract::DEFAULT_DATA);
 

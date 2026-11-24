@@ -20,6 +20,8 @@ use WP_Query;
 use function wp_json_encode;
 use function get_post;
 
+\defined('ABSPATH') || exit;
+
 class WorkflowModel implements WorkflowModelInterface
 {
     public const META_KEY_HAS_LEGACY_TRIGGER = '_pp_workflow_has_legacy_trigger';
@@ -297,13 +299,14 @@ class WorkflowModel implements WorkflowModelInterface
             return;
         }
 
-        wp_delete_post($this->post->ID);
+        $workflowId = $this->post->ID;
+        wp_delete_post($workflowId);
         $this->reset();
 
         /**
          * @param int $workflowId
          */
-        $this->hooks->doAction(WorkflowsHooksAbstract::ACTION_WORKFLOW_DELETED, $this->post->ID);
+        $this->hooks->doAction(WorkflowsHooksAbstract::ACTION_WORKFLOW_DELETED, $workflowId);
     }
 
     private function getAllNodeTypesByType(): array
@@ -333,6 +336,15 @@ class WorkflowModel implements WorkflowModelInterface
 
             if (! is_array($this->flow)) {
                 $this->flow = [];
+            }
+
+            // An empty post body decodes to a list. The editor reads flow.edges.length.
+            if (! isset($this->flow['nodes']) || ! is_array($this->flow['nodes'])) {
+                $this->flow['nodes'] = [];
+            }
+
+            if (! isset($this->flow['edges']) || ! is_array($this->flow['edges'])) {
+                $this->flow['edges'] = [];
             }
 
             if ($updateSteps) {
@@ -385,7 +397,7 @@ class WorkflowModel implements WorkflowModelInterface
 
     private function getStepVersion(array $node): int
     {
-        return (int)($node['data']['version'] ?? 0);
+        return (int) ($node['data']['version'] ?? 0);
     }
 
     private function getUnstranslatedString(string $string): string
@@ -473,7 +485,11 @@ class WorkflowModel implements WorkflowModelInterface
         $newWorkflow->createNew(false);
 
         // Copy properties  of current workflow to new workflow
-        $newWorkflow->setTitle(sprintf(__('%s #2', 'post-expirator'), $this->getTitle()));
+        $newWorkflow->setTitle(sprintf(
+            /* translators: %s is the original workflow title. */
+            __('%s #2', 'post-expirator'),
+            $this->getTitle()
+        ));
         $newWorkflow->setDescription($this->getDescription());
         $newWorkflow->setFlow($this->getFlow());
 

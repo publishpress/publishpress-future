@@ -10,7 +10,7 @@ use PublishPress\Future\Modules\Expirator\ExpirationActionsAbstract;
 use PublishPress\Future\Modules\Expirator\Interfaces\ActionArgsModelInterface;
 use PublishPress\Future\Framework\Database\Interfaces\DBTableSchemaInterface;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 class ActionArgsModel implements ActionArgsModelInterface
 {
@@ -276,7 +276,7 @@ class ActionArgsModel implements ActionArgsModelInterface
 
     public function getPostId(): int
     {
-        return (int)$this->postId;
+        return (int) $this->postId;
     }
 
     public function setPostId(int $postId): void
@@ -286,17 +286,17 @@ class ActionArgsModel implements ActionArgsModelInterface
 
     public function getArgs(): array
     {
-        return (array)$this->args;
+        return (array) $this->args;
     }
 
     public function getArg(string $key): string
     {
-        return isset($this->args[$key]) ? $this->args[$key] : '';
+        return $this->args[$key] ?? '';
     }
 
     public function getAction(): string
     {
-        return isset($this->args['expireType']) ? $this->args['expireType'] : '';
+        return $this->args['expireType'] ?? '';
     }
 
     public function getActionLabel(string $postType = ''): string
@@ -312,7 +312,7 @@ class ActionArgsModel implements ActionArgsModelInterface
 
     public function getTaxonomyTerms(): array
     {
-        $terms = isset($this->args['category']) ? $this->args['category'] : [];
+        $terms = $this->args['category'] ?? [];
 
         if (! is_array($terms)) {
             $terms = explode(',', $terms);
@@ -323,7 +323,7 @@ class ActionArgsModel implements ActionArgsModelInterface
 
     public function getTaxonomy(): string
     {
-        return isset($this->args['categoryTaxonomy']) ? $this->args['categoryTaxonomy'] : '';
+        return $this->args['categoryTaxonomy'] ?? '';
     }
 
     public function getTaxonomyTermsNames(): array
@@ -353,7 +353,7 @@ class ActionArgsModel implements ActionArgsModelInterface
 
     public function getCreatedAt(): string
     {
-        return (string)$this->createdAt;
+        return (string) $this->createdAt;
     }
 
     public function setCreatedAt(string $createdAt): void
@@ -372,10 +372,10 @@ class ActionArgsModel implements ActionArgsModelInterface
     public function getScheduledDateAsISO8601(): string
     {
         if (is_numeric($this->scheduledDate)) {
-            $this->scheduledDate = $this->convertUnixTimeDateToISO8601((int)$this->scheduledDate);
+            $this->scheduledDate = $this->convertUnixTimeDateToISO8601((int) $this->scheduledDate);
         }
 
-        return (string)$this->scheduledDate;
+        return (string) $this->scheduledDate;
     }
 
     public function setEnabled(bool $enabled): void
@@ -385,7 +385,7 @@ class ActionArgsModel implements ActionArgsModelInterface
 
     public function getEnabled(): bool
     {
-        return (bool)$this->enabled;
+        return (bool) $this->enabled;
     }
 
     public function getScheduledDateAsUnixTime(): int
@@ -399,7 +399,7 @@ class ActionArgsModel implements ActionArgsModelInterface
     public function setScheduledDate(string $scheduledDate): void
     {
         if (is_numeric($scheduledDate)) {
-            $scheduledDate = $this->convertUnixTimeDateToISO8601((int)$scheduledDate);
+            $scheduledDate = $this->convertUnixTimeDateToISO8601((int) $scheduledDate);
         }
 
         $this->setScheduledDateFromISO8601($scheduledDate);

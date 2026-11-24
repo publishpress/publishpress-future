@@ -4,6 +4,8 @@ namespace PublishPress\Future\Modules\Workflows\Domain\Engine\VariableResolvers;
 
 use PublishPress\Future\Modules\Workflows\Interfaces\VariableResolverInterface;
 
+\defined('ABSPATH') || exit;
+
 class WorkflowMetaResolver implements VariableResolverInterface
 {
     private $workflowId;
@@ -35,7 +37,7 @@ class WorkflowMetaResolver implements VariableResolverInterface
 
     public function getValueAsString(string $name = ''): string
     {
-        return (string)$this->getValue($name);
+        return (string) $this->getValue($name);
     }
 
     public function compact($name = ''): array

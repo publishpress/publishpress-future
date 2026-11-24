@@ -1,6 +1,6 @@
 <?php
 
-defined('ABSPATH') or die('Direct access not allowed.');
+defined('ABSPATH') || exit;
 ?>
 
 <div id="future-workflow-editor" class="hide-if-no-js">

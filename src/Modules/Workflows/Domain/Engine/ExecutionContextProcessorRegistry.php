@@ -5,6 +5,8 @@ namespace PublishPress\Future\Modules\Workflows\Domain\Engine;
 use PublishPress\Future\Modules\Workflows\Interfaces\ExecutionContextProcessorRegistryInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\ExecutionContextProcessorInterface;
 
+\defined('ABSPATH') || exit;
+
 class ExecutionContextProcessorRegistry implements ExecutionContextProcessorRegistryInterface
 {
     private array $processors = [];

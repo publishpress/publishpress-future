@@ -2,6 +2,8 @@
 
 namespace PublishPress\Future\Modules\Workflows\Interfaces;
 
+\defined('ABSPATH') || exit;
+
 interface StepTypesModelInterface
 {
     /** @since 4.3.1 */

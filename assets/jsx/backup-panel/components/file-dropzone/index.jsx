@@ -9,7 +9,8 @@ export const FileDropzone = ({
     onDragLeave,
     onFileSelect,
     file,
-    formatFileSize
+    formatFileSize,
+    describedBy
 }) => {
     return (
         <div
@@ -26,6 +27,7 @@ export const FileDropzone = ({
                 accept=".json,application/json,text/json,text/plain"
                 onChange={onFileSelect}
                 className="is-primary"
+                aria-describedby={describedBy}
             >
                 {__('Select a .json file', 'post-expirator')}
             </FormFileUpload>

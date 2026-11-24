@@ -12,6 +12,8 @@
     <arg value="ps"/>
 
     <file>.</file>
+    <exclude-pattern>/\.ddev/*</exclude-pattern>
+    <exclude-pattern>/\.web/*</exclude-pattern>
     <exclude-pattern>/\.cursor/*</exclude-pattern>
     <exclude-pattern>/\.github/*</exclude-pattern>
     <exclude-pattern>/\.idea/*</exclude-pattern>

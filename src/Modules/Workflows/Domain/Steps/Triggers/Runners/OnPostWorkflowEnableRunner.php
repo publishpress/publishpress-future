@@ -14,6 +14,8 @@ use PublishPress\Future\Modules\Workflows\Interfaces\ExecutionContextInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\StepPostRelatedProcessorInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\WorkflowExecutionSafeguardInterface;
 
+\defined('ABSPATH') || exit;
+
 class OnPostWorkflowEnableRunner implements TriggerRunnerInterface
 {
     public const META_KEY_MANUALLY_TRIGGERED = '_pp_workflow_manually_triggered_';

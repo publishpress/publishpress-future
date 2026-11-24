@@ -43,3 +43,8 @@ translation-audit-report.*
 /scripts/
 .web/
 .ddev/
+/.php-cs-fixer.php
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/

@@ -7,6 +7,8 @@ use PublishPress\Future\Framework\Logger\LoggerInterface;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnPostAuthorChange;
 use PublishPress\Future\Modules\Workflows\Interfaces\StepProcessorInterface;
 
+\defined('ABSPATH') || exit;
+
 class OnPostAuthorChangeRunner implements TriggerRunnerInterface
 {
     /**

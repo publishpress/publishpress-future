@@ -1,6 +1,6 @@
 <?php
 
-defined('ABSPATH') or die('Direct access not allowed.');
+defined('ABSPATH') || exit;
 
 /**
  * Autoloads the classes.
@@ -9,7 +9,7 @@ defined('ABSPATH') or die('Direct access not allowed.');
  */
 function postexpirator_autoload($class)
 {
-    $namespaces = array('PostExpirator');
+    $namespaces = ['PostExpirator'];
     foreach ($namespaces as $namespace) {
         if (substr($class, 0, strlen($namespace)) === $namespace) {
             $class = str_replace('_', '', strstr($class, '_'));

@@ -4,7 +4,7 @@ use PublishPress\Future\Core\DI\Container;
 use PublishPress\Future\Modules\Expirator\HooksAbstract as ExpiratorHooks;
 use PublishPress\Future\Modules\Expirator\Models\PostTypesModel;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+defined('ABSPATH') || exit;
 
 if (! function_exists('_scheduleExpiratorEvent')) {
     /**
@@ -80,7 +80,7 @@ if (! function_exists('_postexpirator_expire_type')) {
             return false;
         }
 
-        PostExpirator_Display::getInstance()->render_template('how-to-expire', array('opts' => $opts));
+        PostExpirator_Display::getInstance()->render_template('how-to-expire', ['opts' => $opts]);
     }
 }
 
@@ -292,7 +292,7 @@ if (! function_exists('_postexpirator_get_cat_names')) {
     {
         _deprecated_function(__FUNCTION__, '2.8.0');
 
-        $out = array();
+        $out = [];
         foreach ($cats as $cat) {
             $out[$cat] = get_the_category_by_id($cat);
         }
@@ -399,7 +399,7 @@ if (! function_exists('_postexpirator_taxonomy')) {
 
         $disabled = false;
         if (isset($opts['disabled'])) {
-            $disabled = (bool)$opts['disabled'];
+            $disabled = (bool) $opts['disabled'];
         }
 
         $onchange = '';
@@ -429,7 +429,7 @@ if (! function_exists('_postexpirator_taxonomy')) {
             'disabled' => $disabled,
             'taxonomies' => $taxonomies,
             'selected' => $selected,
-            'onchange' => $onchange
+            'onchange' => $onchange,
         ];
 
         return PostExpirator_Display::getInstance()->get_rendered_template('taxonomy-field', $params);

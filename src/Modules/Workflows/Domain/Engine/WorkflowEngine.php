@@ -28,6 +28,8 @@ use Throwable;
 use function random_bytes;
 use function bin2hex;
 
+\defined('ABSPATH') || exit;
+
 class WorkflowEngine implements WorkflowEngineInterface
 {
     public const LOG_PREFIX = '[WorkflowEngine] ';

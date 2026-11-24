@@ -4,6 +4,8 @@ namespace PublishPress\Future\Modules\Workflows\Interfaces;
 
 use Closure;
 
+\defined('ABSPATH') || exit;
+
 interface WorkflowEngineInterface
 {
     public function start();

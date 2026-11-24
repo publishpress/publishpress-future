@@ -7,6 +7,8 @@ use PublishPress\Future\Modules\Workflows\HooksAbstract;
 use PublishPress\Future\Modules\Workflows\Interfaces\RestApiManagerInterface;
 use PublishPress\Future\Framework\WordPress\Utils\WorkflowSanitizationUtil;
 
+\defined('ABSPATH') || exit;
+
 // TODO: This is a temporary class to register the REST API routes. Move this to controllers on each module.
 class RestApiManager implements RestApiManagerInterface
 {
@@ -33,7 +35,7 @@ class RestApiManager implements RestApiManagerInterface
             new RestApiV1(
                 $this->hooks,
                 $this->workflowSanitization
-            )
+            ),
         ];
 
         /**

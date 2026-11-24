@@ -2,6 +2,8 @@
 
 namespace PublishPress\Future\Modules\Workflows\Domain\Engine\Traits;
 
+\defined('ABSPATH') || exit;
+
 /**
  * @deprecated 4.4.0 Use the WorkflowExecutionSafeguardInterface instead
  */

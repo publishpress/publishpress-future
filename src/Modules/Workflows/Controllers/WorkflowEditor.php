@@ -19,6 +19,8 @@ use PublishPress\Future\Modules\Workflows\Models\TaxonomiesModel;
 use PublishPress\Future\Modules\Workflows\Models\UserRolesModel;
 use PublishPress\Future\Modules\Workflows\Module;
 
+\defined('ABSPATH') || exit;
+
 class WorkflowEditor implements InitializableInterface
 {
     /**
@@ -79,7 +81,7 @@ class WorkflowEditor implements InitializableInterface
     public function renderEditorPage()
     {
         // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-        $workflowId = (int)($_GET["workflow"] ?? 0);
+        $workflowId = (int) ($_GET["workflow"] ?? 0);
 
         require_once __DIR__ . "/../Views/editor.html.php";
     }
@@ -187,7 +189,7 @@ class WorkflowEditor implements InitializableInterface
         $taxonomies = $taxonomiesModel->getTaxonomiesAsOptions();
 
         // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-        $workflowId = (int)($_GET["workflow"] ?? 0);
+        $workflowId = (int) ($_GET["workflow"] ?? 0);
 
         $isPro = $this->hooks->applyFilters(HooksAbstract::FILTER_IS_PRO, false);
 

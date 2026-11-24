@@ -16,6 +16,8 @@ use PublishPress\Future\Modules\Workflows\Interfaces\ExecutionContextInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\PostCacheInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\WorkflowExecutionSafeguardInterface;
 
+\defined('ABSPATH') || exit;
+
 /**
  * Trigger runner for the "On Post Update" workflow step.
  *

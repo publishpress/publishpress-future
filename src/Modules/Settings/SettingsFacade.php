@@ -15,7 +15,7 @@ use PublishPress\Future\Modules\Expirator\ExpirationActionsAbstract;
 use PublishPress\Future\Modules\Settings\HooksAbstract as SettingsHooksAbstract;
 use WP_Role;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 /**
  *
@@ -146,7 +146,7 @@ class SettingsFacade
      */
     public function getSettingPreserveData($default = true)
     {
-        return (bool)$this->options->getOption('expirationdatePreserveData', $default);
+        return (bool) $this->options->getOption('expirationdatePreserveData', $default);
     }
 
     public function setSettingPreserveData(bool $value): void
@@ -165,20 +165,20 @@ class SettingsFacade
         }
 
         if (! isset($this->cache['debugIsEnabled'])) {
-            $this->cache['debugIsEnabled'] = (bool)$this->options->getOption('expirationdateDebug', $default);
+            $this->cache['debugIsEnabled'] = (bool) $this->options->getOption('expirationdateDebug', $default);
         }
 
-        return (bool)$this->cache['debugIsEnabled'];
+        return (bool) $this->cache['debugIsEnabled'];
     }
 
     public function getSendEmailNotification()
     {
-        return (bool)$this->options->getOption('expirationdateEmailNotification', POSTEXPIRATOR_EMAILNOTIFICATION);
+        return (bool) $this->options->getOption('expirationdateEmailNotification', POSTEXPIRATOR_EMAILNOTIFICATION);
     }
 
     public function getSendEmailNotificationToAdmins()
     {
-        return (bool)$this->options->getOption(
+        return (bool) $this->options->getOption(
             'expirationdateEmailNotificationAdmins',
             POSTEXPIRATOR_EMAILNOTIFICATIONADMINS
         );
@@ -197,7 +197,7 @@ class SettingsFacade
             $emailAddress = filter_var(trim($emailAddress), FILTER_SANITIZE_EMAIL);
         }
 
-        return (array)$emailsList;
+        return (array) $emailsList;
     }
 
     public function getPostTypeDefaults($postType)
@@ -220,7 +220,7 @@ class SettingsFacade
 
         $defaults = array_merge(
             $defaults,
-            (array)$this->options->getOption('expirationdateDefaults' . ucfirst($postType))
+            (array) $this->options->getOption('expirationdateDefaults' . ucfirst($postType))
         );
 
         if (empty($defaults['expireType'])) {
@@ -349,7 +349,7 @@ class SettingsFacade
 
     public function getHideCalendarByDefault()
     {
-        return (bool)$this->options->getOption('expirationdateHideCalendarByDefault', false);
+        return (bool) $this->options->getOption('expirationdateHideCalendarByDefault', false);
     }
 
     public function setHideCalendarByDefault(bool $value): void
@@ -365,17 +365,17 @@ class SettingsFacade
 
     public function getScheduledWorkflowStepsCleanupStatus(): bool
     {
-        return (bool)$this->options->getOption(self::OPTION_SCHEDULED_STEP_CLEANUP_STATUS, true);
+        return (bool) $this->options->getOption(self::OPTION_SCHEDULED_STEP_CLEANUP_STATUS, true);
     }
 
     public function getScheduledWorkflowStepsCleanupRetention(): int
     {
-        return (int)$this->options->getOption(self::OPTION_FINISHED_SCHEDULED_STEP_RETENTION, 30);
+        return (int) $this->options->getOption(self::OPTION_FINISHED_SCHEDULED_STEP_RETENTION, 30);
     }
 
     public function getExperimentalFeaturesStatus(): bool
     {
-        $value = (bool)$this->options->getOption(self::OPTION_EXPERIMENTAL_ENABLED, false);
+        $value = (bool) $this->options->getOption(self::OPTION_EXPERIMENTAL_ENABLED, false);
         return $value && PUBLISHPRESS_FUTURE_WORKFLOW_EXPERIMENTAL;
     }
 
@@ -459,7 +459,7 @@ class SettingsFacade
 
     public function getShowInPostFooter(): bool
     {
-        return (bool)$this->options->getOption('expirationdateDisplayFooter', POSTEXPIRATOR_FOOTERDISPLAY);
+        return (bool) $this->options->getOption('expirationdateDisplayFooter', POSTEXPIRATOR_FOOTERDISPLAY);
     }
 
     public function setShowInPostFooter(bool $value): void
@@ -531,9 +531,32 @@ class SettingsFacade
         return $this->options->getOption('shortcodeWrapper', '');
     }
 
+    /**
+     * Restrict shortcode wrapper to safe container elements.
+     *
+     * @since 4.10.6
+     */
+    public function sanitizeShortcodeWrapper(string $value): string
+    {
+        $value = strtolower(trim($value));
+
+        if ($value === '') {
+            return '';
+        }
+
+        if (in_array($value, ['p', 'div', 'span'], true)) {
+            return $value;
+        }
+
+        return 'div';
+    }
+
     public function setShortcodeWrapper(string $value): void
     {
-        $this->options->updateOption('shortcodeWrapper', sanitize_text_field($value));
+        $this->options->updateOption(
+            'shortcodeWrapper',
+            $this->sanitizeShortcodeWrapper(sanitize_text_field($value))
+        );
     }
 
     public function getShortcodeWrapperClass(): string
@@ -613,7 +636,7 @@ class SettingsFacade
             'metaboxTitle' => $this->getMetaboxTitle(),
             'metaboxCheckboxLabel' => $this->getMetaboxCheckboxLabel(),
             'columnStyle' => $this->getColumnStyle(),
-            'timeFormatForDatePicker' => $this->getTimeFormatForDatePicker()
+            'timeFormatForDatePicker' => $this->getTimeFormatForDatePicker(),
         ];
 
         $settings = $this->hooks->applyFilters(HooksAbstract::FILTER_SETTINGS_ADMIN, $settings);
@@ -672,7 +695,7 @@ class SettingsFacade
 
     public function getPastDueActionsNotificationStatus(): bool
     {
-        return (bool)$this->options->getOption('pastDueActionsNotification', true);
+        return (bool) $this->options->getOption('pastDueActionsNotification', true);
     }
 
     public function setPastDueActionsNotificationStatus(bool $value): void
@@ -707,7 +730,7 @@ class SettingsFacade
      */
     public function getPreserveData(): int
     {
-        return (int)$this->options->getOption('expirationdatePreserveData', 0);
+        return (int) $this->options->getOption('expirationdatePreserveData', 0);
     }
 
     /**

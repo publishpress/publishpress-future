@@ -1,5 +1,7 @@
 
+.agents
 .babelrc
+.codex
 .deploy-state.json
 .distignore
 .git
@@ -9,6 +11,7 @@
 .idea
 .php-cs-fixer.cache
 .phpcs-php-compatibility.xml
+.phpcs-plugin-review.xml
 .phpcs.xml
 .phplint-cache
 .phplint.yml
@@ -18,11 +21,11 @@
 *.code-workspace
 /.cursor
 /.wordpress-org
+/assets/adobe-animate
+/assets/jsx
 /cache
 /dev-workspace
 /dev-workspace-cache
-/assets/jsx
-/assets/adobe-animate
 /dist
 /docs
 /lib/composer.json
@@ -41,7 +44,10 @@ jsconfig.json
 node_modules
 package-lock.json
 package.json
+patches
+phpmd.ruleset.xml
 phpstan.neon
+playwright.config.ts
 psalm.xml
 ray-dist.php
 ray.php

@@ -4,6 +4,8 @@ namespace PublishPress\Future\Modules\Workflows\Models;
 
 use PublishPress\Future\Modules\Workflows\Interfaces\PostTermsModelInterface;
 
+\defined('ABSPATH') || exit;
+
 class PostTermModel implements PostTermsModelInterface
 {
     public function getAllTerms(): array

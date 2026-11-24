@@ -4,6 +4,8 @@ namespace PublishPress\Future\Modules\Workflows\Models;
 
 use PublishPress\Future\Modules\Workflows\Interfaces\CronSchedulesModelInterface;
 
+\defined('ABSPATH') || exit;
+
 class CronSchedulesModel implements CronSchedulesModelInterface
 {
     public function getCronSchedules(): array
@@ -33,7 +35,7 @@ class CronSchedulesModel implements CronSchedulesModelInterface
 
         foreach ($schedules as $key => $schedule) {
             if ($key === $name) {
-                return (int)$schedule['interval'];
+                return (int) $schedule['interval'];
             }
         }
 

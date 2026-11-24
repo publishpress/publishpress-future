@@ -13,6 +13,8 @@ namespace PublishPress\Future\Modules\Workflows\Logger;
 use PublishPress\Future\Framework\Logger\LoggerInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\ExecutionContextInterface;
 
+\defined('ABSPATH') || exit;
+
 /**
  * Decorator around LoggerInterface that automatically prepends the workflow
  * context prefix ([WorkflowEngine:X]: ) to all log messages.

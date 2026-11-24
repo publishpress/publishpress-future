@@ -10,6 +10,8 @@ use PublishPress\Future\Modules\Workflows\Interfaces\StepProcessorInterface;
 use PublishPress\Future\Modules\Workflows\Models\WorkflowModel;
 use Throwable;
 
+\defined('ABSPATH') || exit;
+
 class General implements StepProcessorInterface
 {
     public const LOG_PREFIX = '[WorkflowStepsProcessorsGeneral:%d]: ';

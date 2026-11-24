@@ -12,7 +12,7 @@ use PublishPress\Future\Framework\WordPress\Facade\DatabaseFacade;
 use PublishPress\Future\Framework\WordPress\Facade\SiteFacade;
 use PublishPress\Future\Modules\Settings\SettingsFacade;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 class Logger implements LoggerInterface
 {
@@ -434,7 +434,7 @@ class Logger implements LoggerInterface
             $where = " WHERE `request_id` IN (SELECT DISTINCT `request_id` FROM $databaseTableName WHERE `trigger_activated` = 1 AND `request_id` != '')";
         }
 
-        return (array)$this->db->getResults("SELECT * FROM $databaseTableName{$where} ORDER BY `id`", 'ARRAY_A');
+        return (array) $this->db->getResults("SELECT * FROM $databaseTableName{$where} ORDER BY `id`", 'ARRAY_A');
     }
 
     /**
@@ -455,7 +455,7 @@ class Logger implements LoggerInterface
             $where = " WHERE `request_id` IN (SELECT DISTINCT `request_id` FROM $databaseTableName WHERE `trigger_activated` = 1 AND `request_id` != '')";
         }
 
-        $list = (array)$this->db->getResults(
+        $list = (array) $this->db->getResults(
             "SELECT * FROM $databaseTableName{$where} ORDER BY `id` DESC LIMIT $limit",
             'ARRAY_A'
         );
@@ -478,7 +478,7 @@ class Logger implements LoggerInterface
             $where = " WHERE `request_id` IN (SELECT DISTINCT `request_id` FROM $databaseTableName WHERE `trigger_activated` = 1 AND `request_id` != '')";
         }
 
-        return (int)$this->db->getVar("SELECT COUNT(*) FROM $databaseTableName{$where}");
+        return (int) $this->db->getVar("SELECT COUNT(*) FROM $databaseTableName{$where}");
     }
 
     /**

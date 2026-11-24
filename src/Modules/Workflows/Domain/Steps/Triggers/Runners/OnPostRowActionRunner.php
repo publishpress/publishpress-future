@@ -7,6 +7,8 @@ use PublishPress\Future\Modules\Workflows\Interfaces\TriggerRunnerInterface;
 use PublishPress\Future\Framework\Logger\LoggerInterface;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnPostRowAction;
 
+\defined('ABSPATH') || exit;
+
 class OnPostRowActionRunner implements TriggerRunnerInterface
 {
     public const ACTION_RUN_POST_ROW_ACTION = 'ppfuture-run-post-row-action';

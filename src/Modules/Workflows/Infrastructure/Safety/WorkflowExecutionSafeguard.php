@@ -8,6 +8,8 @@ use PublishPress\Future\Modules\Workflows\Interfaces\ExecutionContextInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\WorkflowExecutionSafeguardInterface;
 use PublishPress\Future\Modules\Workflows\TransientsAbstract;
 
+\defined('ABSPATH') || exit;
+
 class WorkflowExecutionSafeguard implements WorkflowExecutionSafeguardInterface
 {
     /**

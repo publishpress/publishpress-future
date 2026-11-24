@@ -119,7 +119,7 @@ var StatusChangeHandler = function StatusChangeHandler() {
 };
 document.addEventListener('DOMContentLoaded', function () {
   var root = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createRoot)(document.createElement('div'));
-  root.render( /*#__PURE__*/React.createElement(StatusChangeHandler, null));
+  root.render(/*#__PURE__*/React.createElement(StatusChangeHandler, null));
 });
 })();
 

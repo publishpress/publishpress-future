@@ -3,7 +3,8 @@ import { useState, useEffect } from '@wordpress/element';
 
 import ImportTab from './tabs-content/import';
 import ExportTab from './tabs-content/export';
-import TabbedWindow from './tabbed-window';
+import { SnackbarList } from '@wordpress/components';
+import { useSelect, useDispatch } from '@wordpress/data';
 
 const tabs = [
     {
@@ -15,6 +16,25 @@ const tabs = [
         value: 'import',
     },
 ];
+
+/**
+ * Renders the export/import notices from the core/notices store. Snackbar
+ * announces each notice through wp.a11y when it appears.
+ */
+const BackupNotices = () => {
+    const notices = useSelect((select) => select('core/notices').getNotices(), []);
+    const { removeNotice } = useDispatch('core/notices');
+
+    const snackbarNotices = (notices || []).filter((notice) => notice.type === 'snackbar');
+
+    return (
+        <SnackbarList
+            notices={snackbarNotices}
+            className="pe-settings-tab__snackbar-list"
+            onRemove={(noticeId) => removeNotice(noticeId)}
+        />
+    );
+};
 
 const BackupPanel = () => {
     const [activeTab, setActiveTab] = useState();
@@ -40,13 +60,22 @@ const BackupPanel = () => {
         return null;
     }
 
+    let content = null;
+
     if (activeTab === 'import') {
-        return <ImportTab />;
+        content = <ImportTab />;
     }
 
     if (activeTab === 'export') {
-        return <ExportTab />;
+        content = <ExportTab />;
     }
+
+    return (
+        <>
+            {content}
+            <BackupNotices />
+        </>
+    );
 };
 
 export default BackupPanel;

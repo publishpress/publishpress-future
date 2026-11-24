@@ -7,6 +7,8 @@ use PublishPress\Future\Framework\Logger\LoggerInterface;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\DeletePostMeta;
 use PublishPress\Future\Modules\Workflows\Interfaces\StepProcessorInterface;
 
+\defined('ABSPATH') || exit;
+
 class DeletePostMetaRunner implements StepRunnerInterface
 {
     /**

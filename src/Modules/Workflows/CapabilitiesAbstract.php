@@ -2,6 +2,8 @@
 
 namespace PublishPress\Future\Modules\Workflows;
 
+\defined('ABSPATH') || exit;
+
 abstract class CapabilitiesAbstract
 {
     public const EDIT_WORKFLOWS = 'edit_publishpress_workflows';

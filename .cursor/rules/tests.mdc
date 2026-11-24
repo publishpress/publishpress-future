@@ -9,6 +9,8 @@ globs: tests/**, **/*Test.php, **/*Cest.php, **/*.feature, codeception.yml
 Apply when user requests tests or work touches test files.
 
 - Tests should follow good practices.
-- This project uses Codeception and has Unit and Integration tests. It can also have Acceptance or EndToEnd tests.
+- Codeception runs Unit and Integration tests.
+- Browser acceptance is Playwright (`composer test:e2e`).
+- Plugin activation and instance protection are Playwright too (`tests/playwright/plugins/`).
 - Tests run inside a docker container defined on dev-workspace/docker/compose.yaml, as the services db_test, test-wp, test-wpcli
 - Instead of calling codecept directly, we call `composer test` and the arguments are the same as we would do on the original command.

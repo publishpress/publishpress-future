@@ -14,7 +14,7 @@ use PublishPress\Future\Modules\Expirator\ExpirationActionsAbstract;
 use PublishPress\Future\Modules\Expirator\HooksAbstract as ExpiratorHooksAbstract;
 use PublishPress\Future\Modules\Settings\SettingsFacade;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 class PostTypeDefaultDataModel
 {
@@ -147,13 +147,13 @@ class PostTypeDefaultDataModel
         }
 
         $calculatedDate = $this->dateTimeHandler->getCalculatedTimeWithOffset(
-            (int)$baseDate,
+            (int) $baseDate,
             $dateTimeOffset
         );
 
         if (empty($calculatedDate)) {
-            // translators: %s is the date/time offset and %s is the post type.
-            $errorMessage = esc_html__('Invalid date/time offset "%s" for post type "%s". Please ensure you use only English terms for the date/time offset, such as "3 months" or "1 week".', 'post-expirator');
+            /* translators: 1: date/time offset, 2: post type. */
+            $errorMessage = esc_html__('Invalid date/time offset "%1$s" for post type "%2$s". Please ensure you use only English terms for the date/time offset, such as "3 months" or "1 week".', 'post-expirator');
 
             throw new \Exception(
                 sprintf(
@@ -218,7 +218,7 @@ class PostTypeDefaultDataModel
 
     public function isAutoEnabled(): bool
     {
-        return (bool)$this->getSetting('autoEnable');
+        return (bool) $this->getSetting('autoEnable');
     }
 
     public function getAction(): string
@@ -237,7 +237,7 @@ class PostTypeDefaultDataModel
 
     public function getTaxonomy(): string
     {
-        return (string)$this->getSetting('taxonomy');
+        return (string) $this->getSetting('taxonomy');
     }
 
     public function getTerms(): array

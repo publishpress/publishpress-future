@@ -7,7 +7,7 @@ use PublishPress\Future\Core\DI\ServicesAbstract;
 use PublishPress\Future\Framework\Database\Interfaces\DBTableSchemaInterface;
 use PublishPress\Future\Modules\Expirator\Interfaces\AbstractTableSchemaInterface;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 /**
  * @deprecated version 3.4.3 Use the DBTableSchemas/ActionArgsSchema class instead.

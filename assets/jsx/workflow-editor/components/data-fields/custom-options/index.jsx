@@ -64,7 +64,11 @@ export function CustomOptions({
         const name = defaultName.name;
         const nameIndex = defaultName.index;
 
-        const defaultLabel = sprintf(__('Option %s', 'post-expirator'), nameIndex);
+        const defaultLabel = sprintf(
+            /* translators: %s is the option index. */
+            __('Option %s', 'post-expirator'),
+            nameIndex
+        );
 
         onChangeSetting({ value: [...defaultValue, { name, label: defaultLabel, hint: '' }] });
         setAutoOpenItem(defaultValue.length);
@@ -92,7 +96,11 @@ export function CustomOptions({
                         <OptionItem
                             name={`options[${index}].name`}
                             label={`#${index + 1}`}
-                            popoverLabel={sprintf(__('Option #%s', 'post-expirator'), index + 1)}
+                            popoverLabel={sprintf(
+                                /* translators: %s is the option number. */
+                                __('Option #%s', 'post-expirator'),
+                                index + 1
+                            )}
                             defaultValue={option}
                             onChange={(value) => onChangeOption(index, value)}
                             autoOpen={autoOpenItem === index}
@@ -104,7 +112,18 @@ export function CustomOptions({
                             onNameChangeCallback={onNameChangeCallback}
                         />
                         {! hasOnlyOneOption && (
-                            <Button onClick={() => onClickRemoveOption(index)} isSmall={true} iconSize={16} icon={'trash'} />
+                            <Button
+                                onClick={() => onClickRemoveOption(index)}
+                                isSmall={true}
+                                iconSize={16}
+                                icon={'trash'}
+                                label={sprintf(
+                                    /* translators: %s is the option number. */
+                                    __('Remove option #%s', 'post-expirator'),
+                                    index + 1
+                                )}
+                                showTooltip
+                            />
                         )}
                     </div>
                 ))}
@@ -129,6 +148,7 @@ export function CustomOptions({
                     <DescriptionText
                         text={
                             sprintf(
+                                /* translators: %s is the maximum number of options. */
                                 __('You have reached the maximum number of options. You can add up to %s options.', 'post-expirator'),
                                 maxOptions
                             )

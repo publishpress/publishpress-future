@@ -9,6 +9,8 @@ use PublishPress\Future\Modules\Expirator\HooksAbstract;
 use PublishPress\Future\Modules\Workflows\Module;
 use PublishPress\Future\Modules\Workflows\CapabilitiesAbstract as WorkflowCapabilities;
 
+\defined('ABSPATH') || exit;
+
 class PostType implements InitializableInterface
 {
     public const MENU_CAPABILITY = 'manage_options';

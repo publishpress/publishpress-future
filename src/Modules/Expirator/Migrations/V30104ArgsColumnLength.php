@@ -13,7 +13,7 @@ use PublishPress\Future\Modules\Expirator\Interfaces\MigrationInterface;
 
 use function tad\WPBrowser\vendorDir;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 class V30104ArgsColumnLength implements MigrationInterface
 {

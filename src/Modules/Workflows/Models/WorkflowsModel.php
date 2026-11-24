@@ -7,6 +7,8 @@ use PublishPress\Future\Modules\Workflows\Module;
 use PublishPress\Future\Modules\Workflows\Interfaces\WorkflowsModelInterface;
 use WP_Query;
 
+\defined('ABSPATH') || exit;
+
 class WorkflowsModel implements WorkflowsModelInterface
 {
     public const OPTION_SAMPLE_WORKFLOWS_CREATED = 'publishpress_future_workflow_samples_created';
@@ -99,7 +101,7 @@ class WorkflowsModel implements WorkflowsModelInterface
             'meta_query' => [
                 [
                     'key' => sanitize_key($metaKey),
-                    'value' => (int)$metaValue,
+                    'value' => (int) $metaValue,
                 ],
             ],
         ];
@@ -111,7 +113,7 @@ class WorkflowsModel implements WorkflowsModelInterface
         foreach ($query->posts as $workflow) {
             $workflows[] = [
                 'value' => $workflow->ID,
-                'label' => $workflow->post_title
+                'label' => $workflow->post_title,
             ];
         }
 

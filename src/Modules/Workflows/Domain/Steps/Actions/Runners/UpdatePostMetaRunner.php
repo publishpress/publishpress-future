@@ -7,6 +7,8 @@ use PublishPress\Future\Framework\Logger\LoggerInterface;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\UpdatePostMeta;
 use PublishPress\Future\Modules\Workflows\Interfaces\StepProcessorInterface;
 
+\defined('ABSPATH') || exit;
+
 class UpdatePostMetaRunner implements StepRunnerInterface
 {
     /**

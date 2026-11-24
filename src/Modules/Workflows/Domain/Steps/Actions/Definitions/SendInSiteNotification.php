@@ -5,6 +5,8 @@ namespace PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions
 use PublishPress\Future\Modules\Workflows\Interfaces\StepTypeInterface;
 use PublishPress\Future\Modules\Workflows\Models\StepTypesModel;
 
+\defined('ABSPATH') || exit;
+
 class SendInSiteNotification implements StepTypeInterface
 {
     public static function getNodeTypeName(): string
@@ -132,8 +134,8 @@ class SendInSiteNotification implements StepTypeInterface
                             ],
                         ],
                         "default" => "info",
-                    ]
-                ]
+                    ],
+                ],
             ],
         ];
     }
@@ -183,8 +185,8 @@ class SendInSiteNotification implements StepTypeInterface
                         "label" => __("Message", "post-expirator"),
                         "fieldLabel" => __("Message > Message", "post-expirator"),
                     ],
-                ]
-            ]
+                ],
+            ],
         ];
     }
 
@@ -228,7 +230,7 @@ class SendInSiteNotification implements StepTypeInterface
             "target" => [
                 [
                     "id" => "input",
-                ]
+                ],
             ],
             "source" => [
                 [
@@ -239,7 +241,7 @@ class SendInSiteNotification implements StepTypeInterface
                     "id" => "read",
                     "label" => __("On dismiss", "post-expirator"),
                 ],
-            ]
+            ],
         ];
     }
 

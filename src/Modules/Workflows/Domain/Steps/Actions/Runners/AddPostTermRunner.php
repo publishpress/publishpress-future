@@ -8,6 +8,8 @@ use PublishPress\Future\Modules\Workflows\Interfaces\StepProcessorInterface;
 use PublishPress\Future\Framework\Logger\LoggerInterface;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\AddPostTerm;
 
+\defined('ABSPATH') || exit;
+
 class AddPostTermRunner implements StepRunnerInterface
 {
     /**

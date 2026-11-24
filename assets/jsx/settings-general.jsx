@@ -3,6 +3,7 @@
  */
 
 import { DateOffsetPreview } from "./components";
+import { useControlA11yAttributes } from "./components/a11yUtils";
 
 import {
     StrictMode,
@@ -38,6 +39,12 @@ const SettingsFormPanel = (props) => {
         setIsValidForm(isValid);
     }
 
+    const hasError = ! isValidForm && !! validationError;
+    const errorId = 'expired-custom-expiration-date-error';
+
+    // Link the error to the offset field (rendered by PHP) and flag it as invalid.
+    useControlA11yAttributes('expired-custom-expiration-date', hasError ? errorId : '', hasError);
+
     useEffect(() => {
         jQuery('#expired-custom-expiration-date').on('keyup', function () {
             setOffset(jQuery(this).val());
@@ -56,10 +63,11 @@ const SettingsFormPanel = (props) => {
                 setValidationErrorCallback={onHasValidationError}
                 setHasPendingValidationCallback={onValidationStarted}
                 setHasValidDataCallback={onValidationFinished}
+                headingLevel={4}
                 />
 
-            {! isValidForm && validationError && (
-                <div className="publishpress-future-notice publishpress-future-notice-error">
+            {hasError && (
+                <div className="publishpress-future-notice publishpress-future-notice-error" id={errorId} role="alert">
                     <p>{text.error}: {validationError}</p>
                 </div>
             )}

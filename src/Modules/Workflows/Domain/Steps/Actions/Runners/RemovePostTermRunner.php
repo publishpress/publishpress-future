@@ -8,6 +8,8 @@ use PublishPress\Future\Modules\Workflows\Interfaces\StepProcessorInterface;
 use PublishPress\Future\Framework\Logger\LoggerInterface;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\RemovePostTerm;
 
+\defined('ABSPATH') || exit;
+
 class RemovePostTermRunner implements StepRunnerInterface
 {
     /**

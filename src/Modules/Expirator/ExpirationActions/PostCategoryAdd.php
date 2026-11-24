@@ -8,7 +8,7 @@ use PublishPress\Future\Modules\Expirator\Interfaces\ExpirationActionInterface;
 use PublishPress\Future\Modules\Expirator\Models\PostTypeDefaultDataModelFactory;
 use PublishPress\Future\Modules\Expirator\Models\ExpirablePostModel;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 class PostCategoryAdd implements ExpirationActionInterface
 {

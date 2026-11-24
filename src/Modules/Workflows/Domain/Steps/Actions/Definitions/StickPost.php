@@ -5,6 +5,8 @@ namespace PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions
 use PublishPress\Future\Modules\Workflows\Interfaces\StepTypeInterface;
 use PublishPress\Future\Modules\Workflows\Models\StepTypesModel;
 
+\defined('ABSPATH') || exit;
+
 class StickPost implements StepTypeInterface
 {
     public static function getNodeTypeName(): string
@@ -76,7 +78,7 @@ class StickPost implements StepTypeInterface
                             "variable" => [
                                 "rule" => "first",
                                 "dataType" => "post",
-                            ]
+                            ],
                         ],
                     ],
                 ],
@@ -139,14 +141,14 @@ class StickPost implements StepTypeInterface
             "target" => [
                 [
                     "id" => "input",
-                ]
+                ],
             ],
             "source" => [
                 [
                     "id" => "output",
                     "label" => __("Next", "post-expirator"),
-                ]
-            ]
+                ],
+            ],
         ];
     }
 

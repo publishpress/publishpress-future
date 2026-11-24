@@ -6,7 +6,7 @@ use PublishPress\Future\Modules\Debug\HooksAbstract;
 use PublishPress\Future\Framework\Database\Interfaces\DBTableSchemaInterface;
 use PublishPress\Future\Modules\Settings\HooksAbstract as SettingsHooksAbstract;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+defined('ABSPATH') || exit;
 
 // phpcs:disable Generic.Files.LineLength.TooLong
 
@@ -57,10 +57,10 @@ $rayDebugIsInstalled = function_exists('ray');
                         esc_html_e('WP-Cron Status Check', 'post-expirator'); ?></th>
                     <td>
                         <?php if (PostExpirator_CronFacade::is_cron_enabled()) : ?>
-                            <i class="dashicons dashicons-yes pe-status pe-status-enabled"></i> <span><?php
+                            <i class="dashicons dashicons-yes pe-status pe-status-enabled" aria-hidden="true"></i> <span><?php
                                 esc_html_e('Passed', 'post-expirator'); ?></span>
                         <?php else : ?>
-                            <i class="dashicons dashicons-no pe-status pe-status-disabled"></i> <span><?php
+                            <i class="dashicons dashicons-no pe-status pe-status-disabled" aria-hidden="true"></i> <span><?php
                                 esc_html_e('WP Cron Disabled', 'post-expirator'); ?></span>
                         <?php endif; ?>
                     </td>
@@ -76,10 +76,10 @@ $rayDebugIsInstalled = function_exists('ray');
                             ); ?>
                         </p>
                         <?php if ($isSchemaHealthOk) : ?>
-                            <i class="dashicons dashicons-yes pe-status pe-status-enabled"></i> <span><?php
+                            <i class="dashicons dashicons-yes pe-status pe-status-enabled" aria-hidden="true"></i> <span><?php
                                 esc_html_e('Passed', 'post-expirator'); ?></span>
                         <?php else : ?>
-                            <i class="dashicons dashicons-no pe-status pe-status-disabled"></i>
+                            <i class="dashicons dashicons-no pe-status pe-status-disabled" aria-hidden="true"></i>
                             <span><?php echo esc_html(
                                 _n(
                                     'Error found on the database schema:',
@@ -98,7 +98,7 @@ $rayDebugIsInstalled = function_exists('ray');
                                 <table class="widefat striped" style="margin-top: 10px; margin-bottom: 10px;">
                                     <thead>
                                         <tr>
-                                            <th><strong><?php echo esc_html($tableName); ?></strong></th>
+                                            <th scope="col"><strong><?php echo esc_html($tableName); ?></strong></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -120,11 +120,11 @@ $rayDebugIsInstalled = function_exists('ray');
                 <tr><td colspan="2"><hr></td></tr>
 
                 <tr id="debug-logging">
-                    <th scope="row"><label for="postexpirator-log"><?php
+                    <th scope="row"><label><?php
                             esc_html_e('Debug Logging', 'post-expirator'); ?></label></th>
                     <td>
                         <?php if ($debug->isEnabled()) : ?>
-                            <i class="dashicons dashicons-yes pe-status pe-status-enabled"></i> <span><?php
+                            <i class="dashicons dashicons-yes pe-status pe-status-enabled" aria-hidden="true"></i> <span><?php
                                 esc_html_e('Enabled', 'post-expirator'); ?></span>
                             <?php
                             echo '<input type="submit" class="button" name="debugging-disable" id="debugging-disable" value=" '
@@ -144,7 +144,7 @@ $rayDebugIsInstalled = function_exists('ray');
                                 )
                             ) . '">' . esc_html__('View Debug Logs', 'post-expirator') . '</a>'; ?>
                         <?php else : ?>
-                            <i class="dashicons dashicons-no-alt pe-status pe-status-disabled"></i> <span><?php
+                            <i class="dashicons dashicons-no-alt pe-status pe-status-disabled" aria-hidden="true"></i> <span><?php
                             esc_html_e('Disabled', 'post-expirator'); ?></span>
                             <?php
                             echo '<input type="submit" class="button" name="debugging-enable" id="debugging-enable" value=" '
@@ -160,19 +160,19 @@ $rayDebugIsInstalled = function_exists('ray');
                         esc_html_e('Spatie Ray Debug', 'post-expirator'); ?></th>
                     <td>
                         <?php if ($rayDebugIsInstalled) : ?>
-                            <i class="dashicons dashicons-yes pe-status pe-status-enabled"></i> <span><?php
+                            <i class="dashicons dashicons-yes pe-status pe-status-enabled" aria-hidden="true"></i> <span><?php
                                 esc_html_e('Spatie Ray Detected', 'post-expirator'); ?></span>
                             <p class="description">
                                 <?php esc_html_e('Spatie Ray Debug is detected. The "Send to Ray" workflow step will be available in the workflow editor.', 'post-expirator'); ?>
                             </p>
                         <?php else : ?>
-                            <i class="dashicons dashicons-no-alt pe-status pe-status-disabled"></i> <span><?php
+                            <i class="dashicons dashicons-no-alt pe-status pe-status-disabled" aria-hidden="true"></i> <span><?php
                                 esc_html_e('Spatie Ray Not Detected', 'post-expirator'); ?></span>
                             <p class="description">
                                 <?php esc_html_e('Spatie Ray Debug is not detected. This is not an error, but the "Send to Ray" workflow step will not be available in the workflow editor.', 'post-expirator'); ?>
                             </p>
                         <?php endif; ?>
-                        <a href="https://spatie.be/products/ray" target="_blank"><?php esc_html_e('Learn more about Spatie Ray', 'post-expirator'); ?></a>
+                        <a href="https://spatie.be/products/ray" target="_blank"><?php esc_html_e('Learn more about Spatie Ray', 'post-expirator'); ?><span class="screen-reader-text"> <?php esc_html_e('(opens in a new tab)', 'post-expirator'); ?></span></a>
                     </td>
                 </tr>
                 <?php $hooks->doAction(HooksAbstract::ACTION_AFTER_DEBUG_LOG_SETTING); ?>
@@ -217,7 +217,7 @@ $rayDebugIsInstalled = function_exists('ray');
                     <tr><td colspan="2"><hr></td></tr>
 
                     <tr id="tools-legacy-cron-schedule">
-                        <th scope="row"><label for="cron-schedule"><?php
+                        <th scope="row"><label><?php
                                 esc_html_e('Legacy Cron Schedule', 'post-expirator'); ?></label></th>
                         <td>
                             <?php
@@ -237,13 +237,13 @@ $rayDebugIsInstalled = function_exists('ray');
                                 <table class="striped wp-list-table widefat fixed table-view-list">
                                     <thead>
                                         <tr>
-                                            <th class="pe-date-column">
+                                            <th scope="col" class="pe-date-column">
                                                 <?php esc_html_e('Date', 'post-expirator'); ?>
                                             </th>
-                                            <th class="pe-event-column">
+                                            <th scope="col" class="pe-event-column">
                                                 <?php esc_html_e('Event', 'post-expirator'); ?>
                                             </th>
-                                            <th>
+                                            <th scope="col">
                                                 <?php esc_html_e('Posts and expiration settings', 'post-expirator'); ?>
                                             </th>
                                         </tr>
@@ -274,9 +274,9 @@ $rayDebugIsInstalled = function_exists('ray');
             echo '<td>';
             foreach ($eventValueKeys as $eventGUID) {
                 if (false === empty($eventValue[$eventGUID]['args'])) {
-                    echo '<div class="pe-event-post" title="' . esc_attr((string)$eventGUID) . '">';
+                    echo '<div class="pe-event-post" title="' . esc_attr((string) $eventGUID) . '">';
                     foreach ($eventValue[$eventGUID]['args'] as $value) {
-                        $eventPost = get_post((int)$value);
+                        $eventPost = get_post((int) $value);
 
                         if (
                             false === empty($eventPost)

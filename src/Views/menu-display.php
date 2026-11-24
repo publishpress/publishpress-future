@@ -1,11 +1,12 @@
 <?php
-defined('ABSPATH') or die('Direct access not allowed.');
-
-// phpcs:disable Generic.Files.LineLength.TooLong
 
 use PublishPress\Future\Modules\Expirator\HooksAbstract as ExpiratorHooksAbstract;
 use PublishPress\Future\Core\DI\Container;
 use PublishPress\Future\Core\DI\ServicesAbstract;
+
+defined('ABSPATH') || exit;
+
+// phpcs:disable Generic.Files.LineLength.TooLong
 
 $container = Container::getInstance();
 $hooks = $container->get(ServicesAbstract::HOOKS);
@@ -65,7 +66,7 @@ $shortcodeWrapperClass = $settingsFacade->getShortcodeWrapperClass();
                                                                 'The default format to use when displaying the action date within a post using the shortcode or within the footer.  For information on valid formatting options, see: %s.',
                                                                 'post-expirator'
                                                             ),
-                                                            '<a href="https://www.php.net/manual/en/function.date.php" target="_blank">' . esc_html__('PHP Date Function', 'post-expirator') . '</a>'
+                                                            '<a href="https://www.php.net/manual/en/function.date.php" target="_blank">' . esc_html__('PHP Date Function', 'post-expirator') . '<span class="screen-reader-text"> ' . esc_html__('(opens in a new tab)', 'post-expirator') . '</span></a>'
                                                         ); ?>
                         </p>
                     </td>
@@ -103,7 +104,7 @@ $shortcodeWrapperClass = $settingsFacade->getShortcodeWrapperClass();
                                                                 'The default format to use when displaying the action time within a post using the shortcode or within the footer.  For information on valid formatting options, see: %s.',
                                                                 'post-expirator'
                                                             ),
-                                                            '<a href="https://www.php.net/manual/en/function.date.php" target="_blank">' . esc_html__('PHP Date Function', 'post-expirator') . '</a>'
+                                                            '<a href="https://www.php.net/manual/en/function.date.php" target="_blank">' . esc_html__('PHP Date Function', 'post-expirator') . '<span class="screen-reader-text"> ' . esc_html__('(opens in a new tab)', 'post-expirator') . '</span></a>'
                                                         ); ?>
                         </p>
                     </td>
@@ -123,11 +124,13 @@ $shortcodeWrapperClass = $settingsFacade->getShortcodeWrapperClass();
             <table class="form-table">
                 <tr valign="top">
                     <th scope="row">
-                        <label for="expired-display-footer">
+                        <label>
                             <?php esc_html_e('Show in Post Footer?', 'post-expirator'); ?>
                         </label>
                     </th>
                     <td>
+                        <fieldset class="pp-a11y-fieldset">
+                        <legend class="screen-reader-text"><?php esc_html_e('Show in Post Footer?', 'post-expirator'); ?></legend>
                         <div class="pp-settings-field-row">
                             <input
                                 type="radio"
@@ -156,6 +159,7 @@ $shortcodeWrapperClass = $settingsFacade->getShortcodeWrapperClass();
                                 'post-expirator'
                             ); ?>
                         </p>
+                        </fieldset>
                     </td>
                 </tr>
                 <tr valign="top">
@@ -245,8 +249,8 @@ $shortcodeWrapperClass = $settingsFacade->getShortcodeWrapperClass();
             <p class="description">
                 <?php
                 echo sprintf(
-                    // translators: %s is a code tag that wraps the shortcode
-                    esc_html__('Use the %s[futureaction]%s shortcode to show when the future action will occur. You can add this shortcode anywhere in your post content.', 'post-expirator'),
+                    /* translators: 1: opening code tag, 2: closing code tag. */
+                    esc_html__('Use the %1$s[futureaction]%2$s shortcode to show when the future action will occur. You can add this shortcode anywhere in your post content.', 'post-expirator'),
                     '<code>',
                     '</code>'
                 ); ?>
@@ -299,9 +303,7 @@ $shortcodeWrapperClass = $settingsFacade->getShortcodeWrapperClass();
                 </tr>
                 <tr valign="top">
                     <th scope="row">
-                        <label>
-                            <?php esc_html_e('Attributes', 'post-expirator'); ?>
-                        </label>
+                        <?php esc_html_e('Attributes', 'post-expirator'); ?>
                     </th>
                     <td>
                         <p><?php
@@ -342,7 +344,7 @@ $shortcodeWrapperClass = $settingsFacade->getShortcodeWrapperClass();
                             <li>
                                 <p><?php
                                 echo sprintf(
-        // translators: %s is a code tag that wraps the shortcode attribute dateformat
+                                    // translators: %s is a code tag that wraps the shortcode attribute name.
                                     esc_html__('%s - Format set here will override the value set on the settings page', 'post-expirator'),
                                     '<code>dateformat</code>'
                                 ); ?></p>
@@ -350,7 +352,7 @@ $shortcodeWrapperClass = $settingsFacade->getShortcodeWrapperClass();
                             <li>
                                 <p><?php
                                 echo sprintf(
-            // translators: %s is a code tag that wraps the shortcode attribute timeformat
+                                    // translators: %s is a code tag that wraps the shortcode attribute name.
                                     esc_html__('%s - Format set here will override the value set on the settings page', 'post-expirator'),
                                     '<code>timeformat</code>'
                                 ); ?></p>

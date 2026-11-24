@@ -2,6 +2,8 @@
 
 namespace PublishPress\Future\Modules\Expirator\Models;
 
+\defined('ABSPATH') || exit;
+
 interface ActionModelInterface
 {
     public function getPostId(): int;

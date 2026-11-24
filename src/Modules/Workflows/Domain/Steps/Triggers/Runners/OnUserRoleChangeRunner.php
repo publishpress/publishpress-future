@@ -7,6 +7,8 @@ use PublishPress\Future\Modules\Workflows\Interfaces\TriggerRunnerInterface;
 use PublishPress\Future\Framework\Logger\LoggerInterface;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnUserRoleChange;
 
+\defined('ABSPATH') || exit;
+
 class OnUserRoleChangeRunner implements TriggerRunnerInterface
 {
     /**

@@ -4,6 +4,8 @@ namespace PublishPress\Future\Modules\Workflows\Models;
 
 use PublishPress\Future\Modules\Workflows\Interfaces\PostAuthorsModelInterface;
 
+\defined('ABSPATH') || exit;
+
 class PostAuthorsModel implements PostAuthorsModelInterface
 {
     public function getAuthors(): array
@@ -11,7 +13,7 @@ class PostAuthorsModel implements PostAuthorsModelInterface
         $authors = get_users([
             'capability' => ['edit_posts'],
             'orderby' => 'display_name',
-            'order' => 'ASC'
+            'order' => 'ASC',
         ]);
 
         return $authors;

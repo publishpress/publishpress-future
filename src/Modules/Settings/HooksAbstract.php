@@ -6,7 +6,7 @@
 
 namespace PublishPress\Future\Modules\Settings;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 abstract class HooksAbstract
 {

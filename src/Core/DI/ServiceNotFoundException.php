@@ -9,7 +9,7 @@ namespace PublishPress\Future\Core\DI;
 use InvalidArgumentException;
 use PublishPress\Psr\Container\NotFoundExceptionInterface;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 class ServiceNotFoundException extends InvalidArgumentException implements NotFoundExceptionInterface
 {

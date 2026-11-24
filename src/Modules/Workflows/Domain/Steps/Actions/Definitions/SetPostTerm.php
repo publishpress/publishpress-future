@@ -5,6 +5,8 @@ namespace PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions
 use PublishPress\Future\Modules\Workflows\Interfaces\StepTypeInterface;
 use PublishPress\Future\Modules\Workflows\Models\StepTypesModel;
 
+\defined('ABSPATH') || exit;
+
 class SetPostTerm implements StepTypeInterface
 {
     public static function getNodeTypeName(): string
@@ -73,7 +75,7 @@ class SetPostTerm implements StepTypeInterface
                             "variable" => [
                                 "rule" => "first",
                                 "dataType" => "post",
-                            ]
+                            ],
                         ],
                     ],
                 ],
@@ -91,7 +93,7 @@ class SetPostTerm implements StepTypeInterface
                         "label" => __("Terms", "post-expirator"),
                         "description" => __("The terms that will be added to the posts.", "post-expirator"),
                     ],
-                ]
+                ],
             ],
         ];
     }
@@ -141,7 +143,7 @@ class SetPostTerm implements StepTypeInterface
                 "type" => "input",
                 "label" => __("Step input", "post-expirator"),
                 "description" => __("The input data for this step.", "post-expirator"),
-            ]
+            ],
         ];
     }
 
@@ -156,14 +158,14 @@ class SetPostTerm implements StepTypeInterface
             "target" => [
                 [
                     "id" => "input",
-                ]
+                ],
             ],
             "source" => [
                 [
                     "id" => "output",
                     "label" => __("Next", "post-expirator"),
-                ]
-            ]
+                ],
+            ],
         ];
     }
 

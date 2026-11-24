@@ -22,7 +22,7 @@ use PublishPress\Future\Modules\Expirator\Models\CurrentUserModel;
 use PublishPress\Future\Modules\Settings\SettingsFacade;
 use Throwable;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 class QuickEditController implements InitializableInterface
 {
@@ -100,7 +100,7 @@ class QuickEditController implements InitializableInterface
             $settingsFacade = $container->get(ServicesAbstract::SETTINGS);
 
             $defaults = $settingsFacade->getPostTypeDefaults($postType);
-            $taxonomy = isset($defaults['taxonomy']) ? $defaults['taxonomy'] : '';
+            $taxonomy = $defaults['taxonomy'] ?? '';
             $label = '';
 
             // if settings have not been configured and this is the default post type
@@ -113,11 +113,11 @@ class QuickEditController implements InitializableInterface
                 $label = $tax_object ? $tax_object->label : '';
             }
 
-            PostExpirator_Display::getInstance()->render_template('quick-edit', array(
+            PostExpirator_Display::getInstance()->render_template('quick-edit', [
                 'post_type' => $postType,
                 'taxonomy' => $taxonomy,
-                'tax_label' => $label
-            ));
+                'tax_label' => $label,
+            ]);
         } catch (Throwable $th) {
             $this->logger->error('Error registering quick edit custom box: ' . $th->getMessage());
         }
@@ -132,7 +132,7 @@ class QuickEditController implements InitializableInterface
             }
 
             // Don't update data if the function is called for saving revision.
-            $posttype = get_post_type((int)$postId);
+            $posttype = get_post_type((int) $postId);
             if ($posttype === 'revision') {
                 return;
             }
@@ -174,11 +174,26 @@ class QuickEditController implements InitializableInterface
                     $newStatus = 'trash';
                 }
 
+                $taxonomy = isset($_POST['future_action_taxonomy']) ? sanitize_text_field($_POST['future_action_taxonomy']) : '';
+
+                if (! $currentUserModel->userCanScheduleAction((int) $postId, $expireType, $newStatus, $taxonomy)) {
+                    $this->logger->debug(
+                        sprintf(
+                            '%1$d  -> ACTION NOT SCHEDULED: user cannot schedule %2$s (status %3$s)',
+                            (int) $postId,
+                            $expireType,
+                            $newStatus
+                        )
+                    );
+
+                    return;
+                }
+
                 $opts = [
                     'expireType' => $expireType,
                     'newStatus' => $newStatus,
                     'category' => isset($_POST['future_action_terms']) ? sanitize_text_field($_POST['future_action_terms']) : '',
-                    'categoryTaxonomy' => isset($_POST['future_action_taxonomy']) ? sanitize_text_field($_POST['future_action_taxonomy']) : '',
+                    'categoryTaxonomy' => $taxonomy,
                 ];
 
                 if (! empty($opts['category'])) {
@@ -187,7 +202,8 @@ class QuickEditController implements InitializableInterface
 
                     $opts['category'] = $taxonomiesModel->normalizeTermsCreatingIfNecessary(
                         $opts['categoryTaxonomy'],
-                        explode(',', $opts['category'])
+                        explode(',', $opts['category']),
+                        $posttype
                     );
                 }
 
@@ -213,11 +229,11 @@ class QuickEditController implements InitializableInterface
 
         $postTypeDefaultConfig = $settingsFacade->getPostTypeDefaults($postType);
 
-        if (! in_array((string)$postTypeDefaultConfig['activeMetaBox'], ['active', '1', true])) {
+        if (! in_array((string) $postTypeDefaultConfig['activeMetaBox'], ['active', '1', true])) {
             return false;
         }
 
-        $hideMetabox = (bool)$this->hooks->applyFilters(HooksAbstract::FILTER_HIDE_METABOX, false, $postType);
+        $hideMetabox = (bool) $this->hooks->applyFilters(HooksAbstract::FILTER_HIDE_METABOX, false, $postType);
         if ($hideMetabox) {
             return false;
         }
@@ -309,7 +325,7 @@ class QuickEditController implements InitializableInterface
                     'hour' => date('H', $now),
                     'minute' => date('i', $now),
                     'ts' => $calculatedDate,
-                    'iso' => $gmDate
+                    'iso' => $gmDate,
                 ];
             }
 
@@ -320,6 +336,13 @@ class QuickEditController implements InitializableInterface
 
             $hiddenFields = (array) $this->hooks->applyFilters(HooksAbstract::FILTER_HIDDEN_METABOX_FIELDS, [], $postType);
 
+            $scheduleOptions = $this->currentUserModel->filterScheduleSelectOptions(
+                $actionsModel->getActionsAsOptions($postType),
+                $actionsModel->getStatusesAsOptionsForPostType($postType),
+                (string) $postType,
+                0
+            );
+
             wp_localize_script(
                 'postexpirator-quick-edit',
                 'publishpressFutureQuickEditConfig',
@@ -329,8 +352,8 @@ class QuickEditController implements InitializableInterface
                     'is12Hour' => get_option('time_format') !== 'H:i',
                     'timeFormat' => $settingsFacade->getTimeFormatForDatePicker(),
                     'startOfWeek' => get_option('start_of_week', 0),
-                    'actionsSelectOptions' => $actionsModel->getActionsAsOptions($postType),
-                    'statusesSelectOptions' => $actionsModel->getStatusesAsOptionsForPostType($postType),
+                    'actionsSelectOptions' => $scheduleOptions['actions'],
+                    'statusesSelectOptions' => $scheduleOptions['statuses'],
                     'isDebugEnabled' => $debug->isEnabled(),
                     'taxonomyName' => $taxonomyPluralName,
                     'taxonomyTerms' => $taxonomyTerms,
@@ -348,7 +371,7 @@ class QuickEditController implements InitializableInterface
                         'showCalendar' => __('Show Calendar', 'post-expirator'),
                         'hideCalendar' => __('Hide Calendar', 'post-expirator'),
                         'loading' => __('Loading', 'post-expirator'),
-                        // translators: the text between {{}} is the link to the settings page.
+                        // translators: the text between {} is the link to the settings page.
                         'timezoneSettingsHelp' => __('Timezone is controlled by the {WordPress Settings}.', 'post-expirator'),
                         // translators: %s is the name of the taxonomy in plural form.
                         'noTermsFound' => sprintf(
@@ -374,7 +397,7 @@ class QuickEditController implements InitializableInterface
                             strtolower($taxonomyPluralName)
                         ),
                         'newStatus' => __('New status', 'post-expirator'),
-                    ]
+                    ],
                 ]
             );
         } catch (Throwable $th) {

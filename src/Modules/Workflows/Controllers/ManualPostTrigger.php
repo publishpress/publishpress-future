@@ -18,6 +18,8 @@ use PublishPress\Future\Modules\Workflows\Models\PostTypesModel;
 use PublishPress\Future\Modules\Workflows\Module;
 use Throwable;
 
+\defined('ABSPATH') || exit;
+
 class ManualPostTrigger implements InitializableInterface
 {
     /**
@@ -155,7 +157,7 @@ class ManualPostTrigger implements InitializableInterface
                 return;
             }
 
-            $postType = get_post_type((int)$postId);
+            $postType = get_post_type((int) $postId);
             $postTypeToIgnore = ['revision', Module::POST_TYPE_WORKFLOW];
             if (in_array($postType, $postTypeToIgnore)) {
                 return;
@@ -169,7 +171,7 @@ class ManualPostTrigger implements InitializableInterface
             }
 
             check_ajax_referer('__future_action', '_future_action_nonce');
-            
+
             if (! $this->userCanManageManualWorkflowForPost($postId)) {
                 return;
             }
@@ -208,7 +210,7 @@ class ManualPostTrigger implements InitializableInterface
 
         // Trigger the action to trigger those workflows
         foreach ($manuallyEnabledWorkflows as $workflowId) {
-            $this->hooks->doAction(HooksAbstract::ACTION_MANUALLY_TRIGGERED_WORKFLOW, (int)$postId, (int)$workflowId);
+            $this->hooks->doAction(HooksAbstract::ACTION_MANUALLY_TRIGGERED_WORKFLOW, (int) $postId, (int) $workflowId);
         }
     }
 
@@ -381,13 +383,13 @@ class ManualPostTrigger implements InitializableInterface
 
                             if (! $post || is_null($post->ID)) {
                                 return [
-                                    'enabledWorkflows' => []
+                                    'enabledWorkflows' => [],
                                 ];
                             }
 
                             if (! $this->userCanManageManualWorkflowForPost($post->ID)) {
                                 return [
-                                    'enabledWorkflows' => []
+                                    'enabledWorkflows' => [],
                                 ];
                             }
 
@@ -425,7 +427,7 @@ class ManualPostTrigger implements InitializableInterface
                         'schema' => [
                             'description' => __('Workflow Manual Trigger', 'post-expirator'),
                             'type' => 'object',
-                        ]
+                        ],
                     ]
                 );
             }
@@ -522,7 +524,7 @@ class ManualPostTrigger implements InitializableInterface
                 return;
             }
 
-            $postType = get_post_type((int)$postId);
+            $postType = get_post_type((int) $postId);
             $postTypeToIgnore = ['revision', Module::POST_TYPE_WORKFLOW];
             if (in_array($postType, $postTypeToIgnore)) {
                 return;
@@ -642,9 +644,9 @@ class ManualPostTrigger implements InitializableInterface
         // phpcs:disable WordPress.Security.NonceVerification.Recommended
         $strategy = sanitize_text_field($_REQUEST['future_workflow_manual_strategy'] ?? 'no-change');
         // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated
-        $postIds = array_map('intval', (array)$_REQUEST['post']);
+        $postIds = array_map('intval', (array) $_REQUEST['post']);
         // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated
-        $selectedWorkflows = array_map('intval', (array)$_REQUEST['future_workflow_manual_trigger']);
+        $selectedWorkflows = array_map('intval', (array) $_REQUEST['future_workflow_manual_trigger']);
 
         if (empty($postIds) || $strategy === 'no-change') {
             return;
@@ -653,7 +655,7 @@ class ManualPostTrigger implements InitializableInterface
         $postModel = new PostModel();
 
         foreach ($postIds as $postId) {
-            $postId = (int)$postId;
+            $postId = (int) $postId;
 
             if (! $this->currentUserModel->userCanEditPost($postId)) {
                 continue;

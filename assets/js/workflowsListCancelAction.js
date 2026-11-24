@@ -676,7 +676,7 @@ document.addEventListener('DOMContentLoaded', function () {
   document.body.appendChild(modalContainer);
   // Render the container
   var root = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createRoot)(modalContainer);
-  root.render( /*#__PURE__*/React.createElement(CancelActionsConfirmation, null));
+  root.render(/*#__PURE__*/React.createElement(CancelActionsConfirmation, null));
 });
 })();
 

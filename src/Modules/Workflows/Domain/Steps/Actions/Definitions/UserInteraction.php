@@ -5,6 +5,8 @@ namespace PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions
 use PublishPress\Future\Modules\Workflows\Interfaces\StepTypeInterface;
 use PublishPress\Future\Modules\Workflows\Models\StepTypesModel;
 
+\defined('ABSPATH') || exit;
+
 class UserInteraction implements StepTypeInterface
 {
     public static function getNodeTypeName(): string
@@ -122,7 +124,7 @@ class UserInteraction implements StepTypeInterface
                             ],
                         ],
                         "default" => "info",
-                    ]
+                    ],
                 ],
             ],
             [
@@ -146,7 +148,7 @@ class UserInteraction implements StepTypeInterface
                         ],
                     ],
                 ],
-            ]
+            ],
         ];
     }
 
@@ -158,7 +160,7 @@ class UserInteraction implements StepTypeInterface
                     [
                         "rule" => "hasIncomingConnection",
                     ],
-                ]
+                ],
             ],
             "settings" => [
                 "rules" => [
@@ -200,9 +202,9 @@ class UserInteraction implements StepTypeInterface
                         "field" => "options",
                         "label" => __("Options", "post-expirator"),
                         "fieldLabel" => __("Options > Options", "post-expirator"),
-                    ]
-                ]
-            ]
+                    ],
+                ],
+            ],
         ];
     }
 
@@ -246,7 +248,7 @@ class UserInteraction implements StepTypeInterface
             "target" => [
                 [
                     "id" => "input",
-                ]
+                ],
             ],
             "source" => [
                 [
@@ -254,7 +256,7 @@ class UserInteraction implements StepTypeInterface
                     "type" => "__dynamic__:options",
                     "label" => __("After interaction", "post-expirator"),
                 ],
-            ]
+            ],
         ];
     }
 

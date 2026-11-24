@@ -15,6 +15,7 @@ import { addQueryArgs } from '@wordpress/url';
 import { applyFilters } from '@wordpress/hooks';
 import DateOffsetPreview from './DateOffsetPreview';
 import { Tooltip } from "@wordpress/components";
+import { __ } from '@wordpress/i18n';
 
 const { apiFetch } = wp;
 
@@ -195,6 +196,9 @@ export const PostTypeSettingsPanel = function (props) {
 
     const termOptionsLabels = termOptions.map((term) => term.label);
 
+    const offsetErrorId = 'pe-offset-error-' + props.postType;
+    const hasOffsetError = ! hasValidData;
+
     let settingsRows = [
         <SettingRow label={props.text.fieldActive} key={'expirationdate_activemeta-' + props.postType}>
             <CheckboxControl
@@ -220,7 +224,7 @@ export const PostTypeSettingsPanel = function (props) {
 
         if (isAutoEnabled) {
             settingsRows.push(
-                <SettingRow label={props.text.fieldTaxonomy} key={'expirationdate_taxonomy-' + props.postType}>
+                <SettingRow label={props.text.fieldTaxonomy} id={'expirationdate_taxonomy-' + props.postType} key={'expirationdate_taxonomy-' + props.postType}>
                     <SelectControl
                         name={'expirationdate_taxonomy-' + props.postType}
                         options={props.taxonomiesList}
@@ -235,7 +239,7 @@ export const PostTypeSettingsPanel = function (props) {
             );
 
             settingsRows.push(
-                <SettingRow label={props.text.fieldHowToExpire} key={'expirationdate_expiretype-' + props.postType}>
+                <SettingRow label={props.text.fieldHowToExpire} id={'expirationdate_expiretype-' + props.postType} key={'expirationdate_expiretype-' + props.postType}>
                     <SelectControl
                         name={'expirationdate_expiretype-' + props.postType}
                         className={'pe-howtoexpire'}
@@ -248,6 +252,8 @@ export const PostTypeSettingsPanel = function (props) {
                     {settingHowToExpire === 'change-status' &&
                         <SelectControl
                             name={'expirationdate_newstatus-' + props.postType}
+                            label={__('New status', 'post-expirator')}
+                            hideLabelFromVision={true}
                             options={props.statusesList}
                             selected={newStatus}
                             onChange={setNewStatus}
@@ -272,7 +278,7 @@ export const PostTypeSettingsPanel = function (props) {
             );
 
             settingsRows.push(
-                <SettingRow label={props.text.fieldDefaultDateTimeOffset} key={'expired-custom-date-' + props.postType}>
+                <SettingRow label={props.text.fieldDefaultDateTimeOffset} id={'expired-custom-date-' + props.postType} key={'expired-custom-date-' + props.postType}>
                     <TextControl
                         name={'expired-custom-date-' + props.postType}
                         value={expireOffset}
@@ -280,6 +286,8 @@ export const PostTypeSettingsPanel = function (props) {
                         placeholder={props.settings.globalDefaultExpireOffset}
                         description={props.text.fieldDefaultDateTimeOffsetDescription}
                         unescapedDescription={true}
+                        ariaDescribedBy={hasOffsetError ? offsetErrorId : ''}
+                        isInvalid={hasOffsetError}
                         onChange={onChangeExpireOffset}
                     />
 
@@ -296,7 +304,7 @@ export const PostTypeSettingsPanel = function (props) {
             );
 
             settingsRows.push(
-                <SettingRow label={props.text.fieldWhoToNotify} key={'expirationdate_emailnotification-' + props.postType}>
+                <SettingRow label={props.text.fieldWhoToNotify} id={'expirationdate_emailnotification-' + props.postType} key={'expirationdate_emailnotification-' + props.postType}>
                     <TextControl
                         name={'expirationdate_emailnotification-' + props.postType}
                         className="large-text"
@@ -315,10 +323,13 @@ export const PostTypeSettingsPanel = function (props) {
                 <SettingRow label={props.text.fieldCustomStatuses} key={'custom-statuses_promo'}>
                     <FieldRow>
                         <div>
-                            <input type="checkbox" disabled />
-                            {props.text.fieldCustomStatusesLabel}
+                            <label>
+                                <input type="checkbox" disabled />
+                                {props.text.fieldCustomStatusesLabel}
+                                <span className="screen-reader-text"> {__('(Pro feature)', 'post-expirator')}</span>
+                            </label>
                             <Tooltip text={props.text.proFeatureTooltip}>
-                                <span className="dashicons dashicons-lock pp-pro-loc-icon"></span>
+                                <span className="dashicons dashicons-lock pp-pro-loc-icon" aria-hidden="true"></span>
                             </Tooltip>
                         <HelpText>{props.text.fieldCustomStatusesDescription}</HelpText>
                         </div>
@@ -331,10 +342,13 @@ export const PostTypeSettingsPanel = function (props) {
                 <SettingRow label={props.text.fieldMetadataScheduling} key={'metadata_mapping_promo'}>
                     <FieldRow>
                         <div>
-                            <input type="checkbox" disabled />
-                            {props.text.fieldMetadataSchedulingLabel}
+                            <label>
+                                <input type="checkbox" disabled />
+                                {props.text.fieldMetadataSchedulingLabel}
+                                <span className="screen-reader-text"> {__('(Pro feature)', 'post-expirator')}</span>
+                            </label>
                             <Tooltip text={props.text.proFeatureTooltip}>
-                                <span className="dashicons dashicons-lock pp-pro-loc-icon"></span>
+                                <span className="dashicons dashicons-lock pp-pro-loc-icon" aria-hidden="true"></span>
                             </Tooltip>
                         </div>
                         <HelpText>{props.text.fieldMetadataSchedulingDescription}</HelpText>
@@ -355,8 +369,9 @@ export const PostTypeSettingsPanel = function (props) {
 
             {! hasValidData && (
                 <PanelRow>
-                    <div className="publishpress-future-notice publishpress-future-notice-error">
+                    <div className="publishpress-future-notice publishpress-future-notice-error" id={offsetErrorId} role="alert">
                         <strong>{props.text.error}:</strong> {validationError}
+                        {' '}{__('Saving is disabled until this is fixed.', 'post-expirator')}
                     </div>
                 </PanelRow>
             )}

@@ -24,6 +24,8 @@ use PublishPress\Future\Modules\Workflows\Models\WorkflowModel;
 
 use function wp_json_encode;
 
+\defined('ABSPATH') || exit;
+
 class ExecutionContext implements ExecutionContextInterface
 {
     private const LOG_PREFIX = '[WorkflowExecutionContext#%d]: ';
@@ -161,7 +163,7 @@ class ExecutionContext implements ExecutionContextInterface
             }
 
             // Ensure value is a string for str_replace
-            $value = (string)$value;
+            $value = (string) $value;
 
             // Use preg_replace for more reliable replacement, escaping special regex characters
             $pattern = '/\{\{' . preg_quote($expression, '/') . '\}\}/';
@@ -185,7 +187,7 @@ class ExecutionContext implements ExecutionContextInterface
             return $array;
         }
 
-        return array_map(fn ($item) => $this->resolveExpressionsInText($item), $array);
+        return array_map(fn($item) => $this->resolveExpressionsInText($item), $array);
     }
 
     /**
@@ -231,7 +233,7 @@ class ExecutionContext implements ExecutionContextInterface
                     }
                 } elseif (is_numeric($resolvedText)) {
                     // Preserve numeric types (e.g., timestamps from date helper with output="U")
-                    $resolved = strpos($resolvedText, '.') !== false ? (float)$resolvedText : (int)$resolvedText;
+                    $resolved = strpos($resolvedText, '.') !== false ? (float) $resolvedText : (int) $resolvedText;
                 } else {
                     $resolved = $resolvedText;
                 }
@@ -316,8 +318,8 @@ class ExecutionContext implements ExecutionContextInterface
     {
         if (is_array($dataSource) && isset($dataSource[$variableName])) {
             if (
-                is_object($dataSource[$variableName]) &&
-                $dataSource[$variableName] instanceof VariableResolverInterface
+                is_object($dataSource[$variableName])
+                && $dataSource[$variableName] instanceof VariableResolverInterface
             ) {
                 return $dataSource[$variableName]->getValue();
             }
@@ -397,9 +399,9 @@ class ExecutionContext implements ExecutionContextInterface
             return $variableName;
         }
 
-        $currentVariableSource = is_array($dataSource) ?
-            $dataSource[$variableNameParts[0]] :
-            $dataSource->{$variableNameParts[0]};
+        $currentVariableSource = is_array($dataSource)
+            ? $dataSource[$variableNameParts[0]]
+            : $dataSource->{$variableNameParts[0]};
 
         $variableNameParts = array_slice($variableNameParts, 1);
 
@@ -662,9 +664,9 @@ class ExecutionContext implements ExecutionContextInterface
                 switch ($type) {
                     case 'post':
                         if ($isLegacyCompact) {
-                            $postId = (int)$value['id'];
+                            $postId = (int) $value['id'];
                         } else {
-                            $postId = (int)$value['value'];
+                            $postId = (int) $value['value'];
                         }
 
                         $resolverArgument = get_post($postId);
@@ -672,18 +674,18 @@ class ExecutionContext implements ExecutionContextInterface
                         break;
                     case 'user':
                         if ($isLegacyCompact) {
-                            $userId = (int)$value;
+                            $userId = (int) $value;
                         } else {
-                            $userId = (int)$value['value'];
+                            $userId = (int) $value['value'];
                         }
 
                         $resolverArgument = get_user_by('id', $userId);
                         break;
                     case 'workflow':
                         if ($isLegacyCompact) {
-                            $workflowId = (int)$value;
+                            $workflowId = (int) $value;
                         } else {
-                            $workflowId = (int)$value['value'];
+                            $workflowId = (int) $value['value'];
                         }
 
                         $workflowModel = new WorkflowModel();

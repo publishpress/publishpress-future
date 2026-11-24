@@ -6,7 +6,7 @@ use DateTime;
 use DateTimeZone;
 use InvalidArgumentException;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 class DateTimeHandler implements DateTimeHandlerInterface
 {
@@ -56,7 +56,7 @@ class DateTimeHandler implements DateTimeHandlerInterface
             $date->setTimezone($siteTimezone);
         }
 
-        $format = $format ?? $this->getDateTimeFormat();
+        $format ??= $this->getDateTimeFormat();
 
         return $date->format($format);
     }

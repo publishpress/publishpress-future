@@ -4,6 +4,8 @@ namespace PublishPress\Future\Modules\Workflows\Models;
 
 use PublishPress\Future\Modules\Workflows\Interfaces\TaxonomiesModelInterface;
 
+\defined('ABSPATH') || exit;
+
 class TaxonomiesModel implements TaxonomiesModelInterface
 {
     public function getTaxonomies(): array

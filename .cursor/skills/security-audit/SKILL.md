@@ -66,7 +66,7 @@ composer.json:
 - Outdated (3+ years = HIGH RISK)
 - Stripe (v13+), PayPal
 - Unmaintained (2+ years)
-- PHP min 7.4, WP version req
+- PHP min 8.2, WP version req
 
 Payment (if applicable): Stripe SDK/API/PCI/webhooks; PayPal IPN/webhook; API keys wp_options/constants not plaintext; no card data
 

@@ -8,6 +8,8 @@ use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\SendR
 use PublishPress\Future\Modules\Workflows\Interfaces\ExecutionContextInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\StepProcessorInterface;
 
+\defined('ABSPATH') || exit;
+
 class SendRayRunner implements StepRunnerInterface
 {
     /**

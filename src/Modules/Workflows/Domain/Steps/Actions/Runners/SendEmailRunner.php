@@ -9,6 +9,8 @@ use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\SendE
 use PublishPress\Future\Modules\Workflows\Interfaces\StepProcessorInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\ExecutionContextInterface;
 
+\defined('ABSPATH') || exit;
+
 class SendEmailRunner implements StepRunnerInterface
 {
     /**
@@ -137,7 +139,7 @@ class SendEmailRunner implements StepRunnerInterface
         }
 
         if (! is_array($recipient)) {
-            $recipient = explode(',', (string)$recipient);
+            $recipient = explode(',', (string) $recipient);
         }
 
         $recipient = array_map('trim', $recipient);

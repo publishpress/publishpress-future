@@ -10,7 +10,7 @@ use PublishPress\Future\Core\DI\Container;
 use PublishPress\Future\Framework\Logger\LoggerInterface;
 use PublishPress\Future\Modules\Expirator\Models\PostTypesModel;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 class TaxonomiesModel
 {
@@ -39,7 +39,7 @@ class TaxonomiesModel
             $taxonomies = get_object_taxonomies($postType, 'object');
 
             if ($hierarchical) {
-                $taxonomies = wp_filter_object_list($taxonomies, array('hierarchical' => true));
+                $taxonomies = wp_filter_object_list($taxonomies, ['hierarchical' => true]);
             }
 
             $taxonomiesByPostType[$postType] = $taxonomies;
@@ -59,8 +59,25 @@ class TaxonomiesModel
         return $term->term_id;
     }
 
-    public function createTermAndReturnId($taxonomy, $termName)
+    /**
+     * Creates a term and returns its ID when the current user may edit that taxonomy.
+     *
+     * @param string      $taxonomy Taxonomy name.
+     * @param string      $termName Term name.
+     * @param string|null $postType Post type the taxonomy must belong to. Empty skips that check.
+     *
+     * @return int Term ID, or 0 when creation is blocked or fails.
+     *
+     * @since 4.10.6
+     */
+    public function createTermAndReturnId($taxonomy, $termName, $postType = null)
     {
+        $taxonomyObject = $this->getTaxonomyForPostType($taxonomy, $postType);
+
+        if (! $taxonomyObject || ! current_user_can($taxonomyObject->cap->edit_terms)) {
+            return 0;
+        }
+
         $term = wp_insert_term($termName, $taxonomy);
 
         if (is_wp_error($term)) {
@@ -70,42 +87,113 @@ class TaxonomiesModel
         return $term['term_id'];
     }
 
-    public function normalizeTermsCreatingIfNecessary($taxonomy, $terms)
+    /**
+     * Normalizes term IDs and names, creating missing terms only when allowed.
+     *
+     * Users who cannot edit the taxonomy still resolve names of terms that already exist.
+     *
+     * @param string      $taxonomy Taxonomy name.
+     * @param mixed       $terms    Term IDs or names.
+     * @param string|null $postType Post type the taxonomy must belong to. Empty skips that check.
+     *
+     * @return array<int, int>
+     *
+     * @since 4.10.6
+     */
+    public function normalizeTermsCreatingIfNecessary($taxonomy, $terms, $postType = null)
     {
-        $newTerms = array_filter($terms, function ($item) {
-            return ! is_numeric($item);
-        });
+        $taxonomyObject = $this->getTaxonomyForPostType($taxonomy, $postType);
 
-        if (! empty($newTerms)) {
-            $existingTerms = array_values(array_filter($terms, 'is_numeric'));
-
-            $newTerms = array_values(array_map('sanitize_text_field', $newTerms));
-
-            $newTerms = array_map(function ($newTerm) use ($taxonomy) {
-                $newTerm = wp_insert_term($newTerm, $taxonomy);
-
-                if (is_wp_error($newTerm) && $newTerm->get_error_code() === 'term_exists') {
-                    return $newTerm->get_error_data('term_exists');
-                }
-
-                if (is_wp_error($newTerm)) {
-                    $this->logger->error(
-                        sprintf(
-                            'Error creating term for taxonomy %1$s: %2$s',
-                            $taxonomy,
-                            $newTerm->get_error_message()
-                        )
-                    );
-                    return 0;
-                }
-
-                return $newTerm['term_id'];
-            }, $newTerms);
-
-            $terms = array_merge($existingTerms, $newTerms);
-            $terms = array_map('intval', $terms);
+        if (! $taxonomyObject || ! is_array($terms)) {
+            return [];
         }
 
-        return $terms;
+        $numericIds = [];
+        $names = [];
+
+        foreach ($terms as $term) {
+            if (is_numeric($term)) {
+                $numericIds[] = intval($term);
+                continue;
+            }
+
+            $names[] = $term;
+        }
+
+        if (empty($names)) {
+            return $numericIds;
+        }
+
+        $names = array_map('sanitize_text_field', $names);
+
+        if (! current_user_can($taxonomyObject->cap->edit_terms)) {
+            $resolvedIds = [];
+
+            foreach ($names as $name) {
+                $existingTerm = get_term_by('name', $name, $taxonomy);
+
+                if ($existingTerm instanceof \WP_Term) {
+                    $resolvedIds[] = (int) $existingTerm->term_id;
+                }
+            }
+
+            $this->logger->debug(
+                sprintf(
+                    'Current user cannot create terms for taxonomy %1$s. Resolved existing terms by name.',
+                    $taxonomy
+                )
+            );
+
+            return array_values(array_unique(array_map('intval', array_merge($numericIds, $resolvedIds))));
+        }
+
+        $createdIds = array_map(function ($newTerm) use ($taxonomy) {
+            $insertedTerm = wp_insert_term($newTerm, $taxonomy);
+
+            if (is_wp_error($insertedTerm) && $insertedTerm->get_error_code() === 'term_exists') {
+                return $insertedTerm->get_error_data('term_exists');
+            }
+
+            if (is_wp_error($insertedTerm)) {
+                $this->logger->error(
+                    sprintf(
+                        'Error creating term for taxonomy %1$s: %2$s',
+                        $taxonomy,
+                        $insertedTerm->get_error_message()
+                    )
+                );
+
+                return 0;
+            }
+
+            return $insertedTerm['term_id'];
+        }, $names);
+
+        return array_map('intval', array_merge($numericIds, $createdIds));
+    }
+
+    /**
+     * Returns the taxonomy when it is registered for the post type.
+     *
+     * @param string      $taxonomy Taxonomy name.
+     * @param string|null $postType Post type. Empty skips the object check.
+     *
+     * @return \WP_Taxonomy|null
+     *
+     * @since 4.10.6
+     */
+    private function getTaxonomyForPostType($taxonomy, $postType = null)
+    {
+        $taxonomyObject = get_taxonomy($taxonomy);
+
+        if (! $taxonomyObject) {
+            return null;
+        }
+
+        if (! empty($postType) && ! is_object_in_taxonomy($postType, $taxonomy)) {
+            return null;
+        }
+
+        return $taxonomyObject;
     }
 }

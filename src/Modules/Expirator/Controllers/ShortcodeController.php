@@ -14,7 +14,7 @@ use PublishPress\Future\Modules\Settings\HooksAbstract;
 use PublishPress\Future\Framework\WordPress\Facade\DateTimeFacade;
 use PublishPress\Future\Modules\Settings\SettingsFacade;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 class ShortcodeController implements InitializableInterface
 {
@@ -84,10 +84,10 @@ class ShortcodeController implements InitializableInterface
      */
     public function renderShortcode($attrs = [])
     {
-        $postId = $this->getCurrentPostId((array)$attrs);
+        $postId = $this->getCurrentPostId((array) $attrs);
 
         if (!$postId) {
-            $debugIsEnabled = (bool)$this->hooks->applyFilters(HooksAbstract::FILTER_DEBUG_ENABLED, false);
+            $debugIsEnabled = (bool) $this->hooks->applyFilters(HooksAbstract::FILTER_DEBUG_ENABLED, false);
 
             if ($debugIsEnabled) {
                 // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_trigger_error
@@ -114,14 +114,14 @@ class ShortcodeController implements InitializableInterface
         }
 
         $attrs = shortcode_atts(
-            array(
+            [
                 'dateformat' => $this->settingsFacade->getDefaultDateFormat(),
                 'timeformat' => $this->settingsFacade->getDefaultTimeFormat(),
                 'type' => 'full',
                 'tz' => date('T'), // phpcs:ignore WordPress.DateTime.RestrictedFunctions.date_date
                 'wrapper' => '',
                 'class' => '',
-            ),
+            ],
             $attrs
         );
 
@@ -167,16 +167,15 @@ class ShortcodeController implements InitializableInterface
             $defaultDateTimeFormat
         );
 
-        $wrapper = ($attrs['wrapper'] === tag_escape($attrs['wrapper']))
-            ? strtolower(trim($attrs['wrapper']))
-            : 'div';
+        $wrapper = $this->settingsFacade->sanitizeShortcodeWrapper((string) $attrs['wrapper']);
+        $output = esc_html($output);
 
-        if (!empty($attrs['wrapper'])) {
+        if ($wrapper !== '') {
             $output = sprintf(
                 '<%1$s class="%2$s">%3$s</%1$s>',
                 esc_html($wrapper),
                 esc_attr($attrs['class']),
-                esc_html($output)
+                $output
             );
         }
 

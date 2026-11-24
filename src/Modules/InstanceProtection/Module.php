@@ -11,7 +11,7 @@ use PublishPress\Future\Framework\ModuleInterface;
 use PublishPressInstanceProtection\Config;
 use PublishPressInstanceProtection\InstanceChecker;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 final class Module implements ModuleInterface
 {
