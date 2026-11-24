@@ -100,6 +100,7 @@ echo '<div class="pp-debug-log-option">';
 echo '<label class="pp-checkbox-label"><input type="checkbox" name="trigger_activated_only" value="1" ' . ($triggerActivatedOnly ? 'checked' : '') . '> ' . esc_html__('Show only requests with trigger activated', 'post-expirator') . '</label>';
 echo '</div>';
 echo '<div class="pp-debug-log-option">';
+
 echo '<button type="submit" class="button" id="pp-debug-log-apply">' . esc_html__('Apply', 'post-expirator') . '</button>';
 echo '</div>';
 echo '</form>';
@@ -113,8 +114,8 @@ if ($groupByRequest) {
     $results = DebugLogDisplayHelper::sortResultsByRequest($results);
 }
 
-echo '<label for="pp-debug-log-textarea" class="screen-reader-text">' . esc_html__('Debug log', 'post-expirator') . '</label>';
-echo '<textarea id="pp-debug-log-textarea" readonly>';
+echo '<label class="screen-reader-text" for="pp-debug-log-output">' . esc_html__('Debug log output', 'post-expirator') . '</label>';
+echo '<textarea id="pp-debug-log-output" readonly>';
 if (empty($results)) {
     if ($totalLogsUnfiltered === 0) {
         echo esc_html__('Debugging table is currently empty.', 'post-expirator');
