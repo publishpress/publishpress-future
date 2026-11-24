@@ -6,6 +6,8 @@ use PublishPress\Future\Modules\Workflows\Interfaces\NodeTypesModelInterface;
 use PublishPress\Future\Framework\WordPress\Facade\HooksFacade;
 use PublishPress\Future\Modules\Settings\SettingsFacade;
 
+\defined('ABSPATH') || exit;
+
 /**
  * @deprecated 4.3.1 Use StepTypesModel instead.
  */

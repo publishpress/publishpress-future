@@ -2,6 +2,8 @@
 
 namespace PublishPress\Future\Framework\WordPress\Utils;
 
+\defined('ABSPATH') || exit;
+
 class WorkflowSanitizationUtil
 {
     public function sanitizeWorkflowData($data)

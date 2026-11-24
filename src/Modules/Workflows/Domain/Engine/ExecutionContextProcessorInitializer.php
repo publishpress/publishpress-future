@@ -5,6 +5,8 @@ namespace PublishPress\Future\Modules\Workflows\Domain\Engine;
 use PublishPress\Future\Framework\InitializableInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\ExecutionContextProcessorRegistryInterface;
 
+\defined('ABSPATH') || exit;
+
 class ExecutionContextProcessorInitializer implements InitializableInterface
 {
     /**

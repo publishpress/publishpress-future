@@ -2,6 +2,8 @@
 
 namespace PublishPress\Future\Modules\Workflows\Interfaces;
 
+\defined('ABSPATH') || exit;
+
 interface DataTypeInterface
 {
     public function getName(): string;

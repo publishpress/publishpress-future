@@ -4,6 +4,8 @@ namespace PublishPress\Future\Modules\Workflows\Domain\Engine\VariableResolvers;
 
 use PublishPress\Future\Modules\Workflows\Interfaces\VariableResolverInterface;
 
+\defined('ABSPATH') || exit;
+
 class SiteResolver implements VariableResolverInterface
 {
     private $siteDataCache = [];
@@ -60,7 +62,7 @@ class SiteResolver implements VariableResolverInterface
 
     public function getValueAsString(string $property = ''): string
     {
-        return (string)$this->getValue($property);
+        return (string) $this->getValue($property);
     }
 
     protected function getSiteName()

@@ -4,6 +4,8 @@ namespace PublishPress\Future\Modules\Workflows\Models;
 
 use PublishPress\Future\Modules\Workflows\Interfaces\PostTypesModelInterface;
 
+\defined('ABSPATH') || exit;
+
 class PostTypesModel implements PostTypesModelInterface
 {
     public function getPostTypes(): array

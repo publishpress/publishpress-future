@@ -17,7 +17,7 @@ use PublishPress\Future\Modules\Expirator\PostMetaAbstract;
 use PublishPress\Future\Modules\Expirator\Models\PostTypeDefaultDataModelFactory;
 use Throwable;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 class ExpirablePostModel extends PostModel
 {
@@ -246,7 +246,7 @@ class ExpirablePostModel extends PostModel
 
             if ($this->getPostStatus() !== 'auto-draft') {
                 $args = $this->actionArgsModel->getArgs();
-                $newStatus = isset($args['newStatus']) ? $args['newStatus'] : '';
+                $newStatus = $args['newStatus'] ?? '';
 
                 $this->expirationNewStatus = $newStatus;
             }
@@ -276,7 +276,7 @@ class ExpirablePostModel extends PostModel
 
 
             if ($this->getPostStatus() !== 'auto-draft') {
-                $this->expirationCategories = (array)$this->actionArgsModel->getTaxonomyTerms();
+                $this->expirationCategories = (array) $this->actionArgsModel->getTaxonomyTerms();
             }
 
             if (empty($this->expirationCategories)) {
@@ -359,7 +359,7 @@ class ExpirablePostModel extends PostModel
             }
         }
 
-        return (bool)$this->expirationIsEnabled;
+        return (bool) $this->expirationIsEnabled;
     }
 
     /**
@@ -369,7 +369,7 @@ class ExpirablePostModel extends PostModel
     {
         $this->expirationDate = $this->getExpirationDateString($gmt);
 
-        return (int)strtotime($this->expirationDate);
+        return (int) strtotime($this->expirationDate);
     }
 
     /**
@@ -520,7 +520,7 @@ class ExpirablePostModel extends PostModel
 
     private function expirationEmailIsEnabled()
     {
-        return (bool)$this->options->getOption(
+        return (bool) $this->options->getOption(
             'expirationdateEmailNotification',
             POSTEXPIRATOR_EMAILNOTIFICATION
         );
@@ -712,7 +712,7 @@ class ExpirablePostModel extends PostModel
          */
         $emailBody = $this->hooks->applyFilters(HooksAbstract::FILTER_EXPIRED_EMAIL_BODY, $emailBody, $this, $expirationAction);
 
-        $emailAddresses = array();
+        $emailAddresses = [];
 
         if ($this->settings->getSendEmailNotificationToAdmins()) {
             $blogAdmins = $this->users->getUsers('role=Administrator');
@@ -905,7 +905,7 @@ class ExpirablePostModel extends PostModel
                 'expireType' => $type,
                 'newStatus' => $newStatus,
                 'category' => $this->getMeta(PostMetaAbstract::EXPIRATION_TERMS, true),
-                'categoryTaxonomy' => $this->getMeta(PostMetaAbstract::EXPIRATION_TAXONOMY, true)
+                'categoryTaxonomy' => $this->getMeta(PostMetaAbstract::EXPIRATION_TAXONOMY, true),
             ];
 
             $timestampInPostMeta = $this->forceTimestampToUnixtime($timestampInPostMeta);
@@ -929,7 +929,7 @@ class ExpirablePostModel extends PostModel
             $this->getMeta(PostMetaAbstract::EXPIRATION_TYPE, true),
             $this->getMeta(PostMetaAbstract::EXPIRATION_POST_STATUS, true),
             $this->getMeta(PostMetaAbstract::EXPIRATION_TAXONOMY, true),
-            is_array($terms) ? $terms : []
+            is_array($terms) ? $terms : [],
         ];
 
         return md5(maybe_serialize($data));
@@ -1003,7 +1003,7 @@ class ExpirablePostModel extends PostModel
             'expireType' => $this->defaultDataModel->getAction(),
             'newStatus' => $this->defaultDataModel->getNewStatus(),
             'category' => $this->defaultDataModel->getTerms(),
-            'categoryTaxonomy' => (string)$this->defaultDataModel->getTaxonomy(),
+            'categoryTaxonomy' => (string) $this->defaultDataModel->getTaxonomy(),
         ];
 
         $this->hooks->doAction(

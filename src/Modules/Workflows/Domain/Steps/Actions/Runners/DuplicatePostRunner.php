@@ -7,6 +7,8 @@ use PublishPress\Future\Modules\Workflows\Interfaces\StepProcessorInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\StepRunnerInterface;
 use PublishPress\Future\Framework\Logger\LoggerInterface;
 
+\defined('ABSPATH') || exit;
+
 class DuplicatePostRunner implements StepRunnerInterface
 {
     /**

@@ -11,6 +11,8 @@ use PublishPress\Future\Modules\Workflows\Domain\Engine\VariableResolvers\Intege
 use PublishPress\Future\Modules\Workflows\Domain\Engine\VariableResolvers\PostResolver;
 use WP_Post;
 
+\defined('ABSPATH') || exit;
+
 class PostModel implements PostModelInterface
 {
     public const META_KEY_WORKFLOW_MANUALLY_TRIGGERED = '_pp_workflow_manually_triggered';
@@ -141,7 +143,7 @@ class PostModel implements PostModelInterface
                 $executionContext = $executionContextRegistry->getExecutionContext($workflowExecutionId);
                 $executionContext->setVariable($triggerStep['data']['slug'], [
                     'post' => new PostResolver($postObject, $hooks, '', $expirablePostModelFactory),
-                    'postId' => new IntegerResolver($postId)
+                    'postId' => new IntegerResolver($postId),
                 ]);
 
                 if (! $postQueryValidator->validate(['post' => $postObject, 'node' => $triggerStep])) {

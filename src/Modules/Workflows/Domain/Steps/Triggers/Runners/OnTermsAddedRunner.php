@@ -15,6 +15,8 @@ use PublishPress\Future\Modules\Workflows\Interfaces\ExecutionContextInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\WorkflowExecutionSafeguardInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\PostCacheInterface;
 
+\defined('ABSPATH') || exit;
+
 class OnTermsAddedRunner implements TriggerRunnerInterface
 {
     /**

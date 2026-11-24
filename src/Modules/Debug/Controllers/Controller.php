@@ -14,7 +14,7 @@ use PublishPress\Future\Framework\WordPress\Facade\HooksFacade;
 use PublishPress\Future\Modules\Debug\HooksAbstract;
 use PublishPress\Future\Modules\Workflows\HooksAbstract as WorkflowsHooksAbstract;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 class Controller implements InitializableInterface
 {
@@ -87,7 +87,7 @@ class Controller implements InitializableInterface
 
     public function onDeactivatePlugin()
     {
-        $preserveData = (bool)get_option('expirationdatePreserveData', 1);
+        $preserveData = (bool) get_option('expirationdatePreserveData', 1);
 
         if (! $preserveData) {
             $this->logger->dropDatabaseTable();
@@ -111,15 +111,15 @@ class Controller implements InitializableInterface
             wp_die(esc_html__('Invalid nonce.', 'post-expirator'), '', ['response' => 403]);
         }
 
-        $grouped = isset($_GET['grouped']) ? (int)$_GET['grouped'] : 0;
+        $grouped = isset($_GET['grouped']) ? (int) $_GET['grouped'] : 0;
         $disposition = isset($_GET['disposition']) ? sanitize_key($_GET['disposition']) : 'inline';
         // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-        $triggerActivatedOnly = isset($_GET['trigger_activated_only']) ? (int)$_GET['trigger_activated_only'] : 0;
+        $triggerActivatedOnly = isset($_GET['trigger_activated_only']) ? (int) $_GET['trigger_activated_only'] : 0;
 
         // Variables for the view.
-        $rawDebugLogGrouped = (bool)$grouped;
+        $rawDebugLogGrouped = (bool) $grouped;
         $rawDebugLogDisposition = $disposition === 'attachment' ? 'attachment' : 'inline';
-        $rawDebugLogTriggerActivatedOnly = (bool)$triggerActivatedOnly;
+        $rawDebugLogTriggerActivatedOnly = (bool) $triggerActivatedOnly;
 
         require_once __DIR__ . '/../Views/raw-debug-log.html.php';
 

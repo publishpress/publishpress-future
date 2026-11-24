@@ -27,7 +27,7 @@ class Walker_PostExpirator_Category_Checklist extends Walker
      *
      * @var array
      */
-    public $db_fields = array('parent' => 'parent', 'id' => 'term_id'); // TODO: decouple this
+    public $db_fields = ['parent' => 'parent', 'id' => 'term_id']; // TODO: decouple this
 
     /**
      * The disabled attribute.
@@ -54,7 +54,7 @@ class Walker_PostExpirator_Category_Checklist extends Walker
      * @param int $depth Depth of the item.
      * @param array $args An array of additional arguments.
      */
-    public function start_lvl(&$output, $depth = 0, $args = array())
+    public function start_lvl(&$output, $depth = 0, $args = [])
     {
         $indent = str_repeat("\t", $depth);
         $output .= "$indent<ul class='children'>\n";
@@ -70,7 +70,7 @@ class Walker_PostExpirator_Category_Checklist extends Walker
      * @param int $depth Depth of the item.
      * @param array $args An array of additional arguments.
      */
-    public function end_lvl(&$output, $depth = 0, $args = array())
+    public function end_lvl(&$output, $depth = 0, $args = [])
     {
         $indent = str_repeat("\t", $depth);
         $output .= "$indent</ul>\n";
@@ -88,11 +88,11 @@ class Walker_PostExpirator_Category_Checklist extends Walker
      * @param array $args An array of additional arguments.
      * @param int $current_object_id ID of the current item.
      */
-    public function start_el(&$output, $data_object, $depth = 0, $args = array(), $current_object_id = 0)
+    public function start_el(&$output, $data_object, $depth = 0, $args = [], $current_object_id = 0)
     {
-        $taxonomy = isset($args['taxonomy']) ? $args['taxonomy'] : 'category';
-        $popular_cats = isset($args['popular_cats']) ? (array)$args['popular_cats'] : [];
-        $selected_cats = isset($args['selected_cats']) ? (array)$args['selected_cats'] : [];
+        $taxonomy = $args['taxonomy'] ?? 'category';
+        $popular_cats = isset($args['popular_cats']) ? (array) $args['popular_cats'] : [];
+        $selected_cats = isset($args['selected_cats']) ? (array) $args['selected_cats'] : [];
 
         $container = Container::getInstance();
         $hooks = $container->get(ServicesAbstract::HOOKS);
@@ -119,7 +119,7 @@ class Walker_PostExpirator_Category_Checklist extends Walker
      * @param int $depth Depth of the item.
      * @param array $args An array of additional arguments.
      */
-    public function end_el(&$output, $category, $depth = 0, $args = array())
+    public function end_el(&$output, $category, $depth = 0, $args = [])
     {
         $output .= "</li>\n";
     }

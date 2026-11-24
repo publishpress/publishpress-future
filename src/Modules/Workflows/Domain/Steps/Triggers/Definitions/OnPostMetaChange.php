@@ -5,6 +5,8 @@ namespace PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definition
 use PublishPress\Future\Modules\Workflows\Interfaces\StepTypeInterface;
 use PublishPress\Future\Modules\Workflows\Models\StepTypesModel;
 
+\defined('ABSPATH') || exit;
+
 class OnPostMetaChange implements StepTypeInterface
 {
     public static function getNodeTypeName(): string
@@ -82,7 +84,7 @@ class OnPostMetaChange implements StepTypeInterface
                             "postStatus" => [],
                         ],
                     ],
-                ]
+                ],
             ],
             [
                 "label" => __("Meta settings", "post-expirator"),
@@ -95,9 +97,9 @@ class OnPostMetaChange implements StepTypeInterface
                         "description" => __("This field allow you to choose the post meta that will trigger this action.", "post-expirator"),
                         "default" => [],
                         'helpUrl' => 'https://publishpress.com/knowledge-base/future-postmeta-field',
-                    ]
-                ]
-            ]
+                    ],
+                ],
+            ],
         ];
     }
 
@@ -109,8 +111,8 @@ class OnPostMetaChange implements StepTypeInterface
                     [
                         "rule" => "hasOutgoingConnection",
                     ],
-                ]
-            ]
+                ],
+            ],
         ];
     }
 
@@ -128,7 +130,7 @@ class OnPostMetaChange implements StepTypeInterface
                 "type" => "integer",
                 "label" => __("Post ID", "post-expirator"),
                 "description" => __("The ID of the post that was updated.", "post-expirator"),
-            ]
+            ],
         ];
     }
 
@@ -176,7 +178,7 @@ class OnPostMetaChange implements StepTypeInterface
                 'type' => 'string',
                 'label' => __("Old meta value", "post-expirator"),
                 'description' => __("The meta value before the change.", "post-expirator"),
-            ]
+            ],
         ];
     }
 
@@ -193,8 +195,8 @@ class OnPostMetaChange implements StepTypeInterface
                 [
                     "id" => "output",
                     "label" => __("Next", "post-expirator"),
-                ]
-            ]
+                ],
+            ],
         ];
     }
 

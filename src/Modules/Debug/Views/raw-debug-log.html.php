@@ -16,6 +16,8 @@ declare(strict_types=1);
 
 use PublishPress\Future\Modules\Debug\DebugLogDisplayHelper;
 
+defined('ABSPATH') || exit;
+
 header('Content-Type: text/plain; charset=utf-8');
 
 if (! empty($rawDebugLogDisposition) && $rawDebugLogDisposition === 'attachment') {

@@ -4,6 +4,8 @@ namespace PublishPress\Future\Modules\Workflows\Domain\Engine\VariableResolvers;
 
 use PublishPress\Future\Modules\Workflows\Interfaces\VariableResolverInterface;
 
+\defined('ABSPATH') || exit;
+
 class PostTermsResolver implements VariableResolverInterface
 {
     private $post;
@@ -65,14 +67,14 @@ class PostTermsResolver implements VariableResolverInterface
             return wp_json_encode($value);
         }
 
-        return (string)$value;
+        return (string) $value;
     }
 
     public function compact(): array
     {
         return [
             'type' => $this->getType(),
-            'value' => $this->termsData
+            'value' => $this->termsData,
         ];
     }
 

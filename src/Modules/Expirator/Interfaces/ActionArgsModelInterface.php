@@ -8,7 +8,7 @@ namespace PublishPress\Future\Modules\Expirator\Interfaces;
 
 use PublishPress\Future\Modules\Expirator\Models\ExpirationActionsModel;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 interface ActionArgsModelInterface
 {

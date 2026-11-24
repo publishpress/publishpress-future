@@ -5,6 +5,8 @@ namespace PublishPress\Future\Modules\Workflows\Controllers;
 use PublishPress\Future\Framework\InitializableInterface;
 use PublishPress\Future\Modules\Workflows\Models\WorkflowsModel;
 
+\defined('ABSPATH') || exit;
+
 class SampleWorkflows implements InitializableInterface
 {
     public function __construct()
@@ -84,7 +86,7 @@ class SampleWorkflows implements InitializableInterface
                 'title' => __('Unstick post one week after publishing', 'post-expirator'),
                 'description' => __('Sample workflow to unstick post one week after publishing', 'post-expirator'), // phpcs:ignore Generic.Files.LineLength.TooLong
                 'flow' => '{"nodes":[{"id":"scheduleDelay_1h3jg9go","type":"generic","position":{"x":-120,"y":-340},"data":{"name":"advanced/core.schedule","elementaryType":"advanced","version":1,"slug":"scheduleDelay1","settings":{"schedule":{"whenToRun":"offset","dateSource":"event","recurrence":"single","repeatUntil":"forever","repeatInterval":"3600","repeatIntervalUnit":"seconds","repeatTimes":"5","repeatUntilDate":"2025-09-09T07:28:28.081Z","unique":true,"priority":"10","specificDate":"2025-09-05T07:28:28.081Z","dateOffset":"+7 days"}}},"width":140,"height":67,"positionAbsolute":{"x":-120,"y":-340},"selected":false,"dragging":false},{"id":"sendEmail_1h3jq591","type":"generic","position":{"x":-120,"y":-120},"data":{"name":"action/core.send-email","elementaryType":"action","version":1,"slug":"sendEmail1","settings":{"recipient":{"expression":"{{global.site.admin_email}}"},"subject":{"expression":"PublishPress Workflow: {{global.workflow.title}}"},"message":{"expression":"This is a message sent by PublishPress Workflow: {{global.workflow.title}}."}}},"width":140,"height":67,"positionAbsolute":{"x":-120,"y":-120},"selected":true,"dragging":false},{"id":"unstickPost_1h3lm7ek","type":"generic","position":{"x":-120,"y":-230},"data":{"name":"action/core.unstick-post","elementaryType":"action","version":1,"slug":"unstickPost1","settings":{"post":{"variable":"{{onPostPublish1.postAfter}}"}}},"width":140,"height":67,"positionAbsolute":{"x":-120,"y":-230},"selected":false,"dragging":false},{"id":"onPostPublish_1jvorf41","type":"trigger","position":{"x":-120,"y":-440},"data":{"name":"trigger/core.post-published","elementaryType":"trigger","version":1,"slug":"onPostPublish1","settings":{"postQuery":{"postSource":"custom","postType":["post"],"postId":[],"postStatus":[]}}},"width":140,"height":67,"positionAbsolute":{"x":-120,"y":-440},"selected":false,"dragging":false}],"edges":[{"source":"scheduleDelay_1h3jg9go","sourceHandle":"output","target":"unstickPost_1h3lm7ek","targetHandle":"input","type":"genericEdge","id":"scheduleDelay_1h3jg9go-output-unstickPost_1h3lm7ek-input","markerEnd":{"type":"arrowclosed"}},{"source":"unstickPost_1h3lm7ek","sourceHandle":"output","target":"sendEmail_1h3jq591","targetHandle":"input","type":"genericEdge","id":"unstickPost_1h3lm7ek-output-sendEmail_1h3jq591-input","markerEnd":{"type":"arrowclosed"}},{"source":"onPostPublish_1jvorf41","sourceHandle":"output","target":"scheduleDelay_1h3jg9go","targetHandle":"input","type":"genericEdge","id":"onPostPublish_1jvorf41-output-scheduleDelay_1h3jg9go-input","markerEnd":{"type":"arrowclosed"}}],"viewport":{"x":527.8508339206014,"y":503.9146112285647,"zoom":1.0970166784120272},"editorVersion":"4.9.0"}', // phpcs:ignore Generic.Files.LineLength.TooLong
-            ]
+            ],
         ];
     }
 }

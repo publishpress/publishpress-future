@@ -197,12 +197,14 @@ export const DateOffset = ({ name, label, defaultValue, onChange, variables = []
                                         {isHelpVisible && (
                                             <Popover>
                                                 <div className="settings-field-help-popover">
-                                                    <Button variant="tertiary" icon={'no-alt'} />
+                                                    {/* No onClick: the click bubbles (through the portal) to the parent toggle button, which closes the help. */}
+                                                    <Button variant="tertiary" icon={'no-alt'} label={__("Close", "post-expirator")} />
 
                                                     <div dangerouslySetInnerHTML={{
                                                         __html: sprintf(
                                                             stripTags(
-                                                                __("For more information on formatting, see the %sPHP strtotime function%s. For example, you could enter %s+1 month%s or %s+1 week 2 days 4 hours 2 seconds%s or %snext Thursday%s. Please use only phrases in English.", "post-expirator")
+                                                                /* translators: 1: opening link tag, 2: closing link tag, 3: opening code tag, 4: closing code tag, 5: opening code tag, 6: closing code tag, 7: opening code tag, 8: closing code tag. */
+                                                                __("For more information on formatting, see the %1$sPHP strtotime function%2$s. For example, you could enter %3$s+1 month%4$s or %5$s+1 week 2 days 4 hours 2 seconds%6$s or %7$snext Thursday%8$s. Please use only phrases in English.", "post-expirator")
                                                             ),
                                                             "<a href='https://www.php.net/manual/en/function.strtotime.php' target='_blank'>",
                                                             "</a>",

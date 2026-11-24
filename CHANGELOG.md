@@ -1,16 +1,78 @@
-The format is based on [Keep a Changelog](http://keepachangelog.com/)
-and this project adheres to [Semantic Versioning](http://semver.org/).
+The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
-[UNRELEASED]
+[4.12.0] - 24 Nov, 2026
 
-- Changed: Upgrade woocommerce/action-scheduler from 3.9.3 to 4.1.0 (Issue #1655).
-- Changed: Raise minimum WordPress version to 6.8 (required by Action Scheduler 4.0+).
-- Changed: Action Scheduler 4.0+ breaking changes — unique actions now consider args when determining uniqueness; failed actions are purged after 3 months by default.
+- Added: Connect AI services through PublishPress Hub to manage Future actions, workflow graphs, settings and scheduled actions with native WordPress permissions.
+- Security: Enforce workflow publish and unpublish capabilities before enabling, changing, disabling, or deleting workflows. See [GHSA-9cgh-x983-rc5r](https://github.com/publishpress/publishpress-future/security/advisories/GHSA-9cgh-x983-rc5r).
+- Security: Restrict Future settings updates to users with the required admin capability.
+- Security: Limit Future term listings to taxonomies supported for Future actions.
+- Security: Require delete capability before a Future Action moves a post to trash.
+- Security: Require term assignment capability and a valid post-type taxonomy before a Future Action changes terms.
+- Security: Update the uuid dependency to address GHSA-w5hq-g745-h8pq.
+- Fixed: The workflow deleted hook receives the workflow ID after the model resets.
+- Fixed: A workflow step can be added from the inserter with a click or Enter.
+- Fixed: A nested workflow field, such as `recipient.expression`, is marked invalid when its validation key uses a dot path.
+- Fixed: Backup export and import notices are shown.
+- Fixed: Future abilities are registered when another plugin starts the WordPress Abilities API before Future initializes on `init`.
+- Fixed: MCP allowed-role settings validate against the live WordPress role registry, so roles registered on `init` are accepted (Issue #1794).
+- Fixed: Future Action column no longer fatals when the posts or pages list has no current post (Issue #1705).
+- Fixed: Debug log output has a screen-reader label (Issue #1703).
+- Fixed: PublishPress footer logo has alt text (Issue #1701).
+- Changed: Admin screens and the workflow editor improve keyboard use, labels, contrast, and screen-reader announcements for WCAG 2.2 AA.
+- Changed: Debug log filters apply when the user presses Apply.
+- Changed: Raise the minimum PHP version from 7.4 to 8.2.
+- Changed: Display the PublishPress Hub translation update notice on Future Actions, Workflows, the workflow editor, Settings, and Scheduled Actions.
+- Changed: The release workflow attaches `post-expirator-locales.zip` for the package server. Language files stay in the repository.
 
-- Fixed: Improved workflow compatibility with ACF Extended frontend forms by triggering only when the required metadata has already been processed (Issue #1649).
-- Fixed: Fatal error on Scheduled Actions screen when Action Scheduler 4.1 is loaded (Issue #1684).
-- Fixed: Activating a Workflow Sets Status to "Scheduled" Instead of "Active" on Sites with a Positive UTC Timezone Offset (Issue #1698).
-- Added: Copy workflow to text feature for development, support or debug work.
+[4.11.2]
+
+- Fixed: Prevent the PublishPress Hub notice from appearing on admin pages outside the plugins screen by updating the translation library.
+- Fixed: Update the POT file.
+
+[4.11.1]
+
+- Fixed: Workflow editor no longer crashes when a workflow post body is empty, because the flow always includes `nodes` and `edges` arrays (Issue #1757).
+
+[4.11.0]
+
+- Fixed: Schedule capability check runs after expiration options are filtered, so rewritten action types such as legacy custom statuses are authorized correctly.
+- Security: Require the matching WordPress capability before a Future Action is scheduled. Publish and make private require `publish_posts`, stick and unstick require `edit_others_posts`, and delete requires `delete_post`. The editor only lists actions the current user can schedule.
+- Security: Require the taxonomy `edit_terms` capability before a Future Action creates terms, and only allow taxonomies registered for that post type. Users without that capability can still select existing terms.
+- Security: Restrict the `publishpress_future_action` REST field to the edit context and to users who can edit the post. Public wp/v2 responses no longer include Future Action schedule metadata.
+- Added: Workflow share summaries show human-readable setting values instead of raw JSON.
+- Added: Expression builder shows variable details on hover.
+- Added: Copy a workflow as plain text for development, support, or debugging.
+- Changed: Expand the readme FAQ and correct the Future menu paths and Action Scheduler notes.
+- Changed: Upgrade Action Scheduler from 3.9.3 to 4.1.0 (Issue #1655).
+- Changed: Raise the minimum WordPress version from 6.7 to 6.8, required by Action Scheduler 4.0+.
+- Changed: With Action Scheduler 4.0+, unique actions include their arguments when checking uniqueness, and failed actions are purged after 3 months by default.
+- Changed: Tested up to WordPress 7.1.
+- Changed: Upgrade bundled translations library to 1.0.4.
+- Fixed: Mark diagnostics and scheduled-action log table headers with scope.
+- Fixed: Settings form no longer intercepts other plugins' submissions that use `?tab=license` (Issue #1708).
+- Fixed: Workflows no longer stay "Scheduled" instead of "Active" on sites with a positive UTC offset (Issue #1698).
+- Fixed: ACF Extended frontend forms trigger workflows only after the required metadata is saved (Issue #1649).
+- Fixed: REST API permission checks no longer return 403 for Application Password requests (Issue #1716).
+- Fixed: Block editor no longer marks posts without an expiration as unsaved (Issue #1651).
+- Fixed: Custom PHP date formats no longer gain extra backslashes when Display settings are saved (Issue #1686).
+- Fixed: Workflow editor toolbar aligns with WordPress 7.1 (Issue #1674).
+- Fixed: Schedule delay step no longer shows a false "custom date source is required" error (Issue #1658).
+- Fixed: Expression builder no longer shows the insert-at-cursor hint on metadata form fields.
+- Fixed: Workflow execution safeguard no longer treats different triggers as an infinite loop (Issue #1680).
+- Fixed: Translation strings now include translator comments and ordered placeholders.
+- Fixed: Initialize Action Scheduler when another plugin autoloads its classes before the procedural API is loaded, preventing a fatal error on admin requests.
+- Fixed: Instance protection warns again about duplicated, outdated, or multiple active copies of the plugin. It stopped matching the plugin after the rename to "PublishPress Future Free" in 4.10.0.
+
+[4.10.7] - 07 Oct, 2026
+
+- Fixed: Fatal error: Cannot redeclare class ComposerAutoloaderInit4e236dcfe4d243372f5b41b5aead30db (Issue #1733).
+
+[4.10.6] - 06 Oct, 2026
+
+- Security: Restrict `[futureaction]` / `[postexpirator]` shortcode wrapper to safe container elements (`p`, `div`, `span`) and escape shortcode output when no wrapper is used, closing incomplete remediation of CVE-2026-5247. Thanks to Civitasmass for the responsible disclosure.
+- Changed: Upgrade publishpress/pimple-pimple (3.5.0.10 => 3.5.0.11)
+- Changed: Upgrade publishpress/wordpress-reviews (1.2.1 => 1.2.2)
+- Fixed: Update POT file.
 
 [4.10.5] - 12 Aug, 2026
 
@@ -111,7 +173,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Fixed: Add proper permission checks for post expiration data access
 - Fixed: Add input sanitization for workflow node data values
 
-[4.9.2] - 18 Novemeber, 2025
+[4.9.2] - 18 November, 2025
 
 - Added: Add "User Role After Change" criteria to "User role is changed" trigger,  (Issue #1473).
 - Changed: Re-organize Action Workflows quick edit links, (Issue #1479)
@@ -1085,80 +1147,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Fixed: bulk edit when expiration is not enabled for the post type, #281
 - Fixed: custom taxonomies support, #50
-
-[2.7.7] - 14 Jul, 2022
-
-- Added: post meta "expiration_log" with expiration log data when post expires
-
-- Fixed: Can't bulk edit posts if hour or minutes are set to 00, #273
-- Fixed: When the post expires to draft we don't trigger the status transition actions, #264
-
-[2.7.6] - 13 Jun, 2022
-
-- Fixed: fatal error on cron if debug is not activated, #265
-
-[2.7.5] - 09 Jun, 2022
-
-- Fixed: undefined array key "hook_suffix" warning, #259
-- Fixed: Double email sending bug confirmed, #204
-
-[2.7.4] - 07 Jun, 2022
-
-- Added: library to protect breaking site when multiple instances of the plugin are activated
-- Changed: order of the debug log, showing now in ASC order
-- Changed: bulk edit date fields required, #256
-
-- Fixed: unlocalized string on the taxonomy field (Thanks to Alex Lion), #255
-- Fixed: default taxonomy selection for Post Types in the settings, #144
-- Fixed: typo in the hook name 'postexpirator_schedule' (Thanks to Nico Mollet), #244
-- Fixed: bulk editing for WordPress v6.0, #251
-- Fixed: the Gutenberg panel for custom post types created on PODS in WordPress v6.0, #250
-
-[2.7.3] - 27 Jan, 2022
-
-- Fixed: the selection of categories when setting a post to expire, #220
-
-[2.7.2] - 25 Jan, 2022
-
-- Added: the event GUID as tooltip to each post in the Current Cron Schedule list on the Diagnostics page, #214
-
-- Added: more clear debug message if the cron event was not scheduled due to an error
-- Developers: the list of cron schedules in the Diagnostics tab adding more post information, #215
-- Changed: the admin notice about the plugin renaming
-
-- Fixed: the Expires column in the posts page correctly identifying the post ID on cron event with multiple IDs, #210
-- Fixed: wrong function used to escape HTML attributes on a settings page
-- Fixed: missed sanitization for some data on admin pages
-- Fixed: some false positives given by PHPCS
-- Fixed: expiration data processing to avoid processing for deactivated posts
-- Fixed: a typo in the diagnostics settings tab
-- Fixed: the checkbox state for posts that are not set to expire, #217
-
-[2.7.1] - 12 Jan, 2022
-
-- Added: visual indicator to the cron event status in the settings page, #155
-- Added: small help text to the Expires column icon to say if the event is scheduled or not
-- Added: additional permission check before loading the settings page
-- Added: CLI command to expire a post, #206
-
-- Removed: the plugin description from the settings page, #194
-- Deprecated: a not used function called `expirationdate_get_blog_url`
-- Fixed: the min required WP to 5.3 due to the requirement of using the function `wp_date`
-
-- Fixed: PHP error while purging the debug log, #135
-- Fixed: composer's autoloader path
-- Fixed: Code cleanup: removed comments and dead code
-- Fixed: the block for direct access to view files
-- Added: check for `is_admin` before checking if the user has permission to see the settings page
-- Fixed: Avoid running sortable column code if not in the admin
-- Fixed: Cross-site scripting (XSS) was possible if a third party allowed HTML or JavaScript into a database setting or language file
-- Fixed: the URL for the View Debug Log admin page, #196
-- Changed: unopened span tag from a form
-- Added: a secondary admin and ajax referer check when saving expiration post data
-- Fixed: the option "Preserve data after deactivating the plugin" that was not saving the setting, #198
-- Fixed: the post expiration function to make sure a post is not expired if the checkbox is not checked on it, #199
-- Fixed: the post expiration meta not being cleaned up after a post expires, #207
-- Fixed: the post expiration checkbox status when post type is set to check it by default
 
 [2.7.7] - 14 Jul, 2022
 

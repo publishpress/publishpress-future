@@ -11,13 +11,13 @@ description: PublishPress Future code style
 **PublishPress Future** (Post Expirator): schedule automatic post/page/content changes — expiration, workflows, scheduled content management.
 
 - **Plugin Slug**: `post-expirator` | **Text Domain**: `post-expirator` | **Namespace**: `PublishPress\Future`
-- **Minimum PHP**: 7.4 | **Minimum WordPress**: 6.7
+- **Minimum PHP**: 8.2 | **Minimum WordPress**: 6.7
 - **Version**: `post-expirator.php` or `PUBLISHPRESS_FUTURE_VERSION`
 
 ## Technology Stack
 
 ### Core Technologies
-PHP ≥7.4 | WP ≥6.7 | JSX admin UI (`assets/`) | CSS | MySQL/MariaDB
+PHP ≥8.2 | WP ≥6.7 | JSX admin UI (`assets/`) | CSS | MySQL/MariaDB
 
 ### Key Dependencies
 - **Action Scheduler** (not WP-Cron): `lib/vendor/woocommerce/action-scheduler/`
@@ -25,14 +25,14 @@ PHP ≥7.4 | WP ≥6.7 | JSX admin UI (`assets/`) | CSS | MySQL/MariaDB
 - **WP Reviews**: `lib/vendor/publishpress/wordpress-reviews/`
 
 ### Development Tools
-Composer | npm/Yarn | Webpack | Codeception (Unit/Integration/Acceptance) | WP-Browser | Docker | PHPCS | PHPStan | PHP-CS-Fixer
+Composer | npm/Yarn | Webpack | Codeception (Unit/Integration) | Playwright (browser acceptance) | WP-Browser | Docker | PHPCS | PHPStan | PHP-CS-Fixer
 
 ### Build Tools
 `dev-workspace/scripts/` | `dev-workspace/docker/compose.yaml` | Webpack | `composer.json` scripts
 
 ## PSR-12 PHP Coding Style
 
-PSR-12 Extended | 4 spaces not tabs | braces next line | control-structure spacing per PSR-12 | UPPER_SNAKE constants | camelCase methods/properties | ~120 char soft limit | `namespace PublishPress\Future\{Module}\{SubFolder};` | grouped alphabetical imports | no trailing whitespace | single trailing newline | omit `?>` in pure PHP | method docblocks with `@since` | type hints (PHP 7.4+)
+PSR-12 Extended | 4 spaces not tabs | braces next line | control-structure spacing per PSR-12 | UPPER_SNAKE constants | camelCase methods/properties | ~120 char soft limit | `namespace PublishPress\Future\{Module}\{SubFolder};` | grouped alphabetical imports | no trailing whitespace | single trailing newline | omit `?>` in pure PHP | method docblocks with `@since` | native parameter, return, and property types (PHP 8.2)
 - All files must have the following comment at the top:
 
 /**
@@ -53,7 +53,7 @@ Layered Core/Framework/Modules/Views | feature modules in `Modules/` | cohesion 
 Core/ | Framework/ | Modules/{Name}/ | Views/
 Module: Module.php, HooksAbstract.php, Controllers/, Models/, DBTableSchemas/, Migrations/
 Framework: WordPress/Facade/, Database/, Logger/, …
-tests/: Unit/, Integration/, Acceptance/features/, EndToEnd/, Support/
+tests/codeception/: Unit/, Integration/, Support/ | tests/playwright/: admin/, editor/, public/, plugins/, support/
 
 ### Module Structure Pattern
 Each feature module follows a consistent structure:
@@ -84,6 +84,25 @@ ModuleName/
 - **Models**: entity + `Model` | **Facades**: WP area + `Facade` | **Interfaces**: contract + `Interface`
 - **Abstract**: `Abstract` suffix | **Schemas**: table + `Schema` | **Migrations**: `V{version}{description}` (e.g. `V40000WorkflowScheduledStepsSchema`)
 
+## PHP 8.2
+
+Source of truth: `Requires PHP: 8.2` in `post-expirator.php` and `composer.json`. Use 8.0–8.2 features in code you already edit. Do not rewrite an untouched file only to adopt them.
+
+Use:
+
+- Parameter, return, and property types. Typed properties replace `@var` on new code.
+- Constructor promotion for injected dependencies. `readonly` on a dependency the class does not reassign.
+- `str_contains`, `str_starts_with`, and `str_ends_with` instead of a `strpos` comparison.
+- `match` for a closed branch with no shared arm. Keep `switch` when arms share a body, or when an unknown value must not throw.
+- `??=` and `?->` at a null boundary.
+
+Do not:
+
+- Convert `*Abstract` constant classes to enums. Hooks, services, meta keys, capabilities, log levels, and expiration actions stay constants. Enum cases need unique backing values. Several constants share one string. Those sets are open, or WordPress stores them as strings.
+- Add an enum for a value stored in post meta, options, or workflow JSON unless the edit already rewrites that boundary. Parse with `tryFrom()` at the edge.
+- Pass named arguments to WordPress core functions.
+- Mass-convert constructors, `switch` statements, or `strpos` calls outside the task.
+
 ## Language-Specific Practices
 
 PHP (`*.php`): follow `.cursor/rules/php.mdc` — clean code, design patterns, no god files
@@ -107,7 +126,7 @@ React/JSX (`*.jsx`, `*.tsx`): follow `.cursor/rules/react.mdc` — functional co
 
 ## Testing Guidelines
 
-**Codeception** — Unit, Integration, Acceptance, EndToEnd.
+**Codeception** — Unit, Integration. **Playwright** — all browser tests (`composer test:e2e`), including plugin activation and instance protection.
 
 ### Unit Testing
 Behavior not implementation | `test_should_*` names | AAA | mock WP/DB | 80%+ domain coverage | `WPTestCase` or PHPUnit `TestCase`
@@ -115,17 +134,17 @@ Behavior not implementation | `test_should_*` names | AAA | mock WP/DB | 80%+ do
 ### Integration Testing
 Component + WP integration | real test DB | REST + controller/model flows | `WPTestCase` / `NoTransactionWPTestCase` | critical workflows
 
-### Acceptance Testing (BDD)
-Gherkin Given/When/Then | browser tests | `tests/Acceptance/features/` | steps in `tests/Support/GherkinSteps/` | admin/classic/Gutenberg/bulk/quick edit
+### Acceptance Testing (browser)
+Playwright | `tests/playwright/` | `composer test:e2e` | tags `@acceptance` plus `@admin`, `@editor`, or `@public` | every test runs on its own database from the site pool
 
-### EndToEnd Testing
-Lifecycle (activate/deactivate) | WP core interaction | real-world scenarios
+### Plugin lifecycle (browser)
+Playwright `tests/playwright/plugins/` | activate/deactivate | instance protection (serial: shares `wp-content/plugins`)
 
 ### Test Environment
 Docker `dev-workspace/docker/compose.yaml` — `db_test`, `test-wp`, `test-wpcli` | `composer test:up` / `test:clean` | `test:db-export` / `test:db-import`
 
 ### Test Naming Conventions
-Classes: `{ClassName}Test.php` / `{ClassName}Cest.php` | PHPUnit: `test_should_do_something_when_condition()` | Codeception: `testShouldDoSomethingWhenCondition()` | features: `kebab-case.feature`
+Classes: `{ClassName}Test.php` | PHPUnit: `test_should_do_something_when_condition()` | Codeception: `testShouldDoSomethingWhenCondition()` | Playwright: `kebab-case.spec.ts`
 
 ## Composer Commands
 
@@ -136,7 +155,7 @@ Grouped one-liners — see `composer.json` for full definitions.
 | env | `composer up`, `dev:up`, `test:up`, `down`, `dev:clean`, `test:clean` |
 | build | `composer build`, `build:js`, `build:lang`, `build:all`, `watch:js` |
 | check | `composer check`, `check:cs`, `fix:cs`, `fix:php`, `check:stan`, `check:longpath` |
-| test | `composer test`, `test:all`, `test Unit\|Integration\|Acceptance\|EndToEnd`, `test Unit:Core/DI/ContainerTest`, `test Integration:Modules/…`, `test:debug`, `test:steps`, `test:snippets` |
+| test | `composer test`, `test:all`, `test Unit\|Integration`, `test Unit:Core/DI/ContainerTest`, `test Integration:Modules/…`, `test:debug`, `test:steps`, `test:snippets` |
 | wp/db | `composer wp:dev -- …`, `wp:tests -- …`, `test:db-export`, `test:db-import`, `test:db-logs` |
 | version | `composer get:version`, `set:version`, `pre-release` |
 
@@ -149,7 +168,7 @@ Grouped one-liners — see `composer.json` for full definitions.
 `DBTableSchemas/` + `DBTableSchemaInterface` → `Migrations/` `V{version}{description}.php` → register in `Module.php`.
 
 ### Adding REST API Endpoints
-`Controllers/` → routes in `initialize()` → `/publishpress-future/v1/endpoint` → permissions → Integration tests in `tests/Integration/Modules/{Module}/Rest/`.
+`Controllers/` → routes in `initialize()` → `/publishpress-future/v1/endpoint` → permissions → Integration tests in `tests/codeception/Integration/Modules/{Module}/Rest/`.
 
 ### Adding Expiration Actions
 `ExpirationActions/` + `ExpirationActionInterface` → `ExpirationActionsAbstract` → `ExpirationActionsModel` → tests + i18n labels.

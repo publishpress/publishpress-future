@@ -14,6 +14,8 @@ use PublishPress\Future\Modules\Workflows\Models\WorkflowsModel;
 use PublishPress\Future\Modules\Workflows\CapabilitiesAbstract;
 use PublishPress\Future\Framework\WordPress\Utils\WorkflowSanitizationUtil;
 
+\defined('ABSPATH') || exit;
+
 // TODO: Move this to a controller on the workflows module.
 class RestApiV1 implements RestApiManagerInterface
 {
@@ -65,8 +67,8 @@ class RestApiV1 implements RestApiManagerInterface
                     'id' => [
                         'description' => __('The ID of the workflow', 'post-expirator'),
                         'type' => 'integer',
-                        'required' => true
-                    ]
+                        'required' => true,
+                    ],
                 ],
                 'show_in_index' => false,
                 'show_in_rest' => true,
@@ -89,8 +91,8 @@ class RestApiV1 implements RestApiManagerInterface
                     'postType' => [
                         'description' => __('The post type', 'post-expirator'),
                         'type' => 'string',
-                        'required' => true
-                    ]
+                        'required' => true,
+                    ],
                 ],
                 'show_in_index' => false,
                 'show_in_rest' => true,
@@ -128,8 +130,8 @@ class RestApiV1 implements RestApiManagerInterface
                     'id' => [
                         'description' => __('The ID of the workflow', 'post-expirator'),
                         'type' => 'integer',
-                        'required' => true
-                    ]
+                        'required' => true,
+                    ],
                 ],
                 'show_in_index' => false,
                 'show_in_rest' => true,
@@ -151,8 +153,8 @@ class RestApiV1 implements RestApiManagerInterface
                     'id' => [
                         'description' => __('The ID of the workflow', 'post-expirator'),
                         'type' => 'integer',
-                        'required' => true
-                    ]
+                        'required' => true,
+                    ],
                 ],
                 'show_in_index' => false,
                 'show_in_rest' => true,
@@ -174,8 +176,8 @@ class RestApiV1 implements RestApiManagerInterface
                     'taxonomy' => [
                         'description' => __('The taxonomy name', 'post-expirator'),
                         'type' => 'string',
-                        'required' => true
-                    ]
+                        'required' => true,
+                    ],
                 ],
                 'show_in_index' => false,
                 'show_in_rest' => true,
@@ -197,8 +199,8 @@ class RestApiV1 implements RestApiManagerInterface
                     'post' => [
                         'description' => __('The post ID', 'post-expirator'),
                         'type' => 'integer',
-                        'required' => true
-                    ]
+                        'required' => true,
+                    ],
                 ],
                 'show_in_index' => false,
                 'show_in_rest' => true,
@@ -290,8 +292,36 @@ class RestApiV1 implements RestApiManagerInterface
             $request['flow'] = $this->sanitizeWorkflowData($request['flow']);
         }
 
-        $isPublishing = $workflowModel->getStatus() !== 'publish' && $request['status'] === 'publish';
-        $isUnpublishing = $workflowModel->getStatus() === 'publish' && $request['status'] !== 'publish';
+        $currentStatus = $workflowModel->getStatus();
+        $statusWasSent = isset($request['status']);
+        $requestedStatus = $statusWasSent ? (string) $request['status'] : '';
+
+        $isPublishing = $statusWasSent
+            && $currentStatus !== 'publish'
+            && $requestedStatus === 'publish';
+        $isUnpublishing = $statusWasSent
+            && $currentStatus === 'publish'
+            && $requestedStatus !== 'publish';
+
+        if (
+            $statusWasSent
+            && ($requestedStatus === 'publish' || $currentStatus === 'publish')
+            && ! current_user_can(CapabilitiesAbstract::PUBLISH_WORKFLOWS)
+        ) {
+            return new WP_Error(
+                'rest_forbidden',
+                __('You cannot publish or change an enabled workflow.', 'post-expirator'),
+                ['status' => 403]
+            );
+        }
+
+        if ($isUnpublishing && ! current_user_can(CapabilitiesAbstract::UNPUBLISH_WORKFLOWS)) {
+            return new WP_Error(
+                'rest_forbidden',
+                __('You cannot disable this workflow.', 'post-expirator'),
+                ['status' => 403]
+            );
+        }
 
         if (isset($request['title'])) {
             $workflowModel->setTitle($request['title']);
@@ -351,6 +381,14 @@ class RestApiV1 implements RestApiManagerInterface
             );
         }
 
+        if (! current_user_can(CapabilitiesAbstract::UNPUBLISH_WORKFLOWS)) {
+            return new WP_Error(
+                'rest_forbidden',
+                __('You cannot delete this workflow.', 'post-expirator'),
+                ['status' => 403]
+            );
+        }
+
         $workflowModel->delete();
 
         return rest_ensure_response(true);
@@ -368,8 +406,8 @@ class RestApiV1 implements RestApiManagerInterface
         if (is_array($terms) && ! empty($terms)) {
             $terms = array_map(function ($term) {
                 return [
-                'id' => $term->term_id,
-                'name' => $term->name,
+                    'id' => $term->term_id,
+                    'name' => $term->name,
                     'slug' => $term->slug,
                 ];
             }, $terms);
@@ -447,7 +485,7 @@ class RestApiV1 implements RestApiManagerInterface
             return [
                 'id' => $user->ID,
                 'userLogin' => $user->user_login,
-                'name' => $user->display_name
+                'name' => $user->display_name,
             ];
         }, $authors);
 

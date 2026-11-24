@@ -19,6 +19,8 @@ use PublishPress\Future\Modules\Workflows\Models\WorkflowModel;
 use PublishPress\Future\Modules\Workflows\Models\WorkflowScheduledStepModel;
 use Throwable;
 
+\defined('ABSPATH') || exit;
+
 class ScheduledActions implements InitializableInterface
 {
     /**
@@ -172,7 +174,7 @@ class ScheduledActions implements InitializableInterface
 
             $step = $workflowModel->getNodeById($args['step']['nodeId']);
         } else {
-            $step = isset($args['step']) ? $args['step'] : [];
+            $step = $args['step'] ?? [];
         }
 
         return $step;
@@ -197,9 +199,9 @@ class ScheduledActions implements InitializableInterface
                     $stepModel = new WorkflowScheduledStepModel();
                     $stepModel->loadByActionId($row['ID']);
 
-                    $title = $stepModel->getIsRecurring() ?
-                        __('Workflow repeating scheduled step', 'post-expirator') :
-                        __('Workflow scheduled step', 'post-expirator');
+                    $title = $stepModel->getIsRecurring()
+                        ? __('Workflow repeating scheduled step', 'post-expirator')
+                        : __('Workflow scheduled step', 'post-expirator');
 
                     break;
 
@@ -214,6 +216,7 @@ class ScheduledActions implements InitializableInterface
 
                 case WorkflowsHooksAbstract::ACTION_CLEANUP_FINISHED_SCHEDULED_STEPS:
                     $title = sprintf(
+                        /* translators: %d is the number of days. */
                         __('Clean up completed scheduled steps older than %d days', 'post-expirator'),
                         $this->settingsFacade->getScheduledWorkflowStepsCleanupRetention()
                     );
@@ -251,8 +254,8 @@ class ScheduledActions implements InitializableInterface
                     $noticeMessage = get_transient($transientName);
                     delete_transient($transientName);
 
-                    // translators: %s is the action description
                     $html = sprintf(
+                        /* translators: %s is the action description. */
                         __('Successfully executed action: %s', 'post-expirator'),
                         $noticeMessage
                     );
@@ -267,6 +270,7 @@ class ScheduledActions implements InitializableInterface
                 $days = $this->settingsFacade->getScheduledWorkflowStepsCleanupRetention();
 
                 $html = sprintf(
+                    /* translators: %d is the number of days. */
                     __('Cleaned up completed scheduled steps older than %d days', 'post-expirator'),
                     $days
                 );

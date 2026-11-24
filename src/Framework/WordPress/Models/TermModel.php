@@ -8,7 +8,7 @@ namespace PublishPress\Future\Framework\WordPress\Models;
 
 use PublishPress\Future\Framework\WordPress\Exceptions\NonexistentTermException;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 class TermModel
 {
@@ -33,7 +33,7 @@ class TermModel
         }
 
         if (is_numeric($term)) {
-            $this->termId = (int)$term;
+            $this->termId = (int) $term;
         }
     }
 
@@ -70,7 +70,7 @@ class TermModel
 
     public function getTermID()
     {
-        return (int)$this->termId;
+        return (int) $this->termId;
     }
 
     /**

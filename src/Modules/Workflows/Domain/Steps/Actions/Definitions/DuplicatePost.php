@@ -5,6 +5,8 @@ namespace PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions
 use PublishPress\Future\Modules\Workflows\Interfaces\StepTypeInterface;
 use PublishPress\Future\Modules\Workflows\Models\StepTypesModel;
 
+\defined('ABSPATH') || exit;
+
 class DuplicatePost implements StepTypeInterface
 {
     public static function getNodeTypeName(): string
@@ -76,10 +78,10 @@ class DuplicatePost implements StepTypeInterface
                             "variable" => [
                                 "rule" => "first",
                                 "dataType" => "post",
-                            ]
+                            ],
                         ],
                     ],
-                ]
+                ],
             ],
             [
                 "label" => __("Duplication Options", "post-expirator"),
@@ -89,38 +91,38 @@ class DuplicatePost implements StepTypeInterface
                         "name" => "newPostStatus",
                         "type" => "postStatus",
                         "label" => __("New post status", "post-expirator"),
-                        "description" => __("The status for the duplicated post.", "post-expirator")
+                        "description" => __("The status for the duplicated post.", "post-expirator"),
                     ],
                     [
                         "name" => "titlePrefix",
                         "type" => "text",
                         "label" => __("Title prefix", "post-expirator"),
                         "description" => __("Text to add before the original title. Leave empty for no prefix.", "post-expirator"),
-                        "default" => __("Copy of ", "post-expirator")
+                        "default" => __("Copy of ", "post-expirator"),
                     ],
                     [
                         "name" => "copyMeta",
                         "type" => "toggle",
                         "label" => __("Copy Post Meta", "post-expirator"),
                         "description" => __("If enabled, all post meta will be copied to the new post.", "post-expirator"),
-                        "default" => false
+                        "default" => false,
                     ],
                     [
                         "name" => "copyTaxonomies",
                         "type" => "toggle",
                         "label" => __("Copy Post Taxonomies", "post-expirator"),
                         "description" => __("If enabled, all post taxonomies will be copied to the new post.", "post-expirator"),
-                        "default" => false
+                        "default" => false,
                     ],
                     [
                         "name" => "copyFeaturedImage",
                         "type" => "toggle",
                         "label" => __("Copy Featured Image", "post-expirator"),
                         "description" => __("If enabled, the featured image will be copied to the new post.", "post-expirator"),
-                        "default" => false
-                    ]
-                ]
-            ]
+                        "default" => false,
+                    ],
+                ],
+            ],
         ];
     }
 
@@ -131,7 +133,7 @@ class DuplicatePost implements StepTypeInterface
                 "rules" => [
                     [
                         "rule" => "hasIncomingConnection",
-                    ]
+                    ],
                 ],
             ],
             "settings" => [
@@ -194,14 +196,14 @@ class DuplicatePost implements StepTypeInterface
             "target" => [
                 [
                     "id" => "input",
-                ]
+                ],
             ],
             "source" => [
                 [
                     "id" => "output",
                     "label" => __("Next", "post-expirator"),
-                ]
-            ]
+                ],
+            ],
         ];
     }
 

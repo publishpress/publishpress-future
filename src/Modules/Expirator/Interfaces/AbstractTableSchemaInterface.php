@@ -6,7 +6,7 @@
 
 namespace PublishPress\Future\Modules\Expirator\Interfaces;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 /**
  * @deprecated version 3.4.3 Use the TableSchemaInterface interface instead.

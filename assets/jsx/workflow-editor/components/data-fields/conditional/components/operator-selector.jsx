@@ -1,8 +1,11 @@
 import { SelectControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
-export const OperatorSelector = ({ label, value, options, handleOnChange }) => {
+// react-querybuilder passes the accessible text as `title`, not `label`.
+export const OperatorSelector = ({ label, title, value, options, handleOnChange }) => {
     return <SelectControl
-        label={label}
+        label={label || title || __('Operator', 'post-expirator')}
+        hideLabelFromVision
         value={value}
         options={options}
         onChange={handleOnChange}

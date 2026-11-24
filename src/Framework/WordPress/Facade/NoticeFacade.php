@@ -4,6 +4,8 @@ namespace PublishPress\Future\Framework\WordPress\Facade;
 
 use PublishPress\Future\Core\HookableInterface;
 
+\defined('ABSPATH') || exit;
+
 class NoticeFacade implements NoticeInterface
 {
     private $notices = [];

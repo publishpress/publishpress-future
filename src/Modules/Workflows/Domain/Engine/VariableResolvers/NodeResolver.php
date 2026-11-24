@@ -6,6 +6,8 @@ use PublishPress\Future\Modules\Workflows\Interfaces\VariableResolverInterface;
 
 use function wp_json_encode;
 
+\defined('ABSPATH') || exit;
+
 class NodeResolver implements VariableResolverInterface
 {
     private array $data;
@@ -15,32 +17,32 @@ class NodeResolver implements VariableResolverInterface
         if (is_object($node)) {
             $node = $node->getVariable();
         } else {
-            $node = (array)$node;
+            $node = (array) $node;
         }
 
         $this->data = [
             'id'                   => '',
-            'name'                 => (string)($node['name'] ?? ''),
-            'label'                => (string)($node['label'] ?? ''),
-            'activation_timestamp' => (string)($node['activation_timestamp'] ?? ''),
-            'slug'                 => (string)($node['slug'] ?? ''),
+            'name'                 => (string) ($node['name'] ?? ''),
+            'label'                => (string) ($node['label'] ?? ''),
+            'activation_timestamp' => (string) ($node['activation_timestamp'] ?? ''),
+            'slug'                 => (string) ($node['slug'] ?? ''),
             'postId'               => 0,
         ];
 
         if (! isset($node['id']) && isset($node['ID'])) {
-            $this->data['id'] = (string)$node['ID'];
+            $this->data['id'] = (string) $node['ID'];
         }
 
         if (isset($node['id'])) {
-            $this->data['id'] = (string)$node['id'];
+            $this->data['id'] = (string) $node['id'];
         }
 
         if (isset($node['postId'])) {
-            $this->data['postId'] = (int)$node['postId'];
+            $this->data['postId'] = (int) $node['postId'];
         }
 
         if (isset($node['post_id'])) {
-            $this->data['postId'] = (int)$node['post_id'];
+            $this->data['postId'] = (int) $node['post_id'];
         }
     }
 
@@ -56,7 +58,7 @@ class NodeResolver implements VariableResolverInterface
 
     public function getValueAsString(string $property = ''): string
     {
-        return (string)$this->getValue($property);
+        return (string) $this->getValue($property);
     }
 
     public function compact(): array
@@ -96,7 +98,7 @@ class NodeResolver implements VariableResolverInterface
     public function __get($name)
     {
         if ($name === 'ID') {
-            return $this->data['id'] !== '' ? (int)$this->data['id'] : null;
+            return $this->data['id'] !== '' ? (int) $this->data['id'] : null;
         }
 
         if ($name === 'post_id') {
@@ -121,7 +123,7 @@ class NodeResolver implements VariableResolverInterface
         $output = [];
 
         if ($this->data['id'] !== '') {
-            $output['ID'] = (int)$this->data['id'];
+            $output['ID'] = (int) $this->data['id'];
         }
 
         foreach (['name', 'label', 'activation_timestamp', 'slug'] as $key) {

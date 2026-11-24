@@ -5,6 +5,8 @@ namespace PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions
 use PublishPress\Future\Modules\Workflows\Interfaces\StepTypeInterface;
 use PublishPress\Future\Modules\Workflows\Models\StepTypesModel;
 
+\defined('ABSPATH') || exit;
+
 class DeactivatePostWorkflow implements StepTypeInterface
 {
     public static function getNodeTypeName(): string
@@ -79,7 +81,7 @@ class DeactivatePostWorkflow implements StepTypeInterface
                             "variable" => [
                                 "rule" => "first",
                                 "dataType" => "post",
-                            ]
+                            ],
                         ],
                     ],
                     [
@@ -89,7 +91,7 @@ class DeactivatePostWorkflow implements StepTypeInterface
                             "variable" => [
                                 "rule" => "first",
                                 "dataType" => "workflow",
-                            ]
+                            ],
                         ],
                         "label" => __("Workflow to Deactivate", "post-expirator"),
                         "description" => __(
@@ -148,7 +150,7 @@ class DeactivatePostWorkflow implements StepTypeInterface
                 "type" => "input",
                 "label" => __("Step input", "post-expirator"),
                 "description" => __("The input data for this step.", "post-expirator"),
-            ]
+            ],
         ];
     }
 
@@ -163,14 +165,14 @@ class DeactivatePostWorkflow implements StepTypeInterface
             "target" => [
                 [
                     "id" => "input",
-                ]
+                ],
             ],
             "source" => [
                 [
                     "id" => "output",
                     "label" => __("Next", "post-expirator"),
-                ]
-            ]
+                ],
+            ],
         ];
     }
 

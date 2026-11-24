@@ -4,9 +4,11 @@ import { PluginArea } from '@wordpress/plugins';
 import { Fill, Slot, SlotFillProvider } from '@wordpress/components';
 import { FutureActionPanelAfterActionField } from './FutureActionPanelAfterActionField';
 import { FutureActionPanelTop } from './FutureActionPanelTop';
+import { __ } from '@wordpress/i18n';
+import { speak } from '@wordpress/a11y';
 
 const { PanelRow, CheckboxControl, SelectControl, FormTokenField, Spinner, BaseControl } = wp.components;
-const { Fragment, useEffect, useState } = wp.element;
+const { Fragment, useEffect, useState, useRef } = wp.element;
 const { decodeEntities } = wp.htmlEntities;
 const { addQueryArgs } = wp.url;
 const {
@@ -15,7 +17,29 @@ const {
 } = wp.data;
 const { apiFetch } = wp;
 
+let futureActionPanelInstanceCounter = 0;
+
+/**
+ * Admin URL used for links to core settings screens. Prefer a localized value
+ * when the PHP side provides one, else derive it from ajaxurl, which WordPress
+ * prints on every admin screen.
+ */
+const getAdminUrl = (props) => {
+    if (props.adminUrl) {
+        return props.adminUrl;
+    }
+
+    if (typeof window.ajaxurl === 'string' && window.ajaxurl.indexOf('admin-ajax.php') !== -1) {
+        return window.ajaxurl.replace(/admin-ajax\.php.*$/, '');
+    }
+
+    return '/wp-admin/';
+};
+
 export const FutureActionPanel = (props) => {
+    const [instanceId] = useState(() => ++futureActionPanelInstanceCounter);
+    const panelRef = useRef(null);
+    const errorId = 'future-action-validation-error-' + instanceId;
     const {
         action,
         date,
@@ -272,7 +296,12 @@ export const FutureActionPanel = (props) => {
             const [before, after] = part.split('}');
 
             result.push(
-                <a href={href} target={target} key={href}>{before}</a>
+                <a href={href} target={target} key={href} rel={target === '_blank' ? 'noopener noreferrer' : undefined}>
+                    {before}
+                    {target === '_blank' && (
+                        <span className="screen-reader-text"> {__('(opens in a new tab)', 'post-expirator')}</span>
+                    )}
+                </a>
             );
 
             result.push(after);
@@ -289,7 +318,8 @@ export const FutureActionPanel = (props) => {
         });
     }
 
-    const HelpText = replaceCurlyBracketsWithLink(props.strings.timezoneSettingsHelp, '/wp-admin/options-general.php#timezone_string', '_blank');
+    const timezoneSettingsUrl = props.strings.timezoneSettingsUrl || (getAdminUrl(props) + 'options-general.php#timezone_string');
+    const HelpText = replaceCurlyBracketsWithLink(props.strings.timezoneSettingsHelp, timezoneSettingsUrl, '_blank');
     const displayTaxonomyField = String(action).includes('category') && action !== 'category-remove-all';
 
     let termsFieldLabel = taxonomyName;
@@ -381,6 +411,71 @@ export const FutureActionPanel = (props) => {
         setHasValidData(validateData());
     }, [action, date, enabled, terms, taxonomy]);
 
+    // Link the validation error to the field it is about and flag that field as invalid.
+    const showValidationError = enabled && !hasValidData && !!validationError;
+
+    useEffect(() => {
+        const panel = panelRef.current;
+
+        if (!panel) {
+            return;
+        }
+
+        // Clear the previous link.
+        panel.querySelectorAll('[data-pe-error-linked]').forEach((element) => {
+            const ids = (element.getAttribute('aria-describedby') || '')
+                .split(' ')
+                .filter((id) => id && id !== errorId);
+
+            if (ids.length) {
+                element.setAttribute('aria-describedby', ids.join(' '));
+            } else {
+                element.removeAttribute('aria-describedby');
+            }
+
+            element.removeAttribute('aria-invalid');
+            element.removeAttribute('data-pe-error-linked');
+        });
+
+        if (!showValidationError) {
+            return;
+        }
+
+        let selector = null;
+
+        if (validationError === props.strings.errorActionRequired) {
+            selector = '.future-action-select-action select';
+        } else if (validationError === props.strings.errorDateRequired || validationError === props.strings.errorDateInPast) {
+            selector = '.future-action-date-panel input, .future-action-date-panel select';
+        } else if (validationError === props.strings.errorTermsRequired) {
+            selector = '.future-action-terms input';
+        }
+
+        if (!selector) {
+            return;
+        }
+
+        panel.querySelectorAll(selector).forEach((element) => {
+            const ids = (element.getAttribute('aria-describedby') || '').split(' ').filter(Boolean);
+
+            ids.push(errorId);
+
+            element.setAttribute('aria-describedby', ids.join(' '));
+            element.setAttribute('aria-invalid', 'true');
+            element.setAttribute('data-pe-error-linked', '1');
+        });
+    }, [showValidationError, validationError, action, calendarIsVisible]);
+
+    const savingDisabledMessage = __('Saving is disabled until this is fixed.', 'post-expirator');
+
+    // Announce the error when it appears or changes. The visible notice is not a live
+    // region, so this is the only announcement and it is not repeated on re-render.
+    useEffect(() => {
+        if (showValidationError) {
+            speak(validationError + ' ' + savingDisabledMessage, 'assertive');
+        }
+    }, [showValidationError, validationError]);
+
     // This adds a 'cancel' class to the input when the user clicks on the
     // field to prevent the form from being submitted. This is a workaround
     // for the issue on the quick-edit form where the form is submitted when
@@ -391,13 +486,18 @@ export const FutureActionPanel = (props) => {
 
     return (
         <SlotFillProvider>
-            <div className={panelClass}>
+            <div className={panelClass} ref={panelRef}>
                 {props.autoEnableAndHideCheckbox && (
                     <input type="hidden" name={'future_action_enabled'} value={1} />
                 )}
 
                 {props.showTitle && (
-                    <div style={{ fontWeight: 'bold', marginBottom: '10px' }}>{props.strings.panelTitle}</div>
+                    <h3
+                        className="future-action-panel-title"
+                        style={{ fontWeight: 'bold', marginTop: 0, marginBottom: '10px', fontSize: 'inherit', lineHeight: 'inherit', padding: 0 }}
+                    >
+                        {props.strings.panelTitle}
+                    </h3>
                 )}
 
                 <FutureActionPanelTop.Slot fillProps={{ storeName: props.storeName }} />
@@ -455,7 +555,7 @@ export const FutureActionPanel = (props) => {
                                     <PanelRow>
                                         <BaseControl label={taxonomyName} className="future-action-warning">
                                             <div>
-                                                <i className="dashicons dashicons-warning"></i> {props.strings.noTaxonomyFound}
+                                                <i className="dashicons dashicons-warning" aria-hidden="true"></i> {props.strings.noTaxonomyFound}
                                             </div>
                                         </BaseControl>
                                     </PanelRow>
@@ -465,7 +565,7 @@ export const FutureActionPanel = (props) => {
                                             <PanelRow>
                                                 <BaseControl label={taxonomyName} className="future-action-warning">
                                                     <div>
-                                                        <i className="dashicons dashicons-warning"></i> {props.strings.noTermsFound}
+                                                        <i className="dashicons dashicons-warning" aria-hidden="true"></i> {props.strings.noTermsFound}
                                                     </div>
                                                 </BaseControl>
                                             </PanelRow>
@@ -511,7 +611,7 @@ export const FutureActionPanel = (props) => {
                                     <div className="future-action-help-text">
                                         <hr />
 
-                                        <span className="dashicons dashicons-info"></span> {HelpText}
+                                        <span className="dashicons dashicons-info" aria-hidden="true"></span> {HelpText}
                                     </div>
                                 </PanelRow>
                             </>
@@ -520,7 +620,12 @@ export const FutureActionPanel = (props) => {
                         {!hasValidData && (
                             <PanelRow>
                                 <BaseControl className="notice notice-error">
-                                    <div>{validationError}</div>
+                                    <div id={errorId}>
+                                        {validationError}
+                                        {validationError && (
+                                            <span className="future-action-saving-disabled"> {savingDisabledMessage}</span>
+                                        )}
+                                    </div>
                                 </BaseControl>
                             </PanelRow>
                         )}

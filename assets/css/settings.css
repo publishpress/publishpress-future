@@ -67,7 +67,7 @@ ul.pe-list ul {
 }
 
 span.post-expiration-attributes {
-	color: #adadad;
+	color: #646970;
 }
 
 .pe-event-post {
@@ -262,7 +262,7 @@ p.description,
 .form-table td p.description {
     font-size: 13px;
     margin: 2px 0 5px;
-    color: #8d929a;
+    color: #646970;
 }
 
 .pp-settings-field-row .description.offset {
@@ -422,6 +422,10 @@ p.description,
     font-weight: 600;
 }
 
+.pp-debug-log-option-label {
+    font-weight: 600;
+}
+
 .pp-radio-label {
     font-weight: normal !important;
 }
@@ -445,4 +449,14 @@ p.description,
 
 #pe-settings-tabs {
     margin-top: 10px;
+}
+
+/* Accessibility: fieldsets used only to group radio/checkbox controls keep the original look. */
+fieldset.pp-a11y-fieldset,
+#pe-settings-tabs fieldset.pp-a11y-fieldset {
+    border: 0;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    min-width: 0;
 }

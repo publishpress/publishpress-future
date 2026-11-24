@@ -2,7 +2,7 @@
 
 namespace PublishPress\Future\Framework\Cache;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 class GenericCacheHandler implements GenericCacheHandlerInterface
 {

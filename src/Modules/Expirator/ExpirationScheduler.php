@@ -12,12 +12,13 @@ use PublishPress\Future\Framework\WordPress\Facade\DateTimeFacade;
 use PublishPress\Future\Framework\WordPress\Facade\ErrorFacade;
 use PublishPress\Future\Modules\Expirator\Interfaces\CronInterface;
 use PublishPress\Future\Modules\Expirator\Interfaces\SchedulerInterface;
+use PublishPress\Future\Modules\Expirator\Models\CurrentUserModel;
 use PublishPress\Future\Modules\Expirator\Models\ExpirablePostModel;
 use PublishPress\Future\Modules\Expirator\Models\ExpirationActionsModel;
 
 use function tad\WPBrowser\vendorDir;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 class ExpirationScheduler implements SchedulerInterface
 {
@@ -62,6 +63,11 @@ class ExpirationScheduler implements SchedulerInterface
     private $expirationActionsModel;
 
     /**
+     * @var \Closure
+     */
+    private $currentUserModelFactory;
+
+    /**
      * @param HookableInterface $hooksFacade
      * @param CronInterface $cron
      * @param ErrorFacade $errorFacade
@@ -70,6 +76,7 @@ class ExpirationScheduler implements SchedulerInterface
      * @param \Closure $postModelFactory
      * @param \Closure $actionArgsModelFactory
      * @param ExpirationActionsModel $expirationActionsModel
+     * @param \Closure $currentUserModelFactory
      */
     public function __construct(
         $hooksFacade,
@@ -79,7 +86,8 @@ class ExpirationScheduler implements SchedulerInterface
         $datetime,
         $postModelFactory,
         $actionArgsModelFactory,
-        $expirationActionsModel
+        $expirationActionsModel,
+        $currentUserModelFactory
     ) {
         $this->hooks = $hooksFacade;
         $this->cron = $cron;
@@ -89,12 +97,13 @@ class ExpirationScheduler implements SchedulerInterface
         $this->postModelFactory = $postModelFactory;
         $this->actionArgsModelFactory = $actionArgsModelFactory;
         $this->expirationActionsModel = $expirationActionsModel;
+        $this->currentUserModelFactory = $currentUserModelFactory;
     }
 
     private function convertLocalTimeToUtc($timestamp): int
     {
         // phpcs:ignore WordPress.DateTime.RestrictedFunctions.date_date
-        return (int)get_gmt_from_date(date('Y-m-d H:i:s', $timestamp), 'U');
+        return (int) get_gmt_from_date(date('Y-m-d H:i:s', $timestamp), 'U');
     }
 
     /**
@@ -102,27 +111,32 @@ class ExpirationScheduler implements SchedulerInterface
      */
     public function schedule($postId, $timestamp, $opts)
     {
-
         $factory = $this->actionArgsModelFactory;
 
         $postModelFactory = $this->postModelFactory;
         $postModel = $postModelFactory($postId);
 
         $opts['date'] = $timestamp;
-        $opts['category'] = isset($opts['category']) ? $opts['category'] : [];
-        $opts['categoryTaxonomy'] = isset($opts['categoryTaxonomy']) ? $opts['categoryTaxonomy'] : '';
+        $opts['category'] ??= [];
+        $opts['categoryTaxonomy'] ??= '';
         $opts['actionLabel'] = $this->expirationActionsModel->getLabelForAction($opts['expireType'], $postModel->getPostType());
         $opts['postTitle'] = $postModel->getTitle();
         $opts['postType'] = $postModel->getPostType();
         $opts['postLink'] = $postModel->getPermalink();
         $opts['postTypeLabel'] = $postModel->getPostTypeSingularLabel();
-        $opts['extraData'] = isset($opts['extraData']) ? $opts['extraData'] : $postModel->getExtraData();
+        $opts['extraData'] ??= $postModel->getExtraData();
 
         if (isset($opts['extraData']['extraData'])) {
             $opts['extraData'] = $opts['extraData']['extraData'];
         }
 
+        // Listeners may rewrite expireType (legacy custom statuses). Authorize the rewritten action.
         $opts = $this->hooks->applyFilters(HooksAbstract::FILTER_PREPARE_POST_EXPIRATION_OPTS, $opts, $postId);
+
+        if (! $this->currentRequestSkipsScheduleAuthorization() && ! $this->userCanScheduleOpts((int) $postId, $opts)) {
+            return;
+        }
+
         $timestamp = $this->convertLocalTimeToUtc($opts['date']);
 
         $this->hooks->doAction(HooksAbstract::ACTION_LEGACY_SCHEDULE, $postId, $timestamp, $opts);
@@ -134,7 +148,7 @@ class ExpirationScheduler implements SchedulerInterface
             HooksAbstract::ACTION_RUN_WORKFLOW,
             [
                 'postId' => $postId,
-                'workflow' => 'expire'
+                'workflow' => 'expire',
             ]
         );
 
@@ -185,15 +199,85 @@ class ExpirationScheduler implements SchedulerInterface
         $this->updateLegacyPostMetaUsedBy3rdPartySoftware($postId, $timestamp, $opts);
     }
 
+    /**
+     * Authorize the action after expiration options have been filtered.
+     *
+     * @since 4.11.0
+     *
+     * @param int $postId
+     * @param array<string, mixed> $opts
+     * @return bool
+     */
+    private function userCanScheduleOpts(int $postId, array $opts): bool
+    {
+        $expireType = '';
+        $newStatus = '';
+
+        if (isset($opts['expireType']) && is_string($opts['expireType'])) {
+            $expireType = $opts['expireType'];
+        }
+
+        if (isset($opts['newStatus']) && is_string($opts['newStatus'])) {
+            $newStatus = $opts['newStatus'];
+        }
+
+        $taxonomy = '';
+        if (isset($opts['categoryTaxonomy']) && is_string($opts['categoryTaxonomy'])) {
+            $taxonomy = $opts['categoryTaxonomy'];
+        }
+
+        $currentUserModelFactory = $this->currentUserModelFactory;
+        $currentUserModel = $currentUserModelFactory();
+
+        if (
+            ! $currentUserModel instanceof CurrentUserModel
+            || ! $currentUserModel->userCanScheduleAction($postId, $expireType, $newStatus, $taxonomy)
+        ) {
+            $this->logger->debug(
+                sprintf(
+                    '%1$d  -> ACTION NOT SCHEDULED: user cannot schedule %2$s (status %3$s)',
+                    $postId,
+                    $expireType,
+                    $newStatus
+                )
+            );
+
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * Cron and CLI reschedules run with no logged-in user and skip the cap check.
+     * Every other logged-out request is checked and fails closed.
+     *
+     * @since 4.10.6
+     *
+     * @return bool
+     */
+    private function currentRequestSkipsScheduleAuthorization(): bool
+    {
+        if (is_user_logged_in()) {
+            return false;
+        }
+
+        if (wp_doing_cron()) {
+            return true;
+        }
+
+        return defined('WP_CLI') && WP_CLI;
+    }
+
     private function updateLegacyPostMetaUsedBy3rdPartySoftware(int $postId, int $timestamp, array $opts): void
     {
         $postModelFactory = $this->postModelFactory;
         $postModel = $postModelFactory($postId);
 
-        $type = isset($opts['expireType']) ? $opts['expireType'] : '';
-        $taxonomy = isset($opts['categoryTaxonomy']) ? $opts['categoryTaxonomy'] : '';
-        $terms = isset($opts['category']) ? $opts['category'] : '';
-        $newStatus = isset($opts['newStatus']) ? $opts['newStatus'] : '';
+        $type = $opts['expireType'] ?? '';
+        $taxonomy = $opts['categoryTaxonomy'] ?? '';
+        $terms = $opts['category'] ?? '';
+        $newStatus = $opts['newStatus'] ?? '';
 
         $postModel->updateMeta(PostMetaAbstract::EXPIRATION_TIMESTAMP, $timestamp);
         $postModel->updateMeta(PostMetaAbstract::EXPIRATION_STATUS, 'saved');

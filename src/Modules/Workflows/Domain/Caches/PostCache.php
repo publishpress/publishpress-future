@@ -8,6 +8,8 @@ use PublishPress\Future\Modules\Workflows\Interfaces\PostCacheInterface;
 
 use function get_permalink;
 
+\defined('ABSPATH') || exit;
+
 class PostCache implements PostCacheInterface
 {
     private array $cache = [];
@@ -178,7 +180,7 @@ class PostCache implements PostCacheInterface
                     $termsBefore = get_terms([
                         'include' => $oldTtIds,
                         'taxonomy' => $taxonomy,
-                        'hide_empty' => false
+                        'hide_empty' => false,
                     ]);
                     if (!is_wp_error($termsBefore)) {
                         $beforeTaxonomyTermsData = $termsBefore;
@@ -192,7 +194,7 @@ class PostCache implements PostCacheInterface
                     $termsAfter = get_terms([
                         'include' => $ttIds,
                         'taxonomy' => $taxonomy,
-                        'hide_empty' => false
+                        'hide_empty' => false,
                     ]);
                     if (!is_wp_error($termsAfter)) {
                         $afterTaxonomyTermsData = $termsAfter;

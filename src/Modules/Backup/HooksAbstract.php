@@ -2,7 +2,7 @@
 
 namespace PublishPress\Future\Modules\Backup;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 abstract class HooksAbstract
 {

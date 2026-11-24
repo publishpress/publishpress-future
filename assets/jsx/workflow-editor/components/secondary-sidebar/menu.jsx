@@ -1,5 +1,7 @@
 import { useState, useCallback, useMemo } from '@wordpress/element';
-import { __ } from "@wordpress/i18n";
+import { __, sprintf } from "@wordpress/i18n";
+import { speak } from '@wordpress/a11y';
+import { useReactFlow, addEdge, MarkerType } from 'reactflow';
 import { VisuallyHidden, SearchControl } from '@wordpress/components';
 import { useSelect, select } from '@wordpress/data';
 import { Tips } from './tips';
@@ -14,6 +16,39 @@ import { useDispatch } from '@wordpress/data';
 import InserterSearchResults from './inserter-search-results';
 import { Popover } from '@wordpress/components';
 import InserterPreviewPanel from './inserter-preview-panel';
+import { store as workflowStore } from '../workflow-store';
+import { createNewNode, getNodeById, getNodeHandleSchema } from '../../utils';
+import { filterHandlesByConditions } from '../node-types/generic';
+
+const NEW_NODE_VERTICAL_GAP = 80;
+const DEFAULT_NODE_HEIGHT = 80;
+
+/**
+ * Find the first visible source handle of a node that has no outgoing edge.
+ *
+ * Uses the same handle list the node renders (resolved schema, filtered by conditions),
+ * so the new edge never starts from a handle that isn't on screen.
+ */
+function getFirstFreeSourceHandleId(node, nodeType, edges) {
+    if (! nodeType?.handleSchema?.source) {
+        return null;
+    }
+
+    const sourceHandles = filterHandlesByConditions(
+        getNodeHandleSchema(nodeType, node.data, 'source'),
+        node.data
+    ) || [];
+
+    const freeHandle = sourceHandles.find((handle) => {
+        if (! handle?.id) {
+            return false;
+        }
+
+        return ! edges.some((edge) => edge.source === node.id && edge.sourceHandle === handle.id);
+    });
+
+    return freeHandle?.id || null;
+}
 
 export function InserterMenu({
     onSelect,
@@ -41,9 +76,124 @@ export function InserterMenu({
         setHoveredItem,
     } = useDispatch(editorStore);
 
-    const onInsert = useCallback((blocks, meta, shouldForceFocusBlock) => {
-        onSelect();
-    }, [onSelect]);
+    const reactFlowInstance = useReactFlow();
+
+    const {
+        setNodes,
+        setEdges,
+        removePlaceholderNodes,
+    } = useDispatch(workflowStore);
+
+    /**
+     * Insert a step from the inserter using click or keyboard (Enter).
+     * Uses the same node creation path as the drag and drop (createNewNode).
+     */
+    const onInsert = useCallback((item) => {
+        if (! item || item.isDisabled || item.disabled) {
+            return;
+        }
+
+        const nodes = select(workflowStore).getNodes();
+        const edges = select(workflowStore).getEdges();
+        const selectedNodeIds = select(workflowStore).getSelectedNodes() || [];
+        const selectedNode = selectedNodeIds.length === 1 ? getNodeById(selectedNodeIds[0], nodes) : null;
+
+        let position;
+
+        if (selectedNode && selectedNode.position) {
+            const internalNode = reactFlowInstance.getNode(selectedNode.id);
+            const height = internalNode?.height || DEFAULT_NODE_HEIGHT;
+
+            position = {
+                x: selectedNode.position.x,
+                y: selectedNode.position.y + height + NEW_NODE_VERTICAL_GAP,
+            };
+        } else {
+            const flowElement = document.querySelector('.reactflow-wrapper .react-flow');
+            const rect = flowElement ? flowElement.getBoundingClientRect() : null;
+
+            position = reactFlowInstance.screenToFlowPosition({
+                x: rect ? rect.left + (rect.width / 2) : window.innerWidth / 2,
+                y: rect ? rect.top + (rect.height / 2) : window.innerHeight / 2,
+            });
+        }
+
+        const newNode = createNewNode({
+            item,
+            position,
+            reactFlowInstance,
+        });
+
+        removePlaceholderNodes();
+
+        // Connect the new step to the selected step when it has a free output.
+        let connectedTo = null;
+        if (selectedNode) {
+            const getNodeTypeByName = select(editorStore).getNodeTypeByName;
+            const selectedNodeType = getNodeTypeByName(selectedNode.data?.name);
+            const newNodeType = getNodeTypeByName(newNode.data.name) || item;
+            const targetHandleId = newNodeType?.handleSchema?.target?.[0]?.id;
+            const sourceHandleId = getFirstFreeSourceHandleId(selectedNode, selectedNodeType, edges);
+
+            if (targetHandleId && sourceHandleId) {
+                const newEdgeParams = {
+                    source: selectedNode.id,
+                    sourceHandle: sourceHandleId,
+                    target: newNode.id,
+                    targetHandle: targetHandleId,
+                    type: 'genericEdge',
+                    id: `${selectedNode.id}-${sourceHandleId}-${newNode.id}-${targetHandleId}`,
+                    markerEnd: {
+                        type: MarkerType.ArrowClosed,
+                    },
+                };
+
+                setEdges(addEdge(newEdgeParams, edges));
+                connectedTo = selectedNodeType?.label || selectedNode.data?.slug;
+            }
+        }
+
+        // Select the new step so its settings show in the inspector.
+        const currentNodes = select(workflowStore).getNodes();
+        setNodes(currentNodes.map((node) => ({
+            ...node,
+            selected: node.id === newNode.id,
+        })));
+
+        if (connectedTo) {
+            speak(
+                sprintf(
+                    /* translators: 1: the new step name, 2: the step it was connected to. */
+                    __('Step added: %1$s, connected after %2$s.', 'post-expirator'),
+                    item.label,
+                    connectedTo
+                ),
+                'assertive'
+            );
+        } else {
+            speak(
+                sprintf(
+                    /* translators: %s: the new step name. */
+                    __('Step added: %s.', 'post-expirator'),
+                    item.label
+                ),
+                'assertive'
+            );
+        }
+
+        // Move the focus to the new node once React Flow has rendered it.
+        setTimeout(() => {
+            const nodeElement = document.querySelector(
+                `.react-flow__node[data-id="${window.CSS && CSS.escape ? CSS.escape(newNode.id) : newNode.id}"]`
+            );
+
+            if (nodeElement) {
+                nodeElement.focus();
+            }
+        }, 150);
+
+        onSelect(item);
+    }, [onSelect, reactFlowInstance, setNodes, setEdges, removePlaceholderNodes]);
 
     const onHover = useCallback((item) => {
         setHoveredItem(item);
@@ -59,7 +209,7 @@ export function InserterMenu({
                     <div className="block-editor-inserter__block-list">
                         <NodesTab
                             type={INSERTER_TAB_TRIGGERS}
-                            onInsert={onInsert}
+                            onSelect={onInsert}
                             onHover={onHover}
                             showMostUsedNodes={showMostUsedNodes}
                             items={items}
@@ -98,7 +248,7 @@ export function InserterMenu({
                     <div className="block-editor-inserter__block-list">
                         <NodesTab
                             type={INSERTER_TAB_ACTIONS}
-                            onInsert={onInsert}
+                            onSelect={onInsert}
                             onHover={onHover}
                             showMostUsedNodes={showMostUsedNodes}
                             items={items}
@@ -165,7 +315,7 @@ export function InserterMenu({
                         {!!filterValue && (
                             <InserterSearchResults
                                 filterValue={filterValue}
-                                onSelect={onSelect}
+                                onSelect={onInsert}
                                 onHover={onHover}
                             />
                         )}

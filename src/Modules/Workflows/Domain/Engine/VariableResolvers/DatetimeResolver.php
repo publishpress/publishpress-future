@@ -4,6 +4,8 @@ namespace PublishPress\Future\Modules\Workflows\Domain\Engine\VariableResolvers;
 
 use PublishPress\Future\Modules\Workflows\Interfaces\VariableResolverInterface;
 
+\defined('ABSPATH') || exit;
+
 class DatetimeResolver implements VariableResolverInterface
 {
     /**
@@ -28,14 +30,14 @@ class DatetimeResolver implements VariableResolverInterface
 
     public function getValueAsString(string $property = ''): string
     {
-        return (string)$this->getValue($property);
+        return (string) $this->getValue($property);
     }
 
     public function compact(): array
     {
         return [
             'type' => $this->getType(),
-            'value' => $this->variable
+            'value' => $this->variable,
         ];
     }
 
@@ -74,6 +76,6 @@ class DatetimeResolver implements VariableResolverInterface
 
     public function __toString(): string
     {
-        return (string)$this->variable;
+        return (string) $this->variable;
     }
 }

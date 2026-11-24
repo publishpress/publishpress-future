@@ -1,4 +1,10 @@
+- .agents
+- .codex
+- .ddev
+- .php-cs-fixer.dist.php
+- .php-cs-fixer.php
 - .phpcs-plugin-review.xml
+- .web
 - /assets/adobe-animate
 - /assets/jsx
 - /builder
@@ -8,6 +14,8 @@
 - /dist
 - /docs
 - /node_modules
+- /patches
+- /test-results
 - /tests
 - /tests-old
 - /vendor
@@ -24,7 +32,11 @@
 - jsconfig.json
 - package-lock.json
 - package.json
+- phpmd.ruleset.xml
 - phpstan.neon
+- playwright-report
+- playwright.config.js
+- playwright.config.ts
 - psalm.xml
 - ray-dist.php
 - ray.php
@@ -32,5 +44,3 @@
 - README.md
 - RoboFile.php
 - screenshot-*.png
-- .web
-- .ddev

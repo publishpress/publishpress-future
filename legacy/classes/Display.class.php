@@ -9,7 +9,7 @@ use PublishPress\Future\Modules\Expirator\HooksAbstract as ExpiratorHooksAbstrac
 use PublishPress\Future\Framework\Database\Interfaces\DBTableSchemaInterface;
 use PublishPress\Future\Modules\Settings\SettingsFacade;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+defined('ABSPATH') || exit;
 
 /**
  * The class that is responsible for all the displays.
@@ -149,7 +149,7 @@ class PostExpirator_Display
         $allowed_tabs = ['advanced', 'diagnostics', 'viewdebug' ];
         $allowed_tabs = $this->hooks->applyFilters(SettingsHooksAbstract::FILTER_ALLOWED_SETTINGS_TABS, $allowed_tabs);
 
-        $debugIsEnabled = (bool)$this->hooks->applyFilters(SettingsHooksAbstract::FILTER_DEBUG_ENABLED, false);
+        $debugIsEnabled = (bool) $this->hooks->applyFilters(SettingsHooksAbstract::FILTER_DEBUG_ENABLED, false);
         if (! $debugIsEnabled) {
             unset($allowed_tabs['viewdebug']);
 
@@ -202,7 +202,7 @@ class PostExpirator_Display
                 // phpcs:disable WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.ValidatedSanitizedInput.InputNotValidated
                 $this->settingsFacade->setDefaultDateFormat(sanitize_text_field(wp_unslash($_POST['expired-default-date-format'])));
                 $this->settingsFacade->setDefaultTimeFormat(sanitize_text_field(wp_unslash($_POST['expired-default-time-format'])));
-                $this->settingsFacade->setShowInPostFooter((bool)$_POST['expired-display-footer']);
+                $this->settingsFacade->setShowInPostFooter((bool) $_POST['expired-display-footer']);
                 $this->settingsFacade->setFooterContents(wp_kses(wp_unslash($_POST['expired-footer-contents']), []));
                 $this->settingsFacade->setFooterStyle(wp_kses(wp_unslash($_POST['expired-footer-style']), []));
                 $this->settingsFacade->setShortcodeWrapper(sanitize_text_field(wp_unslash($_POST['shortcode-wrapper'])));
@@ -442,10 +442,10 @@ class PostExpirator_Display
 
 
             // phpcs:disable WordPress.Security.ValidatedSanitizedInput.InputNotValidated
-            $this->settingsFacade->setSendEmailNotification((bool)$_POST['expired-email-notification']);
-            $this->settingsFacade->setSendEmailNotificationToAdmins((bool)$_POST['expired-email-notification-admins']);
+            $this->settingsFacade->setSendEmailNotification((bool) $_POST['expired-email-notification']);
+            $this->settingsFacade->setSendEmailNotificationToAdmins((bool) $_POST['expired-email-notification-admins']);
             $this->settingsFacade->setEmailNotificationAddressesList($expiredEmailNotificationList);
-            $this->settingsFacade->setPastDueActionsNotificationStatus((bool)$_POST['past-due-actions-notification']);
+            $this->settingsFacade->setPastDueActionsNotificationStatus((bool) $_POST['past-due-actions-notification']);
             $this->settingsFacade->setPastDueActionsNotificationAddressesList($pastDueActionsNotificationList);
             // phpcs:enable WordPress.Security.ValidatedSanitizedInput.InputNotValidated
 
@@ -566,15 +566,17 @@ class PostExpirator_Display
                         // translators: %1$s is the plugin name, %2$s is the star rating markup
                         esc_html__('If you like %1$s, please leave us a %2$s rating. Thank you!', 'post-expirator'),
                         '<strong>PublishPress Future</strong>',
-                        '<span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span>'
+                        '<span class="screen-reader-text">' . esc_html__('five-star', 'post-expirator') . '</span>'
+                            . '<span aria-hidden="true"><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span></span>'
                     );
                     ?>
+                    <span class="screen-reader-text"><?php esc_html_e('(opens in a new tab)', 'post-expirator'); ?></span>
                 </a>
             </div>
 
             <hr>
 
-            <nav>
+            <nav aria-label="<?php esc_attr_e('PublishPress Future footer', 'post-expirator'); ?>">
                 <ul>
                     <li>
                         <a href="https://publishpress.com/future/" target="_blank" rel="noopener noreferrer"
@@ -582,6 +584,7 @@ class PostExpirator_Display
                             esc_attr_e('About PublishPress Future', 'post-expirator'); ?>">
                             <?php
                             esc_html_e('About', 'post-expirator'); ?>
+                            <span class="screen-reader-text"><?php esc_html_e('(opens in a new tab)', 'post-expirator'); ?></span>
                         </a>
                     </li>
                     <li>
@@ -590,6 +593,7 @@ class PostExpirator_Display
                             esc_attr_e('Future Documentation', 'post-expirator'); ?>">
                             <?php
                             esc_html_e('Documentation', 'post-expirator'); ?>
+                            <span class="screen-reader-text"><?php esc_html_e('(opens in a new tab)', 'post-expirator'); ?></span>
                         </a>
                     </li>
                     <li>
@@ -598,6 +602,7 @@ class PostExpirator_Display
                             esc_attr_e('Contact the PublishPress team', 'post-expirator'); ?>">
                             <?php
                             esc_html_e('Contact', 'post-expirator'); ?>
+                            <span class="screen-reader-text"><?php esc_html_e('(opens in a new tab)', 'post-expirator'); ?></span>
                         </a>
                     </li>
                 </ul>
@@ -606,7 +611,8 @@ class PostExpirator_Display
             <div class="pp-pressshack-logo">
                 <a href="https://publishpress.com" target="_blank" rel="noopener noreferrer">
                     <img src="<?php
-                    echo esc_url(plugins_url('../assets/images/publishpress-logo.png', dirname(__FILE__))) ?>"/>
+                    echo esc_url(plugins_url('../assets/images/publishpress-logo.png', dirname(__FILE__))) ?>" alt="<?php
+                    esc_attr_e('PublishPress', 'post-expirator'); ?>"/>
                 </a>
             </div>
         </footer>

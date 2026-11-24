@@ -9,6 +9,8 @@ use PublishPress\Future\Modules\Workflows\Interfaces\StepTypeInterface;
 use PublishPress\Future\Modules\Workflows\Models\StepTypesModel;
 use PublishPress\Future\Modules\Workflows\Models\WorkflowsModel;
 
+\defined('ABSPATH') || exit;
+
 class OnLegacyActionTrigger implements StepTypeInterface
 {
     public static function getNodeTypeName(): string
@@ -95,8 +97,8 @@ class OnLegacyActionTrigger implements StepTypeInterface
                     [
                         "rule" => "hasOutgoingConnection",
                     ],
-                ]
-            ]
+                ],
+            ],
         ];
     }
 
@@ -119,7 +121,7 @@ class OnLegacyActionTrigger implements StepTypeInterface
                 'type' => 'integer',
                 'label' => __("Action Post ID", "post-expirator"),
                 'description' => __("The ID of the post that triggered the action.", "post-expirator"),
-            ]
+            ],
         ];
     }
 
@@ -136,8 +138,8 @@ class OnLegacyActionTrigger implements StepTypeInterface
                 [
                     "id" => "output",
                     "label" => __("Next", "post-expirator"),
-                ]
-            ]
+                ],
+            ],
         ];
     }
 

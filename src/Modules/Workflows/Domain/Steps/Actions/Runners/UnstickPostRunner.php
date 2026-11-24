@@ -7,6 +7,8 @@ use PublishPress\Future\Framework\Logger\LoggerInterface;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\UnstickPost;
 use PublishPress\Future\Modules\Workflows\Interfaces\StepProcessorInterface;
 
+\defined('ABSPATH') || exit;
+
 class UnstickPostRunner implements StepRunnerInterface
 {
     /**
@@ -59,7 +61,7 @@ class UnstickPostRunner implements StepRunnerInterface
                     && isset($_POST['action'])
                     && $_POST['action'] === 'inline-save';
 
-                $isClassicEditor = ( ! defined('DOING_AJAX') || ! DOING_AJAX)
+                $isClassicEditor = (! defined('DOING_AJAX') || ! DOING_AJAX)
                     && isset($_POST['action'])
                     && $_POST['action'] === 'editpost';
                 // phpcs:enable WordPress.Security.NonceVerification.Missing

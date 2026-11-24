@@ -1,10 +1,11 @@
 <?php
-defined('ABSPATH') or die('Direct access not allowed.');
-
-// phpcs:disable Generic.Files.LineLength.TooLong
 
 use PublishPress\Future\Core\DI\Container;
 use PublishPress\Future\Core\DI\ServicesAbstract;
+
+defined('ABSPATH') || exit;
+
+// phpcs:disable Generic.Files.LineLength.TooLong
 
 $container = Container::getInstance();
 $settingsFacade = $container->get(ServicesAbstract::SETTINGS);
@@ -79,11 +80,13 @@ $columnStyle = $settingsFacade->getColumnStyle();
             <table class="form-table">
                 <tr valign="top">
                     <th scope="row">
-                        <label for="future-action-column-style">
+                        <label>
                             <?php esc_html_e('Future Action Column Style', 'post-expirator'); ?>
                         </label>
                     </th>
                     <td>
+                        <fieldset class="pp-a11y-fieldset">
+                        <legend class="screen-reader-text"><?php esc_html_e('Future Action Column Style', 'post-expirator'); ?></legend>
                         <div class="pp-settings-field-row">
                             <input type="radio" name="future-action-column-style"
                                 id="future-action-column-style-verbose"
@@ -108,6 +111,7 @@ $columnStyle = $settingsFacade->getColumnStyle();
                                 <?php esc_html_e('Displays only the icon and date/time in the Future Action column on the "Posts" screen.', 'post-expirator'); ?>
                             </p>
                         </div>
+                        </fieldset>
                     </td>
                 </tr>
             </table>
@@ -124,11 +128,13 @@ $columnStyle = $settingsFacade->getColumnStyle();
             <table class="form-table">
                 <tr valign="top">
                     <th scope="row">
-                        <label for="future-action-time-format">
+                        <label>
                             <?php esc_html_e('Time format in the date picker', 'post-expirator'); ?>
                         </label>
                     </th>
                     <td>
+                        <fieldset class="pp-a11y-fieldset">
+                        <legend class="screen-reader-text"><?php esc_html_e('Time format in the date picker', 'post-expirator'); ?></legend>
                         <div class="pp-settings-field-row">
                             <input
                                 type="radio"
@@ -162,6 +168,7 @@ $columnStyle = $settingsFacade->getColumnStyle();
                                 <?php esc_html_e('AM/PM', 'post-expirator'); ?>
                             </label>
                         </div>
+                        </fieldset>
                     </td>
                 </tr>
             </table>

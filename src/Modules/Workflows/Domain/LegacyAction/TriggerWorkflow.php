@@ -7,6 +7,8 @@ use PublishPress\Future\Core\HookableInterface;
 use PublishPress\Future\Modules\Expirator\Interfaces\ExpirationActionInterface;
 use PublishPress\Future\Modules\Workflows\HooksAbstract;
 
+\defined('ABSPATH') || exit;
+
 class TriggerWorkflow implements ExpirationActionInterface
 {
     public const ACTION_NAME = 'trigger-workflow';

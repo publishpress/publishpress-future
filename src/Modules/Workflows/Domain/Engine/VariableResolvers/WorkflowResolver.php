@@ -6,6 +6,8 @@ use PublishPress\Future\Modules\Workflows\Interfaces\VariableResolverInterface;
 
 use function wp_json_encode;
 
+\defined('ABSPATH') || exit;
+
 class WorkflowResolver implements VariableResolverInterface
 {
     /**
@@ -33,30 +35,30 @@ class WorkflowResolver implements VariableResolverInterface
         switch ($property) {
             case 'id':
             case 'ID':
-                return (int)$this->workflow['ID'];
+                return (int) $this->workflow['ID'];
 
             case 'title':
-                return (string)$this->workflow['title'];
+                return (string) $this->workflow['title'];
 
             case 'description':
-                return (string)$this->workflow['description'];
+                return (string) $this->workflow['description'];
 
             case 'modified_at':
-                return (string)$this->workflow['modified_at'];
+                return (string) $this->workflow['modified_at'];
 
             case 'meta':
                 return new WorkflowMetaResolver($this->workflow['ID']);
 
             case 'execution_id':
                 if (isset($this->workflow['execution_id'])) {
-                    return (string)$this->workflow['execution_id'];
+                    return (string) $this->workflow['execution_id'];
                 }
 
                 return '';
 
             case 'execution_trace':
                 if (isset($this->workflow['execution_trace'])) {
-                    return (array)$this->workflow['execution_trace'];
+                    return (array) $this->workflow['execution_trace'];
                 }
 
                 return [];
@@ -73,7 +75,7 @@ class WorkflowResolver implements VariableResolverInterface
             return implode(', ', $value);
         }
 
-        return (string)$value;
+        return (string) $value;
     }
 
     public function compact(): array

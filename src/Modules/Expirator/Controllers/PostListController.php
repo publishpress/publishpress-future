@@ -19,7 +19,7 @@ use PublishPress\Future\Framework\Database\Interfaces\DBTableSchemaInterface;
 use PublishPress\Future\Framework\Logger\LoggerInterface;
 use Throwable;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 class PostListController implements InitializableInterface
 {
@@ -79,12 +79,12 @@ class PostListController implements InitializableInterface
 
         // If settings are not configured, show the metabox by default only for posts and pages
         if (
-            (! isset($defaults['activeMetaBox']) && in_array($postType, array(
-                    'post',
-                    'page'
-                ), true)) || (is_array(
-                    $defaults
-                ) && in_array((string)$defaults['activeMetaBox'], ['active', '1']))
+            (! isset($defaults['activeMetaBox']) && in_array($postType, [
+                'post',
+                'page',
+            ], true)) || (is_array(
+                $defaults
+            ) && in_array((string) $defaults['activeMetaBox'], ['active', '1']))
         ) {
             $columns['expirationdate'] = __('Future Action', 'post-expirator');
         }
@@ -165,8 +165,8 @@ class PostListController implements InitializableInterface
 
             if (
                 ! in_array($order, [
-                'ASC',
-                'DESC'
+                    'ASC',
+                    'DESC',
                 ], true)
             ) {
                 $order = 'ASC';

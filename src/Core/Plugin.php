@@ -27,7 +27,7 @@ use PublishPress\Future\Modules\Debug\Migrations\V04905DebugLogRequestId;
 use PublishPress\Future\Modules\Debug\Migrations\V04906DebugLogTimestampMilliseconds;
 use Throwable;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 class Plugin implements InitializableInterface
 {
@@ -256,10 +256,10 @@ class Plugin implements InitializableInterface
                     $pagedefault = get_option('expirationdateExpiredPageStatus');
                     $postdefault = get_option('expirationdateExpiredPostStatus');
                     if ($pagedefault) {
-                        update_option('expirationdateDefaultsPage', array('expireType' => $pagedefault));
+                        update_option('expirationdateDefaultsPage', ['expireType' => $pagedefault]);
                     }
                     if ($postdefault) {
-                        update_option('expirationdateDefaultsPost', array('expireType' => $postdefault));
+                        update_option('expirationdateDefaultsPost', ['expireType' => $postdefault]);
                     }
 
                     delete_option('expirationdateCronSchedule');

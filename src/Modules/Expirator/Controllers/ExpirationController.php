@@ -17,7 +17,7 @@ use PublishPress\Future\Modules\Expirator\Interfaces\SchedulerInterface;
 use PublishPress\Future\Modules\Expirator\Models\ExpirablePostModel;
 use Throwable;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 class ExpirationController implements InitializableInterface
 {
@@ -104,7 +104,7 @@ class ExpirationController implements InitializableInterface
 
     public function onActionSchedulePostExpiration($postId, $timestamp, $opts)
     {
-        $this->scheduler->schedule((int)$postId, (int)$timestamp, $opts);
+        $this->scheduler->schedule((int) $postId, (int) $timestamp, $opts);
     }
 
     public function onActionUnschedulePostExpiration($postId)

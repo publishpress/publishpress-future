@@ -9,6 +9,8 @@ use PublishPress\Future\Modules\Workflows\Interfaces\StepRunnerInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\StepProcessorInterface;
 use PublishPress\Future\Modules\Workflows\Models\PostModel;
 
+\defined('ABSPATH') || exit;
+
 class DeactivatePostWorkflowRunner implements StepRunnerInterface
 {
     /**

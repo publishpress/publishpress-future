@@ -12,7 +12,7 @@ use PublishPress\Future\Modules\Expirator\Models\PostTypesModel;
 use PublishPress\Future\Modules\Settings\HooksAbstract;
 use PublishPress\Future\Core\HookableInterface;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 class SettingsPostTypesModel
 {
@@ -53,13 +53,13 @@ class SettingsPostTypesModel
 
             $defaults = $this->settings->getPostTypeDefaults($postType);
 
-            $terms = isset($defaults['terms']) ? $defaults['terms'] : [];
+            $terms = $defaults['terms'] ?? [];
             if (is_string($terms)) {
                 $terms = explode(',', $terms);
             }
             $terms = array_map('intval', $terms);
             $terms = array_filter($terms, function ($value) {
-                return (int)$value > 0;
+                return (int) $value > 0;
             });
             $termsName = array_map(function ($termId) {
                 $term = get_term($termId);
@@ -73,18 +73,18 @@ class SettingsPostTypesModel
 
             $settings[$postType] = [
                 'label' => esc_html($postTypeObject->label),
-                'active' => (! isset($defaults['activeMetaBox']) && in_array($postType, array('post', 'page'), true))
-                    || (isset($defaults['activeMetaBox']) && (! in_array((string)$defaults['activeMetaBox'], ['inactive', '0']))),
-                'howToExpire' => isset($defaults['expireType']) ? $defaults['expireType'] : '',
+                'active' => (! isset($defaults['activeMetaBox']) && in_array($postType, ['post', 'page'], true))
+                    || (isset($defaults['activeMetaBox']) && (! in_array((string) $defaults['activeMetaBox'], ['inactive', '0']))),
+                'howToExpire' => $defaults['expireType'] ?? '',
                 'autoEnabled' => isset($defaults['autoEnable']) && $defaults['autoEnable'] == 1,
-                'taxonomy' => isset($defaults['taxonomy']) ? $defaults['taxonomy'] : false,
+                'taxonomy' => $defaults['taxonomy'] ?? false,
                 'terms' => $terms,
                 'termsName' => $termsName,
-                'emailNotification' => isset($defaults['emailnotification']) ? $defaults['emailnotification'] : '',
-                'defaultExpireType' => isset($defaults['default-expire-type']) ? $defaults['default-expire-type'] : '',
-                'defaultExpireOffset' => isset($defaults['default-custom-date']) ? $defaults['default-custom-date'] : '',
+                'emailNotification' => $defaults['emailnotification'] ?? '',
+                'defaultExpireType' => $defaults['default-expire-type'] ?? '',
+                'defaultExpireOffset' => $defaults['default-custom-date'] ?? '',
                 'globalDefaultExpireOffset' => $this->settings->getGeneralDateTimeOffset(),
-                'newStatus' => isset($defaults['newStatus']) ? $defaults['newStatus'] : 'draft',
+                'newStatus' => $defaults['newStatus'] ?? 'draft',
             ];
 
             $settings = $this->hooks->applyFilters(

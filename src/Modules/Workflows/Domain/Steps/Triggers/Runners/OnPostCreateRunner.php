@@ -7,6 +7,8 @@ use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnPo
 use PublishPress\Future\Modules\Workflows\Interfaces\StepProcessorInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\TriggerRunnerInterface;
 
+\defined('ABSPATH') || exit;
+
 class OnPostCreateRunner implements TriggerRunnerInterface
 {
     /**

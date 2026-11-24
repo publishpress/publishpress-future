@@ -5,12 +5,12 @@
  * Plugin URI: http://wordpress.org/extend/plugins/post-expirator/
  * Description: PublishPress Future allows you to schedule automatic changes to posts, pages and other content types.
  * Author: PublishPress
- * Version: 4.10.5
+ * Version: 4.12.0
  * Author URI: http://publishpress.com
  * Text Domain: post-expirator
  * Domain Path: /languages
  * Requires at least: 6.8
- * Requires PHP: 7.4
+ * Requires PHP: 8.2
  *
  *
  * @package     PublishPress\Future
@@ -21,24 +21,26 @@
 
 namespace PublishPress\Future;
 
+use PublishPress\Future\Core\ActionSchedulerFallbackInitializer;
 use PublishPress\Future\Core\Autoloader;
 use PublishPress\Future\Core\DI\Container;
+use PublishPress\Future\Core\DI\ContainerInterface;
 use PublishPress\Future\Core\DI\ServicesAbstract;
 use PublishPress\Future\Framework\Logger\LoggerInterface;
 use PublishPress\Future\Framework\WordPress\Facade\HooksFacade;
 use PublishPress\BundledTranslations\BundledTranslations;
 use Throwable;
 
-if (! defined('ABSPATH')) {
-    exit('Direct access not allowed.');
-}
+use function defined;
+
+defined('ABSPATH') || exit;
 
 // If the plugin is already loaded, terminate the plugin execution.
 if (defined('PUBLISHPRESS_FUTURE_LOADED')) {
     return;
 }
 
-const MINIMUM_PHP_VERSION = '7.4';
+const MINIMUM_PHP_VERSION = '8.2';
 const MINIMUM_WP_VERSION = '6.8';
 
 global $wp_version;
@@ -52,7 +54,7 @@ if (version_compare($wp_version, MINIMUM_WP_VERSION, '<')) {
     return;
 }
 
-define('PUBLISHPRESS_FUTURE_VERSION', '4.10.5');
+define('PUBLISHPRESS_FUTURE_VERSION', '4.12.0');
 define('PUBLISHPRESS_FUTURE_BASE_PATH', __DIR__);
 define('PUBLISHPRESS_FUTURE_SRC_PATH', __DIR__ . '/src');
 define('PUBLISHPRESS_FUTURE_PLUGIN_FILE', __FILE__);
@@ -87,6 +89,10 @@ try {
         require_once $autoloadFilePath;
     }
 
+    // Register versioned library loaders before their plugins_loaded callbacks run.
+    require_once PUBLISHPRESS_FUTURE_LIB_VENDOR_PATH . '/publishpress/psr-container/lib/include.php';
+    require_once PUBLISHPRESS_FUTURE_LIB_VENDOR_PATH . '/publishpress/pimple-pimple/lib/include.php';
+
     require_once PUBLISHPRESS_FUTURE_LIB_VENDOR_PATH . '/woocommerce/action-scheduler/action-scheduler.php';
     require_once PUBLISHPRESS_FUTURE_LIB_VENDOR_PATH . '/publishpress/bundled-translations/core/include.php';
 
@@ -94,6 +100,19 @@ try {
         require_once PUBLISHPRESS_FUTURE_SRC_PATH . '/Core/Autoloader.php';
     }
     Autoloader::register();
+
+    /**
+     * Ensure Action Scheduler is initialized.
+     */
+    add_action(
+        'plugins_loaded',
+        [ActionSchedulerFallbackInitializer::class, 'ensureInitialized'],
+        2
+    );
+
+    if (did_action('plugins_loaded')) {
+        ActionSchedulerFallbackInitializer::ensureInitialized();
+    }
 
     /**
      * Bootstrap the DI container and legacy autoload. Safe to call multiple times.
@@ -104,8 +123,8 @@ try {
             return;
         }
 
-        require_once PUBLISHPRESS_FUTURE_LIB_VENDOR_PATH . '/publishpress/psr-container/lib/autoload.php';
-        require_once PUBLISHPRESS_FUTURE_LIB_VENDOR_PATH . '/publishpress/pimple-pimple/lib/autoload.php';
+        require_once PUBLISHPRESS_FUTURE_LIB_VENDOR_PATH . '/publishpress/psr-container/lib/include.php';
+        require_once PUBLISHPRESS_FUTURE_LIB_VENDOR_PATH . '/publishpress/pimple-pimple/lib/include.php';
 
         $services = require PUBLISHPRESS_FUTURE_BASE_PATH . '/services.php';
         $container = new Container($services);
@@ -118,6 +137,63 @@ try {
         require_once PUBLISHPRESS_FUTURE_BASE_PATH . '/legacy/autoload.php';
 
         define('PUBLISHPRESS_FUTURE_LOADED_DEPENDENCIES', true);
+    }
+
+    /**
+     * Log a caught error through the plugin logger, falling back to the PHP error log.
+     *
+     * @since 4.12.0
+     */
+    function logCaughtError(?ContainerInterface $container, Throwable $e): void
+    {
+        if (is_object($container)) {
+            try {
+                $logger = $container->get(ServicesAbstract::LOGGER);
+
+                if ($logger instanceof LoggerInterface) {
+                    $logger->error('Caught ' . get_class($e) . ': ' . $e->getMessage() . ' on file ' . $e->getFile() . ', line ' . $e->getLine());
+                    return;
+                }
+            } catch (Throwable $loggerError) {
+                logError('PUBLISHPRESS FUTURE', $loggerError);
+            }
+        }
+
+        logError('PUBLISHPRESS FUTURE', $e);
+    }
+
+    /**
+     * WordPress starts the abilities registry on first access, which can happen before the init boot.
+     *
+     * @since 4.12.0
+     */
+    function registerAbilityCategories(): void
+    {
+        $container = null;
+        try {
+            loadPluginDependencies();
+
+            $container = Container::getInstance();
+            $container->get(ServicesAbstract::MODULE_MCP)->registerCategory();
+        } catch (Throwable $e) {
+            logCaughtError($container, $e);
+        }
+    }
+
+    /**
+     * @since 4.12.0
+     */
+    function registerAbilities(): void
+    {
+        $container = null;
+        try {
+            loadPluginDependencies();
+
+            $container = Container::getInstance();
+            $container->get(ServicesAbstract::MODULE_MCP)->register();
+        } catch (Throwable $e) {
+            logCaughtError($container, $e);
+        }
     }
 
     require_once PUBLISHPRESS_FUTURE_SRC_PATH . '/install.php';
@@ -143,6 +219,33 @@ try {
         $bundledTranslations->init();
     });
 
+    add_filter('publishpress_bundled_translations_hub_notice_enabled', function ($enabled, $domain) {
+        if ($domain === 'post-expirator') {
+            return true;
+        }
+
+        return $enabled;
+    }, 10, 2);
+
+    add_filter('publishpress_bundled_translations_hub_notice_screens', function ($screens, $domain) {
+        if ($domain === 'post-expirator') {
+            if (! is_array($screens)) {
+                $screens = [];
+            }
+
+            return array_merge($screens, [
+                'toplevel_page_publishpress-future',
+                'future_page_publishpress-future-settings',
+                'edit-ppfuture_workflow',
+                'admin_page_future_workflow_editor',
+                'future_page_publishpress-future-scheduled-actions',
+                'admin_page_publishpress-future-scheduled-actions',
+            ]);
+        }
+
+        return $screens;
+    }, 10, 2);
+
     add_action('init', function () {
         $container = null;
         try {
@@ -151,22 +254,12 @@ try {
             $container = Container::getInstance();
             $container->get(ServicesAbstract::PLUGIN)->initialize();
         } catch (Throwable $e) {
-            $isLogged = false;
-
-            if (is_object($container)) {
-                $logger = $container->get(ServicesAbstract::LOGGER);
-
-                if ($logger instanceof LoggerInterface) {
-                    $logger->error('Caught ' . get_class($e) . ': ' . $e->getMessage() . ' on file ' . $e->getFile() . ', line ' . $e->getLine());
-                    $isLogged = true;
-                }
-            }
-
-            if (! $isLogged) {
-                logError('PUBLISHPRESS FUTURE', $e);
-            }
+            logCaughtError($container, $e);
         }
     }, 10, 0);
+
+    add_action('wp_abilities_api_categories_init', __NAMESPACE__ . '\\registerAbilityCategories', 10, 0);
+    add_action('wp_abilities_api_init', __NAMESPACE__ . '\\registerAbilities', 10, 0);
 } catch (Throwable $e) {
     logError('PUBLISHPRESS FUTURE - Error starting the plugin. File: ' . $e->getFile() . ', Line: ' . $e->getLine(), $e);
 }

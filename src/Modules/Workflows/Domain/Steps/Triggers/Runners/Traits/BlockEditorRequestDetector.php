@@ -10,6 +10,8 @@
 
 namespace PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Runners\Traits;
 
+\defined('ABSPATH') || exit;
+
 /**
  * Trait to detect block editor (REST) requests.
  *
