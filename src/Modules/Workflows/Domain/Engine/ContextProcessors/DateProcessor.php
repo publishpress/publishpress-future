@@ -8,6 +8,8 @@ use PublishPress\Future\Framework\System\DateTimeHandlerInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\ExecutionContextProcessorInterface;
 use Throwable;
 
+\defined('ABSPATH') || exit;
+
 class DateProcessor implements ExecutionContextProcessorInterface
 {
     private DateTimeHandlerInterface $dateTimeHandler;
@@ -31,7 +33,7 @@ class DateProcessor implements ExecutionContextProcessorInterface
             $inputFormat = $parameters['INPUT'] ?? 'Y-m-d H:i:s';
             $outputFormat = $parameters['OUTPUT']
                 ?? $this->dateTimeHandler->getDateTimeFormat() . ' ' . $this->dateTimeHandler->getTimeFormat();
-            $convertToUtc = isset($parameters['CONVERTTOUTC']) ? (bool)$parameters['CONVERTTOUTC'] : false;
+            $convertToUtc = isset($parameters['CONVERTTOUTC']) ? (bool) $parameters['CONVERTTOUTC'] : false;
 
             // Parse the date string according to input format
             $date = DateTime::createFromFormat($inputFormat, $value);
@@ -46,18 +48,18 @@ class DateProcessor implements ExecutionContextProcessorInterface
                 // Format the date as Y-m-d H:i:s for get_gmt_from_date
                 // get_gmt_from_date expects the date string to be in site timezone
                 $dateString = $date->format('Y-m-d H:i:s');
-                $timestamp = (int)get_gmt_from_date($dateString, 'U');
+                $timestamp = (int) get_gmt_from_date($dateString, 'U');
             } else {
                 $timestamp = $date->getTimestamp();
             }
 
             // If output format is 'U', return the timestamp directly
             if ($outputFormat === 'U') {
-                return (string)$timestamp;
+                return (string) $timestamp;
             }
 
             // Create DateTime object from timestamp
-            $resultDate = DateTime::createFromFormat('U', (string)$timestamp);
+            $resultDate = DateTime::createFromFormat('U', (string) $timestamp);
 
             if ($convertToUtc) {
                 $resultDate->setTimezone(new DateTimeZone('UTC'));
@@ -66,7 +68,7 @@ class DateProcessor implements ExecutionContextProcessorInterface
             // Apply offset if specified
             if ($parameters['OFFSET'] ?? false) {
                 $newTimestamp = $this->dateTimeHandler->getCalculatedTimeWithOffset($resultDate->getTimestamp(), $parameters['OFFSET']);
-                $resultDate = DateTime::createFromFormat('U', (string)$newTimestamp);
+                $resultDate = DateTime::createFromFormat('U', (string) $newTimestamp);
 
                 if ($convertToUtc) {
                     $resultDate->setTimezone(new DateTimeZone('UTC'));

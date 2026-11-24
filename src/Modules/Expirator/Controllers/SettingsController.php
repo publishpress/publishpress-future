@@ -16,7 +16,7 @@ use PublishPress\Future\Modules\Settings\SettingsFacade;
 use PublishPress\Future\Modules\Workflows\HooksAbstract as WorkflowsHooksAbstract;
 use Throwable;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 class SettingsController implements InitializableInterface
 {
@@ -341,7 +341,7 @@ class SettingsController implements InitializableInterface
                         'wp-element',
                         'wp-hooks',
                         'wp-api-fetch',
-                        'wp-html-entities'
+                        'wp-html-entities',
                     ],
                     PUBLISHPRESS_FUTURE_VERSION,
                     true
@@ -373,7 +373,7 @@ class SettingsController implements InitializableInterface
             'defaults',
             'general',
             'display',
-            'notifications'
+            'notifications',
         ];
 
         $allowedTabs = $this->hooks->applyFilters(SettingsHooksAbstract::FILTER_ALLOWED_TABS, $allowedTabs);
@@ -392,6 +392,16 @@ class SettingsController implements InitializableInterface
     {
         // phpcs:ignore WordPress.Security.NonceVerification.Missing
         if (empty($_POST)) {
+            return;
+        }
+
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Only comparing admin page slug; no form action.
+        $page = isset($_GET['page']) ? sanitize_key(wp_unslash($_GET['page'])) : '';
+        if (! in_array($page, ['publishpress-future', 'publishpress-future-settings'], true)) {
+            return;
+        }
+
+        if (! current_user_can('manage_options')) {
             return;
         }
 
@@ -415,7 +425,18 @@ class SettingsController implements InitializableInterface
         }
     }
 
-    private function convertTermsToIds($taxonomy, $terms)
+    /**
+     * Converts a comma-separated term list into IDs for one post type.
+     *
+     * @param string $taxonomy Taxonomy name.
+     * @param string $terms    Comma-separated term names.
+     * @param string $postType Post type the taxonomy must belong to.
+     *
+     * @return array<int, int>
+     *
+     * @since 4.10.6
+     */
+    private function convertTermsToIds($taxonomy, $terms, $postType)
     {
         if (empty($terms)) {
             return [];
@@ -425,14 +446,15 @@ class SettingsController implements InitializableInterface
         $taxonomiesModel = $taxonomiesModelFactory();
 
         $terms = explode(',', $terms);
-        $terms = array_map(function ($term) use ($taxonomy, $taxonomiesModel) {
+        $terms = array_map(function ($term) use ($taxonomy, $taxonomiesModel, $postType) {
             $term = \sanitize_text_field($term);
             $termId = $taxonomiesModel->getTermIdByName($taxonomy, $term);
 
             if (! $termId) {
                 $termId = $taxonomiesModel->createTermAndReturnId(
                     $taxonomy,
-                    $term
+                    $term,
+                    $postType
                 );
             }
 
@@ -492,7 +514,11 @@ class SettingsController implements InitializableInterface
                 }
 
                 if (isset($settings['taxonomy']) && isset($settings['terms'])) {
-                    $settings['terms'] = $this->convertTermsToIds($settings['taxonomy'], $settings['terms']);
+                    $settings['terms'] = $this->convertTermsToIds(
+                        $settings['taxonomy'],
+                        $settings['terms'],
+                        $postType
+                    );
                 }
 
                 if (isset($_POST['expirationdate_newstatus-' . $postType])) {

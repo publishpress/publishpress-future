@@ -45,7 +45,11 @@ const Fields = ({ storeName }) => {
         return (
             <CheckboxControl
                 key={workflow.value}
-                label={sprintf(__('Enable workflow %s', 'post-expirator'), workflow.label)}
+                label={sprintf(
+                    /* translators: %s is the workflow label. */
+                    __('Enable workflow %s', 'post-expirator'),
+                    workflow.label
+                )}
                 checked={isChecked}
                 onChange={(value) => handleActionChange(workflow.value, value)}
             />

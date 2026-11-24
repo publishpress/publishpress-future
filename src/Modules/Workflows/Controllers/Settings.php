@@ -7,6 +7,8 @@ use PublishPress\Future\Framework\Database\Interfaces\DBTableSchemaInterface;
 use PublishPress\Future\Framework\InitializableInterface;
 use PublishPress\Future\Modules\Settings\HooksAbstract as SettingsHooksAbstract;
 
+\defined('ABSPATH') || exit;
+
 class Settings implements InitializableInterface
 {
     /**

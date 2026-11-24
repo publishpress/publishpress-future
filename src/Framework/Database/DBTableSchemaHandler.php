@@ -14,7 +14,7 @@ namespace PublishPress\Future\Framework\Database;
 use PublishPress\Future\Framework\Database\Interfaces\DBTableSchemaHandlerInterface;
 use wpdb;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 // phpcs:disable WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.PreparedSQL.NotPrepared
 
@@ -188,7 +188,7 @@ class DBTableSchemaHandler implements DBTableSchemaHandlerInterface
 
         unset(self::$tableExistenceCache[$tableName]);
 
-        return (bool)$result;
+        return (bool) $result;
     }
 
     public function getColumnLength(string $column): int
@@ -453,9 +453,9 @@ class DBTableSchemaHandler implements DBTableSchemaHandlerInterface
 
         // For numeric types (DECIMAL, NUMERIC with precision/scale)
         if (in_array($typeName, ['decimal', 'numeric'])) {
-            list($precision, $scale) = explode(',', $expectedSize);
-            $precision = (int)trim($precision);
-            $scale = (int)trim($scale);
+            [$precision, $scale] = explode(',', $expectedSize);
+            $precision = (int) trim($precision);
+            $scale = (int) trim($scale);
 
             // phpcs:disable WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
             $columnInfo = $this->wpdb->get_row(
@@ -469,8 +469,8 @@ class DBTableSchemaHandler implements DBTableSchemaHandlerInterface
             );
             // phpcs:enable
 
-            return $columnInfo && (int)$columnInfo->NUMERIC_PRECISION === $precision &&
-                   (int)$columnInfo->NUMERIC_SCALE === $scale;
+            return $columnInfo && (int) $columnInfo->NUMERIC_PRECISION === $precision
+                   && (int) $columnInfo->NUMERIC_SCALE === $scale;
         }
 
         // For integer types where display width doesn't affect storage but might be a compatibility concern

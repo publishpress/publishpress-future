@@ -9,7 +9,7 @@ namespace PublishPress\Future\Framework\WordPress\Facade;
 use PublishPress\Future\Core\HookableInterface;
 use Throwable;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 class HooksFacade implements HookableInterface
 {
@@ -54,7 +54,7 @@ class HooksFacade implements HookableInterface
         try {
             $params = array_merge([
                 $filterName,
-                $valueToBeFiltered
+                $valueToBeFiltered,
             ], $args);
 
             return call_user_func_array('apply_filters', $params);

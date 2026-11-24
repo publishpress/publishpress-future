@@ -18,7 +18,7 @@ use PublishPress\Future\Modules\Workflows\HooksAbstract as WorkflowsHooksAbstrac
 use PublishPress\Future\Modules\Workflows\Module;
 use Throwable;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 class ScheduledActionsController implements InitializableInterface
 {
@@ -300,12 +300,13 @@ class ScheduledActionsController implements InitializableInterface
         if ($hook === HooksAbstract::ACTION_RUN_WORKFLOW) {
             $args = $action->get_args();
             if (isset($args['postId']) && isset($args['workflow']) && 'expire' === $args['workflow']) {
-                $postId = (int)$args['postId'];
+                $postId = (int) $args['postId'];
                 $post = get_post($postId);
                 $postTitle = $post ? html_entity_decode(get_the_title($post)) : __('Unknown post', 'post-expirator');
 
                 $html = sprintf(
-                    __('Executed action for: %s (ID: %d)', 'post-expirator'),
+                    /* translators: 1: post title, 2: post ID. */
+                    __('Executed action for: %1$s (ID: %2$d)', 'post-expirator'),
                     $postTitle,
                     $postId
                 );

@@ -1,6 +1,6 @@
 <?php
 
-defined('ABSPATH') or die('Direct access not allowed.');
+defined('ABSPATH') || exit;
 ?>
 
 <div style="clear:both"></div>

@@ -6,6 +6,8 @@ use PublishPress\Future\Modules\Expirator\ExpirationActionsAbstract;
 use PublishPress\Future\Modules\Workflows\Interfaces\VariableResolverInterface;
 use PublishPress\Future\Modules\Expirator\Models\ExpirablePostModel;
 
+\defined('ABSPATH') || exit;
+
 class FutureActionResolver implements VariableResolverInterface
 {
     /**
@@ -78,7 +80,7 @@ class FutureActionResolver implements VariableResolverInterface
 
     public function getValueAsString(string $property = ''): string
     {
-        return (string)$this->getValue($property);
+        return (string) $this->getValue($property);
     }
 
     public function compact(): array

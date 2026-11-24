@@ -8,6 +8,8 @@ use PublishPress\Future\Modules\Workflows\Interfaces\ExecutionContextInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\ExecutionContextRegistryInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\ExecutionContextProcessorRegistryInterface;
 
+\defined('ABSPATH') || exit;
+
 class ExecutionContextRegistry implements ExecutionContextRegistryInterface
 {
     private $executionContexts = [];

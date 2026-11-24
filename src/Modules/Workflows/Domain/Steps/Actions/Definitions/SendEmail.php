@@ -5,6 +5,8 @@ namespace PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions
 use PublishPress\Future\Modules\Workflows\Interfaces\StepTypeInterface;
 use PublishPress\Future\Modules\Workflows\Models\StepTypesModel;
 
+\defined('ABSPATH') || exit;
+
 class SendEmail implements StepTypeInterface
 {
     public static function getNodeTypeName(): string
@@ -101,9 +103,9 @@ class SendEmail implements StepTypeInterface
                         "default" => [
                             "expression" => self::getDefaultMessage(),
                         ],
-                    ]
+                    ],
                 ],
-            ]
+            ],
         ];
     }
 
@@ -148,8 +150,8 @@ class SendEmail implements StepTypeInterface
                         "label" => __("Message", "post-expirator"),
                         "fieldLabel" => __("Email Message > Message", "post-expirator"),
                     ],
-                ]
-            ]
+                ],
+            ],
         ];
     }
 
@@ -166,7 +168,7 @@ class SendEmail implements StepTypeInterface
                 "type" => "input",
                 "label" => __("Step input", "post-expirator"),
                 "description" => __("The input data for this step.", "post-expirator"),
-            ]
+            ],
         ];
     }
 
@@ -181,14 +183,14 @@ class SendEmail implements StepTypeInterface
             "target" => [
                 [
                     "id" => "input",
-                ]
+                ],
             ],
             "source" => [
                 [
                     "id" => "output",
                     "label" => __("Next", "post-expirator"),
-                ]
-            ]
+                ],
+            ],
         ];
     }
 

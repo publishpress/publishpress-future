@@ -9,7 +9,7 @@
  * @license     GPLv2 or later
  */
 
-defined('ABSPATH') or die('Direct access not allowed.');
+defined('ABSPATH') || exit;
 
 /**
  * Utility functions.
@@ -64,7 +64,7 @@ class PostExpirator_Cli
     public function expirePostCommand($args)
     {
         foreach ($args as $postId) {
-            $postId = (int)$postId;
+            $postId = (int) $postId;
 
             if (empty($postId)) {
                 continue;

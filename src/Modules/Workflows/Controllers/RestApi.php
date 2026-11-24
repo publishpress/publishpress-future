@@ -7,6 +7,8 @@ use PublishPress\Future\Framework\InitializableInterface;
 use PublishPress\Future\Core\HooksAbstract as CoreHooksAbstract;
 use PublishPress\Future\Modules\Workflows\Interfaces\RestApiManagerInterface;
 
+\defined('ABSPATH') || exit;
+
 class RestApi implements InitializableInterface
 {
     /**

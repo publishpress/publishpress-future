@@ -2,8 +2,10 @@
 
 namespace PublishPress\Future\Modules\Workflows\Interfaces;
 
+\defined('ABSPATH') || exit;
+
 /**
- * @since 4.3.1
+ * @since 4.3.1 
  */
 interface AsyncStepProcessorInterface extends StepProcessorInterface
 {

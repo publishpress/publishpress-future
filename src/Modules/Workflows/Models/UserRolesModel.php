@@ -4,6 +4,8 @@ namespace PublishPress\Future\Modules\Workflows\Models;
 
 use PublishPress\Future\Modules\Workflows\Interfaces\UserRolesModelInterface;
 
+\defined('ABSPATH') || exit;
+
 class UserRolesModel implements UserRolesModelInterface
 {
     public function getUserRoles($filtered = false): array

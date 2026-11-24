@@ -5,6 +5,8 @@ namespace PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions
 use PublishPress\Future\Modules\Workflows\Interfaces\StepTypeInterface;
 use PublishPress\Future\Modules\Workflows\Models\StepTypesModel;
 
+\defined('ABSPATH') || exit;
+
 class Conditional implements StepTypeInterface
 {
     public static function getNodeTypeName(): string
@@ -73,8 +75,8 @@ class Conditional implements StepTypeInterface
                         "label" => __("Conditions", "post-expirator"),
                         "description" => __("The conditions that must be met for deciding which branch to take.", "post-expirator"),
                     ],
-                ]
-            ]
+                ],
+            ],
         ];
     }
 
@@ -88,7 +90,7 @@ class Conditional implements StepTypeInterface
                     ],
                     [
                         "rule" => "hasOutgoingConnection",
-                    ]
+                    ],
                 ],
             ],
             "settings" => [
@@ -139,7 +141,7 @@ class Conditional implements StepTypeInterface
             "target" => [
                 [
                     "id" => "input",
-                ]
+                ],
             ],
             "source" => [
                 [
@@ -149,8 +151,8 @@ class Conditional implements StepTypeInterface
                 [
                     "id" => "false",
                     "label" => __("False", "post-expirator"),
-                ]
-            ]
+                ],
+            ],
         ];
     }
 

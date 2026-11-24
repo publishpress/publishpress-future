@@ -20,7 +20,7 @@ use PublishPress\Future\Modules\Expirator\Schemas\ActionArgsSchema;
 
 use function tad\WPBrowser\vendorDir;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 class V30001RestorePostMeta implements MigrationInterface
 {
@@ -81,7 +81,7 @@ class V30001RestorePostMeta implements MigrationInterface
     {
         $events = [];
 
-        $query = array(
+        $query = [
             'per_page' => -1,
             'offset' => 0,
             'status' => '',
@@ -89,7 +89,7 @@ class V30001RestorePostMeta implements MigrationInterface
             'order' => 'ASC',
             'search' => '',
             'group' => CronToWooActionSchedulerAdapter::SCHEDULED_ACTION_GROUP,
-        );
+        ];
 
         $actions = $this->actionStore->query_actions($query);
         $modelFactory = $this->expirablePostModelFactory;

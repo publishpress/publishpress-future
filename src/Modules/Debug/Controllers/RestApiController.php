@@ -13,7 +13,7 @@ use PublishPress\Future\Modules\Debug\DebugLogDisplayHelper;
 use WP_REST_Request;
 use WP_REST_Response;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 class RestApiController implements InitializableInterface
 {

@@ -11,7 +11,7 @@ use PublishPress\Future\Framework\Logger\LoggerInterface;
 use PublishPress\Future\Framework\ModuleInterface;
 use PublishPress\Future\Modules\Settings\Controllers\Controller;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 final class Module implements ModuleInterface
 {

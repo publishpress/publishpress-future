@@ -13,7 +13,7 @@ namespace PublishPress\Future\Modules\Debug;
 
 use PostExpirator_Util;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 /**
  * @since 4.10.0

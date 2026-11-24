@@ -12,6 +12,8 @@ use PublishPress\Future\Modules\Workflows\Domain\Engine\VariableResolvers\Intege
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnLegacyActionTrigger;
 use PublishPress\Future\Modules\Workflows\Interfaces\ExecutionContextInterface;
 
+\defined('ABSPATH') || exit;
+
 class OnLegacyActionTriggerRunner implements TriggerRunnerInterface
 {
     /**

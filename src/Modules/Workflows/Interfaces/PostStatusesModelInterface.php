@@ -2,6 +2,8 @@
 
 namespace PublishPress\Future\Modules\Workflows\Interfaces;
 
+\defined('ABSPATH') || exit;
+
 interface PostStatusesModelInterface
 {
     public function getPostStatuses(): array;

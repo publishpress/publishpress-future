@@ -9,8 +9,6 @@
  * @license     GPLv2 or later
  */
 
-defined("ABSPATH") or die("Direct access not allowed.");
-
 use PublishPress\Future\Core\DI\ServicesAbstract;
 use PublishPress\Future\Core\HooksAbstract;
 use PublishPress\Future\Core\Paths;
@@ -140,12 +138,27 @@ use PublishPress\Future\Modules\Debug\Migrations\V04905DebugLogRequestId;
 use PublishPress\Future\Modules\Debug\Migrations\V04906DebugLogTimestampMilliseconds;
 use PublishPress\Future\Modules\Workflows\Interfaces\ExecutionContextInterface;
 
+defined("ABSPATH") || exit;
+
+use PublishPress\Future\Framework\WordPress\Facade\McpFacade;
+use PublishPress\Future\Modules\Mcp\Module as ModuleMcp;
+use PublishPress\Future\Modules\Mcp\Registry as McpRegistry;
+use PublishPress\Future\Modules\Mcp\Services\SchedulesService as McpSchedules;
+use PublishPress\Future\Modules\Mcp\Services\SettingsService as McpSettings;
+use PublishPress\Future\Modules\Mcp\Services\PostTypeSettingsService as McpPostTypes;
+use PublishPress\Future\Modules\Mcp\Services\WorkflowGraph as McpGraph;
+use PublishPress\Future\Modules\Mcp\Services\WorkflowsService as McpWorkflows;
+use PublishPress\Future\Modules\Mcp\Services\PostWorkflowsService as McpPostWorkflows;
+use PublishPress\Future\Modules\Mcp\Services\RuntimeService as McpRuntime;
+use PublishPress\Future\Modules\Mcp\Services\ConfigurationService as McpConfiguration;
+
 return [
     ServicesAbstract::PLUGIN_VERSION => PUBLISHPRESS_FUTURE_VERSION,
 
     ServicesAbstract::PLUGIN_SLUG => 'post-expirator',
 
-    ServicesAbstract::PLUGIN_NAME => "PublishPress Future",
+    // Must match "Plugin Name" in post-expirator.php: instance protection finds copies by that header.
+    ServicesAbstract::PLUGIN_NAME => "PublishPress Future Free",
 
     ServicesAbstract::DEFAULT_DATA => [
         ServicesAbstract::DEFAULT_DATE_FORMAT => __(
@@ -370,7 +383,8 @@ return [
             $container->get(ServicesAbstract::DATETIME),
             $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY),
             $container->get(ServicesAbstract::ACTION_ARGS_MODEL_FACTORY),
-            $container->get(ServicesAbstract::EXPIRATION_ACTIONS_MODEL)
+            $container->get(ServicesAbstract::EXPIRATION_ACTIONS_MODEL),
+            $container->get(ServicesAbstract::CURRENT_USER_MODEL_FACTORY)
         );
     },
 
@@ -823,7 +837,7 @@ return [
         return new ExecutionContextProcessorInitializer(
             $container->get(ServicesAbstract::EXECUTION_CONTEXT_PROCESSOR_REGISTRY),
             [
-                $container->get(ServicesAbstract::EXECUTION_CONTEXT_DATE_PROCESSOR)
+                $container->get(ServicesAbstract::EXECUTION_CONTEXT_DATE_PROCESSOR),
             ]
         );
     },
@@ -845,8 +859,8 @@ return [
         );
     },
 
-    ServicesAbstract::GENERAL_STEP_PROCESSOR_FACTORY =>
-    static function (ContainerInterface $container): \Closure {
+    ServicesAbstract::GENERAL_STEP_PROCESSOR_FACTORY
+    => static function (ContainerInterface $container): \Closure {
         return static function (string $workflowExecutionId) use ($container): StepProcessorInterface {
             $executionContext = $container->get(ServicesAbstract::EXECUTION_CONTEXT_REGISTRY)
                 ->getExecutionContext($workflowExecutionId);
@@ -859,8 +873,8 @@ return [
         };
     },
 
-    ServicesAbstract::POST_STEP_PROCESSOR_FACTORY =>
-    static function (ContainerInterface $container): \Closure {
+    ServicesAbstract::POST_STEP_PROCESSOR_FACTORY
+    => static function (ContainerInterface $container): \Closure {
         return static function (
             StepProcessorInterface $generalProcessor,
             string $workflowExecutionId
@@ -877,8 +891,8 @@ return [
         };
     },
 
-    ServicesAbstract::CRON_STEP_PROCESSOR_FACTORY =>
-    static function (ContainerInterface $container): \Closure {
+    ServicesAbstract::CRON_STEP_PROCESSOR_FACTORY
+    => static function (ContainerInterface $container): \Closure {
         return static function (
             StepProcessorInterface $generalProcessor,
             string $workflowExecutionId
@@ -926,14 +940,14 @@ return [
                 return $stepRunner;
             }
 
-            $workflowLogger = call_user_func(
-                $container->get(ServicesAbstract::WORKFLOW_LOGGER_FACTORY),
+            $workflowLogger = $container->build(
+                ServicesAbstract::WORKFLOW_LOGGER_FACTORY,
                 $executionContext
             );
             $settingsModel = $container->get(ServicesAbstract::SETTINGS);
 
-            $generalStepProcessor = call_user_func(
-                $container->get(ServicesAbstract::GENERAL_STEP_PROCESSOR_FACTORY),
+            $generalStepProcessor = $container->build(
+                ServicesAbstract::GENERAL_STEP_PROCESSOR_FACTORY,
                 $workflowExecutionId
             );
 
@@ -959,8 +973,8 @@ return [
                     break;
 
                 case OnPostSaveRunner::getNodeTypeName():
-                    $inputValidatorPostQuery = call_user_func(
-                        $container->get(ServicesAbstract::INPUT_VALIDATOR_POST_QUERY_FACTORY),
+                    $inputValidatorPostQuery = $container->build(
+                        ServicesAbstract::INPUT_VALIDATOR_POST_QUERY_FACTORY,
                         $workflowExecutionId
                     );
 
@@ -976,8 +990,8 @@ return [
                     break;
 
                 case OnPostUpdateRunner::getNodeTypeName():
-                    $inputValidatorPostQuery = call_user_func(
-                        $container->get(ServicesAbstract::INPUT_VALIDATOR_POST_QUERY_FACTORY),
+                    $inputValidatorPostQuery = $container->build(
+                        ServicesAbstract::INPUT_VALIDATOR_POST_QUERY_FACTORY,
                         $workflowExecutionId
                     );
 
@@ -994,8 +1008,8 @@ return [
                     break;
 
                 case OnPostPublishRunner::getNodeTypeName():
-                    $inputValidatorPostQuery = call_user_func(
-                        $container->get(ServicesAbstract::INPUT_VALIDATOR_POST_QUERY_FACTORY),
+                    $inputValidatorPostQuery = $container->build(
+                        ServicesAbstract::INPUT_VALIDATOR_POST_QUERY_FACTORY,
                         $workflowExecutionId
                     );
 
@@ -1033,32 +1047,32 @@ return [
                     break;
 
                 case OnTermsAddedRunner::getNodeTypeName():
-                        $inputValidatorPostQuery = call_user_func(
-                            $container->get(ServicesAbstract::INPUT_VALIDATOR_POST_QUERY_FACTORY),
+                        $inputValidatorPostQuery = $container->build(
+                            ServicesAbstract::INPUT_VALIDATOR_POST_QUERY_FACTORY,
                             $workflowExecutionId
                         );
 
-                        $stepRunner = new OnTermsAddedRunner(
-                            $container->get(ServicesAbstract::HOOKS),
-                            $generalStepProcessor,
-                            $inputValidatorPostQuery,
-                            $workflowLogger,
-                            $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY),
-                            $container->get(ServicesAbstract::POST_CACHE),
-                            $container->get(ServicesAbstract::WORKFLOW_EXECUTION_SAFEGUARD),
-                            $executionContext
-                        );
+                    $stepRunner = new OnTermsAddedRunner(
+                        $container->get(ServicesAbstract::HOOKS),
+                        $generalStepProcessor,
+                        $inputValidatorPostQuery,
+                        $workflowLogger,
+                        $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY),
+                        $container->get(ServicesAbstract::POST_CACHE),
+                        $container->get(ServicesAbstract::WORKFLOW_EXECUTION_SAFEGUARD),
+                        $executionContext
+                    );
                     break;
 
                 case OnPostWorkflowEnableRunner::getNodeTypeName():
-                    $postStepProcessor = call_user_func(
-                        $container->get(ServicesAbstract::POST_STEP_PROCESSOR_FACTORY),
+                    $postStepProcessor = $container->build(
+                        ServicesAbstract::POST_STEP_PROCESSOR_FACTORY,
                         $generalStepProcessor,
                         $workflowExecutionId
                     );
 
-                    $inputValidatorPostQuery = call_user_func(
-                        $container->get(ServicesAbstract::INPUT_VALIDATOR_POST_QUERY_FACTORY),
+                    $inputValidatorPostQuery = $container->build(
+                        ServicesAbstract::INPUT_VALIDATOR_POST_QUERY_FACTORY,
                         $workflowExecutionId
                     );
 
@@ -1125,10 +1139,10 @@ return [
                     );
                     break;
 
-                // Actions
+                    // Actions
                 case DeletePostRunner::getNodeTypeName():
-                    $postStepProcessor = call_user_func(
-                        $container->get(ServicesAbstract::POST_STEP_PROCESSOR_FACTORY),
+                    $postStepProcessor = $container->build(
+                        ServicesAbstract::POST_STEP_PROCESSOR_FACTORY,
                         $generalStepProcessor,
                         $workflowExecutionId
                     );
@@ -1141,8 +1155,8 @@ return [
                     break;
 
                 case StickPostRunner::getNodeTypeName():
-                    $postStepProcessor = call_user_func(
-                        $container->get(ServicesAbstract::POST_STEP_PROCESSOR_FACTORY),
+                    $postStepProcessor = $container->build(
+                        ServicesAbstract::POST_STEP_PROCESSOR_FACTORY,
                         $generalStepProcessor,
                         $workflowExecutionId
                     );
@@ -1155,8 +1169,8 @@ return [
                     break;
 
                 case UnstickPostRunner::getNodeTypeName():
-                    $postStepProcessor = call_user_func(
-                        $container->get(ServicesAbstract::POST_STEP_PROCESSOR_FACTORY),
+                    $postStepProcessor = $container->build(
+                        ServicesAbstract::POST_STEP_PROCESSOR_FACTORY,
                         $generalStepProcessor,
                         $workflowExecutionId
                     );
@@ -1169,8 +1183,8 @@ return [
                     break;
 
                 case AddPostTermRunner::getNodeTypeName():
-                    $postStepProcessor = call_user_func(
-                        $container->get(ServicesAbstract::POST_STEP_PROCESSOR_FACTORY),
+                    $postStepProcessor = $container->build(
+                        ServicesAbstract::POST_STEP_PROCESSOR_FACTORY,
                         $generalStepProcessor,
                         $workflowExecutionId
                     );
@@ -1184,8 +1198,8 @@ return [
                     break;
 
                 case SetPostTermRunner::getNodeTypeName():
-                    $postStepProcessor = call_user_func(
-                        $container->get(ServicesAbstract::POST_STEP_PROCESSOR_FACTORY),
+                    $postStepProcessor = $container->build(
+                        ServicesAbstract::POST_STEP_PROCESSOR_FACTORY,
                         $generalStepProcessor,
                         $workflowExecutionId
                     );
@@ -1199,8 +1213,8 @@ return [
                     break;
 
                 case RemovePostTermRunner::getNodeTypeName():
-                    $postStepProcessor = call_user_func(
-                        $container->get(ServicesAbstract::POST_STEP_PROCESSOR_FACTORY),
+                    $postStepProcessor = $container->build(
+                        ServicesAbstract::POST_STEP_PROCESSOR_FACTORY,
                         $generalStepProcessor,
                         $workflowExecutionId
                     );
@@ -1214,8 +1228,8 @@ return [
                     break;
 
                 case ChangePostStatusRunner::getNodeTypeName():
-                    $postStepProcessor = call_user_func(
-                        $container->get(ServicesAbstract::POST_STEP_PROCESSOR_FACTORY),
+                    $postStepProcessor = $container->build(
+                        ServicesAbstract::POST_STEP_PROCESSOR_FACTORY,
                         $generalStepProcessor,
                         $workflowExecutionId
                     );
@@ -1238,8 +1252,8 @@ return [
                     break;
 
                 case DeactivatePostWorkflowRunner::getNodeTypeName():
-                    $postStepProcessor = call_user_func(
-                        $container->get(ServicesAbstract::POST_STEP_PROCESSOR_FACTORY),
+                    $postStepProcessor = $container->build(
+                        ServicesAbstract::POST_STEP_PROCESSOR_FACTORY,
                         $generalStepProcessor,
                         $workflowExecutionId
                     );
@@ -1252,8 +1266,8 @@ return [
                     break;
 
                 case AddPostMetaRunner::getNodeTypeName():
-                    $postStepProcessor = call_user_func(
-                        $container->get(ServicesAbstract::POST_STEP_PROCESSOR_FACTORY),
+                    $postStepProcessor = $container->build(
+                        ServicesAbstract::POST_STEP_PROCESSOR_FACTORY,
                         $generalStepProcessor,
                         $workflowExecutionId
                     );
@@ -1265,8 +1279,8 @@ return [
                     break;
 
                 case DeletePostMetaRunner::getNodeTypeName():
-                    $postStepProcessor = call_user_func(
-                        $container->get(ServicesAbstract::POST_STEP_PROCESSOR_FACTORY),
+                    $postStepProcessor = $container->build(
+                        ServicesAbstract::POST_STEP_PROCESSOR_FACTORY,
                         $generalStepProcessor,
                         $workflowExecutionId
                     );
@@ -1278,8 +1292,8 @@ return [
                     break;
 
                 case UpdatePostMetaRunner::getNodeTypeName():
-                    $postStepProcessor = call_user_func(
-                        $container->get(ServicesAbstract::POST_STEP_PROCESSOR_FACTORY),
+                    $postStepProcessor = $container->build(
+                        ServicesAbstract::POST_STEP_PROCESSOR_FACTORY,
                         $generalStepProcessor,
                         $workflowExecutionId
                     );
@@ -1291,8 +1305,8 @@ return [
                     break;
 
                 case UpdatePostRunner::getNodeTypeName():
-                    $postStepProcessor = call_user_func(
-                        $container->get(ServicesAbstract::POST_STEP_PROCESSOR_FACTORY),
+                    $postStepProcessor = $container->build(
+                        ServicesAbstract::POST_STEP_PROCESSOR_FACTORY,
                         $generalStepProcessor,
                         $workflowExecutionId
                     );
@@ -1303,10 +1317,10 @@ return [
                     );
                     break;
 
-                // Advanced
+                    // Advanced
                 case ScheduleDelayRunner::getNodeTypeName():
-                    $cronStepProcessor = call_user_func(
-                        $container->get(ServicesAbstract::CRON_STEP_PROCESSOR_FACTORY),
+                    $cronStepProcessor = $container->build(
+                        ServicesAbstract::CRON_STEP_PROCESSOR_FACTORY,
                         $generalStepProcessor,
                         $workflowExecutionId
                     );
@@ -1377,8 +1391,8 @@ return [
             $executionContext = $container->get(ServicesAbstract::EXECUTION_CONTEXT_REGISTRY)
                 ->getExecutionContext($workflowExecutionId);
 
-            $jsonLogicEngine = call_user_func(
-                $container->get(ServicesAbstract::JSON_LOGIC_ENGINE_FACTORY),
+            $jsonLogicEngine = $container->build(
+                ServicesAbstract::JSON_LOGIC_ENGINE_FACTORY,
                 $executionContext
             );
 
@@ -1421,4 +1435,125 @@ return [
     ServicesAbstract::WORKFLOW_SANITIZATION_UTIL => static function (ContainerInterface $container) {
         return new Utils\WorkflowSanitizationUtil();
     },
+    ServicesAbstract::MCP_WORDPRESS => static function (ContainerInterface $container) {
+        return new McpFacade();
+    },
+    ServicesAbstract::MCP_REGISTRY => static function (ContainerInterface $container) {
+        return new McpRegistry($container->get(ServicesAbstract::MCP_WORDPRESS));
+    },
+    ServicesAbstract::MCP_WORKFLOW_FACTORY => static function (ContainerInterface $container) {
+        return static function () {
+            return new \PublishPress\Future\Modules\Workflows\Models\WorkflowModel();
+        };
+    },
+    ServicesAbstract::MCP_POST_WORKFLOW_FACTORY => static function (ContainerInterface $container) {
+        return static function () {
+            return new \PublishPress\Future\Modules\Workflows\Models\PostModel();
+        };
+    },
+    ServicesAbstract::MCP_POST_TYPES_MODEL => static function (ContainerInterface $container) {
+        return new \PublishPress\Future\Modules\Settings\Models\SettingsPostTypesModel();
+    },
+    ServicesAbstract::MCP_STEP_VALIDATION => static function (ContainerInterface $container) {
+        return new \PublishPress\Future\Modules\Mcp\Services\StepValidation($container->get(ServicesAbstract::MCP_WORDPRESS));
+    },
+    ServicesAbstract::MCP_GRAPH => static function (ContainerInterface $container) {
+        return new McpGraph(
+            $container->get(ServicesAbstract::MCP_WORDPRESS),
+            $container->get(ServicesAbstract::STEP_TYPES_MODEL),
+            $container->get(ServicesAbstract::WORKFLOW_SANITIZATION_UTIL),
+            $container->get(ServicesAbstract::MCP_STEP_VALIDATION)
+        );
+    },
+    ServicesAbstract::MCP_SCHEDULES => static function (ContainerInterface $container) {
+        $userFactory = $container->get(ServicesAbstract::CURRENT_USER_MODEL_FACTORY);
+        return new McpSchedules(
+            $container->get(ServicesAbstract::MCP_WORDPRESS),
+            $container->get(ServicesAbstract::EXPIRATION_SCHEDULER),
+            $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY),
+            $userFactory(),
+            $container->get(ServicesAbstract::EXPIRATION_ACTIONS_MODEL),
+            $container->get(ServicesAbstract::MCP_POST_TYPES_MODEL),
+            $container->get(ServicesAbstract::MCP_WORKFLOW_FACTORY),
+            $container->get(ServicesAbstract::ACTION_ARGS_MODEL_FACTORY)
+        );
+    },
+    ServicesAbstract::MCP_SETTINGS => static function (ContainerInterface $container) {
+        return new McpSettings($container->get(ServicesAbstract::MCP_WORDPRESS), $container->get(ServicesAbstract::SETTINGS));
+    },
+    ServicesAbstract::MCP_POST_TYPES => static function (ContainerInterface $container) {
+        return new McpPostTypes(
+            $container->get(ServicesAbstract::MCP_WORDPRESS),
+            $container->get(ServicesAbstract::SETTINGS),
+            $container->get(ServicesAbstract::MCP_POST_TYPES_MODEL),
+            $container->get(ServicesAbstract::EXPIRATION_ACTIONS_MODEL)
+        );
+    },
+
+    ServicesAbstract::MCP_WORKFLOW_CHOICES => static function (ContainerInterface $container) {
+        return new \PublishPress\Future\Modules\Mcp\Services\WorkflowChoices(
+            new \PublishPress\Future\Modules\Workflows\Models\PostTypesModel(),
+            new \PublishPress\Future\Modules\Workflows\Models\PostStatusesModel(),
+            new \PublishPress\Future\Modules\Workflows\Models\TaxonomiesModel(),
+            new \PublishPress\Future\Modules\Workflows\Models\UserRolesModel(),
+            $container->get(ServicesAbstract::CRON_SCHEDULES_MODEL)
+        );
+    },
+    ServicesAbstract::MCP_WORKFLOWS => static function (ContainerInterface $container) {
+        return new McpWorkflows(
+            $container->get(ServicesAbstract::MCP_WORDPRESS),
+            $container->get(ServicesAbstract::MCP_GRAPH),
+            $container->get(ServicesAbstract::MCP_WORKFLOW_FACTORY),
+            $container->get(ServicesAbstract::MCP_WORKFLOW_CHOICES)
+        );
+    },
+    ServicesAbstract::MCP_POST_WORKFLOWS => static function (ContainerInterface $container) {
+        return new McpPostWorkflows(
+            $container->get(ServicesAbstract::MCP_WORDPRESS),
+            $container->get(ServicesAbstract::MCP_POST_WORKFLOW_FACTORY),
+            $container->get(ServicesAbstract::HOOKS)
+        );
+    },
+
+    ServicesAbstract::MCP_RUNTIME => static function (ContainerInterface $container) {
+        return new McpRuntime(
+            $container->get(ServicesAbstract::MCP_WORDPRESS),
+            $container->get(ServicesAbstract::ACTION_SCHEDULER_STORE),
+            $container->get(ServicesAbstract::ACTION_SCHEDULER_RUNNER),
+            $container->get(ServicesAbstract::LOGGER),
+            static function () {
+                return new \PublishPress\Future\Modules\Workflows\Models\WorkflowScheduledStepModel();
+            },
+            $container->get(ServicesAbstract::MCP_SCHEDULES)
+        );
+    },
+    ServicesAbstract::MCP_CONFIGURATION => static function (ContainerInterface $container) {
+        return new McpConfiguration(
+            $container->get(ServicesAbstract::MCP_WORDPRESS),
+            $container->get(ServicesAbstract::MCP_SETTINGS),
+            $container->get(ServicesAbstract::MCP_POST_TYPES),
+            $container->get(ServicesAbstract::MCP_WORKFLOWS)
+        );
+    },
+    ServicesAbstract::MCP_FEATURES => static function (ContainerInterface $container) {
+        return new \PublishPress\Future\Modules\Mcp\Services\FeatureCatalogService($container->get(ServicesAbstract::MCP_WORDPRESS));
+    },
+    ServicesAbstract::MODULE_MCP => static function (ContainerInterface $container) {
+        return new ModuleMcp(
+            $container->get(ServicesAbstract::HOOKS),
+            $container->get(ServicesAbstract::MCP_WORDPRESS),
+            $container->get(ServicesAbstract::MCP_REGISTRY),
+            [
+                $container->get(ServicesAbstract::MCP_FEATURES),
+                $container->get(ServicesAbstract::MCP_SCHEDULES),
+                $container->get(ServicesAbstract::MCP_SETTINGS),
+                $container->get(ServicesAbstract::MCP_POST_TYPES),
+                $container->get(ServicesAbstract::MCP_WORKFLOWS),
+                $container->get(ServicesAbstract::MCP_POST_WORKFLOWS),
+                $container->get(ServicesAbstract::MCP_RUNTIME),
+                $container->get(ServicesAbstract::MCP_CONFIGURATION),
+            ]
+        );
+    },
+
 ];

@@ -13,6 +13,8 @@ use PublishPress\Future\Modules\Workflows\Models\WorkflowModel;
 use PublishPress\Future\Modules\Workflows\Models\WorkflowsModel;
 use Throwable;
 
+\defined('ABSPATH') || exit;
+
 class FutureLegacyAction implements InitializableInterface
 {
     /**
@@ -124,7 +126,7 @@ class FutureLegacyAction implements InitializableInterface
             return $opts;
         }
 
-        $workflowId = (int)$_REQUEST['future_action_pro_workflow'] ?? 0;
+        $workflowId = (int) $_REQUEST['future_action_pro_workflow'] ?? 0;
 
         if (empty($workflowId)) {
             return $opts;

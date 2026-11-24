@@ -4,6 +4,8 @@ namespace PublishPress\Future\Modules\Workflows\Domain\Engine\VariableResolvers;
 
 use PublishPress\Future\Modules\Workflows\Interfaces\VariableResolverInterface;
 
+\defined('ABSPATH') || exit;
+
 class TermPropertyResolver implements VariableResolverInterface
 {
     private $termData;
@@ -50,7 +52,7 @@ class TermPropertyResolver implements VariableResolverInterface
             return implode(', ', $values);
         }
 
-        return (string)$values;
+        return (string) $values;
     }
 
     public function setValue(string $propertyName, $value): void
@@ -61,7 +63,7 @@ class TermPropertyResolver implements VariableResolverInterface
     {
         return [
             'type' => $this->getType(),
-            'value' => $this->termData
+            'value' => $this->termData,
         ];
     }
 

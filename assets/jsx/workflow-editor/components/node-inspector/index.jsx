@@ -114,6 +114,7 @@ export const NodeInspector = () => {
             {onlyNodesSelected && selectedElementsCount > 1 && (
                 <InspectorCard
                     title={sprintf(
+                        /* translators: %d is the number of selected steps. */
                         __("%d steps selected", "post-expirator"),
                         selectedElementsCount,
                     )}
@@ -128,6 +129,7 @@ export const NodeInspector = () => {
             {onlyEdgesSelected && selectedElementsCount > 1 && (
                 <InspectorCard
                     title={sprintf(
+                        /* translators: %d is the number of selected connections. */
                         __("%d connections selected", "post-expirator"),
                         selectedElementsCount,
                     )}

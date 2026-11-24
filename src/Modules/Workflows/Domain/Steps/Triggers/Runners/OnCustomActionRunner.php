@@ -7,6 +7,8 @@ use PublishPress\Future\Modules\Workflows\Interfaces\StepProcessorInterface;
 use PublishPress\Future\Framework\Logger\LoggerInterface;
 use PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definitions\OnCustomAction;
 
+\defined('ABSPATH') || exit;
+
 class OnCustomActionRunner implements TriggerRunnerInterface
 {
     /**

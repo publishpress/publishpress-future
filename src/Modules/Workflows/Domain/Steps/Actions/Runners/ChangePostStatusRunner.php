@@ -9,6 +9,8 @@ use PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions\Chang
 use PublishPress\Future\Modules\Workflows\Interfaces\StepRunnerInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\StepProcessorInterface;
 
+\defined('ABSPATH') || exit;
+
 class ChangePostStatusRunner implements StepRunnerInterface
 {
     /**

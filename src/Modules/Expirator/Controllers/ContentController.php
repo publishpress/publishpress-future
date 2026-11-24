@@ -14,7 +14,7 @@ use PublishPress\Future\Framework\WordPress\Facade\DateTimeFacade;
 use PublishPress\Future\Modules\Expirator\HooksAbstract as ExpiratorHooks;
 use PublishPress\Future\Modules\Settings\SettingsFacade;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 class ContentController implements InitializableInterface
 {
@@ -160,7 +160,7 @@ class ContentController implements InitializableInterface
                 $timeformat,
                 $expirationDate,
                 $defaultTimeFormat
-            )
+            ),
         ];
 
         $content .= str_replace(

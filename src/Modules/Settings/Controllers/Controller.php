@@ -15,7 +15,7 @@ use PublishPress\Future\Modules\Settings\HooksAbstract as SettingsHooksAbstract;
 use PublishPress\Future\Modules\Settings\SettingsFacade;
 use Throwable;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 class Controller implements InitializableInterface
 {
@@ -289,6 +289,10 @@ class Controller implements InitializableInterface
     public function processFormSubmission()
     {
         if (isset($_POST['_postExpiratorMenuAdvanced_nonce']) && ! empty($_POST['_postExpiratorMenuAdvanced_nonce'])) {
+            if (! current_user_can('manage_options')) {
+                return;
+            }
+
             if (
                 ! wp_verify_nonce(
                     sanitize_key($_POST['_postExpiratorMenuAdvanced_nonce']),

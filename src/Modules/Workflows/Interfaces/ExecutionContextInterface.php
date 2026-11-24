@@ -2,6 +2,8 @@
 
 namespace PublishPress\Future\Modules\Workflows\Interfaces;
 
+\defined('ABSPATH') || exit;
+
 interface ExecutionContextInterface
 {
     public function setAllVariables(array $runtimeVariables);

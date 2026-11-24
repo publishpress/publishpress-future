@@ -5,6 +5,8 @@ namespace PublishPress\Future\Modules\Workflows\Domain\Steps\Actions\Definitions
 use PublishPress\Future\Modules\Workflows\Interfaces\StepTypeInterface;
 use PublishPress\Future\Modules\Workflows\Models\StepTypesModel;
 
+\defined('ABSPATH') || exit;
+
 class DoAction implements StepTypeInterface
 {
     public static function getNodeTypeName(): string
@@ -90,8 +92,8 @@ class DoAction implements StepTypeInterface
                             "withExpression" => true,
                         ],
                     ],
-                ]
-            ]
+                ],
+            ],
         ];
     }
 
@@ -103,7 +105,7 @@ class DoAction implements StepTypeInterface
                     [
                         "rule" => "hasIncomingConnection",
                     ],
-                ]
+                ],
             ],
             "settings" => [
                 "rules" => [
@@ -118,8 +120,8 @@ class DoAction implements StepTypeInterface
                         "field" => "args",
                         "label" => __("Action arguments", "post-expirator"),
                     ],
-                ]
-            ]
+                ],
+            ],
         ];
     }
 
@@ -151,14 +153,14 @@ class DoAction implements StepTypeInterface
             "target" => [
                 [
                     "id" => "input",
-                ]
+                ],
             ],
             "source" => [
                 [
                     "id" => "output",
                     "label" => __("Next", "post-expirator"),
-                ]
-            ]
+                ],
+            ],
         ];
     }
 

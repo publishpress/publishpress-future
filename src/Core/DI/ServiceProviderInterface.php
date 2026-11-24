@@ -6,7 +6,7 @@
 
 namespace PublishPress\Future\Core\DI;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 /**
  * @deprecated 3.1.1

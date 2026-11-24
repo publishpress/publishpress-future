@@ -13,7 +13,7 @@ use PublishPress\Future\Modules\Expirator\Interfaces\MigrationInterface;
 use PublishPress\Future\Modules\Expirator\PostMetaAbstract;
 use PublishPress\Future\Modules\Expirator\Schemas\ActionArgsSchema;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 class V30000WPCronToActionsScheduler implements MigrationInterface
 {
@@ -96,7 +96,7 @@ class V30000WPCronToActionsScheduler implements MigrationInterface
 
             $expireType = $postModel->getMeta(PostMetaAbstract::EXPIRATION_TYPE, true);
             $expirationTaxonomy = $postModel->getMeta(PostMetaAbstract::EXPIRATION_TAXONOMY, true);
-            $expirationCategories = (array)$postModel->getMeta(PostMetaAbstract::EXPIRATION_TERMS, true);
+            $expirationCategories = (array) $postModel->getMeta(PostMetaAbstract::EXPIRATION_TERMS, true);
 
             $args = [
                 'expireType' => $expireType,

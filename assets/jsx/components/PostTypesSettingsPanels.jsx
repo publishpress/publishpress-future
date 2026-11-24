@@ -78,8 +78,9 @@ export const PostTypesSettingsPanels = function (props) {
                         marginBottom: '10px'
                     }}
                 >
-                    <label style={{ lineHeight: '33px' }}>{__('Select a post type to edit:', 'post-expirator')}</label>
+                    <label htmlFor="pe-post-type-selector" style={{ lineHeight: '33px' }}>{__('Select a post type to edit:', 'post-expirator')}</label>
                     <SelectControl
+                        id="pe-post-type-selector"
                         value={selectedPostType}
                         options={postTypeOptions}
                         onChange={onSelectPostType}

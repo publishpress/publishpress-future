@@ -6,7 +6,7 @@
 
 namespace PublishPress\Future\Framework\WordPress\Models;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 class UserModel
 {
@@ -31,7 +31,7 @@ class UserModel
         }
 
         if (is_numeric($user)) {
-            $this->userId = (int)$user;
+            $this->userId = (int) $user;
         }
     }
 

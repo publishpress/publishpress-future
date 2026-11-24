@@ -4,6 +4,8 @@ namespace PublishPress\Future\Modules\Workflows\Interfaces;
 
 use WP_Post;
 
+\defined('ABSPATH') || exit;
+
 interface PostModelInterface
 {
     public function load(int $id): bool;

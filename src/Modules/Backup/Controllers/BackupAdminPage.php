@@ -9,6 +9,8 @@ use PublishPress\Future\Framework\InitializableInterface;
 use PublishPress\Future\Modules\Settings\SettingsFacade;
 use PublishPress\Future\Modules\Settings\HooksAbstract as SettingsHooksAbstract;
 
+\defined('ABSPATH') || exit;
+
 class BackupAdminPage implements InitializableInterface
 {
     private HookableInterface $hooks;
@@ -169,7 +171,7 @@ class BackupAdminPage implements InitializableInterface
                 'title' => __('Import', 'post-expirator'),
                 'slug'  => 'import',
                 'link'  => admin_url($baseLink . 'import'),
-            ]
+            ],
         ];
 
         $tabs = array_merge($backupTabs, $tabs);

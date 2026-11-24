@@ -17,6 +17,8 @@ use Throwable;
 use WP_REST_Request;
 use WP_REST_Response;
 
+\defined('ABSPATH') || exit;
+
 class BackupRestApi implements InitializableInterface
 {
     private WorkflowSanitizationUtil $workflowSanitization;

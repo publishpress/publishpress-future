@@ -8,6 +8,8 @@ use PublishPress\Future\Modules\Workflows\Interfaces\InputValidatorsInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\JsonLogicEngineInterface;
 use PublishPress\Future\Modules\Workflows\Module;
 
+\defined('ABSPATH') || exit;
+
 class PostQuery implements InputValidatorsInterface
 {
     private const LOG_PREFIX = '[PostQueryValidator:%d]: ';

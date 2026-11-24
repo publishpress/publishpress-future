@@ -16,7 +16,7 @@ use PublishPress\Future\Modules\Expirator\HooksAbstract;
 use PublishPress\Future\Modules\Expirator\Models\CurrentUserModel;
 use Throwable;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 class BlockEditorController implements InitializableInterface
 {
@@ -67,7 +67,7 @@ class BlockEditorController implements InitializableInterface
         $options = $container->get(ServicesAbstract::OPTIONS);
 
         $postTypeDefaultConfig = $settingsFacade->getPostTypeDefaults($post->post_type);
-        $hideMetabox = (bool)$this->hooks->applyFilters(HooksAbstract::FILTER_HIDE_METABOX, false, $post->post_type);
+        $hideMetabox = (bool) $this->hooks->applyFilters(HooksAbstract::FILTER_HIDE_METABOX, false, $post->post_type);
         $activeMetaBox = $postTypeDefaultConfig['activeMetaBox'] ?? null;
         $willEnqueueScript = $hideMetabox === false
             && (
@@ -80,7 +80,7 @@ class BlockEditorController implements InitializableInterface
                     ],
                     true
                 )
-                || (in_array((string)$postTypeDefaultConfig['activeMetaBox'], ['active', '1']))
+                || (in_array((string) $postTypeDefaultConfig['activeMetaBox'], ['active', '1']))
             );
 
         // if settings are not configured, show the metabox by default only for posts and pages
@@ -142,7 +142,7 @@ class BlockEditorController implements InitializableInterface
                     'hour' => date('H', $now),
                     'minute' => date('i', $now),
                     'ts' => $calculatedDate,
-                    'iso' => $gmDate
+                    'iso' => $gmDate,
                 ];
             }
 
@@ -150,6 +150,13 @@ class BlockEditorController implements InitializableInterface
             $metaboxCheckboxLabel = $settingsFacade->getMetaboxCheckboxLabel() ?? __('Enable Future Action', 'post-expirator');
 
             $hiddenFields = (array) $this->hooks->applyFilters(HooksAbstract::FILTER_HIDDEN_METABOX_FIELDS, [], $post->post_type);
+
+            $scheduleOptions = $this->currentUserModel->filterScheduleSelectOptions(
+                $actionsModel->getActionsAsOptions($post->post_type),
+                $actionsModel->getStatusesAsOptionsForPostType($post->post_type),
+                (string) $post->post_type,
+                (int) $post->ID
+            );
 
             wp_localize_script(
                 'postexpirator-block-editor',
@@ -161,8 +168,8 @@ class BlockEditorController implements InitializableInterface
                     'is12Hour' => $options->getOption('time_format') !== 'H:i',
                     'timeFormat' => $settingsFacade->getTimeFormatForDatePicker(),
                     'startOfWeek' => $options->getOption('start_of_week', 0),
-                    'actionsSelectOptions' => $actionsModel->getActionsAsOptions($post->post_type),
-                    'statusesSelectOptions' => $actionsModel->getStatusesAsOptionsForPostType($post->post_type),
+                    'actionsSelectOptions' => $scheduleOptions['actions'],
+                    'statusesSelectOptions' => $scheduleOptions['statuses'],
                     'isDebugEnabled' => $container->get(ServicesAbstract::DEBUG)->isEnabled(),
                     'taxonomyName' => $taxonomyPluralName,
                     'taxonomyTerms' => $taxonomyTerms,
@@ -212,7 +219,7 @@ class BlockEditorController implements InitializableInterface
                             strtolower($taxonomyPluralName)
                         ),
                         'newStatus' => __('New status', 'post-expirator'),
-                    ]
+                    ],
                 ]
             );
         }

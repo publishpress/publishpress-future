@@ -21,7 +21,7 @@ use PublishPress\Future\Modules\Expirator\Models\ExpirablePostModel;
 use PublishPress\Future\Modules\Expirator\Models\CurrentUserModel;
 use Throwable;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 class BulkEditController implements InitializableInterface
 {
@@ -179,7 +179,7 @@ class BulkEditController implements InitializableInterface
                 'hour' => date('H', $now),
                 'minute' => date('i', $now),
                 'ts' => $calculatedDate,
-                'iso' => $gmDate
+                'iso' => $gmDate,
             ];
         }
 
@@ -190,6 +190,13 @@ class BulkEditController implements InitializableInterface
 
         $hiddenFields = (array) $this->hooks->applyFilters(HooksAbstract::FILTER_HIDDEN_METABOX_FIELDS, [], $postType);
 
+        $scheduleOptions = $this->currentUserModel->filterScheduleSelectOptions(
+            $actionsModel->getActionsAsOptions($postType),
+            $actionsModel->getStatusesAsOptionsForPostType($postType),
+            (string) $postType,
+            0
+        );
+
         wp_localize_script(
             'postexpirator-bulk-edit',
             'publishpressFutureBulkEditConfig',
@@ -199,8 +206,8 @@ class BulkEditController implements InitializableInterface
                 'is12Hour' => get_option('time_format') !== 'H:i',
                 'timeFormat' => $settingsFacade->getTimeFormatForDatePicker(),
                 'startOfWeek' => get_option('start_of_week', 0),
-                'actionsSelectOptions' => $actionsModel->getActionsAsOptions($postType),
-                'statusesSelectOptions' => $actionsModel->getStatusesAsOptionsForPostType($postType),
+                'actionsSelectOptions' => $scheduleOptions['actions'],
+                'statusesSelectOptions' => $scheduleOptions['statuses'],
                 'isDebugEnabled' => $debug->isEnabled(),
                 'taxonomyName' => $taxonomyPluralName,
                 'taxonomyTerms' => $taxonomyTerms,
@@ -218,7 +225,7 @@ class BulkEditController implements InitializableInterface
                     'showCalendar' => __('Show Calendar', 'post-expirator'),
                     'hideCalendar' => __('Hide Calendar', 'post-expirator'),
                     'loading' => __('Loading', 'post-expirator'),
-                    // translators: the text between {{}} is the link to the settings page.
+                    // translators: the text between {} is the link to the settings page.
                     'timezoneSettingsHelp' => __(
                         'Timezone is controlled by the {WordPress Settings}.',
                         'post-expirator'
@@ -259,7 +266,7 @@ class BulkEditController implements InitializableInterface
                         strtolower($taxonomyPluralName)
                     ),
                     'newStatus' => __('New status', 'post-expirator'),
-                ]
+                ],
             ]
         );
     }
@@ -282,7 +289,7 @@ class BulkEditController implements InitializableInterface
 
             $defaults = $settingsFacade->getPostTypeDefaults($postType);
 
-            $taxonomy = isset($defaults['taxonomy']) ? $defaults['taxonomy'] : '';
+            $taxonomy = $defaults['taxonomy'] ?? '';
             $label = '';
 
             // if settings have not been configured and this is the default post type
@@ -295,11 +302,11 @@ class BulkEditController implements InitializableInterface
                 $label = $tax_object ? $tax_object->label : '';
             }
 
-            PostExpirator_Display::getInstance()->render_template('bulk-edit', array(
+            PostExpirator_Display::getInstance()->render_template('bulk-edit', [
                 'post_type' => $postType,
                 'taxonomy' => $taxonomy,
-                'tax_label' => $label
-            ));
+                'tax_label' => $label,
+            ]);
         } catch (Throwable $th) {
             $this->logger->error('Error registering bulk edit custom box: ' . $th->getMessage());
         }
@@ -339,10 +346,10 @@ class BulkEditController implements InitializableInterface
     {
         // phpcs:disable WordPress.Security.NonceVerification.Recommended
         // phpcs:disable WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-        $expireType = isset($_REQUEST['future_action_bulk_action']) ?
-            $this->sanitization->sanitizeTextField($_REQUEST['future_action_bulk_action']) : '';
-        $newStatus = isset($_REQUEST['future_action_bulk_new_status']) ?
-            $this->sanitization->sanitizeTextField($_REQUEST['future_action_bulk_new_status']) : 'draft';
+        $expireType = isset($_REQUEST['future_action_bulk_action'])
+            ? $this->sanitization->sanitizeTextField($_REQUEST['future_action_bulk_action']) : '';
+        $newStatus = isset($_REQUEST['future_action_bulk_new_status'])
+            ? $this->sanitization->sanitizeTextField($_REQUEST['future_action_bulk_new_status']) : 'draft';
 
         if ($expireType === ExpirationActionsAbstract::POST_STATUS_TO_DRAFT) {
             $expireType = ExpirationActionsAbstract::CHANGE_POST_STATUS;
@@ -359,13 +366,28 @@ class BulkEditController implements InitializableInterface
             $newStatus = 'trash';
         }
 
+        $taxonomy = isset($_REQUEST['future_action_bulk_taxonomy'])
+            ? $this->sanitization->sanitizeTextField($_REQUEST['future_action_bulk_taxonomy']) : '';
+
+        if (! $this->currentUserModel->userCanScheduleAction((int) $postModel->getPostId(), $expireType, $newStatus, $taxonomy)) {
+            $this->logger->debug(
+                sprintf(
+                    '%1$d  -> ACTION NOT SCHEDULED: user cannot schedule %2$s (status %3$s)',
+                    (int) $postModel->getPostId(),
+                    $expireType,
+                    $newStatus
+                )
+            );
+
+            return;
+        }
+
         $opts = [
             'expireType' => $expireType,
             'newStatus' => $newStatus,
-            'category' => isset($_REQUEST['future_action_bulk_terms']) ?
-                $this->sanitization->sanitizeTextField($_REQUEST['future_action_bulk_terms']) : '',
-            'categoryTaxonomy' => isset($_REQUEST['future_action_bulk_taxonomy']) ?
-                $this->sanitization->sanitizeTextField($_REQUEST['future_action_bulk_taxonomy']) : '',
+            'category' => isset($_REQUEST['future_action_bulk_terms'])
+                ? $this->sanitization->sanitizeTextField($_REQUEST['future_action_bulk_terms']) : '',
+            'categoryTaxonomy' => $taxonomy,
         ];
 
         if (! empty($opts['category'])) {
@@ -375,7 +397,8 @@ class BulkEditController implements InitializableInterface
 
             $opts['category'] = $taxonomiesModel->normalizeTermsCreatingIfNecessary(
                 $opts['categoryTaxonomy'],
-                explode(',', $opts['category'])
+                explode(',', $opts['category']),
+                $postModel->getPostType()
             );
         }
 
@@ -383,8 +406,8 @@ class BulkEditController implements InitializableInterface
             $opts['category'] = [];
         }
 
-        $date = isset($_REQUEST['future_action_bulk_date']) ?
-            sanitize_text_field($_REQUEST['future_action_bulk_date']) : '0';
+        $date = isset($_REQUEST['future_action_bulk_date'])
+            ? sanitize_text_field($_REQUEST['future_action_bulk_date']) : '0';
         $date = strtotime($date);
 
         $this->hooks->doAction(
@@ -433,7 +456,7 @@ class BulkEditController implements InitializableInterface
         }
 
         // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.NonceVerification.Recommended
-        $postIds = array_map('intval', (array)$_REQUEST['post']);
+        $postIds = array_map('intval', (array) $_REQUEST['post']);
 
         if (empty($postIds)) {
             return;
@@ -442,7 +465,7 @@ class BulkEditController implements InitializableInterface
         $postModelFactory = $this->expirablePostModelFactory;
 
         foreach ($postIds as $postId) {
-            $postId = (int)$postId;
+            $postId = (int) $postId;
 
             if (! $this->currentUserModel->userCanEditPost($postId)) {
                 continue;

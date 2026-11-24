@@ -3,7 +3,7 @@
 use PublishPress\Future\Core\Plugin;
 use PublishPress\WordPressReviews\ReviewsController;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+defined('ABSPATH') || exit;
 
 /**
  * WordPress reviews functions.

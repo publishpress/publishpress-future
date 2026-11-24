@@ -5,7 +5,7 @@ namespace PublishPress\Future\Modules\Expirator\ExpirationActions;
 use PublishPress\Future\Core\DI\Container;
 use PublishPress\Future\Core\DI\ServicesAbstract;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 trait TaxonomyRelatedTrait
 {

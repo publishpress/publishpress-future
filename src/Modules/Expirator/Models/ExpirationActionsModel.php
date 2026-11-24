@@ -22,7 +22,7 @@ use PublishPress\Future\Modules\Expirator\ExpirationActions\UnstickPost;
 use PublishPress\Future\Modules\Expirator\ExpirationActionsAbstract;
 use PublishPress\Future\Modules\Expirator\HooksAbstract;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 class ExpirationActionsModel
 {
@@ -213,6 +213,6 @@ class ExpirationActionsModel
     {
         $actions = $this->getActions($postType);
 
-        return isset($actions[$actionName]) ? $actions[$actionName] : '';
+        return $actions[$actionName] ?? '';
     }
 }

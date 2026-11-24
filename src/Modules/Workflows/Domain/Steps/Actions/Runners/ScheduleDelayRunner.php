@@ -7,6 +7,8 @@ use PublishPress\Future\Modules\Workflows\Interfaces\AsyncStepProcessorInterface
 use PublishPress\Future\Modules\Workflows\Interfaces\AsyncStepRunnerInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\ExecutionContextInterface;
 
+\defined('ABSPATH') || exit;
+
 class ScheduleDelayRunner implements AsyncStepRunnerInterface
 {
     /**

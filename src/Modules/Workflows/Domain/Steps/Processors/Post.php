@@ -9,6 +9,8 @@ use PublishPress\Future\Framework\Logger\LoggerInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\ExecutionContextInterface;
 use PublishPress\Future\Modules\Workflows\Interfaces\StepPostRelatedProcessorInterface;
 
+\defined('ABSPATH') || exit;
+
 class Post implements StepProcessorInterface, StepPostRelatedProcessorInterface
 {
     public const LOG_PREFIX = '[WorkflowStepsProcessorsPost:%d]: ';

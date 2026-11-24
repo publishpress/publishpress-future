@@ -14,7 +14,7 @@ use PublishPress\Future\Modules\Workflows\HooksAbstract;
 use PublishPress\Future\Modules\Workflows\Interfaces\ScheduledActionsModelInterface;
 use PublishPress\Future\Modules\Workflows\Models\ScheduledActionsModel;
 
-defined('ABSPATH') or die('No direct script access allowed.');
+\defined('ABSPATH') || exit;
 
 class PastDueActions implements ModuleInterface
 {

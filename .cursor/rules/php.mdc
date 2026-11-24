@@ -1,12 +1,12 @@
 ---
-description: PHP 7.4 min + clean code
+description: PHP 8.2 min + clean code
 globs: *.php
 alwaysApply: false
 ---
 
 # PHP
 
-**Min PHP 7.4.**
+**Min PHP 8.2.** Language features and the enum limits: `.cursor/skills/code-style/SKILL.md`.
 
 ## Practices (Clean Code, design patterns)
 

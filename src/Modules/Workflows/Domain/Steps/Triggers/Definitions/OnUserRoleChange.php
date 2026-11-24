@@ -5,6 +5,8 @@ namespace PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definition
 use PublishPress\Future\Modules\Workflows\Interfaces\StepTypeInterface;
 use PublishPress\Future\Modules\Workflows\Models\StepTypesModel;
 
+\defined('ABSPATH') || exit;
+
 class OnUserRoleChange implements StepTypeInterface
 {
     public static function getNodeTypeName(): string
@@ -88,7 +90,7 @@ class OnUserRoleChange implements StepTypeInterface
                             ],
                         ],
                     ],
-                ]
+                ],
             ],
         ];
     }
@@ -101,8 +103,8 @@ class OnUserRoleChange implements StepTypeInterface
                     [
                         "rule" => "hasOutgoingConnection",
                     ],
-                ]
-            ]
+                ],
+            ],
         ];
     }
 
@@ -133,7 +135,7 @@ class OnUserRoleChange implements StepTypeInterface
                 'type' => 'array',
                 'label' => __("Removed roles", "post-expirator"),
                 'description' => __("The roles that were removed from the user.", "post-expirator"),
-            ]
+            ],
         ];
     }
 
@@ -150,8 +152,8 @@ class OnUserRoleChange implements StepTypeInterface
                 [
                     "id" => "output",
                     "label" => __("Next", "post-expirator"),
-                ]
-            ]
+                ],
+            ],
         ];
     }
 

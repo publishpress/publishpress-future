@@ -5,6 +5,8 @@ namespace PublishPress\Future\Modules\Workflows\Models;
 use Exception;
 use PublishPress\Future\Modules\Workflows\Interfaces\ScheduledActionModelInterface;
 
+\defined('ABSPATH') || exit;
+
 class ScheduledActionModel implements ScheduledActionModelInterface
 {
     public const ARGS_MAX_LENGTH = 191;

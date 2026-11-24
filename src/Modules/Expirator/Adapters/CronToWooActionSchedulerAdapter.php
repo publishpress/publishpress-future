@@ -21,7 +21,7 @@ use function as_schedule_single_action;
 use function as_unschedule_action;
 use function as_unschedule_all_actions;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 class CronToWooActionSchedulerAdapter implements CronInterface
 {
@@ -61,12 +61,12 @@ class CronToWooActionSchedulerAdapter implements CronInterface
         if (! ActionScheduler::is_initialized(__FUNCTION__)) {
             return 0;
         }
-        $params = array(
+        $params = [
             'hook'    => $action,
             'orderby' => 'date',
             'order'   => 'ASC',
             'group'   => self::SCHEDULED_ACTION_GROUP,
-        );
+        ];
         if (is_array($args)) {
             $params['args'] = $args;
         }

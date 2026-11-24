@@ -9,7 +9,7 @@ use PublishPress\Future\Core\DI\ServicesAbstract;
 use PublishPress\Future\Modules\Expirator\ExpirationActionsAbstract;
 use PublishPress\Future\Modules\Expirator\Interfaces\ExpirationActionInterface;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+defined('ABSPATH') || exit;
 
 $container = Container::getInstance();
 $factory = $container->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY);

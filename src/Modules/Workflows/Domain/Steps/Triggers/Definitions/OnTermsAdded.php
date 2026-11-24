@@ -5,6 +5,8 @@ namespace PublishPress\Future\Modules\Workflows\Domain\Steps\Triggers\Definition
 use PublishPress\Future\Modules\Workflows\Interfaces\StepTypeInterface;
 use PublishPress\Future\Modules\Workflows\Models\StepTypesModel;
 
+\defined('ABSPATH') || exit;
+
 class OnTermsAdded implements StepTypeInterface
 {
     public static function getNodeTypeName(): string
@@ -82,7 +84,7 @@ class OnTermsAdded implements StepTypeInterface
                             "postStatus" => [],
                         ],
                     ],
-                ]
+                ],
             ],
             [
                 "label" => __("Terms Filter", "post-expirator"),
@@ -107,8 +109,8 @@ class OnTermsAdded implements StepTypeInterface
                             "terms" => [],
                         ],
                     ],
-                ]
-            ]
+                ],
+            ],
         ];
     }
 
@@ -121,7 +123,7 @@ class OnTermsAdded implements StepTypeInterface
                         "rule" => "required",
                         "field" => "termsQuery.terms",
                         "label" => __("Terms", "post-expirator"),
-                    ]
+                    ],
                 ],
             ],
             "connections" => [
@@ -129,7 +131,7 @@ class OnTermsAdded implements StepTypeInterface
                     [
                         "rule" => "hasOutgoingConnection",
                     ],
-                ]
+                ],
             ],
         ];
     }
@@ -176,8 +178,8 @@ class OnTermsAdded implements StepTypeInterface
                 [
                     "id" => "output",
                     "label" => __("Next", "post-expirator"),
-                ]
-            ]
+                ],
+            ],
         ];
     }
 

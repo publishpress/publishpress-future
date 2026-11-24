@@ -15,7 +15,7 @@ use PublishPress\Future\Modules\Expirator\ExpirationActionsAbstract;
 use PublishPress\Future\Modules\Expirator\HooksAbstract;
 use PublishPress\Future\Modules\Expirator\Models\PostTypeModel;
 
-defined('ABSPATH') or die('Direct access not allowed.');
+\defined('ABSPATH') || exit;
 
 // phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps
 class ScheduledActionsTable extends \ActionScheduler_ListTable
@@ -60,9 +60,9 @@ class ScheduledActionsTable extends \ActionScheduler_ListTable
         $statusPosition = array_search('status', array_keys($this->columns));
         if ($statusPosition !== false) {
             $columns = $this->columns;
-            $this->columns = array_slice($columns, 0, $statusPosition + 1, true) +
-                            ['run_now' => __('Run now', 'post-expirator')] +
-                            array_slice($columns, $statusPosition + 1, null, true);
+            $this->columns = array_slice($columns, 0, $statusPosition + 1, true)
+                            + ['run_now' => __('Run now', 'post-expirator')]
+                            + array_slice($columns, $statusPosition + 1, null, true);
         } else {
             $this->columns['run_now'] = __('Run now', 'post-expirator');
         }
@@ -70,62 +70,62 @@ class ScheduledActionsTable extends \ActionScheduler_ListTable
 
         $this->hooks->addAction('admin_enqueue_scripts', [$this, 'enqueueScripts']);
 
-        $this->row_actions = array(
-            'hook' => array(
-                'cancel' => array(
+        $this->row_actions = [
+            'hook' => [
+                'cancel' => [
                     'name' => __('Cancel', 'post-expirator'),
                     'desc' => __(
                         'Cancel the action. This will prevent the action from running in the future',
                         'post-expirator'
                     ),
                     'class' => 'cancel trash',
-                ),
-            ),
-        );
+                ],
+            ],
+        ];
 
-        $this->bulk_actions = array(
+        $this->bulk_actions = [
             'delete' => __('Delete', 'post-expirator'),
             'run' => __('Run', 'post-expirator'),
             'cancel' => __('Cancel', 'post-expirator'),
-        );
+        ];
 
-        self::$time_periods = array(
-            array(
+        self::$time_periods = [
+            [
                 'seconds' => YEAR_IN_SECONDS,
                 /* translators: %s: amount of time */
                 'names'   => _n_noop('%s year', '%s years', 'post-expirator'),
-            ),
-            array(
+            ],
+            [
                 'seconds' => MONTH_IN_SECONDS,
                 /* translators: %s: amount of time */
                 'names'   => _n_noop('%s month', '%s months', 'post-expirator'),
-            ),
-            array(
+            ],
+            [
                 'seconds' => WEEK_IN_SECONDS,
                 /* translators: %s: amount of time */
                 'names'   => _n_noop('%s week', '%s weeks', 'post-expirator'),
-            ),
-            array(
+            ],
+            [
                 'seconds' => DAY_IN_SECONDS,
                 /* translators: %s: amount of time */
                 'names'   => _n_noop('%s day', '%s days', 'post-expirator'),
-            ),
-            array(
+            ],
+            [
                 'seconds' => HOUR_IN_SECONDS,
                 /* translators: %s: amount of time */
                 'names'   => _n_noop('%s hour', '%s hours', 'post-expirator'),
-            ),
-            array(
+            ],
+            [
                 'seconds' => MINUTE_IN_SECONDS,
                 /* translators: %s: amount of time */
                 'names'   => _n_noop('%s minute', '%s minutes', 'post-expirator'),
-            ),
-            array(
+            ],
+            [
                 'seconds' => 1,
                 /* translators: %s: amount of time */
                 'names'   => _n_noop('%s second', '%s seconds', 'post-expirator'),
-            ),
-        );
+            ],
+        ];
 
         $this->sort_by = [
             'action_id',
@@ -154,6 +154,7 @@ class ScheduledActionsTable extends \ActionScheduler_ListTable
             'publishpressFutureActionsConfig',
             [
                 'dialogTitle' => esc_js(__('Action Logs', 'post-expirator')),
+                'closeLabel' => __('Close', 'post-expirator'),
             ]
         );
 
@@ -201,7 +202,7 @@ class ScheduledActionsTable extends \ActionScheduler_ListTable
 
         $per_page = $this->get_items_per_page($this->get_per_page_option_name(), $this->items_per_page);
 
-        $query = array(
+        $query = [
             'per_page' => $per_page,
             'offset' => $this->get_items_offset(),
             'status' => $this->get_request_status(),
@@ -209,7 +210,7 @@ class ScheduledActionsTable extends \ActionScheduler_ListTable
             'order' => $this->get_request_order(),
             'search' => $this->get_request_search_query(),
             'group' => CronToWooActionSchedulerAdapter::SCHEDULED_ACTION_GROUP,
-        );
+        ];
 
         /**
          * Change query arguments to query for past-due actions.
@@ -221,7 +222,7 @@ class ScheduledActionsTable extends \ActionScheduler_ListTable
             $query['date'] = as_get_datetime_object();
         }
 
-        $this->items = array();
+        $this->items = [];
 
         $total_items = $this->store->query_actions($query, 'count');
 
@@ -238,7 +239,7 @@ class ScheduledActionsTable extends \ActionScheduler_ListTable
                 continue;
             }
 
-            $this->items[$action_id] = array(
+            $this->items[$action_id] = [
                 'ID' => $action_id,
                 'hook' => $action->get_hook(),
                 'status_name' => $this->store->get_status($action_id),
@@ -249,21 +250,21 @@ class ScheduledActionsTable extends \ActionScheduler_ListTable
                 'claim_id' => $this->store->get_claim_id($action_id),
                 'recurrence' => $this->get_recurrence($action),
                 'schedule' => $action->get_schedule(),
-            );
+            ];
         }
 
-        $this->set_pagination_args(array(
+        $this->set_pagination_args([
             'total_items' => $total_items,
             'per_page' => $per_page,
             'total_pages' => ceil($total_items / $per_page),
-        ));
+        ]);
     }
 
     protected function extra_action_counts()
     {
-        $extra_actions = array();
+        $extra_actions = [];
 
-        $pastdue_action_counts = (int)$this->store->query_actions([
+        $pastdue_action_counts = (int) $this->store->query_actions([
             'status' => \ActionScheduler_Store::STATUS_PENDING,
             'date' => as_get_datetime_object(),
             'group' => CronToWooActionSchedulerAdapter::SCHEDULED_ACTION_GROUP,
@@ -288,10 +289,10 @@ class ScheduledActionsTable extends \ActionScheduler_ListTable
 
         // Update the status count
         foreach ($this->status_counts as $status => $count) {
-            $query = array(
+            $query = [
                 'status' => $status,
                 'group' => CronToWooActionSchedulerAdapter::SCHEDULED_ACTION_GROUP,
-            );
+            ];
             $this->status_counts[$status] = $this->store->query_actions($query, 'count');
         }
 
@@ -302,12 +303,12 @@ class ScheduledActionsTable extends \ActionScheduler_ListTable
     {
         $this->update_status_counts();
 
-        $status_list_items = array();
+        $status_list_items = [];
         $request_status = $this->get_request_status();
 
         // Helper to set 'all' filter when not set on status counts passed in.
         if (! isset($this->status_counts['all'])) {
-            $this->status_counts = array('all' => array_sum($this->status_counts)) + $this->status_counts;
+            $this->status_counts = ['all' => array_sum($this->status_counts)] + $this->status_counts;
         }
 
         $status_labels = [
@@ -335,12 +336,12 @@ class ScheduledActionsTable extends \ActionScheduler_ListTable
                 'status',
                 $status_name
             );
-            $status_filter_url = remove_query_arg(array('paged', 's'), $status_filter_url);
+            $status_filter_url = remove_query_arg(['paged', 's'], $status_filter_url);
             $status_list_items[] = sprintf(
                 $status_list_item,
                 esc_attr($status_name),
                 esc_url($status_filter_url),
-                esc_html(isset($status_labels[$status_name]) ? $status_labels[$status_name] : ucfirst($status_name)),
+                esc_html($status_labels[$status_name] ?? ucfirst($status_name)),
                 absint($count)
             );
         }
@@ -365,13 +366,13 @@ class ScheduledActionsTable extends \ActionScheduler_ListTable
     public function column_status(array $row)
     {
         $icons = [
-            \ActionScheduler_Store::STATUS_COMPLETE =>
-                'dashicons dashicons-yes-alt action-scheduler-status-icon-complete',
+            \ActionScheduler_Store::STATUS_COMPLETE
+                => 'dashicons dashicons-yes-alt action-scheduler-status-icon-complete',
             \ActionScheduler_Store::STATUS_PENDING => 'dashicons dashicons-clock action-scheduler-status-icon-pending',
             \ActionScheduler_Store::STATUS_RUNNING => 'dashicons dashicons-update action-scheduler-status-icon-running',
             \ActionScheduler_Store::STATUS_FAILED => 'dashicons dashicons-warning action-scheduler-status-icon-failed',
-            \ActionScheduler_Store::STATUS_CANCELED =>
-                'dashicons dashicons-marker action-scheduler-status-icon-canceled',
+            \ActionScheduler_Store::STATUS_CANCELED
+                => 'dashicons dashicons-marker action-scheduler-status-icon-canceled',
         ];
 
         $iconClass = 'dashicons dashicons-editor-help';
@@ -388,7 +389,7 @@ class ScheduledActionsTable extends \ActionScheduler_ListTable
             $status = __('Completed', 'post-expirator');
         }
 
-        return '<span class="' . esc_attr($iconClass) . '"></span> ' . esc_html($status);
+        return '<span class="' . esc_attr($iconClass) . '" aria-hidden="true"></span> ' . esc_html($status);
     }
 
     private function rowIsAWorkflow(array $row)
@@ -474,11 +475,11 @@ class ScheduledActionsTable extends \ActionScheduler_ListTable
 
         $row_id = $row[$this->ID];
         $action_link = add_query_arg(
-            array(
+            [
                 'row_action' => 'run',
                 'row_id'     => $row_id,
                 'nonce'      => wp_create_nonce('run::' . $row_id),
-            )
+            ]
         );
 
         return sprintf(
@@ -542,7 +543,7 @@ class ScheduledActionsTable extends \ActionScheduler_ListTable
         $taxonomyActions = [
             ExpirationActionsAbstract::POST_CATEGORY_SET,
             ExpirationActionsAbstract::POST_CATEGORY_REMOVE,
-            ExpirationActionsAbstract::POST_CATEGORY_ADD
+            ExpirationActionsAbstract::POST_CATEGORY_ADD,
         ];
 
         $container = Container::getInstance();
@@ -662,7 +663,7 @@ class ScheduledActionsTable extends \ActionScheduler_ListTable
 
         $html = '';
 
-        if (! in_array((string)$userLogFormat, ['list', 'popup'])) {
+        if (! in_array((string) $userLogFormat, ['list', 'popup'])) {
             $userLogFormat = 'popup';
         }
 
@@ -677,7 +678,7 @@ class ScheduledActionsTable extends \ActionScheduler_ListTable
         }
 
         if ($userLogFormat === 'popup') {
-            $html = '<a href="javascript:void(0);" class="publishpres-future-view-log" data-id="' . $row['ID'] . '">' . esc_html__(
+            $html = '<a href="javascript:void(0);" role="button" class="publishpres-future-view-log" data-id="' . esc_attr($row['ID']) . '">' . esc_html__(
                 'View log',
                 'post-expirator'
             ) . '</a>';
@@ -688,25 +689,25 @@ class ScheduledActionsTable extends \ActionScheduler_ListTable
             $html .= '<tbody>';
 
             $html .= '<tr>';
-            $html .= '<td>' . esc_html__('Action: ', 'post-expirator') . '</td><td>' . $this->column_hook(
+            $html .= '<th scope="row">' . esc_html__('Action: ', 'post-expirator') . '</th><td>' . $this->column_hook(
                 $row
             ) . '</td>';
             $html .= '</tr>';
 
             $html .= '<tr>';
-            $html .= '<td>' . esc_html__('Status: ', 'post-expirator') . '</td><td>' . $this->column_status(
+            $html .= '<th scope="row">' . esc_html__('Status: ', 'post-expirator') . '</th><td>' . $this->column_status(
                 $row
             ) . '</td>';
             $html .= '</tr>';
 
             $html .= '<tr>';
-            $html .= '<td>' . esc_html__('Arguments: ', 'post-expirator') . '</td><td>' . $this->column_args(
+            $html .= '<th scope="row">' . esc_html__('Arguments: ', 'post-expirator') . '</th><td>' . $this->column_args(
                 $row
             ) . '</td>';
             $html .= '</tr>';
 
             $html .= '<tr>';
-            $html .= '<td>' . esc_html__('Scheduled date: ', 'post-expirator') . '</td><td>' . $this->column_schedule(
+            $html .= '<th scope="row">' . esc_html__('Scheduled date: ', 'post-expirator') . '</th><td>' . $this->column_schedule(
                 $row
             ) . '</td>';
             $html .= '</tr>';
@@ -720,8 +721,8 @@ class ScheduledActionsTable extends \ActionScheduler_ListTable
             $html .= '<table class="wp-list-table widefat striped">';
             $html .= '<thead>';
             $html .= '<tr>';
-            $html .= '<th>' . esc_html__('Date', 'post-expirator') . '</th>';
-            $html .= '<th>' . esc_html__('Message', 'post-expirator') . '</th>';
+            $html .= '<th scope="col">' . esc_html__('Date', 'post-expirator') . '</th>';
+            $html .= '<th scope="col">' . esc_html__('Message', 'post-expirator') . '</th>';
             $html .= '</tr>';
             $html .= '</thead>';
             $html .= '<tbody>';

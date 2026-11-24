@@ -8,6 +8,8 @@ use PublishPress\Future\Framework\Database\Interfaces\DBTableSchemaInterface;
 use PublishPress\Future\Modules\Expirator\Adapters\CronToWooActionSchedulerAdapter;
 use PublishPress\Future\Modules\Workflows\Interfaces\ScheduledActionsModelInterface;
 
+\defined('ABSPATH') || exit;
+
 class ScheduledActionsModel implements ScheduledActionsModelInterface
 {
     public function deleteOrphanWorkflowArgs(): void
@@ -221,7 +223,7 @@ class ScheduledActionsModel implements ScheduledActionsModelInterface
             wp_cache_set($cacheKey, $groupId);
         }
 
-        return (int)$groupId;
+        return (int) $groupId;
     }
 
     public function getPastDuePendingActions(): array
