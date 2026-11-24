@@ -1,14 +1,14 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
-[4.12.0] - 23 Nov, 2026
+[4.12.0] - 24 Nov, 2026
 
-- Added: MCP, connect AI services through PublishPress Hub to manage Future actions, workflow graphs, settings and scheduled actions with native WordPress permissions.
-- Security: Require `publish_publishpress_workflows` before a workflow is enabled or an enabled workflow is changed, and `unpublish_publishpress_workflows` before a workflow is disabled or deleted, on the workflow REST API and the workflows list. Stock administrator accounts already have both capabilities. See (GHSA-9cgh-x983-rc5r).
-- Security: Require `manage_options` before the Future settings form and the advanced settings form save.
-- Security: `GET /publishpress-future/v1/terms/{taxonomy}` returns terms only when the taxonomy belongs to a supported post type.
-- Security: Require `delete_post` before a Future Action changes a post to trash. Post ID 0 uses the post type `delete_posts` capability. Stock roles that can edit a post already have this capability.
-- Security: Require `assign_terms` and a taxonomy registered for the post type before a Future Action sets, adds, or removes terms. `GET /publishpress-future/v1/terms/{taxonomy}` returns no terms when the user lacks `assign_terms`. Stock roles that can edit a post already have this capability.
-- Security: Pin uuid to 11.1.1 so older transitive copies are not installed (GHSA-w5hq-g745-h8pq).
+- Added: Connect AI services through PublishPress Hub to manage Future actions, workflow graphs, settings and scheduled actions with native WordPress permissions.
+- Security: Enforce workflow publish and unpublish capabilities before enabling, changing, disabling, or deleting workflows. See [GHSA-9cgh-x983-rc5r](https://github.com/publishpress/publishpress-future/security/advisories/GHSA-9cgh-x983-rc5r).
+- Security: Restrict Future settings updates to users with the required admin capability.
+- Security: Limit Future term listings to taxonomies supported for Future actions.
+- Security: Require delete capability before a Future Action moves a post to trash.
+- Security: Require term assignment capability and a valid post-type taxonomy before a Future Action changes terms.
+- Security: Update the uuid dependency to address GHSA-w5hq-g745-h8pq.
 - Fixed: The workflow deleted hook receives the workflow ID after the model resets.
 - Fixed: A workflow step can be added from the inserter with a click or Enter.
 - Fixed: A nested workflow field, such as `recipient.expression`, is marked invalid when its validation key uses a dot path.
