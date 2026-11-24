@@ -1,27 +1,24 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
-[Unreleased]
+[4.12.0] - 24 Nov, 2026
 
-
-[4.12.0] - 17 Nov, 2026
-
-- Security: Require `publish_publishpress_workflows` before a workflow is enabled or an enabled workflow is changed, and `unpublish_publishpress_workflows` before a workflow is disabled or deleted, on the workflow REST API and the workflows list. Stock administrator accounts already have both capabilities. See [GHSA-9cgh-x983-rc5r](https://github.com/publishpress/publishpress-future/security/advisories/GHSA-9cgh-x983-rc5r).
-- Security: Require `manage_options` before the Future settings form and the advanced settings form save.
-- Security: `GET /publishpress-future/v1/terms/{taxonomy}` returns terms only when the taxonomy belongs to a supported post type.
-- Security: Require `delete_post` before a Future Action changes a post to trash. Post ID 0 uses the post type `delete_posts` capability. Stock roles that can edit a post already have this capability.
-- Security: Require `assign_terms` and a taxonomy registered for the post type before a Future Action sets, adds, or removes terms. `GET /publishpress-future/v1/terms/{taxonomy}` returns no terms when the user lacks `assign_terms`. Stock roles that can edit a post already have this capability.
+- Added: Connect AI services through PublishPress Hub to manage Future actions, workflow graphs, settings and scheduled actions with native WordPress permissions.
+- Security: Enforce workflow publish and unpublish capabilities before enabling, changing, disabling, or deleting workflows. See [GHSA-9cgh-x983-rc5r](https://github.com/publishpress/publishpress-future/security/advisories/GHSA-9cgh-x983-rc5r).
+- Security: Restrict Future settings updates to users with the required admin capability.
+- Security: Limit Future term listings to taxonomies supported for Future actions.
+- Security: Require delete capability before a Future Action moves a post to trash.
+- Security: Require term assignment capability and a valid post-type taxonomy before a Future Action changes terms.
+- Security: Update the uuid dependency to address GHSA-w5hq-g745-h8pq.
 - Fixed: The workflow deleted hook receives the workflow ID after the model resets.
-- Changed: Admin screens and the workflow editor improve keyboard use, labels, contrast, and screen-reader announcements for WCAG 2.2 AA.
 - Fixed: A workflow step can be added from the inserter with a click or Enter.
 - Fixed: A nested workflow field, such as `recipient.expression`, is marked invalid when its validation key uses a dot path.
-- Changed: Debug log filters apply when the user presses Apply.
 - Fixed: Backup export and import notices are shown.
-- Added: Connect AI services through PublishPress Hub to manage Future actions, workflow graphs, settings and scheduled actions with native WordPress permissions.
-- Security: Pin uuid to 11.1.1 so older transitive copies are not installed (GHSA-w5hq-g745-h8pq).
-- Changed: Raise the minimum PHP version from 7.4 to 8.2.
 - Fixed: Future abilities are registered when another plugin starts the WordPress Abilities API before Future initializes on `init`.
 - Fixed: MCP allowed-role settings validate against the live WordPress role registry, so roles registered on `init` are accepted (Issue #1794).
 - Fixed: Future Action column no longer fatals when the posts or pages list has no current post (Issue #1705).
+- Changed: Admin screens and the workflow editor improve keyboard use, labels, contrast, and screen-reader announcements for WCAG 2.2 AA.
+- Changed: Debug log filters apply when the user presses Apply.
+- Changed: Raise the minimum PHP version from 7.4 to 8.2.
 
 [4.11.2]
 
