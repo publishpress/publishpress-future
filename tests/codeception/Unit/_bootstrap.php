@@ -70,6 +70,36 @@ if (! function_exists('sanitize_key')) {
     }
 }
 
+if (! function_exists('__')) {
+    /**
+     * @param string $text
+     * @param string $domain
+     * @return string
+     */
+    function __($text, $domain = 'default')
+    {
+        unset($domain);
+
+        return (string) $text;
+    }
+}
+
+if (! function_exists('add_filter')) {
+    /**
+     * @param string   $hook_name
+     * @param callable $callback
+     * @param int      $priority
+     * @param int      $accepted_args
+     * @return true
+     */
+    function add_filter($hook_name, $callback, $priority = 10, $accepted_args = 1)
+    {
+        unset($hook_name, $callback, $priority, $accepted_args);
+
+        return true;
+    }
+}
+
 use PublishPress\Future\Core\Autoloader;
 
 if (! defined('PUBLISHPRESS_FUTURE_LIB_VENDOR_PATH')) {

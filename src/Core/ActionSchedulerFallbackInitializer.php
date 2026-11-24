@@ -42,6 +42,53 @@ class ActionSchedulerFallbackInitializer
     private const MAX_BOOTSTRAP_DEPTH = 5;
 
     /**
+     * Cron schedule slug used by Action Scheduler's queue runner.
+     *
+     * @since 4.12.0
+     */
+    private const EVERY_MINUTE_SCHEDULE = 'every_minute';
+
+    /**
+     * Registers the every_minute cron schedule filter as early as possible.
+     *
+     * Action Scheduler only adds this schedule inside QueueRunner::init() on
+     * WP init priority 1. WP Cron can reschedule action_scheduler_run_queue
+     * before that filter is attached, which yields invalid_schedule.
+     *
+     * @return void
+     * @since 4.12.0
+     */
+    public static function registerCronSchedules(): void
+    {
+        // phpcs:ignore WordPress.WP.CronInterval.CronSchedulesInterval -- Matches Action Scheduler QueueRunner every_minute.
+        \add_filter('cron_schedules', [self::class, 'addEveryMinuteSchedule'], 0);
+    }
+
+    /**
+     * Adds the every_minute schedule when it is not already registered.
+     *
+     * Matches ActionScheduler_QueueRunner::add_wp_cron_schedule() so both
+     * filters stay idempotent with each other.
+     *
+     * @param array<string, array<string, int|string>> $schedules Existing cron schedules.
+     * @return array<string, array<string, int|string>>
+     * @since 4.12.0
+     */
+    public static function addEveryMinuteSchedule(array $schedules): array
+    {
+        if (isset($schedules[self::EVERY_MINUTE_SCHEDULE])) {
+            return $schedules;
+        }
+
+        $schedules[self::EVERY_MINUTE_SCHEDULE] = [
+            'interval' => 60,
+            'display' => \__('Every minute', 'action-scheduler'),
+        ];
+
+        return $schedules;
+    }
+
+    /**
      * Ensures the Action Scheduler procedural API is loaded.
      *
      * No-op when as_get_scheduled_actions() already exists. A second

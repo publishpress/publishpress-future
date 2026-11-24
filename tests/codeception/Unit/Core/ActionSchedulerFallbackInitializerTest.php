@@ -52,4 +52,28 @@ class ActionSchedulerFallbackInitializerTest extends Unit
 
         $this->assertTrue(function_exists('as_get_scheduled_actions'));
     }
+
+    public function testAddEveryMinuteScheduleRegistersIntervalWhenMissing()
+    {
+        $schedules = ActionSchedulerFallbackInitializer::addEveryMinuteSchedule([]);
+
+        $this->assertArrayHasKey('every_minute', $schedules);
+        $this->assertSame(60, $schedules['every_minute']['interval']);
+        $this->assertSame('Every minute', $schedules['every_minute']['display']);
+    }
+
+    public function testAddEveryMinuteScheduleLeavesExistingScheduleUnchanged()
+    {
+        $existing = [
+            'every_minute' => [
+                'interval' => 60,
+                'display' => 'Already registered',
+            ],
+        ];
+
+        $schedules = ActionSchedulerFallbackInitializer::addEveryMinuteSchedule($existing);
+
+        $this->assertSame($existing, $schedules);
+    }
 }
+

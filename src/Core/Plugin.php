@@ -343,7 +343,7 @@ class Plugin implements InitializableInterface
     }
 
     /**
-     * Runs after plugin activation (see install.php) once the container is available.
+     * Runs after plugin activation (see activation hook / init.php) once the container is available.
      */
     private function runPendingDatabaseSchemaRepair(Container $container): void
     {
