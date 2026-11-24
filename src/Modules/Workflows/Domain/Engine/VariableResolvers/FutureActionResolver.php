@@ -156,7 +156,7 @@ class FutureActionResolver implements VariableResolverInterface
 
     private function getPropertyAction(): string
     {
-        return $this->postModel->getExpirationAction();
+        return (string) $this->postModel->getExpirationType();
     }
 
     private function getPropertyDate(): int
@@ -171,7 +171,7 @@ class FutureActionResolver implements VariableResolverInterface
 
     private function getPropertyTerms(): array
     {
-        $action = (string) $this->postModel->getExpirationAction();
+        $action = (string) $this->postModel->getExpirationType();
 
         $categoryRelated = [
             ExpirationActionsAbstract::POST_CATEGORY_SET,
@@ -179,7 +179,7 @@ class FutureActionResolver implements VariableResolverInterface
             ExpirationActionsAbstract::POST_CATEGORY_REMOVE,
         ];
 
-        if (in_array($action, $categoryRelated)) {
+        if (in_array($action, $categoryRelated, true)) {
             $terms = $this->postModel->getExpirationCategoryIDs();
 
             $labels = array_map(function ($term) {
@@ -200,7 +200,7 @@ class FutureActionResolver implements VariableResolverInterface
 
     private function getPropertyNewStatus(): string
     {
-        $action = (string) $this->postModel->getExpirationAction();
+        $action = (string) $this->postModel->getExpirationType();
 
         $statusRelated = [
             ExpirationActionsAbstract::CHANGE_POST_STATUS,
@@ -209,7 +209,7 @@ class FutureActionResolver implements VariableResolverInterface
             ExpirationActionsAbstract::POST_STATUS_TO_TRASH,
         ];
 
-        if (in_array($action, $statusRelated)) {
+        if (in_array($action, $statusRelated, true)) {
             return $this->postModel->getExpirationNewStatus();
         }
 

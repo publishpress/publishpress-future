@@ -25,8 +25,34 @@ class FutureActionResolverTest extends \lucatume\WPBrowser\TestCase\WPTestCase
     {
         parent::setUp();
 
+        wp_set_current_user(0);
+
         // Mock ExpirablePostModel using anonymous class
         $this->postModelFactory = Container::getInstance()->get(ServicesAbstract::EXPIRABLE_POST_MODEL_FACTORY);
+    }
+
+    public function tearDown(): void
+    {
+        wp_set_current_user(0);
+
+        parent::tearDown();
+    }
+
+    /**
+     * Taxonomy schedules require assign_terms. Use an administrator.
+     *
+     * @since 4.12.0
+     */
+    private function setCurrentAdministrator(): int
+    {
+        $userId = (int) $this->factory()->user->create(
+            [
+                'role' => 'administrator',
+            ]
+        );
+        wp_set_current_user($userId);
+
+        return $userId;
     }
 
     public function testGetTypeReturnsCorrectType(): void
@@ -112,6 +138,8 @@ class FutureActionResolverTest extends \lucatume\WPBrowser\TestCase\WPTestCase
 
     public function testGetTermsReturnsCorrectStructure(): void
     {
+        $this->setCurrentAdministrator();
+
         $postId = $this->factory()->post->create();
         $post = get_post($postId);
 
@@ -133,6 +161,7 @@ class FutureActionResolverTest extends \lucatume\WPBrowser\TestCase\WPTestCase
         $scheduler->schedule($postId, 1742239607, [
             'expireType' => ExpirationActionsAbstract::POST_CATEGORY_ADD,
             'category' => [$term1, $term2, $term3],
+            'categoryTaxonomy' => 'category',
         ]);
 
         $resolver = new FutureActionResolver($post, $this->postModelFactory);
