@@ -264,5 +264,4 @@ abstract class ServicesAbstract
     public const MCP_WORKFLOW_CHOICES = 'future.free/mcp/workflow-choices';
 
     public const MCP_FEATURES = 'future.free/mcp/features';
-
 }

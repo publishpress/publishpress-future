@@ -137,9 +137,6 @@ use PublishPress\Future\Modules\Workflows\Migrations\V040500OnScheduledStepsSche
 use PublishPress\Future\Modules\Debug\Migrations\V04905DebugLogRequestId;
 use PublishPress\Future\Modules\Debug\Migrations\V04906DebugLogTimestampMilliseconds;
 use PublishPress\Future\Modules\Workflows\Interfaces\ExecutionContextInterface;
-
-defined("ABSPATH") || exit;
-
 use PublishPress\Future\Framework\WordPress\Facade\McpFacade;
 use PublishPress\Future\Modules\Mcp\Module as ModuleMcp;
 use PublishPress\Future\Modules\Mcp\Registry as McpRegistry;
@@ -151,6 +148,8 @@ use PublishPress\Future\Modules\Mcp\Services\WorkflowsService as McpWorkflows;
 use PublishPress\Future\Modules\Mcp\Services\PostWorkflowsService as McpPostWorkflows;
 use PublishPress\Future\Modules\Mcp\Services\RuntimeService as McpRuntime;
 use PublishPress\Future\Modules\Mcp\Services\ConfigurationService as McpConfiguration;
+
+defined("ABSPATH") || exit;
 
 return [
     ServicesAbstract::PLUGIN_VERSION => PUBLISHPRESS_FUTURE_VERSION,
