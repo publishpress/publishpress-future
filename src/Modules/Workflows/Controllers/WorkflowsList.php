@@ -17,6 +17,8 @@ use PublishPress\Future\Framework\Logger\LoggerInterface;
 use PublishPress\Future\Modules\Settings\SettingsFacade;
 use Throwable;
 
+\defined('ABSPATH') || exit;
+
 class WorkflowsList implements InitializableInterface
 {
     /**
@@ -283,8 +285,8 @@ class WorkflowsList implements InitializableInterface
 
         foreach ($workflowFlow["nodes"] as $node) {
             if (
-                StepTypesModel::STEP_TYPE_TRIGGER ===
-                $node["data"]["elementaryType"]
+                StepTypesModel::STEP_TYPE_TRIGGER
+                === $node["data"]["elementaryType"]
             ) {
                 $nodeType = $this->stepTypesModel->getStepType($node["data"]["name"]);
 
@@ -328,6 +330,14 @@ class WorkflowsList implements InitializableInterface
         $workflowId = (int) $_POST['workflow_id'];
         $newStatus = sanitize_key($_POST['new_status']);
 
+        if ('publish' === $newStatus) {
+            if (!current_user_can(WorkflowCapabilities::PUBLISH_WORKFLOWS)) {
+                return;
+            }
+        } elseif (!current_user_can(WorkflowCapabilities::UNPUBLISH_WORKFLOWS)) {
+            return;
+        }
+
         try {
             $workflowModel = new WorkflowModel();
             $workflowModel->load($workflowId);
@@ -344,7 +354,7 @@ class WorkflowsList implements InitializableInterface
                     [
                         'post_type' => Module::POST_TYPE_WORKFLOW,
                         'pp_workflow_notice' => 'status_changed',
-                        'pp_workflow_notice_type' => 'success'
+                        'pp_workflow_notice_type' => 'success',
                     ],
                     admin_url('edit.php')
                 )
@@ -358,7 +368,7 @@ class WorkflowsList implements InitializableInterface
                     [
                         'post_type' => Module::POST_TYPE_WORKFLOW,
                         'pp_workflow_notice' => 'status_change_error',
-                        'pp_workflow_notice_type' => 'error'
+                        'pp_workflow_notice_type' => 'error',
                     ],
                     admin_url('edit.php')
                 )
@@ -430,7 +440,7 @@ class WorkflowsList implements InitializableInterface
                 $redirect_url = add_query_arg(
                     [
                         'pp_workflow_notice' => 'source_not_found',
-                        'pp_workflow_notice_type' => 'error'
+                        'pp_workflow_notice_type' => 'error',
                     ],
                     $redirect_url
                 );
@@ -446,7 +456,7 @@ class WorkflowsList implements InitializableInterface
                 $redirect_url = add_query_arg(
                     [
                         'pp_workflow_notice' => 'create_failed',
-                        'pp_workflow_notice_type' => 'error'
+                        'pp_workflow_notice_type' => 'error',
                     ],
                     $redirect_url
                 );
@@ -458,7 +468,7 @@ class WorkflowsList implements InitializableInterface
             $redirect_url = add_query_arg(
                 [
                     'pp_workflow_notice' => 'copy_success',
-                    'pp_workflow_notice_type' => 'success'
+                    'pp_workflow_notice_type' => 'success',
                 ],
                 $redirect_url
             );
@@ -472,7 +482,7 @@ class WorkflowsList implements InitializableInterface
             $redirect_url = add_query_arg(
                 [
                     'pp_workflow_notice' => 'generic_error',
-                    'pp_workflow_notice_type' => 'error'
+                    'pp_workflow_notice_type' => 'error',
                 ],
                 $redirect_url
             );
@@ -519,7 +529,7 @@ class WorkflowsList implements InitializableInterface
                 $redirect_url = add_query_arg(
                     [
                         'pp_workflow_notice' => 'scheduled_action_cancelling_empty',
-                        'pp_workflow_notice_type' => 'error'
+                        'pp_workflow_notice_type' => 'error',
                     ],
                     $redirect_url
                 );
@@ -536,7 +546,7 @@ class WorkflowsList implements InitializableInterface
             $redirect_url = add_query_arg(
                 [
                     'pp_workflow_notice' => 'scheduled_action_cancelling_success',
-                    'pp_workflow_notice_type' => 'success'
+                    'pp_workflow_notice_type' => 'success',
                 ],
                 $redirect_url
             );
@@ -550,7 +560,7 @@ class WorkflowsList implements InitializableInterface
             $redirect_url = add_query_arg(
                 [
                     'pp_workflow_notice' => 'scheduled_action_cancelling_error',
-                    'pp_workflow_notice_type' => 'error'
+                    'pp_workflow_notice_type' => 'error',
                 ],
                 $redirect_url
             );
@@ -567,14 +577,17 @@ class WorkflowsList implements InitializableInterface
         $newStatus = $isActive ? 'draft' : 'publish';
         $icon = $isActive ? 'yes' : 'no';
         $iconClass = $isActive ? 'active' : 'inactive';
+        $ariaLabel = $isActive
+            ? __('Workflow is active. Deactivate workflow', 'post-expirator')
+            : __('Workflow is inactive. Activate workflow', 'post-expirator');
         ?>
         <form method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" style="display: inline;">
             <?php wp_nonce_field('workflow_status_change', 'workflow_nonce'); ?>
             <input type="hidden" name="action" value="publishpress_future_change_workflow_status" />
             <input type="hidden" name="workflow_id" value="<?php echo esc_attr($postId); ?>" />
             <input type="hidden" name="new_status" value="<?php echo esc_attr($newStatus); ?>" />
-            <button type="submit" class="button-link" aria-label="<?php echo esc_attr($title); ?>" style="border: none; background: none; padding: 0; cursor: pointer;">
-                <i class="pp-future-workflow-status-icon dashicons dashicons-<?php echo esc_attr($icon); ?> <?php echo esc_attr($iconClass); ?>" aria-hidden="true" title="<?php echo esc_attr($title); ?>"></i>
+            <button type="submit" class="button-link" style="border: none; background: none; padding: 0; cursor: pointer;" aria-label="<?php echo esc_attr($ariaLabel); ?>" title="<?php echo esc_attr($title); ?>">
+                <i class="pp-future-workflow-status-icon dashicons dashicons-<?php echo esc_attr($icon); ?> <?php echo esc_attr($iconClass); ?>" aria-hidden="true"></i>
             </button>
         </form>
         <?php
@@ -594,10 +607,10 @@ class WorkflowsList implements InitializableInterface
                 'text' => __('Deactivate', 'post-expirator'),
                 'title' => __('Deactivate', 'post-expirator'),
                 'status' => 'draft',
-            ]
+            ],
         ];
 
-        $statusData = isset($statuses[$workflowStatus]) ? $statuses[$workflowStatus] : [];
+        $statusData = $statuses[$workflowStatus] ?? [];
 
         if (empty($statusData)) {
             return [];
@@ -699,7 +712,7 @@ class WorkflowsList implements InitializableInterface
                 'scheduled_action_cancelling_error' =>  __('Error cancelling scheduled actions.', 'post-expirator'),
                 'scheduled_action_cancelling_empty' =>  __('This workflow doesn\'t have any scheduled action.', 'post-expirator'),
                 // Worklow status change
-                'status_change_error'   =>  __('Error updating workflow status.', 'post-expirator')
+                'status_change_error'   =>  __('Error updating workflow status.', 'post-expirator'),
             ],
             'success' => [
                 // Copy workflow success
@@ -707,8 +720,8 @@ class WorkflowsList implements InitializableInterface
                 // Cancel scheduled workflow success
                 'scheduled_action_cancelling_success' => __('Scheduled actions have been cancelled successfully.', 'post-expirator'),
                 // Worklow status change
-                'status_changed'   =>  __('Workflow status updated successfully.', 'post-expirator')
-            ]
+                'status_changed'   =>  __('Workflow status updated successfully.', 'post-expirator'),
+            ],
         ];
 
         if (isset($messages[$type][$notice])) {
@@ -838,10 +851,12 @@ class WorkflowsList implements InitializableInterface
         $postRevision = isset($_GET['revision']) ? (int) $_GET['revision'] : null;
 
         $messages[$postType][1]  = sprintf(
+            /* translators: %s is the post type singular name. */
             __('%s updated.', 'post-expirator'),
             $singular
         );
         $messages[$postType][4]  = sprintf(
+            /* translators: %s is the post type singular name. */
             __('%s updated.', 'post-expirator'),
             $singular
         );
@@ -854,14 +869,17 @@ class WorkflowsList implements InitializableInterface
         )
         : false;
         $messages[$postType][6]  = sprintf(
+            /* translators: %s is the post type singular name. */
             __('%s published.', 'post-expirator'),
             $singular
         );
         $messages[$postType][7]  = sprintf(
+            /* translators: %s is the post type singular name. */
             __('%s saved.', 'post-expirator'),
             $singular
         );
         $messages[$postType][8]  = sprintf(
+            /* translators: %s is the post type singular name. */
             __('%s submitted.', 'post-expirator'),
             $singular
         );
@@ -872,6 +890,7 @@ class WorkflowsList implements InitializableInterface
             date_i18n('M j, Y @ G:i', strtotime($post->post_date))
         );
         $messages[$postType][10] = sprintf(
+            /* translators: %s is the post type singular name. */
             __('%s draft updated.', 'post-expirator'),
             $singular
         );
