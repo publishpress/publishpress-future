@@ -16,6 +16,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Fixed: Future abilities are registered when another plugin starts the WordPress Abilities API before Future initializes on `init`.
 - Fixed: MCP allowed-role settings validate against the live WordPress role registry, so roles registered on `init` are accepted (Issue #1794).
 - Fixed: Future Action column no longer fatals when the posts or pages list has no current post (Issue #1705).
+- Fixed: Debug log output has a screen-reader label (Issue #1703).
+- Fixed: PublishPress footer logo has alt text (Issue #1701).
 - Changed: Admin screens and the workflow editor improve keyboard use, labels, contrast, and screen-reader announcements for WCAG 2.2 AA.
 - Changed: Debug log filters apply when the user presses Apply.
 - Changed: Raise the minimum PHP version from 7.4 to 8.2.
