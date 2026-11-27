@@ -902,7 +902,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/api-fetch */ "./node_modules/@wordpress/api-fetch/build-module/index.js");
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
-/* harmony import */ var _wordpress_deprecated__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/deprecated */ "./node_modules/@wordpress/data-controls/node_modules/@wordpress/deprecated/build-module/index.js");
+/* harmony import */ var _wordpress_deprecated__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/deprecated */ "./node_modules/@wordpress/deprecated/build-module/index.js");
 /**
  * WordPress dependencies
  */
@@ -1050,10 +1050,10 @@ const controls = {
 
 /***/ },
 
-/***/ "./node_modules/@wordpress/data-controls/node_modules/@wordpress/deprecated/build-module/index.js"
-/*!********************************************************************************************************!*\
-  !*** ./node_modules/@wordpress/data-controls/node_modules/@wordpress/deprecated/build-module/index.js ***!
-  \********************************************************************************************************/
+/***/ "./node_modules/@wordpress/deprecated/build-module/index.js"
+/*!******************************************************************!*\
+  !*** ./node_modules/@wordpress/deprecated/build-module/index.js ***!
+  \******************************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
